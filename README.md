@@ -1,2 +1,2 @@
-# wot-security
-a repo exclusively for security to better manage issues and security considerations for WoT
+# WoT Security and Privacy
+Github repository of the W3C Web of Things Security and Privacy Task Force to manage cross-cutting security and privacy considerations.
