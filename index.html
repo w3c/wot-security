@@ -270,6 +270,82 @@
     </section>
 
     <section>
+    <h1>Examples of WoT security configurations</h1>
+        <p>
+          WoT is intended to be used in variety of use cases and configurations. While the below list does not cover all possible deployment variations, it covers
+          the most common cases and shows the ways how security mechanisms can be configured for them, as well brings attention to the relevant details.
+        </p>
+
+           <h2>Basic Interaction between WoT Thing and WoT Client</h2>
+            <p>
+              Here we will consider two cases. <a href="#wot_client_thing_basic"></a> shows the basic WoT Client (can be a browser or application on a user smartphone) that is used to operate the WoT Thing (Garage door controller or other HW device). The latter exposes a WoT interface and provides a Thing Description with actions that can be performed on a Thing. 
+            </p>
+            <figure id="wot_client_thing_basic">
+              <img src="images/client-server-basic.png" style="width: 1000px;" />
+              <figcaption>Basic WoT Thing and WoT Client</figcaption>
+            </figure>
+            <p>
+            Todo: Here we will talk about the ways how the security association between the WoT Client and WoT Thing can be provisioned (WoT Client needs to be able to authenticate WoT Thing), as well as how WoT Thing can setup access control mechanisms on exposed WoT Interface (x509 certs, OAuth, access tokens etc.). 
+            We will give examples and suggestions for security mechanism usages based on different device classes (limited resource devices, more powerful devices etc.).
+            Also, we will list point to the threats from the Threat model document that are important to consider in this case, such as TD authenticity in transfer and others. 
+            </p>
+            <p>
+            <a href="#wot_client_thing_basic_2"></a> is identical but with an important difference that a Thing description is not stored on a WoT Thing device, but provided to the WoT client from Things Directory residing on a remote cloud.
+            </p>
+            <figure id="wot_client_thing_basic_2">
+              <img src="images/client-server-basic-2.png" style="width: 1000px;" />
+              <figcaption>Basic WoT Thing and WoT Client with TD provided from Things Directory</figcaption>
+            </figure>
+            <p>
+              Todo: In addition to the above described things, we will discuss issues around secure TD provisioning from the Cloud here. 
+            </p>
+
+          <h2>Interaction between WoT Thing and WoT Client via WoT Servient Gateway</h2>
+            <p>
+              Here we will also consider two cases. <a href="#wot_client_thing_gateway"></a> shows the same basic WoT Client (can be a browser or application on a user smartphone) that is used to operate the WoT Thing (Garage door controller or other HW device). However in contrast to previous case, the interaction between WoT Client and WoT Thing happens via WoT Servient Gateway. The latter exposes a WoT interface and provides a Thing Description with actions that can be performed on a Thing. 
+            </p>
+            <figure id="wot_client_thing_gateway">
+              <img src="images/client-server-gateway.png" style="width: 1000px;" />
+              <figcaption>WoT Thing and WoT Client via Gateway</figcaption>
+            </figure>
+            <p>
+            Todo: Same things like in the previous section, but pointing out the differences in security configuration in this case.
+            </p>
+            <p>
+            <a href="#wot_client_thing_gateway_2"></a> is identical but with an important difference that a Thing description is not stored on a WoT Thing device, but provided to the WoT client from Things Directory residing on a remote cloud.
+            </p>
+            <figure id="wot_client_thing_gateway_2">
+              <img src="images/client-server-gateway-2.png" style="width: 1000px;" />
+              <figcaption>WoT Thing and WoT Client via Gateway with Remote Cloud</figcaption>
+            </figure>
+
+            <h2>WoT Servient Single-Tenant</h2>
+            <p>
+              <a href="#wot_servient-single-tenant"></a> shows the WoT Servient (for example providing Garage door controller) with Scripting API support and a couple of scripts running inside WoT runtime. All scripts are coming from a trusted entity.
+            </p>
+            <figure id="wot_servient-single-tenant">
+              <img src="images/servient-single-tenant.png" style="width: 1000px;" />
+              <figcaption>WoT Servient Single-Tenant</figcaption>
+            </figure>
+            <p>
+            Todo: Here we will take a deeper look inside of WoT Servient and Scripting API and discuss the security-related issues and threats. Things to cover: script provisioning and provisioning of security metadata, possibility to setup different access controls on different TDs and actions that different scripts expose. 
+            We will give examples and suggestions for security mechanism usages based on different device classes (limited resource devices, more powerful devices etc.).
+            We will also talk at the end of possibility to use capabilities to group related accesses and giving AC permissions to the group. 
+            </p>
+            <h2>WoT Servient Multi-Tenant</h2>
+            <p>
+              <a href="#wot_servient-multi-tenant"></a> shows the WoT Servient (for example providing Garage door controller) with two different tenants running in two different instances of WoT Runtime. Each tenant can have multiple independent scripts. WoT Runtime core also has a Thing manager entity that allows installation of scripts into the corresponding WoT runtimes. 
+            </p>
+            <figure id="wot_servient-multi-tenant">
+              <img src="images/servient-multi-tenant.png" style="width: 1000px;" />
+              <figcaption>WoT Servient Multi-Tenant</figcaption>
+            </figure>
+            <p>
+            Todo: Here we will take a deeper look inside of multi-tenant case and the security threats arising from it. We will consider recommended ways of addressing them for different classes of devices.  
+            </p>
+    </section>
+
+    <section>
       <h2>Terminology</h2>
       <p>
         Please refer to the <a href="wot-architecture">WoT Architecture</a> document for terminology definitions.
