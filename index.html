@@ -88,17 +88,14 @@
       </p>
     </section>
 
-    <section>
+  <section>
     <h1>Requirements</h1>
-	<p>The security requirements of a WoT system depend on its context (for example, industrial vs. home)
-	and the value of the assets it provides access to.
-	In this section we discuss some security requirements by reference the <a href="wot-threat-model.md">WoT threat model</a>.
-	</p>
+	
         <section>
         <h2>General</h2>
             <p>
             In general using the WoT approach should "do no harm": the security of any protocols should be maintained.
-		    The Web of Things systems does not introduce new security mechanisms, 
+		        The Web of Things systems does not introduce new security mechanisms, 
             but should preserve the functionality of existing mechanisms.
             <ul>
                 <li><strong>Exposing:</strong>
@@ -106,171 +103,238 @@
                 it should be possible to use best practices for security,
                 including maintaining the integrity of the TD and delivering it only to an authorized recipient.</li>
                 <li><strong>Consuming:</strong>
-		        A consumed TD should accurately reflect the actual security status of a target device.</li>
+		            A consumed TD should accurately reflect the actual security status of a target device.</li>
                 <li><strong>Protocols:</strong>
-		        We will ensure in particular that, at a minimum, 
+		            We will ensure in particular that, at a minimum, 
                 the needs of the following protocols are addressed: http(s) and coap(s).</li>
             </ul>
             </p>
         </section>
+
         <section>
-        <h2>Assets</h2>
-            <p>
-            From a security perspective each TD consists of the following assets:
-            <ul>
-               <li>A Thing Description itself and all its fields.</li>
-               <li>A Thing object instance that the TD describes.</li> 
-               <li>Resources exposed by the Thing Description.</li>
-            </ul>
+        <h2>Threat Model and Security Objectives</h2>
+            <p> 
+              Due to big diversity of devices, use cases, country regulations and requirements it is impossible to draw a precise picture of WoT threat model that would fit every case. Instead we crated an overall <a href="wot-threat-model.md">WoT threat model</a> that can be adjusted by OEMs or WoT deployers based on their concrete security requirements.  The practical examples on typical high-level WoT scenarios and their security objectives is given in the <a href="wot-security-scenarios-objectives.md">WoT Security Scenarios and Objectives </a>.   <!-- todo: need to build a couple of more scenarios in addition to home scenario we have. --> 
             </p>
         </section>
+
         <section>
-        <h2>Threat Model</h2>
-            <p>
-            The following main threats on the 
-            above assets should be taken into account while developing a TD:
-            <ul>
-            <li><strong>WoT TD - Privacy.</strong>
-              Publicly exposed information in TD can have strong privacy implications,
-              such as information about individuals, their households, equipment etc.</li>
-            <li><strong>WoT TD - Local Storage.</strong>
-              Any local or remote attack method on TD in-storage the purpose of its modification,
-              including rolling back to an older version of TD.</li>
-            <li><strong>WoT Interface - General compromise.</strong>
-              Any remote attack method using WoT Interface with the purpose of compromising 
-		      the Thing instance and as a result getting access/control to all available WoT assets in the same 
-              execution boundary.</li>
-            <li><strong>WoT Interface - Unauthorized access.</strong>
-              Any remote attack method using WoT Interface with the purpose of obtaining
-              unauthorized access to a WoT asset.</li>
-            <li><strong>WoT DoS.</strong>
-              Any attack method using WoT Interface in order to cause a Denial of Service to another Thing,
-              the resources it provides, other devices or infrastructure.
-              Examples include invoking WoT Interface actions in a way that requires excessive processing and
-              sending too many messages in a certain time frame, and
-              disturbing the operation of a service by intentional dropping all or some messages.</li>
-            <li><strong>WoT Communication - TD Authenticity.</strong> 
-              Any attack method on TDs in-transfer with the purpose of its modification,
-              including rolling back to an older version of TD.</li>
-            <li><strong>WoT Communication - TD Confidentiality.</strong> 
-              Any attack method on TDs during transfer with the purpose of obtaining
-              unauthorized access to non-public parts of TDs.</li>
-            </ul>
-	    </p>
+        <h2>Determining a suitable security architecture</h2>
+            <p> 
+              <!-- todo: List the criteria that raise risk level for particular WoT architecture, such as handing privacy-sensitive data, physical safety, etc. (we started to build this list, need to finish)  --> 
+              <!-- todo: Talk about capabilities of devices themselves, what security protocols are supported, how processes isolation is implemented (granularity: everything runs as one process, only kernel - vs. userspace isolation, process isolation, script isolation etc.), etc.   -->
+              <!-- todo: List additional factors that are important in selecting security architecture   -->
+            </p>
         </section>
-    </section>
-    <section>
-    <h1>Recommended Practices</h1>
-        <p>Based on the security assets and threats listed above, we provide a set of recommended practices for
-        enhancing security and privacy.</p>
+
+  </section>
+
+  <section>
+  <h1>Recommended Security Practices</h1>
+      <p>
+        Based on the security assets and threats listed above, we provide a set of recommended practices for
+        enhancing security and privacy.
+      </p>
+
         <section>
         <h2>Secure Delivery and Storage of Thing Description</h2>
             <p>
-	    When a TD is transferred between endpoints, 
-            it is important to at least use secure protocols guaranteeing
-	    data authenticity and in many cases confidentiality 
-            (depending on whenever a TD contains any confidential information)
-            to avoid manipulation of a TD. 
-            </p><p>
-            If end-to-end TD authenticity is required,
-            it is possible to sign TD objects with either digital signatures 
-            (using asymmetric cryptographic primitives) 
-            or Message Authentication Codes (MACs, using symmetric cryptographic primitives).
-            Such digital signatures or MACs are created by the producers/issuers of TD objects
-            and validated by consumers of TD objects (which should reject signed TD objects whose signatures/MACs are invalid).
-            For TD objects expressed in JSON,
-            RFC 7515 (IETF JSON Web Signature: https://datatracker.ietf.org/doc/rfc7515/)
-            provides guidelines for computation and validation of digital signatures or MACs using JSON-based data structures. 
-            </p><p>
-            Similarly, if end-to-end TD confidentiality is required
-            (though probably a much more rare case than authenticity),
-            it is possible to encrypt TD objects using available cryptographic encryption primitives.
-            For TD objects expressed in JSON,
-            RFC 7516 (IETF JSON Web Encryption: https://datatracker.ietf.org/doc/rfc7516/)
-            provides the guidelines for encryption and decryption of JSON-based data structures. 
-	    When TD is stored at the end device or remote storage,
-            its authenticity and in some cases confidentiality should
-	    also be protected using the best available local methods.
-            An access control mechanism should also be used that prevents 
-	    illegitimate modification of any of the TD's parts. 
-            </p><p>
-	    This recommendation helps prevent the following threats: 
-            WoT Communication - TD Authenticity,
-            WoT Communication - TD Confidentiality,
-            WoT TD - Local Storage.
+    	         When a TD is transferred between endpoints, 
+                it is important to at least use secure protocols guaranteeing
+    	          data authenticity and in many cases confidentiality 
+                (depending on whenever a TD contains any confidential information)
+                to avoid manipulation of a TD. 
+            </p>
+            <p>
+              If end-to-end TD authenticity is required,
+              it is possible to sign TD objects with either digital signatures 
+              (using asymmetric cryptographic primitives) 
+              or Message Authentication Codes (MACs, using symmetric cryptographic primitives).
+              Such digital signatures or MACs are created by the producers/issuers of TD objects
+              and validated by consumers of TD objects (which should reject signed TD objects whose signatures/MACs are invalid).
+              For TD objects expressed in JSON,
+              RFC 7515 (IETF JSON Web Signature: https://datatracker.ietf.org/doc/rfc7515/)
+              provides guidelines for computation and validation of digital signatures or MACs using JSON-based data structures. 
+            </p>
+            <p>
+              Similarly, if end-to-end TD confidentiality is required
+              (though probably a much more rare case than authenticity),
+              it is possible to encrypt TD objects using available cryptographic encryption primitives.
+              For TD objects expressed in JSON,
+              RFC 7516 (IETF JSON Web Encryption: https://datatracker.ietf.org/doc/rfc7516/)
+              provides the guidelines for encryption and decryption of JSON-based data structures. 
+  	          When TD is stored at the end device or remote storage,
+              its authenticity and in some cases confidentiality should
+  	          also be protected using the best available local methods.
+              An access control mechanism should also be used that prevents 
+  	          illegitimate modification of any of the TD's parts. 
+            </p>
+            <p>
+  	          This recommendation helps prevent the following threats: 
+              WoT Communication - TD Authenticity,
+              WoT Communication - TD Confidentiality,
+              WoT TD - Local Storage.
             </p>
         </section>
+
         <section>
         <h2>Use Secure Transports</h2>
-            <p>
-	    When defining protocols for APIs exposed by a TD, 
-            it is often important to use secure protocols guaranteeing
-	    data authenticity and confidentiality.
+            <p> 
+	           When defining protocols for APIs exposed by a TD, 
+             it is often important to use secure protocols guaranteeing
+	           data authenticity and confidentiality.
             For example, coaps and https should be preferred to coap and http whenever possible.
-            </p><p>
-	    This recommendation helps prevent the following threats: 
+            </p>
+            <p>
+	          This recommendation helps prevent the following threats: 
             WoT Communication - Solution Data Authenticity,
             WoT Communication - Solution Data Confidentiality.
             </p>
         </section>
+
         <section>
-	<h2>Avoid Heavy Functional Processing without Authentication</h2>
+	     <h2>Avoid Heavy Functional Processing without Authentication</h2>
             <p>
-	    When defining WoT Interfaces exposed by a TD,
-            it is important to avoid any heavy functional processing before the successful authentication
-	    of a WoT client.
-            Any publicly exposed network interface should avoid heavy processing altogether. 
-            </p><p>
-	    This recommendation helps prevent the following threats: 
+  	          When defining WoT Interfaces exposed by a TD,
+              it is important to avoid any heavy functional processing before the successful authentication
+  	         of a WoT client.
+              Any publicly exposed network interface should avoid heavy processing altogether. 
+            </p>
+            <p>
+	           This recommendation helps prevent the following threats: 
             WoT DoS.
             </p>
         </section>
+
         <section>
-	<h2>Avoid Exposing Immutable Identifiers</h2>
+	      <h2>Avoid Exposing Immutable Identifiers</h2>
             <p>
-	    When defining fields exposed by a TD personally identifiable information should be avoided.
-	    It is also strongly recommended to avoid exposing any immutable hardware identifiers.
-            Instead it is recommended to use "soft identifiers", i.e. identifiers that can be changed during device lifecycle.
-            </p><p>
-	    This recommendation helps prevent the following threats: 
+	           When defining fields exposed by a TD personally identifiable information should be avoided.
+	           It is also strongly recommended to avoid exposing any immutable hardware identifiers.
+             Instead it is recommended to use "soft identifiers", i.e. identifiers that can be changed during device lifecycle.
+            </p>
+            <p>
+	          This recommendation helps prevent the following threats: 
             WoT TD - Privacy.
             </p>
         </section>
+
         <section>
-	<h2>Minimize Network Interface Functionality</h2>
+	      <h2>Minimize Network Interface Functionality</h2>
             <p>
-	    Network interfaces exposed by a TD (WoT Interfaces) should only provide the minimal necessary functionality,
+	          Network interfaces exposed by a TD (WoT Interfaces) should only provide the minimal necessary functionality,
             which helps to minimize implementation errors,
-	    possibilities for exposing potentially sensitive data, DoS attack possibilities etc.  
-	    Devices should be strongly encapsulated, meaning the network interfaces should not expose implementation details
+	         possibilities for exposing potentially sensitive data, DoS attack possibilities etc.  
+	         Devices should be strongly encapsulated, meaning the network interfaces should not expose implementation details
             (for example, the use of particular software frameworks).
-	    Consider different levels of access for different users.
-            </p><p>
-	    This recommendation helps prevent the following threats: 
+	         Consider different levels of access for different users.
+            </p>
+            <p>
+	         This recommendation helps prevent the following threats: 
             WoT Interface - General compromise, 
             WoT Interface - Unauthorized API access, 
             WoT DoS. 
             </p>
         </section>
-        <section>
-	<h2>Testing</h2>
+ 
+    <section>
+    <h1>Examples of WoT security configurations</h1>
+        <p>
+          WoT is intended to be used in variety of use cases and configurations. While the below list does not cover all possible deployment variations, it covers
+          the most common cases and shows the ways how security mechanisms can be configured for them, as well brings attention to the relevant details.
+        </p>
+
+           <section>
+           <h2>Basic Interaction between WoT Thing and WoT Client</h2>
             <p>
-	    The WoT Interface exposed by a TD should be extensively tested for overall robustness,
-            including the ability to handle malformed and malicious inputs.
-	    When an HTTP interface is available for a Thing, 
-            it may be possible to perform testing using available web service penetration testing tools. 
+              Here we will consider two cases. <a href="#wot_client_thing_basic"></a> shows the basic WoT Client (can be a browser or application on a user smartphone) that is used to operate the WoT Thing (Garage door controller or other HW device). The latter exposes a WoT interface and provides a Thing Description with actions that can be performed on a Thing. 
+            </p>
+            <figure id="wot_client_thing_basic">
+              <img src="images/client-server-basic.png" style="width: 1000px;" />
+              <figcaption>Basic WoT Thing and WoT Client</figcaption>
+            </figure>
+            <p>
+            Todo: Here we will talk about the ways how the security association between the WoT Client and WoT Thing can be provisioned (WoT Client needs to be able to authenticate WoT Thing), as well as how WoT Thing can setup access control mechanisms on exposed WoT Interface (x509 certs, OAuth, access tokens etc.). 
+            We will give examples and suggestions for security mechanism usages based on different device classes (limited resource devices, more powerful devices etc.).
+            Also, we will list point to the threats from the Threat model document that are important to consider in this case, such as TD authenticity in transfer and others. 
+            </p>
+            <p>
+            <a href="#wot_client_thing_basic_2"></a> is identical but with an important difference that a Thing description is not stored on a WoT Thing device, but provided to the WoT client from Things Directory residing on a remote cloud.
+            </p>
+            <figure id="wot_client_thing_basic_2">
+              <img src="images/client-server-basic-2.png" style="width: 1000px;" />
+              <figcaption>Basic WoT Thing and WoT Client with TD provided from Things Directory</figcaption>
+            </figure>
+            <p>
+              Todo: In addition to the above described things, we will discuss issues around secure TD provisioning from the Cloud here. 
+            </p>
+          </section>
+
+          <section>
+          <h2>Interaction between WoT Thing and WoT Client via WoT Servient Gateway</h2>
+            <p>
+              Here we will also consider two cases. <a href="#wot_client_thing_gateway"></a> shows the same basic WoT Client (can be a browser or application on a user smartphone) that is used to operate the WoT Thing (Garage door controller or other HW device). However in contrast to previous case, the interaction between WoT Client and WoT Thing happens via WoT Servient Gateway. The latter exposes a WoT interface and provides a Thing Description with actions that can be performed on a Thing. 
+            </p>
+            <figure id="wot_client_thing_gateway">
+              <img src="images/client-server-gateway.png" style="width: 1000px;" />
+              <figcaption>WoT Thing and WoT Client via Gateway</figcaption>
+            </figure>
+            <p>
+            Todo: Same things like in the previous section, but pointing out the differences in security configuration in this case.
+            </p>
+            <p>
+            <a href="#wot_client_thing_gateway_2"></a> is identical but with an important difference that a Thing description is not stored on a WoT Thing device, but provided to the WoT client from Things Directory residing on a remote cloud.
+            </p>
+            <figure id="wot_client_thing_gateway_2">
+              <img src="images/client-server-gateway-2.png" style="width: 1000px;" />
+              <figcaption>WoT Thing and WoT Client via Gateway with Remote Cloud</figcaption>
+            </figure>
+          </section>
+
+          <section>
+            <h2>WoT Servient Single-Tenant</h2>
+            <p>
+              <a href="#wot_servient-single-tenant"></a> shows the WoT Servient (for example providing Garage door controller) with Scripting API support and a couple of scripts running inside WoT runtime. All scripts are coming from a trusted entity.
+            </p>
+            <figure id="wot_servient-single-tenant">
+              <img src="images/servient-single-tenant.png" style="width: 1000px;" />
+              <figcaption>WoT Servient Single-Tenant</figcaption>
+            </figure>
+            <p>
+            Todo: Here we will take a deeper look inside of WoT Servient and Scripting API and discuss the security-related issues and threats. Things to cover: script provisioning and provisioning of security metadata, possibility to setup different access controls on different TDs and actions that different scripts expose. 
+            We will give examples and suggestions for security mechanism usages based on different device classes (limited resource devices, more powerful devices etc.).
+            We will also talk at the end of possibility to use capabilities to group related accesses and giving AC permissions to the group. 
+            </p>
+            </section>
+
+            <section>
+            <h2>WoT Servient Multi-Tenant</h2>
+            <p>
+              <a href="#wot_servient-multi-tenant"></a> shows the WoT Servient (for example providing Garage door controller) with two different tenants running in two different instances of WoT Runtime. Each tenant can have multiple independent scripts. WoT Runtime core also has a Thing manager entity that allows installation of scripts into the corresponding WoT runtimes. 
+            </p>
+            <figure id="wot_servient-multi-tenant">
+              <img src="images/servient-multi-tenant.png" style="width: 1000px;" />
+              <figcaption>WoT Servient Multi-Tenant</figcaption>
+            </figure>
+            <p>
+            Todo: Here we will take a deeper look inside of multi-tenant case and the security threats arising from it. We will consider recommended ways of addressing them for different classes of devices.  
+            </p>
+            </section>
+    </section>
+
+    <section>
+      <h1>Security Validation</h1>
+            <p>              
+              In this section we give overall guidelines on how a deployed WoT network should be validated and tested from the security perspective. 
             <!-- todo: add names of the tools. -->
-	    <!-- (TBD) In addition WoT will provide a basic penetration testing of a Test Thing 
+            <!-- (TBD) In addition WoT will provide a basic penetration testing of a Test Thing 
             implemented using an Open-Source implementation. -->
-            </p><p>
-	    This recommendation helps prevent the following threats: 
-            WoT Interface - General compromise.
             </p>
         </section>
     </section>
 
     <section>
-      <h2>Terminology</h2>
+      <h1>Terminology</h1>
       <p>
         Please refer to the <a href="wot-architecture">WoT Architecture</a> document for terminology definitions.
       </p>
