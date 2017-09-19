@@ -3,7 +3,9 @@ Github repository of the W3C Web of Things Security and Privacy Task Force to ma
 
 * [Threat Model](wot-threat-model.md): Assets, agents, risks, threats, and use cases.
 * [References](wot-security-references.md): List of both normative and informative source material.
-* [WoT Security and Privacy Considerations](index.html): A unified set of informative recommendations for security and privacy in a Web of Things system (Work in progress).
+* [WoT Security and Privacy Considerations](index.html): A unified set of informative recommendations for security and privacy in a Web of Things system. This is work in progress.
+    * The latest stable version can be found [here](https://rawgit.com/w3c/wot-security/master/index.html).
+    * A working "unstable" version is also available [here](https://rawgit.com/w3c/wot-security/working/index.html) but has not yet been validated and may have errors.
 
 If you wish to make a contribution,
 please be aware that since the master is being linked from other WoT documents
