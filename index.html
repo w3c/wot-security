@@ -7,6 +7,7 @@
     <script class="remove">
           var respecConfig = {
               specStatus:     "ED"
+            , noRecTrack:     "true"
             , processVersion: 2017
             , shortName:      "wot-security"
             , copyrightStart: 2017
@@ -53,12 +54,255 @@
                 }
               ]
             , localBiblio: {
-                "CoRE-RD" : {
+                "CoRE-RD": {
                   href: "https://tools.ietf.org/html/draft-ietf-core-resource-directory-11"
                 , title: "CoRE Resource Directory"
                 , status:    "Internet-Draft"
                 , publisher: "IETF"
                 , date: "03 July 2017"
+                },
+                "Bel89": {
+                  authors: ["S. Bellovin"]
+                , href: "https://cseweb.ucsd.edu/classes/sp99/cse227/ipext.pdf"
+                , title: "Security Problems in the TCP-IP Protocol Suite"
+                , publisher: "Computer Communication Review, Vol. 19, No. 2" 
+                , pages: "32-48"
+                , date: "April 1989"
+                },
+                "Bel13": {
+                  authors: ["S. Bellovin"]
+                  , href: "http://csrc.nist.gov/groups/ST/ca-workshop-2013/presentations/Bellovin_ca-workshop2013.pdf"
+ 
+                  , title: "Web Security in the Real World" 
+                  , publisher: "Workshop on Improving Trust in the Online Marketplace, NIST" 
+                  , date: "April 2013"
+                },
+                "Ber14": {
+                  authors: ["V. Bertocci"]
+                  , href: "http://www.cloudidentity.com/blog/2014/04/22/authentication-protocols-web-ux-and-web-api/"
+                  , title: "Authentication Protocols, Web UX and Web API" 
+                  , date: "April 2014"
+                },
+                "Bor14": {
+                  authors: ["C. Bormann", "et al."]
+                  , href: "https://tools.ietf.org/rfc/rfc7228.txt"
+                  , title: "Terminology for Constrained-Node Networks"
+                  , publisher: "IETF RFC 7228"
+                  , date: "May 2014"
+                },
+                "Bru14": {
+                  authors: ["C. Brubaker", "et al."]
+                  , href: "https://www.cs.utexas.edu/~shmat/shmat_oak14.pdf"
+                  , title: "Using Frankencerts for Automated Adversarial Testing of Certificate Validation in SSL/TLS Implementations"
+                  , publisher: "IEEE Security Privacy"
+                  , date: "2014"
+                  , pages: "114-129"
+                },
+                "Coo13": {
+                  authors: ["A. Cooper", "et al"]
+                  , href: "https://tools.ietf.org/html/rfc6973"
+                  , title: "Privacy Considerations for Internet Protocols"
+                  , publisher: "IETF RFC 6973 (IAB Guideline)"
+                  , date: "July 2013"
+                },
+                "Dur13": {
+                  authors: ["Z. Durumeric", "et al."]
+                  , href: "http://conferences.sigcomm.org/imc/2013/papers/imc257-durumericAemb.pdf"
+                  , title: "Analysis of the HTTPS Certificate Ecosystem"
+                  , publisher: "Proc. of the 2013 conference on Internet measurement conference"
+                  , date: "October 2013"
+                },
+                "Ell00": {
+                  authors: ["C. Ellison", "B. Schneier"]
+                  , href: "https://www.schneier.com/paper-pki.pdf"
+                  , title: "Ten Risks of PKI: What You’re not Being Told about Public Key Infrastructure"
+                  , publisher: "Computer Security Journal, v 16, n 1,"
+                  , date: "2000"
+                  , pages: "1-7"
+                },
+                "Fu01": {
+                  authors: ["K. Fu", "et al."]
+                  , href: "http://pdos.csail.mit.edu/papers/webauth:sec10.pdf"
+                  , title: "Dos and Don’ts of Client Authentication on the Web"
+                  , publisher: "Proc. 10th USENIX Security Symposium"
+                  , date: "August 2001"
+                },
+                "Geo12": {
+                  authors: ["M. Georgiev", "et al."]
+                  , href: "http://www.cs.utexas.edu/~shmat/shmat_ccs12.pdf"
+                  , title: "The Most Dangerous Code in the World: Validating SSL Certificates in Non-Browser Software"
+                  , publisher: "Proc. of the 2012 ACM conference on Computer and communications security"
+                  , date: "2012"
+                  , pages: "38-49"
+                },
+                "Gol03": {
+                  authors: ["O. Goldreich"]
+                  , href: "http://www.wisdom.weizmann.ac.il/~oded/foc-sur01.html"
+                  , title: "Cryptography and Cryptographic Protocols"
+                  , publisher: "Distributed Computing, vol. 16"
+                  , pages: "177-199"
+                  , date: "2003"
+                }, 
+                "Gre14": {
+                  authors: ["M. Green"]
+                  , href: "http://blog.cryptographyengineering.com/2014/03/how-do-you-know-if-rng-is-working.html"
+                  , title: "How do you know if an RNG is working?"
+                  , date: "March 2014"
+                },
+                "Gut02": {
+                  authors: ["P. Gutman"]
+                  , href: "https://www.cs.auckland.ac.nz/~pgut001/pubs/notdead.pdf"
+                  , title: "PKI: It’s Not Dead, Just Resting"
+                  , publisher: "IEEE Computer, vol. 35, no. 8"
+                  , date: "Aug. 2002"
+                  , pages: "41-49"
+                },
+                "Hea13": {
+                  authors: ["M. Hearn"]
+                  , href: "http://googleblog.blogspot.de/2013/02/an-update-on-our-war-against-account.html"
+                  , title: "An update on our war against account hijackers"
+                  , date: "Feb 2013"
+                },
+                "IETFACE": {
+                  title: "IETF Authentication and Authorization for Constrained Environments (ACE)"
+                  , href: "https://tools.ietf.org/wg/ace/"
+                },
+                "Iic15": {
+                  authors: ["Industrial Internet Consortium"]
+                  , href: "http://www.iiconsortium.org/IIRA.htm"
+                  , title: "Industrial Internet Reference Architecture"
+                  , date: "June 2015"
+                },
+                "IicRA17": {
+                  authors: ["Industrial Internet Consortium"]
+                  , href: "http://www.iiconsortium.org/IIRA.htm"
+                  , title: "The Industrial Internet of Things Volume G1: Reference Architecture"
+                  , publisher: "IIC:PUB:G1:V1.80:20170131"
+                  , date: "Jan 2017"
+                },
+                "IicSF16": {
+                  authors: ["Industrial Internet Consortium"]
+                  , href: "http://www.iiconsortium.org/IISF.htm"
+                  , title: "The Industrial Internet of Things Volume G4: Security Framework"
+                  , publisher: "IIC:PUB:G4:V1.0:PB:20160926"
+                  , date: "Sept 2016"
+                },
+                "ISF17": {
+                  authors: ["IoT Security Foundation"]
+                  , href: "https://iotsecurityfoundation.org/best-practice-guidelines/"
+                  , title: "IoT Security Foundation Best Practice Guidelines"
+                  , date: "May 2017"
+                },
+                "Jon14": {
+                  authors: ["M. Jones"]
+                  , href: "http://www.niso.org/apps/group<em>public/download.php/14003/SPJonesJSONisqv26no3.pdf"
+                  , title: "A JSON-Based Identity Protocol Suite"
+                  , publisher: "Information Standards Quarterly, vol. 26, no. 3"
+                  , date: "2014"
+                  , pages: "19–22"
+                },
+                "Ken03": {
+                  authors: ["S. Kent", "L. Millet"]
+                  , href: "http://www.nap.edu/openbook.php?isbn=0309088968"
+                  , title: "Who Goes There? Authentication Through the Lens of Privacy"
+                  , publisher: "The National Academies Press, Washington D.C."
+                  , date: "2003"
+                },
+                "Lam04": {
+                  authors: ["B. Lampson"]
+                  , href: "http://research.microsoft.com/en-us/um/people/blampson/69-SecurityRealIEEE/69-SecurityRealIEEE.htm"
+                  , title: "Computer Security in the Real World"
+                  , publisher: "IEEE Computer, vol. 37, no. 6"
+                  , date: "June 2004"
+                  , pages: "37-46"
+                },
+                "Loc05": {
+                  authors: ["H. Lockhart"]
+                  , href: "http://www.oracle.com/au/products/database/saml-084342.html"
+                  , title: "Demystifying SAML"
+                  , date: "May 2005"
+                },
+                "Mel15": {
+                  authors: ["D. Melzer"]
+                  , href: "http://c.ymcdn.com/sites/www.issa.org/resource/resmgr/journalpdfs/feature0615.pdf"
+                  , title: "Securing the Industrial Internet of Things"
+                  , date: "June 2015"
+                },
+                "Mic17": {
+                  authors: ["Microsoft"]
+                  , href: "https://docs.microsoft.com/en-us/azure/iot-suite/iot-security-architecture"
+                  , title: "Internet of Things security architecture"
+                  , publisher: "STRIDE threat model for IoT"
+                  , date: "Jan 2017"
+                },
+                "Moo02": {
+                  authors: ["T. Moors"]
+                  , href: "http://www.csd.uoc.gr/~hy435/material/moors.pdf"
+                  , title: "A critical review of End-to-end arguments in system design"
+                  , publisher: "Proc. of the IEEE International Conference on Communications"
+                  , date: "2002"
+                },
+                "Nis15": {
+                  authors: ["NIST"] 
+                  , title: "Guide to Industrial Control Systems (ICS) Security"
+                  , publisher: "NIST Special Publication 800-82"
+                },
+                "Oos10": {
+                  authors: ["M. Oosdijk", "et al."]
+                  , href: "https://tnc2011.terena.org/getfile/696"
+                  , title: "Provisioning scenarios in identity federations"
+                  , publisher: "Surfnet Research Paper" 
+                  , date: "2010"
+                },
+                "Owa17": {
+                  authors: ["OWASP"]
+                  , href: "https://www.owasp.org/index.php/ThreatRiskModeling"
+                  , title: "Threat Risk Modeling"
+                  , publisher: "OWASP"
+                  , date: "Jan 2017"
+                },
+                "Res03": {
+                  authors: ["E. Rescorla", "et al."]
+                  , href: "https://tools.ietf.org/html/rfc3552"
+                  , title: "Guidelines for Writing RFC Text on Security Considerations"
+                  , publisher: "IETF RFC 3552 (IAB Guideline)"
+                  , date: "2003"
+                },
+                "Sch14": {
+                  authors: ["B. Schneier"]
+                  , href: "http://www.wired.com/2014/01/theres-no-good-way-to-patch-the-internet-of-things-and-thats-a-huge-problem/"
+                  , title: "The Internet of Things Is Wildly Insecure — And Often Unpatchable"
+                  , publisher: "Wired"
+                  , date: "Jan. 2014"
+                },
+                "Sch99": {
+                  authors: ["B. Scheier", "A. Shostack"]
+                  , href: "https://www.schneier.com/paper-smart-card-threats.pdf"
+                  , title: "Breaking Up Is Hard To Do: Modeling Security Threats for Smart Cards"
+                  , publisher: "USENIX Workshop on Smart Card Technology, USENIX Press"
+                  , date: "1999"
+                  , pages: "175-185"
+                },
+                "She14": {
+                  authors: ["Z. Shelby", "et al."]
+                  , href: "https://tools.ietf.org/rfc/rfc7252.txt"
+                  , title: "The Constrained Application Protocol (CoAP)"
+                  , publisher: "IETF RFC 7252"
+                  , date: "June 2014"
+                 },
+                "Vol00": {
+                  authors: ["J. Vollbrecht", "et al."]
+                  , href: "https://tools.ietf.org/rfc/rfc2904.txt"
+                  , title: "AAA Authorization Framework"
+                  , publisher: "IETF RFC 2904"
+                  , date: "Aug. 2000"
+                },
+                "Yeg11": {
+                  authors: ["S. Yegge"]
+                  , href: "https://plus.google.com/+RipRowan/posts/eVeouesvaVX"
+                  , title: "Stevey's Google Platforms Rant"
+                  , publisher: "Blog"
+                  , date: "Oct. 2011"
                 }
               }
             };
@@ -111,11 +355,770 @@
             </p>
         </section>
 
-        <section>
-        <h2>Threat Model and Security Objectives</h2>
+        <section id="wot-threat-model">
+        <h2>Threat Model</h2>
             <p> 
-              Due to big diversity of devices, use cases, country regulations and requirements it is impossible to draw a precise picture of WoT threat model that would fit every case. Instead we crated an overall <a href="wot-threat-model.md">WoT threat model</a> that can be adjusted by OEMs or WoT deployers based on their concrete security requirements.  The practical examples on typical high-level WoT scenarios and their security objectives is given in the <a href="wot-security-scenarios-objectives.md">WoT Security Scenarios and Objectives </a>.   <!-- todo: need to build a couple of more scenarios in addition to home scenario we have. --> 
+              Due to the large diversity of devices, use cases, country regulations and requirements for WoT Things,
+              it is impossible to draw a precise picture of a WoT threat model that would fit every case.
+              Instead we have created an overall WoT threat model that can be adjusted
+              by OEMs or WoT deployers based on their concrete security requirements.
             </p>
+            <section>
+            <h3>WoT Primary Stakeholders</h3>
+                <p>This section lists the primary WoT stakeholders.</p>
+		<table>
+		    <tr>
+			<th><strong>Description</strong></th>
+			<th><strong>Role</strong></th>
+			<th><strong>Business-driven security goals</strong></th>
+			<th><strong>Interesting edge cases</strong></th>
+		    </tr><tr>
+			<td>Thing manufacturer (OEM)</td>
+			<td>Producer of the HW thing,
+                            might define and make TD available for everyone,
+                            implements WoT runtime,
+                            certifies thing to be WoT compliant.</td>
+                        <td>Don't want the things to be used in any form of attacks
+                            (loss of reputation, possible legal consequences in some countries).
+                            Want to satisfy security requirements of solution users 
+                            and solution providers for better sales.</td>
+			<td></td>
+		    </tr><tr>
+			<td>Solution provider (solution integrator)</td>
+			<td>Uses things from OEMs to build various WoT end solutions
+                            specific to particular WoT use case(s).
+                            OEM might also be a solution provider at the same time.
+                            Might define new TDs for things or modify TDs provided by manufacturers.
+                            Might use scripting API and runtime provided to implement their solution
+                            or might do a full reflash of the thing.
+                            Solution provider's scripts and their configuration data might require 
+                            confidentiality and/or integrity</td>
+			<td>Don't want their solution to be a target of attacks
+                            (loss of reputation, possible legal consequences in some countries).
+                            Want to satisfy security requirements of solution users for better sales.
+                            Don't want security to interfere with usability for better sales (usability vs. security). 
+                            Want solution to be robust and not easily falling down to DoS
+                            (at least basic DoS resistance).
+                            Want to hide their proprietary scripts and other relevant data from other parties.
+                            <br /><strong><em>Any security obligations towards OEMs?</em></strong></td>
+			<td>There might be several independent solution providers on a single HW Thing.
+                            Need to be able to support their isolation within WoT runtime,
+                            as well as sharing solution user preferences.</td>
+</tr>
+<tr>
+<td>Solution user</td>
+<td>This might be physical user(s) (as John and his family in their smart home) or an abstract user (as company running the factory). Solutions users might differ in their access to the WoT solution capabilities and transferred data (might be able to configure certain parts of solution only or only use solution as it is).</td>
+<td>Don&#39;t want their data to be exposed to any other solution user, solution provider or OEM unless intended (Data confidentiality).Don&#39;t want their data to be modified unless intended (Data integrity).</td>
+<td>Access to the user data might be configurable not only based &quot;who&quot; is the entity accessing data (AC subject), its role, type of access, but also on the time and context data.</td>
+</tr>
+
+</table>
+
+<p>In addition to the above stakeholders, we might need to define a notion of &quot; <strong>Security Owner</strong>&quot;. It defines an entity that provisions a thing with the security root of trust and sets up initial policies on who can provision/update/remove scripts to/from the WoT runtime, if such model is supported. WoT might generally have a number of independent security owners, each with its own set of provisioned certificates and/or credentials. The exact hierarchy of owners that WoT wants to support is to be discussed. <strong><em>Todo: this needs more discussion.</em></strong></p>
+</section>
+<section>
+<h3>WoT Supported Physical Roles?</h3>
+
+<p>This section list primary roles that WoT aims to support.</p>
+
+<table>
+
+<tr>
+<th><strong>Role</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Level of system access?</strong></th>
+</tr>
+
+
+<tr>
+<td>System Maintainer</td>
+<td>Administers the WoT network on behalf of solution provider or solution user. <strong><em>Todo: need to understand more about this role: what kind of operations would it need to do? Reflash devices, reinstall/install/remove scripts? If it has the level of access equal to solution provider, we just talk about delegation (and there are security mechnisms to do it), not really about separate role...</em></strong></td>
+<td>---</td>
+</tr>
+
+</table>
+</section>
+<section>
+<h3>Assets</h3>
+
+<p>This section lists all WoT Assets that are important from security point of view.</p>
+
+<table>
+
+<tr>
+<th><strong>Description</strong></th>
+<th><strong>Who should have access (Trust Model)</strong></th>
+<th><strong>Attack Points</strong></th>
+</tr>
+
+
+<tr>
+<td><strong>Thing Description(TD)</strong><br />Access Control policies for TDs and resources it provides  are part of TDs and they are managed in discretionary access control model way (owner of TD set the AC policy). Some contents of TDs might be privacy sensitive and therefore should not be shared without a need. TDs integrity is crucial for the system correct operation.</td>
+<td>TDs owner: full access Others: read only for minimal required part.</td>
+<td>Storage on thing itself, cloud storage, in-transfer (network) including TD updates.</td>
+</tr>
+<tr>
+<td><strong>Thing object instance</strong><br />Thing object instance confidentiality should be guranteed by the system since it might contain privacy-sensitive information. Integrity is also mandatory for the operation.</td>
+<td>Thing owner: full access Others: read only for minimal required part.</td>
+<td>WoT Runtime</td>
+</tr>
+<tr>
+<td><strong>Solution user data</strong><br />Can be highly privacy sensitive and confidential.</td>
+<td>Different solution users might have different level of access to this data based on the use case. Non-authorized access must be minimized since access even to small amount of information (for example last timestamp when door lock API was used) might have severe privacy converns (allows to detect that owner has been away from his house) Mechanism should be flexible to configure and include also RBAC.  Others: should have no access unless specifically allowed</td>
+<td>Storage on thing itself, solution provider storage (remote cloud or other), in-transfer (network)</td>
+</tr>
+<tr>
+<td><strong>Solution provider scripts and their configuration data</strong><br />Solution providers might have Intellectual Property (IP) in their scripts, therefore make them highly confidential.</td>
+<td>Solution provider: full accessOthers: no access</td>
+<td>Storage on the thing itself, remote storage (if scripts are backed up to a remote storage), in-transfer only for initial provisioning and scripts updates</td>
+</tr>
+<tr>
+<td><strong>Thing&#39;s resources, WoT Infrastructure resources</strong></td>
+<td>Resources should only be used for legitimate purposes and be available when required.</td>
+<td>WoT exposed API</td>
+</tr>
+<tr>
+<td><strong>WoT controlled physical environment</strong></td>
+<td>WoT devices that have actuator capabilities are able to affect the physical environment around them. Such capability must only be used by authorized entities and for legitimate purposes only</td>
+<td>WoT exposed API</td>
+</tr>
+<tr>
+<td><strong>WoT indirectly transmitted behavoir information</strong><br />Amount of communication between different things, APIs used, distribution of communication over time, etc.</td>
+<td>It must not be possible to collect/identify the indirectly transferrable information</td>
+<td>In-trasfer data and usage of WoT Interface</td>
+</tr>
+<tr>
+<td><strong>Unique object indentifier</strong><br />Highly sensitive asset. <strong><em>todo: Need more understanding/discussion on what it is in WoT</em></strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Links</strong>  <strong><em>todo: Need more understanding/discussion on what it is in WoT, model around links</em></strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong><em>Todo: list all the keys/credentials that are used on the level. They will be assets and they will be needed if WoT plans to have its own access control policies and enforce it. The exact list would depend on chosen solution. First step is to obtain the list of protocols that WoT plans to support.</em></strong></td>
+<td></td>
+<td></td>
+</tr>
+
+</table>
+
+<p>If in the future the WoT model is extended to allow dynamic installation of scripts inside WoT runtime, the following assets are added:</p>
+
+<table>
+
+<tr>
+<th><strong>Description</strong></th>
+<th><strong>Who should have access (Trust Model)</strong></th>
+<th><strong>Attack Points</strong></th>
+</tr>
+
+
+<tr>
+<td><strong>Script provisioning/updates policies</strong><br />Defines who can install/remove new scripts into WOT runtime, update existing ones</td>
+<td></td>
+<td></td>
+</tr>
+
+</table>
+
+<p>If in the future the WoT model is extended to allow co-existence of different independent solution providers on a single physical device, the following assets are added:</p>
+
+<table>
+
+<tr>
+<th><strong>Description</strong></th>
+<th><strong>Who should have access (Trust Model)</strong></th>
+<th><strong>Attack Points</strong></th>
+</tr>
+
+
+<tr>
+<td><strong>Access control policies for co-existing solution providers</strong><br />Not required if initially a simple model of &quot;full isolation&quot; is applied to scripts, their execution environment and processed data when having more than two solution providers sharing the same WoT runtime.</td>
+<td></td>
+<td>Storage on the thing itself, remote storage (if they are backed up to a remote storage), in-transfer for initial provisioning and policy updates</td>
+</tr>
+
+</table>
+</section>
+<section>
+<h3>Adversaries</h3>
+
+<p>The following adversaries are in-scope for the WoT threat model: </p>
+
+<table>
+
+<tr>
+<th><strong>Persona</strong></th>
+<th><strong>Motivation</strong></th>
+<th><strong>Attacker type</strong></th>
+</tr>
+
+
+<tr>
+<td><strong>WoT Network attacker</strong></td>
+<td>Unauthorised access or modification of any stakeholder's asset. Denial of service. Taking control of WoT network part. Reasons: monetary, fame etc.</td>
+<td>Network attack: an attacker has a network access to the WoT network, able to use WoT Interface, perform MitM attacks, drop, delay, reorder, re-play, inject messages.</td>
+</tr>
+<tr>
+<td><strong>Malicious authorized solution user</strong></td>
+<td>Unauthorized access of private data of other solution users or other stakeholders (eavesdropping). Unauthorized modification of data of any stakeholder (modification of sensor data). Obtaining higher privileges that originally intended (hotel guest trying to control overall hotel lighting).</td>
+<td>Local physical access, WoT configuration point (smartphone, web interface, washing machine interface, etc.).</td>
+</tr>
+<tr>
+<td><strong>Malicious unauthorized solution user</strong></td>
+<td>Similar to above, but with no prior access to the WoT system (guest in a house, guest in a factory)</td>
+<td>Limited local physical network access, can use proximity factor</td>
+</tr>
+<tr>
+<td><strong>Malware developer - 1</strong></td>
+<td>Unauthorised access or modification of any stakeholder's asset. Denial of service. Taking control of WoT network part. Reasons: monetary, fame etc.</td>
+<td>Unprivileged software adversary: application intentionally gets installed or code injected into WoT configuration point (user&#39;s smartphone, browser, etc.) or in WoT runtime itself using WoT Interface</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+</table>
+
+<p>If in the future the WoT model is extended to allow co-existence of different independent solution providers on a single physical device, the following adversaries are added:</p>
+
+<table>
+
+<tr>
+<th><strong>Persona</strong></th>
+<th><strong>Motivation</strong></th>
+<th><strong>Attacker type</strong></th>
+</tr>
+
+
+<tr>
+<td><strong>Malicious solution provider</strong></td>
+<td>Tries to get access or modify other solution providers scripts or data, tries to access or modify solution users data from another solution provider.</td>
+<td>Unprivileged software adversary: solution provider scripts running inside WoT runtime</td>
+</tr>
+
+</table>
+
+<p>If in the future the WoT model is extended to allow dynamic installation of scripts inside WoT runtime, the following adversaries are added:</p>
+
+<table>
+
+<tr>
+<th><strong>Persona</strong></th>
+<th><strong>Motivation</strong></th>
+<th><strong>Attacker type</strong></th>
+</tr>
+
+
+<tr>
+<td><strong>Malware developer - 2</strong></td>
+<td>Same as WoT network attacker</td>
+<td>Same as for Malware developer - 1, but in addition WoT management API can be used to install attacker's code into WoT runtime.</td>
+</tr>
+
+</table>
+
+<p>The following adversaries are out of the scope for the WoT threat model:</p>
+
+<table>
+
+<tr>
+<th><strong>Persona</strong></th>
+<th><strong>Motivation</strong></th>
+<th><strong>Attacker type</strong></th>
+</tr>
+
+
+<tr>
+<td><strong>Malicious OEM</strong></td>
+<td>Intentionally installs HW, firmware or other lower sw level backdoors, rootkits etc. in order to get unauthorized access to WoT assets or affect WoT system in any form</td>
+<td>Local physical access, privileged access</td>
+</tr>
+<tr>
+<td><strong>Careless OEM</strong></td>
+<td>In order to reduce production costs substitutes original HW parts with low quality parts potentially impacting security.</td>
+<td>Local physical access, privileged access</td>
+</tr>
+<tr>
+<td><strong>Careless Solution provider</strong></td>
+<td>In order to reduce solution deployment costs utilizes low quality SW, performs poor testing, misconfigures things, TDs and access control policies.</td>
+<td>Local physical access, prilividged access</td>
+</tr>
+<tr>
+<td><strong>Non-WoT End Point Attacker</strong></td>
+<td>Tries to get authorized access/modify any asset stored at the non-WoT end points (Cloud, non-WoT devices etc.) Reasons: monetary, fame etc.</td>
+<td>Remote or local attack</td>
+</tr>
+
+</table>
+</section>
+<section>
+<h3>Attack surfaces</h3>
+
+<p>In order to correctly define WoT attack surfaces one needs to determine the system's trust model as well as execution context boundaries. Figure 1 presents high-level view on WoT architecture from the security point of view with all possible execution boundaries. However, in practice certain execution boundaries might not be present and it is dependent on the actual device implementation.</p>
+
+<div  style="text-align: center;"><img  src="images/WoTArchSecurityView.png" title="WoT High-Level Architecture Security View" /></div>
+
+ <p  style="text-align: center;">Fig.1 WoT High-Level Architecture Security View.</p>
+
+<p><p  style="text-align: left;"></p>
+
+<p>The main execution boundaries for WoT system are:</p>
+
+<table>
+
+<tr>
+<th><strong>Boundary name</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Notes</strong></th>
+</tr>
+
+
+<tr>
+<td><strong>Scripts execution boundary</strong></td>
+<td>Separates execution contexts between different scripts and script-provided thing instances. If present, this boundary should be implemented either as having different script runtime contexts (with WoT runtime isolation means) or by having separate process execution contexts (with OS process isolation means)</td>
+<td>This boundary is required if we assume that WoT Runtime can run untrusted scripts</td>
+</tr>
+<tr>
+<td><strong>WoT execution boundary</strong></td>
+<td>Separates execution contexts between WoT runtime (including Protocol Bindings) and the rest of the system. If present, this boundary should be implemented at least with OS process isolation means, but in addition can be implemented using stronger security measures available on the device (Mandatory Access Control, OS-kernel level virtualization, Full Virtualization etc.)</td>
+<td>This boundary is required if we assume that WoT Runtime might run untrusted scripts or there might be untrusted Protocol Bindings present. It is also required if a device also runs a non-WoT SW stack and elements of that stack can be compromised</td>
+</tr>
+<tr>
+<td><strong>WoT Runtime and Protocol Bindings execution boundaries</strong></td>
+<td>Separate execution contexts between WoT runtime and Protocol Bindings. If present, these boundaries should be implemented at least with OS process isolation means.</td>
+<td>These boundaries might be needed if we assume that WoT Runtime can run untrusted scripts and would like to implement additional access control measures at the Protocol Binding level.</td>
+</tr>
+
+</table>
+
+<p>The following WoT attack surfaces are always in-scope for the WoT Security model:</p>
+
+<table>
+
+<tr>
+<th><strong>System Element</strong></th>
+<th><strong>Compromise Type(s)</strong></th>
+<th><strong>Assets exposed</strong></th>
+<th><strong>Attack Method</strong></th>
+</tr>
+
+
+<tr>
+<td><strong>WoT Client and Server APIs</strong></td>
+<td>Modification/access to TDs, user data modification/data confidentiality, Unauthorized execution of APIs, DoS</td>
+<td>TDs, solution user data, Thing&#39;s resources, WoT Infrastructure resources, WoT controlled environment, WoT indirectly transmitted behaviour information</td>
+<td>Network attack</td>
+</tr>
+<tr>
+<td><strong>WoT Discovery API/Service</strong></td>
+<td>Modification/access to TDs, Thing&#39;s resources, WoT Infrastructure resources, WoT indirectly transmitted behaviour information</td>
+<td>TDs, Thing&#39;s resources, WoT Infrastructure resources</td>
+<td>Network attack</td>
+</tr>
+<tr>
+<td><strong>Protocol Bindings</strong></td>
+<td>User data modification/data confidentiality, Unauthorized execution of APIs, DoS</td>
+<td>Solution user data, Thing&#39;s resources, WoT Infrastructure resources, WoT controlled environment</td>
+<td>Network attack</td>
+</tr>
+
+</table>
+
+<p>The following WoT attack surfaces are only in-scope for the WoT Security model if we assume application scripts can be untrusted or we assume co-existence of different solution providers on a single physical device:</p>
+
+<table>
+
+<tr>
+<th><strong>System Element</strong></th>
+<th><strong>Compromise Type(s)</strong></th>
+<th><strong>Assets exposed</strong></th>
+<th><strong>Attack Method</strong></th>
+</tr>
+
+
+<tr>
+<td><strong>WoT Script</strong></td>
+<td>Component compromise</td>
+<td>TDs, solution user data, solution provider data/scripts</td>
+<td>Local attack by other WoT scripts</td>
+</tr>
+<tr>
+<td><strong>WoT Runtime</strong></td>
+<td>Component compromise</td>
+<td>TDs, solution user data, Thing&#39;s resources, WoT Infrastructure resources, WoT controlled environment, solution provider data/scripts</td>
+<td>Local attack by WoT scripts</td>
+</tr>
+
+</table>
+
+<p>If in the future the WoT model is extended to allow dynamic installation of scripts inside WoT runtime, the following attack surfaces are added:</p>
+
+<table>
+
+<tr>
+<th><strong>System Element</strong></th>
+<th><strong>Compromise Type(s)</strong></th>
+<th><strong>Assets exposed</strong></th>
+<th><strong>Attack Method</strong></th>
+</tr>
+
+
+<tr>
+<td><strong>WoT Script Management API</strong></td>
+<td>Compromise of application scripts, including installing older version of legitimate scripts (rollback)</td>
+<td>Solution provider scripts and their execution environment</td>
+<td>Network attack</td>
+</tr>
+
+</table>
+
+<p>Another additional set of attack surfaces might be added if we assume that Protocol Bindings can be untrusted. <strong><em>Todo: define them if such model is supported.</em></strong></p>
+
+<p>The following attack surfaces are out-of-scope for the WoT Security model:</p>
+
+<table>
+
+<tr>
+<th><strong>System Element</strong></th>
+<th><strong>Compromise Type(s)</strong></th>
+<th><strong>Assets exposed</strong></th>
+<th><strong>Attack Method</strong></th>
+</tr>
+
+
+<tr>
+<td><strong>Non-WoT endpoints</strong><br />This might be non-WoT endpoint devices, user interface devices, remote Clouds etc.</td>
+<td>Component compromise</td>
+<td>TDs, solution user data, WoT Infrastructure resources</td>
+<td>Network attacks, Local attack of all levels</td>
+</tr>
+<tr>
+<td><strong>Services below WoT Layer</strong></td>
+<td>Component compromise on levels below WoT</td>
+<td>Modification/access to TDs, Thing&#39;s resources, WoT Infrastructure resources</td>
+<td>Network attacks, Local attacks of all levels</td>
+</tr>
+
+</table>
+</section>
+<section>
+<h3>Threats</h3>
+
+<p>This section lists all basic WoT threats, both in-scope and out-of-scope. </p>
+
+<p>It is important to note that this threat model assumes that WoT User Interface (that might reside on non-WoT device, such as smartphone, PC browser, etc.) communicates with WoT network using standard WoT Interfaces and WoT Protocol Bindings. It is strongly recommended that no other separate communication mean is provided for this purpose. It is also assumed that WoT Protocol Bindings are trusted and cannot come from untrusted parties.    </p>
+
+<table>
+
+<tr>
+<th><strong>Name</strong></th>
+<th><strong>Adversary</strong></th>
+<th><strong>Asset</strong></th>
+<th><strong>Attack method and pre-conditions</strong></th>
+</tr>
+
+
+<tr>
+<td><strong>Non-WoT End Point</strong></td>
+<td>All attacker types</td>
+<td>TDs, data from solution users, WoT Infrastructure resources stored at non-WoT end points (Cloud, non-WoT devices etc.)</td>
+<td><strong>Attack method</strong> : Any remote or local attack method that results in attacker to obtain unauthorized access or modify assets stored at the Non-WoT End Point or cause a DoS attack on the service itself.</td>
+</tr>
+<tr>
+<td><strong>WoT Platform</strong> <br />(<strong><em>currently it incorporates all kinds of attacks on level below WoT runtime. Might break it up a bit later one</em></strong>)</td>
+<td>All attacker types</td>
+<td>TDs, data from solution users, Application scripts and their configuration, WoT Infrastructure resources</td>
+<td><strong>Attack method</strong> : Any local or remote attack method on levels below WoT runtime that results in attacker to obtain unauthorized access or modify assets stored at things, or cause DoS attack on thing or WoT infrastructure.</td>
+</tr>
+<tr>
+<td><strong>WoT Protocol Bindings</strong></td>
+<td>WoT Network attacker, Malware developer - 1, Malicious solution users</td>
+<td>Compromising Protocol Bindings and getting access/control to all WoT assets in the same execution boundary</td>
+<td><strong>Pre-conditions:</strong> General preconditions for network attacker with access to the WoT Interface. In case of Malicious Authorized Solution User or Malware developer - 1 also access to solution user credentials available on the configuration interface (smartphone, tablet etc.)<br /><strong>Attack method:</strong>  Any remote attack method using WoT Interface or directly protocol binding interfaces with the purpose of compromising protocol binding component and access to all available WoT assets</td>
+</tr>
+<tr>
+<td><strong>WoT Interface - General Compromise</strong></td>
+<td>Network attacker, Malware developer 1, Malicious solution users</td>
+<td>Compromising Thing instance and getting access/control to all available WoT assets in the same execution boundary</td>
+<td><strong>Pre-conditions:</strong> General preconditions for network attacker with access to the WoT Interface. In case of Malicious Authorized Solution User or Malware developer - 1 also access to solution user credentials available on the configuration interface (smartphone, tablet etc.)<br /><strong>Attack method</strong> : Any remote attack method using WoT Interface with the purpose of compromising the Thing instance and as a result getting access/control to all available WoT assets in the same execution boundary</td>
+</tr>
+<tr>
+<td><strong>WoT Interface - Unauthorized API access</strong></td>
+<td>Network attacker, Malware developer 1, Malicious users, Malicious solution provider</td>
+<td>Unauthorized access to an asset provided via WoT Interface (WoT controlled environment, users data, non-public parts of TDs, etc.)</td>
+<td><strong>Pre-conditions:</strong> An attacker with an access to the WoT client API<br /><strong>Attack method</strong> : Any remote attack method using WoT Interface with the purpose of obtaining unauthorized access to a WoT asset</td>
+</tr>
+<tr>
+<td><strong>WoT TD Privacy</strong></td>
+<td>Network attacker, Malware developer 1</td>
+<td>Unauthorized access to privacy-sensitive data exposed via TD</td>
+<td><strong>Attack method</strong> : Passive observation of TD data during transfer or at storage</td>
+</tr>
+<tr>
+<td><strong>WoT TD - Local Storage</strong></td>
+<td>Malware developer 1</td>
+<td>TDs authenticity</td>
+<td><strong>Attack method</strong> : Any local or remote attack method on TD in-storage the purpose of its modification, including rolling back to an older version of TD</td>
+</tr>
+<tr>
+<td><strong>WoT DoS</strong></td>
+<td>WoT Network attacker, Malware developer - 1, Malicious authorized solution user</td>
+<td>Things resources, WoT Infrastructure resources, Infrastructure operability</td>
+<td><strong>Pre-conditions:</strong> General preconditions for network attacker with access to the WoT Interface<br /><strong>Attack method</strong> : Any attack method using WoT Interface in order to cause DoS to an end thing, device or infrastructure (calling WoT Interface methods that require processing, sending too many messages etc.) or to disturb the service operation by intentional dropping all or selective WoT messages</td>
+</tr>
+<tr>
+<td><strong>WoT communication - TD Authenticity</strong></td>
+<td>Network attacker, Malware developer 1, Malicious users, Malicious solution provider</td>
+<td>TDs authenticity in-transfer</td>
+<td><strong>Pre-conditions:</strong> General preconditions for network attacker with access to the WoT Interface<br /><strong>Attack method</strong> : Any attack method on TDs in-transfer with the purpose of its modification, including rolling back to an older version of TD</td>
+</tr>
+<tr>
+<td><strong>WoT communication - TD Confidentiality</strong></td>
+<td>Network attacker, Malware developer 1, Malicious users, Malicious solution provider</td>
+<td>TDs confidentiality in-transfer</td>
+<td><strong>Pre-conditions:</strong> General preconditions for network attacker with access to the WoT Interface<br /><strong>Attack method</strong> : Any attack method on TDs in-transfer with the purpose of obtaining unauthorized access to non-public parts of TDs</td>
+</tr>
+<tr>
+<td><strong>WoT communication - Solution Data Authenticity</strong></td>
+<td>Network attacker, Malware developer 1, Malicious users, Malicious solution provider</td>
+<td>Solution data authenticity in-transfer</td>
+<td><strong>Pre-conditions:</strong> General preconditions for network attacker with access to the WoT Interface<br /><strong>Attack method</strong> : Any attack method on solution data in-transfer with the purpose of its modification, including sequence of received data, its freshness and illegitimate replay</td>
+</tr>
+<tr>
+<td><strong>WoT communication - Solution Data Confidentiality</strong></td>
+<td>Network attacker, Malware developer 1, Malicious users, Malicious solution provider</td>
+<td>Solution data confidentiality in-transfer</td>
+<td><strong>Pre-conditions:</strong> General preconditions for network attacker with access to the WoT Interface<br /><strong>Attack method</strong> : Any attack method on solution data in-transfer with the purpose of obtaining unauthorized access to the solution data</td>
+</tr>
+<tr>
+<td><strong>WoT communication - Side Channels</strong></td>
+<td>Network attacker, Malicious users, Malicious solution provider</td>
+<td>WoT indirectly transmitted behaviour information</td>
+<td><strong>Pre-conditions:</strong> General preconditions for network attacker with access to the WoT client API<br /><strong>Attack method</strong> : Passive observation of WoT network and messages with the intention to learn some behavioural and operational patterns</td>
+</tr>
+<tr>
+<td><strong><em>Todo: add all the treats respective to the credentials/policy management if any</em></strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+</table>
+
+<p>If in the future the WoT model is extended to allow dynamic installation of scripts inside WoT runtime, the following threats are added:</p>
+
+<table>
+
+<tr>
+<th><strong>Name</strong></th>
+<th><strong>Adversary</strong></th>
+<th><strong>Asset</strong></th>
+<th><strong>Attack method and pre-conditions</strong></th>
+</tr>
+
+
+<tr>
+<td><strong>WoT Script Mgm API - 1</strong></td>
+<td>Network attacker, Malware developer, Malicious solution users</td>
+<td>Execution inside WoT Runtime(stepping stone to other further local attacks) and all assets within WoT Runtime</td>
+<td><strong>Pre-conditions:</strong> General preconditions for network attacker with access to the WoT Script Mgm API<br /><strong>Attack method</strong>: Attacker installs its own script into WoT runtime using WoT Script Management API or compromises WoT Runtime itself using WoT Script Management API</td>
+</tr>
+<tr>
+<td><strong>WoT Script Mgm API - 2</strong></td>
+<td>Network attacker, Malware developer, Malicious solution users</td>
+<td>Execution inside WoT Runtime(stepping stone to other further local attacks) and all assets within WoT Runtime</td>
+<td><strong>Pre-conditions:</strong> General preconditions for network attacker with access to the WoT Script Mgm API<br /><strong>Attack method</strong>: Attacker compromises WoT Runtime itself using WoT Script Management API</td>
+</tr>
+<tr>
+<td><strong>WoT Script Mgm API - 3</strong></td>
+<td>Network attacker, Malware developer, Malicious solution users</td>
+<td>Things resources, Infrastructure operability</td>
+<td><strong>Pre-conditions:</strong> General preconditions for network attacker with access to the WoT Script Mgm API<br /><strong>Attack method</strong>: Attacker misuses WoT Script Management API to cause DoS on things or infrastructure, including deleting, corrupting WoT scripts</td>
+</tr>
+
+</table>
+
+<p>If in the future the WoT model is extended to allow co-existence of different independent solution providers on a single physical device or WoT scripts are assumed to be untrusted, it brings the following new threats in addition to the above ones:</p>
+
+<table>
+
+<tr>
+<th><strong>Name</strong></th>
+<th><strong>Adversary</strong></th>
+<th><strong>Asset</strong></th>
+<th><strong>Attack method and pre-conditions</strong></th>
+</tr>
+
+
+<tr>
+<td><strong>WoT Script</strong></td>
+<td>Malicious solution provider, Malware developers, Malicious solution users (if they can install their own scripts)</td>
+<td>Component compromise</td>
+<td><strong>Pre-conditions:</strong> An attacker has a full control over the script running inside WoT runtime either legitimately (solution provider script) or by compromising a solution provider script or by installing its own script by other means.<br /><strong>Attack method</strong>: Any local attack method on another script running in the same WoT runtime that results in attacker compromising that script and getting controls over it</td>
+</tr>
+<tr>
+<td><strong>WoT Runtime</strong></td>
+<td>Malicious solution provider, Malware developers, Malicious solution users (if they can install their own scripts)</td>
+<td>Component compromise</td>
+<td><strong>Pre-conditions:</strong> An attacker has a full control over the script running inside WoT runtime either legitimately (solution provider script) or by compromising a solution provider script or by installing its own script by other means.<br /><strong>Attack method</strong>: Any local attack method on WoT runtime with the purpose of elevating its privileges to WoT runtime level</td>
+</tr>
+<tr>
+<td><strong>WoT Script - Confidentiality</strong></td>
+<td>Malicious solution provider, Malware developers, Malicious solution users (if they can install their own scripts)</td>
+<td>Solution provider scripts and configuration confidentiality</td>
+<td><strong>Pre-conditions:</strong> An attacker has a full control over the script running inside WoT runtime either legitimately (solution provider script) or by compromising a solution provider script or by installing its own script by other means.<br /><strong>Attack method</strong>: Any local attack method on another script running in the same WoT runtime that results in attacker in obtaining knowledge about script or its configuration</td>
+</tr>
+<tr>
+<td><strong>WoT Script - Authenticity</strong></td>
+<td>Malicious solution provider, Malware developers, Malicious solution users (if they can install their own scripts)</td>
+<td>Solution provider scripts and configuration authenticity</td>
+<td><strong>Pre-conditions:</strong> An attacker has a full control over the script running inside WoT runtime either legitimately (solution provider script) or by compromising a solution provider script or by installing its own script by other means.<br /><strong>Attack method</strong> : Any local attack method on another script running in the same WoT runtime that results in attacker in modifying script or its configuration, including rolling back to an older version of a script</td>
+</tr>
+<tr>
+<td><strong>WoT Local - TD Authenticity</strong></td>
+<td>Malicious solution provider, Malware developers, Malicious solution users (if they can install their own scripts)</td>
+<td>TDs authenticity as stored on a thing</td>
+<td><strong>Pre-conditions:</strong> An attacker has a full control over the script running inside WoT runtime either legitimately (solution provider script) or by compromising a solution provider script or by installing its own script by other means.<br /><strong>Attack method</strong>: Any local attack method on another script running in the same WoT runtime that results in attacker unauthorized modification of TDs, including rolling back to an older version of TD</td>
+</tr>
+<tr>
+<td><strong>WoT Local - TD Confidentiality</strong></td>
+<td>Malicious solution provider, Malware developers, Malicious solution users (if they can install their own scripts)</td>
+<td>TDs integrity as stored on a thing</td>
+<td><strong>Pre-conditions:</strong> An attacker has a full control over the script running inside WoT runtime either legitimately (solution provider script) or by compromising a solution provider script or by installing its own script by other means.<br /><strong>Attack method</strong>: Any local attack method on another script running in the same WoT runtime that results in attacker unauthorized access to non-public parts of TDs.</td>
+</tr>
+<tr>
+<td><strong>WoT Local - Solution Data Authenticity</strong></td>
+<td>Malicious solution provider, Malware developers, Malicious solution users (if they can install their own scripts)</td>
+<td>Solution data authenticity as stored/processed on a thing</td>
+<td><strong>Pre-conditions:</strong> An attacker has a full control over the script running inside WoT runtime either legitimately (solution provider script) or by compromising a solution provider script or by installing its own script by other means.<br /><strong>Attack method</strong>: Any local attack method on another script running in the same WoT runtime that results in attacker in being able to modify solution data, including rolling back to an older version of solution data</td>
+</tr>
+<tr>
+<td><strong>WoT Local - Solution Data Confidentiality</strong></td>
+<td>Malicious solution provider, Malware developers, Malicious solution users (if they can install their own scripts)</td>
+<td>Solution data confidentiality as stored/processed on a thing</td>
+<td><strong>Pre-conditions:</strong> An attacker has a full control over the script running inside WoT runtime either legitimately (solution provider script) or by compromising a solution provider script or by installing its own script by other means.<br /><strong>Attack method</strong> : Any local attack method on another script running in the same WoT runtime that results in attacker getting unauthorized access to the solution data</td>
+</tr>
+<tr>
+<td><strong>WoT Local - DoS</strong></td>
+<td>Malicious solution provider, Malware developers, Malicious solution users (if they can install their own scripts)</td>
+<td>Thing resources, Infrastructure operability of other solution providers</td>
+<td><strong>Pre-conditions:</strong> An attacker has a full control over the script running inside WoT runtime either legitimately (solution provider script) or by compromising a solution provider script or by installing its own script by other means.<br /><strong>Attack method</strong> : Any local attack method with the goal of consuming things or infrastructure resources that disturb legitimate operation of co-existing providers.</td>
+</tr>
+
+</table>
+        </section>
+        </section>
+
+        <section id="wot-security-objectives">
+        <h2>Security Objectives</h2>
+            <p>
+              Practical examples of typical high-level WoT scenarios and their security objectives are given here.   
+            </p>
+
+<section>
+<h3>Scenario 1 - Home environment</h3>
+
+<p>In this scenario we assume a standard home environment with a WoT network running behind a firewall that separates it from the rest of the Internet. However the WoT network is shared with the standard user home network that contains other non-WoT devices that have high chances of being compromised. This results on viewing these non-WoT devices as network attackers with access to WoT network and its APIs/Protocol Bindings. WoT scripts and protocol bindings are considered trusted, single solution provider exists on physical WoT devices, no dynamic installation of WoT scripts are possible.</p>
+
+<p>This scenario implies the following <strong>WoT Security objectives</strong>:</p>
+
+<table>
+
+<tr>
+<th><strong>Threat name</strong></th>
+<th><strong>Example(s)</strong></th>
+<th><strong>Mitigation</strong></th>
+</tr>
+
+
+<tr>
+<td><strong>WoT Protocol Bindings</strong></td>
+<td>A compromised application on a user smartphone connected to the same internal network as WoT devices sends a malformed request to a WoT device using directly Protocol Bindings interface. This malformed request causes the respective Protocol Binding to be compromised and attacker is able to run the code with the privileges of the Protocol Binding on the WoT device.</td>
+<td>TBD</td>
+</tr>
+<tr>
+<td><strong>WoT Interface - General Compromise</strong></td>
+<td>A compromised application on a user smartphone connected to the same internal network as WoT devices sends a malformed request to a WoT device using WoT interface. This malformed request causes the respective Thing Instance to be compromised and attacker is able to run the code with the privileges of the Thing Instance on the WoT device.</td>
+<td>TBD</td>
+</tr>
+<tr>
+<td><strong>WoT Interface - Unauthorized API access</strong></td>
+<td>A user's party guest with the network access to the same internal network as WoT devices using his device sends a WoT interface request to a user's WoT device for a certain resource access, for example, to get a video stream from user's video camera footage or permission to unlock some rooms in the house. Due to lack of proper authentication, it is able to access this information or execute the required action (opening the door).</td>
+<td>TBD</td>
+</tr>
+<tr>
+<td><strong>WoT communication - TD Authenticity</strong></td>
+<td>A compromised application on a user smartphone connected to the same internal network as WoT devices listens to the network and intercepts a legitimate TD send by one of the WoT devices. Then it modifies the TD to state different authentication method or authority and forwards it to the intended device. The device follow the instructions in the modified TD and sends authentication request to the attacker's specified location potentially revealing its credentials, such as keys etc. Similarly instead of modifying the legitimate TD, an attack might save it and use later on, for example when it would be updated to a newer version. Then, an attacker substitutes a new version of TD with an older version to cause DoS to a device trying to get an access to a resource. An additional reason for using an older TD might be exposing a previously available vulnerable interface that got hidden when TD was updated to a newer version. This can be a stepping stone to conducting other attacks on the WoT network.</td>
+<td>TBD</td>
+</tr>
+<tr>
+<td><strong>WoT communication - TD Confidentiality</strong></td>
+<td>A user's party guest with the network access to the same internal network as WoT devices using his device listens to the network and intercepts a legitimate TD send by one of the WoT devices. While inspecting the TD he/she learns the privacy-sensitive information about the host, such as presence of medical tracking/assistant equipment, name of healthcare provider company etc.</td>
+<td>TBD</td>
+</tr>
+<tr>
+<td><strong>WoT communication - Solution Data Authenticity</strong></td>
+<td>A user's party guest with the network access to the same internal network as WoT devices using his device listens to the network and intercepts a legitimate WoT interface request to set some settings on some actuator, for example the time when house doors get locked and unlocked. He then modifies the specified value to the desirable one and then forwards the request to the destination WoT device. The destination WoT device accepts incorrect settings.<br />Another attack example is a replay of a legitimate WoT interface request to set a setting, for example, increase temperature of the house by a number of degrees. When repeated many times, it might not only make living environment unusable, but also break heating equipment.<br />Another attack involves replaying an old legitimate WoT interface request that attacker intercepts while visiting user's home, such as command to unlock the doors, stop camera recordings etc. in a different time when user wants to get authorized access to the house.</td>
+<td>TBD</td>
+</tr>
+<tr>
+<td><strong>WoT communication - Solution Data Confidentiality</strong></td>
+<td>A user's party guest with the network access to the same internal network as WoT devices using his device listens to the network and intercepts WoT interface exchange between legitimate entities. From that exchange the guest learns the privacy-sensitive information about the host, such as data stream from his medical tracking equipment, information about user's preferences in home environment, video/audio camera stream etc.</td>
+<td>TBD</td>
+</tr>
+<tr>
+<td><strong>WoT DoS</strong></td>
+<td>A compromised application on a user smartphone connected to the same internal network as WoT devices sends huge amount of requests to either a single WoT device or all device available in the WoT network using directly Protocol Bindings interface or WoT interface. These requests fully take the processing bandwidth of a WoT device or WoT network and make it impossible for legitimate users to communicate with WoT devices or devices to communicate with each other. Depending on the implementation it can also lead to the case that alarm or authentication systems might be disabled and thieves get into user's house (however systems should always implement "safe defaults" principle and in such cases keeps doors closed despite of inability to authenticate).</td>
+<td>TBD</td>
+</tr>
+<tr>
+<td><strong>WoT TD Privacy</strong></td>
+<td>A compromised application on a user smartphone connected to the same internal network as WoT devices listens for publicly broadcasted TDs and sends this data to a remote attacker to build a profile of home installed devices and their purpose.</td>
+<td>TBD</td>
+</tr>
+<tr>
+<td><strong>WoT TD - Local Storage</strong></td>
+<td></td>
+<td>TBD</td>
+</tr>
+
+</table>
+
+<p>As well as the following <strong>Security non-objectives</strong>:</p>
+
+<table>
+
+<tr>
+<th><strong>Threat name</strong></th>
+<th><strong>Reasoning &amp; recommendation</strong></th>
+</tr>
+
+
+<tr>
+<td><strong>Non-WoT End Point</strong></td>
+<td><strong>Reasoning</strong> : The security of non-WoT end points and their external interfaces is out of the WoT scope. <strong>Recommendations</strong> : Solution providers and OEMs are recommended to use industry best security practices when designing their non-WoT End points, protocols and interfaces.</td>
+</tr>
+<tr>
+<td><strong>WoT Platform</strong></td>
+<td>TBD</td>
+</tr>
+<tr>
+<td><strong>WoT communication Side Channels</strong></td>
+<td>TBD</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+
+</table>
+        </section>
         </section>
 
         <section>
