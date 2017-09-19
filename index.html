@@ -374,6 +374,10 @@
               Instead we have created an overall WoT threat model that can be adjusted
               by OEMs or WoT deployers based on their concrete security requirements.
             </p>
+            <p class="ednote" title="Make tables look visually acceptable">
+              All tables in Threat model and Security objectives sections are currently look horrible and need fixing.
+              Also emphasis on the keywords should be added back to improve readability.
+            </p>
             <section>
             <h3>WoT Primary Stakeholders</h3>
                 <p>This section lists the primary WoT stakeholders.</p>
@@ -1127,31 +1131,232 @@
 <td></td>
 <td></td>
 </tr>
-
 </table>
-        </section>
-        </section>
+    </section>
+ 
+    <section>
+    <h3>Scenario 2 - Business/Corporate environment</h3>
 
-        <section>
-        <h2>Determining a suitable security architecture</h2>
+    <p>In this scenario we assume an office building environment that is shared between a number of independent companies with a WoT network running that controls temperature, lights, video surveillance, air etc.</p>
+
+    <p class="ednote" title="Fill in the content">
+      This subsection content needs to be added.
+    </p>
+
+    <p>This scenario implies the following <strong>WoT Security objectives</strong>:</p>
+
+    <table>
+    <tr>
+    <th><strong>Threat name</strong></th>
+    <th><strong>Example(s)</strong></th>
+    <th><strong>Mitigation</strong></th>
+    </tr>
+
+    <tr>
+    <td><strong>WoT Protocol Bindings</strong></td>
+    <td> </td>
+    <td>TBD</td>
+    </tr>
+    <tr>
+    <td><strong>WoT Interface - General Compromise</strong></td>
+    <td></td>
+    <td>TBD</td>
+    </tr>
+    <tr>
+    <td><strong>WoT Interface - Unauthorized API access</strong></td>
+    <td></td>
+    <td>TBD</td>
+    </tr>
+    <tr>
+    <td><strong>WoT communication - TD Authenticity</strong></td>
+    <td></td>
+    <td>TBD</td>
+    </tr>
+    <tr>
+    <td><strong>WoT communication - TD Confidentiality</strong></td>
+    <td> </td>
+    <td>TBD</td>
+    </tr>
+    <tr>
+    <td><strong>WoT communication - Solution Data Authenticity</strong></td>
+    <td></td>
+    <td>TBD</td>
+    </tr>
+    <tr>
+    <td><strong>WoT communication - Solution Data Confidentiality</strong></td>
+    <td></td>
+    <td>TBD</td>
+    </tr>
+    <tr>
+    <td><strong>WoT DoS</strong></td>
+    <td>A</td>
+    <td>TBD</td>
+    </tr>
+    <tr>
+    <td><strong>WoT TD Privacy</strong></td>
+    <td></td>
+    <td>TBD</td>
+    </tr>
+    <tr>
+    <td><strong>WoT TD - Local Storage</strong></td>
+    <td></td>
+    <td>TBD</td>
+    </tr>
+    </table>
+
+    <p>As well as the following <strong>Security non-objectives</strong>:</p>
+
+    <table>
+    <tr>
+    <th><strong>Threat name</strong></th>
+    <th><strong>Reasoning &amp; recommendation</strong></th>
+    </tr>
+    <tr>
+    <td><strong>Non-WoT End Point</strong></td>
+    <td><strong></td>
+    </tr>
+    <tr>
+    <td><strong>WoT Platform</strong></td>
+    <td>TBD</td>
+    </tr>
+    <tr>
+    <td><strong>WoT communication Side Channels</strong></td>
+    <td>TBD</td>
+    </tr>
+    <tr>
+    <td></td>
+    <td></td>
+    </tr>
+    </table>
+    </section>
+
+    <section>
+    <h3>Scenario 3 - Industrial/Critical infrastructure environment</h3>
+
+    <p>In this scenario we assume an industrial factory or infrastructure (power plant, water distribution system) environment that is using WoT network to monitor or perform certain automation tasks.</p>
+
+    <p class="ednote" title="Fill in the content">
+      This subsection content needs to be added.
+    </p>
+
+    <p>This scenario implies the following <strong>WoT Security objectives</strong>:</p>
+
+    <table>
+    <tr>
+    <th><strong>Threat name</strong></th>
+    <th><strong>Example(s)</strong></th>
+    <th><strong>Mitigation</strong></th>
+    </tr>
+
+    <tr>
+    <td><strong>WoT Protocol Bindings</strong></td>
+    <td> </td>
+    <td>TBD</td>
+    </tr>
+    <tr>
+    <td><strong>WoT Interface - General Compromise</strong></td>
+    <td></td>
+    <td>TBD</td>
+    </tr>
+    <tr>
+    <td><strong>WoT Interface - Unauthorized API access</strong></td>
+    <td></td>
+    <td>TBD</td>
+    </tr>
+    <tr>
+    <td><strong>WoT communication - TD Authenticity</strong></td>
+    <td></td>
+    <td>TBD</td>
+    </tr>
+    <tr>
+    <td><strong>WoT communication - TD Confidentiality</strong></td>
+    <td> </td>
+    <td>TBD</td>
+    </tr>
+    <tr>
+    <td><strong>WoT communication - Solution Data Authenticity</strong></td>
+    <td></td>
+    <td>TBD</td>
+    </tr>
+    <tr>
+    <td><strong>WoT communication - Solution Data Confidentiality</strong></td>
+    <td></td>
+    <td>TBD</td>
+    </tr>
+    <tr>
+    <td><strong>WoT DoS</strong></td>
+    <td>A</td>
+    <td>TBD</td>
+    </tr>
+    <tr>
+    <td><strong>WoT TD Privacy</strong></td>
+    <td></td>
+    <td>TBD</td>
+    </tr>
+    <tr>
+    <td><strong>WoT TD - Local Storage</strong></td>
+    <td></td>
+    <td>TBD</td>
+    </tr>
+    </table>
+
+    <p>As well as the following <strong>Security non-objectives</strong>:</p>
+
+    <table>
+    <tr>
+    <th><strong>Threat name</strong></th>
+    <th><strong>Reasoning &amp; recommendation</strong></th>
+    </tr>
+    <tr>
+    <td><strong>Non-WoT End Point</strong></td>
+    <td><strong></td>
+    </tr>
+    <tr>
+    <td><strong>WoT Platform</strong></td>
+    <td>TBD</td>
+    </tr>
+    <tr>
+    <td><strong>WoT communication Side Channels</strong></td>
+    <td>TBD</td>
+    </tr>
+    <tr>
+    <td></td>
+    <td></td>
+    </tr>
+    </table>
+    </section>
+
+   </section>
+   <section>
+   <h2>Determining a suitable security architecture</h2>
             <p> 
               <!-- todo: List the criteria that raise risk level for particular WoT architecture, such as handing privacy-sensitive data, physical safety, etc. (we started to build this list, need to finish)  --> 
               <!-- todo: Talk about capabilities of devices themselves, what security protocols are supported, how processes isolation is implemented (granularity: everything runs as one process, only kernel - vs. userspace isolation, process isolation, script isolation etc.), etc.   -->
               <!-- todo: List additional factors that are important in selecting security architecture   -->
             </p>
-        </section>
+    </section>
 
+  </section>
+
+  <section>
+  <h1>Existing Security Best Practices in related fields</h1>
+      <p class="ednote" title="Fill in the content">
+          This section content needs to be added.
+      </p>
   </section>
 
   <section>
   <h1>Recommended Security Practices</h1>
       <p>
         Based on the security assets and threats listed above, we provide a set of recommended practices for
-        enhancing security and privacy.
+        enhancing security and privacy when designing various aspects of WoT network.
       </p>
 
+      <section>
+        <h2>Secure Practices for designing a Thing Description</h2>
+
         <section>
-        <h2>Secure Delivery and Storage of Thing Description</h2>
+        <h3>Secure Delivery and Storage of Thing Description</h3>
             <p>
     	         When a TD is transferred between endpoints, 
                 it is important to at least use secure protocols guaranteeing
@@ -1192,7 +1397,7 @@
         </section>
 
         <section>
-        <h2>Use Secure Transports</h2>
+        <h3>Use Secure Transports</h3>
             <p> 
 	           When defining protocols for APIs exposed by a TD, 
              it is often important to use secure protocols guaranteeing
@@ -1207,7 +1412,7 @@
         </section>
 
         <section>
-	     <h2>Avoid Heavy Functional Processing without Authentication</h2>
+	     <h3>Avoid Heavy Functional Processing without Authentication</h3>
             <p>
   	          When defining WoT Interfaces exposed by a TD,
               it is important to avoid any heavy functional processing before the successful authentication
@@ -1221,7 +1426,7 @@
         </section>
 
         <section>
-	      <h2>Avoid Exposing Immutable Identifiers</h2>
+	      <h3>Avoid Exposing Immutable Identifiers</h3>
             <p>
 	           When defining fields exposed by a TD personally identifiable information should be avoided.
 	           It is also strongly recommended to avoid exposing any immutable hardware identifiers.
@@ -1234,7 +1439,7 @@
         </section>
 
         <section>
-	      <h2>Minimize Network Interface Functionality</h2>
+	      <h3>Minimize Network Interface Functionality</h3>
             <p>
 	          Network interfaces exposed by a TD (WoT Interfaces) should only provide the minimal necessary functionality,
             which helps to minimize implementation errors,
@@ -1250,7 +1455,17 @@
             WoT DoS. 
             </p>
         </section>
- 
+      </section>
+    
+      <section>
+      <h2>Secure Practices for designing WoT Scripts and WoT Script APIs</h2>
+          <p class="ednote" title="Fill in the content">
+          This subsection content needs to be added.
+          </p>
+      </section>
+
+    </section>
+
     <section>
     <h1>Examples of WoT security configurations</h1>
         <p>
@@ -1343,6 +1558,9 @@
             <!-- todo: add names of the tools. -->
             <!-- (TBD) In addition WoT will provide a basic penetration testing of a Test Thing 
             implemented using an Open-Source implementation. -->
+            </p>
+            <p class="ednote" title="Fill in the content">
+              This section content needs to be added.
             </p>
         </section>
     </section>
