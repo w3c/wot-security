@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <link rel="stylesheet" href="tablestyle.css">
     <meta charset="utf-8" />
     <title>Web of Things (WoT) Security and Privacy Considerations</title>
     <script class="remove" async="" src="https://www.w3.org/Tools/respec/respec-w3c-common"></script>
@@ -374,21 +375,20 @@
               Instead we have created an overall WoT threat model that can be adjusted
               by OEMs or WoT deployers based on their concrete security requirements.
             </p>
-            <p class="ednote" title="Make tables look visually acceptable">
-              All tables in Threat model and Security objectives sections are currently look horrible and need fixing.
-              Also emphasis on the keywords should be added back to improve readability.
-            </p>
-            <section>
+            <section id="wot-threat-model-stakeholders">
             <h3>WoT Primary Stakeholders</h3>
                 <p>This section lists the primary WoT stakeholders.</p>
 		<table>
 		    <tr>
-			<th><strong>Description</strong></th>
-			<th><strong>Role</strong></th>
-			<th><strong>Business-driven security goals</strong></th>
-			<th><strong>Interesting edge cases</strong></th>
+			<th>Stakeholder</th>
+			<th>Description</th>
+                        <!-- TODO: remove "business-driven"? may not be a business user -->
+			<th>Business-driven security goals</th>
+                        <!-- TODO: remove "interesting"? redundant. -->
+			<th>Interesting edge cases</th>
 		    </tr><tr>
-			<td>Thing manufacturer (OEM)</td>
+			<th><dfn data-lt="thing manufacturer|thing manufacturers|manufacturer|oem">
+                            Thing Manufacturer</dfn> (OEM)</th>
 			<td>Producer of the HW thing,
                             might define and make TD available for everyone,
                             implements WoT runtime,
@@ -399,7 +399,8 @@
                             and solution providers for better sales.</td>
 			<td></td>
 		    </tr><tr>
-			<td>Solution provider (solution integrator)</td>
+			<th><dfn data-lt="solution provider|solution providers">
+                            Solution Provider</dfn></th>
 			<td>Uses things from OEMs to build various WoT end solutions
                             specific to particular WoT use case(s).
                             OEM might also be a solution provider at the same time.
@@ -407,7 +408,7 @@
                             Might use scripting API and runtime provided to implement their solution
                             or might do a full reflash of the thing.
                             Solution provider's scripts and their configuration data might require 
-                            confidentiality and/or integrity</td>
+                            confidentiality and/or integrity.</td>
 			<td>Don't want their solution to be a target of attacks
                             (loss of reputation, possible legal consequences in some countries).
                             Want to satisfy security requirements of solution users for better sales.
@@ -415,82 +416,123 @@
                             Want solution to be robust and not easily falling down to DoS
                             (at least basic DoS resistance).
                             Want to hide their proprietary scripts and other relevant data from other parties.
-                            <br /><strong><em>Any security obligations towards OEMs?</em></strong></td>
+                            <!-- TODO Are there any security obligations towards OEMs? -->
+                            </td>
 			<td>There might be several independent solution providers on a single HW Thing.
                             Need to be able to support their isolation within WoT runtime,
                             as well as sharing solution user preferences.</td>
-</tr>
-<tr>
-<td>Solution user</td>
-<td>This might be physical user(s) (as John and his family in their smart home) or an abstract user (as company running the factory). Solutions users might differ in their access to the WoT solution capabilities and transferred data (might be able to configure certain parts of solution only or only use solution as it is).</td>
-<td>Don&#39;t want their data to be exposed to any other solution user, solution provider or OEM unless intended (Data confidentiality).Don&#39;t want their data to be modified unless intended (Data integrity).</td>
-<td>Access to the user data might be configurable not only based &quot;who&quot; is the entity accessing data (AC subject), its role, type of access, but also on the time and context data.</td>
-</tr>
+                    </tr><tr>
+                        <th><dfn data-lt="solution user|solution users">
+                            Solution User</dfn></th>
+                        <td>This might be physical user(s) (e.g. John and his family in their smart home) 
+                            or an abstract user (e.g. a company running a factory).
+                            Solutions users might differ in their access to the WoT solution capabilities
+                            and transferred data
+                            (for example, they might only be able to configure certain parts of the solution 
+                            or only use solution as it is).</td>
+                        <td>Don't want their data to be exposed to any other solution user,
+                            solution provider or OEM unless intended (Data confidentiality).
+                            Don't want their data to be modified unless intended (Data integrity).</td>
+                        <td>Access to user data might be configurable based not only on "who" 
+                            is the entity accessing the data (AC subject), but also his/her/its role,
+                            type of access, or based on time and context.</td>
+                    </tr>
+                </table>
 
-</table>
+                <p class="ednote" title="Consider adding Security Owner">
+                   In addition to the above stakeholders, 
+                   we might need to define a notion of 
+                   <dfn data-lt="security owner|security owners">Security Owner</dfn>:
+                   an entity that provisions a thing with the security root of trust 
+                   and sets up the initial policies on who can provision/update/remove scripts to/from the WoT runtime,
+                   if such model is supported.
+                   A WoT system might generally have a number of independent security owners,
+                   each with its own set of provisioned certificates and/or credentials.
+                   The exact hierarchy of owners that WoT wants to support is to be discussed.
+                 </p>
+             </section>
+             <section id="wot-threat-model-roles">
+             <h3>WoT Supported Physical Roles</h3>
 
-<p>In addition to the above stakeholders, we might need to define a notion of &quot; <strong>Security Owner</strong>&quot;. It defines an entity that provisions a thing with the security root of trust and sets up initial policies on who can provision/update/remove scripts to/from the WoT runtime, if such model is supported. WoT might generally have a number of independent security owners, each with its own set of provisioned certificates and/or credentials. The exact hierarchy of owners that WoT wants to support is to be discussed. <strong><em>Todo: this needs more discussion.</em></strong></p>
-</section>
-<section>
-<h3>WoT Supported Physical Roles?</h3>
+             <p>This section list primary roles that the WoT aims to support.</p>
+             <table>
+                 <tr>
+                     <th>Role</th>
+                     <th>Description</th>
+                     <th>Level of system access?</th>
+                 </tr><tr>
+                     <th><dfn data-lt="system maintainer|system maintainers">
+                         System Maintainer</dfn></th>
+                     <td>Administers a WoT system on behalf of a <a>Solution Provider</a> or <a>Solution User</a>.</td>
+                     <td>---</td>
+                 </tr>
+             </table>
 
-<p>This section list primary roles that WoT aims to support.</p>
+             <p class="ednote" title="System Maintainer role needs to be more clearly defined">
+               we need to understand more about the <a>System Maintainer</a> role: 
+               what kind of operations would it need to do? 
+               Reflash devices, reinstall/install/remove scripts?
+               If it has the level of access equal to solution provider,
+               we just talk about delegation (and there are security mechnisms to do it),
+               not really about a separate role.</p>
 
-<table>
-
-<tr>
-<th><strong>Role</strong></th>
-<th><strong>Description</strong></th>
-<th><strong>Level of system access?</strong></th>
-</tr>
-
-
-<tr>
-<td>System Maintainer</td>
-<td>Administers the WoT network on behalf of solution provider or solution user. <strong><em>Todo: need to understand more about this role: what kind of operations would it need to do? Reflash devices, reinstall/install/remove scripts? If it has the level of access equal to solution provider, we just talk about delegation (and there are security mechnisms to do it), not really about separate role...</em></strong></td>
-<td>---</td>
-</tr>
-
-</table>
-</section>
-<section>
-<h3>Assets</h3>
-
-<p>This section lists all WoT Assets that are important from security point of view.</p>
-
-<table>
-
-<tr>
-<th><strong>Description</strong></th>
-<th><strong>Who should have access (Trust Model)</strong></th>
-<th><strong>Attack Points</strong></th>
-</tr>
-
-
-<tr>
-<td><strong>Thing Description(TD)</strong><br />Access Control policies for TDs and resources it provides  are part of TDs and they are managed in discretionary access control model way (owner of TD set the AC policy). Some contents of TDs might be privacy sensitive and therefore should not be shared without a need. TDs integrity is crucial for the system correct operation.</td>
-<td>TDs owner: full access Others: read only for minimal required part.</td>
-<td>Storage on thing itself, cloud storage, in-transfer (network) including TD updates.</td>
-</tr>
-<tr>
-<td><strong>Thing object instance</strong><br />Thing object instance confidentiality should be guranteed by the system since it might contain privacy-sensitive information. Integrity is also mandatory for the operation.</td>
-<td>Thing owner: full access Others: read only for minimal required part.</td>
-<td>WoT Runtime</td>
-</tr>
-<tr>
-<td><strong>Solution user data</strong><br />Can be highly privacy sensitive and confidential.</td>
-<td>Different solution users might have different level of access to this data based on the use case. Non-authorized access must be minimized since access even to small amount of information (for example last timestamp when door lock API was used) might have severe privacy converns (allows to detect that owner has been away from his house) Mechanism should be flexible to configure and include also RBAC.  Others: should have no access unless specifically allowed</td>
-<td>Storage on thing itself, solution provider storage (remote cloud or other), in-transfer (network)</td>
-</tr>
-<tr>
-<td><strong>Solution provider scripts and their configuration data</strong><br />Solution providers might have Intellectual Property (IP) in their scripts, therefore make them highly confidential.</td>
-<td>Solution provider: full accessOthers: no access</td>
-<td>Storage on the thing itself, remote storage (if scripts are backed up to a remote storage), in-transfer only for initial provisioning and scripts updates</td>
-</tr>
-<tr>
-<td><strong>Thing&#39;s resources, WoT Infrastructure resources</strong></td>
-<td>Resources should only be used for legitimate purposes and be available when required.</td>
-<td>WoT exposed API</td>
+         </section>
+         <section id="wot-threat-model-assets">
+         <h3>Assets</h3>
+         <p>This section lists all WoT Assets that are important from security point of view.</p>
+         <table>
+             <tr>
+                 <th>Asset</th>
+                 <th>Description</th>
+                 <th>Who should have access<br/>(Trust Model)</th>
+                 <th>Attack Points</th>
+             </tr><tr>
+                 <th><dfn>Thing Description</dfn> (TD)</th>
+                 <td>Access Control policies for TDs and the resources it describes are part of TDs 
+                     and they are managed using a discretionary access control model 
+                     (the owner of a TD sets the AC policy).
+                     Some contents of TDs might be privacy sensitive and therefore should not 
+                     be shared without a need.
+                     The integrity of TDs  is crucial for correct system operation.</td>
+                 <td>TD owner: full access<br/> 
+                     Others: read only for minimal required part.</td>
+                 <td>Storage on thing itself, cloud storage, in-transfer (network) including TD updates.</td>
+             </tr><tr>
+                 <th><dfn>Thing object instance</dfn></th>
+                 <td>Thing object instance confidentiality should be guranteed by the system
+                     since it might contain privacy-sensitive information.
+                     Integrity is also mandatory for correct operation.</td>
+                 <td>Thing owner: full access<br/>
+                     Others: read only for minimal required part.</td>
+                 <td>WoT Runtime</td>
+             </tr><tr>
+                 <th><dfn>Solution User Data</dfn></th>
+                 <td>Can be highly privacy sensitive and confidential.</td>
+                 <td>Different <a>solution users</a> might have different levels of access to this data
+                     based on the use case.
+                     Non-authorized access must be minimized since access even to small amount of information
+                     (for example the last timestamp when a door lock API was used) might have severe 
+                     privacy converns (example allows an attacker to detect that the owner has been away
+                     from his house).
+                     Mechanism should be flexible to configure and also include RBAC.<br/>
+                     Others: should have no access unless specifically allowed</td>
+                 <td>Storage on thing itself, solution provider storage (remote cloud or other),
+                     in-transfer (network)</td>
+             </tr><tr>
+                 <th><dfn>Solution Provider Scripts</dfn> and configuration data</th>
+                 <td><a>Solution providers</a> might have Intellectual Property (IP) in their scripts,
+                     making them highly confidential.</td>
+                 <td><a>Solution provider</a>: full access<br/>
+                     Others: no access</td>
+                 <td>Storage on the thing itself,
+                     remote storage (if scripts are backed up to a remote storage),
+                     in-transfer only for initial provisioning and scripts updates</td>
+             </tr><tr>
+                 <th><dfn>Thing's resources</dfn><br/>
+                     <dfn>WoT Infrastructure Resources</dfn></th>
+                 <td>Resources should only be used for legitimate purposes and be available when required.</td>
+                 <td><a>Solution User</a></td>
+                 <td>WoT Interface</td>
 </tr>
 <tr>
 <td><strong>WoT controlled physical environment</strong></td>
