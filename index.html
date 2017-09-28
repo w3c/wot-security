@@ -67,6 +67,32 @@
                 , publisher: "IETF"
                 , date: "03 July 2017"
                 },
+                "Ocf17": {
+                  href: "https://openconnectivity.org/specs/OCF_Security_Specification_v1.0.0.pdf"
+                , title: "The OCF Security Specification, version 1.0.0"
+                , publisher: "OCF"
+                , date: "June 2017"
+                },
+                "JWT15": {
+                  href: "https://tools.ietf.org/html/rfc7519"
+                , title: "JSON Web Token (JWT)"
+                , publisher: "IETF"
+                , date: "May 2015"
+                },
+                "CBOR17": {
+                  href: "https://tools.ietf.org/pdf/draft-ietf-ace-cbor-web-token-07.pdf"
+                , title: "CBOR Web Token (CWT)"
+                , status:    "Internet-Draft"
+                , publisher: "IETF"
+                , date: "June 2017"
+                },
+                "OSCOAP17": {
+                  href: "https://tools.ietf.org/pdf/draft-ietf-core-object-security-04.pdf"
+                , title: "Object Security of CoAP (OSCOAP)"
+                , status:    "Internet-Draft"
+                , publisher: "IETF"
+                , date: "July 2017"
+                },
                 "Bel89": {
                   authors: ["S. Bellovin"]
                 , href: "https://cseweb.ucsd.edu/classes/sp99/cse227/ipext.pdf"
@@ -1482,29 +1508,61 @@
            <section>
            <h2>Basic Interaction between WoT Thing and WoT Client</h2>
             <p>
-              Here we will consider two cases. <a href="#wot_client_thing_basic"></a> shows the basic WoT Client (can be a browser or application on a user smartphone) that is used to operate the WoT Thing (Garage door controller or other HW device). The latter exposes a WoT interface and provides a Thing Description with actions that can be performed on a Thing. 
+              <a href="#wot_client_thing_basic"></a> shows the basic WoT Client (can be a browser or application on a user smartphone) that is used to operate the WoT Thing (Garage door controller or other HW device). The latter exposes a WoT interface and provides a Thing Description with actions that can be performed on a Thing.
             </p>
             <figure id="wot_client_thing_basic">
               <img src="images/client-server-basic.png" style="width: 1000px;" />
               <figcaption>Basic WoT Thing and WoT Client</figcaption>
             </figure>
             <p>
-            Todo: Here we will talk about the ways how the security association between the WoT Client and WoT Thing can be provisioned (WoT Client needs to be able to authenticate WoT Thing), as well as how WoT Thing can setup access control mechanisms on exposed WoT Interface (x509 certs, OAuth, access tokens etc.). 
-            We will give examples and suggestions for security mechanism usages based on different device classes (limited resource devices, more powerful devices etc.).
-            Also, we will list point to the threats from the Threat model document that are important to consider in this case, such as TD authenticity in transfer and others. 
+            From a security point of view two aspects are important to consider in this scenario. First the WoT Client should be certain that it is talking to the correct WoT Thing and not to some arbitrary device
+            exposed in the WoT network. I.e. user performing controls on the garage door wants to make sure it is talking to his or her garage door device. In security terms it means that WoT Client must have a way to
+            authenticate the device exposing the WoT Thing. Second, upon receiving any requests from WoT Client, WoT Thing must verify the the WoT Client is authorized to perform such requests. I.e. garage door must only process requests from devices associated with user or service provider and not from arbitrary guests in the house.
             </p>
             <p>
-            <a href="#wot_client_thing_basic_2"></a> is identical but with an important difference that a Thing description is not stored on a WoT Thing device, but provided to the WoT client from Things Directory residing on a remote cloud.
+            Both aspects can be fulfilled using different security mechanisms and the end decision on a concrete method depends on the deployment scenario, as well as capabilities of involved devices. The WoT Client is not expected be a resource limited device, but the device exposing the WoT Thing might have some resource constraints. Also, it is important to mention that even if the WoT Thing does not expose any sensitive device resources or actions, mutual authentication between the WoT Client and the device exposing the WoT Thing is strongly recommended and might be even required for some underlying protocols.
+            </p>
+            <p class="ednote" title="Fill in the protocols">
+            Need to fill in the list of underlying protocols that actually require mutual authentication.
+            </p>
+            <p>
+            The WoT Client and the device exposing the WoT thing can use one of the following methods recommended by the OCF Security Specification [[Ocf17]] (see Section 10) to mutually authenticate each other:
+            <ul>
+            <li><strong>Symmetric key credentials.</strong> This method assumes that both WoT Client and the device exposing WoT Thing has pre-shared symmetric key credentials. Such keys can be established during device provisioning/on-boarding phase using one of the methods recommended in Section 7 [[Ocf17]] or using ad-hoc security protocols, such as Diffie-Hellman based on other existing pre-shared credentials. See Section 9.2.1 [[Ocf17]] for more details on such credential type.</li>
+            <li><strong>Raw asymmetric key credentials.</strong> This method assumes that WoT Client has been provisioned with the public key of the device exposing the WoT thing (and visa versa) and able to authenticate the device based on it. The provisioning of public key can similarly happen during device provisioning/on-boarding phase using one of the methods recommended in Section 7 [[Ocf17]]. Section 9.2.3 [[Ocf17]] also provides more details on this credential type as well as guidance on its secure provisioning.</li>
+            <li><strong>Certificates.</strong>This method assumes that WoT Client has been provisioned with the certificate of the device exposing the WoT thing (and visa versa) and able to authenticate the device based on it. The provisioning of the certificate can similarly happen during device provisioning/on-boarding phase using one of the methods recommended in Section 7 [[Ocf17]]. Section 9.2.5 [[Ocf17]] also provides more details on this credential type as well Section 9.3.</li>
+            </ul>
+            </p>
+            <p>
+            In addition to being able to generically authenticate the WoT Client device, the WoT Thing might want to create a more fine-grained access controls on the WoT interfaces its exposing. This is especially important if the WoT Thing does not perform the authentication of the WoT Client described above, which might be common for the resource restricted devices. For example, it might require different credentials to be presented for obtaining the current status of the garage door versus opening the door.
+            </p>
+            <p>
+            In principle the same methods described above can be used to perform more fine-grained access control on different WoT interfaces (using different set of credentials), but depending on the amount of interfaces and device resources it might not be the desired method. Instead the following methods should be considered:
+            <ul>
+            <li><strong>OAuth 2.0-based access tokens.</strong> These tokens follow the JSON Web Token (JWT) format defined in RFC 7519 [[JWT15]] and should used according to the suggestions by the the IETF Authentication and Authorization for Constrained Environments (ACE) specification draft [[IETFACE]]. These are recommended for the devices that are able to use HTTP protocol and do not have significant resource constraints.</li>
+            <li><strong>Proof-of-possession (PoP) tokens.</strong>These are extensions of the OAuth 2.0-based access tokens that follow the CBOR web token (CWT) format [[CBOR17]]. The IETF Authentication and Authorization for Constrained Environments (ACE) specification draft [[IETFACE]] recommends such tokens for the resource-constrained devices that are using COAP protocol instead of HTTP. For details of using such token please see [[IETFACE]].</li>
+            </ul>
+            </p>
+            <p class="ednote" title="Fill in the threats">
+            Need to fill in the list threats from the WoT Threat model that are addressed by the above described measures.
+            </p>
+            <p>
+            In addition to above measures the authenticity, confidentiality and replay protection of transferred solution data and TD between the WoT Client and the WoT Thing is strongly recommended for the scenarios where an attacker can observe or/and modify the traffic in the WoT network. While TD transfer might only require the authenticity, the solution data usually requires all of the properties.
+            </p>
+            <p>
+            The authenticity, confidentiality and replay protection can be guaranteed by underlying usage of secure protocols to exchange the data between the WoT client and the WoT Thing, such as TLS/DTLS. If the underlying protocol does not provide required security measures (such as plain COAP run over non-TLS protected channel), then authenticity and confidentiality of transferred data can be implemented separately on the application layer. The recommended method for doing this in resource constrained environments is the Object Security of CoAP (OSCOAP) method described in the IETF Object Security of CoAP (OSCOAP) specification draft [[OSCOAP17]].
+            </p>
+            <p>
+            The scenario shown in <a href="#wot_client_thing_basic_2"></a> is identical but with an important difference that a Thing description is not stored on a WoT Thing device, but provided to the WoT client from Things Directory residing on a remote cloud.
             </p>
             <figure id="wot_client_thing_basic_2">
               <img src="images/client-server-basic-2.png" style="width: 1000px;" />
               <figcaption>Basic WoT Thing and WoT Client with TD provided from Things Directory</figcaption>
             </figure>
             <p>
-              Todo: In addition to the above described things, we will discuss issues around secure TD provisioning from the Cloud here. 
+            The primary additional security consideration of this scenario is a secure transfer of TD between the WoT Client and Things Directory that can reside on a remote cloud or other remote location. Similarly to the methods described above such transfer should be done using underlying secure protocols. Since we do not expect the WoT Client to be resource constrained, the usage of TLS/DTLS is the recommended method.
             </p>
           </section>
-
           <section>
           <h2>Interaction between WoT Thing and WoT Client via WoT Servient Gateway</h2>
             <p>
