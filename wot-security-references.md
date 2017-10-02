@@ -68,3 +68,7 @@
 [Vol00] Vollbrecht, J. et al.: [https://tools.ietf.org/rfc/rfc2904.txt AAA Authorization Framework]. IETF RFC 2904, Aug. 2000
 
 [Yeg11] Yegge, S.: [https://plus.google.com/+RipRowan/posts/eVeouesvaVX Stevey's Google Platforms Rant]. Blog Oct. 2011
+
+[Ocf17] OCF: [https://openconnectivity.org/specs/OCF_Security_Specification_v1.0.0.pdf The OCF Security Specification, version 1.0.0]. Jun. 2017
+
+[JWT15] M. Jones, E. et al.: [https://tools.ietf.org/html/rfc7519 JSON Web Token (JWT)]. IETF RFC 7519, 2015.
