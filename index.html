@@ -316,17 +316,37 @@
   </head>
   <body>
     <section id="abstract">
-     - The purpose of this document is to provide an overall non-normative guidance on various WoT security aspects.
-     - Document starts from the generic WoT threat model covering main WoT security stakeholders,
-       security-relevant WoT assets, possible WoT attackers and attack surfaces, as well as WoT threats.
-     - Using this generic WoT model it should be possible to build a specific set of security objectives for a concrete
-       WoT implementation/usage and "Security objectives" section shows some examples of such sets using common high-level WoT scenarios.
-     - The central part of the document is an overall guidance on the designing and deploying a secure WoT network that takes into
-       account various aspects and low-level WoT deployment scenarios. All recommendations are linked to the corresponding WoT threats
-       in the generic threat model in order to facilitate understanding why they are needed. 
-    -  While we do not limit a set of security mechanisms that can be used to secure a WoT network, we do provide examples and recommendations
-    based on the best available practices in the industry.  
-
+     <p>
+     This document provides non-normative guidance on Web of Things (WoT) security and privacy.
+     The Web of Things is descriptive, not prescriptive, 
+     and so is generally designed to support the security models and mechanisms of the systems it describes,
+     not introduce new ones.
+     However, a WoT system also has its own unique assets, such as a Scripting API and Thing Descriptions, that
+     need to be protected and also have security and privacy implications.
+     </p><p>
+     We define the general security requirements for a Web of Things system using a threat model.
+     The WoT threat model defines the main security stakeholders, security-relevant assets, possible attackers, attack surfaces, 
+     and finally threats for a WoT system.
+     Using this generic WoT threat model as a foundation, 
+     it should be possible to build a specific set of security objectives for a concrete WoT system implementation.
+     We provide several examples using common scenarios based on home, enterprise, and industrial use cases.
+     We also provide more general guidance on the design and deployment of a secure WoT system.
+     All recommendations are linked to the corresponding WoT threats in the generic woT threat model in order to 
+     facilitate understanding why they are needed. 
+     </p><p>
+     It is not the intention of this document to limit the set of security mechanisms that can be used to 
+     secure a WoT network.  
+     In particular, while we provide examples and recommendations based on the best available practices in the industry,
+     this document contains informative statements only.
+     Specific normative security aspects of the WoT specification are defined in the corresponding normative WoT documents
+     for each WoT building block.
+     </p>
+     <p class="ednote">
+        Check that content is consistent with the summary in the 
+        Security sections of other documents, in particular the
+	<a href="https://w3c.github.io/wot-architecture#x8.-security-and-privacy-considerations">WoT Architecture</a> 
+        document.
+     </p>
     </section>
 
     <section id="sotd">
