@@ -1959,6 +1959,20 @@
             Todo: Here we will take a deeper look inside of multi-tenant case and the security threats arising from it. We will consider recommended ways of addressing them for different classes of devices.  
             </p>
             </section>
+            
+        <section>
+        	<h2>Open Markets of Services using HTTP and WebSockets</h2>
+            <p>Figure 8 (below) shows how application platforms for the Web of things can provide open markets of services across the Internet. These markets provides a means to connect producers and consumers of things as software objects that act as proxies for sensors and actuators, or more generally physical or abstract entities. Some IoT devices may be capable of directly supplying things to the cloud, whilst others require the use of a gateway. In both cases, the applications that produce things hide the backend protocols from the consuming applications. Web protocols are sufficient for the vast majority of use cases for synchronization of produced and consumed software objects. This includes gateways at the network edge, WoT application platforms in multiple clouds, and the role of Web browsers for the user interfaces for services.</p>
+
+            <figure id="wot_arch_clouds">
+              <img src="images/wot-arch-clouds.png" style="width: 1000px;" />
+              <figcaption>WoT Architecture for Open Markets of Services</figcaption>
+            </figure>
+            
+            <p>A separation of concerns can be applied to simplify the synchronization protocol. HTTP can be used for authentication, authorization and agreements on terms and conditions, including privacy policies and service level agreements. The HTTP response includes a time limited security token that can then be used as part of the object synchronization protocol over WebSockets. When this token expires or is revoked, a new one can be obtained through a further HTTP request. Transport level security is used to protect the use of both HTTP and WebSockets.</p>
+            <p>This approach allows developers to build upon evolving best practices for Web security. This includes the use of client and server certificates for transport layer security, and a transition from user account ids and passwords to public key based authentication, and the potential for using ecliptic curve cryptography for derived keys.</p>
+            <p>Authorization decisions may include the need to authenticate the owner of an application, the application itself, the organization that developed it, and the platform that hosts it.  OAuth could potentially be useful as a means for owners to authorize applications to authenticate on their behalf to a cloud platform. There are plenty of challenges to be studied, e.g. how to balance security and usability for the bootstrapping process when installing a device or service.</p>
+        </section>
     </section>
 
     <section>
