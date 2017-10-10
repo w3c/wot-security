@@ -1723,68 +1723,91 @@
 
   <section>
   <h1>Existing Security Best Practices in related fields</h1>
-      <p class="ednote" title="Use global database for RFC references">
-          Use references from global ReSpec bibliography whenever possible,
-          rather than local bibliographic entries.
-      </p>
-      <p class="ednote" title="Elaborate on references">
+    <p>
+      Best practices in security are constantly evolving,
+      and it is important to keep up to date.
+      At the same time,
+      IoT is new enough and is itself evolving rapidly enough that best practices
+      are just now emerging and are likely to require rapid updating.  
+      Recently attempts have been made to document and categorize useful approaches to security in IoT.
+      The following are among some of the more useful references.
+      <ul>
+      <li>[[Garcia17]] - <cite>State-of-the-Art and Challenges for the Internet of Things Security</cite>:<br/>
+      This IETF document, a product of the IETF T2TRG, is still in draft form but is now a candidate for
+      ratification. 
+      It covers a range of recommendations for securing IoT systems.  
+      Readers should look for the latest version using the IETF RFC tracker.</li>
+      <li>[[IicSF16]] - <cite>The Industrial Internet of Things Volume G4: Security Framework</cite>:<br/>
+      Focuses on industrial IoT systems and use cases, and so emphasizes safety over privacy considerations.
+      However, this document includes many practices that are also relevant to other IoT use cases.
+      </li>
+      <li>[[IETFACE]] - <cite>IETF Authentication and Authorization for Constrained Environments (ACE)</cite>:<br/>
+      Discusses the use of existing IETF standards for constrained environments 
+      (such as CoAP and DTLS) of relevance to IoT.
+      This document also defines a generic IoT security architecture that is followed by several IoT standards.
+      </li>
+      <li>[[ISF17]] - <cite>IoT Security Foundation Best Practice Guidelines</cite>:<br/>
+      A general set of recommendations for managing the security of IoT systems,
+      including lifecycle management.
+      </li>
+      </ul>
+    </p><p>
+      Here are some additional general references for threat modeling and security architecture planning.
+      These frameworks can be helpful when designing the security architecture of a specific IoT system or 
+      standard.
+      <ul>
+      <li>[[Mic17]] - <cite>STRIDE - Internet of Things security architecture</cite></li>
+      <li>[[Nis15]] - <cite>NIST Guide to Industrial Control Systems (ICS) Security</cite></li>
+      <li>[[Owa17]] - <cite>OWASP Threat Risk Modeling</cite></li>
+      </ul>
+    </p><p>
+      The following documents define the security and privacy considerations 
+      that should be included in internet standards.
+      These references helped define the topics covered in this document.
+      <ul>
+      <li>[[Coo13]] - <cite>Privacy Considerations for Internet Protocols</cite></li>
+      <li>[[Res03]] - <cite>IETF Guidelines for Writing RFC Text on Security Considerations</cite></li>
+      </ul>
+    </p><p class="ednote" title="Elaborate on additional references and/or cull">
           The references below are relevant,
           but the text should explain them more, categorize them, and put them in context.
           Also, we don't necessarily need all of these, and may need others not listed.
-      </p>
-
-      Key references for overall best practices in IoT security:
-      <ul>
-      <li>[[Garcia17]] - State-of-the-Art and Challenges for the Internet of Things Security.</li>
-      <li>[[IicSF16]] - The Industrial Internet of Things Volume G4: Security Framework.</li>
-      <li>[[IETFACE]] - IETF Authentication and Authorization for Constrained Environments (ACE).</li>
-      <li>[[ISF17]] - IoT Security Foundation Best Practice Guidelines.</li>
-      </ul>
-
-      General references for threat modeling and security architecture planning:
-      <ul>
-      <li>[[Mic17]] - STRIDE - Internet of Things security architecture</li>
-      <li>[[Nis15]] - NIST Guide to Industrial Control Systems (ICS) Security</li>
-      <li>[[Owa17]] - OWASP Threat Risk Modeling</li>
-      </ul>
-
-      Security and privacy considerations for internet protocols and standards:
-      <ul>
-      <li>[[Coo13]] - Privacy Considerations for Internet Protocols</li>
-      <li>[[Res03]] - IETF Guidelines for Writing RFC Text on Security Considerations</li>
-      </ul>
-
+    </p><p>
       Additional references:
       <ul>
-      <li>[[CoRE-RD]] - CoRE Resource Directory</li>
-      <li>[[Bel89]] - Security Problems in the TCP-IP Protocol Suite</li>
-      <li>[[Bel13]] - Web Security in the Real World</li>
-      <li>[[Ber14]] - Authentication Protocols, Web UX and Web API</li>
-      <li>[[Bor14]] - Terminology for Constrained-Node Networks</li>
-      <li>[[Bru14]] - Using Frankencerts for Automated Adversarial Testing of Certificate Validation in SSL/TLS Implementations</li>
-      <li>[[Dur13]] - Analysis of the HTTPS Certificate Ecosystem</li>
-      <li>[[Ell00]] - Ten Risks of PKI: What You’re not Being Told about Public Key Infrastructure</li>
-      <li>[[Fu01]] - Dos and Don’ts of Client Authentication on the Web</li>
-      <li>[[Geo12]] - The Most Dangerous Code in the World: Validating SSL Certificates in Non-Browser Software</li>
-      <li>[[Gol03]] - Cryptography and Cryptographic Protocols</li>
-      <li>[[Gre14]] - How do you know if an RNG is working?</li>
-      <li>[[Gut02]] - PKI: It’s Not Dead, Just Resting</li>
-      <li>[[Hea13]] - An update on our war against account hijackers</li>
-      <li>[[Iic15]] - Industrial Internet Reference Architecture</li>
-      <li>[[IicRA17]] - The Industrial Internet of Things Volume G1: Reference Architecture</li>
-      <li>[[Jon14]] - A JSON-Based Identity Protocol Suite</li>
-      <li>[[Ken03]] - Who Goes There? Authentication Through the Lens of Privacy</li>
-      <li>[[Lam04]] - Computer Security in the Real World</li>
-      <li>[[Loc05]] - Demystifying SAML</li>
-      <li>[[Mel15]] - Securing the Industrial Internet of Things</li>
-      <li>[[Moo02]] - A critical review of End-to-end arguments in system design</li>
-      <li>[[Oos10]] - Provisioning scenarios in identity federations</li>
-      <li>[[Sch14]] - The Internet of Things Is Wildly Insecure — And Often Unpatchable</li>
-      <li>[[Sch99]] - Breaking Up Is Hard To Do: Modeling Security Threats for Smart Cards</li>
-      <li>[[She14]] - The Constrained Application Protocol (CoAP)</li>
-      <li>[[Vol00]] - AAA Authorization Framework</li>
-      <li>[[Yeg11]] - Stevey's Google Platforms Rant</li>
+      <li>[[CoRE-RD]] - <cite>CoRE Resource Directory</cite></li>
+      <li>[[Bel89]] - <cite>Security Problems in the TCP-IP Protocol Suite</cite></li>
+      <li>[[Bel13]] - <cite>Web Security in the Real World</cite></li>
+      <li>[[Ber14]] - <cite>Authentication Protocols, Web UX and Web API</cite></li>
+      <li>[[Bor14]] - <cite>Terminology for Constrained-Node Networks</cite></li>
+      <li>[[Bru14]] - <cite>Using Frankencerts for Automated Adversarial Testing of Certificate Validation in SSL/TLS Implementations</cite></li>
+      <li>[[Dur13]] - <cite>Analysis of the HTTPS Certificate Ecosystem</cite></li>
+      <li>[[Ell00]] - <cite>Ten Risks of PKI: What You’re not Being Told about Public Key Infrastructure</cite></li>
+      <li>[[Fu01]] - <cite>Dos and Don’ts of Client Authentication on the Web</cite></li>
+      <li>[[Geo12]] - <cite>The Most Dangerous Code in the World: Validating SSL Certificates in Non-Browser Software</cite></li>
+      <li>[[Gol03]] - <cite>Cryptography and Cryptographic Protocols</cite></li>
+      <li>[[Gre14]] - <cite>How do you know if an RNG is working?</cite></li>
+      <li>[[Gut02]] - <cite>PKI: It’s Not Dead, Just Resting</cite></li>
+      <li>[[Hea13]] - <cite>An update on our war against account hijackers</cite></li>
+      <li>[[Iic15]] - <cite>Industrial Internet Reference Architecture</cite></li>
+      <li>[[IicRA17]] - <cite>The Industrial Internet of Things Volume G1: Reference Architecture</cite></li>
+      <li>[[Jon14]] - <cite>A JSON-Based Identity Protocol Suite</cite></li>
+      <li>[[Ken03]] - <cite>Who Goes There? Authentication Through the Lens of Privacy</cite></li>
+      <li>[[Lam04]] - <cite>Computer Security in the Real World</cite></li>
+      <li>[[Loc05]] - <cite>Demystifying SAML</cite></li>
+      <li>[[Mel15]] - <cite>Securing the Industrial Internet of Things</cite></li>
+      <li>[[Moo02]] - <cite>A critical review of End-to-end arguments in system design</cite></li>
+      <li>[[Oos10]] - <cite>Provisioning scenarios in identity federations</cite></li>
+      <li>[[Sch14]] - <cite>The Internet of Things Is Wildly Insecure — And Often Unpatchable</cite></li>
+      <li>[[Sch99]] - <cite>Breaking Up Is Hard To Do: Modeling Security Threats for Smart Cards</cite></li>
+      <li>[[She14]] - <cite>The Constrained Application Protocol (CoAP)</cite></li>
+      <li>[[Vol00]] - <cite>AAA Authorization Framework</cite></li>
+      <li>[[Yeg11]] - <cite>Stevey's Google Platforms Rant</cite></li>
       </ul>
+    </p><p class="ednote" title="Use global database for RFC references">
+          Should use references from global ReSpec bibliography whenever possible,
+          rather than local bibliographic entries.
+    </p>
   </section>
 
   <section>
