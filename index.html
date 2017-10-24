@@ -935,7 +935,7 @@
                    <th>Assets exposed</th>
                    <th>Attack Method</th>
                </tr><tr>
-                   <th>WoT Script Management API</th>
+                   <th>WoT Script Management Interface</th>
                    <td>Compromise of WoT scripts,
                        including installing an older version of legitimate scripts (rollback)</td>
                    <td><a>Thing Provider Scripts</a> (part of <a>Thing Provider Data</a>)
@@ -1152,7 +1152,7 @@
                  <th>Asset</th>
                  <th>Attack method and pre-conditions</th>
              </tr><tr>
-                 <th><dfn>WoT Script Mgm API Threat - Script installation</dfn></th>
+                 <th><dfn>WoT Script Management Interface Threat - Script installation</dfn></th>
                  <td><a>Network Attacker</a>,
                      <a>Malware Developer</a>,
                      <a>Malicious Users</td>
@@ -1161,9 +1161,9 @@
                  <td><strong>Pre-conditions:</strong>
                      General preconditions for network attacker with access to the WoT Script Mgm API<br>
                      <strong>Attack method:</strong>
-                     Attacker installs its own script into WoT runtime using WoT Script Management API</td>
+                     Attacker installs its own script into WoT runtime using WoT Script Management Interface</td>
              </tr><tr>
-                 <th><dfn>WoT Script Mgm API Threat - WoT Runtime Compromise</dfn></th>
+                 <th><dfn>WoT Script Management Interface Threat - WoT Runtime Compromise</dfn></th>
                  <td><a>Network Attacker</a>,
                      <a>Malware Developer</a>,
                      <a>Malicious Users</td>
@@ -1171,9 +1171,9 @@
                  <td><strong>Pre-conditions:</strong>
                      General preconditions for network attacker with access to the WoT Script Mgm API<br/>
                      <strong>Attack method:</strong>
-                     Attacker compromises WoT Runtime itself using WoT Script Management API</td>
+                     Attacker compromises WoT Runtime itself using WoT Script Management Interface</td>
              </tr><tr>
-                 <th><dfn>WoT Script Mgm API Threat - DoS</dfn></th>
+                 <th><dfn>WoT Script Management Interface Threat - DoS</dfn></th>
                  <td><a>Network Attacker</a>,
                      <a>Malware Developer</a>,
                      <a>Malicious Users</td>
@@ -1181,15 +1181,15 @@
                  <td><strong>Pre-conditions:</strong>
                      General preconditions for network attacker with access to the WoT Script Mgm API<br/>
                      <strong>Attack method:</strong>
-                     Attacker misuses WoT Script Management API to cause DoS on things or infrastructure,
+                     Attacker misuses WoT Script Management Interface to cause DoS on things or infrastructure,
                      including deleting, corrupting WoT scripts</td>
              </tr>
          </table>
 
-         <p>The general term <dfn>WoT Script Mgm API Threat</dfn> may be used to refer to any or all of
-             <a>WoT Script Mgm API Threat - Script installation</a>, 
-             <a>WoT Script Mgm API Threat - WoT Runtime Compromise</a>, or 
-             <a>WoT Script Mgm API Threat - DoS</a>.</p>
+         <p>The general term <dfn>WoT Script Management Interface Threat</dfn> may be used to refer to any or all of
+             <a>WoT Script Management Interface Threat - Script installation</a>, 
+             <a>WoT Script Management Interface Threat - WoT Runtime Compromise</a>, or 
+             <a>WoT Script Management Interface Threat - DoS</a>.</p>
 
          <p>If a WoT system allows co-existence of different independent thing providers (tenants) on a
             single physical device or if WoT scripts are assumed to be untrusted,
@@ -1947,7 +1947,7 @@ An example of privacy threat: a compromised application on a user smartphone con
               <figcaption>WoT Servient Multi-Tenant</figcaption>
             </figure>
             <p>
-            The case of the multi-tenant servient with a possibility to install the WoT Scripts remotely into the WoT Runtimes brings an additional set of threats that must be taken into account: <a>WoT Script Mgm API Threat</a>, <a>WoT Untrusted Script Threat - Script Compromise</a>,<a>WoT Untrusted Script Threat - Runtime Compromise</a>,<a>WoT Untrusted Script Threat - Authenticity</a>,<a>WoT Untrusted Script Threat - Confidentiality</a>,<a>WoT Untrusted Script Threat - TD Authenticity</a>,<a>WoT Untrusted Script Threat - TD Confidentiality/Privacy</a>,<a>WoT Untrusted Script Threat - Thing Data Authenticity</a>,<a>WoT Untrusted Script Threat - Thing Data Confidentiality</a>,<a>WoT Untrusted Script Threat - DoS</a>.
+            The case of the multi-tenant servient with a possibility to install the WoT Scripts remotely into the WoT Runtimes brings an additional set of threats that must be taken into account: <a>WoT Script Management Interface Threat</a>, <a>WoT Untrusted Script Threat - Script Compromise</a>,<a>WoT Untrusted Script Threat - Runtime Compromise</a>,<a>WoT Untrusted Script Threat - Authenticity</a>,<a>WoT Untrusted Script Threat - Confidentiality</a>,<a>WoT Untrusted Script Threat - TD Authenticity</a>,<a>WoT Untrusted Script Threat - TD Confidentiality/Privacy</a>,<a>WoT Untrusted Script Threat - Thing Data Authenticity</a>,<a>WoT Untrusted Script Threat - Thing Data Confidentiality</a>,<a>WoT Untrusted Script Threat - DoS</a>.
             </p>
             <p>
             In order to address these threats one should utilize the strongest isolation method available on the device to separate different WoT Runtimes. The isolation should cover execution context, runtime memory, local storage and resource allocation between different WoT Runtimes.
