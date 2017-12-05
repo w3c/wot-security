@@ -790,7 +790,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
      need to be protected and also have security and privacy implications."></head>
   <body aria-busy="false" class="h-entry toc-inline"><div class="head">
     <p>
-      <a class="logo" href="https://www.w3.org/"><img src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" alt="W3C" width="72" height="48"></a>
+      <a class="logo" href="https://www.w3.org/"><img src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" alt="W3C" width="72" height="48"/></a>
     </p>
   <p><!--_hyper: 1027972047;--></p>
   <h1 class="title p-name" id="title">Web of Things (WoT) Security and Privacy Considerations</h1>
@@ -1332,7 +1332,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
               dependent on the actual device implementation.</p>
 
            <figure id="wot-security-fig-attack-surfaces">
-               <img src="images/WoTArchSecurityView.png" title="WoT High-Level Architecture Security View" width="100%">
+               <img src="images/WoTArchSecurityView.png" title="WoT High-Level Architecture Security View" />
                <figcaption>Figure <span class="figno">1</span> <span class="fig-title">WoT High-Level Architecture Security View</span></figcaption>
            </figure>
 
@@ -2350,7 +2350,7 @@ An example of privacy threat: a compromised application on a user smartphone con
               <a href="#wot_client_thing_basic" class="fig-ref">Figure <span class="figno">2</span> <span class="fig-title">Basic WoT Thing and WoT Client</span></a> shows the basic WoT Client (can be a browser or application on a user smartphone) that is used to operate the WoT Thing (Garage door controller or other HW device). The latter exposes a WoT interface and provides a Thing Description with actions that can be performed on a Thing.
             </p>
             <figure id="wot_client_thing_basic">
-              <img src="images/client-server-basic.png" style="width: 1000px;">
+              <img src="images/client-server-basic.png" style="width: 1000px;"/>
               <figcaption>Figure <span class="figno">2</span> <span class="fig-title">Basic WoT Thing and WoT Client</span></figcaption>
             </figure>
             <p>
@@ -2394,7 +2394,7 @@ An example of privacy threat: a compromised application on a user smartphone con
             The scenario shown in <a href="#wot_client_thing_basic_2" class="fig-ref">Figure <span class="figno">3</span> <span class="fig-title">Basic WoT Thing and WoT Client with TD provided from Things Directory</span></a> is identical but with an important difference that a Thing description is not stored on a WoT Thing device, but provided to the WoT client from Things Directory residing on a remote cloud.
             </p>
             <figure id="wot_client_thing_basic_2">
-              <img src="images/client-server-basic-2.png" style="width: 1000px;">
+              <img src="images/client-server-basic-2.png" style="width: 1000px;"/>
               <figcaption>Figure <span class="figno">3</span> <span class="fig-title">Basic WoT Thing and WoT Client with TD provided from Things Directory</span></figcaption>
             </figure>
             <p>
@@ -2407,7 +2407,7 @@ An example of privacy threat: a compromised application on a user smartphone con
              <a href="#wot_client_thing_gateway" class="fig-ref">Figure <span class="figno">4</span> <span class="fig-title">WoT Thing and WoT Client via Gateway</span></a> shows the same basic WoT Client that is used to operate the WoT Thing. However in contrast to the previous case, the interaction between the WoT Client and the WoT Thing happens via the WoT Servient Gateway. The latter exposes a WoT interface and provides a Thing Description with actions that can be performed on a Thing.
             </p>
             <figure id="wot_client_thing_gateway">
-              <img src="images/client-server-gateway.png" style="width: 1000px;">
+              <img src="images/client-server-gateway.png" style="width: 1000px;"/>
               <figcaption>Figure <span class="figno">4</span> <span class="fig-title">WoT Thing and WoT Client via Gateway</span></figcaption>
             </figure>
             <p>
@@ -2423,7 +2423,7 @@ An example of privacy threat: a compromised application on a user smartphone con
             <a href="#wot_client_thing_gateway_2" class="fig-ref">Figure <span class="figno">5</span> <span class="fig-title">WoT Thing and WoT Client via Gateway with Remote Cloud</span></a> is identical to the previous case but with an important difference that a Thing Description is not provided by the the WoT Servient Gateway, but can be fetched by the WoT client from a Things Directory residing on a remote cloud. Similar to the previous case, this Thing Description can either be original Thing Description supplied by the end device (i.e. garage door) or modified by the WoT Servient Gateway. Regardless of the actual setup, the transfer of Thing Description between any two endpoints should be done using underlying secure protocols and the usage of TLS/DTLS is the recommended method. Similarly to Section <a href="#wot-client-server-basic" class="sec-ref"><span class="secno">5.1</span> <span class="sec-title">Basic Interaction between WoT Thing and WoT Client</span></a> in case the remote cloud does not guarantee the secure storage and delivery of Thing Descriptions to the WoT Client or in case the remote cloud is not a trusted entity, the authenticity of the Thing Description should be verified using other methods on the application layer.
             </p>
             <figure id="wot_client_thing_gateway_2">
-              <img src="images/client-server-gateway-2.png" style="width: 1000px;">
+              <img src="images/client-server-gateway-2.png" style="width: 1000px;"/>
               <figcaption>Figure <span class="figno">5</span> <span class="fig-title">WoT Thing and WoT Client via Gateway with Remote Cloud</span></figcaption>
             </figure>
           </section>
@@ -2434,7 +2434,7 @@ An example of privacy threat: a compromised application on a user smartphone con
               In previous examples we have considered the Wot Servient as a black box exposing a set of WoT Interfaces and Thing Descriptions. <a href="#wot_servient-single-tenant" class="fig-ref">Figure <span class="figno">6</span> <span class="fig-title">WoT Servient Single-Tenant</span></a> shows the WoT Servient (for example again a garage door controller device or a WoT Gateway) in more details with Scripting API support and a couple of scripts running inside WoT runtime. For this case we considered all scripts to be trusted and provisioned to a device by a single trusted entity (for example by a device flashing).
             </p>
             <figure id="wot_servient-single-tenant">
-              <img src="images/servient-single-tenant.png" style="width: 1000px;">
+              <img src="images/servient-single-tenant.png" style="width: 1000px;"/>
               <figcaption>Figure <span class="figno">6</span> <span class="fig-title">WoT Servient Single-Tenant</span></figcaption>
             </figure>
             <p>
@@ -2469,7 +2469,7 @@ An example of privacy threat: a compromised application on a user smartphone con
               <a href="#wot_servient-multi-tenant" class="fig-ref">Figure <span class="figno">7</span> <span class="fig-title">WoT Servient Multi-Tenant</span></a> shows the WoT Servient with two different tenants running in two different instances of WoT Runtime. There is a no trust relation between different tenants and they can be untrusted. Each tenant can have multiple independent WoT scripts running inside their WoT Runtime. WoT Runtime core also has a Thing Manager entity that allows installation of scripts into the corresponding WoT Runtimes.
             </p>
             <figure id="wot_servient-multi-tenant">
-              <img src="images/servient-multi-tenant.png" style="width: 1000px;">
+              <img src="images/servient-multi-tenant.png" style="width: 1000px;"/>
               <figcaption>Figure <span class="figno">7</span> <span class="fig-title">WoT Servient Multi-Tenant</span></figcaption>
             </figure>
             <p>
