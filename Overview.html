@@ -2443,10 +2443,11 @@ An example of privacy threat: a compromised application on a user smartphone con
             <p>
             Depending on the device capabilities, the following isolation mechanisms might be available:
             </p><ul>
-            <li><strong>WoT Runtime enforced isolation.</strong> This is the basic isolation provided by the WoT Runtime itself and it is based on the restricting the API exposed to the scripts running within the WoT Runtime. </li>
+            <li><strong>WoT Runtime enforced isolation.</strong> This is the basic isolation provided by the WoT Runtime itself and it is based on the restricting the API exposed to the scripts running within the WoT Runtime.
             <div class="ednote"><div role="heading" class="ednote-title marker" id="h-ednote-17" aria-level="4"><span>Editor's note</span><span style="text-transform: none">: WoT Runtime enforced isolation</span></div><p class="">
             How is it implemented in practice for WoT Runtime now? What memory/thread isolation guarantees are provided?
             </p></div>
+            </li>
             <li><strong>Native OS process-based isolation.</strong> This method relies on the underneath native OS to provide basic isolation guarantees based on native process isolation. The exact set of guarantees depends on capabilities of native OS, but it usually includes at least memory and execution content isolation. Some other mechanisms like Discretionary Access Controls (DAC) might be also available to be used. </li>
             <li><strong>Native OS advanced isolation.</strong> A native OS might also provide a stronger set of measures that can be deployed for process-based isolation. Examples of such measures are Mandatory access Control (MACs in all major OSes), OS-level virtualization (i.e. namespaces and containers in Linux), Cryptographic methods etc. </li>
             </ul>
