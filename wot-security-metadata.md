@@ -30,8 +30,8 @@ HTTP authentication for HTTP links and ACL for equivalent CoAP links:
           "scheme": "basic"
         },
         {
-          "id": "acl",
-          "type": "ocf",
+          "id": "ocfACL",
+          "type": "ocf"
         },
         {
           "id": "key",
@@ -50,7 +50,7 @@ HTTP authentication for HTTP links and ACL for equivalent CoAP links:
             {
               "href": "coaps://mylamp.example.com:5683/status",
               "mediaType": "application/json",
-              "security": "acl"
+              "security": "ocfACL"
             },
             {
               "href": "https://mylamp.example.com/status",
@@ -66,7 +66,7 @@ HTTP authentication for HTTP links and ACL for equivalent CoAP links:
             {
               "href": "coaps://mylamp.example.com:5683/toggle",
               "mediaType": "application/json"
-              "security": ["acl","key"]
+              "security": ["ocfACL","key"]
             },
             {
               "href": "https://mylamp.example.com/toggle",
@@ -83,7 +83,7 @@ HTTP authentication for HTTP links and ACL for equivalent CoAP links:
             {
               "href": "coaps://mylamp.example.com:5683/oh",
               "mediaType": "application/json"
-              "security": "acl"
+              "security": "ocfACL"
             },
             {
               "href": "https://mylamp.example.com/oh",
@@ -103,7 +103,12 @@ basic authentication and the key).
 
 Note that security is specified per "form" so that it can be different for each one,
 as is often necessary when multiple protocols are supported for the same interaction,
-since different protocols may support different security mechanisms.
+since different protocols may support different security mechanisms.  In this case we
+also wanted to support stronger security for actions that change the state of the light.
+
+TODO: We may want "read" access (eg the "GET" method) on a property to have different
+(for example, weaker) security than "write" access (eg the "POST" and "PUT" methods).
+How would we specify that here?
 
 The value in a security object inside a form can be a single string or an object.
 If a string, it is an identifier that refers to a previously declared configuration at the 
@@ -112,6 +117,89 @@ a set of configurations may be given, all of which must be satisfied to allow ac
 Arrays can contain strings or objects, or both.
 
 ## Detailed Specifications of Configuration Specifications
-To Do.
 
--
+Each configuration is identified with a "type" which must be one of the following:
+- "http": HTTP Authentication
+- "ocf": OCF security model (ACL)
+- "apiKey": API key
+- "oauth2": OAuth2.0
+- "openIdConnect": OpenID Connect
+For each type, additional parameters may or may not be required.
+These are specified in the corresponding sections below. 
+
+### Basic HTTP Authentication
+
+Type: "http"
+
+The standard HTTP security models can be specified (obviously, just on HTTP links) by
+using the additional parameter "scheme" with the following values [RFC7235 https://tools.ietf.org/html/rfc7235#section-5.1]
+- "basic": simple authentication
+- "bearer": bearer token
+If a bearer token is used, its format must be specified using "format", which should
+have one of the following values.
+- "JWT": Javascript Web Token
+
+### OCF Security Model
+
+Type: "ocf"
+
+OCF mandates a specific security model, including ACLs (access control lists).
+As OCF itself defines a set of standard introspection mechanisms to discover
+security metadata, rather than repeat it all we simply specify that the OCF model
+is used.
+
+### API Key
+ 
+Type: "apiKey"
+
+OpenAPI-like API key specifications.  The key can be given in either the header or in the 
+body, as indicated by the value of the "in" field:
+- "in":"header" - the key is in the header
+- "in":"body" - the key is in the body 
+- "in":"cookie" - the key is in a cookie 
+
+### OAuth2.0
+
+Type: "oauth2"
+
+To do. There are also multiple flows: implicit, password, clientCredentials, and authorizationCode.
+
+### OpenID Connect
+
+Type: "openIdConnect"
+
+To do.
+
+### Interledger
+ 
+Type: "interledger"
+
+To do.
+
+## Issues
+The following need to be discussed.
+
+### Authentication Server Link
+Many of these schemes require use of an authentication server.
+Should the metadata include a link to the authentication server in this case?
+
+### Bearer Token Format
+OpenAPI does not specify the terms used to identify different kinds of bearer tokens, since
+they are not created by the client, but by an authentication server.
+Should we be stricter, or not?
+
+### Cookie API Keys
+Does this even make sense for M2M IoT APIs?
+
+### OAuth
+What about other versions of OAuth? What about versions in general?
+
+### OpenIDConnect
+Does this even make sense for IoT devices?
+
+### Interledger
+In addition to the address, it is necessary to specify the amount of deposit required,
+and perhaps the amount per use.  Units also need to be specified.   This will often be
+combined with other forms of authentication.  While not strictly a security mechanism,
+it may be used as such (although maybe it's something only used indirectly eg at a
+"ticket vending" service, not at individual IoT devices).
