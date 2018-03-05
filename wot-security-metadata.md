@@ -4,7 +4,7 @@ This is an initial proposal for security metadata to be included in the WoT Thin
 It is intended to be compatible with and equivalent in functionality to several other standards
 and proposals,
 including the 
-[OpenAPI 3.0 Security Object https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.1.md#securitySchemeObject]
+[OpenAPI 3.0 Security Object](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.1.md#securitySchemeObject)
 metadata (which includes in turn header and query parameter API keys, common OAuth2 flows, and OpenID.
 Also included are support for OCF access control, Kerberos, Javascript Web Tokens, and Interledger payments.
 
@@ -25,16 +25,16 @@ HTTP authentication for HTTP links and ACL for equivalent CoAP links:
       "name": "MyLampThing",
       "security": [
         {
-          "id": "simple",
+          "@id": "basic-config",
           "type": "http",
           "scheme": "basic"
         },
         {
-          "id": "ocfACL",
+          "@id": "ocf-config",
           "type": "ocf"
         },
         {
-          "id": "key",
+          "@id": "apikey-config",
           "type": "apikey",
           "in": "header"
         }
@@ -50,12 +50,12 @@ HTTP authentication for HTTP links and ACL for equivalent CoAP links:
             {
               "href": "coaps://mylamp.example.com:5683/status",
               "mediaType": "application/json",
-              "security": "ocfACL"
+              "security": "ocf-config"
             },
             {
               "href": "https://mylamp.example.com/status",
               "mediaType": "application/json",
-              "security": "simple"
+              "security": "basic-config"
             },
           ]
         },
@@ -66,12 +66,12 @@ HTTP authentication for HTTP links and ACL for equivalent CoAP links:
             {
               "href": "coaps://mylamp.example.com:5683/toggle",
               "mediaType": "application/json"
-              "security": ["ocfACL","key"]
+              "security": ["ocf-config","apikey-config"]
             },
             {
               "href": "https://mylamp.example.com/toggle",
               "mediaType": "application/json"
-              "security": ["simple","key"]
+              "security": ["basic-config","apikey-config"]
             }
           ]
         },
@@ -115,6 +115,63 @@ If a string, it is an identifier that refers to a previously declared configurat
 top level.  If an object, it is a local configuration definition.  If an array, then
 a set of configurations may be given, all of which must be satisfied to allow access.
 Arrays can contain strings or objects, or both.
+
+## Additional Examples:
+
+Matthias Kovatsc has [documented how Node-wot already implements certain
+security mechanisms](https://github.com/w3c/wot-security/issues/73).
+His example includes several additional mechanisms not covered by the above,
+including tokens and proxies.  Here are his two examples as they would be
+expressed under the current proposal.
+
+    {
+      "@context": ["https://w3c.github.io/wot/w3c-wot-td-context.jsonld"],
+      "@type": ["Thing"],
+      "name": "FujitsuBeacon",
+      "@id": "urn:dev:wot:fujitsu-beacon",
+      "security": [{
+        "@id": "token-config",
+        "type": "token",
+        "scheme": "bearer",
+        "alg": "ES256",
+        "as": "https://plugfest.thingweb.io:8443/"
+      }],
+      ...
+    }
+    
+The interactions are omitted but under "form" in each there would have to be
+a "security" : "token-config" entry.
+  
+Here is a second example using a proxy configuration:
+
+    {
+      "@context": ["https://w3c.github.io/wot/w3c-wot-td-context.jsonld"],
+      "@type": ["Thing"],
+      "name": "Festo",
+      "@id": "urn:dev:wot:festo",
+      "security": [{
+          "@id": "proxy-config",
+          "type": "http-proxy",
+          "scheme": "basic",
+          "href": "http://plugfest.thingweb.io:8087"
+      }],
+      ...
+    }
+
+As above, interactions are omitted but each would have to include a "security": "proxy-config" entry.
+
+A few comments:
+- A Thing ID (here encoded under the `@id` tag) is needed in order for tokens to work (they have to encode some identity).
+- The "authority" tag in Matthias' example was changed to "type" and "schema" in this example
+  to be consistent with the example above, which is based on OpenAPI.  To discuss... "type/schema" may be overly verbose and
+  "type" conflicts with other uses of "type" in the TD.
+- It is still necessary to refer to the name of the security configuration in each interaction.
+  We _could_ make a rule like "the first security scheme mentioned is the default", the problem is consistency with JSON-LD.
+- Note that in general security configurations have a set of "extra" parameters that depend on their type and scheme.
+- I have converted the simple "proxy" type to "http-proxy" in case we want to contemplate others.
+  In this case the "basic" scheme refers to basic HTTP proxy authentication.
+- If we had defaults, it would be nice to automatically
+  give the @id for a security configuration the same name as the scheme, if it is unique.
 
 ## Detailed Specifications of Configuration Specifications
 
