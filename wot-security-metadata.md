@@ -293,7 +293,18 @@ The following need to be discussed.
 
 ### Authentication Server Link
 Many of these schemes require use of an authentication server.
-Should the metadata include a link to the authentication server in this case?
+A standard tag should be used for this when it is needed.
+The example from Matthias uses "as".
+
+### Algorithm
+Many of these schemes require use of a specific encryption or hashing algorithm.
+A standard tag should be used for this when it is needed.
+The example from Matthias uses "alg".
+
+### Proxy
+A proxy requires a separate URL to access it.
+A standard tag should be used for this when it is needed.
+The example from Matthias uses "href".
 
 ### Bearer Token Format
 OpenAPI does not specify the terms used to identify different kinds of bearer tokens, since
@@ -301,7 +312,7 @@ they are not created by the client, but by an authentication server.
 Should we be stricter, or not?
 
 ### Cookie API Keys
-Does this even make sense for M2M IoT APIs?
+Does this even make sense for machine to machine IoT APIs?
 
 ### OAuth
 What about other versions of OAuth? What about versions in general?
@@ -315,6 +326,9 @@ and perhaps the amount per use.  Units also need to be specified.   This will of
 combined with other forms of authentication.  While not strictly a security mechanism,
 it may be used as such (although maybe it's something only used indirectly eg at a
 "ticket vending" service, not at individual IoT devices).
+
+NOTE: We should only support this for prototyping reasons,
+as it is not yet fully standards-track (although it is on its way).
 
 ## References
 
