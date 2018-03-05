@@ -204,7 +204,7 @@ Each configuration is identified with a "type" which must be one of the followin
 - "ocf": OCF security model (ACL)
 - "apikey": API key
 - "bearer": bearer token (to discuss: stand-alone possible?)
-- "jwt": Javascript Web Token (to discuss: also under HTTP, but... what about CoAP, etc?)
+- "jwt": JSON Web Token (to discuss: also under HTTP, but... what about CoAP, etc?)
 - "oauth2": OAuth2.0 (requires a flow definition)
 - "openIdConnect": OpenID Connect
 For each type, additional parameters may or may not be required.
@@ -220,7 +220,7 @@ using the additional parameter "scheme" with the following values [RFC7235 https
 - "bearer": bearer token
 If a bearer token is used, its format must be specified using "format", which should
 have one of the following values.
-- "jwt": Javascript Web Token
+- "jwt": JSON Web Token
 
 ### HTTP Proxy Authentication
 
@@ -332,4 +332,7 @@ as it is not yet fully standards-track (although it is on its way).
 
 ## References
 
-TO DO.
+- [OpenAPI 3.0.1](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.1.md)
+- [RFC7617 - The 'Basic' HTTP Authentication Scheme](https://tools.ietf.org/html/rfc7617)
+- [RFC7519 JSON Web Token (JWT)](https://tools.ietf.org/html/rfc7519)
+- [RFC7235 Hypertext Transfer Protocol (HTTP/1.1): Authentication](https://tools.ietf.org/html/rfc7235)
