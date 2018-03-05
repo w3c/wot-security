@@ -263,7 +263,8 @@ at how API keys are used in practice to see if any additional parameters are nee
 Type: "oauth2"
 
 To do. There are also multiple flows: implicit, password, clientCredentials, and authorizationCode.
-Each one may use different kinds of tokens.
+Each one may use different kinds of tokens.  We probably want to model after the [OpenAPI OAuth
+Flow Object](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.1.md#oauthFlowObject).
 
 TO DISCUSS: Which flows are relevant?
 
