@@ -408,6 +408,28 @@
       </p>
     </section>
 
+    <section>
+      <h1>Lifecycle of a WoT device</h1>
+
+      <figure id="wot-lifecycle">
+           <img src="images/WoT_lifecycle_diagram.png"
+                width="100%"
+                title="WoT Device Lifecycle"/>
+           <figcaption>WoT Device Lifecycle</figcaption>
+       </figure>
+
+      <p>A typical lifecycle of a WoT device is very similar to lifecycles of IoT devices. It is shown in Figure <a href="#wot-lifecycle"></a> and consists from the following states:
+      <ul>
+        <li><strong>Manufactured.</strong> At this stage the WoT device is manufactured by an OEM with a variant of WoT stack enabled. It might have a WoT runtime present that enables single or multi-tenant users or it might only have exposed WoT interfaces present. From manufactured state, the device can transition to either of two states: Installation/Commissioning state or Security Provisioning state based on deployment scenario.</li>
+        <li><strong>Installation/Commissioning</strong> At this stage a WoT device is installed into its intended deployment scenario by a system provider or system integrator, as well as necessary SW configuration is performed. This in practice can be combined with the following Security Provisioning stage.</li>
+        <li><strong>Security Provisioning.</strong> The main goal of this stage is to provision a WoT device with a required set of security metadata and credentials that it needs during the Operational state. The exact set of these credentials would vary based on deployment model, choice of security mechanisms etc. <cite> The State-of-the-Art and Challenges for the Internet of Things Security</cite> [[Garcia17]] document refers to this stage as "Bootstrapping".</li>
+        <li><strong>Operational State.</strong> This is the default operational state of WoT devices. Devices are fully ready to communicate over WoT interfaces and operate to their deployment scenarios. From Operational state a device can return back to manufactured state if it is fully decommissioned and security de-provisioned (link E in Figure <a href="#wot-lifecycle"></a>). It is also possible that only partial reset on device is performed: if it only requires re-installation and recommissioning without security re-provisioning needed (link D in Figure <a href="#wot-lifecycle"></a>) or only security re-provisioning is needed without re-installation and re-commissioning (link C in Figure <a href="#wot-lifecycle"></a>).</li>
+        <li><strong>Maintenance and security updates.</strong> This is an optional state that can be activated remotely or locally (link A in Figure <a href="#wot-lifecycle"></a>) on a WoT device depending on the deployment model and overall setup. This state can be required for example to update the SW layers of a WoT device or perform some security-related updates, such as key revocation, certificate updates etc. After the maintenance or updates are done, the device returns back to the Operational state (link B in Figure <a href="#wot-lifecycle"></a>). </li>
+      </ul>
+      The scope of this document only covers the Operation state of a WoT device with the assumption that all relevant security metadata and credentials has been successfully provisioned during the Security Provisioning state and available transparently to the WoT runtime level. The security-related updates (such as revocation and update of keys and other credentials) is also out of the scope of this document.
+      </p>
+    </section>
+
   <section>
     <h1>Requirements</h1>
 	
@@ -515,7 +537,7 @@
       <p class="ednote" title="Consider adding System Owner">
         In addition to the above stakeholders, we might need to define a notion of
         <dfn data-lt="system owner|system owners">System Owner</dfn>:
-        an entity that bootstrap/provisions a thing with the security root of trust
+        an entity that provisions a thing with the security root of trust
         and sets up the initial policies on who can provision/update/remove scripts
         to/from the WoT runtimes, if such model is supported.
         A WoT system might have a number of independent system owners,
@@ -604,7 +626,7 @@
             <td><a>System provider</a>: full access<br/>
             Others: no access</td>
             <td>Storage on the device itself, runtime memory representation,
-            in-transfer only for initial provisioning/bootstrapping and script updates
+            in-transfer only for initial provisioning and script updates
             </td>
           </tr><tr>
             <th><dfn data-lt="thing resource">
@@ -637,7 +659,7 @@
             <th><dfn>WoT Basic Security Metadata</dfn></th>
             <td>All required security metadata (keys, certificates etc.) that might be provisioned to the WoT device in order to be able to perform various security-related operations, such as authenticating another device or WoT client in the WoT network, authenticating remote authorization service in case the access control to WoT interfaces is done using tokens, etc.</td>
             <td>Corresponding Thing instances, Thing Manager (if present in WoT Runtime), WoT Runtime itself if exposes security APIs to scripts</td>
-            <td> On device storage, in-transfer including provisioning/bootstrapping and updates of security metadata.
+            <td> On device storage, in-transfer including provisioning and updates of security metadata.
             <p class="ednote" title="Discussion">
             Need to discuss more on how the security metadata would be exposed to WoT runtime and scripts running within it.
           </p></td>
@@ -668,7 +690,7 @@
                   <th>Attack Points</th>
               </tr><tr>
                   <th><dfn>WoT Scripts Security Metadata</dfn></th>
-                  <td>Defines who can provision/bootstrap, install, update, and remove scripts and other
+                  <td>Defines who can provision, install, update, and remove scripts and other
                       <a>System Provider Data</a> inside a WOT runtime.</td>
                   <td><a>System Provider</a>, <a>System Maintainer</a></td>
                   <td>WoT Script Management Interface</td>
@@ -1836,7 +1858,7 @@ An example of privacy threat: a compromised application on a user smartphone con
             Both aspects can be fulfilled using different security mechanisms and the end decision on a concrete method depends on the deployment scenario, as well as capabilities of involved devices. The WoT Client is not expected be a resource limited device, but the device exposing the WoT Thing might have some resource constraints.
             </p>
             <p>
-            The WoT Client and the device exposing the WoT thing can use one of the following methods recommended by the OCF Security Specification [[Ocf17]] (see Section 10) to mutually authenticate each other given that there is a way to supply credential information required for authentication during the WoT network bootstrapping/provisioning stage:
+            The WoT Client and the device exposing the WoT thing can use one of the following methods recommended by the OCF Security Specification [[Ocf17]] (see Section 10) to mutually authenticate each other given that there is a way to supply credential information required for authentication during the WoT network provisioning stage:
             <ul>
             <li><strong>Symmetric key credentials.</strong> This method assumes that both WoT Client and the device exposing WoT Thing has pre-shared symmetric key credentials. Such keys can be established during device provisioning/on-boarding phase using one of the methods recommended in Section 7 [[Ocf17]] or using ad-hoc security protocols, such as EC Diffie-Hellman based on other existing pre-shared credentials. See Section 9.2.1 [[Ocf17]] for more details on such credential type.</li>
             <li><strong>Raw asymmetric key credentials.</strong> This method assumes that WoT Client has been provisioned with the public key of the device exposing the WoT thing (and visa versa) and able to authenticate the device based on it. The provisioning of public key can similarly happen during device provisioning/on-boarding phase using one of the methods recommended in Section 7 [[Ocf17]]. Section 9.2.3 [[Ocf17]] also provides more details on this credential type as well as guidance on its secure provisioning.</li>
