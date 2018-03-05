@@ -241,7 +241,10 @@ security metadata, rather than repeat it all we simply specify that the OCF mode
 is used.
 
 TO DISCUSS: The other option here would be have a set of options available for CoAP
-security that are rich enough to describe the OCF security model.
+security that are rich enough to describe the OCF security model.  We probably want
+that anyway for non-OCF CoAP systems, so then this tag becomes a convenience for OCF.
+However, in that case, we should also add "convenience" tags for other CoAP-based
+standards (LWM2M, OMA, etc).
 
 ### API Key
  
