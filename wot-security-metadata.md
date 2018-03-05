@@ -312,3 +312,7 @@ and perhaps the amount per use.  Units also need to be specified.   This will of
 combined with other forms of authentication.  While not strictly a security mechanism,
 it may be used as such (although maybe it's something only used indirectly eg at a
 "ticket vending" service, not at individual IoT devices).
+
+## References
+
+TO DO.
