@@ -341,3 +341,4 @@ as it is not yet fully standards-track (although it is on its way).
 - [RFC8152 CBOR Object Signing and Encryption (COSE)](https://tools.ietf.org/html/rfc8152)
 - [Authentication and Authorization for Constrained Environments (ACE); _Internet Draft_](https://tools.ietf.org/html/draft-ietf-ace-oauth-authz-09)
 - [OCF Specifications](https://openconnectivity.org/developer/specifications)
+- [AWS IoT Security Documentation](https://docs.aws.amazon.com/iot/latest/developerguide/iot-security-identity.html)
