@@ -173,10 +173,10 @@ Here is a second example using a proxy configuration:
       "name": "Festo",
       "@id": "urn:dev:wot:festo",
       "security": [{
-          "@id": "proxy-config",
-          "type": "http-proxy",
-          "scheme": "basic",
-          "href": "http://plugfest.thingweb.io:8087"
+        "@id": "proxy-config",
+        "type": "http-proxy",
+        "scheme": "basic",
+        "href": "http://plugfest.thingweb.io:8087"
       }],
       ...
     }
