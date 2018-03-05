@@ -51,12 +51,26 @@ HTTP authentication for HTTP links and ACL for equivalent CoAP links:
             {
               "href": "coaps://mylamp.example.com:5683/status",
               "mediaType": "application/json",
+              "method": "coap:get",
               "security": "ocf-config"
+            },
+            {
+              "href": "coaps://mylamp.example.com:5683/status",
+              "mediaType": "application/json",
+              "method": "coap:post",
+              "security": ["ocf-config","apikey-config"]
             },
             {
               "href": "https://mylamp.example.com/status",
               "mediaType": "application/json",
+              "method": "http:get",
               "security": "basic-config"
+            },
+            {
+              "href": "https://mylamp.example.com/status",
+              "mediaType": "application/json",
+              "method": "http:post",
+              "security": ["basic-config","apikey-config"]
             },
           ]
         },
@@ -107,14 +121,22 @@ as is often necessary when multiple protocols are supported for the same interac
 since different protocols may support different security mechanisms.  In this case we
 also wanted to support stronger security for actions that change the state of the light.
 
-TODO: We may want "read" access (eg the "GET" method) on a property to have different
-(for example, weaker) security than "write" access (eg the "POST" and "PUT" methods).
-How would we specify that here?
+Since the API also allows changing the state of the light by writing to the "status" property,
+we specify that "read" access (eg the "GET" method) on this property to has different
+(weaker) security than "write" access (eg the "POST" and "PUT" methods).
+In this example reads just require basic HTTP authentication
+(or, under OCF, appropriate ACL authorization) but writes in addition require an API key,
+consistent with the actions.  Note that in
+practice the API key may not be needed to provide this differential access under OCF as the ACL
+can include differential read/write access for different users (although that access is tied to 
+identity, not ownership of the API key, so the additional API key provides an additional 
+layer of security; in particular, an API key can be updated on a device to revoke access to
+everyone with the old key).
 
 The value in a security object inside a form can be a single string or an object.
 If a string, it is an identifier that refers to a previously declared configuration at the 
 top level.  If an object, it is a local configuration definition.  If an array, then
-a set of configurations may be given, all of which must be satisfied to allow access.
+a set of configurations may be given, _all_ of which must be satisfied to allow access.
 Arrays can contain strings or objects, or both.
 
 ## Additional Examples:
