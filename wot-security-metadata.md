@@ -5,7 +5,7 @@ It is intended to be compatible with and equivalent in functionality to several 
 and proposals,
 including the 
 [OpenAPI 3.0 Security Object](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.1.md#securitySchemeObject)
-metadata (which includes in turn header and query parameter API keys, common OAuth2 flows, and OpenID.
+metadata, which includes in turn header and query parameter API keys, common OAuth2 flows, and OpenID.
 Also included are support for OCF access control, Kerberos, Javascript Web Tokens, and Interledger payments.
 
 One requirement is that security should be specifiable both across the entire thing and per-interaction.
