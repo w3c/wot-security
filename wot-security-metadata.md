@@ -23,6 +23,7 @@ HTTP authentication for HTTP links and ACL for equivalent CoAP links:
       "@context": ["https://w3c.github.io/wot/w3c-wot-td-context.jsonld"],
       "@type": ["Thing"],
       "name": "MyLampThing",
+      "@id": "urn:dev:wot:my-lamp-thing",
       "security": [
         {
           "@id": "basic-config",
@@ -83,7 +84,7 @@ HTTP authentication for HTTP links and ACL for equivalent CoAP links:
             {
               "href": "coaps://mylamp.example.com:5683/oh",
               "mediaType": "application/json"
-              "security": "ocfACL"
+              "security": "ocf-config"
             },
             {
               "href": "https://mylamp.example.com/oh",
@@ -118,7 +119,7 @@ Arrays can contain strings or objects, or both.
 
 ## Additional Examples:
 
-Matthias Kovatsc has [documented how Node-wot already implements certain
+Matthias Kovatsc has [documented how the current version of Node-wot implements certain
 security mechanisms](https://github.com/w3c/wot-security/issues/73).
 His example includes several additional mechanisms not covered by the above,
 including tokens and proxies.  Here are his two examples as they would be
@@ -163,8 +164,8 @@ As above, interactions are omitted but each would have to include a "security": 
 A few comments:
 - A Thing ID (here encoded under the `@id` tag) is needed in order for tokens to work (they have to encode some identity).
 - The "authority" tag in Matthias' example was changed to "type" and "schema" in this example
-  to be consistent with the example above, which is based on OpenAPI.  To discuss... "type/schema" may be overly verbose and
-  "type" conflicts with other uses of "type" in the TD.
+  to be consistent with this proposal's tag vocabulary, which is based on OpenAPI.
+  To discuss... "type/schema" may be overly verbose and "type" conflicts with other uses of "type" in the TD.
 - It is still necessary to refer to the name of the security configuration in each interaction.
   We _could_ make a rule like "the first security scheme mentioned is the default", the problem is consistency with JSON-LD.
 - Note that in general security configurations have a set of "extra" parameters that depend on their type and scheme.
@@ -177,14 +178,17 @@ A few comments:
 
 Each configuration is identified with a "type" which must be one of the following:
 - "http": HTTP Authentication
+- "proxy": HTTP Proxy authentication (note: to be combined with other authentication mechanisms for the actual endpoint)
 - "ocf": OCF security model (ACL)
-- "apiKey": API key
-- "oauth2": OAuth2.0
+- "apikey": API key
+- "bearer": bearer token (to discuss: stand-alone possible?)
+- "jwt": Javascript Web Token (to discuss: also under HTTP, but... what about CoAP, etc?)
+- "oauth2": OAuth2.0 (requires a flow definition)
 - "openIdConnect": OpenID Connect
 For each type, additional parameters may or may not be required.
 These are specified in the corresponding sections below. 
 
-### Basic HTTP Authentication
+### HTTP Authentication
 
 Type: "http"
 
@@ -194,7 +198,16 @@ using the additional parameter "scheme" with the following values [RFC7235 https
 - "bearer": bearer token
 If a bearer token is used, its format must be specified using "format", which should
 have one of the following values.
-- "JWT": Javascript Web Token
+- "jwt": Javascript Web Token
+
+### HTTP Proxy Authentication
+
+Type: "http-proxy"
+
+This takes the same values as "http" but is targeted at the proxy, not the endpoint.
+You would generally include this alongside a separate endpoint authentication scheme (eg you would use an array of configurations).
+
+TO DISCUSS: Do we _need_ anything different from "http" here?
 
 ### OCF Security Model
 
@@ -205,9 +218,12 @@ As OCF itself defines a set of standard introspection mechanisms to discover
 security metadata, rather than repeat it all we simply specify that the OCF model
 is used.
 
+TO DISCUSS: The other option here would be have a set of options available for CoAP
+security that are rich enough to describe the OCF security model.
+
 ### API Key
  
-Type: "apiKey"
+Type: "apikey"
 
 OpenAPI-like API key specifications.  The key can be given in either the header or in the 
 body, as indicated by the value of the "in" field:
@@ -215,11 +231,19 @@ body, as indicated by the value of the "in" field:
 - "in":"body" - the key is in the body 
 - "in":"cookie" - the key is in a cookie 
 
+TO DISCUSS: This leaves open the format of the API key, so it is assumed opaque.
+An alternative to an API key is a JWT token, which has similar properties but also includes
+information about the source, expiry date, and other useful information.   We should look
+at how API keys are used in practice to see if any additional parameters are needed.
+
 ### OAuth2.0
 
 Type: "oauth2"
 
 To do. There are also multiple flows: implicit, password, clientCredentials, and authorizationCode.
+Each one may use different kinds of tokens.
+
+TO DISCUSS: Which flows are relevant?
 
 ### OpenID Connect
 
@@ -227,11 +251,16 @@ Type: "openIdConnect"
 
 To do.
 
+TO DISCUSS: Is this relevant?
+
 ### Interledger
  
 Type: "interledger"
 
 To do.
+
+TO DISCUSS: This is not really a standard yet so we should probably leave it out, for now,
+but I think it's interesting and relevant for prototyping use cases that involve payments.
 
 ## Issues
 The following need to be discussed.
