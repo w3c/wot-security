@@ -308,6 +308,9 @@ OpenAPI does not specify the terms used to identify different kinds of bearer to
 they are not created by the client, but by an authentication server.
 Should we be stricter, or not?
 
+Discussion: [Issue #80](https://github.com/w3c/wot-security/issues/80)
+
+
 ### API Key Format
 The `apikey` scheme leaves open the format of the API key, so it is assumed opaque.
 An alternative to an API key is a JWT token, which has similar properties but also includes
