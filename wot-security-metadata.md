@@ -298,6 +298,8 @@ that anyway for non-OCF CoAP systems, so then this tag becomes a convenience for
 However, in that case, we should also add "convenience" tags for other CoAP-based
 standards (LWM2M, OMA, etc).
 
+Discussion: [Issue #82](https://github.com/w3c/wot-security/issues/82)
+
 ### Proxy
 A proxy requires a separate URL to access it.
 A standard tag should be used for this when it is needed.
