@@ -273,6 +273,18 @@ combined with other forms of authentication.  While not strictly a security mech
 it may be used as such (although maybe it's something only used indirectly eg at a
 "ticket vending" service, not at individual IoT devices). 
 
+## Generic Tags
+
+### Authentication Server Link
+Many of authentication schemes require use of an authentication server.
+A standard tag should be used for this when it is needed.
+The example from Matthias uses "as".
+
+### Algorithm
+Many of these schemes require use of a specific encryption or hashing algorithm.
+A standard tag should be used for this when it is needed.
+The example from Matthias uses "alg".
+
 ## Issues
 The following need to be discussed.  Discussion has been moved from comments on the original
 PR to the issues linked below.
@@ -285,16 +297,6 @@ security that are rich enough to describe the OCF security model.  We probably w
 that anyway for non-OCF CoAP systems, so then this tag becomes a convenience for OCF.
 However, in that case, we should also add "convenience" tags for other CoAP-based
 standards (LWM2M, OMA, etc).
-
-### Authentication Server Link
-Many of these schemes require use of an authentication server.
-A standard tag should be used for this when it is needed.
-The example from Matthias uses "as".
-
-### Algorithm
-Many of these schemes require use of a specific encryption or hashing algorithm.
-A standard tag should be used for this when it is needed.
-The example from Matthias uses "alg".
 
 ### Proxy
 A proxy requires a separate URL to access it.
