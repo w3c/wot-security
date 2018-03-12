@@ -320,6 +320,8 @@ What about other versions of OAuth? What about versions in general?
 ### OpenIDConnect
 Does this even make sense for IoT devices?
 
+Discussion: [Issue #75](https://github.com/w3c/wot-security/issues/75)
+
 ### Interledger
 In addition to the address, it is necessary to specify the amount of deposit required,
 and perhaps the amount per use.  Units also need to be specified.   This will often be
