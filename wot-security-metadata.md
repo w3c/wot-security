@@ -317,6 +317,8 @@ at how API keys are used in practice to see if any additional parameters are nee
 ### Cookie API Keys
 Does this even make sense for machine to machine IoT APIs?
 
+Discussion: [Issue #78](https://github.com/w3c/wot-security/issues/78)
+
 ### OAuth
 Which flows are relevant? What about other versions of OAuth? What about versions in general?
 
