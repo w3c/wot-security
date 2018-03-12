@@ -332,6 +332,8 @@ it may be used as such (although maybe it's something only used indirectly eg at
 NOTE: We should only support this for prototyping reasons,
 as it is not yet fully standards-track (although it is on its way).
 
+Discussion: [Issue #76](https://github.com/w3c/wot-security/issues/76)
+
 ## References
 
 - [OpenAPI 3.0.1](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.1.md)
