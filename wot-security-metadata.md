@@ -229,8 +229,6 @@ Type: "http-proxy"
 This takes the same values as "http" but is targeted at the proxy, not the endpoint.
 You would generally include this alongside a separate endpoint authentication scheme (eg you would use an array of configurations).
 
-TO DISCUSS: Do we _need_ anything different from "http" here?
-
 ### OCF Security Model
 
 Type: "ocf"
@@ -239,12 +237,6 @@ OCF mandates a specific security model, including ACLs (access control lists).
 As OCF itself defines a set of standard introspection mechanisms to discover
 security metadata, rather than repeat it all we simply specify that the OCF model
 is used.
-
-TO DISCUSS: The other option here would be have a set of options available for CoAP
-security that are rich enough to describe the OCF security model.  We probably want
-that anyway for non-OCF CoAP systems, so then this tag becomes a convenience for OCF.
-However, in that case, we should also add "convenience" tags for other CoAP-based
-standards (LWM2M, OMA, etc).
 
 ### API Key
  
@@ -256,20 +248,13 @@ body, as indicated by the value of the "in" field:
 - "in":"body" - the key is in the body 
 - "in":"cookie" - the key is in a cookie 
 
-TO DISCUSS: This leaves open the format of the API key, so it is assumed opaque.
-An alternative to an API key is a JWT token, which has similar properties but also includes
-information about the source, expiry date, and other useful information.   We should look
-at how API keys are used in practice to see if any additional parameters are needed.
-
 ### OAuth2.0
 
 Type: "oauth2"
 
-To do. There are also multiple flows: implicit, password, clientCredentials, and authorizationCode.
+To do. There are multiple flows: implicit, password, clientCredentials, and authorizationCode.
 Each one may use different kinds of tokens.  We probably want to model after the [OpenAPI OAuth
 Flow Object](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.1.md#oauthFlowObject).
-
-TO DISCUSS: Which flows are relevant?
 
 ### OpenID Connect
 
@@ -277,19 +262,29 @@ Type: "openIdConnect"
 
 To do.
 
-TO DISCUSS: Is this relevant?
-
 ### Interledger
  
 Type: "interledger"
 
-To do.
-
-TO DISCUSS: This is not really a standard yet so we should probably leave it out, for now,
-but I think it's interesting and relevant for prototyping use cases that involve payments.
+To do.  To support pay-for-use services and deposit-based trust.
+In addition to the address, it is necessary to specify the amount of deposit required,
+and perhaps the amount per use.  Units also need to be specified.   This will often be
+combined with other forms of authentication.  While not strictly a security mechanism,
+it may be used as such (although maybe it's something only used indirectly eg at a
+"ticket vending" service, not at individual IoT devices). 
 
 ## Issues
-The following need to be discussed.
+The following need to be discussed.  Discussion has been moved from comments on the original
+PR to the issues linked below.
+
+### OCF Security Model
+OCF is built on top of CoAP and follows ACE recommendations so it's unclear whether or not
+the OCF security model should have its own scheme tag.
+The other option here would be have a set of options available for CoAP
+security that are rich enough to describe the OCF security model.  We probably want
+that anyway for non-OCF CoAP systems, so then this tag becomes a convenience for OCF.
+However, in that case, we should also add "convenience" tags for other CoAP-based
+standards (LWM2M, OMA, etc).
 
 ### Authentication Server Link
 Many of these schemes require use of an authentication server.
@@ -305,17 +300,27 @@ The example from Matthias uses "alg".
 A proxy requires a separate URL to access it.
 A standard tag should be used for this when it is needed.
 The example from Matthias uses "href".
+However, should this be embedded in another access scheme, or have its own scheme?
+For HTTP proxies, do we _need_ to specify anything different from "http"?
 
 ### Bearer Token Format
 OpenAPI does not specify the terms used to identify different kinds of bearer tokens, since
 they are not created by the client, but by an authentication server.
 Should we be stricter, or not?
 
+### API Key Format
+The `apikey` scheme leaves open the format of the API key, so it is assumed opaque.
+An alternative to an API key is a JWT token, which has similar properties but also includes
+information about the source, expiry date, and other useful information.   We should look
+at how API keys are used in practice to see if any additional parameters are needed.
+
 ### Cookie API Keys
 Does this even make sense for machine to machine IoT APIs?
 
 ### OAuth
-What about other versions of OAuth? What about versions in general?
+Which flows are relevant? What about other versions of OAuth? What about versions in general?
+
+Discussion: [Issue #77](https://github.com/w3c/wot-security/issues/77)
 
 ### OpenIDConnect
 Does this even make sense for IoT devices?
@@ -323,14 +328,8 @@ Does this even make sense for IoT devices?
 Discussion: [Issue #75](https://github.com/w3c/wot-security/issues/75)
 
 ### Interledger
-In addition to the address, it is necessary to specify the amount of deposit required,
-and perhaps the amount per use.  Units also need to be specified.   This will often be
-combined with other forms of authentication.  While not strictly a security mechanism,
-it may be used as such (although maybe it's something only used indirectly eg at a
-"ticket vending" service, not at individual IoT devices).
 
-NOTE: We should only support this for prototyping reasons,
-as it is not yet fully standards-track (although it is on its way).
+This is not really a standard yet, but I think it's interesting and relevant for use cases that involve payments.  We should only support this, if at all, for prototyping reasons.
 
 Discussion: [Issue #76](https://github.com/w3c/wot-security/issues/76)
 
