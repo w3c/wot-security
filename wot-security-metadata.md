@@ -303,6 +303,8 @@ The example from Matthias uses "href".
 However, should this be embedded in another access scheme, or have its own scheme?
 For HTTP proxies, do we _need_ to specify anything different from "http"?
 
+Discussion: [Issue #81](https://github.com/w3c/wot-security/issues/81)
+
 ### Bearer Token Format
 OpenAPI does not specify the terms used to identify different kinds of bearer tokens, since
 they are not created by the client, but by an authentication server.
