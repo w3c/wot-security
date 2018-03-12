@@ -314,6 +314,8 @@ An alternative to an API key is a JWT token, which has similar properties but al
 information about the source, expiry date, and other useful information.   We should look
 at how API keys are used in practice to see if any additional parameters are needed.
 
+Discussion: [Issue #79](https://github.com/w3c/wot-security/issues/79)
+
 ### Cookie API Keys
 Does this even make sense for machine to machine IoT APIs?
 
