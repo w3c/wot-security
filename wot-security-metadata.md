@@ -1,4 +1,4 @@
-# WoT Security Metadata
+# WoT Security Metadata (Strawman Proposal)
 
 This is an initial proposal for security metadata to be included in the WoT Thing Description.
 It is intended to be compatible with and equivalent in functionality to several other standards
