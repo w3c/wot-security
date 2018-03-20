@@ -385,31 +385,43 @@ other schemes based on permissioned blockchain (eg hyperledger).
 ## Generic Tags
 
 ### Authentication Server Link
-For authentication schemes requiring the use of an authentication server to obtain authentication tokens or keys.
-- `"as"`: URL specifying the location of the authentication server.
+Tag: `"as"`
+
+For authentication schemes requiring the use of an authentication server to obtain
+authentication tokens or keys.
+
+Value: URL specifying the location of the authentication server.
 
 ### Algorithm
+Tag: `"alg"`
+
 Many schemes require use of a specific encryption or hashing algorithm.
-- `"alg"`: String specifying the cipher suite used.  One of:
-    - `"ES256"`: SHA-256 ciphersuite.
+
+Value: String specifying the cipher suite used.  One of:
+- `"ES256"`: SHA-256 ciphersuite.
 
 To do: we should indicate a set of additional valid values for this based on existing RFCs
 and standards.
 
 ### Proxy
+Tag: `"proxy"`
+
 For protocols that support proxies, the proxy may have its own authentication scheme
 separate from that of the endpoint.  If a security configuration includes a value
 for the following tag, it indicates the information provided is for the proxy and not the
 endpoint.
-- `"proxy"`: URL of the proxy.
+
+Value: URL of the proxy.
 
 ### Format
+Tag: `"format"`
+
 Some authentication schemes have options for how data is to be encoded, for example,
 there might be differnet formats for how tokens are encoded.  This tag indicates how
 the data for a scheme is encoded.  Valid values depend on the scheme.
-- `"format"`:
-    - `"token"`: one of 
-        - `"jwt"`: JSON Web Token 
+
+For the `"token"` scheme, the value is one of 
+- `"jwt"`: JSON Web Token 
     
 Note: the format tag is only used in one place for now and when used currently only has
 one legal value.  This is a temporary situation and we expect `"format"`
@@ -417,16 +429,25 @@ to be used in multiple schemes and also to be used to express multiple formats f
 in the future.
 
 ### In
+Tag: `"in"`
+
 Location of information in a particular protocol.
-- `"in"`: one of
-    - `"header"`: in protocol header
-    - `"parameter"`: the key is added to the url as a query parameter
-    - `"body"`: in payload body
-    - `"cookie"`: in data maintained by the client and sent automatically with each transaction
-      (typically also in the header, but in a different field)
+
+Value is one of
+- `"header"`: in protocol header
+- `"parameter"`: the key is added to the url as a query parameter
+- `"body"`: in payload body
+- `"cookie"`: in data maintained by the client and sent automatically with each transaction
+  (typically also in the header, but in a different field)
 
 Note: the `"parameter"` option requires manipulation of the URL.  In this case the URL given
 in the `"href"` parameter is just considered the base URL.
+
+### Name
+Tag: `"name"`
+
+The name to be used for a header, query parameter, or cookie.  In the case of a header
+this can be omitted if there is a useful default.
 
 ## Protocol-Specific Notes
 Schemes only resolve into specific security mechanisms when combined with specific protocols.
