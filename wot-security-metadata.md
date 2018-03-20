@@ -163,7 +163,8 @@ His example includes several additional mechanisms not covered by the above,
 including tokens and proxies.  Here are his two examples as they would be
 expressed under the current proposal.
 
-First, tokens:
+### Tokens
+Here is an example (based on Matthias' example, above) using tokens:
 
     {
       "@context": ["https://w3c.github.io/wot/w3c-wot-td-context.jsonld"],
@@ -197,6 +198,7 @@ First, tokens:
 As shown, in each form under interactions there would have to be
 a `"security" : "bearer-token-config"` entry.
   
+### Proxies
 Here is a second example using a proxy configuration:
 
     {
