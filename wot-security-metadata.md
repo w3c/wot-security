@@ -164,72 +164,72 @@ including tokens and proxies.  Here are his two examples as they would be
 expressed under the current proposal.
 
 First, tokens:
-'''
-{
-  "@context": ["https://w3c.github.io/wot/w3c-wot-td-context.jsonld"],
-  "@type": ["Thing"],
-  "name": "FujitsuBeacon",
-  "@id": "urn:dev:wot:fujitsu-beacon",
-  "security": [
+
     {
-      "@id": "bearer-token-config",
-      "scheme": "token",
-      "format": "jwt",
-      "alg": "ES256",
-      "as": "https://plugfest.thingweb.io:8443/"
-    },
-    ... // other security configurations, if needed
-  ],
-  ...
-  "interaction": [
-    {
-      "form": [
+      "@context": ["https://w3c.github.io/wot/w3c-wot-td-context.jsonld"],
+      "@type": ["Thing"],
+      "name": "FujitsuBeacon",
+      "@id": "urn:dev:wot:fujitsu-beacon",
+      "security": [
         {
-          ...
-          "security": "bearer-token-config"
+          "@id": "bearer-token-config",
+          "scheme": "token",
+          "format": "jwt",
+          "alg": "ES256",
+          "as": "https://plugfest.thingweb.io:8443/"
         },
-        ... // other forms
-    },
-    ... // other interactions
-  ]
-}
-'''
+        ... // other security configurations, if needed
+      ],
+      ...
+      "interaction": [
+        {
+          "form": [
+            {
+              ...
+              "security": "bearer-token-config"
+            },
+            ... // other forms
+        },
+        ... // other interactions
+      ]
+    }
+
 As shown, in each form under interactions there would have to be
 a `"security" : "bearer-token-config"` entry.
   
 Here is a second example using a proxy configuration:
-'''
-{
-  "@context": ["https://w3c.github.io/wot/w3c-wot-td-context.jsonld"],
-  "@type": ["Thing"],
-  "name": "Festo",
-  "@id": "urn:dev:wot:festo",
-  "security": [
+
     {
-      "@id": "proxy-config",
-      "scheme": "basic",
-      "proxy": "http://plugfest.thingweb.io:8087"
-    },
-    {
-      "@id": "endpoint-config",
-      ... // details omitted; independent of proxy configuration
-    },
-    ... // other security configurations, if needed
-  ],
-  ...
-  "interaction": [
-    {
-      "form": [
+      "@context": ["https://w3c.github.io/wot/w3c-wot-td-context.jsonld"],
+      "@type": ["Thing"],
+      "name": "Festo",
+      "@id": "urn:dev:wot:festo",
+      "security": [
         {
-          ...
-          "security": ["proxy-config","endpoint-config"]
+          "@id": "proxy-config",
+          "scheme": "basic",
+          "proxy": "http://plugfest.thingweb.io:8087"
         },
-        ... // other forms
-    },
-    ... // other interactions
-  ]
-}
-'''
+        {
+          "@id": "endpoint-config",
+          ... // details omitted; independent of proxy configuration
+        },
+        ... // other security configurations, if needed
+      ],
+      ...
+      "interaction": [
+        {
+          "form": [
+            {
+              ...
+              "security": ["proxy-config","endpoint-config"]
+            },
+            ... // other forms
+        },
+        ... // other interactions
+      ]
+    }
+
 As above, each form under interactions 
 would have to include a "proxy-config" _and_ an "endpoint-config"
 reference in its "security" tag.
