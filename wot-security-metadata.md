@@ -157,104 +157,144 @@ in the TD (for example, a UUID) to validate identity (to be discussed).
 
 ## Additional Examples:
 
-Matthias Kovatsc has [documented how the current version of Node-wot implements certain
+Matthias Kovatsc has [documented how the current version of 'node-wot' implements certain
 security mechanisms](https://github.com/w3c/wot-security/issues/73).
 His example includes several additional mechanisms not covered by the above,
 including tokens and proxies.  Here are his two examples as they would be
 expressed under the current proposal.
 
+First, tokens:
+'''
+{
+  "@context": ["https://w3c.github.io/wot/w3c-wot-td-context.jsonld"],
+  "@type": ["Thing"],
+  "name": "FujitsuBeacon",
+  "@id": "urn:dev:wot:fujitsu-beacon",
+  "security": [
     {
-      "@context": ["https://w3c.github.io/wot/w3c-wot-td-context.jsonld"],
-      "@type": ["Thing"],
-      "name": "FujitsuBeacon",
-      "@id": "urn:dev:wot:fujitsu-beacon",
-      "security": [
+      "@id": "bearer-token-config",
+      "scheme": "token",
+      "format": "jwt",
+      "alg": "ES256",
+      "as": "https://plugfest.thingweb.io:8443/"
+    },
+    ... // other security configurations, if needed
+  ],
+  ...
+  "interaction": [
+    {
+      "form": [
         {
-          "@id": "bearer-token-config",
-          "scheme": "token",
-          "format": "jwt",
-          "alg": "ES256",
-          "as": "https://plugfest.thingweb.io:8443/"
-        }
-      ],
-      ...
-    }
-    
-The interactions are omitted but under "form" in each there would have to be
+          ...
+          "security": "bearer-token-config"
+        },
+        ... // other forms
+    },
+    ... // other interactions
+  ]
+}
+'''
+As shown, in each form under interactions there would have to be
 a `"security" : "bearer-token-config"` entry.
   
 Here is a second example using a proxy configuration:
-
+'''
+{
+  "@context": ["https://w3c.github.io/wot/w3c-wot-td-context.jsonld"],
+  "@type": ["Thing"],
+  "name": "Festo",
+  "@id": "urn:dev:wot:festo",
+  "security": [
     {
-      "@context": ["https://w3c.github.io/wot/w3c-wot-td-context.jsonld"],
-      "@type": ["Thing"],
-      "name": "Festo",
-      "@id": "urn:dev:wot:festo",
-      "security": [
+      "@id": "proxy-config",
+      "scheme": "basic",
+      "proxy": "http://plugfest.thingweb.io:8087"
+    },
+    {
+      "@id": "endpoint-config",
+      ... // details omitted; independent of proxy configuration
+    },
+    ... // other security configurations, if needed
+  ],
+  ...
+  "interaction": [
+    {
+      "form": [
         {
-          "@id": "proxy-config",
-          "scheme": "basic",
-          "proxy": "http://plugfest.thingweb.io:8087"
-        },
-        {
-          "@id": "endpoint-config",
           ...
+          "security": ["proxy-config","endpoint-config"]
         },
-        ...
-      ],
-      ...
-    }
-
-As above, interactions are omitted but each would have to include a "proxy-config" _and_ an "endpoint-config"
-reference in its "security" tag.  Note that multiple proxy configuration and endpoint configurations could
-be included in a single Thing Description, and that proxy authentication is handled separately from
+        ... // other forms
+    },
+    ... // other interactions
+  ]
+}
+'''
+As above, each form under interactions 
+would have to include a "proxy-config" _and_ an "endpoint-config"
+reference in its "security" tag.
+Multiple proxy configuration and endpoint configurations could also
+be included in a single Thing Description.
+In this example, the details of the endpoint security configuration have 
+been omitted.
+Proxy authentication is handled separately from
 endpoint configuration in any case.
 
 A few comments:
-- A Thing ID (encoded under some top-level tag, such as "@id", not shown) is needed in order for tokens to work (they have to encode some identity).
+- A Thing ID (encoded under some top-level tag, such as "@id", not shown)
+ is needed in order for tokens to work (they have to encode some identity).
 - The "authority" tag in Matthias' example was changed to "scheme" 
   to be more consistent with this proposal's tag vocabulary, which is based on OpenAPI.
-  Unlike OpenAPI, however, we only use a single name for the "scheme" and it is actually the combination
-  of the "scheme" with the protocol used in a particular form that determines the final authentication
-  mechanism.  For example, "basic" authentication means clear-text user name and password,
-  but this will be instantiated in different ways in MQTT and HTTP (for example).
+  Unlike OpenAPI, however, we only use a single name for the "scheme" and it is actually
+  the combination of the "scheme" with the protocol used in a particular form that determines
+  the final authentication mechanism.
+    - For example, "basic" authentication means clear-text user name and password,
+      but this will be instantiated in different ways in MQTT and HTTP.
 - It is still necessary to refer to the name of the security configuration in each interaction.
-  We might be able to use a rule like "the first security scheme mentioned is the default" as long as we can make this work with JSON-LD; to discuss.
-- In general security configurations have a set of "extra" parameters that depend on their type and scheme.
-  Several of these tags, however, are used in more than one scheme.  For example, many schemes have 
-  references to an authentication server, and in general this is referenced by the "as" tag.
-- If a security configuration is intended for a proxy this is indicated by giving a value (a URL) to
-  the "proxy" tag.  If no such value is given, then the configuration is intended for the endpoint.
-- If we had defaults, it would be nice to automatically
-  give the @id for a security configuration the same name as the scheme, if it is unique.  Note that in
-  the example above we generally use the name of the scheme followed by "-config" although in
-  general the value of the "@id" for a security configuration is arbitrary, and there could be 
-  multiple configurations using the same scheme but with different parameters.
+  We might be able to use a rule like "the first security scheme mentioned is the default" as 
+  long as we can make this work with JSON-LD; to discuss.
+- In general security configurations have a set of "extra" parameters that depend on their type
+  and scheme. Several of these tags, however, are used in more than one scheme.
+    - For example, many schemes have references to an authentication server, and in general this
+      is referenced by a URL given in the "as" tag.
+- If a security configuration is intended for a proxy this is indicated by giving a value (a URL)
+  to the "proxy" tag.  If no such value is given, then the configuration is intended for the 
+  endpoint.
+- If we can use default values (to discuss), it would be nice to automatically
+  give the @id for a security configuration the same name as the scheme, if it is unique.
+  Note that in the example above we generally use the name of the scheme followed by "-config"
+  although in general the value of the "@id" for a security configuration is arbitrary,
+  and there could be multiple configurations using the same scheme but with different parameters.
 
 ## Detailed Specifications of Configurations
 
-Each configuration is identified with a "scheme" which currently must be one of the following:
+Each configuration is identified with a `"scheme"' which currently must be one of the following:
 - "basic": Clear-text username and password (must be encapsulated in encrypted transport)
-- "ocf": OCF security model (access control lists)
+- "ocf": OCF security model (access control lists with authentication servers and tickets)
 - "apikey": API key (opaque strings)
 - "token": bearer token (format given by the value of a "format" tag) 
-- "oauth2": OAuth2.0 
-For each type, additional parameters may or may not be required.
+- "oauth2": OAuth2.0 authentication flows
+For each scheme, additional parameters may be required.
 These are specified in the corresponding sections below. 
 
 Notes:
-- Unlike OpenAPI,
-  OpenIDConnect is not included in the above since it is a user identification scheme, not an authorization scheme.
-  However, it might be used by an authorization server to identify a user.
-- In general we have tried to use generic tags identifying authorization schemes that are orthogonal
-  to protocols.  For example, in theory, "basic" authentication can be combined with several transport
-  protocols, such as HTTPS and MQTT, although it is only secure if that transport is previously encrypted 
-  by other means.
-- OCF has its own tag since it has an authentication scheme specific to OCF, even though it is built on top
-  of the ACE specification.  OCF authorization and communication can also take place over multiple
-  protocols (coaps and https).
-- This is not a closed set.  In particular, additional tags may be needed for additional schemes specific
-  to particular ecosystems: OneM2M, OPC-UA, MQTT, AWS IoT, HomeKit, etc.
+- OpenIDConnect is not included in the above since it is a user identification scheme,
+  not an authorization scheme. However, it might be used by an authorization server to
+  identify a user, and we assume authentication services will be implemented by other means,
+  eg web services with metadata in OpenAPI.  To discuss: can a Thing be an authentication server?
+- In general we have tried to use generic tags identifying authorization schemes that are
+  orthogonal to protocols.
+    - For example, in theory, "basic" authentication can be combined with several transport
+      protocols, such as HTTPS and MQTT, although it is only secure if that transport is
+      previously encrypted by other means.  This also raises a validation question:
+      combining certain authentication schemes with certain protocols should be considered an
+      error.
+- OCF has its own scheme label since it has an authentication scheme specific to OCF,
+  even though it is built on top of the ACE specification.  OCF authorization and communication
+  can also take place over multiple protocols (coaps and https).
+- This is not a closed set. In particular, additional tags may be needed for additional schemes
+  specific to particular ecosystems: OneM2M, OPC-UA, MQTT, AWS IoT, HomeKit, etc. or supported
+  by additional standards.
 
 ### Basic Authentication
 
@@ -270,17 +310,21 @@ Since the username and password used in this scheme are in plaintext, they need
 to be sent via a mechanism that provides transport security, such as TLS.  In the case of HTTP,
 this means that a secure HTTPS connection needs to be established before this authentication
 method can be used.  In the context of a Thing Description this means that this mechanism
-should only be combined with secure protocols, eg. coaps, https, and the equivalent.
+should only be combined with protocols supporting secure transport,
+eg. COAPS, HTTPS, and the equivalent.
 
-### OCF Security Model
+### OCF Security 
 
 Scheme: "ocf"
 
-OCF mandates a specific security model, including ACLs (access control lists).
+OCF mandates a specific security model, including ACLs (access control lists),
+an authentication server, and tickets.
 As OCF itself defines a set of standard introspection mechanisms to discover
 security metadata, including the location of authorization servers, 
-rather than repeat it all we simply specify that the OCF model
-is used.
+rather than repeat it all we simply specify that the OCF model is used.
+
+Note: We should build prototypes to discover if additional configuration parameters are needed
+in practice.
 
 ### API Key
  
@@ -289,16 +333,21 @@ Scheme: "apikey"
 The key can be given in either the header or in the 
 body, as indicated by the value of the "in" field:
 - "in":"header" - the key is in the header
+- "in":"parameter" - the key is added to the url as a query parameter
 - "in":"body" - the key is in the body 
-- "in":"cookie" - the key is in a cookie
+- "in":"cookie" - the key is in a cookie (state maintained automatically by the client, and typically also sent in the header, but under a different field)
 
 By definition an API key is opaque.  
+
+Note: the '"parameter"' option requires manipulation of the URL.  In this case the URL given
+in the '"href"' parameter is just considered the base URL.
 
 ### OAuth2.0
 
 Scheme: "oauth2"
 
-To do. There are multiple flows: implicit, password, clientCredentials, and authorizationCode.
+In general OAuth requires multiple flows: 
+implicit, password, clientCredentials, and authorizationCode.
 Each one may use different kinds of tokens.  We probably want to model after the [OpenAPI OAuth
 Flow Object](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.1.md#oauthFlowObject).
 
