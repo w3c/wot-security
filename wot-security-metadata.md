@@ -124,7 +124,7 @@ and another case where two are required (to turn on the light by CoAP/OCF, we ne
 access rights in the ACL _and_ an API key; the corresponding HTTPS interface needs both
 basic authentication and the key).
 
-Note that security is specified per `"form"` so that it can be different for each one,
+*Note:* Security is specified per `"form"` so that it can be different for each one,
 as is often necessary when multiple protocols are supported for the same interaction,
 since different protocols may support different security mechanisms.  In this case we
 also wanted to support stronger security for actions that change the state of the light.
@@ -156,9 +156,12 @@ username and password in the clear in the header.  This is only secure if the he
 encrypted by an outer transport layer.  Likewise, other authentication mechanisms not
 used in this example, such as tokens, also rely on secure transport to protect against
 certain forms of attack.  The security configuration metadata in this example focuses on 
-authentication.  In this example, it is assumed that issues such as certificate authentication
+authentication.  
+
+*To discuss:* In this example, it is assumed that issues such as certificate authentication
 for TLS can be handled by TLS itself, although it may use other information 
-in the TD (for example, a UUID) to validate identity (to be discussed).
+in the TD (for example, a UUID) to validate identity.   This is useful in situations where
+normal certificate validation cannot be performed, eg semi offline systems.
 
 ## Additional Examples:
 Matthias Kovatsc has [documented how the current version of 'node-wot' implements certain
@@ -260,11 +263,11 @@ This example uses an OAuth authorization code flow.
           "scheme": "oauth2",
           "flow": "code",
           "as": "https://example.com/api/oauth/dialog",
-          "ts": "https://example.com/api/aouth/token",
+          "ts": "https://example.com/api/oauth/token",
+          "rs": "https://example.com/api/oauth/refresh",
           "scope": [
             { "name": "read:frame" },
-            { "name": "read:framerate" }, 
-            { "name": "write:framerate" } 
+            ... // other scopes
            ]
         }
         ... // other security configurations, if needed
@@ -291,7 +294,7 @@ This example uses an OAuth authorization code flow.
       ]
     }
 
-To Discuss: OpenAPI also allows a description in various places, for example
+*To discuss:* OpenAPI also allows a description in various places, for example
 associated with the scopes of an OAuth flow.  This would be useful to include as 
 well but since it would also be useful elsewhere, should be part of a more general 
 discussion.
@@ -307,9 +310,10 @@ A few comments:
   the final authentication mechanism.
     - For example, `"basic"` authentication means clear-text user name and password,
       but this will be instantiated in different ways in MQTT and HTTP.
-- It is still necessary to refer to the name of the security configuration in each interaction.
+- *To discuss:* 
+  It is still necessary to refer to the name of the security configuration in each interaction.
   We might be able to use a rule like "the first security scheme mentioned is the default" as 
-  long as we can make this work with JSON-LD; to discuss.
+  long as we can make this work with JSON-LD.
 - In general security configurations have a set of "extra" parameters that depend on their type
   and scheme. Several of these tags, however, are used in more than one scheme.
     - For example, many schemes have references to an authentication server, and in general this
@@ -317,8 +321,8 @@ A few comments:
 - If a security configuration is intended for a proxy this is indicated by giving a value (a URL)
   to the `"proxy"` tag.  If no such value is given, then the configuration is intended for the 
   endpoint.
-    - To discuss: whether this can be made to work with JSON-LD.
-- If we can use default values (to discuss), it would be nice to automatically
+    - *To discuss:* whether this can be made to work with JSON-LD.
+- *To discuss:* If we can use default values, it would be nice to automatically
   give the @id for a security configuration the same name as the scheme, if it is unique.
     - In the example above we generally use the name of the scheme followed by `"-config"`
       although in general the value of the `"@id"` for a security configuration is arbitrary,
@@ -332,14 +336,16 @@ Each configuration is identified with a `"scheme"` which currently must be one o
 - `"apikey"`: API key (opaque strings)
 - `"token"`: bearer token (format given by the value of a "format" tag) 
 - `"oauth2"`: OAuth2.0 authentication flows
+
 For each scheme, additional parameters may be required.
 These are specified in the corresponding sections below. 
 
-Notes:
+*Notes:*
 - OpenIDConnect is not included in the above since it is a user identification scheme,
   not an authorization scheme. However, it might be used by an authorization server to
   identify a user, and we assume authentication services will be implemented by other means,
-  eg web services with metadata in OpenAPI.  To discuss: can a Thing be an authentication server?
+  eg web services with metadata in OpenAPI.  
+    - *To discuss:* can a Thing be an authentication server?
 - In general we have tried to use generic tags identifying authorization schemes that are
   orthogonal to protocols.
     - For example, in theory, `"basic"` authentication can be combined with several transport
@@ -380,7 +386,7 @@ As OCF itself defines a set of standard introspection mechanisms to discover
 security metadata, including the location of authorization servers, 
 rather than repeat it all we simply specify that the OCF model is used.
 
-Note: We should build prototypes to discover if additional configuration parameters are needed
+*Note:* We should build prototypes to discover if additional configuration parameters are needed
 in practice.
 
 ### API Key
@@ -400,6 +406,7 @@ one of the following values:
 - `"password"`: also requires `"ts"` URL and `"scope"` array.
 - `"client"`: also requires `"ts"` URL and `"scope"` array.
 - `"code"`: requires both `"as"` and `"ts"` URLs and `"scope"` array.
+
 This is modelled after the [OpenAPI OAuth
 Flow Object](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.1.md#oauthFlowObject) specification but with a flatter structure and simpler names.
 In particular, we use `"as"` in place of `"authorizationUrl"` and
@@ -411,7 +418,8 @@ All flows require an array of scopes.  These are a set of strings giving a name 
 Within each form of an interaction, an additional `"auth"` tag is needed giving an array
 of authorized scopes.
 
-To discuss: Note that the version is embedded in the name.  We may want to generalize this to other
+*To discuss:* Note that the version is embedded in the name.
+We may want to generalize this to other
 standards _or_ define a general mechanism to specify a minimum version.  If we embed versions
 in names, we need a consistent rule to identify versions in schemes that do not have them
 embedded.
@@ -430,7 +438,7 @@ also user-oriented.  It seems more appropriate to only support this on authoriza
 
 If this is supported, it would also use the `"scope"` and `"auth"` tags defined for OAuth.
 
-To discuss: we may want to support this if Things can act as authentication servers.
+*To discuss:* we may want to support this if Things can act as authentication servers.
 
 ### Interledger
 Scheme: `"interledger"`
@@ -442,7 +450,7 @@ combined with other forms of authentication.  While not strictly a security mech
 it may be used as such (although maybe it's something only used indirectly eg at a
 "ticket vending" service, not at individual IoT devices). 
 
-To discuss: Supporting this as an experimental authentication scheme, perhaps alongside
+*To discuss:* Supporting this as an experimental authentication scheme, perhaps alongside
 other schemes based on permissioned blockchain (eg hyperledger).
 
 ## Generic Tags
@@ -464,7 +472,7 @@ authentication tokens or keys.
 
 Value: URL specifying the location of the token server.
 
-Note: the OAuth code flow, as well as Kerberos, have multiple authentication servers.
+*Note:* the OAuth code flow, as well as Kerberos, have multiple authentication servers.
 The first provides a ticket-granting ticket, the second actually provides this tickets.
 This is done for reasons of scalability.
 
@@ -487,7 +495,7 @@ If used, each form needs an additional `"auth"` tag (which can be
 an array or a single value) specifying the
 authorization roles it can be used with.
 
-To discuss: Would an implied default value for `"auth"` be useful here?  For example,
+*To discuss:* Would an implied default value for `"auth"` be useful here?  For example,
 if not given, it could be assumed that an interaction can be used with all scopes.
 
 ### Algorithm
@@ -498,7 +506,7 @@ Many schemes require use of a specific encryption or hashing algorithm.
 Value: String specifying the cipher suite used.  One of:
 - `"ES256"`: SHA-256 ciphersuite.
 
-To do: we should indicate a set of additional valid values for this based on existing RFCs
+*To do:* we should indicate a set of additional valid values for this based on existing RFCs
 and standards.
 
 ### Proxy
@@ -521,7 +529,7 @@ the data for a scheme is encoded.  Valid values depend on the scheme.
 For the `"token"` scheme, the value is one of 
 - `"jwt"`: JSON Web Token 
     
-Note: the format tag is only used in one place for now and when used currently only has
+*Note:* The format tag is only used in one place for now and when used currently only has
 one legal value.  This is a temporary situation and we expect `"format"`
 to be used in multiple schemes and also to be used to express multiple formats for tokens 
 in the future.
@@ -538,7 +546,7 @@ Value is one of
 - `"cookie"`: in data maintained by the client and sent automatically with each transaction
   (typically also in the header, but in a different field)
 
-Note: the `"parameter"` option requires manipulation of the URL.  In this case the URL given
+*Note:* The `"parameter"` option requires manipulation of the URL.  In this case the URL given
 in the `"href"` parameter is just considered the base URL.
 
 ### Name
@@ -558,7 +566,7 @@ Right now only the following combinations are supported:
 - `"apikey"`+`"coaps"`
 - `"ocf"`+`"coaps"`
 
-To discuss: Other combinations may make sense, for example, basic authentication under COAPS,
+*To discuss:* Other combinations may make sense, for example, basic authentication under COAPS,
 tokens and api keys with non-encrypted transports (maybe, if the tokens are self-protected
 somehow), and support for additional protocols (for example, MQTT).
 
@@ -574,12 +582,12 @@ If a bearer token is used, its format must be specified using `"format"`, which 
 have one of the following values:
 - `"jwt"`: JSON Web Token
 
-Notes: 
+*Notes:* 
 - There is only one format for tokens supported now, but this set will
   likely be expanded in the future.
 - Basic authentication assumes defaults whose values actually depend on the protocol
   it is combined with.  
-    - To discuss: whether this will work with JSON-LD. 
+    - *To discuss:* whether this will work with JSON-LD. 
 
 ### HTTP Proxy Authentication
 This takes the same values as `"http"` but is targeted at the proxy, not the endpoint.
