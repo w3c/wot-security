@@ -246,9 +246,59 @@ been omitted.
 Proxy authentication is handled separately from
 endpoint configuration in any case.
 
+### OAuth
+This example uses an OAuth authorization code flow.
+
+    {
+      "@context": ["https://w3c.github.io/wot/w3c-wot-td-context.jsonld"],
+      "@type": ["Thing"],
+      "name": "Camera",
+      "@id": "urn:dev:wot:camera",
+      "security": [
+        {
+          "@id": "oauth-config",
+          "scheme": "oauth2",
+          "flow": "code",
+          "as": "https://example.com/api/oauth/dialog",
+          "ts": "https://example.com/api/aouth/token",
+          "scope": [
+            { "name": "read:frame" },
+            { "name": "read:framerate" }, 
+            { "name": "write:framerate" } 
+           ]
+        }
+        ... // other security configurations, if needed
+      ],
+      ...
+      "interaction": [
+        {
+          "@type": ["Property"],
+          "name": "frame",
+          ...
+          "writable": false,
+          "observable": true,
+          "form": [
+            {
+              "href": "https://example.com/api/frame",
+              "mediaType": "image/jpeg",
+              "method": "http:get",
+              "security": ["oauth-config"],
+              "auth": ["read:frame"]
+            },
+            ... // other forms
+        },
+        ... // other interactions
+      ]
+    }
+
+To Discuss: OpenAPI also allows a description in various places, for example
+associated with the scopes of an OAuth flow.  This would be useful to include as 
+well but since it would also be useful elsewhere, should be part of a more general 
+discussion.
+
 ### Comments
 A few comments:
-- A Thing ID (encoded under some top-level tag, such as "@id", as shown)
+- A Thing ID (encoded under some top-level tag, such as `"@id"`, as shown)
   is needed in order for tokens to work (they have to encode some identity).
 - The `"authorization"` tag in Matthias' example was changed to `"scheme"` 
   to be more consistent with this proposal's tag vocabulary, which is based on OpenAPI.
@@ -276,7 +326,6 @@ A few comments:
       parameters.
 
 ## Detailed Specifications of Configurations
-
 Each configuration is identified with a `"scheme"` which currently must be one of the following:
 - `"basic"`: Clear-text username and password (must be encapsulated in encrypted transport)
 - `"ocf"`: OCF security model (access control lists with authentication servers and tickets)
@@ -345,10 +394,22 @@ By definition an API key is opaque.  If the key is not opaque it should be consi
 ### OAuth2.0
 Scheme: `"oauth2"`
 
-In general OAuth requires multiple flows: 
-implicit, password, clientCredentials, and authorizationCode.
-Each one may use different kinds of tokens.  We probably want to model after the [OpenAPI OAuth
-Flow Object](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.1.md#oauthFlowObject).
+In general OAuth supports multiple flows, indicated with the `"flow"` tag, which has 
+one of the following values:
+- `"implicit"`: also requires `"as"` URL and `"scope"` array.
+- `"password"`: also requires `"ts"` URL and `"scope"` array.
+- `"client"`: also requires `"ts"` URL and `"scope"` array.
+- `"code"`: requires both `"as"` and `"ts"` URLs and `"scope"` array.
+This is modelled after the [OpenAPI OAuth
+Flow Object](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.1.md#oauthFlowObject) specification but with a flatter structure and simpler names.
+In particular, we use `"as"` in place of `"authorizationUrl"` and
+`"ts"` in place of `"tokenUrl"`.
+In addtion to the above required values, all flows may also have a 
+`"rs"` (refresh server) URL. 
+
+All flows require an array of scopes.  These are a set of strings giving a name to each scope.
+Within each form of an interaction, an additional `"auth"` tag is needed giving an array
+of authorized scopes.
 
 To discuss: Note that the version is embedded in the name.  We may want to generalize this to other
 standards _or_ define a general mechanism to specify a minimum version.  If we embed versions
@@ -367,6 +428,8 @@ This is provided for in OpenAPI but is an identification (authentication) scheme
 for Thing interactions we are generally interested in authorization.  OpenIdConnect is 
 also user-oriented.  It seems more appropriate to only support this on authorization servers.
 
+If this is supported, it would also use the `"scope"` and `"auth"` tags defined for OAuth.
+
 To discuss: we may want to support this if Things can act as authentication servers.
 
 ### Interledger
@@ -383,6 +446,7 @@ To discuss: Supporting this as an experimental authentication scheme, perhaps al
 other schemes based on permissioned blockchain (eg hyperledger).
 
 ## Generic Tags
+This section defines a set of parameters that can be used with one or more security configurations.
 
 ### Authentication Server Link
 Tag: `"as"`
@@ -391,6 +455,40 @@ For authentication schemes requiring the use of an authentication server to obta
 authentication tokens or keys.
 
 Value: URL specifying the location of the authentication server.
+
+### Token (or Ticket) Server Link
+Tag: `"ts"`
+
+For authentication schemes requiring the use of an token server to obtain
+authentication tokens or keys.
+
+Value: URL specifying the location of the token server.
+
+Note: the OAuth code flow, as well as Kerberos, have multiple authentication servers.
+The first provides a ticket-granting ticket, the second actually provides this tickets.
+This is done for reasons of scalability.
+
+### Token (or Ticket) Refresh Server Link
+Tag: `"rs"`
+
+For authentication schemes requiring the use of an token server to obtain
+refreshed authentication tokens or keys.
+
+Value: URL specifying the location of the refresh server.  This only needs to be
+provided in general if it is different from the `"ts"`.
+
+### Authentication Scopes
+Tag: `"scope"`
+
+Value: an array of strings used to identify different roles for 
+interactions.
+
+If used, each form needs an additional `"auth"` tag (which can be
+an array or a single value) specifying the
+authorization roles it can be used with.
+
+To discuss: Would an implied default value for `"auth"` be useful here?  For example,
+if not given, it could be assumed that an interaction can be used with all scopes.
 
 ### Algorithm
 Tag: `"alg"`
