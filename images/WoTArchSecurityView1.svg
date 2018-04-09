@@ -1,0 +1,2316 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="svg2"
+   viewBox="0 0 524.09997 394.50001"
+   height="111.33667mm"
+   width="147.91266mm"
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
+   sodipodi:docname="WoTArchSecurityView1.svg">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1806"
+     inkscape:window-height="1158"
+     id="namedview498"
+     showgrid="false"
+     inkscape:zoom="1.2685914"
+     inkscape:cx="387.04944"
+     inkscape:cy="73.955974"
+     inkscape:window-x="114"
+     inkscape:window-y="42"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <defs
+     id="defs4" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     transform="translate(-92.23571,-129.3979)">
+    <g
+       id="g4144"
+       transform="matrix(1.25,0,0,-1.25,-256.81429,566.3479)">
+      <path
+         d="M 314.28,240.24 H 514.8 V 231.6 H 314.28 Z"
+         style="fill:#c5e0b3;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path4146"
+         inkscape:connector-curvature="0" />
+      <path
+         d="M 314.52,179.28 H 515.04 V 109.44 H 314.52 Z"
+         style="fill:#5b9bd5;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path4148"
+         inkscape:connector-curvature="0" />
+      <g
+         id="g4150"
+         transform="matrix(0.12,0,0,-0.12,0,612)">
+        <path
+           d="M 2621,4188 H 4292 V 3606 H 2621 Z"
+           style="fill:none;stroke:#c8c8c8;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+           id="path4152"
+           inkscape:connector-curvature="0" />
+      </g>
+      <path
+         d="m 329.52,229.32 h 170.04 v -17.4 H 329.52 Z"
+         style="fill:#5b9bd5;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path4154"
+         inkscape:connector-curvature="0" />
+      <g
+         id="g4156"
+         transform="matrix(0.12,0,0,-0.12,0,612)">
+        <path
+           d="M 2746,3334 H 4163 V 3189 H 2746 Z"
+           style="fill:none;stroke:#c8c8c8;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+           id="path4158"
+           inkscape:connector-curvature="0" />
+      </g>
+      <text
+         transform="matrix(1,0,0,-1,395.88,219.12)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4160">
+        <tspan
+           x="0 4.2719998 6.8016 9.2399998 10.3248 12.9312 15.4512 17.971201 19.68 20.7792 24.614401 27.004801 28.200001 30.7584 33.287998 34.9632"
+           y="0"
+           id="tspan4162">WoT Runtime Core</tspan>
+      </text>
+      <path
+         d="m 333.84,226.08 h 48 v -10.92 h -48 z"
+         style="fill:#5b9bd5;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path4164"
+         inkscape:connector-curvature="0" />
+      <g
+         id="g4166"
+         transform="matrix(0.12,0,0,-0.12,0,612)">
+        <path
+           d="m 2782,3307 h 400 v -91 h -400 z"
+           style="fill:none;stroke:#feffff;stroke-width:5;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:2;stroke-dasharray:none;stroke-opacity:1"
+           id="path4168"
+           inkscape:connector-curvature="0" />
+      </g>
+      <text
+         transform="matrix(1,0,0,-1,343.08,219.12)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4170">
+        <tspan
+           x="0 4.1999998 6.4991999 9.0192003 11.3184 13.5792 15.9696 17.76 18.844801 21.120001 23.76 24.8592 27.3792"
+           y="0"
+           id="tspan4172">Manager Thing</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,350.88192,234.12096)"
+         style="font-variant:normal;font-weight:normal;font-size:5.76000023px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4174">
+        <tspan
+           x="0 3.07008 4.3891201 5.7081599 8.6400003 11.760002 13.689602 14.991362 18.326403 21.304321 22.755842"
+           y="0"
+           id="tspan4176">Client API</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,403.2,234.12096)"
+         style="font-variant:normal;font-weight:normal;font-size:5.76000023px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4178">
+        <tspan
+           x="0 2.6438401 5.51232 7.5225601 10.199998 13.068478 15.078718 16.380478 19.799999 22.77792 24.229441"
+           y="0"
+           id="tspan4180">Server API</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,455.51808,234.12096)"
+         style="font-variant:normal;font-weight:normal;font-size:5.76000023px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4182">
+        <tspan
+           x="0 3.5423999 4.8614402 7.1999998 9.6364803 12.672 15.360002 18.228481 20.238722 22.920002 24.221762 27.556803 30.6"
+           y="0"
+           id="tspan4184">Discovery API</tspan>
+      </text>
+      <g
+         id="g4186"
+         transform="matrix(0.12,0,0,-0.12,0,612)">
+        <path
+           d="m 2741,3352 h 1409 c 97,0 176,-79 176,-176 v -665 c 0,-97 -79,-176 -176,-176 H 2741 c -98,0 -177,79 -177,176 v 665 c 0,97 79,176 177,176 z"
+           style="fill:none;stroke:#5b9bd5;stroke-width:6;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:2;stroke-dasharray:none;stroke-opacity:1"
+           id="path4188"
+           inkscape:connector-curvature="0" />
+      </g>
+      <text
+         transform="matrix(1,0,0,-1,390.477,324.71568)"
+         style="font-variant:normal;font-weight:normal;font-size:8.76000023px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#5b9bd5;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4190">
+        <tspan
+           x="0 7.7964001 12.41292 16.559999 18.600002 23.280006 27.879007 32.478008 35.412605 37.418648 44.417885"
+           y="0"
+           id="tspan4192">WoT Runtime</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,495.3606,256.8066)"
+         style="font-variant:normal;font-weight:normal;font-size:17.39999962px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#5b9bd5;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4194">
+        <tspan
+           x="0 4.3848 8.7695999"
+           y="0"
+           id="tspan4196">...</tspan>
+      </text>
+      <path
+         d="m 320.76,166.2 h 29.52 v -29.52 h -29.52 z"
+         style="fill:#5b9bd5;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path4198"
+         inkscape:connector-curvature="0" />
+      <g
+         id="g4200"
+         transform="matrix(0.12,0,0,-0.12,0,612)">
+        <path
+           d="m 2673,3961 h 246 v -246 h -246 z"
+           style="fill:none;stroke:#c8c8c8;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+           id="path4202"
+           inkscape:connector-curvature="0" />
+      </g>
+      <text
+         transform="matrix(1,0,0,-1,327.24,155.76)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4204">
+        <tspan
+           x="0 2.4816 4.1567998 6.6863999 8.3999996 10.9296 12.96 15.4896 16.68"
+           y="0"
+           id="tspan4206">Protocol</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,326.4,149.88)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4208">
+        <tspan
+           x="0 2.6112001 3.7104001 6.2304001 8.8800001 9.9792004 12.4992 14.76"
+           y="0"
+           id="tspan4210">Binding</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,342.24,149.88)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4212">
+        <tspan
+           x="0"
+           y="0"
+           id="tspan4214">1</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,330.12,144.12)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4216">
+        <tspan
+           x="0"
+           y="0"
+           id="tspan4218">(</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,331.56,144.12)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4220">
+        <tspan
+           x="0 3.24 5.7983999"
+           y="0"
+           id="tspan4222">OCF</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,339.6,144.12)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4224">
+        <tspan
+           x="0"
+           y="0"
+           id="tspan4226">)</tspan>
+      </text>
+      <path
+         d="m 320.76,166.2 h 29.52 v -29.52 h -29.52 z"
+         style="fill:#5b9bd5;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path4228"
+         inkscape:connector-curvature="0" />
+      <g
+         id="g4230"
+         transform="matrix(0.12,0,0,-0.12,0,612)">
+        <path
+           d="m 2673,3961 h 246 v -246 h -246 z"
+           style="fill:none;stroke:#feffff;stroke-width:5;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:2;stroke-dasharray:none;stroke-opacity:1"
+           id="path4232"
+           inkscape:connector-curvature="0" />
+      </g>
+      <text
+         transform="matrix(1,0,0,-1,327.24,155.76)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4234">
+        <tspan
+           x="0 2.4816 4.1567998 6.6863999 8.3999996 10.9296 12.96 15.4896 16.68"
+           y="0"
+           id="tspan4236">Protocol</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,326.4,149.88)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4238">
+        <tspan
+           x="0 2.6112001 3.7104001 6.2304001 8.8800001 9.9792004 12.4992 14.76"
+           y="0"
+           id="tspan4240">Binding</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,342.24,149.88)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4242">
+        <tspan
+           x="0"
+           y="0"
+           id="tspan4244">1</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,330.12,144.12)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4246">
+        <tspan
+           x="0"
+           y="0"
+           id="tspan4248">(</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,331.56,144.12)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4250">
+        <tspan
+           x="0 3.24 5.7983999"
+           y="0"
+           id="tspan4252">OCF</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,339.6,144.12)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4254">
+        <tspan
+           x="0"
+           y="0"
+           id="tspan4256">)</tspan>
+      </text>
+      <path
+         d="m 360,166.2 h 29.52 V 136.68 H 360 Z"
+         style="fill:#5b9bd5;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path4258"
+         inkscape:connector-curvature="0" />
+      <g
+         id="g4260"
+         transform="matrix(0.12,0,0,-0.12,0,612)">
+        <path
+           d="m 3000,3961 h 246 v -246 h -246 z"
+           style="fill:none;stroke:#feffff;stroke-width:5;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:2;stroke-dasharray:none;stroke-opacity:1"
+           id="path4262"
+           inkscape:connector-curvature="0" />
+      </g>
+      <text
+         transform="matrix(1,0,0,-1,366.48,155.76)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4264">
+        <tspan
+           x="0 2.4816 4.1567998 6.6863999 8.3999996 10.9296 12.96 15.4896 16.68"
+           y="0"
+           id="tspan4266">Protocol</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,365.64,149.88)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4268">
+        <tspan
+           x="0 2.6112001 3.7104001 6.2304001 8.8800001 9.9792004 12.4992 14.76"
+           y="0"
+           id="tspan4270">Binding</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,381.48,149.88)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4272">
+        <tspan
+           x="0"
+           y="0"
+           id="tspan4274">2</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,369.84,144.12)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4276">
+        <tspan
+           x="0"
+           y="0"
+           id="tspan4278">(</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,371.28,144.12)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4280">
+        <tspan
+           x="0 2.6112001 4.6272001"
+           y="0"
+           id="tspan4282">BLE</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,378.36,144.12)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4284">
+        <tspan
+           x="0"
+           y="0"
+           id="tspan4286">)</tspan>
+      </text>
+      <path
+         d="m 419.4,166.2 h 29.52 V 136.68 H 419.4 Z"
+         style="fill:#5b9bd5;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path4288"
+         inkscape:connector-curvature="0" />
+      <g
+         id="g4290"
+         transform="matrix(0.12,0,0,-0.12,0,612)">
+        <path
+           d="m 3495,3961 h 246 v -246 h -246 z"
+           style="fill:none;stroke:#feffff;stroke-width:5;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:2;stroke-dasharray:none;stroke-opacity:1"
+           id="path4292"
+           inkscape:connector-curvature="0" />
+      </g>
+      <text
+         transform="matrix(1,0,0,-1,425.88,155.76)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4294">
+        <tspan
+           x="0 2.4816 4.1567998 6.6863999 8.3999996 10.9296 12.96 15.4896 16.68"
+           y="0"
+           id="tspan4296">Protocol</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,424.68,149.88)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4298">
+        <tspan
+           x="0 2.6112001 3.7104001 6.2304001 8.8800001 9.9792004 12.4992 14.76 15.8448"
+           y="0"
+           id="tspan4300">Binding N</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,423.24,144.12)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4302">
+        <tspan
+           x="0"
+           y="0"
+           id="tspan4304">(</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,424.8,144.12)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4306">
+        <tspan
+           x="0 3.24 5.7600002 8.1504002"
+           y="0"
+           id="tspan4308">OneM</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,437.04,144.12)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4310">
+        <tspan
+           x="0"
+           y="0"
+           id="tspan4312">2</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,439.56,144.12)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4314">
+        <tspan
+           x="0"
+           y="0"
+           id="tspan4316">M</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,443.64,144.12)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4318">
+        <tspan
+           x="0"
+           y="0"
+           id="tspan4320">)</tspan>
+      </text>
+      <path
+         d="m 473.4,166.2 h 29.4 v -29.52 h -29.4 z"
+         style="fill:#5b9bd5;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path4322"
+         inkscape:connector-curvature="0" />
+      <g
+         id="g4324"
+         transform="matrix(0.12,0,0,-0.12,0,612)">
+        <path
+           d="m 3945,3961 h 245 v -246 h -245 z"
+           style="fill:none;stroke:#feffff;stroke-width:5;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:2;stroke-dasharray:none;stroke-opacity:1"
+           id="path4326"
+           inkscape:connector-curvature="0" />
+      </g>
+      <text
+         transform="matrix(1,0,0,-1,479.88,155.76)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4328">
+        <tspan
+           x="0 2.4816 4.1567998 6.6863999 8.3999996 10.9296 12.96 15.4896 16.68"
+           y="0"
+           id="tspan4330">Protocol</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,475.68,149.88)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4332">
+        <tspan
+           x="0 2.6112001 3.7104001 6.2304001 8.8800001 9.9792004 12.4992 14.76 15.8448 18.945601"
+           y="0"
+           id="tspan4334">Binding N</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,495.72,149.88)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4336">
+        <tspan
+           x="0"
+           y="0"
+           id="tspan4338">+</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,498.24,149.88)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4340">
+        <tspan
+           x="0"
+           y="0"
+           id="tspan4342">1</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,476.28,144.12)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4344">
+        <tspan
+           x="0"
+           y="0"
+           id="tspan4346">(</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,477.84,144.12)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4348">
+        <tspan
+           x="0 2.28 3.3792 4.4784002 6.8688002 8.7455997 10.92 12.7968 14.52 16.9104"
+           y="0"
+           id="tspan4350">Filesystem</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,498.48,144.12)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4352">
+        <tspan
+           x="0"
+           y="0"
+           id="tspan4354">)</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,399.4848,147.83964)"
+         style="font-variant:normal;font-weight:normal;font-size:11.64000034px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4356">
+        <tspan
+           x="0 2.93328 5.86656"
+           y="0"
+           id="tspan4358">...</tspan>
+      </text>
+      <path
+         d="m 323.76,116.04 h 26.52 v 16.68 l -3,2.88 h -26.52 v -16.68 z"
+         style="fill:#5b9bd5;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         id="path4360"
+         inkscape:connector-curvature="0" />
+      <g
+         id="g4362"
+         transform="matrix(0.12,0,0,-0.12,0,612)">
+        <path
+           d="m 2698,4133 h 221 v -139 l -25,-24 h -221 v 139 z"
+           style="fill:none;stroke:#feffff;stroke-width:5;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:2;stroke-dasharray:none;stroke-opacity:1"
+           id="path4364"
+           inkscape:connector-curvature="0" />
+      </g>
+      <text
+         transform="matrix(1,0,0,-1,322.92,129.72096)"
+         style="font-variant:normal;font-weight:normal;font-size:4.32000017px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4366">
+        <tspan
+           x="0 2.2334399 3.7411201 6.1200013 7.5672016 9.8438416 11.671202 13.947842"
+           y="0"
+           id="tspan4368">Protocol</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,337.79808,129.72096)"
+         style="font-variant:normal;font-weight:normal;font-size:4.32000017px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4370">
+        <tspan
+           x="0"
+           y="0"
+           id="tspan4372">-</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,339.24096,129.72096)"
+         style="font-variant:normal;font-weight:normal;font-size:4.32000017px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4374">
+        <tspan
+           x="0 1.6891201 3.9571199 6.10848"
+           y="0"
+           id="tspan4376">spec</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,347.15952,129.72096)"
+         style="font-variant:normal;font-weight:normal;font-size:4.32000017px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4378">
+        <tspan
+           x="0 1.08864"
+           y="0"
+           id="tspan4380">.</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,328.32,124.44192)"
+         style="font-variant:normal;font-weight:normal;font-size:4.32000017px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4382">
+        <tspan
+           x="0 0.98927999 2.039999 4.3079991 5.8156791 7.8849592 9.3926392 11.349599"
+           y="0"
+           id="tspan4384">library</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,340.67952,124.44192)"
+         style="font-variant:normal;font-weight:normal;font-size:4.32000017px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4386">
+        <tspan
+           x="0"
+           y="0"
+           id="tspan4388">1</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,327.96144,119.27952)"
+         style="font-variant:normal;font-weight:normal;font-size:4.32000017px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4390">
+        <tspan
+           x="0"
+           y="0"
+           id="tspan4392">(</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,329.27904,119.27952)"
+         style="font-variant:normal;font-weight:normal;font-size:4.32000017px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4394">
+        <tspan
+           x="0 2.8598399 5.1623998 7.1452799 8.1216002 9.2400007 10.22928"
+           y="0"
+           id="tspan4396">OCF lib</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,341.88048,119.27952)"
+         style="font-variant:normal;font-weight:normal;font-size:4.32000017px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4398">
+        <tspan
+           x="0"
+           y="0"
+           id="tspan4400">)</tspan>
+      </text>
+      <path
+         d="m 363,116.04 h 26.52 v 16.68 l -3,2.88 H 360 v -16.68 z"
+         style="fill:#5b9bd5;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         id="path4402"
+         inkscape:connector-curvature="0" />
+      <g
+         id="g4404"
+         transform="matrix(0.12,0,0,-0.12,0,612)">
+        <path
+           d="m 3025,4133 h 221 v -139 l -25,-24 h -221 v 139 z"
+           style="fill:none;stroke:#feffff;stroke-width:5;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:2;stroke-dasharray:none;stroke-opacity:1"
+           id="path4406"
+           inkscape:connector-curvature="0" />
+      </g>
+      <text
+         transform="matrix(1,0,0,-1,362.15856,129.72096)"
+         style="font-variant:normal;font-weight:normal;font-size:4.32000017px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4408">
+        <tspan
+           x="0 2.2334399 3.7411201 6.1200013 7.5672016 9.8438416 11.671202 13.947842"
+           y="0"
+           id="tspan4410">Protocol</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,377.04096,129.72096)"
+         style="font-variant:normal;font-weight:normal;font-size:4.32000017px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4412">
+        <tspan
+           x="0"
+           y="0"
+           id="tspan4414">-</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,378.35856,129.72096)"
+         style="font-variant:normal;font-weight:normal;font-size:4.32000017px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4416">
+        <tspan
+           x="0 1.6891201 3.9571199 6.10848"
+           y="0"
+           id="tspan4418">spec</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,386.39808,129.72096)"
+         style="font-variant:normal;font-weight:normal;font-size:4.32000017px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4420">
+        <tspan
+           x="0 1.08864"
+           y="0"
+           id="tspan4422">.</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,367.55856,124.44192)"
+         style="font-variant:normal;font-weight:normal;font-size:4.32000017px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4424">
+        <tspan
+           x="0 0.98927999 2.039999 4.3079991 5.8156791 7.8849592 9.3926392 11.349599"
+           y="0"
+           id="tspan4426">library</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,379.91808,124.44192)"
+         style="font-variant:normal;font-weight:normal;font-size:4.32000017px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4428">
+        <tspan
+           x="0"
+           y="0"
+           id="tspan4430">2</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,367.67952,119.27952)"
+         style="font-variant:normal;font-weight:normal;font-size:4.32000017px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4432">
+        <tspan
+           x="0"
+           y="0"
+           id="tspan4434">(</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,369.00144,119.27952)"
+         style="font-variant:normal;font-weight:normal;font-size:4.32000017px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4436">
+        <tspan
+           x="0 2.35008 4.1644802 6.3599992 7.336319 8.3255987 9.3148794"
+           y="0"
+           id="tspan4438">BLE lib</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,380.63952,119.27952)"
+         style="font-variant:normal;font-weight:normal;font-size:4.32000017px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4440">
+        <tspan
+           x="0"
+           y="0"
+           id="tspan4442">)</tspan>
+      </text>
+      <path
+         d="m 422.4,116.04 h 26.52 v 16.68 l -3,2.88 H 419.4 v -16.68 z"
+         style="fill:#5b9bd5;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         id="path4444"
+         inkscape:connector-curvature="0" />
+      <g
+         id="g4446"
+         transform="matrix(0.12,0,0,-0.12,0,612)">
+        <path
+           d="m 3520,4133 h 221 v -139 l -25,-24 h -221 v 139 z"
+           style="fill:none;stroke:#feffff;stroke-width:5;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:2;stroke-dasharray:none;stroke-opacity:1"
+           id="path4448"
+           inkscape:connector-curvature="0" />
+      </g>
+      <text
+         transform="matrix(1,0,0,-1,421.55856,129.72096)"
+         style="font-variant:normal;font-weight:normal;font-size:4.32000017px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4450">
+        <tspan
+           x="0 2.2334399 3.7411201 6.1200013 7.5672016 9.8438416 11.671202 13.947842"
+           y="0"
+           id="tspan4452">Protocol</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,436.44096,129.72096)"
+         style="font-variant:normal;font-weight:normal;font-size:4.32000017px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4454">
+        <tspan
+           x="0"
+           y="0"
+           id="tspan4456">-</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,437.75856,129.72096)"
+         style="font-variant:normal;font-weight:normal;font-size:4.32000017px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4458">
+        <tspan
+           x="0 1.6891201 3.9571199 6.10848"
+           y="0"
+           id="tspan4460">spec</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,445.79808,129.72096)"
+         style="font-variant:normal;font-weight:normal;font-size:4.32000017px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4462">
+        <tspan
+           x="0 1.08864"
+           y="0"
+           id="tspan4464">.</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,426.6,124.44192)"
+         style="font-variant:normal;font-weight:normal;font-size:4.32000017px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4466">
+        <tspan
+           x="0 0.98927999 2.039999 4.3079991 5.8156791 7.8849592 9.3926392 11.349599 12.325919"
+           y="0"
+           id="tspan4468">library N</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,421.80048,119.27952)"
+         style="font-variant:normal;font-weight:normal;font-size:4.32000017px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4470">
+        <tspan
+           x="0"
+           y="0"
+           id="tspan4472">(</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,423.11808,119.27952)"
+         style="font-variant:normal;font-weight:normal;font-size:4.32000017px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4474">
+        <tspan
+           x="0 2.8598399 5.12784 7.2792001"
+           y="0"
+           id="tspan4476">OneM</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,434.16,119.27952)"
+         style="font-variant:normal;font-weight:normal;font-size:4.32000017px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4478">
+        <tspan
+           x="0"
+           y="0"
+           id="tspan4480">2</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,436.32,119.27952)"
+         style="font-variant:normal;font-weight:normal;font-size:4.32000017px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4482">
+        <tspan
+           x="0 3.6935999 4.66992 5.7599988 6.7492785"
+           y="0"
+           id="tspan4484">M lib</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,445.31856,119.27952)"
+         style="font-variant:normal;font-weight:normal;font-size:4.32000017px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4486">
+        <tspan
+           x="0"
+           y="0"
+           id="tspan4488">)</tspan>
+      </text>
+      <path
+         d="m 476.28,116.04 h 26.52 v 16.68 l -2.88,2.88 H 473.4 v -16.68 z"
+         style="fill:#5b9bd5;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         id="path4490"
+         inkscape:connector-curvature="0" />
+      <g
+         id="g4492"
+         transform="matrix(0.12,0,0,-0.12,0,612)">
+        <path
+           d="m 3969,4133 h 221 v -139 l -24,-24 h -221 v 139 z"
+           style="fill:none;stroke:#feffff;stroke-width:5;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:2;stroke-dasharray:none;stroke-opacity:1"
+           id="path4494"
+           inkscape:connector-curvature="0" />
+      </g>
+      <text
+         transform="matrix(1,0,0,-1,475.44192,129.72096)"
+         style="font-variant:normal;font-weight:normal;font-size:4.32000017px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4496">
+        <tspan
+           x="0 2.2334399 3.7411201 6.1200013 7.5672016 9.8438416 11.671202 13.947842"
+           y="0"
+           id="tspan4498">Protocol</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,490.44096,129.72096)"
+         style="font-variant:normal;font-weight:normal;font-size:4.32000017px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4500">
+        <tspan
+           x="0"
+           y="0"
+           id="tspan4502">-</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,491.75856,129.72096)"
+         style="font-variant:normal;font-weight:normal;font-size:4.32000017px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4504">
+        <tspan
+           x="0 1.6891201 3.9571199 6.10848"
+           y="0"
+           id="tspan4506">spec</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,499.79808,129.72096)"
+         style="font-variant:normal;font-weight:normal;font-size:4.32000017px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4508">
+        <tspan
+           x="0 1.08864"
+           y="0"
+           id="tspan4510">.</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,477.36,124.44192)"
+         style="font-variant:normal;font-weight:normal;font-size:4.32000017px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4512">
+        <tspan
+           x="0 0.98927999 2.039999 4.3079991 5.8156791 7.8849592 9.3926392 11.349599 12.325919 15.240001"
+           y="0"
+           id="tspan4514">library N</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,493.56,124.44192)"
+         style="font-variant:normal;font-weight:normal;font-size:4.32000017px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4516">
+        <tspan
+           x="0 2.15136"
+           y="0"
+           id="tspan4518">+</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,496.67904,124.44192)"
+         style="font-variant:normal;font-weight:normal;font-size:4.32000017px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4520">
+        <tspan
+           x="0"
+           y="0"
+           id="tspan4522">1</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,482.40144,119.27952)"
+         style="font-variant:normal;font-weight:normal;font-size:4.32000017px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4524">
+        <tspan
+           x="0"
+           y="0"
+           id="tspan4526">(</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,483.71904,119.27952)"
+         style="font-variant:normal;font-weight:normal;font-size:4.32000017px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4528">
+        <tspan
+           x="0 1.98288 3.6719999 4.6483202 5.6375999 6.7200017"
+           y="0"
+           id="tspan4530">Fs lib</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,492.60096,119.27952)"
+         style="font-variant:normal;font-weight:normal;font-size:4.32000017px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4532">
+        <tspan
+           x="0"
+           y="0"
+           id="tspan4534">)</tspan>
+      </text>
+      <path
+         d="m 360,57.12 c 0,8.52 6.84,15.36 15.36,15.36 8.4,0 15.24,-6.84 15.24,-15.36 0,-8.4 -6.84,-15.24 -15.24,-15.24 -8.52,0 -15.36,6.84 -15.36,15.24 z"
+         style="fill:#5b9bd5;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         id="path4536"
+         inkscape:connector-curvature="0" />
+      <g
+         id="g4538"
+         transform="matrix(0.12,0,0,-0.12,0,612)">
+        <path
+           d="m 3000,4624 c 0,-71 57,-128 128,-128 70,0 127,57 127,128 0,70 -57,127 -127,127 -71,0 -128,-57 -128,-127"
+           style="fill:none;stroke:#c8c8c8;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+           id="path4540"
+           inkscape:connector-curvature="0" />
+      </g>
+      <text
+         transform="matrix(1,0,0,-1,366.6,61.44)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4542">
+        <tspan
+           x="0 2.28 4.6704001 6.3456001 8.5151997 9.6143999 11.6448 14.0352"
+           y="0"
+           id="tspan4544">Service</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,381.72,61.44)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4546">
+        <tspan
+           x="0"
+           y="0"
+           id="tspan4548">2</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,371.16,55.68)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4550">
+        <tspan
+           x="0"
+           y="0"
+           id="tspan4552">(</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,372.6,55.68)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4554">
+        <tspan
+           x="0 2.6112001 4.6272001 7.0799999"
+           y="0"
+           id="tspan4556">BLE</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,367.56,49.8)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4558">
+        <tspan
+           x="0 2.28 4.6704001 6.3456001 8.5151997 9.6143999 11.6448"
+           y="0"
+           id="tspan4560">Service</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,381.72,49.8)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4562">
+        <tspan
+           x="0"
+           y="0"
+           id="tspan4564">)</tspan>
+      </text>
+      <path
+         d="m 418.92,57.12 c 0,8.52 6.84,15.36 15.24,15.36 8.4,0 15.24,-6.84 15.24,-15.36 0,-8.4 -6.84,-15.24 -15.24,-15.24 -8.4,0 -15.24,6.84 -15.24,15.24 z"
+         style="fill:#5b9bd5;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         id="path4566"
+         inkscape:connector-curvature="0" />
+      <g
+         id="g4568"
+         transform="matrix(0.12,0,0,-0.12,0,612)">
+        <path
+           d="m 3491,4624 c 0,-71 57,-128 127,-128 70,0 127,57 127,128 0,70 -57,127 -127,127 -70,0 -127,-57 -127,-127"
+           style="fill:none;stroke:#c8c8c8;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+           id="path4570"
+           inkscape:connector-curvature="0" />
+      </g>
+      <text
+         transform="matrix(1,0,0,-1,425.04,61.44)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4572">
+        <tspan
+           x="0 2.28 4.6704001 6.3456001 8.5151997 9.6143999 11.6448 14.0352 15.12"
+           y="0"
+           id="tspan4574">Service N</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,424.08,55.68)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4576">
+        <tspan
+           x="0"
+           y="0"
+           id="tspan4578">(</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,425.52,55.68)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4580">
+        <tspan
+           x="0 3.24 5.7600002 8.1504002"
+           y="0"
+           id="tspan4582">OneM</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,437.76,55.68)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4584">
+        <tspan
+           x="0"
+           y="0"
+           id="tspan4586">2</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,440.28,55.68)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4588">
+        <tspan
+           x="0 4.1999998"
+           y="0"
+           id="tspan4590">M</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,426.48,49.8)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4592">
+        <tspan
+           x="0 2.28 4.6704001 6.3456001 8.5151997 9.6143999 11.6448"
+           y="0"
+           id="tspan4594">Service</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,440.52,49.8)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4596">
+        <tspan
+           x="0"
+           y="0"
+           id="tspan4598">)</tspan>
+      </text>
+      <path
+         d="m 320.76,57.12 c 0,8.52 6.84,15.36 15.36,15.36 8.4,0 15.24,-6.84 15.24,-15.36 0,-8.4 -6.84,-15.24 -15.24,-15.24 -8.52,0 -15.36,6.84 -15.36,15.24 z"
+         style="fill:#5b9bd5;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         id="path4600"
+         inkscape:connector-curvature="0" />
+      <g
+         id="g4602"
+         transform="matrix(0.12,0,0,-0.12,0,612)">
+        <path
+           d="m 2673,4624 c 0,-71 57,-128 128,-128 70,0 127,57 127,128 0,70 -57,127 -127,127 -71,0 -128,-57 -128,-127"
+           style="fill:none;stroke:#c8c8c8;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+           id="path4604"
+           inkscape:connector-curvature="0" />
+      </g>
+      <text
+         transform="matrix(1,0,0,-1,327.36,61.44)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4606">
+        <tspan
+           x="0 2.28 4.6704001 6.3456001 8.5151997 9.6143999 11.6448 14.0352"
+           y="0"
+           id="tspan4608">Service</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,342.48,61.44)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4610">
+        <tspan
+           x="0"
+           y="0"
+           id="tspan4612">1</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,331.44,55.68)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4614">
+        <tspan
+           x="0"
+           y="0"
+           id="tspan4616">(</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,332.88,55.68)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4618">
+        <tspan
+           x="0 3.24 5.7983999 8.0016003"
+           y="0"
+           id="tspan4620">OCF</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,328.32,49.8)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4622">
+        <tspan
+           x="0 2.28 4.6704001 6.3456001 8.5151997 9.6143999 11.6448"
+           y="0"
+           id="tspan4624">Service</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,342.48,49.8)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4626">
+        <tspan
+           x="0"
+           y="0"
+           id="tspan4628">)</tspan>
+      </text>
+      <path
+         d="m 473.4,57.12 c 0,8.52 6.84,15.36 15.24,15.36 8.4,0 15.24,-6.84 15.24,-15.36 0,-8.4 -6.84,-15.24 -15.24,-15.24 -8.4,0 -15.24,6.84 -15.24,15.24 z"
+         style="fill:#5b9bd5;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         id="path4630"
+         inkscape:connector-curvature="0" />
+      <g
+         id="g4632"
+         transform="matrix(0.12,0,0,-0.12,0,612)">
+        <path
+           d="m 3945,4624 c 0,-71 57,-128 127,-128 70,0 127,57 127,128 0,70 -57,127 -127,127 -70,0 -127,-57 -127,-127"
+           style="fill:none;stroke:#c8c8c8;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+           id="path4634"
+           inkscape:connector-curvature="0" />
+      </g>
+      <text
+         transform="matrix(1,0,0,-1,481.68,61.44)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4636">
+        <tspan
+           x="0 2.28 4.6704001 6.3456001 8.5151997 9.6143999 11.6448 14.0352"
+           y="0"
+           id="tspan4638">Service</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,484.68,55.68)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4640">
+        <tspan
+           x="0"
+           y="0"
+           id="tspan4642">N</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,487.8,55.68)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4644">
+        <tspan
+           x="0"
+           y="0"
+           id="tspan4646">+</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,490.2,55.68)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4648">
+        <tspan
+           x="0"
+           y="0"
+           id="tspan4650">1</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,477.48,49.8)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4652">
+        <tspan
+           x="0"
+           y="0"
+           id="tspan4654">(</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,478.92,49.8)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4656">
+        <tspan
+           x="0 2.28 4.4832001 5.5679998 7.7712002 10.1616 11.8368 14.0064 15.1056 17.136"
+           y="0"
+           id="tspan4658">FS Service</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,498.48,49.8)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4660">
+        <tspan
+           x="0"
+           y="0"
+           id="tspan4662">)</tspan>
+      </text>
+      <g
+         id="g4664"
+         transform="matrix(0.12,0,0,-0.12,0,612)">
+        <path
+           d="m 2796,4158 4,314"
+           style="fill:none;stroke:#5b9bd5;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+           id="path4666"
+           inkscape:connector-curvature="0" />
+      </g>
+      <path
+         d="m 333.84,112.56 1.68,3.48 1.8,-3.36 z"
+         style="fill:#5b9bd5;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         id="path4668"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 337.68,75.84 -1.56,-3.36 -1.8,3.36 z"
+         style="fill:#5b9bd5;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         id="path4670"
+         inkscape:connector-curvature="0" />
+      <g
+         id="g4672"
+         transform="matrix(0.12,0,0,-0.12,0,612)">
+        <path
+           d="m 3123,4158 4,314"
+           style="fill:none;stroke:#5b9bd5;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+           id="path4674"
+           inkscape:connector-curvature="0" />
+      </g>
+      <path
+         d="m 373.08,112.56 1.68,3.48 1.8,-3.36 z"
+         style="fill:#5b9bd5;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         id="path4676"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 376.92,75.84 -1.56,-3.36 -1.8,3.36 z"
+         style="fill:#5b9bd5;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         id="path4678"
+         inkscape:connector-curvature="0" />
+      <g
+         id="g4680"
+         transform="matrix(0.12,0,0,-0.12,0,612)">
+        <path
+           d="m 4068,4158 4,314"
+           style="fill:none;stroke:#5b9bd5;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+           id="path4682"
+           inkscape:connector-curvature="0" />
+      </g>
+      <path
+         d="m 486.48,112.56 1.68,3.48 1.68,-3.36 z"
+         style="fill:#5b9bd5;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         id="path4684"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 490.32,75.84 -1.68,-3.36 -1.8,3.36 z"
+         style="fill:#5b9bd5;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         id="path4686"
+         inkscape:connector-curvature="0" />
+      <path
+         d="M 314.52,100.8 H 515.04 V 92.04 H 314.52 Z"
+         style="fill:#c5e0b3;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path4688"
+         inkscape:connector-curvature="0" />
+      <text
+         transform="matrix(1,0,0,-1,393.71904,94.56192)"
+         style="font-variant:normal;font-weight:normal;font-size:5.76000023px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4690">
+        <tspan
+           x="0 3.3350401 6.3129601 7.7644801 9.0662403 10.99584 14.159998 15.461758 19.274878 21.918718 23.220478 25.559999 28.42848 30.438721 33.119999 34.439041 36.960003 39.828484"
+           y="0"
+           id="tspan4692">API to OS services</tspan>
+      </text>
+      <path
+         d="m 326.16,205.8 h 1.44 v 0 h 4.32 v -0.72 h -4.32 -1.44 z m 8.64,0 h 5.88 v -0.72 h -5.88 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.64,0 h 5.88 v -0.72 h -5.88 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.64,0 H 393 v -0.72 h -5.88 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.64,0 h 5.88 v -0.72 h -5.88 z m 8.76,0 h 5.88 v -0.72 h -5.88 z"
+         style="fill:#ed7d31;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path4694"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 422.04,205.8 h 5.76 v -0.72 h -5.76 z m 8.64,0 h 5.88 v -0.72 h -5.88 z m 8.76,0 h 5.88 v -0.72 h -5.88 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.64,0 h 5.88 v -0.72 h -5.88 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.64,0 h 5.88 v -0.72 H 483 Z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.64,0 h 5.88 v -0.72 h -5.88 z"
+         style="fill:#ed7d31;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path4696"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 517.92,205.8 h 5.76 v -0.72 h -5.76 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.64,0 h 5.88 v -0.72 h -5.88 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.76,0 h 1.44 v 0 h 1.44 v 0 l 1.44,0.12 v 0 l 1.32,0.12 v 0 0 l 0.12,-0.72 v 0 l -1.44,-0.12 -1.44,-0.12 h -1.44 -1.44 z m 8.52,0.84 1.2,0.36 v 0 l 1.32,0.48 v 0 l 1.32,0.48 h -0.12 l 1.32,0.6 v 0 l 0.24,0.12 0.36,-0.6 -0.36,-0.24 -1.2,-0.6 -1.32,-0.48 -1.32,-0.48 -1.32,-0.36 z m 7.8,3.48 0.72,0.36 v 0 l 1.08,0.84 v 0 l 1.08,0.84 v 0 l 1.08,0.84 H 573 l 0.72,0.6 0.48,-0.48 -0.6,-0.6 -1.08,-0.96 -1.08,-0.84 -1.2,-0.84 -0.6,-0.36 z m 6.48,5.64 0.24,0.24 v -0.12 l 0.84,1.08 v 0 l 0.72,1.08 v 0 l 0.72,1.2 v 0 l 0.72,1.2 v 0 0 l 0.6,-0.36 v 0 l -0.72,-1.2 -0.72,-1.2 -0.84,-1.08 -0.84,-1.08 -0.12,-0.24 z m 4.44,7.32 0.48,1.08 v -0.12 l 0.36,1.32 v 0 l 0.48,1.44 v -0.12 l 0.24,1.44 v 0 l 0.12,0.36 0.72,-0.12 -0.12,-0.36 -0.36,-1.44 -0.36,-1.32 -0.48,-1.44 -0.36,-1.08 z m 2.04,8.28 0.12,0.96 v 0 1.44 0 3.36 h 0.72 v -3.36 -1.56 l -0.12,-0.84 z m 0.12,8.76 v 5.76 h 0.72 v -5.76 z"
+         style="fill:#ed7d31;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path4698"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 582.24,248.76 v 5.88 h 0.72 v -5.88 z m 0,8.76 v 5.76 h 0.72 v -5.76 z m 0,8.76 v 5.76 h 0.72 v -5.76 z m 0,8.64 v 5.88 h 0.72 v -5.88 z m 0,8.76 v 5.76 h 0.72 v -5.76 z m 0,8.64 v 5.88 h 0.72 v -5.88 z m 0,8.76 v 5.88 h 0.72 v -5.88 z m 0,8.76 v 2.4 0 1.44 -0.12 l -0.12,1.44 v 0 l -0.12,0.6 0.72,0.12 0.12,-0.6 0.12,-1.44 v -1.44 -2.4 z m -0.72,8.52 -0.12,0.84 v 0 l -0.48,1.32 v 0 l -0.36,1.32 v 0 l -0.48,1.2 v 0 l -0.36,0.84 0.6,0.24 0.36,-0.72 0.48,-1.32 0.48,-1.32 0.36,-1.44 0.24,-0.72 z m -3.12,8.04 -0.24,0.36 v -0.12 l -0.72,1.2 v 0 l -0.72,1.08 v 0 l -0.84,1.08 v 0 l -0.96,0.96 0.6,0.48 0.84,-0.96 0.84,-1.08 0.84,-1.2 0.72,-1.08 0.24,-0.36 z m -5.4,6.6 -0.96,0.72 v 0 l -1.08,0.84 v 0 l -1.08,0.84 v 0 l -1.08,0.72 v 0 l -0.48,0.24 0.36,0.6 0.48,-0.24 1.08,-0.72 1.2,-0.84 1.08,-0.84 0.84,-0.72 z"
+         style="fill:#ed7d31;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path4700"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 565.8,337.68 -0.72,0.24 h 0.12 l -1.32,0.6 v 0 l -1.32,0.36 v 0 l -1.32,0.36 v 0 l -0.96,0.24 0.24,0.72 0.96,-0.24 1.32,-0.36 1.32,-0.48 1.32,-0.48 0.6,-0.24 z m -8.28,2.28 -0.36,0.12 v 0 h -1.44 v 0 l -1.44,0.12 v 0 h -2.52 v 0.72 h 2.52 l 1.44,-0.12 h 1.44 l 0.48,-0.12 z m -8.64,0.24 H 543 v 0.72 h 5.88 z m -8.76,0 h -5.88 v 0.72 h 5.88 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.64,0 h -5.88 v 0.72 h 5.88 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.64,0 h -5.88 v 0.72 h 5.88 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.76,0 h -5.76 v 0.72 h 5.76 z"
+         style="fill:#ed7d31;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path4702"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 470.4,340.2 h -5.88 v 0.72 h 5.88 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.64,0 h -5.88 v 0.72 h 5.88 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.64,0 h -5.88 v 0.72 h 5.88 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.64,0 h -5.88 v 0.72 h 5.88 z m -8.76,0 h -5.76 v 0.72 h 5.76 z"
+         style="fill:#ed7d31;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path4704"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 374.4,340.2 h -5.76 v 0.72 h 5.76 z m -8.64,0 h -5.88 v 0.72 h 5.88 z m -8.76,0 h -5.76 v 0.72 H 357 Z m -8.64,0 h -5.88 v 0.72 h 5.88 z m -8.76,0 h -5.88 v 0.72 h 5.88 z m -8.76,0 h -3.24 v 0 l -1.44,-0.12 v 0 h -1.08 v 0.72 h 0.96 l 1.56,0.12 h 3.24 z m -8.64,-0.6 h -0.24 v 0 l -1.44,-0.36 h 0.12 l -1.44,-0.36 v 0 l -1.32,-0.36 H 318 l -1.2,-0.48 -0.36,0.6 1.2,0.48 1.44,0.48 1.32,0.36 1.44,0.36 h 0.24 z m -8.04,-2.88 -1.08,-0.6 v 0 l -1.2,-0.72 v 0 l -1.08,-0.84 v 0 l -1.08,-0.84 h 0.12 l -0.36,-0.24 -0.48,0.6 0.36,0.24 1.08,0.84 1.08,0.84 1.2,0.72 1.08,0.72 z m -6.84,-5.16 -0.48,-0.6 v 0 L 306,330 v 0 l -0.84,-1.08 v 0 l -0.84,-1.08 v 0 l -0.48,-0.84 -0.6,0.36 0.48,0.84 0.84,1.2 0.84,1.08 0.96,0.96 0.48,0.6 z m -4.92,-7.08 v -0.12 0 l -0.6,-1.32 v 0 l -0.48,-1.2 v 0 l -0.48,-1.32 v 0 l -0.36,-1.32 v 0 0 l -0.72,0.12 v 0 l 0.36,1.44 0.48,1.32 0.48,1.32 0.6,1.2 0.12,0.24 z m -2.52,-8.16 -0.12,-1.32 v 0.12 l -0.12,-1.44 v 0 -1.44 0 -1.68 h -0.72 v 1.68 1.44 l 0.12,1.44 0.12,1.32 z"
+         style="fill:#ed7d31;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path4706"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 299.64,307.68 v -5.76 h -0.72 v 5.76 z m 0,-8.76 v -5.76 h -0.72 v 5.76 z m 0,-8.64 v -5.88 h -0.72 v 5.88 z m 0,-8.76 v -5.76 h -0.72 v 5.76 z m 0,-8.76 V 267 h -0.72 v 5.76 z m 0,-8.64 v -5.88 h -0.72 v 5.88 z m 0,-8.76 v -5.76 h -0.72 v 5.76 z m 0,-8.76 v -5.76 h -0.72 v 5.76 z m 0,-8.64 v -4.2 0 -1.44 0 -0.12 l -0.72,-0.12 v 0.12 1.56 4.2 z m 0.36,-8.64 0.12,-1.2 v 0 l 0.36,-1.44 v 0.12 l 0.36,-1.44 v 0 l 0.48,-1.32 v 0.12 l 0.12,-0.36 -0.72,-0.24 -0.12,0.24 -0.48,1.44 -0.36,1.32 -0.36,1.32 -0.12,1.32 z m 2.64,-8.16 0.36,-0.72 v 0 l 0.6,-1.2 v 0 l 0.72,-1.2 v 0 l 0.84,-1.08 v 0 l 0.48,-0.6 -0.48,-0.48 -0.6,0.72 -0.84,1.08 -0.72,1.2 -0.72,1.2 -0.36,0.72 z m 4.92,-6.96 0.24,-0.24 v 0 l 0.96,-0.96 v 0 l 1.08,-0.84 h -0.12 l 1.08,-0.84 v 0 l 1.08,-0.84 v 0 H 312 l -0.48,-0.6 v 0 l -1.08,0.84 -1.08,0.84 -1.08,0.96 -0.96,0.96 -0.24,0.24 z m 6.84,-5.16 1.08,-0.48 v 0 l 1.2,-0.6 v 0 l 1.32,-0.48 h -0.12 L 319.2,207 v 0 l 0.48,-0.12 -0.12,-0.72 -0.48,0.12 -1.44,0.48 -1.2,0.48 -1.32,0.6 -1.08,0.6 z m 8.16,-2.88 0.72,-0.12 v 0 l 1.44,-0.12 v 0 l 1.44,-0.12 -0.12,-0.72 -1.44,0.12 -1.44,0.12 -0.72,0.24 z"
+         style="fill:#ed7d31;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path4708"
+         inkscape:connector-curvature="0" />
+      <text
+         transform="matrix(0,1,1,0,546.24192,226.67736)"
+         style="font-variant:normal;font-weight:normal;font-size:11.64000034px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#ed7d31;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4710">
+        <tspan
+           x="0 6.3205199 12.360003 18.471004 22.439999 25.10556 34.320004 40.200008 42.83065 48.627369 53.667488 59.400013 64.32373 70.434731 74.334137 76.920021 83.160011 89.160011"
+           y="0"
+           id="tspan4712">Runtime execution</tspan>
+      </text>
+      <text
+         transform="matrix(0,1,1,0,560.16336,248.52564)"
+         style="font-variant:normal;font-weight:normal;font-size:11.64000034px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#ed7d31;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4714">
+        <tspan
+           x="0 6.1110001 12.24528 18.356279 24.467279 30.578279 36.153839 40.216202"
+           y="0"
+           id="tspan4716">boundary</tspan>
+      </text>
+      <path
+         d="m 323.76,34.68 h 5.76 v -0.72 h -5.76 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.64,0 h 5.88 v -0.72 h -5.88 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.64,0 h 5.88 v -0.72 h -5.88 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.64,0 h 5.88 v -0.72 h -5.88 z m 8.76,0 H 408 v -0.72 h -5.76 z m 8.76,0 h 5.76 V 33.96 H 411 Z m 8.64,0 h 5.88 v -0.72 h -5.88 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.64,0 h 5.88 v -0.72 h -5.88 z m 8.76,0 h 5.88 v -0.72 h -5.88 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.64,0 h 5.88 v -0.72 h -5.88 z m 8.76,0 h 5.88 v -0.72 h -5.88 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.64,0 h 5.88 v -0.72 h -5.88 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.64,0 h 5.88 v -0.72 h -5.88 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.64,0 h 5.88 v -0.72 h -5.88 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.64,0 h 5.88 v -0.72 h -5.88 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.64,0 h 5.88 V 33.96 H 594 Z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.64,0 h 5.88 v -0.72 h -5.88 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.64,0 h 5.88 v -0.72 h -5.88 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.64,0 h 5.88 v -0.72 h -5.88 z m 8.76,0 h 0.24 v 0 l 1.44,0.12 h -0.12 l 1.44,0.12 h -0.12 l 1.32,0.24 v 0 l 1.32,0.36 v 0 h 0.12 l 0.24,-0.72 h -0.24 l -1.32,-0.36 -1.32,-0.24 -1.32,-0.12 -1.32,-0.12 h -0.36 z m 8.4,1.68 0.84,0.36 h -0.12 l 1.2,0.48 v 0 l 1.2,0.6 v 0 l 1.08,0.72 V 38.4 l 0.84,0.6 0.48,-0.6 -0.96,-0.6 -1.08,-0.6 -1.2,-0.6 -1.2,-0.6 -0.84,-0.24 z m 7.32,4.44 0.96,0.72 v 0 l 0.84,0.84 v 0 l 0.96,0.96 h -0.12 l 0.84,0.96 v 0 l 0.6,0.6 0.48,-0.48 -0.48,-0.6 -0.84,-0.96 -0.96,-0.96 -0.84,-0.96 -0.96,-0.72 z m 5.64,6.48 h 0.12 v 0 l 0.6,1.2 v 0 l 0.6,1.08 v 0 l 0.48,1.2 v 0 l 0.48,1.2 v 0 l 0.12,0.48 0.72,-0.24 -0.12,-0.48 -0.48,-1.32 -0.6,-1.2 -0.6,-1.08 -0.6,-1.2 -0.12,-0.12 z m 3.24,7.92 0.12,0.48 v 0 l 0.24,1.32 v 0 l 0.12,1.32 v 0 l 0.12,1.32 v 0 1.2 h 0.84 l -0.12,-1.2 -0.12,-1.44 -0.12,-1.32 -0.24,-1.32 -0.12,-0.6 z m 0.48,8.52 -0.12,1.32 v 0 l -0.24,1.32 v -0.12 l -0.24,1.32 v 0 l -0.36,1.32 v -0.12 l -0.24,0.48 0.72,0.24 0.12,-0.48 0.36,-1.2 0.36,-1.32 0.24,-1.32 0.12,-1.44 z m -2.16,8.28 -0.24,0.36 v 0 l -0.6,1.2 v 0 l -0.6,1.08 v 0 l -0.72,1.08 v 0 l -0.72,1.08 v -0.12 l -0.12,0.12 0.6,0.48 0.12,-0.12 0.72,-1.08 0.72,-1.08 0.6,-1.08 0.6,-1.2 0.24,-0.48 z m -4.8,7.08 -0.6,0.48 v 0 l -0.84,0.96 v 0 l -0.96,0.84 v 0 l -1.08,0.72 v 0 l -0.96,0.72 0.48,0.6 0.96,-0.72 1.08,-0.84 0.96,-0.84 0.96,-0.84 0.48,-0.6 z m -6.84,5.16 -0.96,0.48 v 0 l -1.2,0.48 h 0.12 l -1.32,0.48 h 0.12 l -1.32,0.48 v 0 l -0.72,0.24 0.12,0.72 0.84,-0.24 1.32,-0.48 1.2,-0.48 1.2,-0.48 0.96,-0.6 z M 675.6,87 h -0.24 0.12 l -1.44,0.24 h 0.12 -1.44 v 0 l -1.32,0.12 v 0.72 l 1.44,-0.12 h 1.32 l 1.32,-0.24 h 0.24 z m -4.2,0.36 h -1.44 v 0.72 h 1.44 z m -4.44,0 h -5.76 v 0.72 h 5.76 z m -8.64,0 h -5.88 v 0.72 h 5.88 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.64,0 h -5.88 v 0.72 h 5.88 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.64,0 h -5.88 v 0.72 H 606 Z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.64,0 h -5.88 v 0.72 h 5.88 z m -8.76,0 h -5.88 v 0.72 h 5.88 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.64,0 h -5.88 v 0.72 h 5.88 z m -8.76,0 h -5.88 v 0.72 h 5.88 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.64,0 h -5.88 v 0.72 h 5.88 z m -8.76,0 h -5.88 v 0.72 h 5.88 z m -8.76,0 H 513 v 0.72 h 5.76 z m -8.64,0 h -5.88 v 0.72 h 5.88 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.64,0 h -5.88 v 0.72 h 5.88 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.64,0 h -5.88 v 0.72 h 5.88 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.64,0 h -5.88 v 0.72 h 5.88 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.64,0 h -5.88 v 0.72 h 5.88 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.64,0 h -5.88 v 0.72 h 5.88 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.64,0 h -5.88 v 0.72 h 5.88 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.64,0 h -5.88 v 0.72 h 5.88 z m -8.76,0 h -3.24 v 0 l -1.32,-0.12 v 0 h -1.2 l -0.12,0.72 h 1.2 l 1.44,0.12 H 327 Z m -8.64,-0.6 -1.2,-0.24 v 0 l -1.2,-0.36 v 0 l -1.32,-0.48 h 0.12 l -1.32,-0.48 h 0.12 l -0.6,-0.24 -0.36,0.72 0.6,0.24 1.2,0.48 1.32,0.48 1.32,0.36 1.2,0.24 z m -7.92,-3.12 -0.36,-0.12 v 0 L 309,82.8 v 0 l -0.96,-0.72 v 0 l -1.08,-0.72 v 0 L 306,80.52 v 0 l -0.24,-0.24 -0.48,0.48 0.24,0.24 1.08,0.84 0.96,0.84 1.08,0.72 1.08,0.72 0.36,0.24 z m -6.6,-5.4 -0.36,-0.48 v 0 l -0.84,-1.08 v 0.12 l -0.72,-1.08 v 0 l -0.72,-1.08 v 0 l -0.6,-1.08 v 0 -0.12 l -0.72,0.36 0.12,0.12 0.6,1.08 0.72,1.08 0.72,1.08 0.84,1.08 0.36,0.48 z m -4.44,-7.32 -0.36,-0.84 v 0 l -0.48,-1.32 v 0.12 l -0.36,-1.32 v 0 l -0.24,-1.32 v 0.12 l -0.12,-0.96 -0.72,0.12 0.12,0.96 0.36,1.32 0.36,1.2 0.36,1.32 0.36,0.84 z m -1.92,-8.4 v -0.12 0 l -0.12,-1.44 h -0.72 l 0.12,1.44 v 0.24 z m -0.12,-1.56 0.12,-1.32 v 0 l 0.12,-1.32 v 0 L 297.72,57 v 0 -0.12 L 297,56.76 v 0.12 l -0.12,1.32 -0.12,1.44 -0.12,1.32 z m 0.96,-6.96 0.24,-0.84 v 0 l 0.48,-1.2 v 0 l 0.48,-1.2 v 0 l 0.48,-1.2 v 0 l 0.48,-0.84 -0.72,-0.36 -0.36,0.84 -0.6,1.2 -0.48,1.32 -0.36,1.2 -0.36,0.96 z m 3.6,-7.8 0.72,-0.96 v 0 l 0.84,-0.96 v 0 l 0.84,-0.96 h -0.12 l 0.96,-0.96 v 0 l 0.48,-0.48 -0.48,-0.48 -0.6,0.48 -0.84,0.96 -0.84,0.96 -0.84,0.96 -0.72,1.08 z m 5.88,-6.12 0.24,-0.24 v 0 L 309,39.12 v 0 l 1.08,-0.72 v 0.12 l 1.08,-0.72 v 0 l 1.2,-0.6 v 0 l 0.36,-0.12 -0.36,-0.72 -0.36,0.24 -1.2,0.6 -1.08,0.6 -1.08,0.72 -1.08,0.72 -0.24,0.24 z m 7.56,-4.08 0.6,-0.12 v 0 l 1.2,-0.36 v 0 l 1.32,-0.36 v 0 l 1.32,-0.24 h -0.12 l 1.32,-0.12 -0.12,-0.72 -1.2,0.12 -1.44,0.24 -1.2,0.36 -1.32,0.36 -0.6,0.12 z"
+         style="fill:#ed7d31;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path4718"
+         inkscape:connector-curvature="0" />
+      <text
+         transform="matrix(0,1,1,0,384.48324,260.28252)"
+         style="font-variant:normal;font-weight:normal;font-size:6.84000015px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#ed7d31;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4720">
+        <tspan
+           x="0 3.13956 6.0328798 8.4200401 9.9863997 13.439998 15.731398 18.405838 19.951677 23.279995 26.241714 29.648035 32.541355 35.999992 38.291393 39.857754 43.462433 47.053432"
+           y="0"
+           id="tspan4722">Scripts execution</tspan>
+      </text>
+      <text
+         transform="matrix(0,1,1,0,392.52024,270.59724)"
+         style="font-variant:normal;font-weight:normal;font-size:6.84000015px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#ed7d31;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4724">
+        <tspan
+           x="0 3.5910001 7.0800018 10.671002 14.262002 17.853003 21.129362 23.400003"
+           y="0"
+           id="tspan4726">boundary</tspan>
+      </text>
+      <path
+         d="m 315.6,308.04 h 21.72 v -17.4 H 315.6 Z"
+         style="fill:#5b9bd5;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path4728"
+         inkscape:connector-curvature="0" />
+      <g
+         id="g4730"
+         transform="matrix(0.12,0,0,-0.12,0,612)">
+        <path
+           d="m 2630,2678 h 181 v -145 h -181 z"
+           style="fill:none;stroke:#c8c8c8;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+           id="path4732"
+           inkscape:connector-curvature="0" />
+      </g>
+      <text
+         transform="matrix(1,0,0,-1,319.08,297.84)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4734">
+        <tspan
+           x="0 2.28 4.3104 5.9856 7.0847998 9.6048002 11.28"
+           y="0"
+           id="tspan4736">Script</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,331.44,297.84)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4738">
+        <tspan
+           x="0"
+           y="0"
+           id="tspan4740">1</tspan>
+      </text>
+      <path
+         d="m 341.76,297.12 h 21.72 v 8.76 l -2.16,2.16 h -17.4 c -1.2,0 -2.16,-0.96 -2.16,-2.16 0,0 0,0 0,0 z"
+         style="fill:#5b9bd5;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         id="path4742"
+         inkscape:connector-curvature="0" />
+      <g
+         id="g4744"
+         transform="matrix(0.12,0,0,-0.12,0,612)">
+        <path
+           d="m 2848,2624 h 181 v -73 l -18,-18 h -145 c -10,0 -18,8 -18,18 0,0 0,0 0,0 z"
+           style="fill:none;stroke:#c8c8c8;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+           id="path4746"
+           inkscape:connector-curvature="0" />
+      </g>
+      <path
+         d="m 346.08,293.88 h 21.84 v 8.76 l -2.16,2.16 h -17.52 c -1.2,0 -2.16,-0.96 -2.16,-2.16 0,0 0,0 0,0 z"
+         style="fill:#5b9bd5;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         id="path4748"
+         inkscape:connector-curvature="0" />
+      <g
+         id="g4750"
+         transform="matrix(0.12,0,0,-0.12,0,612)">
+        <path
+           d="m 2884,2651 h 182 v -73 l -18,-18 h -146 c -10,0 -18,8 -18,18 0,0 0,0 0,0 z"
+           style="fill:none;stroke:#c8c8c8;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+           id="path4752"
+           inkscape:connector-curvature="0" />
+      </g>
+      <path
+         d="m 352.68,290.64 h 21.72 v 8.76 l -2.16,2.16 h -17.4 c -1.2,0 -2.16,-0.96 -2.16,-2.16 0,0 0,0 0,0 z"
+         style="fill:#5b9bd5;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         id="path4754"
+         inkscape:connector-curvature="0" />
+      <g
+         id="g4756"
+         transform="matrix(0.12,0,0,-0.12,0,612)">
+        <path
+           d="m 2939,2678 h 181 v -73 l -18,-18 h -145 c -10,0 -18,8 -18,18 0,0 0,0 0,0 z"
+           style="fill:none;stroke:#c8c8c8;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+           id="path4758"
+           inkscape:connector-curvature="0" />
+      </g>
+      <text
+         transform="matrix(1,0,0,-1,357.24,294.6)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4760">
+        <tspan
+           x="0 2.4000001 4.9200001 6.0191998 8.5391998 10.8"
+           y="0"
+           id="tspan4762">Things</tspan>
+      </text>
+      <g
+         id="g4764"
+         transform="matrix(0.12,0,0,-0.12,0,612)">
+        <path
+           d="m 2721,2678 v 50 h 308 v -25"
+           style="fill:none;stroke:#5b9bd5;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+           id="path4766"
+           inkscape:connector-curvature="0" />
+      </g>
+      <path
+         d="m 361.8,287.28 1.68,3.36 1.8,-3.36 z"
+         style="fill:#5b9bd5;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         id="path4768"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 338.28,286.92 h 13.44 v -4.68 h -13.44 z"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path4770"
+         inkscape:connector-curvature="0" />
+      <text
+         transform="matrix(1,0,0,-1,338.28096,283.31904)"
+         style="font-variant:normal;font-weight:normal;font-size:3.83999991px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#4f88bb;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4772">
+        <tspan
+           x="0 2.016 3.3561599 5.3798399 7.1999998 8.07936 10.09536 12.00768"
+           y="0"
+           id="tspan4774">provides</tspan>
+      </text>
+      <path
+         d="m 449.4,227.16 h 48 v -10.92 h -48 z"
+         style="fill:#5b9bd5;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path4776"
+         inkscape:connector-curvature="0" />
+      <g
+         id="g4778"
+         transform="matrix(0.12,0,0,-0.12,0,612)">
+        <path
+           d="m 3745,3298 h 400 v -91 h -400 z"
+           style="fill:none;stroke:#feffff;stroke-width:5;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:2;stroke-dasharray:none;stroke-opacity:1"
+           id="path4780"
+           inkscape:connector-curvature="0" />
+      </g>
+      <text
+         transform="matrix(1,0,0,-1,458.64,220.2)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4782">
+        <tspan
+           x="0 4.1999998 6.4991999 9.0192003 11.3184 13.5792 15.9696 17.76 18.844801 21.120001 23.76 24.8592 27.3792"
+           y="0"
+           id="tspan4784">Manager Thing</tspan>
+      </text>
+      <path
+         d="m 445.08,225 h 47.88 v -10.92 h -47.88 z"
+         style="fill:#5b9bd5;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path4786"
+         inkscape:connector-curvature="0" />
+      <g
+         id="g4788"
+         transform="matrix(0.12,0,0,-0.12,0,612)">
+        <path
+           d="m 3709,3316 h 399 v -91 h -399 z"
+           style="fill:none;stroke:#feffff;stroke-width:5;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:2;stroke-dasharray:none;stroke-opacity:1"
+           id="path4790"
+           inkscape:connector-curvature="0" />
+      </g>
+      <text
+         transform="matrix(1,0,0,-1,455.64,218.04)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4792">
+        <tspan
+           x="0 2.28 4.4544001 6.3312001 7.9391999 10.3296 14.1648 16.502399 19.0224 20.280001 22.799999 25.060801"
+           y="0"
+           id="tspan4794">SystemThings</tspan>
+      </text>
+      <path
+         d="m 315.6,279.48 h 21.72 v -17.4 H 315.6 Z"
+         style="fill:#5b9bd5;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path4796"
+         inkscape:connector-curvature="0" />
+      <g
+         id="g4798"
+         transform="matrix(0.12,0,0,-0.12,0,612)">
+        <path
+           d="m 2630,2916 h 181 v -145 h -181 z"
+           style="fill:none;stroke:#c8c8c8;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+           id="path4800"
+           inkscape:connector-curvature="0" />
+      </g>
+      <text
+         transform="matrix(1,0,0,-1,318.24,269.28)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4802">
+        <tspan
+           x="0 2.28 4.3104 5.9856 7.0847998 9.6048002 11.28 12.3648"
+           y="0"
+           id="tspan4804">Script M</tspan>
+      </text>
+      <path
+         d="m 341.76,268.56 h 21.72 v 8.76 l -2.16,2.16 h -17.4 c -1.2,0 -2.16,-0.96 -2.16,-2.16 0,0 0,0 0,0 z"
+         style="fill:#5b9bd5;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         id="path4806"
+         inkscape:connector-curvature="0" />
+      <g
+         id="g4808"
+         transform="matrix(0.12,0,0,-0.12,0,612)">
+        <path
+           d="m 2848,2862 h 181 v -73 l -18,-18 h -145 c -10,0 -18,8 -18,18 0,0 0,0 0,0 z"
+           style="fill:none;stroke:#c8c8c8;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+           id="path4810"
+           inkscape:connector-curvature="0" />
+      </g>
+      <path
+         d="m 346.08,265.32 h 21.84 v 8.76 l -2.16,2.16 h -17.52 c -1.2,0 -2.16,-0.96 -2.16,-2.16 0,0 0,0 0,0 z"
+         style="fill:#5b9bd5;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         id="path4812"
+         inkscape:connector-curvature="0" />
+      <g
+         id="g4814"
+         transform="matrix(0.12,0,0,-0.12,0,612)">
+        <path
+           d="m 2884,2889 h 182 v -73 l -18,-18 h -146 c -10,0 -18,8 -18,18 0,0 0,0 0,0 z"
+           style="fill:none;stroke:#c8c8c8;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+           id="path4816"
+           inkscape:connector-curvature="0" />
+      </g>
+      <path
+         d="m 352.68,262.08 h 21.72 v 8.76 l -2.16,2.16 h -17.4 c -1.2,0 -2.16,-0.96 -2.16,-2.16 0,0 0,0 0,0 z"
+         style="fill:#5b9bd5;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         id="path4818"
+         inkscape:connector-curvature="0" />
+      <g
+         id="g4820"
+         transform="matrix(0.12,0,0,-0.12,0,612)">
+        <path
+           d="m 2939,2916 h 181 v -73 l -18,-18 h -145 c -10,0 -18,8 -18,18 0,0 0,0 0,0 z"
+           style="fill:none;stroke:#c8c8c8;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+           id="path4822"
+           inkscape:connector-curvature="0" />
+      </g>
+      <text
+         transform="matrix(1,0,0,-1,357.24,266.04)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4824">
+        <tspan
+           x="0 2.4000001 4.9200001 6.0191998 8.5391998 10.8"
+           y="0"
+           id="tspan4826">Things</tspan>
+      </text>
+      <g
+         id="g4828"
+         transform="matrix(0.12,0,0,-0.12,0,612)">
+        <path
+           d="m 2721,2916 v 51 h 308 v -26"
+           style="fill:none;stroke:#5b9bd5;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+           id="path4830"
+           inkscape:connector-curvature="0" />
+      </g>
+      <path
+         d="m 361.8,258.6 1.68,3.48 1.8,-3.48 z"
+         style="fill:#5b9bd5;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         id="path4832"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 338.28,258.36 h 13.44 v -4.68 h -13.44 z"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path4834"
+         inkscape:connector-curvature="0" />
+      <text
+         transform="matrix(1,0,0,-1,338.28096,254.76096)"
+         style="font-variant:normal;font-weight:normal;font-size:3.83999991px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#4f88bb;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4836">
+        <tspan
+           x="0 2.016 3.3561599 5.3798399 7.1999998 8.07936 10.09536 12.00768"
+           y="0"
+           id="tspan4838">provides</tspan>
+      </text>
+      <path
+         d="m 324.48,105.48 h 1.56 v 0 h 4.32 v -0.72 h -4.32 -1.56 z m 8.76,0 H 339 v -0.72 h -5.76 z m 8.76,0 h 5.76 v -0.72 H 342 Z m 8.64,0 h 5.88 v -0.72 h -5.88 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.64,0 h 5.88 v -0.72 h -5.88 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.64,0 h 5.88 v -0.72 h -5.88 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.64,0 H 435 v -0.72 h -5.88 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.64,0 h 5.88 v -0.72 h -5.88 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.64,0 h 5.88 v -0.72 h -5.88 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.64,0 h 5.88 v -0.72 h -5.88 z m 8.76,0 h 5.88 v -0.72 h -5.88 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.64,0 h 5.88 v -0.72 H 525 Z m 8.76,0 h 5.88 v -0.72 h -5.88 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.64,0 h 4.8 v 0 h 1.08 v -0.72 h -0.96 -4.92 z m 8.76,0.24 0.48,0.12 h -0.12 l 1.44,0.24 v 0 l 1.44,0.36 v 0 l 1.32,0.36 v 0 l 0.96,0.24 0.24,-0.6 -0.96,-0.36 -1.44,-0.36 -1.44,-0.36 -1.44,-0.24 -0.48,-0.12 z m 8.16,2.52 h 0.24 v 0 l 1.2,0.72 v 0 l 1.2,0.6 v 0 l 1.2,0.84 v -0.12 l 1.08,0.84 v 0 0 l 0.48,-0.6 v 0 l -1.2,-0.84 -1.2,-0.72 -1.2,-0.72 -1.2,-0.6 -0.24,-0.12 z m 7.08,4.68 0.96,0.84 v 0 l 0.96,1.08 h -0.12 l 0.96,0.96 v 0 l 0.84,1.08 v 0 l 0.24,0.36 0.6,-0.36 -0.24,-0.48 -0.84,-1.08 -0.96,-1.08 -0.96,-0.96 -0.84,-0.84 z m 5.4,6.72 0.36,0.72 v 0 l 0.72,1.2 v 0 l 0.48,1.32 v -0.12 l 0.6,1.32 v 0 l 0.24,0.84 0.72,-0.24 -0.36,-0.84 -0.48,-1.32 -0.6,-1.32 -0.6,-1.2 -0.48,-0.72 z m 3.12,8.04 0.12,0.48 v 0 l 0.24,1.44 v 0 l 0.24,1.44 v -0.12 l 0.12,1.56 v -0.12 0.96 h 0.72 v -0.96 l -0.12,-1.44 -0.24,-1.44 -0.24,-1.44 -0.12,-0.6 z m 0.72,8.52 v 5.88 h 0.72 v -5.88 z m 0,8.76 v 5.76 h 0.72 v -5.76 z m 0,8.64 v 1.2 0 1.56 -0.12 l -0.12,1.56 v -0.12 l -0.24,1.44 v 0 0.24 l 0.72,0.12 v -0.24 l 0.24,-1.44 0.12,-1.44 v -1.56 -1.2 z m -0.96,8.64 -0.36,1.08 v 0 l -0.36,1.32 v 0 l -0.6,1.2 v 0 l -0.48,1.32 v 0 l -0.24,0.36 0.6,0.36 0.24,-0.36 0.6,-1.32 0.48,-1.32 0.48,-1.44 0.36,-1.08 z m -3.48,7.8 -0.36,0.72 v 0 l -0.84,1.08 v 0 l -0.84,1.08 v 0 l -0.96,0.96 h 0.12 l -0.6,0.72 0.48,0.48 0.6,-0.6 0.96,-1.08 0.84,-1.08 0.84,-1.2 0.36,-0.72 z m -5.64,6.48 -0.24,0.24 v 0 L 573,177.6 v 0 l -1.08,0.84 v -0.12 l -1.2,0.84 v 0 l -1.08,0.6 0.36,0.6 1.08,-0.6 1.2,-0.72 1.2,-0.84 1.08,-0.84 0.24,-0.36 z m -7.32,4.44 -1.2,0.6 v 0 l -1.32,0.36 v 0 l -1.32,0.36 v 0 l -1.44,0.36 v 0 h -0.12 l 0.12,0.72 h 0.12 l 1.44,-0.36 1.44,-0.36 1.32,-0.48 1.32,-0.48 z m -8.28,2.16 -1.2,0.12 v 0 h -1.56 v 0 h -3 v 0.72 h 3.12 1.44 l 1.32,-0.12 z m -8.64,0.12 h -5.88 v 0.72 h 5.88 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.64,0 h -5.88 v 0.72 h 5.88 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.64,0 h -5.88 v 0.72 h 5.88 z m -8.76,0 h -5.76 v 0.72 H 489 Z m -8.64,0 h -5.88 v 0.72 h 5.88 z m -8.76,0 h -5.88 v 0.72 h 5.88 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.64,0 h -5.88 v 0.72 h 5.88 z m -8.76,0 h -5.88 v 0.72 h 5.88 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.64,0 h -5.88 v 0.72 h 5.88 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.64,0 H 396 v 0.72 h 5.88 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.64,0 h -5.88 v 0.72 h 5.88 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.64,0 h -5.88 v 0.72 h 5.88 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.64,-0.12 h -0.24 v 0 l -1.44,-0.24 v 0 l -1.44,-0.24 v 0 l -1.32,-0.36 v 0 l -1.2,-0.24 -0.24,0.72 1.2,0.24 1.44,0.36 1.44,0.24 1.44,0.24 h 0.36 z m -8.28,-2.04 -0.12,-0.12 v 0 l -1.32,-0.48 v 0 l -1.2,-0.72 v 0 l -1.2,-0.6 v 0 l -1.2,-0.84 0.12,0.12 -0.12,-0.12 -0.48,0.6 0.12,0.12 1.2,0.72 1.2,0.72 1.32,0.6 1.2,0.6 h 0.12 z m -7.32,-4.44 -0.84,-0.84 v 0.12 l -1.08,-0.96 H 306 l -0.96,-1.08 v 0 l -0.96,-0.96 v 0 l -0.36,-0.48 -0.48,0.48 0.36,0.48 0.84,1.08 0.96,0.96 1.08,0.96 0.84,0.72 z m -5.64,-6.48 -0.48,-0.6 h 0.12 l -0.72,-1.2 v 0 l -0.6,-1.2 v 0 l -0.6,-1.32 v 0 l -0.36,-0.84 -0.72,0.24 0.36,0.96 0.6,1.32 0.6,1.2 0.72,1.2 0.36,0.6 z m -3.48,-7.92 -0.12,-0.36 V 162 l -0.36,-1.44 v 0 l -0.24,-1.44 v 0 l -0.24,-1.44 v 0.12 -1.2 l -0.72,0.12 v 1.08 l 0.24,1.44 0.24,1.44 0.36,1.44 0.12,0.36 z m -1.08,-8.52 v -5.76 h -0.72 v 5.76 z m 0,-8.64 v -5.88 h -0.72 v 5.88 z m 0,-8.76 v -2.4 0 l 0.12,-1.56 v 0.12 -1.56 0.12 l 0.12,-0.48 -0.72,-0.12 -0.12,0.48 v 1.44 l -0.12,1.56 v 2.4 z m 0.72,-8.52 0.24,-1.08 v 0.12 l 0.36,-1.44 v 0 l 0.48,-1.32 v 0 l 0.48,-1.32 v 0.12 l 0.24,-0.6 -0.72,-0.24 -0.24,0.48 -0.48,1.32 -0.48,1.44 -0.36,1.32 -0.24,0.96 z m 3.12,-8.04 0.36,-0.6 h -0.12 l 0.84,-1.2 v 0 l 0.72,-1.08 v 0 l 0.84,-1.08 v 0 l 0.72,-0.72 -0.6,-0.48 -0.6,0.72 -0.96,1.08 -0.72,1.2 -0.84,1.2 -0.36,0.6 z m 5.28,-6.72 0.24,-0.24 v 0.12 l 0.96,-0.96 v 0 l 1.08,-0.84 v 0 l 1.2,-0.84 -0.12,0.12 1.2,-0.84 v 0 0 l -0.36,-0.6 v 0 l -1.2,0.72 -1.08,0.84 -1.2,0.84 -0.96,0.96 -0.24,0.24 z m 7.08,-4.8 1.2,-0.48 v 0 l 1.32,-0.6 h -0.12 l 1.44,-0.36 h -0.12 l 1.44,-0.36 v 0 l 0.24,-0.12 -0.12,-0.72 -0.36,0.12 -1.32,0.36 -1.44,0.48 -1.32,0.48 -1.08,0.48 z m 8.28,-2.52 1.08,-0.12 v 0 l 1.44,-0.12 -0.12,-0.72 -1.44,0.12 -1.08,0.12 z"
+         style="fill:#ed7d31;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path4840"
+         inkscape:connector-curvature="0" />
+      <g
+         id="g4842"
+         transform="matrix(0.12,0,0,-0.12,0,612)">
+        <path
+           d="m 3618,4158 v 314"
+           style="fill:none;stroke:#5b9bd5;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+           id="path4844"
+           inkscape:connector-curvature="0" />
+      </g>
+      <path
+         d="m 432.48,112.56 1.68,3.48 1.68,-3.48 z"
+         style="fill:#5b9bd5;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         id="path4846"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 435.84,75.84 -1.68,-3.36 -1.68,3.36 z"
+         style="fill:#5b9bd5;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         id="path4848"
+         inkscape:connector-curvature="0" />
+      <text
+         transform="matrix(0,1,1,0,530.15544,124.3152)"
+         style="font-variant:normal;font-weight:normal;font-size:11.64000034px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#ed7d31;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4850">
+        <tspan
+           x="0 6.01788 10.08024 16.21452 20.039995 26.174274 31.097994 37.232273 39.959991"
+           y="0"
+           id="tspan4852">Protocol</tspan>
+      </text>
+      <text
+         transform="matrix(0,1,1,0,544.07688,124.3152)"
+         style="font-variant:normal;font-weight:normal;font-size:11.64000034px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#ed7d31;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4854">
+        <tspan
+           x="0 6.33216 8.9977198 15.10872 21.219721 23.885281 29.996281 35.399998 39.951241"
+           y="0"
+           id="tspan4856">Bindings</tspan>
+      </text>
+      <text
+         transform="matrix(0,1,1,0,557.99832,121.07928)"
+         style="font-variant:normal;font-weight:normal;font-size:11.64000034px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#ed7d31;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4858">
+        <tspan
+           x="0 5.79672 10.83684 16.559996 21.483715 27.594715 31.559998 34.225559 40.359837 46.470837"
+           y="0"
+           id="tspan4860">execution</tspan>
+      </text>
+      <text
+         transform="matrix(0,1,1,0,571.91976,121.55652)"
+         style="font-variant:normal;font-weight:normal;font-size:11.64000034px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#ed7d31;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4862">
+        <tspan
+           x="0 6.1110001 12.24528 18.356279 24.467279 30.578279 36.153839 40.216202"
+           y="0"
+           id="tspan4864">boundary</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,573.47952,64.43904)"
+         style="font-variant:normal;font-weight:normal;font-size:11.64000034px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#ed7d31;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4866">
+        <tspan
+           x="0 4.8888001 11.02308 19.34568 25.079998 29.142359 31.772999 36.324238 40.223637 45.799198 50.722919 56.019119 58.649757 66.355438"
+           y="0"
+           id="tspan4868">Lower stack OS</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,562.08396,50.5176)"
+         style="font-variant:normal;font-weight:normal;font-size:11.64000034px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#ed7d31;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4870">
+        <tspan
+           x="0 5.79672 10.83684 16.559996 21.483715 27.594715 31.559998 34.225559 40.359837 46.470837 49.101479 55.212479 61.346756 67.457756 73.568756 79.55999 85.199989 89.262352"
+           y="0"
+           id="tspan4872">execution boundary</tspan>
+      </text>
+      <g
+         id="g4874"
+         transform="matrix(0.12,0,0,-0.12,0,612)">
+        <path
+           d="m 3440,3354 12,-17"
+           style="fill:none;stroke:#5b9bd5;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+           id="path4876"
+           inkscape:connector-curvature="0" />
+      </g>
+      <path
+         d="m 411.24,210.12 3.24,1.8 -0.48,-3.72 z"
+         style="fill:#5b9bd5;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         id="path4878"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 415.92,210.96 -3.36,-1.92 0.48,3.84 z"
+         style="fill:#5b9bd5;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         id="path4880"
+         inkscape:connector-curvature="0" />
+      <text
+         transform="matrix(1,0,0,-1,386.39844,172.79892)"
+         style="font-variant:normal;font-weight:normal;font-size:6.84000015px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4882">
+        <tspan
+           x="0 3.5362799 5.92344 9.52812 11.81952 15.239999 18.133318 21.737999 23.304359 24.850199 28.571159 30.137518 33.600002 37.191002 38.757362 42.348362 45.48"
+           y="0"
+           id="tspan4884">Protocol Bindings</tspan>
+      </text>
+      <path
+         d="m 314.52,201 h 200.52 v -8.64 H 314.52 Z"
+         style="fill:#c5e0b3;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path4886"
+         inkscape:connector-curvature="0" />
+      <text
+         transform="matrix(1,0,0,-1,380.88,194.87808)"
+         style="font-variant:normal;font-weight:normal;font-size:5.76000023px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4888">
+        <tspan
+           x="0 3.7199981 6.5884781 9.6124783 12.480958 14.491199 15.810238 18.360001 19.66176 22.639681 24.720001 27.755522 29.685122 32.720642 35.157124 38.280003 39.599045 40.900803 44.034245 45.353283 48.480003 51.504002 52.823044 55.920002 58.632965 60.000004 63.335041 66.312965"
+           y="0"
+           id="tspan4890">Generic Protocol Binding API</tspan>
+      </text>
+      <g
+         id="g4892"
+         transform="matrix(0.12,0,0,-0.12,0,612)">
+        <path
+           d="m 3455,3359 v 222"
+           style="fill:none;stroke:#5b9bd5;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+           id="path4894"
+           inkscape:connector-curvature="0" />
+      </g>
+      <path
+         d="m 412.8,208.56 1.68,3.36 1.8,-3.36 z"
+         style="fill:#5b9bd5;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         id="path4896"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 416.28,182.64 -1.68,-3.36 -1.68,3.36 z"
+         style="fill:#5b9bd5;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         id="path4898"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 319.44,248.64 h 5.76 v -0.72 h -5.76 z m 8.64,0 h 5.88 v -0.72 h -5.88 z m 8.76,0 h 5.88 v -0.72 h -5.88 z m 8.76,0 h 5.76 v -0.72 h -5.76 z"
+         style="fill:#ed7d31;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path4900"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 354.24,248.64 h 5.88 v -0.72 h -5.88 z m 8.76,0 h 5.76 v -0.72 H 363 Z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.64,0 h 5.88 v -0.72 h -5.88 z"
+         style="fill:#ed7d31;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path4902"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 389.16,248.64 h 5.76 v -0.72 h -5.76 z m 7.8,0.12 v 5.88 h 0.72 v -5.88 z m 0,8.76 v 5.88 h 0.72 v -5.88 z m 0,8.76 v 5.76 h 0.72 v -5.76 z"
+         style="fill:#ed7d31;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path4904"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 396.96,274.92 v 5.88 h 0.72 v -5.88 z m 0,8.76 v 5.88 h 0.72 v -5.88 z m 0,8.76 v 5.76 h 0.72 v -5.76 z m 0,8.64 v 5.88 h 0.72 v -5.88 z"
+         style="fill:#ed7d31;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path4906"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 396.96,309.84 v 0.36 0 l -0.12,0.84 v 0 l -0.24,0.84 v -0.12 l -0.36,0.84 h 0.12 l -0.36,0.72 v 0 l -0.48,0.72 v -0.12 l -0.48,0.72 v 0 l -0.24,0.24 0.6,0.48 0.24,-0.24 0.48,-0.72 0.48,-0.72 0.36,-0.84 0.36,-0.84 0.24,-0.84 0.12,-0.84 v -0.48 z m -4.32,6.72 v 0.12 0 l -0.72,0.36 v 0 l -0.84,0.24 h 0.12 l -0.84,0.24 v 0 l -0.84,0.12 v 0 h -0.84 v 0.72 h 0.96 l 0.84,-0.12 0.84,-0.24 0.84,-0.36 0.84,-0.36 v 0 z m -3.96,1.08 h -1.44 v 0.72 h 1.44 z m -4.32,0 h -5.88 v 0.72 h 5.88 z"
+         style="fill:#ed7d31;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path4908"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 375.6,317.64 h -5.76 v 0.72 h 5.76 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.64,0 h -5.88 v 0.72 h 5.88 z m -8.76,0 h -5.76 v 0.72 h 5.76 z"
+         style="fill:#ed7d31;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path4910"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 340.68,317.64 h -5.76 v 0.72 h 5.76 z m -8.64,0 h -5.88 v 0.72 h 5.88 z m -8.76,0 h -3.84 v 0 h -0.84 v 0 l -0.84,-0.12 v 0 l -0.12,-0.12 -0.24,0.72 0.24,0.12 0.84,0.12 h 0.96 3.84 z m -8.28,-1.32 -0.24,-0.12 v 0 l -0.6,-0.48 v 0 l -0.6,-0.48 v 0 l -0.6,-0.6 h 0.12 l -0.6,-0.72 0.12,0.12 -0.48,-0.72 v 0 l -0.36,-0.72 v 0 l -0.12,-0.48 -0.72,0.24 0.24,0.48 0.36,0.84 0.36,0.72 0.6,0.72 0.6,0.6 0.6,0.6 0.72,0.48 0.24,0.24 z"
+         style="fill:#ed7d31;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path4912"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 311.16,309.36 v 0 h -0.72 v 0 z m 0,0 v -5.76 h -0.72 v 5.76 z m 0,-8.76 v -5.76 h -0.72 v 5.76 z m 0,-8.64 v -5.88 h -0.72 v 5.88 z m 0,-8.76 v -5.76 h -0.72 v 5.76 z m 0,-8.64 v -5.88 h -0.72 v 5.88 z m 0,-8.76 v -5.88 h -0.72 v 5.88 z m 0,-8.76 v -0.12 0 -0.84 0 l 0.12,-0.84 v 0 l 0.24,-0.84 v 0.12 l 0.24,-0.84 v 0 l 0.36,-0.72 v 0 l 0.48,-0.72 h -0.12 l 0.36,-0.36 -0.6,-0.48 -0.36,0.48 -0.36,0.72 -0.36,0.84 -0.36,0.84 -0.24,0.84 -0.12,0.84 v 0.96 0.12 z m 3.72,-7.08 0.6,-0.36 v 0 l 0.72,-0.36 v 0 l 0.72,-0.24 v 0 l 0.84,-0.24 v 0 l 0.84,-0.12 v 0 h 0.84 v -0.72 h -0.96 l -0.84,0.12 -0.96,0.24 -0.72,0.36 -0.84,0.36 -0.6,0.36 z"
+         style="fill:#ed7d31;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path4914"
+         inkscape:connector-curvature="0" />
+      <text
+         transform="matrix(0,1,1,0,476.03664,260.28252)"
+         style="font-variant:normal;font-weight:normal;font-size:6.84000015px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#ed7d31;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4916">
+        <tspan
+           x="0 3.13956 6.0328798 8.4200401 9.9863997 13.439998 15.731398 18.405838 19.951677 23.279995 26.241714 29.648035 32.541355 35.999992 38.291393 39.857754 43.462433 47.053432"
+           y="0"
+           id="tspan4918">Scripts execution</tspan>
+      </text>
+      <text
+         transform="matrix(0,1,1,0,484.08048,270.59724)"
+         style="font-variant:normal;font-weight:normal;font-size:6.84000015px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#ed7d31;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4920">
+        <tspan
+           x="0 3.5910001 7.0800018 10.671002 14.262002 17.853003 21.129362 23.400003"
+           y="0"
+           id="tspan4922">boundary</tspan>
+      </text>
+      <path
+         d="m 407.16,308.04 h 21.72 v -17.4 h -21.72 z"
+         style="fill:#5b9bd5;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path4924"
+         inkscape:connector-curvature="0" />
+      <g
+         id="g4926"
+         transform="matrix(0.12,0,0,-0.12,0,612)">
+        <path
+           d="m 3393,2678 h 181 v -145 h -181 z"
+           style="fill:none;stroke:#c8c8c8;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+           id="path4928"
+           inkscape:connector-curvature="0" />
+      </g>
+      <text
+         transform="matrix(1,0,0,-1,412.44,300.72)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4930">
+        <tspan
+           x="0 2.28 4.3104 5.9856 7.0847998 9.6048002 11.28"
+           y="0"
+           id="tspan4932">Script</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,413.52,294.96)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4934">
+        <tspan
+           x="0"
+           y="0"
+           id="tspan4936">M</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,417.72,294.96)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4938">
+        <tspan
+           x="0"
+           y="0"
+           id="tspan4940">+</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,420.12,294.96)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4942">
+        <tspan
+           x="0"
+           y="0"
+           id="tspan4944">1</tspan>
+      </text>
+      <path
+         d="m 433.32,297.12 h 21.72 v 8.76 l -2.16,2.16 h -17.4 c -1.2,0 -2.16,-0.96 -2.16,-2.16 0,0 0,0 0,0 z"
+         style="fill:#5b9bd5;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         id="path4946"
+         inkscape:connector-curvature="0" />
+      <g
+         id="g4948"
+         transform="matrix(0.12,0,0,-0.12,0,612)">
+        <path
+           d="m 3611,2624 h 181 v -73 l -18,-18 h -145 c -10,0 -18,8 -18,18 0,0 0,0 0,0 z"
+           style="fill:none;stroke:#c8c8c8;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+           id="path4950"
+           inkscape:connector-curvature="0" />
+      </g>
+      <path
+         d="m 437.64,293.88 h 21.84 v 8.76 l -2.28,2.16 h -17.4 c -1.2,0 -2.16,-0.96 -2.16,-2.16 0,0 0,0 0,0 z"
+         style="fill:#5b9bd5;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         id="path4952"
+         inkscape:connector-curvature="0" />
+      <g
+         id="g4954"
+         transform="matrix(0.12,0,0,-0.12,0,612)">
+        <path
+           d="m 3647,2651 h 182 v -73 l -19,-18 h -145 c -10,0 -18,8 -18,18 0,0 0,0 0,0 z"
+           style="fill:none;stroke:#c8c8c8;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+           id="path4956"
+           inkscape:connector-curvature="0" />
+      </g>
+      <path
+         d="m 444.12,290.64 h 21.84 v 8.76 l -2.16,2.16 h -17.4 c -1.2,0 -2.28,-0.96 -2.28,-2.16 0,0 0,0 0,0 z"
+         style="fill:#5b9bd5;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         id="path4958"
+         inkscape:connector-curvature="0" />
+      <g
+         id="g4960"
+         transform="matrix(0.12,0,0,-0.12,0,612)">
+        <path
+           d="m 3701,2678 h 182 v -73 l -18,-18 h -145 c -10,0 -19,8 -19,18 0,0 0,0 0,0 z"
+           style="fill:none;stroke:#c8c8c8;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+           id="path4962"
+           inkscape:connector-curvature="0" />
+      </g>
+      <text
+         transform="matrix(1,0,0,-1,448.8,294.6)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4964">
+        <tspan
+           x="0 2.4000001 4.9200001 6.0191998 8.5391998 10.8"
+           y="0"
+           id="tspan4966">Things</tspan>
+      </text>
+      <g
+         id="g4968"
+         transform="matrix(0.12,0,0,-0.12,0,612)">
+        <path
+           d="m 3483,2678 v 50 h 309 v -25"
+           style="fill:none;stroke:#5b9bd5;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+           id="path4970"
+           inkscape:connector-curvature="0" />
+      </g>
+      <path
+         d="m 453.36,287.28 1.68,3.36 1.68,-3.36 z"
+         style="fill:#5b9bd5;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         id="path4972"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 429.72,286.92 h 13.56 v -4.68 h -13.56 z"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path4974"
+         inkscape:connector-curvature="0" />
+      <text
+         transform="matrix(1,0,0,-1,429.84192,283.31904)"
+         style="font-variant:normal;font-weight:normal;font-size:3.83999991px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#4f88bb;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4976">
+        <tspan
+           x="0 2.016 3.3561599 5.3798399 7.1999998 8.07936 10.09536 12.00768"
+           y="0"
+           id="tspan4978">provides</tspan>
+      </text>
+      <path
+         d="m 407.16,279.48 h 21.72 v -17.4 h -21.72 z"
+         style="fill:#5b9bd5;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path4980"
+         inkscape:connector-curvature="0" />
+      <g
+         id="g4982"
+         transform="matrix(0.12,0,0,-0.12,0,612)">
+        <path
+           d="m 3393,2916 h 181 v -145 h -181 z"
+           style="fill:none;stroke:#c8c8c8;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+           id="path4984"
+           inkscape:connector-curvature="0" />
+      </g>
+      <text
+         transform="matrix(1,0,0,-1,412.44,272.16)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4986">
+        <tspan
+           x="0 2.28 4.3104 5.9856 7.0847998 9.6048002 11.28"
+           y="0"
+           id="tspan4988">Script</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,412.56,266.4)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4990">
+        <tspan
+           x="0 4.1999998"
+           y="0"
+           id="tspan4992">M</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,417.72,266.4)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4994">
+        <tspan
+           x="0 2.3903999"
+           y="0"
+           id="tspan4996">+</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,421.32,266.4)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text4998">
+        <tspan
+           x="0"
+           y="0"
+           id="tspan5000">Y</tspan>
+      </text>
+      <path
+         d="m 433.32,268.56 h 21.72 v 8.76 l -2.16,2.16 h -17.4 c -1.2,0 -2.16,-0.96 -2.16,-2.16 0,0 0,0 0,0 z"
+         style="fill:#5b9bd5;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         id="path5002"
+         inkscape:connector-curvature="0" />
+      <g
+         id="g5004"
+         transform="matrix(0.12,0,0,-0.12,0,612)">
+        <path
+           d="m 3611,2862 h 181 v -73 l -18,-18 h -145 c -10,0 -18,8 -18,18 0,0 0,0 0,0 z"
+           style="fill:none;stroke:#c8c8c8;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+           id="path5006"
+           inkscape:connector-curvature="0" />
+      </g>
+      <path
+         d="m 437.64,265.32 h 21.84 v 8.76 l -2.28,2.16 h -17.4 c -1.2,0 -2.16,-0.96 -2.16,-2.16 0,0 0,0 0,0 z"
+         style="fill:#5b9bd5;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         id="path5008"
+         inkscape:connector-curvature="0" />
+      <g
+         id="g5010"
+         transform="matrix(0.12,0,0,-0.12,0,612)">
+        <path
+           d="m 3647,2889 h 182 v -73 l -19,-18 h -145 c -10,0 -18,8 -18,18 0,0 0,0 0,0 z"
+           style="fill:none;stroke:#c8c8c8;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+           id="path5012"
+           inkscape:connector-curvature="0" />
+      </g>
+      <path
+         d="m 444.12,262.08 h 21.84 v 8.76 L 463.8,273 h -17.4 c -1.2,0 -2.28,-0.96 -2.28,-2.16 0,0 0,0 0,0 z"
+         style="fill:#5b9bd5;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         id="path5014"
+         inkscape:connector-curvature="0" />
+      <g
+         id="g5016"
+         transform="matrix(0.12,0,0,-0.12,0,612)">
+        <path
+           d="m 3701,2916 h 182 v -73 l -18,-18 h -145 c -10,0 -19,8 -19,18 0,0 0,0 0,0 z"
+           style="fill:none;stroke:#c8c8c8;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+           id="path5018"
+           inkscape:connector-curvature="0" />
+      </g>
+      <text
+         transform="matrix(1,0,0,-1,448.8,266.04)"
+         style="font-variant:normal;font-weight:normal;font-size:4.80000019px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text5020">
+        <tspan
+           x="0 2.4000001 4.9200001 6.0191998 8.5391998 10.8"
+           y="0"
+           id="tspan5022">Things</tspan>
+      </text>
+      <g
+         id="g5024"
+         transform="matrix(0.12,0,0,-0.12,0,612)">
+        <path
+           d="m 3483,2916 v 51 h 309 v -26"
+           style="fill:none;stroke:#5b9bd5;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+           id="path5026"
+           inkscape:connector-curvature="0" />
+      </g>
+      <path
+         d="m 453.36,258.6 1.68,3.48 1.68,-3.48 z"
+         style="fill:#5b9bd5;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         id="path5028"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 429.72,258.36 h 13.56 v -4.68 h -13.56 z"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path5030"
+         inkscape:connector-curvature="0" />
+      <text
+         transform="matrix(1,0,0,-1,429.84192,254.76096)"
+         style="font-variant:normal;font-weight:normal;font-size:3.83999991px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#4f88bb;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text5032">
+        <tspan
+           x="0 2.016 3.3561599 5.3798399 7.1999998 8.07936 10.09536 12.00768"
+           y="0"
+           id="tspan5034">provides</tspan>
+      </text>
+      <path
+         d="m 411,248.64 h 5.76 v -0.72 H 411 Z m 8.64,0 h 5.88 v -0.72 h -5.88 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.76,0 h 5.76 v -0.72 h -5.76 z"
+         style="fill:#ed7d31;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path5036"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 445.8,248.64 h 5.88 v -0.72 h -5.88 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.64,0 h 5.88 v -0.72 h -5.88 z"
+         style="fill:#ed7d31;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path5038"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 480.72,248.64 h 5.76 v -0.72 h -5.76 z m 7.8,0.12 v 5.88 h 0.72 v -5.88 z m 0,8.76 v 5.88 h 0.72 v -5.88 z m 0,8.76 v 5.76 h 0.72 v -5.76 z"
+         style="fill:#ed7d31;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path5040"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 488.52,274.92 v 5.88 h 0.72 v -5.88 z m 0,8.76 v 5.88 h 0.72 v -5.88 z m 0,8.76 v 5.76 h 0.72 v -5.76 z m 0,8.64 v 5.88 h 0.72 v -5.88 z"
+         style="fill:#ed7d31;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path5042"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 488.52,309.84 -0.12,0.36 v 0 l -0.12,0.84 v 0 l -0.12,0.84 v -0.12 l -0.36,0.84 v 0 l -0.36,0.72 h 0.12 l -0.48,0.72 v -0.12 l -0.48,0.72 v 0 l -0.24,0.24 0.6,0.48 0.24,-0.24 0.48,-0.72 0.48,-0.72 0.36,-0.84 0.24,-0.84 0.24,-0.84 0.12,-0.84 0.12,-0.48 z m -4.32,6.72 v 0.12 0 l -0.84,0.36 h 0.12 l -0.84,0.24 v 0 l -0.84,0.24 h 0.12 l -0.84,0.12 v 0 h -0.84 v 0.72 h 0.84 l 0.96,-0.12 0.84,-0.24 0.84,-0.36 0.84,-0.36 v 0 z m -3.96,1.08 h -1.44 v 0.72 h 1.44 z m -4.32,0 h -5.88 v 0.72 h 5.88 z"
+         style="fill:#ed7d31;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path5044"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 467.16,317.64 h -5.88 v 0.72 h 5.88 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.64,0 h -5.88 v 0.72 h 5.88 z m -8.76,0 h -5.88 v 0.72 H 441 Z"
+         style="fill:#ed7d31;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path5046"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 432.24,317.64 h -5.76 v 0.72 h 5.76 z m -8.64,0 h -5.88 v 0.72 h 5.88 z m -8.76,0 H 411 v 0 h -0.96 0.12 l -0.84,-0.12 v 0 l -0.24,-0.12 -0.12,0.72 0.24,0.12 0.84,0.12 h 0.96 3.84 z m -8.28,-1.32 -0.24,-0.12 v 0 l -0.6,-0.48 v 0 l -0.6,-0.48 v 0 l -0.6,-0.6 v 0 l -0.48,-0.72 v 0.12 l -0.36,-0.72 v 0 l -0.36,-0.72 v 0 l -0.12,-0.48 -0.72,0.24 0.12,0.48 0.48,0.84 0.36,0.72 0.6,0.72 0.6,0.6 0.6,0.6 0.72,0.48 0.24,0.24 z"
+         style="fill:#ed7d31;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path5048"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 402.72,309.36 v 0 H 402 v 0 z m 0,0 V 303.6 H 402 v 5.76 z m 0,-8.76 v -5.76 H 402 v 5.76 z m 0,-8.64 v -5.88 H 402 v 5.88 z m 0,-8.76 v -5.76 H 402 v 5.76 z m 0,-8.64 v -5.88 H 402 v 5.88 z m 0,-8.76 v -5.88 H 402 v 5.88 z m 0,-8.76 v -0.12 0 -0.84 0 l 0.12,-0.84 v 0 l 0.24,-0.84 v 0.12 l 0.24,-0.84 v 0 l 0.36,-0.72 v 0 l 0.36,-0.72 v 0 l 0.36,-0.36 -0.6,-0.48 -0.36,0.48 -0.36,0.72 -0.48,0.84 -0.24,0.84 -0.24,0.84 -0.12,0.84 v 0.96 0.12 z m 3.72,-7.08 0.6,-0.36 v 0 l 0.72,-0.36 v 0 l 0.72,-0.24 v 0 l 0.84,-0.24 v 0 l 0.84,-0.12 h -0.12 0.96 v -0.72 h -0.96 l -0.84,0.12 -0.96,0.24 -0.84,0.36 -0.72,0.36 -0.6,0.36 z"
+         style="fill:#ed7d31;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path5050"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 311.52,101.16 h 1.68 v 0 h 4.08 v -0.72 h -4.08 -1.8 z m 8.64,0 h 5.88 v -0.72 h -5.88 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.64,0 h 5.88 v -0.72 h -5.88 z m 8.76,0 h 5.88 v -0.72 h -5.88 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.64,0 h 5.88 v -0.72 h -5.88 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.76,0 H 387 v -0.72 h -5.76 z m 8.64,0 h 5.88 v -0.72 h -5.88 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.64,0 h 5.88 v -0.72 h -5.88 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.64,0 h 5.88 v -0.72 h -5.88 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.64,0 h 5.88 v -0.72 h -5.88 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.64,0 h 5.88 v -0.72 h -5.88 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.64,0 h 5.88 v -0.72 h -5.88 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.64,0 h 5.88 v -0.72 h -5.88 z m 8.76,0 h 5.88 v -0.72 h -5.88 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.64,0 h 5.88 v -0.72 h -5.88 z m 8.76,0 h 5.88 v -0.72 H 573 Z m 8.76,0 h 1.68 v 0 l 1.68,0.12 v 0 l 1.68,0.24 v 0 l 0.6,0.12 0.12,-0.72 -0.6,-0.12 -1.68,-0.24 -1.8,-0.12 h -1.68 z m 8.52,1.08 1.32,0.36 v 0 l 1.56,0.6 v 0 l 1.44,0.6 v -0.12 l 1.08,0.48 0.24,-0.6 -0.96,-0.48 -1.56,-0.6 -1.56,-0.6 -1.44,-0.36 z m 7.92,3.24 0.72,0.48 v 0 l 1.32,0.84 v 0 l 1.32,0.96 v 0 l 1.32,0.96 v 0 0.12 l 0.48,-0.6 -0.12,-0.12 -1.2,-0.96 -1.32,-0.96 -1.44,-0.84 -0.72,-0.48 z m 6.84,5.28 0.12,0.12 v 0 l 1.08,1.08 v 0 l 1.08,1.32 v -0.12 l 0.96,1.32 v 0 l 0.48,0.6 0.6,-0.36 -0.48,-0.72 -0.96,-1.2 -1.08,-1.32 -1.08,-1.08 -0.24,-0.24 z m 5.28,6.72 0.6,1.08 v -0.12 l 0.72,1.56 v -0.12 l 0.72,1.56 v 0 l 0.48,1.2 0.6,-0.24 -0.48,-1.32 -0.6,-1.44 -0.84,-1.44 -0.6,-1.08 z m 3.36,7.92 0.24,0.6 v 0 l 0.36,1.68 v 0 l 0.24,1.56 v 0 l 0.24,1.68 v 0 0.12 h 0.72 v -0.12 l -0.24,-1.8 -0.24,-1.68 -0.48,-1.56 -0.12,-0.6 z m 1.2,8.52 v 0.36 0 5.52 h 0.72 v -5.52 -0.36 z m 0,8.76 v 5.76 h 0.72 v -5.76 z m 0,8.64 v 5.88 h 0.72 v -5.88 z m 0,8.76 v 5.88 h 0.72 v -5.88 z m 0,8.76 v 5.76 h 0.72 v -5.76 z m 0,8.64 v 5.88 h 0.72 v -5.88 z m 0,8.76 V 192 h 0.72 v -5.76 z m 0,8.76 v 5.76 h 0.72 V 195 Z m 0,8.64 v 5.88 h 0.72 v -5.88 z m 0,8.76 v 5.76 h 0.72 v -5.76 z m 0,8.76 v 5.76 h 0.72 v -5.76 z m 0,8.64 v 5.88 h 0.72 v -5.88 z m 0,8.76 v 5.76 h 0.72 v -5.76 z m 0,8.76 v 5.76 h 0.72 v -5.76 z m 0,8.64 v 5.88 h 0.72 v -5.88 z m 0,8.76 v 5.76 h 0.72 v -5.76 z m 0,8.76 v 5.76 h 0.72 v -5.76 z m 0,8.64 V 288 h 0.72 v -5.88 z m 0,8.76 v 5.76 h 0.72 v -5.76 z m 0,8.76 v 5.76 h 0.72 v -5.76 z m 0,8.64 v 5.88 h 0.72 v -5.88 z m 0,8.76 v 0.36 0 l -0.12,1.68 v 0 l -0.24,1.68 v 0 l -0.24,1.68 v -0.12 l -0.12,0.36 0.72,0.24 0.12,-0.36 0.24,-1.68 0.24,-1.68 0.12,-1.8 v -0.36 z m -1.44,8.4 v 0.12 0 l -0.6,1.56 h 0.12 l -0.6,1.44 v 0 l -0.72,1.56 v 0 l -0.36,0.72 0.6,0.24 0.48,-0.72 0.6,-1.44 0.6,-1.56 0.6,-1.56 v -0.12 z m -3.6,7.8 -0.6,0.96 v 0 l -0.96,1.32 v 0 l -0.96,1.32 v 0 l -0.96,1.08 0.6,0.48 0.96,-1.08 0.96,-1.32 0.96,-1.32 0.6,-0.96 z m -5.52,6.72 -0.24,0.36 v -0.12 l -1.2,1.08 v 0 l -1.32,0.96 v 0 l -1.32,0.96 v 0 l -0.36,0.24 0.36,0.6 0.48,-0.24 1.32,-0.96 1.2,-0.96 1.32,-1.08 0.36,-0.36 z m -6.96,5.04 -1.2,0.6 v 0 l -1.56,0.72 v 0 l -1.44,0.6 v 0 l -1.08,0.24 0.24,0.72 1.08,-0.36 1.56,-0.6 1.44,-0.6 1.32,-0.72 z m -8.04,3 -0.96,0.24 v 0 l -1.56,0.24 v 0 l -1.68,0.24 v 0 l -1.44,0.12 v 0.72 l 1.56,-0.12 1.68,-0.24 1.68,-0.24 0.96,-0.24 z m -8.52,0.84 h -5.88 v 0.72 h 5.88 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.64,0 h -5.88 v 0.72 h 5.88 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.64,0 h -5.88 v 0.72 h 5.88 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.64,0 h -5.88 v 0.72 h 5.88 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.64,0 h -5.88 v 0.72 h 5.88 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.64,0 h -5.88 v 0.72 h 5.88 z m -8.76,0 h -5.76 v 0.72 H 450 Z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.64,0 h -5.88 v 0.72 h 5.88 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.64,0 h -5.88 v 0.72 h 5.88 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.64,0 h -5.88 v 0.72 h 5.88 z m -8.76,0 h -5.88 v 0.72 h 5.88 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.64,0 H 357 v 0.72 h 5.88 z m -8.76,0 h -5.88 v 0.72 h 5.88 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.64,0 h -5.88 v 0.72 h 5.88 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.64,-0.12 h -0.84 0.12 l -1.68,-0.24 v 0 l -1.68,-0.24 v 0 l -1.56,-0.36 -0.24,0.72 1.68,0.36 1.68,0.24 1.68,0.24 h 0.72 z m -8.4,-1.68 -0.36,-0.12 v 0 l -1.56,-0.6 v 0 l -1.44,-0.72 v 0 l -1.44,-0.72 v 0 l -0.48,-0.24 -0.36,0.6 0.48,0.24 1.44,0.84 1.56,0.6 1.56,0.6 0.36,0.12 z m -7.68,-3.96 -1.2,-0.84 v 0 l -1.2,-0.96 v 0 l -1.2,-1.08 v 0.12 l -0.84,-0.84 -0.48,0.48 0.84,0.84 1.2,1.08 1.32,0.96 1.08,0.84 z m -6.48,-5.76 -0.48,-0.48 v 0 l -0.96,-1.32 v 0 l -0.96,-1.32 v 0 l -0.84,-1.32 v 0 l -0.12,-0.12 -0.6,0.36 0.12,0.12 0.84,1.44 0.96,1.32 1.08,1.32 0.48,0.48 z m -4.68,-7.08 -0.12,-0.12 v 0 l -0.6,-1.56 v 0 l -0.6,-1.44 v 0 l -0.48,-1.56 v 0 l -0.24,-0.72 -0.72,0.24 0.24,0.72 0.48,1.56 0.6,1.56 0.72,1.44 0.12,0.12 z m -2.76,-8.16 -0.24,-1.32 v 0 l -0.12,-1.68 v 0 l -0.12,-1.68 v 0 l -0.12,-1.08 h -0.72 l 0.12,1.08 0.12,1.8 0.12,1.68 0.24,1.32 z m -0.6,-8.64 v -5.88 h -0.72 v 5.88 z m 0,-8.76 v -5.76 h -0.72 v 5.76 z m 0,-8.64 v -5.88 h -0.72 v 5.88 z m 0,-8.76 v -5.76 h -0.72 v 5.76 z m 0,-8.76 v -5.76 h -0.72 v 5.76 z m 0,-8.64 V 264 h -0.72 v 5.88 z m 0,-8.76 v -5.76 h -0.72 v 5.76 z m 0,-8.76 v -5.76 h -0.72 v 5.76 z m 0,-8.64 v -5.88 h -0.72 v 5.88 z m 0,-8.76 v -5.76 h -0.72 v 5.76 z m 0,-8.76 v -5.76 h -0.72 v 5.76 z m 0,-8.64 v -5.88 h -0.72 v 5.88 z m 0,-8.76 v -5.76 h -0.72 v 5.76 z m 0,-8.76 v -5.76 h -0.72 v 5.76 z m 0,-8.64 v -5.88 h -0.72 v 5.88 z m 0,-8.76 v -5.76 h -0.72 v 5.76 z m 0,-8.76 v -5.76 h -0.72 v 5.76 z m 0,-8.64 v -5.88 h -0.72 v 5.88 z m 0,-8.76 v -5.76 h -0.72 v 5.76 z m 0,-8.76 v -5.76 h -0.72 v 5.76 z m 0,-8.64 v -4.8 0 -1.08 h -0.72 v 1.08 4.8 z m 0.24,-8.64 0.12,-1.2 v 0 l 0.36,-1.56 v 0 l 0.36,-1.68 v 0 l 0.36,-1.2 -0.72,-0.24 -0.36,1.32 -0.36,1.56 -0.36,1.68 -0.12,1.2 z m 2.16,-8.4 0.24,-0.6 v 0 l 0.6,-1.56 V 120 l 0.84,-1.56 v 0.12 l 0.72,-1.44 v 0 l 0.12,-0.24 -0.6,-0.36 -0.12,0.24 -0.84,1.44 -0.72,1.44 -0.72,1.44 -0.24,0.72 z m 4.2,-7.44 v -0.12 0 l 0.96,-1.32 v 0.12 l 1.08,-1.32 v 0 l 1.08,-1.08 v 0 l 0.6,-0.6 -0.48,-0.6 -0.6,0.72 -1.08,1.08 -1.08,1.32 -1.08,1.2 v 0.12 z m 5.88,-6.24 0.84,-0.6 v 0 l 1.32,-0.96 v 0 l 1.32,-0.84 v 0 l 1.32,-0.84 -0.36,-0.6 -1.32,0.84 -1.32,0.84 -1.32,0.96 -0.84,0.6 z m 7.44,-4.44 0.36,-0.24 v 0.12 l 1.56,-0.6 v 0 l 1.56,-0.6 h -0.12 l 1.68,-0.48 v 0 h 0.36 l -0.12,-0.72 -0.48,0.12 -1.56,0.36 -1.56,0.6 -1.56,0.6 -0.48,0.12 z m 8.28,-2.4 v 0 0 l 1.68,-0.24 h -0.12 l 1.8,-0.12 -0.12,-0.72 -1.68,0.12 -1.68,0.24 v 0 z"
+         style="fill:#ed7d31;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path5052"
+         inkscape:connector-curvature="0" />
+      <text
+         transform="matrix(0,1,1,0,603.60384,173.51748)"
+         style="font-variant:normal;font-weight:normal;font-size:11.64000034px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#ed7d31;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text5054">
+        <tspan
+           x="0 10.3596 16.493879 22.079998 24.710638 30.6 35.640121 41.43684 46.360561 52.471561 56.280006 58.945564 65.079842 71.190842 73.821487 79.932487 86.066765 92.177765 98.288765 104.39977 109.97533 114.03768"
+           y="0"
+           id="tspan5056">WoT execution boundary</tspan>
+      </text>
+      <path
+         d="m 634.68,101.16 h 0.72 -0.12 5.16 v -0.72 h -5.16 -0.72 z m 8.64,0 h 5.88 v -0.72 h -5.88 z m 8.76,0 h 5.76 v -0.72 h -5.76 z m 8.64,0 h 5.88 v -0.72 h -5.88 z m 8.76,0 h 5.88 v -0.72 h -5.88 z m 8.76,0 H 684 v -0.72 h -5.76 z m 8.64,0 h 4.2 v 0 h 0.72 v 0 l 0.72,0.12 h -0.12 0.24 l 0.24,-0.72 h -0.24 l -0.72,-0.12 h -0.84 -4.2 z m 8.28,1.32 0.24,0.12 h -0.12 l 0.48,0.48 v 0 l 0.48,0.48 v 0 l 0.36,0.48 v 0 l 0.36,0.6 v -0.12 l 0.24,0.72 v -0.12 l 0.24,0.72 v -0.12 l 0.12,0.72 v 0 l 0.12,0.6 v 0 0.12 h 0.72 v -0.12 l -0.12,-0.84 -0.12,-0.6 -0.24,-0.72 -0.36,-0.6 -0.36,-0.6 -0.36,-0.6 -0.48,-0.48 -0.6,-0.48 -0.24,-0.24 z m 2.64,7.56 v 5.76 h 0.72 v -5.76 z m 0,8.76 v 5.76 h 0.72 v -5.76 z m 0,8.64 v 5.88 h 0.72 v -5.88 z m 0,8.76 v 5.76 h 0.72 v -5.76 z m 0,8.76 v 5.76 h 0.72 v -5.76 z m 0,8.64 v 5.88 h 0.72 v -5.88 z m 0,8.76 v 5.76 h 0.72 v -5.76 z m 0,8.64 v 5.88 h 0.72 V 171 Z m 0,8.76 v 5.88 h 0.72 v -5.88 z m 0,8.76 v 5.76 h 0.72 v -5.76 z m 0,8.64 v 5.88 h 0.72 v -5.88 z m 0,8.76 v 5.88 h 0.72 v -5.88 z m 0,8.76 v 5.76 h 0.72 v -5.76 z m 0,8.64 v 5.88 h 0.72 v -5.88 z m 0,8.76 v 5.88 h 0.72 v -5.88 z m 0,8.76 v 5.76 h 0.72 v -5.76 z m 0,8.64 v 5.88 h 0.72 v -5.88 z m 0,8.76 V 264 h 0.72 v -5.76 z m 0,8.76 v 5.76 h 0.72 V 267 Z m 0,8.64 v 5.88 h 0.72 v -5.88 z m 0,8.76 v 5.76 h 0.72 v -5.76 z m 0,8.76 v 5.76 h 0.72 v -5.76 z m 0,8.64 v 5.88 h 0.72 v -5.88 z m 0,8.76 v 5.76 h 0.72 v -5.76 z m 0,8.76 v 5.76 h 0.72 v -5.76 z m 0,8.64 v 5.88 h 0.72 v -5.88 z m 0,8.76 v 5.52 0 l -0.12,0.24 0.72,0.12 0.12,-0.36 v -5.52 z m -0.72,8.4 -0.12,0.36 v -0.12 l -0.36,0.6 v 0 l -0.36,0.48 v 0 l -0.48,0.48 v 0 l -0.48,0.48 h 0.12 l -0.6,0.36 v 0 l -0.48,0.36 v 0 l -0.6,0.24 v 0 l -0.6,0.24 v 0 H 693 l 0.12,0.72 h 0.24 l 0.6,-0.24 0.72,-0.36 0.6,-0.36 0.48,-0.48 0.6,-0.48 0.48,-0.48 0.36,-0.6 0.36,-0.6 0.12,-0.24 z m -6.84,3.72 h -5.88 v 0.72 h 5.88 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.64,0 h -5.88 v 0.72 h 5.88 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.76,0 h -5.76 v 0.72 h 5.76 z m -8.64,0 h -2.64 0.12 -0.72 v 0 l -0.72,-0.12 v 0 l -0.6,-0.12 v 0 l -0.6,-0.24 v 0 l -0.36,-0.24 -0.36,0.72 0.48,0.24 0.6,0.24 0.72,0.12 0.72,0.12 h 0.72 2.64 z m -7.68,-2.4 -0.36,-0.48 v 0 l -0.36,-0.6 v 0.12 l -0.24,-0.6 v 0 l -0.24,-0.6 v 0 l -0.24,-0.72 0.12,0.12 -0.12,-0.72 v 0 l -0.12,-0.72 v 0 -0.96 h -0.72 v 0.96 l 0.12,0.84 0.12,0.72 0.12,0.6 0.24,0.72 0.36,0.6 0.36,0.6 0.36,0.6 z m -1.56,-8.04 v -5.88 h -0.72 v 5.88 z m 0,-8.76 v -5.88 h -0.72 v 5.88 z m 0,-8.76 v -5.76 h -0.72 v 5.76 z m 0,-8.64 v -5.88 h -0.72 v 5.88 z m 0,-8.76 v -5.76 h -0.72 v 5.76 z m 0,-8.76 v -5.76 h -0.72 v 5.76 z m 0,-8.64 v -5.88 h -0.72 v 5.88 z m 0,-8.76 v -5.76 h -0.72 v 5.76 z m 0,-8.76 v -5.76 h -0.72 v 5.76 z m 0,-8.64 v -5.88 h -0.72 v 5.88 z m 0,-8.76 v -5.76 h -0.72 v 5.76 z m 0,-8.76 v -5.76 h -0.72 v 5.76 z m 0,-8.64 v -5.88 h -0.72 v 5.88 z m 0,-8.76 v -5.76 h -0.72 V 225 Z m 0,-8.76 v -5.76 h -0.72 v 5.76 z m 0,-8.64 v -5.88 h -0.72 v 5.88 z m 0,-8.76 v -5.76 h -0.72 v 5.76 z m 0,-8.76 v -5.76 h -0.72 v 5.76 z m 0,-8.64 v -5.88 h -0.72 v 5.88 z m 0,-8.76 v -5.76 h -0.72 v 5.76 z m 0,-8.76 v -5.76 h -0.72 v 5.76 z m 0,-8.64 v -5.88 h -0.72 v 5.88 z m 0,-8.76 v -5.76 h -0.72 v 5.76 z m 0,-8.64 V 132 h -0.72 v 5.88 z m 0,-8.76 v -5.88 h -0.72 v 5.88 z m 0,-8.76 v -5.76 h -0.72 v 5.76 z m 0,-8.64 v -3.96 0 l 0.12,-0.72 v 0 l 0.12,-0.6 h -0.12 l 0.12,-0.48 -0.6,-0.12 -0.12,0.36 -0.12,0.84 -0.12,0.72 v 3.96 z m 1.56,-8.16 v 0 0 l 0.48,-0.48 h -0.12 l 0.6,-0.48 h -0.12 l 0.6,-0.36 v 0 l 0.48,-0.36 v 0 l 0.6,-0.24 v 0 l 0.6,-0.24 v 0 l 0.6,-0.12 v 0 l 0.72,-0.12 -0.12,-0.72 -0.72,0.12 -0.72,0.12 -0.6,0.24 -0.72,0.36 -0.6,0.36 -0.48,0.48 -0.6,0.48 -0.48,0.48 v 0 z"
+         style="fill:#ed7d31;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path5058"
+         inkscape:connector-curvature="0" />
+      <text
+         transform="matrix(1,0,0,-1,640.56084,132.96372)"
+         style="font-variant:normal;font-weight:normal;font-size:11.64000034px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#ed7d31;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text5060">
+        <tspan
+           x="0 7.5194402 13.65372"
+           y="0"
+           id="tspan5062">Non</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,660.36048,132.96372)"
+         style="font-variant:normal;font-weight:normal;font-size:11.64000034px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#ed7d31;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text5064">
+        <tspan
+           x="0"
+           y="0"
+           id="tspan5066">-</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,663.84084,132.96372)"
+         style="font-variant:normal;font-weight:normal;font-size:11.64000034px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#ed7d31;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text5068">
+        <tspan
+           x="0 10.3596 16.493879 22.079998"
+           y="0"
+           id="tspan5070">WoT</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,640.0836,119.04228)"
+         style="font-variant:normal;font-weight:normal;font-size:11.64000034px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#ed7d31;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text5072">
+        <tspan
+           x="0 5.79672 10.83684 16.559996 21.483715 27.594715 31.559998 34.225559 40.359837 46.470837"
+           y="0"
+           id="tspan5074">execution</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,640.56084,105.12084)"
+         style="font-variant:normal;font-weight:normal;font-size:11.64000034px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#ed7d31;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text5076">
+        <tspan
+           x="0 6.1110001 12.24528 18.356279 24.467279 30.578279 36.153839 40.216202"
+           y="0"
+           id="tspan5078">boundary</tspan>
+      </text>
+      <path
+         d="m 640.32,331.8 h 45.84 v -36.6 h -45.84 z"
+         style="fill:#5b9bd5;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path5080"
+         inkscape:connector-curvature="0" />
+      <g
+         id="g5082"
+         transform="matrix(0.12,0,0,-0.12,0,612)">
+        <path
+           d="m 5336,2640 h 382 v -305 h -382 z"
+           style="fill:none;stroke:#c8c8c8;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+           id="path5084"
+           inkscape:connector-curvature="0" />
+      </g>
+      <text
+         transform="matrix(1,0,0,-1,650.0394,315.48132)"
+         style="font-variant:normal;font-weight:normal;font-size:6.84000015px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text5086">
+        <tspan
+           x="0 4.3200002 7.9246802"
+           y="0"
+           id="tspan5088">Non</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,661.55796,315.48132)"
+         style="font-variant:normal;font-weight:normal;font-size:6.84000015px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text5090">
+        <tspan
+           x="0"
+           y="0"
+           id="tspan5092">-</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,663.60312,315.48132)"
+         style="font-variant:normal;font-weight:normal;font-size:6.84000015px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text5094">
+        <tspan
+           x="0 6 9.6046801 12.93576"
+           y="0"
+           id="tspan5096">WoT</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,648.00108,307.3212)"
+         style="font-variant:normal;font-weight:normal;font-size:6.84000015px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text5098">
+        <tspan
+           x="0 3.27636 6.8673601 10.320001 11.88636 13.452721 16.346041 19.559999 21.851398 23.417759 27.02244"
+           y="0"
+           id="tspan5100">application</tspan>
+      </text>
+      <path
+         d="m 640.32,289.92 h 45.84 v -36.6 h -45.84 z"
+         style="fill:#5b9bd5;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path5102"
+         inkscape:connector-curvature="0" />
+      <g
+         id="g5104"
+         transform="matrix(0.12,0,0,-0.12,0,612)">
+        <path
+           d="m 5336,2989 h 382 v -305 h -382 z"
+           style="fill:none;stroke:#c8c8c8;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+           id="path5106"
+           inkscape:connector-curvature="0" />
+      </g>
+      <text
+         transform="matrix(1,0,0,-1,650.0394,273.6)"
+         style="font-variant:normal;font-weight:normal;font-size:6.84000015px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text5108">
+        <tspan
+           x="0 4.3200002 7.9246802"
+           y="0"
+           id="tspan5110">Non</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,661.55796,273.6)"
+         style="font-variant:normal;font-weight:normal;font-size:6.84000015px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text5112">
+        <tspan
+           x="0"
+           y="0"
+           id="tspan5114">-</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,663.60312,273.6)"
+         style="font-variant:normal;font-weight:normal;font-size:6.84000015px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text5116">
+        <tspan
+           x="0 6 9.6046801 12.93576"
+           y="0"
+           id="tspan5118">WoT</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,653.39784,265.43988)"
+         style="font-variant:normal;font-weight:normal;font-size:6.84000015px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#feffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text5120">
+        <tspan
+           x="0 3.13956 6.4799972 8.867157 11.879999 13.44636 16.33968"
+           y="0"
+           id="tspan5122">Service</tspan>
+      </text>
+      <text
+         transform="matrix(1,0,0,-1,654.47064,217.92408)"
+         style="font-variant:normal;font-weight:normal;font-size:23.28000069px;line-height:0%;font-family:Calibri;-inkscape-font-specification:Calibri;writing-mode:lr-tb;fill:#5b9bd5;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text5124">
+        <tspan
+           x="0 5.86656 11.73312"
+           y="0"
+           id="tspan5126">...</tspan>
+      </text>
+    </g>
+  </g>
+</svg>

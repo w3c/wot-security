@@ -146,7 +146,7 @@
                 },
                 "Dur13": {
                   authors: ["Z. Durumeric", "et al."]
-                  , href: "http://conferences.sigcomm.org/imc/2013/papers/imc257-durumericAemb.pdf"
+                  , href: "https://conferences.sigcomm.org/imc/2013/papers/imc257-durumericAemb.pdf"
                   , title: "Analysis of the HTTPS Certificate Ecosystem"
                   , publisher: "Proc. of the 2013 conference on Internet measurement conference"
                   , date: "October 2013"
@@ -161,7 +161,7 @@
                 },
                 "Fu01": {
                   authors: ["K. Fu", "et al."]
-                  , href: "http://pdos.csail.mit.edu/papers/webauth:sec10.pdf"
+                  , href: "https://pdos.csail.mit.edu/papers/webauth:sec10.pdf"
                   , title: "Dos and Don’ts of Client Authentication on the Web"
                   , publisher: "Proc. 10th USENIX Security Symposium"
                   , date: "August 2001"
@@ -173,7 +173,7 @@
                 },
                 "Geo12": {
                   authors: ["M. Georgiev", "et al."]
-                  , href: "http://www.cs.utexas.edu/~shmat/shmat_ccs12.pdf"
+                  , href: "https://www.cs.utexas.edu/~shmat/shmat_ccs12.pdf"
                   , title: "The Most Dangerous Code in the World: Validating SSL Certificates in Non-Browser Software"
                   , publisher: "Proc. of the 2012 ACM conference on Computer and communications security"
                   , date: "2012"
@@ -189,7 +189,7 @@
                 }, 
                 "Gre14": {
                   authors: ["M. Green"]
-                  , href: "http://blog.cryptographyengineering.com/2014/03/how-do-you-know-if-rng-is-working.html"
+                  , href: "https://blog.cryptographyengineering.com/2014/03/19/how-do-you-know-if-rng-is-working/"
                   , title: "How do you know if an RNG is working?"
                   , date: "March 2014"
                 },
@@ -203,7 +203,7 @@
                 },
                 "Hea13": {
                   authors: ["M. Hearn"]
-                  , href: "http://googleblog.blogspot.de/2013/02/an-update-on-our-war-against-account.html"
+                  , href: "https://googleblog.blogspot.de/2013/02/an-update-on-our-war-against-account.html"
                   , title: "An update on our war against account hijackers"
                   , date: "Feb 2013"
                 },
@@ -219,14 +219,14 @@
                 },
                 "IicRA17": {
                   authors: ["Industrial Internet Consortium"]
-                  , href: "http://www.iiconsortium.org/IIRA.htm"
+                  , href: "https://www.iiconsortium.org/IIRA.htm"
                   , title: "The Industrial Internet of Things Volume G1: Reference Architecture"
                   , publisher: "IIC:PUB:G1:V1.80:20170131"
                   , date: "Jan 2017"
                 },
                 "IicSF16": {
                   authors: ["Industrial Internet Consortium"]
-                  , href: "http://www.iiconsortium.org/IISF.htm"
+                  , href: "https://www.iiconsortium.org/IISF.htm"
                   , title: "The Industrial Internet of Things Volume G4: Security Framework"
                   , publisher: "IIC:PUB:G4:V1.0:PB:20160926"
                   , date: "Sept 2016"
@@ -247,7 +247,7 @@
                 },
                 "Ken03": {
                   authors: ["S. Kent", "L. Millet"]
-                  , href: "http://www.nap.edu/openbook.php?isbn=0309088968"
+                  , href: "https://www.nap.edu/read/10656/chapter/1"
                   , title: "Who Goes There? Authentication Through the Lens of Privacy"
                   , publisher: "The National Academies Press, Washington D.C."
                   , date: "2003"
@@ -268,7 +268,7 @@
                 },
                 "Mel15": {
                   authors: ["D. Melzer"]
-                  , href: "http://c.ymcdn.com/sites/www.issa.org/resource/resmgr/journalpdfs/feature0615.pdf"
+                  , href: "https://c.ymcdn.com/sites/www.issa.org/resource/resmgr/journalpdfs/feature0615.pdf"
                   , title: "Securing the Industrial Internet of Things"
                   , date: "June 2015"
                 },
@@ -281,7 +281,7 @@
                 },
                 "Moo02": {
                   authors: ["T. Moors"]
-                  , href: "http://www.csd.uoc.gr/~hy435/material/moors.pdf"
+                  , href: "https://www.csd.uoc.gr/~hy435/material/moors.pdf"
                   , title: "A critical review of End-to-end arguments in system design"
                   , publisher: "Proc. of the IEEE International Conference on Communications"
                   , date: "2002"
@@ -314,7 +314,7 @@
                 },
                 "Sch14": {
                   authors: ["B. Schneier"]
-                  , href: "http://www.wired.com/2014/01/theres-no-good-way-to-patch-the-internet-of-things-and-thats-a-huge-problem/"
+                  , href: "https://www.wired.com/2014/01/theres-no-good-way-to-patch-the-internet-of-things-and-thats-a-huge-problem/"
                   , title: "The Internet of Things Is Wildly Insecure — And Often Unpatchable"
                   , publisher: "Wired"
                   , date: "Jan. 2014"
@@ -408,6 +408,28 @@
       </p>
     </section>
 
+    <section>
+      <h1>Lifecycle of a WoT device</h1>
+
+      <figure id="wot-lifecycle">
+           <img src="images/WoT_lifecycle_diagram.png"
+                width="100%"
+                title="WoT Device Lifecycle"/>
+           <figcaption>WoT Device Lifecycle</figcaption>
+       </figure>
+
+      <p>A typical lifecycle of a WoT device is very similar to lifecycles of IoT devices. It is shown in Figure <a href="#wot-lifecycle"></a> and consists from the following states:
+      <ul>
+        <li><strong>Manufactured.</strong> At this stage the WoT device is manufactured by an OEM with a variant of WoT stack enabled. It might have a WoT runtime present that enables single or multi-tenant users or it might only have exposed WoT interfaces present. From manufactured state, the device can transition to either of two states: Installation/Commissioning state or Security Provisioning state based on deployment scenario.</li>
+        <li><strong>Installation/Commissioning</strong> At this stage a WoT device is installed into its intended deployment scenario by a system provider or system integrator, as well as necessary SW configuration is performed. This in practice can be combined with the following Security Provisioning stage.</li>
+        <li><strong>Security Provisioning.</strong> The main goal of this stage is to provision a WoT device with a required set of security metadata and credentials that it needs during the Operational state. The exact set of these credentials would vary based on deployment model, choice of security mechanisms etc. <cite> The State-of-the-Art and Challenges for the Internet of Things Security</cite> [[Garcia17]] document refers to this stage as "Bootstrapping".</li>
+        <li><strong>Operational State.</strong> This is the default operational state of WoT devices. Devices are fully ready to communicate over WoT interfaces and operate to their deployment scenarios. From Operational state a device can return back to manufactured state if it is fully decommissioned and security de-provisioned (link E in Figure <a href="#wot-lifecycle"></a>). It is also possible that only partial reset on device is performed: if it only requires re-installation and recommissioning without security re-provisioning needed (link D in Figure <a href="#wot-lifecycle"></a>) or only security re-provisioning is needed without re-installation and re-commissioning (link C in Figure <a href="#wot-lifecycle"></a>).</li>
+        <li><strong>Maintenance and security updates.</strong> This is an optional state that can be activated remotely or locally (link A in Figure <a href="#wot-lifecycle"></a>) on a WoT device depending on the deployment model and overall setup. This state can be required for example to update the SW layers of a WoT device or perform some security-related updates, such as key revocation, certificate updates etc. After the maintenance or updates are done, the device returns back to the Operational state (link B in Figure <a href="#wot-lifecycle"></a>). </li>
+      </ul>
+      The scope of this document only covers the Operation state of a WoT device with the assumption that all relevant security metadata and credentials has been successfully provisioned during the Security Provisioning state and available transparently to the WoT runtime level. The security-related updates (such as revocation and update of keys and other credentials) is also out of the scope of this document.
+      </p>
+    </section>
+
   <section>
     <h1>Requirements</h1>
 	
@@ -456,29 +478,31 @@
       <td>
       Don't want the devices to be used in any form of attacks
       (loss of reputation, possible legal consequences in some countries).
-      Want to satisfy security requirements of <a>Thing users</a>
-      and <a>Thing providers</a> for better HW sales.</td>
+      Want to satisfy security requirements of <a>System users</a>
+      and <a>System providers</a> for better HW sales.</td>
 			<td></td>
 		  </tr><tr>
-			<th><dfn data-lt="thing provider|thing providers">
-      Thing Provider</dfn><br/> or
-      <dfn data-lt="thing integrator|thing integrators">
-      Thing Integrator</dfn></th>
+			<th><dfn data-lt="system provider|system providers">
+      System Provider</dfn><br/> or
+      <dfn data-lt="system integrator|system integrators">
+      System Integrator</dfn><br/> or
+      <dfn data-lt="system installer|system installers">
+      System Installer</dfn></th>
 			<td>
       Uses devices from <a>OEM</a>s to build various WoT end solutions
       specific to particular WoT use case(s).
-      An <a>OEM</a> might simultaneously be a Thing provider.
+      An <a>OEM</a> might simultaneously be a System provider.
       Might define new TDs or modify TDs provided by <a>OEM</a>s.
       Might use scripting API and runtime provided to implement their solution
       or might do a full reflash of the device.
-      Thing provider's scripts and their configuration data might require
+      System provider's scripts and their configuration data might require
       confidentiality and/or integrity.
-      A Thing Integrator is similar to a Thing Provider but tends to
+      A System Integrator/Installer is similar to a System Provider but tends to
       reuse rather than create new technology.
       </td>
 			<td>Don't want their WoT network to be a target of any attacks
       (loss of reputation, possible legal consequences in some countries).
-      Want to satisfy security requirements of Thing users for better sales.
+      Want to satisfy security requirements of System users for better sales.
       Don't want security to interfere with usability for better sales
       (usability vs. security).
       <!-- Is "DOS resistance" a defined term?  If so, where are they defined, and do we need links? -->
@@ -487,22 +511,22 @@
       Want to hide their proprietary scripts and other relevant data from other parties.
       </td>
 			<td>
-      There might be several independent Thing providers (tenants) on a single HW device.
+      There might be several independent system providers (tenants) on a single HW device.
       In that case isolation between them is required while (perhaps) sharing solution user preferences and identification.
       </td>
       </tr><tr>
-      <th><dfn data-lt="thing user|thing users">Thing User</dfn></th>
+      <th><dfn data-lt="system user|system users">System User</dfn></th>
       <td>
       This might be physical users (e.g. John and his family in their smart home)
       or abstract users (e.g. company running a factory). The primary characteristic of this stakeholder is the need to use WoT Network to obtain some functionality. These users would entrust WoT Network with their data (video streams from home cameras or factory plans) or physical capabilities in the surrounding environment(put lights on in a room or start a machine on the factory line).
-      Thing users might differ in their access to the WoT network
+      System users might differ in their access to the WoT network
       and transferred data (for example, they might only be able to configure
       certain parts of the network or only use it as it is).
       </td>
       <!-- TODO: Are Data confidentiality and Data integrity defined terms? If so, where are they defined... in requirements? Should they be marked with links? -->
       <td>
-      Don't want their data to be exposed to any other thing user,
-      <a>Thing provider</a> or <a>OEM</a> unless intended (Data confidentiality).
+      Don't want their data to be exposed to any other system user,
+      <a>System provider</a> or <a>OEM</a> unless intended (Data confidentiality).
       Don't want their data to be modified unless intended (Data integrity).</td>
       <td>Access to user data might be configurable based not only on "who"
       is the entity accessing the data (AC subject), but also his/her/its role,
@@ -510,14 +534,13 @@
       </tr>
       </table>
 
-      <p class="ednote" title="Consider adding Security Owner">
+      <p class="ednote" title="Consider adding System Owner">
         In addition to the above stakeholders, we might need to define a notion of
-        <dfn data-lt="security owner|security owners">Security Owner</dfn>:
-        an entity that provisions a thing with the security root of trust 
+        <dfn data-lt="system owner|system owners">System Owner</dfn>:
+        an entity that provisions a thing with the security root of trust
         and sets up the initial policies on who can provision/update/remove scripts
-        to/from the WoT runtime,
-        if such model is supported.
-        A WoT system might generally have a number of independent security owners,
+        to/from the WoT runtimes, if such model is supported.
+        A WoT system might have a number of independent system owners,
         each with its own set of provisioned certificates and/or credentials.
         The exact hierarchy of owners that WoT wants to support is to be discussed.
         Underlying IoT protocol suites may have their own notion of ownership.
@@ -537,8 +560,8 @@
         </tr><tr>
              <th><dfn data-lt="system maintainer|system maintainers">
                  System Maintainer</dfn></th>
-             <td>Administers a WoT system on behalf of a <a>Thing Provider</a>
-                 or <a>Thing User</a>.</td>
+             <td>Administers a WoT system on behalf of a <a>System Provider</a>
+                 or <a>System User</a>.</td>
              <td>---</td>
         </tr>
         </table>
@@ -547,7 +570,7 @@
         We need to understand more about the <a>System Maintainer</a> role:
         what kind of operations would it need to do?
         Reflash devices, reinstall/install/remove scripts?
-        If it has the level of access equal to Thing provider,
+        If it has the level of access equal to System provider,
         we just talk about delegation (and there are security mechanisms to do it),
         not really about a separate role.</p>
         
@@ -580,9 +603,9 @@
                      Others: read only for minimal required part.</td>
                  <td>Storage on thing itself, cloud storage, in-transfer (network) including TD updates.</td>
          </tr><tr>
-            <th><dfn>Thing User Data</dfn></th>
+            <th><dfn>System User Data</dfn></th>
             <td>Can be highly privacy sensitive and confidential.</td>
-            <td>Different <a>thing users</a> might have different levels of
+            <td>Different <a>system users</a> might have different levels of
             access to this data based on the use case.
             Non-authorized access must be minimized since access even to a small amount of information
             (for example the last timestamp when a door lock API was used) might have severe
@@ -590,17 +613,17 @@
             from his house).
             Mechanism should be flexible to configure and might also need to include RBAC.<br/>
             Others: should have no access unless specifically allowed</td>
-            <td>Storage on the device itself, remote thing provider storage (Cloud or other),
+            <td>Storage on the device itself, remote solution provider storage (Cloud or other),
             in-transfer (network)</td>
           </tr><tr>
-            <th><dfn data-lt="thing provider scripts|thing provider script">
-                     Thing Provider Data</dfn>
+            <th><dfn data-lt="system provider scripts|system provider script">
+                     System Provider Data</dfn>
             <td>This includes both WoT scripts and configuration data owned by a
-            <a>Thing Provider</a>. It also includes the notion of a Thing instance, i.e.
+            <a>System Provider</a>. It also includes the notion of a Thing instance, i.e.
             run-time representation of script running inside WoT Runtime.
-            <a>Thing providers</a> might have Intellectual Property (IP) in their scripts,
+            <a>System providers</a> might have Intellectual Property (IP) in their scripts,
             making them highly confidential.</td>
-            <td><a>Thing provider</a>: full access<br/>
+            <td><a>System provider</a>: full access<br/>
             Others: no access</td>
             <td>Storage on the device itself, runtime memory representation,
             in-transfer only for initial provisioning and script updates
@@ -611,7 +634,7 @@
                      <dfn data-lt="wot infrastructure resource">
                      WoT Infrastructure Resources</dfn></th>
             <td>Resources should only be used for legitimate purposes and be available when required.</td>
-            <td><a>Thing User</a>, <a>Thing provider</a></td>
+            <td><a>System User</a>, <a>System provider</a></td>
             <!-- TODO: "WoT Interface" is a term for the network API of a Thing 
             defined in the WoT architecture document. How do we refer to these,
             and can we link to their definitions? -->
@@ -622,7 +645,7 @@
             around them.
             Such capability must only be used by authorized entities and for legitimate purposes only.
             An actuator capability also implies a possible safety risk.</td>
-            <td><a>Thing User</a>, <a>Thing provider</a> and whoever is explicitly authorized by them to control the environment. </td>
+            <td><a>System User</a>, <a>System provider</a> and whoever is explicitly authorized by them to control the environment. </td>
             <td>WoT Interface</td>
           </tr><tr>
             <th><dfn>WoT Behavior Metrics</dfn></th>
@@ -644,7 +667,7 @@
           </table>
 
           <p>The term <dfn>Thing Data</dfn> can be used to refer to either
-             <a>Thing User Data</a> or <a>Thing Provider Data</a>.</p>
+             <a>System User Data</a> or <a>System Provider Data</a>.</p>
 
           <p class="ednote" title="Unique Object Identifier">
             Can be a highly sensitive asset due to privacy implications of tracking.
@@ -668,13 +691,13 @@
               </tr><tr>
                   <th><dfn>WoT Scripts Security Metadata</dfn></th>
                   <td>Defines who can provision, install, update, and remove scripts and other
-                      <a>Thing Provider Data</a> inside a WOT runtime.</td>
-                  <td><a>Thing Provider</a>, <a>System Maintainer</a></td>
+                      <a>System Provider Data</a> inside a WOT runtime.</td>
+                  <td><a>System Provider</a>, <a>System Maintainer</a></td>
                   <td>WoT Script Management Interface</td>
               </tr>
           </table>
 
-          <p>If a WoT system allows co-existence of different independent <a>Thing providers</a> (tenants)
+          <p>If a WoT system allows co-existence of different independent <a>System providers</a> (tenants)
              on a single physical device, the following assets are added:</p>
 
           <table>
@@ -685,9 +708,9 @@
                   <th>Attack Points</th>
               </tr><tr>
                   <th><dfn>WoT Runtime Isolation Policies</dfn></th>
-                  <td>Access control policies for isolating co-existing thing providers on the device.
-                      Not required if a simple baseline policy of "full isolation" is applied to different WoT Runtimes running scripts from different Thing providers. It might be required if some level of data sharing between them is needed. </td>
-                  <td><a>Thing Provider</a>, <a>System Maintainer</a></td>
+                  <td>Access control policies for isolating co-existing system providers on the device.
+                      Not required if a simple baseline policy of "full isolation" is applied to different WoT Runtimes running scripts from different System providers. It might be required if some level of data sharing between them is needed. </td>
+                  <td><a>System Provider</a>, <a>System Maintainer</a></td>
                   <td>Storage on the thing itself, remote storage (if they are backed up to a remote storage),
                       in-transfer for initial provisioning and policy updates</td>
               </tr>
@@ -744,7 +767,7 @@
           <p>The general term <dfn data-lt="malicious users">Malicious User</dfn> may be used to refer to either a
              <a>Malicious Authorized User</a> or a <a>Malicious Unauthorized User</a>.</p>
 
-          <p>If in a WoT system allows the co-existence of different independent Thing providers (tenants)
+          <p>If in a WoT system allows the co-existence of different independent System providers (tenants)
              on a single physical device, the following adversaries are added:</p>
           <table>
               <tr>
@@ -752,11 +775,11 @@
                   <th>Motivation</th>
                   <th>Attacker Type</th>
               </tr><tr>
-                  <th><dfn>Malicious Thing Provider</dfn></td>
-                  <td>Tries to get access or modify other <a>Thing Provider Data</a>,
-                      tries to access or modify <a>Thing User Data</a> from another solution provider.</td>
-                  <td>Unprivileged software adversary: 
-                      <a>Thing provider scripts</a> running on the same HW device, but inside a different WoT runtime</td>
+                  <th><dfn>Malicious System Provider</dfn></td>
+                  <td>Tries to get access or modify other <a>System Provider Data</a>,
+                      tries to access or modify <a>System User Data</a> from another solution provider.</td>
+                  <td>Unprivileged software adversary:
+                      <a>System provider scripts</a> running on the same HW device, but inside a different WoT runtime</td>
               </tr>
            </table>
 
@@ -778,7 +801,7 @@
 		       HW parts with low quality unvalidated replacement parts potentially impacting security.</td>
 		   <td>Local physical access, privileged access</td>
 	       </tr><tr>
-		   <th><dfn>Careless Thing Provider</dfn></th>
+		   <th><dfn>Careless System Provider</dfn></th>
 		   <td>In order to reduce solution deployment costs utilizes low quality SW,
 		       performs poor testing, misconfigures hardware or software,
 		       TDs and/or access control policies.</td>
@@ -833,7 +856,7 @@
                        but in addition can be implemented using any stronger security measures available
                        on the device (Mandatory Access Control, OS-kernel level virtualization,
                        Full Virtualization etc.)</td>
-                   <td>This boundary is required if we assume that we have different Thing Providers running on the same device in different WoT Runtime Instances.</td>
+                   <td>This boundary is required if we assume that we have different System Providers running on the same device in different WoT Runtime Instances.</td>
                </tr><tr>
                    <th><dfn>WoT Execution Boundary</dfn></th>
                    <td>Separates execution contexts between WoT runtime
@@ -872,7 +895,7 @@
                        Unauthorized execution of exposed WoT Interfaces,
                        Denial of Service</td>
                    <td><a>TDs</a>,
-                       <a>Thing User Data</a>,
+                       <a>System User Data</a>,
                        <a>WoT Thing Resources</a>,
                        <a>WoT Infrastructure Resources</a>,
                        <a>WoT Controlled Environment</a>,
@@ -883,7 +906,7 @@
                    <td>Modification or unauthorized access to any affected asset,
                        Unauthorized execution of exposed WoT Protocol Bindings,
                        Denial of Service</td>
-                  <td> <a>Thing User Data</a>,
+                  <td> <a>System User Data</a>,
                        <a>WoT Thing Resources</a>,
                        <a>WoT Infrastructure Resources</a>,
                        <a>WoT Controlled Environment</a>,
@@ -894,7 +917,7 @@
 
            <p>The following WoT attack surfaces are only in-scope for the WoT Security model 
               if we assume a WoT runtime can run untrusted scripts
-              or we assume co-existence of different Thing providers (tenants)
+              or we assume co-existence of different System providers (tenants)
               on a single physical device:</p>
            <table>
                <tr>
@@ -907,7 +930,7 @@
                    <td>Modification or unauthorized access to any asset available to other scripts.
                    Denial of Service</td>
                    <td><a>TDs</a>,
-                       <a>Thing User Data</a>,
+                       <a>System User Data</a>,
                        <a>WoT Thing Resources</a>,
                        <a>WoT Infrastructure Resources</a>,
                        <a>WoT Controlled Environment</a></td>
@@ -917,7 +940,7 @@
                    <td>Modification or unauthorized access to any asset available to other WoT Runtime running on the same HW device.
                    Denial of Service</td>
                    <td><a>TDs</a>,
-                       <a>Thing User Data</a>,
+                       <a>System User Data</a>,
                        <a>WoT Thing Resources</a>,
                        <a>WoT Infrastructure Resources</a>,
                        <a>WoT Controlled Environment</a></td>
@@ -937,7 +960,7 @@
                    <th>WoT Script Management Interface</th>
                    <td>Compromise of WoT scripts,
                        including installing an older version of legitimate scripts (rollback)</td>
-                   <td><a>Thing Provider Scripts</a> (part of <a>Thing Provider Data</a>)
+                   <td><a>System Provider Scripts</a> (part of <a>System Provider Data</a>)
                        and their execution environment</td>
                    <td>Network attack</td>
                </tr>
@@ -981,11 +1004,11 @@
          This threat model makes the assumption that this recommendation is followed.
          It is also assumed that WoT Protocol Bindings are trusted and cannot come from untrusted parties.
 
-         <p class="ednote" title="Protocol Bindings as Thing Provider Data">
-            We should discuss whether Protocol Bindings should be considered part of Thing Provider Data.
-            This makes sense if the Thing Provider is the one configuring the system capabilities, including
-            protocol bindings.  Note that if this configuration is done by the OEM, then they are a Thing
-            Provider, but there may be <em>another</em> thing provider building on top of the basic configuration
+         <p class="ednote" title="Protocol Bindings as System Provider Data">
+            We should discuss whether Protocol Bindings should be considered part of System Provider Data.
+            This makes sense if the System Provider is the one configuring the system capabilities, including
+            protocol bindings. Note that if this configuration is done by the OEM, then they are a System
+            Provider, but there may be <em>another</em> system provider building on top of the basic configuration
             provided by the OEM.
          </p>
 
@@ -1042,10 +1065,10 @@
                <td><a>Network Attacker</a>,
                    <a>Malware Developer</a>,
                    <a>Malicious Unauthorized Users</a>,
-                   <a>Malicious Thing Provider</a></td>
+                   <a>Malicious System Provider</a></td>
                <td>An asset exposed via WoT Interface:
                    <a>WoT controlled environment</a>,
-                    <a>Thing user data</a>,
+                    <a>System user data</a>,
                     non-public parts of <a>TDs</a>, etc.</td>
                <td><strong>Pre-conditions:</strong>
                    An attacker with an access to the WoT Interface<br/>
@@ -1080,7 +1103,7 @@
                 <td><a>Network Attacker</a>,
                     <a>Malware Developer</a>,
                     <a>Malicious Users</a>,
-                    <a>Malicious Thing Provider</a></td>
+                    <a>Malicious System Provider</a></td>
                 <td>TDs authenticity in-transfer</td>
                 <td><strong>Pre-conditions:</strong>
                     General preconditions for network attacker with access to the WoT Interface<br/>
@@ -1092,7 +1115,7 @@
                 <td><a>Network Attacker</a>,
                     <a>Malware Developer</a>,
                     <a>Malicious Users</a>,
-                    <a>Malicious Thing Provider</a></td>
+                    <a>Malicious System Provider</a></td>
                 <td>Confidential and privacy-sensitive parts of <a>TDs</a>in-transfer</td>
                 <td><strong>Pre-conditions:</strong>
                     General preconditions for network attacker with access to the WoT Interface<br/>
@@ -1104,8 +1127,8 @@
                  <td><a>Network Attacker</a>,
                      <a>Malware developer</a>,
                      <a>Malicious Users</a>,
-                     <a>Malicious Thing Provider</a></td>
-                 <td><a>Thing User Data</a> authenticity in-transfer</td>
+                     <a>Malicious System Provider</a></td>
+                 <td><a>System User Data</a> authenticity in-transfer</td>
                  <td><strong>Pre-conditions:</strong>
                      General preconditions for network attacker with access to the WoT Interface<br/>
                      <strong>Attack method:</strong>
@@ -1117,8 +1140,8 @@
                  <td><a>Network Attacker</a>,
                      <a>Malware Developer</a>,
                      <a>Malicious Users</a>,
-                     <a>Malicious Thing Provider</a></td>
-                 <td><a>Thing User Data</a> confidentiality in-transfer</td>
+                     <a>Malicious System Provider</a></td>
+                 <td><a>System User Data</a> confidentiality in-transfer</td>
                  <td><strong>Pre-conditions:</strong>
                      General preconditions for network attacker with access to the WoT Interface<br/>
                      <strong>Attack method:</strong>
@@ -1128,7 +1151,7 @@
                  <th><dfn>WoT Communication Threat - Side Channels</dfn></th>
                  <td><a>Network attacker</a>,
                      <a>Malicious users</a>,
-                     <a>Malicious Thing Provider</a></td>
+                     <a>Malicious System Provider</a></td>
                  <td><a>WoT Behavior Metrics</a></td>
                  <td><strong>Pre-conditions:</strong>
                      General preconditions for network attacker with access to the WoT Interface<br/>
@@ -1190,7 +1213,7 @@
              <a>WoT Script Management Interface Threat - WoT Runtime Compromise</a>, or 
              <a>WoT Script Management Interface Threat - DoS</a>.</p>
 
-         <p>If a WoT system allows co-existence of different independent thing providers (tenants) on a
+         <p>If a WoT system allows co-existence of different independent system providers (tenants) on a
             single physical device or if WoT scripts are assumed to be untrusted,
             it brings the following new threats in addition to the above ones:</p>
          <table>
@@ -1201,20 +1224,20 @@
                <th>Attack method and pre-conditions</th>
             </tr><tr>
                <th><dfn>WoT Untrusted Script Threat - Script Compromise</dfn></th>
-               <td><a>Malicious Thing Provider</a>,
+               <td><a>Malicious System Provider</a>,
                    <a>Malware Developer</a>,
                    <a>Malicious Users</a> (if they can install their own scripts)</td>
                <td>Component compromise and all WoT assets within the same execution boundary</td>
                <td><strong>Pre-conditions:</strong>
                    An attacker has a full control over the script running inside WoT runtime either
-                   legitimately (<a>thing provider script</a>) or by compromising a thing provider script or
+                   legitimately (<a>system provider script</a>) or by compromising a system provider script or
                    by installing its own script by other means.<br/>
                    <strong>Attack method:</strong>
                    Any local attack method on another script running in the same WoT runtime that results
                    in an attacker compromising that script and getting controls over it</td>
             </tr><tr>
                 <th><dfn>WoT Untrusted Script Threat - Runtime Compromise</dfn></th>
-                <td><a>Malicious Thing Provider</a>,
+                <td><a>Malicious System Provider</a>,
                     <a>Malware Developer</a>,
                     <a>Malicious Users</a> (if they can install their own scripts)</td>
                 <td>Component compromise and all WoT assets within the same execution boundary</td>
@@ -1225,10 +1248,10 @@
                     to WoT runtime level</td>
              </tr><tr>
                  <th><dfn>WoT Untrusted Script Threat - Confidentiality</dfn></th>
-                 <td><a>Malicious Thing Provider</a>,
+                 <td><a>Malicious System Provider</a>,
                      <a>Malware Developer</a>,
                      <a>Malicious Users</a> (if they can install their own scripts)</td>
-                 <td><a>Thing provider data</a> (scripts and configuration) confidentiality</td>
+                 <td><a>System provider data</a> (scripts and configuration) confidentiality</td>
                  <td><strong>Pre-conditions:</strong>
                     Same as for <a>WoT Untrusted Script Threat - Script Compromise</a><br/>
                      <strong>Attack method:</strong>
@@ -1236,10 +1259,10 @@
                      in an attacker obtaining knowledge about a script or its configuration</td>
               </tr><tr>
                   <th><dfn>WoT Untrusted Script Threat - Authenticity</dfn></th>
-                  <td><a>Malicious Thing Provider</a>,
+                  <td><a>Malicious System Provider</a>,
                       <a>Malware Developer</a>,
                       <a>Malicious Users</a> (if they can install their own scripts)</td>
-                  <td><a>Thing provider data</a> (scripts and configuration) authenticity</td>
+                  <td><a>System provider data</a> (scripts and configuration) authenticity</td>
                   <td><strong>Pre-conditions:</strong>
                     Same as for <a>WoT Untrusted Script Threat - Script Compromise</a><br/>
                       <strong>Attack method:</strong>
@@ -1248,7 +1271,7 @@
                       including rolling back to an older version of a script</td>
               </tr><tr>
                   <th><dfn>WoT Untrusted Script Threat - TD Confidentiality/Privacy</dfn></th>
-                  <td><a>Malicious Thing Provider</a>,
+                  <td><a>Malicious System Provider</a>,
                       <a>Malware Developer</a>,
                       <a>Malicious Users</a> (if they can install their own scripts)</td>
                   <td><a>TDs</a> confidentiality/privacy as stored on a thing</td>
@@ -1259,7 +1282,7 @@
                       in attacker unauthorized access to non-public parts of <a>TDs</a> or privacy sensitive parts of <a>TDs</a>.</td>
               </tr><tr>
                   <th><dfn>WoT Untrusted Script Threat - TD Authenticity</dfn></th>
-                  <td><a>Malicious Thing Provider</a>,
+                  <td><a>Malicious System Provider</a>,
                       <a>Malware Developer</a>,
                       <a>Malicious Users</a> (if they can install their own scripts)</td>
                   <td>TDs authenticity as stored on a thing</td>
@@ -1271,38 +1294,38 @@
                       including rolling back to an older version of TD</td>
               </tr><tr>
                   <th><dfn>WoT Untrusted Script Threat - Thing Data Authenticity</dfn></th>
-                  <td><a>Malicious Thing Provider</a>,
+                  <td><a>Malicious System Provider</a>,
                       <a>Malware Developer</a>,
                       <a>Malicious Users</a> (if they can install their own scripts)</td>
-                  <td><a>Thing User data</a> authenticity as stored/processed on a thing</td>
+                  <td><a>System User data</a> authenticity as stored/processed on a thing</td>
                   <td><strong>Pre-conditions:</strong>
                     Same as for <a>WoT Untrusted Script Threat - Script Compromise</a><br/>
                       <strong>Attack method:</strong>
                       Any local attack method on another script running in the same WoT runtime that results
-                      in attacker in being able to modify <a>thing user data</a>,
+                      in attacker in being able to modify <a>system user data</a>,
                       including rolling back to an older version</td>
               </tr><tr>
                   <th><dfn>WoT Untrusted Script Threat - Thing Data Confidentiality</dfn></th>
-                  <td><a>Malicious Thing Provider</a>,
+                  <td><a>Malicious System Provider</a>,
                       <a>Malware Developer</a>,
                       <a>Malicious Users</a> (if they can install their own scripts)</td>
-                  <td><a>Thing user data</a> confidentiality as stored/processed on a thing</td>
+                  <td><a>System user data</a> confidentiality as stored/processed on a thing</td>
                   <td><strong>Pre-conditions:</strong>
                     Same as for <a>WoT Untrusted Script Threat - Script Compromise</a><br/>
                       <strong>Attack method:</strong>
                       Any local attack method on another script running in the same WoT runtime that results
-                      in an attacker getting unauthorized access to <a>thing user data</a></td>
+                      in an attacker getting unauthorized access to <a>system user data</a></td>
               </tr><tr>
                   <th><dfn>WoT Untrusted Script Threat - DoS</dfn></th>
-                  <td><a>Malicious Thing Provider</a>
+                  <td><a>Malicious System Provider</a>
                       <a>Malware Developer</a>,
                       <a>Malicious Users</a> (if they can install their own scripts)</td>
-                  <td><a>WoT Thing Resources</a>,<a>WoT Infrastructure Resources</a>of another <a>thing provider</a></td>
+                  <td><a>WoT Thing Resources</a>,<a>WoT Infrastructure Resources</a>of another <a>system provider</a></td>
                   <td><strong>Pre-conditions:</strong>
                     Same as for <a>WoT Untrusted Script Threat - Script Compromise</a><br/>
                       <strong>Attack method:</strong> 
                       Any local attack method with the goal of consuming things or infrastructure resources
-                      that disturb legitimate operation of co-existing Thing providers.</td>
+                      that disturb legitimate operation of co-existing System providers.</td>
               </tr>
           </table>
       </section>
@@ -1835,7 +1858,7 @@ An example of privacy threat: a compromised application on a user smartphone con
             Both aspects can be fulfilled using different security mechanisms and the end decision on a concrete method depends on the deployment scenario, as well as capabilities of involved devices. The WoT Client is not expected be a resource limited device, but the device exposing the WoT Thing might have some resource constraints.
             </p>
             <p>
-            The WoT Client and the device exposing the WoT thing can use one of the following methods recommended by the OCF Security Specification [[Ocf17]] (see Section 10) to mutually authenticate each other given that there is a way to supply credential information required for authentication during the WoT network setup/provisioning stage:
+            The WoT Client and the device exposing the WoT thing can use one of the following methods recommended by the OCF Security Specification [[Ocf17]] (see Section 10) to mutually authenticate each other given that there is a way to supply credential information required for authentication during the WoT network provisioning stage:
             <ul>
             <li><strong>Symmetric key credentials.</strong> This method assumes that both WoT Client and the device exposing WoT Thing has pre-shared symmetric key credentials. Such keys can be established during device provisioning/on-boarding phase using one of the methods recommended in Section 7 [[Ocf17]] or using ad-hoc security protocols, such as EC Diffie-Hellman based on other existing pre-shared credentials. See Section 9.2.1 [[Ocf17]] for more details on such credential type.</li>
             <li><strong>Raw asymmetric key credentials.</strong> This method assumes that WoT Client has been provisioned with the public key of the device exposing the WoT thing (and visa versa) and able to authenticate the device based on it. The provisioning of public key can similarly happen during device provisioning/on-boarding phase using one of the methods recommended in Section 7 [[Ocf17]]. Section 9.2.3 [[Ocf17]] also provides more details on this credential type as well as guidance on its secure provisioning.</li>

@@ -6,6 +6,7 @@ Github repository of the W3C Web of Things Security and Privacy Task Force to ma
     * The latest stable version can be found [here](https://rawgit.com/w3c/wot-security/master/index.html).
     * A "rendered" form of the latest stable version can be found [here](https://w3c.github.io/wot-security/).  This compiles out the complex JavaScript implementing the ReSpec system, making it faster to view and more compatible with a wider range of browsers.  However, there may a small delay before it gets updated when the master changes.
     * A working "unstable" version is also available [here](https://rawgit.com/w3c/wot-security/working/index.html) but has not yet been validated and may have errors. It is also not "compiled" and so may be slow to display (or display with issues) on some broswers.
+* [Security Metadata (Strawman)](wot-security-metadata.md): A proposal (still under discussion) for a more general set of security metadata and an associated extension to the TD format to support it.   See issues marked "metadata" for discussion points.
 
 If you wish to make a contribution,
 please be aware that since the master is being linked from other WoT documents
