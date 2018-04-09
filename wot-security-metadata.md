@@ -12,16 +12,18 @@ OCF access control, Kerberos, Javascript Web Tokens, and Interledger payments.
 This proposal, unlike the current TD proposed specification, allows different security
 configurations to be specifiable both across the entire thing and per-interaction
 (actually, per link in each interaction).
-Unfortunately, JSON-LD makes it difficult to take the OpenAPI approach of specifying
-a global default and then per-interaction overrides.
-Therefore, we instead take the approach of allowing the specification of an array of named
-"security configurations" at global scope, and then allowing these specifications to be referenced 
+We allow the specification of an array of named
+"security configurations" at global scope.
+These configuration can then be referenced and combined
 in the definition of each interaction.
-This approach also allows a "OR-AND" approach to security configurations.  Within each specific
+This approach also allows a "OR-AND" approach to security configurations.
+Within each specific
 "form" within an interaction, all security configurations specified need to be met:
 an AND combination.
 However, multiple form alternatives are possible within an interaction,
 and these can have different security requirements: an OR combination.
+
+This proposal takes advantage of (proposed) JSON-LD 1.1 features.
 
 ## TD Example
 Before giving the details of each supported security configuration scheme,
@@ -33,21 +35,18 @@ HTTP authentication for HTTPS links and OCF access control lists for equivalent 
       "@type": ["Thing"],
       "name": "MyLampThing",
       "@id": "urn:dev:wot:my-lamp-thing",
-      "security": [
-        {
-          "@id": "basic-config",
+      "security": {
+        "basic-config": {
           "scheme": "basic"
         },
-        {
-          "@id": "ocf-config",
+        "ocf-config": {
           "scheme": "ocf"
         },
-        {
-          "@id": "apikey-config",
+        "apikey-config": {
           "scheme": "apikey",
           "in": "header"
         }
-      ],
+      },
       "interaction": [
         {
           "@type": ["Property"],
@@ -134,8 +133,8 @@ we specify that "read" access (eg the "GET" method) on this property to has diff
 (weaker) security than "write" access (eg the "POST" and "PUT" methods).
 In this example reads just require basic HTTP authentication
 (or, under OCF, appropriate ACL authorization) but writes in addition require an API key,
-consistent with the actions.  Note that in
-practice the API key may not be needed to provide this differential access under OCF as the ACL
+consistent with the actions.
+In practice the API key may not be needed to provide this differential access under OCF as the ACL
 can include differential read/write access for different users (although that access is tied to 
 identity, not ownership of the API key, so the additional API key provides an additional 
 layer of security; in particular, an API key can be updated on a device to revoke access to
@@ -170,24 +169,23 @@ His example includes several additional mechanisms not covered by the above,
 including tokens and proxies.  Here are his two examples as they would be
 expressed under the current proposal.
 
-### Tokens
-Here is an example (based on Matthias' example, above) using tokens:
+### Bearer Tokens
+Here is an example (based on Matthias' example, above) using bearer tokens:
 
     {
       "@context": ["https://w3c.github.io/wot/w3c-wot-td-context.jsonld"],
       "@type": ["Thing"],
       "name": "FujitsuBeacon",
       "@id": "urn:dev:wot:fujitsu-beacon",
-      "security": [
-        {
-          "@id": "bearer-token-config",
-          "scheme": "token",
+      "security": {
+        "bearer-token-config": {
+          "scheme": "bearer",
           "format": "jwt",
           "alg": "ES256",
-          "as": "https://plugfest.thingweb.io:8443/"
+          "authorizationUrl": "https://plugfest.thingweb.io:8443/"
         },
         ... // other security configurations, if needed
-      ],
+      },
       ...
       "interaction": [
         {
@@ -203,7 +201,9 @@ Here is an example (based on Matthias' example, above) using tokens:
     }
 
 As shown, in each form under interactions there would have to be
-a `"security" : "bearer-token-config"` entry.
+a `"security" : "bearer-token-config"` entry.  As bearer tokens need
+to be protected from interception they should only be used in combination with
+secure transport.
   
 ### Proxies
 Here is a second example using a proxy configuration:
@@ -213,18 +213,16 @@ Here is a second example using a proxy configuration:
       "@type": ["Thing"],
       "name": "Festo",
       "@id": "urn:dev:wot:festo",
-      "security": [
-        {
-          "@id": "proxy-config",
+      "security": {
+        "proxy-config": {
           "scheme": "basic",
           "proxy": "http://plugfest.thingweb.io:8087"
         },
-        {
-          "@id": "endpoint-config",
+        "endpoint-config": {
           ... // details omitted; independent of proxy configuration
         },
         ... // other security configurations, if needed
-      ],
+      },
       ...
       "interaction": [
         {
@@ -257,21 +255,20 @@ This example uses an OAuth authorization code flow.
       "@type": ["Thing"],
       "name": "Camera",
       "@id": "urn:dev:wot:camera",
-      "security": [
-        {
-          "@id": "oauth-config",
+      "security": {
+        "oauth-config": {
           "scheme": "oauth2",
           "flow": "code",
-          "as": "https://example.com/api/oauth/dialog",
-          "ts": "https://example.com/api/oauth/token",
-          "rs": "https://example.com/api/oauth/refresh",
+          "authorizationUrl": "https://example.com/api/oauth/dialog",
+          "tokenUrl": "https://example.com/api/oauth/token",
+          "refreshUrl": "https://example.com/api/oauth/refresh",
           "scope": [
             { "name": "read:frame" },
             ... // other scopes
-           ]
+          ]
         }
         ... // other security configurations, if needed
-      ],
+      },
       ...
       "interaction": [
         {
@@ -286,7 +283,7 @@ This example uses an OAuth authorization code flow.
               "mediaType": "image/jpeg",
               "method": "http:get",
               "security": ["oauth-config"],
-              "auth": ["read:frame"]
+              "scope": ["read:frame"]
             },
             ... // other forms
         },
@@ -402,20 +399,20 @@ Scheme: `"oauth2"`
 
 In general OAuth supports multiple flows, indicated with the `"flow"` tag, which has 
 one of the following values:
-- `"implicit"`: also requires `"as"` URL and `"scope"` array.
-- `"password"`: also requires `"ts"` URL and `"scope"` array.
-- `"client"`: also requires `"ts"` URL and `"scope"` array.
-- `"code"`: requires both `"as"` and `"ts"` URLs and `"scope"` array.
+- `"implicit"`: also requires `"authorizationUrl"` and `"scope"` array.
+- `"password"`: also requires `"tokenUrl"` and `"scope"` array.
+- `"client"`: also requires `"tokenUrl"` and `"scope"` array.
+- `"code"`: requires both `"authorizationUrl"` and `"tokenUrl"` URLs and `"scope"` array.
 
 This is modelled after the [OpenAPI OAuth
-Flow Object](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.1.md#oauthFlowObject) specification but with a flatter structure and simpler names.
-In particular, we use `"as"` in place of `"authorizationUrl"` and
-`"ts"` in place of `"tokenUrl"`.
+Flow Object](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.1.md#oauthFlowObject) 
+specification.
+In partiuclar we use `"authorizationUrl"` and `"tokenUrl"` to be consistent with OpenAPI.
 In addtion to the above required values, all flows may also have a 
-`"rs"` (refresh server) URL. 
+`"refreshUrl"`. 
 
 All flows require an array of scopes.  These are a set of strings giving a name to each scope.
-Within each form of an interaction, an additional `"auth"` tag is needed giving an array
+Within each form of an interaction, an additional `"scope"` tag is needed giving an array
 of authorized scopes.
 
 *To discuss:* Note that the version is embedded in the name.
@@ -456,34 +453,34 @@ other schemes based on permissioned blockchain (eg hyperledger).
 ## Generic Tags
 This section defines a set of parameters that can be used with one or more security configurations.
 
-### Authentication Server Link
-Tag: `"as"`
+### Authorization Server Link
+Tag: `"authorizationUrl"`
 
-For authentication schemes requiring the use of an authentication server to obtain
-authentication tokens or keys.
+For authentication schemes requiring the use of an authorization server to obtain
+tokens or keys.
 
-Value: URL specifying the location of the authentication server.
+Value: URL specifying the location of the authorization server.
 
-### Token (or Ticket) Server Link
-Tag: `"ts"`
+### Token Server Link
+Tag: `"tokenUrl"`
 
 For authentication schemes requiring the use of an token server to obtain
-authentication tokens or keys.
+tokens or keys.
 
 Value: URL specifying the location of the token server.
 
-*Note:* the OAuth code flow, as well as Kerberos, have multiple authentication servers.
+*Note:* the OAuth code flow, as well as Kerberos, have multiple authorization servers.
 The first provides a ticket-granting ticket, the second actually provides this tickets.
 This is done for reasons of scalability.
 
-### Token (or Ticket) Refresh Server Link
-Tag: `"rs"`
+### Refresh Server Link
+Tag: `"refreshUrl"`
 
 For authentication schemes requiring the use of an token server to obtain
-refreshed authentication tokens or keys.
+refreshed tokens or keys.
 
 Value: URL specifying the location of the refresh server.  This only needs to be
-provided in general if it is different from the `"ts"`.
+provided in general if it is different from the `"tokenUrl"`.
 
 ### Authentication Scopes
 Tag: `"scope"`
@@ -491,11 +488,11 @@ Tag: `"scope"`
 Value: an array of strings used to identify different roles for 
 interactions.
 
-If used, each form needs an additional `"auth"` tag (which can be
+If used, each form also needs a `"scope"` tag (which can be
 an array or a single value) specifying the
 authorization roles it can be used with.
 
-*To discuss:* Would an implied default value for `"auth"` be useful here?  For example,
+*To discuss:* Would an implied default value for `"scope"` be useful here?  For example,
 if not given, it could be assumed that an interaction can be used with all scopes.
 
 ### Algorithm
@@ -574,11 +571,12 @@ somehow), and support for additional protocols (for example, MQTT).
 The standard HTTP security models can be specified by
 using the following schemes. 
 - `"basic"`: simple (basic) authentication
-- `"token"`: bearer token
+- `"bearer"`: bearer token
+- `"pop"`: proof-of-possession token
 Please refer to [RFC7235 https://tools.ietf.org/html/rfc7235#section-5.1].
 If basic authentication is used, the location should be specified using the `"in"` tag.
 If no value is given for this, `"header"` is assumed.
-If a bearer token is used, its format must be specified using `"format"`, which should
+If a token is used, its format must be specified using `"format"`, which should
 have one of the following values:
 - `"jwt"`: JSON Web Token
 
