@@ -36,8 +36,15 @@ we will give a simple example of a TD using basic
 HTTP authentication for HTTPS links and OCF access control lists for equivalent CoAP links:
 
     {
-      "@context": ["https://w3c.github.io/wot/w3c-wot-td-context.jsonld"],
-      "@type": ["Thing"],
+      "@context": ["https://w3c.github.io/wot/w3c-wot-td-context.jsonld",
+                   "https://w3c.github.io/wot/w3c-wot-common-context.jsonld",
+                    {
+                      "iot": "http://iotschema.org/",
+                      "http": "http://iotschema.org/protocol/http",
+                      "coap": "http://iotschema.org/protocol/coap"
+                    }
+                  ],
+      "@type": ["Thing","iot:Light","iot:BinarySwitch"],
       "label": "MyLampThing",
       "@id": "urn:dev:wot:my-lamp-thing",
       "security": {
@@ -54,32 +61,40 @@ HTTP authentication for HTTPS links and OCF access control lists for equivalent 
       },
       "properties": {
         "status": {
-          "schema": {"type": "string"},
+          "name": "Status",
+          "@type": ["iot:SwitchStatus"],
+          "schema": {
+             "type": "boolean"
+          },
           "writable": true,
           "observable": true,
           "form": [
             {
               "href": "coaps://mylamp.example.com:5683/status",
               "mediaType": "application/json",
-              "method": "coap:get",
+              "rel": "readProperty",
+              "coap:methodCode": 1,
               "security": "ocfConfig"
             },
             {
               "href": "coaps://mylamp.example.com:5683/status",
               "mediaType": "application/json",
-              "method": "coap:put"
+              "rel": "writeProperty",
+              "coap:methodCode": 3,
               "security": ["ocfConfig","apikeyConfig"]
             },
             {
               "href": "https://mylamp.example.com/status",
               "mediaType": "application/json",
-              "method": "http:get",
+              "rel": "readProperty",
+              "http:methodName": "GET",
               "security": "basicConfig"
             },
             {
               "href": "https://mylamp.example.com/status",
               "mediaType": "application/json",
-              "method": "http:put",
+              "rel": "writeProperty",
+              "http:methodName": "PUT",
               "security": ["basicConfig","apikeyConfig"]
             },
           ]
@@ -87,15 +102,21 @@ HTTP authentication for HTTPS links and OCF access control lists for equivalent 
       },
       "actions": {
         "toggle": {
+          "name": "Toggle",
+          "@type": ["iot:ToggleAction"],
           "form": [
             {
               "href": "coaps://mylamp.example.com:5683/toggle",
               "mediaType": "application/json"
+              "rel": "invokeAction",
+              "coap:methodCode": 2,
               "security": ["ocfConfig","apikeyConfig"]
             },
             {
               "href": "https://mylamp.example.com/toggle",
               "mediaType": "application/json"
+              "rel": "invokeAction",
+              "http:methodName": "POST",
               "security": ["basicConfig","apikeyConfig"]
             }
           ]
@@ -103,15 +124,21 @@ HTTP authentication for HTTPS links and OCF access control lists for equivalent 
       },
       "events": {
         "overheating": {
+          "name": "Overheating",
+          "@type": ["iot:OverheatEvent"],
           "schema": {"type": "string"},
           "form": [
             {
               "href": "coaps://mylamp.example.com:5683/oh",
               "mediaType": "application/json"
+              "rel": "subscribeEvent",
+              "coap:methodCode": 1,
               "security": "ocfConfig"
             },
             {
               "href": "https://mylamp.example.com/oh",
+              "rel": "subscribeEvent",
+              "http:methodName": "GET",
               "mediaType": "application/json"
             }
           ]
@@ -201,9 +228,10 @@ expressed under the current proposal.
 Here is an example (based on Matthias' example, above) using bearer tokens:
 
     {
-      "@context": ["https://w3c.github.io/wot/w3c-wot-td-context.jsonld"],
+      "@context": ["https://w3c.github.io/wot/w3c-wot-td-context.jsonld",...],
       "@type": ["Thing"],
-      "label": "FujitsuBeacon",
+      "name": "FujitsuBeacon",
+      "label": "Beacon",
       "@id": "urn:dev:wot:fujitsu-beacon",
       "security": {
         "bearerTokenConfig": {
@@ -217,6 +245,7 @@ Here is an example (based on Matthias' example, above) using bearer tokens:
       ...
       "properties": {
         "status": {
+          ...
           "form": [
             {
               ...
@@ -243,7 +272,7 @@ rather than errors, since they might be useful during development.
 Here is a second example using a proxy configuration:
 
     {
-      "@context": ["https://w3c.github.io/wot/w3c-wot-td-context.jsonld"],
+      "@context": ["https://w3c.github.io/wot/w3c-wot-td-context.jsonld",...],
       "@type": ["Thing"],
       "label": "Festo",
       "@id": "urn:dev:wot:festo",
@@ -296,11 +325,11 @@ endpoint configuration in any case.
 This example uses an OAuth authorization code flow.
 
     {
-      "@context": ["https://w3c.github.io/wot/w3c-wot-td-context.jsonld"],
+      "@context": ["https://w3c.github.io/wot/w3c-wot-td-context.jsonld",...],
       "@type": ["Thing"],
       "label": "Camera",
       "@id": "urn:dev:wot:camera",
-      "base": ...,
+      "base": "https://...",
       "security": {
         "oauthConfig": {
           "scheme": "oauth2",
@@ -318,17 +347,24 @@ This example uses an OAuth authorization code flow.
       ...
       "properties": {
         "frame": {
+          ...
           "writable": false,
           "observable": true,
           "form": [
             {
               "href": "/api/frame",
               "mediaType": "image/jpeg",
-              "method": "http:get",
+              "rel": "readProperty",
               "security": "oauthConfig",
               "scope": "read:frame"
             },
-            ... // other forms
+            {
+              "href": "/api/frame/observe",
+              "mediaType": "image/jpeg",
+              "rel": "observeProperty",
+              "security": "oauthConfig",
+              "scope": "read:frame"
+            }
         },
         ... // other properties
       },
@@ -338,6 +374,10 @@ This example uses an OAuth authorization code flow.
 Here we see that an additional field is used for OAuth flows, `scope`.
 This could be generalized to other authentication mechanisms to restrict
 application of a security mechanism to those with matching scope definitions.
+
+We do not specify `http:methodName' here so the defaults are used.
+Due to the write restriction, only reading and observation of this property is 
+supported.
 
 ### Comments
 A few comments:
