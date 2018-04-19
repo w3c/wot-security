@@ -171,7 +171,7 @@ reflects the measured value of a physical property.
 A property may also be immutable for other reasons, for example, immutable configuration
 state such as a ID that can only be set during provisioning.
 The main point is that the `writable` flag is not meant to represent
-a constraint due to access writes.  In particular if some configuration can
+a constraint due to access rights.  In particular if some configuration can
 be updated by an administrator with sufficient access rights, 
 but not by a normal user, it should still be marked as writable.
 
