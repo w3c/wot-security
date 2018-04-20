@@ -454,6 +454,14 @@ method can be used.  In the context of a Thing Description this means that this 
 should only be combined with protocols supporting secure transport,
 eg. COAPS, HTTPS, and the equivalent.
 
+### Digest Authentication
+Scheme: 'digest'
+
+Uses a cryptographic digest, as specified (for HTTP) in RFC7616.   The name can also be used
+for similar schemes in other protocols.
+
+TODO: are any other parameters needed, eg 'in'?
+
 ### OCF Security 
 Scheme: `ocf`
 
@@ -500,12 +508,22 @@ value if the array only has one element.
 We may want to generalize this to other
 standards _or_ define a general mechanism to specify a minimum version.  If we embed versions
 in names, we need a consistent rule to identify versions in schemes that do not have them
-embedded.  OAuth is also a funny special case since we don't intend to support OAuth version 1.
+embedded.  OAuth is also a funny special case since we don't intend to support OAuth version 1
+
+## Omitted Schemes
+Certain schemes listed in the IANA reference for HTTP authentication schemes have been
+omitted (that is, are not provided in the core vocabulary)
+because they are experimental, obsolete, or not recommended (eg insecure).
+These include 'oauth' (version 1; considered obsolete),
+'mutual' (experimental) and 'hoba' (experimental).
 
 ## Other Schemes
 It's not clear we need to support these, so we have left them out of the 
 initial proposal, but we mention them here to provide a starting
 point for discuission.
+
+In general, additional security schemes (including some of the ones noted above as experimental or 
+obsolete) can be specified with custom vocabularies.
 
 ### OpenID Connect
 Scheme: `openIdConnect`
