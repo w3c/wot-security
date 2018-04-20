@@ -681,6 +681,9 @@ You would generally include this alongside a separate endpoint authentication sc
 
 ## References
 - [OpenAPI 3.0.1](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.1.md)
+- [RFC7235 - Hypertext Transfer Protocol (HTTP/1.1): Authentication](https://tools.ietf.org/html/rfc7235)
+- [RFC7615 - HTTP Authentication-Info and Proxy-Authentication-Info Response Header Fields](https://tools.ietf.org/html/rfc7615)
+- [RFC7616 - HTTP Digest Access Authentication](https://tools.ietf.org/html/rfc7616)
 - [RFC7617 - The 'Basic' HTTP Authentication Scheme](https://tools.ietf.org/html/rfc7617)
 - [RFC7519 JSON Web Token (JWT)](https://tools.ietf.org/html/rfc7519)
 - [RFC7235 Hypertext Transfer Protocol (HTTP/1.1): Authentication](https://tools.ietf.org/html/rfc7235)
