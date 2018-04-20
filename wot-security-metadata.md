@@ -322,7 +322,7 @@ Proxy authentication is handled separately from
 endpoint configuration in any case.
 
 ### OAuth
-This example uses an OAuth authorization code flow.
+This example uses an OAuth 2 authorization code flow.
 
     {
       "@context": ["https://w3c.github.io/wot/w3c-wot-td-context.jsonld",...],
@@ -406,6 +406,7 @@ A few comments:
 ## Detailed Specifications of Configurations
 Each configuration is identified with a `scheme` which currently must be one of the following:
 - `basic`: Clear-text username and password (must be encapsulated in encrypted transport)
+- `digest`: Encrypted username and password (can with used with unencrypted transport)
 - `ocf`: OCF security model (access control lists with authentication servers and tickets)
 - `apikey`: API key (opaque strings)
 - `bearer`: bearer token (format given by the value of a `format` field) 
@@ -455,12 +456,12 @@ should only be combined with protocols supporting secure transport,
 eg. COAPS, HTTPS, and the equivalent.
 
 ### Digest Authentication
-Scheme: 'digest'
+Scheme: `digest`
 
 Uses a cryptographic digest, as specified (for HTTP) in RFC7616.   The name can also be used
 for similar schemes in other protocols.
 
-TODO: are any other parameters needed, eg 'in'?
+TODO: are any other parameters needed, eg `in`?
 
 ### OCF Security 
 Scheme: `ocf`
@@ -514,8 +515,8 @@ embedded.  OAuth is also a funny special case since we don't intend to support O
 Certain schemes listed in the IANA reference for HTTP authentication schemes have been
 omitted (that is, are not provided in the core vocabulary)
 because they are experimental, obsolete, or not recommended (eg insecure).
-These include 'oauth' (version 1; considered obsolete),
-'mutual' (experimental) and 'hoba' (experimental).
+These include `oauth` (version 1; considered obsolete),
+`mutual` (experimental) and `hoba` (experimental).
 
 ## Other Schemes
 It's not clear we need to support these, so we have left them out of the 
@@ -625,8 +626,8 @@ Some authentication schemes have options for how data is to be encoded, in parti
 there might be different formats for how tokens are encoded.  This tag indicates how
 the data for a scheme is encoded.  Valid values depend on the scheme.
 
-For the `"token"` scheme, the value is one of 
-- `"jwt"`: JSON Web Token 
+For the `token` scheme, the value is one of 
+- `jwt`: JSON Web Token 
     
 **Note:** The format tag is only used in one place for now and when used currently only has
 one legal value.  This is a temporary situation and we expect `format`
@@ -661,10 +662,14 @@ Schemes only resolve into specific security mechanisms when combined with specif
 Right now only the following combinations are supported:
 - `basic`+`https`: Basic HTTP Authentication
     - When used in combination with a `proxyUrl` tag indicates Basic HTTP Proxy Authentication
-- `bearer`+`https`: requires a `format' tag as well
-- `bearer`+`coaps`: requires a 'format' tag as well
-- `pop`+`https`: requires a `format' tag as well
-- `pop`+`coaps`: requires a 'format' tag as well
+- `digest`+`http`: Digest HTTP Authentication
+    - When used in combination with a `proxyUrl` tag indicates Digest HTTP Proxy Authentication
+- `digest`+`https`: Digest HTTPS Authentication
+    - When used in combination with a `proxyUrl` tag indicates Digest HTTPS Proxy Authentication
+- `bearer`+`https`: requires a `format` tag as well
+- `bearer`+`coaps`: requires a 'format` tag as well
+- `pop`+`https`: requires a `format` tag as well
+- `pop`+`coaps`: requires a `format` tag as well
 - `apikey`+`https`
 - `apikey`+`https`
 - `apikey`+`coaps`
@@ -678,6 +683,7 @@ somehow), and support for additional protocols (for example, MQTT).
 The standard HTTP security models can be specified by
 using the following schemes. 
 - `basic`: simple (basic) authentication
+- `digest`: digest authentication
 - `bearer`: bearer token
 - `pop`: proof-of-possession token
 Please refer to [RFC7235 https://tools.ietf.org/html/rfc7235#section-5.1].
