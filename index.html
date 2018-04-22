@@ -1912,9 +1912,6 @@ An example of privacy threat: a compromised application on a user smartphone con
             <p>
             The Thing Description that WoT Gateway device provides to the WoT Client can be the same as it gets from the device exposing the WoT Thing or it can be modified to better suit the deployment use case or expose additional functionality via the WoT Gateway. It is also possible that the end device behind the WoT Gateway is a non-WoT device and does not provide any Thing Description on its own, neither supports any interaction via the WoT Interface. In this case the WoT Servient Gateway has to build the Thing Description by itself and expose it to the WoT Client. For all typical use cases, the WoT Servient Gateway should be considered as a trusted entity and it can freely modify or build Thing Descriptions it exposes as well as setup the fine-grained access controls on different exposed WoT Interfaces. It can do it using the same methods described in Section <a href="#wot-client-server-basic"></a> and therefore act fully on behalf of the end device.
             </p>
-            <p class="ednote" title="Untrusted WoT Gateway">
-            Do we want to consider the case when WoT Gateway is not a trusted entity? If yes, need an example for this.
-            </p>
             <p>
             <a href="#wot_client_thing_gateway_2"></a> is identical to the previous case but with an important difference that a Thing Description is not provided by the the WoT Servient Gateway, but can be fetched by the WoT client from a Things Directory residing on a remote cloud. Similar to the previous case, this Thing Description can either be original Thing Description supplied by the end device (i.e. garage door) or modified by the WoT Servient Gateway. Regardless of the actual setup, the transfer of Thing Description between any two endpoints should be done using underlying secure protocols and the usage of TLS/DTLS is the recommended method. Similarly to Section <a href="#wot-client-server-basic"></a> in case the remote cloud does not guarantee the secure storage and delivery of Thing Descriptions to the WoT Client or in case the remote cloud is not a trusted entity, the authenticity of the Thing Description should be verified using other methods on the application layer.
             </p>
@@ -1924,7 +1921,25 @@ An example of privacy threat: a compromised application on a user smartphone con
             </figure>
           </section>
 
-          <section>
+          <section id="wot-client-server-double-proxy">
+           <h2>Basic Interaction between WoT Thing and WoT Client via Split Proxy</h2>
+
+           <p>
+            <a href="#wot_client_thing_double_proxy"></a> shows another commonly done setup, where the WoT Thing resides in a local protected network, behind a NAT/Firewall. The WoT Thing cannot be contacted directly, but the communication between the WoT Client and the WoT Thing goes via a pair of Gateway Servients: local (residing in the local protected network) and remote (residing in the Internet in open). The Local and Remote Gateway Servients are connected with a non-WoT secure channel and the Local Gateway Servient only accepts the connections from the remote one. The WoT Remote Gateway Servient should use the mechanisms described in Section <a href="#wot-client-server-basic"></a> in order to authenticate and authorize the WoT Client before processing any of it requests. Similar to the setups, described in Section <a href="#wot-client-server-basic"></a>, the authenticity, confidentiality and replay protection can be guaranteed by underlying usage of secure protocols to exchange the data between the WoT Client and the Remote Gateway Servient. If the WoT Client is authorized, then the Remote Gateway Servient can package the WoT request and transfer it over the secured channel to the Local Gateway Servient, which in turn can issue request to the Wot Thing. The WoT channel between the Local Gateway Servient and the WoT Thing can be fully unprotected (relying purely on the closed nature of the local network), but it is strongly recommended to employ various security mechanisms described in Section <a href="#wot-client-server-basic"></a> to perform authentication & authorization of involved parties (WoT Thing and Local Gateway Servient), as well as to provide confidentiality and integrity of transferred solution data and TD.
+           </p>
+
+            <figure id="wot_client_thing_double_proxy">
+              <img src="images/client-server-double-proxy.png" style="width: 1000px;" />
+              <figcaption>WoT Thing and WoT Client via Split Proxy</figcaption>
+            </figure>
+
+           <p>
+            An alternative security setup for such scenario can be done using end-to-end security authentication and authorization, where the WoT Client would not only need to authenticate & authorize itself to the Remote Gateway Servient, but also to the WoT Thing. In this case it would need a separate set of security credentials, required to successfully authenticate with each party and the exposed TD should indicate the mechanisms to obtain them.           
+          </p>
+
+          </section>
+
+         <section>
             <h2>WoT Servient Single-Tenant</h2>
             <p>
               In previous examples we have considered the Wot Servient as a black box exposing a set of WoT Interfaces and Thing Descriptions. <a href="#wot_servient-single-tenant"></a> shows the WoT Servient (for example again a garage door controller device or a WoT Gateway) in more details with Scripting API support and a couple of scripts running inside WoT runtime. For this case we considered all scripts to be trusted and provisioned to a device by a single trusted entity (for example by a device flashing).
@@ -1939,10 +1954,7 @@ An example of privacy threat: a compromised application on a user smartphone con
             <p>
             Depending on the device capabilities, the following isolation mechanisms might be available:
             <ul>
-            <li><strong>WoT Runtime enforced isolation.</strong> This is the basic isolation provided by the WoT Runtime itself and it is based on the restricting the API exposed to the scripts running within the WoT Runtime. </li>
-            <p class="ednote" title="WoT Runtime enforced isolation">
-            How is it implemented in practice for WoT Runtime now? What memory/thread isolation guarantees are provided?
-            </p>
+            <li><strong>WoT Runtime enforced isolation.</strong> This is the basic isolation provided by the WoT Runtime itself and it is based on the restricting the API exposed to the scripts running within the WoT Runtime. The exact set of guarantees depends on a concrete WoT Runtime implementation and might vary.</li>
             <li><strong>Native OS process-based isolation.</strong> This method relies on the underneath native OS to provide basic isolation guarantees based on native process isolation. The exact set of guarantees depends on capabilities of native OS, but it usually includes at least memory and execution content isolation. Some other mechanisms like Discretionary Access Controls (DAC) might be also available to be used. </li>
             <li><strong>Native OS advanced isolation.</strong> A native OS might also provide a stronger set of measures that can be deployed for process-based isolation. Examples of such measures are Mandatory access Control (MACs in all major OSes), OS-level virtualization (i.e. namespaces and containers in Linux), Cryptographic methods etc. </li>
             </ul>
@@ -1951,12 +1963,26 @@ An example of privacy threat: a compromised application on a user smartphone con
             The mechanisms are provided in the order from weakest to the strongest isolation method and can be used in combination. In order to choose the appropriate mechanism one should study the capabilities of the underlying device, as well as evaluate the risk level of particular deployment scenario (see Section <a href="#determine-suitable-architecture"></a> for more details on how to evaluate the risk level). It is also important to note that all isolation mechanisms usually affect performance and might require non-trivial policy setup and management.
             </p>
             <p>
-            Now if we consider the basic communication scenario between the WoT Client and the device exposing the WoT Thing described in Section <a href="#wot-client-server-basic"></a> from a perspective of script instances running inside WoT Runtime, each such instance should be able to have a way to perform mutual authentication between itself and a remote WoT Client or support the token-based authentication methods. This means that each script instance should have a way to access the security metadata containing all required credentials or alternatively have a set of APIs provided by the WoT Runtime to perform required cryptographic operations on credentials stored by the WoT Runtime itself.
+            Now if we consider the basic communication scenario between the WoT Client and the device exposing the WoT Thing described in Section <a href="#wot-client-server-basic"></a> from a perspective of script instances running inside WoT Runtime, each such instance should be able to have a way to perform mutual authentication between itself and a remote WoT Client or support the token-based authentication methods. However, there are no methods in the WoT Scripting API to perform any such tasks, but instead the underlying WoT Runtime and protocol bindings handle the required security functionality transparently for the WoT scripts. <a href="#wot_scripts_security_1"></a> shows how it is done, when a WoT Script discovers a new WoT Thing, MyLampThing, using the discover() scripting API method, and invokes an action "toggle". 
+
+            <figure id="wot_scripts_security_1">
+              <img src="images/scripts-security-1.png" style="width: 1000px;" />
+              <figcaption>Transparent handling of security during WoT Thing discovery and use</figcaption>
+            </figure>
+
             </p>
-            <p class="ednote" title="WoT security metadata">
-            Does WoT Runtime currently have any APIs to work with security metadata? If not, how is this envisioned to be done, by exposing the credentials directly to the scripts or by relying on underneath levels to do it?
-            This needs more clarification and explanation.
+
+            <p>
+            <a href="#wot_scripts_security_2"></a> shows handling of security configuration during the exposure of a new WoT Thing, MyLampThing. Since the security configurations (types of authentication & authorization methods and corresponding credentials) are not exposed to the WoT Scripts, but handled by the WoT Runtime and underlying protocol bindings, WoT Scripts must either rely on WoT Runtime to use the default credentials provisioned to it, or indicate the choice of security methods and credentials using a name/id tag known to the WoT Runtime.   
+
+
+            <figure id="wot_scripts_security_2">
+              <img src="images/scripts-security-2.png" style="width: 1000px;" />
+              <figcaption>Transparent handling of security during WoT Thing exposure</figcaption>
+            </figure>
+
             </p>
+            
             </section>
 
             <section>
