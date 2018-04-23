@@ -231,7 +231,7 @@ expanded, and also with all "single-element" security definitions converted to a
       // default security configuration
       security: [
         {
-	  "scheme": "basic"
+          "scheme": "basic"
         }
       ],
       "properties": {
