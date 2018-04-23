@@ -1,20 +1,18 @@
-# WoT Security Metadata (Proposal)
+ty# WoT Security Metadata (Proposal)
 
 This is a proposal for security metadata to be included in the WoT Thing Description.
 It is intended to be compatible with and equivalent in functionality to
 several other standards and proposals, including the 
 [OpenAPI 3.0 Security Object](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.1.md#securitySchemeObject)
 metadata, which includes in turn header and query parameter API keys, common OAuth2 flows, and OpenID.
-Also included are support for
-OCF access control, Kerberos, Javascript Web Tokens, and Interledger payments.
 
 This proposal allows different security
 configurations to be specifiable both across the entire thing and per-interaction
-(actually, per link in each interaction).
-We allow the specification of an array of named
-"security configurations" at global scope.
-These configuration can then be referenced and combined
-in the definition of each interaction.
+(actually, per form in each interaction).
+We also allow the specification of a set of named
+"security configuration definitions" at global scope.
+These definitions can then be referenced and combined
+in the security configurations.
 This approach also allows a "OR-AND" approach to security configurations.
 Within each specific
 "form" within an interaction, all security configurations specified need to be met:
@@ -24,11 +22,14 @@ and these can have different security requirements: an OR combination.
 
 This proposal takes advantage of (proposed) JSON-LD 1.1 features.
 This proposal is similar to a new feature being proposed for the TD,
-a "definition" block.  However, we recommend that a separate "security"
-block be used specifically for security metadata.  The "definitions"
-block is still useful to, for example, create definitions for combinations
-of security configurations suitable to particular roles, thereby
-abstracting security definitions.
+a "definition" block.  However, we recommend that a separate "securityDefinitions"
+block be used specifically for security definitions.  
+Use of security definitions is, however, merely a convenience feature to
+avoid having to repeat security configurations.  
+In addition, a default security configuration can also be specified
+at the top level of the thing.  This is overridden by any per-form configuration
+but is useful in the case that all interactions in a Thing use the same
+security configuration.
 
 ## TD Example
 Before giving the details of each supported security configuration scheme,
@@ -47,7 +48,8 @@ HTTP authentication for HTTPS links and OCF access control lists for equivalent 
       "@type": ["Thing","iot:Light","iot:BinarySwitch"],
       "label": "MyLampThing",
       "@id": "urn:dev:wot:my-lamp-thing",
-      "security": {
+      // set of named security definitions
+      "securityDefinitions": {
         "basicConfig": {
           "scheme": "basic"
         },
@@ -59,13 +61,13 @@ HTTP authentication for HTTPS links and OCF access control lists for equivalent 
           "in": "header"
         }
       },
+      // default security configuration
+      security: "basicConfig",
       "properties": {
         "status": {
-          "name": "Status",
+          "label": "Status",
           "@type": ["iot:SwitchStatus"],
-          "schema": {
-             "type": "boolean"
-          },
+          "type": "boolean",
           "writable": true,
           "observable": true,
           "form": [
@@ -87,8 +89,8 @@ HTTP authentication for HTTPS links and OCF access control lists for equivalent 
               "href": "https://mylamp.example.com/status",
               "mediaType": "application/json",
               "rel": "readProperty",
-              "http:methodName": "GET",
-              "security": "basicConfig"
+              "http:methodName": "GET"
+              // no security given, so uses default
             },
             {
               "href": "https://mylamp.example.com/status",
@@ -96,7 +98,7 @@ HTTP authentication for HTTPS links and OCF access control lists for equivalent 
               "rel": "writeProperty",
               "http:methodName": "PUT",
               "security": ["basicConfig","apikeyConfig"]
-            },
+            }
           ]
         }
       },
@@ -126,7 +128,7 @@ HTTP authentication for HTTPS links and OCF access control lists for equivalent 
         "overheating": {
           "name": "Overheating",
           "@type": ["iot:OverheatEvent"],
-          "schema": {"type": "string"},
+          "type": "string",
           "form": [
             {
               "href": "coaps://mylamp.example.com:5683/oh",
@@ -139,7 +141,8 @@ HTTP authentication for HTTPS links and OCF access control lists for equivalent 
               "href": "https://mylamp.example.com/oh",
               "rel": "subscribeEvent",
               "http:methodName": "GET",
-              "mediaType": "application/json"
+              "mediaType": "application/json",
+              "security": [] // security disabled; overrides default
             }
           ]
         }
@@ -192,16 +195,181 @@ identity, not ownership of the API key, so the additional API key provides an ad
 layer of security; in particular, an API key can be updated on a device to revoke access to
 everyone with the old key.
 
-The value in a security object inside a form can be a single string or an object.
-If a string, it is an identifier that refers to a previously declared configuration at the 
-top level.  If an object, it is a local configuration definition.  If an array, then
+The value in a `security` object inside a form can be a single string or an array.
+If a string, it is an identifier that refers to a configuration defined at the 
+top level in the `securityDefinitions` array.  
+If an array, then
 a set of configurations may be given, _all_ of which must be satisfied to allow access.
-Arrays can contain strings or objects, or both.
+Arrays can contain strings or objects, or both, using the same rules as single values.
+In other words, a single non-array element (string or object) is equivalent to an array
+with one element.
+
+It is possible in general to eliminate the definitions and expand all configurations
+locally; it is just more verbose.  Here is the above example with all definitions 
+expanded, and also with all "single-element" security definitions converted to arrays:
+
+    {
+      "@context": ["https://w3c.github.io/wot/w3c-wot-td-context.jsonld",
+                   "https://w3c.github.io/wot/w3c-wot-common-context.jsonld",
+                    {
+                      "iot": "http://iotschema.org/",
+                      "http": "http://iotschema.org/protocol/http",
+                      "coap": "http://iotschema.org/protocol/coap"
+                    }
+                  ],
+      "@type": ["Thing","iot:Light","iot:BinarySwitch"],
+      "label": "MyLampThing",
+      "@id": "urn:dev:wot:my-lamp-thing",
+      // set of named security definitions
+      "securityDefinitions": {
+        "basicConfig": {
+          "scheme": "basic"
+        },
+        "ocfConfig": {
+          "scheme": "ocf"
+        },
+        "apikeyConfig": {
+          "scheme": "apikey",
+          "in": "header"
+        }
+      },
+      // default security configuration
+      security: [
+        {
+	  "scheme": "basic"
+        }
+      ],
+      "properties": {
+        "status": {
+          "label": "Status",
+          "@type": ["iot:SwitchStatus"],
+          "type": "boolean",
+          "writable": true,
+          "observable": true,
+          "form": [
+            {
+              "href": "coaps://mylamp.example.com:5683/status",
+              "mediaType": "application/json",
+              "rel": "readProperty",
+              "coap:methodCode": 1,
+              "security": [
+                {
+                  "scheme": "ocf"
+                }
+              ]
+            },
+            {
+              "href": "coaps://mylamp.example.com:5683/status",
+              "mediaType": "application/json",
+              "rel": "writeProperty",
+              "coap:methodCode": 3,
+              "security": [
+                {
+                  "scheme": "ocf"
+                },
+                {
+                  "scheme": "apikey",
+                  "in": "header"
+                }
+              ]
+            },
+            {
+              "href": "https://mylamp.example.com/status",
+              "mediaType": "application/json",
+              "rel": "readProperty",
+              "http:methodName": "GET"
+              // no security given, so uses default
+            },
+            {
+              "href": "https://mylamp.example.com/status",
+              "mediaType": "application/json",
+              "rel": "writeProperty",
+              "http:methodName": "PUT",
+              "security": [
+                {
+                  "scheme": "basic"
+                },
+                {
+                  "scheme": "apikey",
+                  "in": "header"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "actions": {
+        "toggle": {
+          "name": "Toggle",
+          "@type": ["iot:ToggleAction"],
+          "form": [
+            {
+              "href": "coaps://mylamp.example.com:5683/toggle",
+              "mediaType": "application/json"
+              "rel": "invokeAction",
+              "coap:methodCode": 2,
+              "security": [
+                {
+                  "scheme": "ocf"
+                },
+                {
+                  "scheme": "apikey",
+                  "in": "header"
+                }
+              ]
+            },
+            {
+              "href": "https://mylamp.example.com/toggle",
+              "mediaType": "application/json"
+              "rel": "invokeAction",
+              "http:methodName": "POST",
+              "security": [
+                {
+                  "scheme": "basic"
+                },
+                {
+                  "scheme": "apikey",
+                  "in": "header"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "events": {
+        "overheating": {
+          "name": "Overheating",
+          "@type": ["iot:OverheatEvent"],
+          "type": "string",
+          "form": [
+            {
+              "href": "coaps://mylamp.example.com:5683/oh",
+              "mediaType": "application/json"
+              "rel": "subscribeEvent",
+              "coap:methodCode": 1,
+              "security": [
+                {
+                  "scheme": "ocf"
+                }
+              ]
+            },
+            {
+              "href": "https://mylamp.example.com/oh",
+              "rel": "subscribeEvent",
+              "http:methodName": "GET",
+              "mediaType": "application/json",
+              "security": [] // security disabled; overrides default
+            }
+          ]
+        }
+      }
+    }
+
 
 All links in this example use secure transport, i.e. either CoAPS (CoAP over UDP using DTLS)
 or HTTPS (HTTP over TCP using TLS).
 These transports use certificates for mutual authentication, secure session key exchange,
-and of course encrypted transport.  In fact, use of such encrypted transport is essential
+and of course encrypted transport.  Use of such encrypted transport is essential
 for many authorization schemes, such as basic HTTP authentication, which transmits a
 username and password "in the clear" in the header.  This is only secure if the header is
 encrypted by an outer transport layer.  Likewise, other authentication mechanisms not
@@ -233,14 +401,14 @@ Here is an example (based on Matthias' example, above) using bearer tokens:
       "name": "FujitsuBeacon",
       "label": "Beacon",
       "@id": "urn:dev:wot:fujitsu-beacon",
-      "security": {
+      "securityDefinitions": {
         "bearerTokenConfig": {
           "scheme": "bearer",
           "format": "jwt",
           "alg": "ES256",
           "authorizationUrl": "https://plugfest.thingweb.io:8443/"
         },
-        ... // other security configurations, if needed
+        ... // other security configurationi definitions, if needed
       },
       ...
       "properties": {
@@ -262,6 +430,8 @@ As shown, in each form under interactions there would have to be
 a `"security" : "bearerTokenConfig"` entry.  As bearer tokens need
 to be protected from interception they should only be used in combination with
 secure transport.
+Alternatively, the security configuration could be given at the
+global scope and only overridden for the exceptions.
 
 **To Discuss**: Should TD validation flag insecure 
 configurations, such as basic authentication or bearer tokens
@@ -276,7 +446,7 @@ Here is a second example using a proxy configuration:
       "@type": ["Thing"],
       "label": "Festo",
       "@id": "urn:dev:wot:festo",
-      "security": {
+      "securityDefinitions": {
         "proxyConfig": {
           "scheme": "basic",
           "proxyUrl": "http://plugfest.thingweb.io:8087"
@@ -284,11 +454,9 @@ Here is a second example using a proxy configuration:
         "endpointConfig": {
           ... // details omitted; independent of proxy configuration
         },
-        ... // other security configurations, if needed
-      },
-      "definitions": {
+        ... // other security configuration definitions, if needed
         "propertySecurityConfig": ["proxyConfig","endpointConfig"],
-        // other definitions
+        // other security definitions
       },
       ...
       "properties": {
@@ -310,7 +478,7 @@ Here is a second example using a proxy configuration:
 As above, each form under interactions 
 would have to include a _both_ a `proxyConfig` _and_ an `endpointConfig`
 reference in its `security` field.
-We make use of the new definitions feature here to
+We make use of the security definitions feature here to
 avoid having to repeat such combinations in every form that uses them;
 the two configurations are combined into one using an array `propertySecurityConfig`
 declared under `definitions`.
@@ -330,7 +498,7 @@ This example uses an OAuth 2 authorization code flow.
       "label": "Camera",
       "@id": "urn:dev:wot:camera",
       "base": "https://...",
-      "security": {
+      "securityDefinitions": {
         "oauthConfig": {
           "scheme": "oauth2",
           "flow": "code",
@@ -342,7 +510,7 @@ This example uses an OAuth 2 authorization code flow.
             ... // other scopes
           ]
         }
-        ... // other security configurations, if needed
+        ... // other security configuration definitions, if needed
       },
       ...
       "properties": {
@@ -390,15 +558,11 @@ A few comments:
   Unlike OpenAPI, however, we only use a single name for the `scheme` and it is actually
   the combination of the `scheme` with the protocol used in a particular form that determines
   the actual security mechanism.
-    - For example, `"basic"` authentication means clear-text user name and password,
+    - For example, `basic` authentication means clear-text user name and password,
       but this will be instantiated in different ways in MQTT and HTTP.
-- **To discuss:** 
-  It is still necessary to refer to the name of the security configuration in each interaction.
-  We might be able to use a rule like "the first security scheme mentioned is the default" as 
-  long as we can make this work with JSON-LD.
 - In general security configurations have a set of "extra" parameters that depend on their type
   and scheme. Several of these tags, however, are used in more than one scheme.
-    - For example, many schemes have references to an authentication server.
+    - For example, many schemes have references to an authentication server, or a cipher suite.
 - If a security configuration is intended for a proxy this is indicated by giving a value (a URL)
   to the `proxyUrl` tag.  If no such value is given, then the configuration is intended for the 
   endpoint.
@@ -437,7 +601,7 @@ These are specified in the corresponding sections below.
 - This is not a closed set. In particular, additional tags may be needed for additional schemes
   specific to particular ecosystems: OneM2M, OPC-UA, MQTT, AWS IoT, HomeKit, etc. or supported
   by additional standards.  Whenever possible new schemes should reuse parameter vocabulary
-  already defined and be defined in a way orthogonal to transport protocols.
+  already defined (eg by IANA) and be defined in a way orthogonal to transport protocols.
 
 ### Basic Authentication
 Scheme: `basic`
@@ -446,7 +610,7 @@ In the basic authentication scheme, a username and password are provided in plai
 using a mechanism specific to the protocol.  Additional parameters may be necessary for
 some protocols as follows:
 - `https`:
-    - `in`: specifies location of the authentication information.  See defintion below.
+    - `in`: specifies location of the authentication information.  See definition below.
 
 Since the username and password used in this scheme are in plaintext, they need
 to be sent via a mechanism that provides transport security, such as TLS.  In the case of HTTP,
@@ -509,7 +673,8 @@ value if the array only has one element.
 We may want to generalize this to other
 standards _or_ define a general mechanism to specify a minimum version.  If we embed versions
 in names, we need a consistent rule to identify versions in schemes that do not have them
-embedded.  OAuth is also a funny special case since we don't intend to support OAuth version 1
+embedded.  OAuth is also a funny special case since we don't intend to support OAuth version 1,
+as it is considered to be obsolete.
 
 ## Omitted Schemes
 Certain schemes listed in the IANA reference for HTTP authentication schemes have been
@@ -604,10 +769,18 @@ Many schemes require use of a specific encryption or hashing algorithm, or
 combination of algorithms.  This is usually referred to as a "ciphersuite".
 
 Value: String specifying the ciphersuite used.  One of:
+- `MD5`: MD5 hashing.
 - `ES256`: SHA-256 ciphersuite.
+- `ES512-256`: SHA-512-256 ciphersuite.
 
 **To do:** we should indicate a set of additional valid values for this based on existing RFCs
-and standards.
+and standards.  For `digest`, for example, HTTP 1.1 specifies MD5 and ES512-256.  Not all
+ciphersuites can be used with all security mechanisms, and some defined by IANA are considered
+obsolete and insecure (eg MD5).  Attempts to combine a mechanism with a ciphersuite it does not
+support MUST be flagged by TD validation tools as an error.
+Obsolete and insecure ciphersuites are be supported
+for compatibility with older services but SHOULD be flagged with warnings by a validation
+system.  
 
 ### Proxy
 Tag: `proxyUrl`
