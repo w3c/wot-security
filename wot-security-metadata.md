@@ -1,8 +1,8 @@
-ty# WoT Security Metadata (Proposal)
+# WoT Security Metadata (Proposal)
 
 This is a proposal for security metadata to be included in the WoT Thing Description.
 It is intended to be compatible with and equivalent in functionality to
-several other standards and proposals, including the 
+several other standards and proposals, including the
 [OpenAPI 3.0 Security Object](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.1.md#securitySchemeObject)
 metadata, which includes in turn header and query parameter API keys, common OAuth2 flows, and OpenID.
 
@@ -13,6 +13,7 @@ We also allow the specification of a set of named
 "security configuration definitions" at global scope.
 These definitions can then be referenced and combined
 in the security configurations.
+
 This approach also allows a "OR-AND" approach to security configurations.
 Within each specific
 "form" within an interaction, all security configurations specified need to be met:
@@ -21,15 +22,22 @@ However, multiple form alternatives are possible within an interaction,
 and these can have different security requirements: an OR combination.
 
 This proposal takes advantage of (proposed) JSON-LD 1.1 features.
-This proposal is similar to a new feature being proposed for the TD,
-a "definition" block.  However, we recommend that a separate "securityDefinitions"
-block be used specifically for security definitions.  
-Use of security definitions is, however, merely a convenience feature to
-avoid having to repeat security configurations.  
-In addition, a default security configuration can also be specified
-at the top level of the thing.  This is overridden by any per-form configuration
+This proposal also includes a definitions mechanism similar to a new feature being proposed for the TD,
+a "definition" block.
+However, we recommend that a separate "securityDefinitions"
+block be used specifically for security definitions.
+Use of security definitions is however a convenience feature to
+avoid having to repeat security configurations.
+It is optional and instead all security configurations can be done locally
+in each form.
+
+A global default security configuration can also be specified
+at the top level of the Thing Description.
+This is overridden by any per-form configuration
 but is useful in the case that all interactions in a Thing use the same
 security configuration.
+This also makes this proposal backward-compatible with the current TD
+specification.
 
 ## TD Example
 Before giving the details of each supported security configuration scheme,
@@ -220,19 +228,6 @@ expanded, and also with all "single-element" security definitions converted to a
       "@type": ["Thing","iot:Light","iot:BinarySwitch"],
       "label": "MyLampThing",
       "@id": "urn:dev:wot:my-lamp-thing",
-      // set of named security definitions
-      "securityDefinitions": {
-        "basicConfig": {
-          "scheme": "basic"
-        },
-        "ocfConfig": {
-          "scheme": "ocf"
-        },
-        "apikeyConfig": {
-          "scheme": "apikey",
-          "in": "header"
-        }
-      },
       // default security configuration
       security: [
         {
