@@ -604,9 +604,12 @@
                  <td>Storage on thing itself, cloud storage, in-transfer (network) including TD updates.</td>
          </tr><tr>
             <th><dfn>System User Data</dfn></th>
-            <td>Can be highly privacy sensitive and confidential.</td>
+            <td>This includes all data that is produced or processed by the elements of a WoT system,
+               i.e. sensor readings and their states, users configurations and preferences, actuators commands,
+               video/audio streams, etc.  Can be highly privacy sensitive and confidential.</td>
             <td>Different <a>system users</a> might have different levels of
-            access to this data based on the use case.
+            access to this data based on the use case. In some cases (like user preferences or settings)
+            the partial access to this asset is also needed by a <a>system provider</a>. 
             Non-authorized access must be minimized since access even to a small amount of information
             (for example the last timestamp when a door lock API was used) might have severe
             privacy concerns (example allows an attacker to detect that the owner has been away
@@ -618,7 +621,7 @@
           </tr><tr>
             <th><dfn data-lt="system provider scripts|system provider script">
                      System Provider Data</dfn>
-            <td>This includes both WoT scripts and configuration data owned by a
+            <td>This includes both WoT scripts and any WoT configuration data produced and owned by a
             <a>System Provider</a>. It also includes the notion of a Thing instance, i.e.
             run-time representation of script running inside WoT Runtime.
             <a>System providers</a> might have Intellectual Property (IP) in their scripts,
@@ -728,11 +731,13 @@
               </tr><tr>
                   <th><dfn>Network Attacker</dfn></th>
                   <td>Unauthorized access or modification of any stakeholder's asset over the network.
-                      Denial of service.
+                      Denial of service. Inferring of non-public or privacy sensitive information.
                       Taking control of the network component of a WoT system. Reasons: money, fame etc.</td>
                   <td>Network attack: an attacker has network access to a WoT system, 
                       is able to use WoT Interface, perform MitM attacks, 
-                      drop, delay, reorder, re-play, and inject messages.</td>
+                      drop, delay, reorder, re-play, and inject messages. 
+                      This attacker type also includes a passive network attacker, where an attacker is only able to passively
+                      observe the WoT network traffic.</td>
               </tr><tr>
                   <th><dfn data-lt="malicious authorized solution user|malicious authorized solution users|malicious authorized users">
                       Malicious Authorized User</dfn></th>
@@ -915,7 +920,7 @@
                </tr>
            </table>
 
-           <p>The following WoT attack surfaces are only in-scope for the WoT Security model 
+          <p>The following WoT attack surfaces are only in-scope for the WoT Security model 
               if we assume a WoT runtime can run untrusted scripts
               or we assume co-existence of different System providers (tenants)
               on a single physical device:</p>
@@ -927,24 +932,28 @@
                    <th>Attack Method</th>
                </tr><tr>
                    <td><a>Script Execution Boundary</a></td>
-                   <td>Modification or unauthorized access to any asset available to other scripts.
+                   <td>Modification or unauthorized access to any asset available
+                   to other scripts.
                    Denial of Service</td>
                    <td><a>TDs</a>,
                        <a>System User Data</a>,
                        <a>WoT Thing Resources</a>,
                        <a>WoT Infrastructure Resources</a>,
                        <a>WoT Controlled Environment</a></td>
-                   <td>Local attack by an untrusted WoT script using WoT Scripting API or any native OS local method.</a></td>
+                   <td>Local attack by an untrusted WoT script using WoT Scripting
+                   API or any native OS local method.</a></td>
                </tr><tr>
                    <td><a>WoT Runtime Instance Execution Boundary</a></td>
-                   <td>Modification or unauthorized access to any asset available to other WoT Runtime running on the same HW device.
+                   <td>Modification or unauthorized access to any asset available
+                   to other WoT Runtime running on the same HW device.
                    Denial of Service</td>
                    <td><a>TDs</a>,
                        <a>System User Data</a>,
                        <a>WoT Thing Resources</a>,
                        <a>WoT Infrastructure Resources</a>,
                        <a>WoT Controlled Environment</a></td>
-                   <td>Local attack by an untrusted WoT runtime using any native OS local method.</a></td>
+                   <td>Local attack by an untrusted WoT runtime using any native OS
+                   local method.</a></td>
                </tr>
            </table>
 
@@ -970,31 +979,77 @@
               Another additional set of attack surfaces might be added
               if we assume that Protocol Bindings can be untrusted.</p>
 
-           <p>The following attack surfaces are out-of-scope for the WoT Security model:</p>
+           <p>The following attack surfaces are currently out-of-scope for the WoT Security model:</p>
            <table>
                <tr>
                    <th>System Element</th>
                    <th>Compromise Type(s)</th>
                    <th>Assets Exposed</th>
                    <th>Attack Method</th>
+                   <th>Reasoning</th>
                </tr><tr>
-                  <th>Non-WoT endpoints</br>
-                  This includes legacy devices, remote clouds and other infrastructures, user interfaces such as browsers or applications on a smartphone, etc.)</th>
-                   <td>Component compromise</td>
-                   <td>Any type of the WoT assets</td>
-                   <td>Network attacks, local attacks</td>
+                   <th>WoT Things Directory</th>
+                   <td>Modification or unauthorized access to hosted TDs,
+                   Denial of Service by preventing legitimate users from obtaining TDs,
+                   Inference of non-public or privacy sensitive information based on
+                   the observation of the protocol between the WoT endpoints and
+                   Things Directory.</td>
+                   <td><a>TDs</a>, history of interaction with Things Directory</td>
+                   <td>Any remote or local attack method on the Things Directory service
+                   that results in attacker obtaining unauthorized access or the ability
+                   to modify TDs hosted by this service or to cause any type of DoS attack
+                   on the hosting service itself. In addition public hosting of TDs by the
+                   Things Directory can have strong privacy implications and risks, as well
+                   as obtaining information on interactions between the Things Directory
+                   and given WoT network setup or user</td>
+                   <td>This attack surface is out of scope because WoT specifications do
+                   not define the internal structure of Things Directory or its interaction
+                   protocol. However, <a href="#sec-pract-things-directory"></a> lists
+                   generic recommendations and best known security practices that should be
+                   followed when designing Things Directory and interaction protocol. </td>
                </tr><tr>
-                   <th>Native OS</th>
-                   <td>Component compromise on levels below WoT runtime</td>
+                  <th>Non-WoT endpoints</th>
+                   <td>Component compromise. This includes legacy devices,
+                   remote clouds and other infrastructures, user interfaces
+                   such as browsers or applications on a smartphone, etc.)</td>
                    <td>Any type of the WoT assets</td>
-                   <td>Network attacks, local attacks</td>
+                   <td>Any remote or local attack method on the non-WoT endpoint that
+                   results in attacker obtaining unauthorized access or the ability to
+                   modify any WoT asset stored at the non-WoT endpoint or to cause any
+                   type of DoS attack on <a>WoT Thing Resources</a> or <a>WoT
+                   Infrastructure Resources</a></td>
+                   <td>This attack surface is out of scope because WoT specifications do
+                   not cover non-WoT endpoints. However, <a href="#sec-pract-non-wot-endpoints"></a>
+                   lists generic recommendations and best known security practices that
+                   should be followed when designing non-Wot endpoints. </td>
+               </tr><tr>
+                   <th>Native device compromise</th>
+                   <td>Component compromise on levels below WoT Runtime,
+                   including any WoT component, such as WoT Gateway Servient,
+                   WoT Client or WoT Thing device. </td>
+                   <td>Any type of the WoT assets</td>
+                   <td>Any remote or local attack method on WoT devices (WoT Gateway Servient,
+                   WoT Client, WoT Thing device, etc.) on levels below WoT runtime that
+                   results in attacker obtaining unauthorized access or the ability to
+                   modify any WoT asset stored at the WoT Runtime or to cause any type
+                   of DoS attack on <a>WoT Thing Resources</a> or <a>WoT Infrastructure
+                   Resources</a></td>
+                   <td>This attack surface is out of scope because WoT specifications do
+                   not cover levels below the WoT Runtime. However,
+                   <a href="#sec-pract-below-wot-runtime"></a> lists generic
+                   recommendations and best known security practices that should be
+                   followed when designing the levels below WoT Runtime. In addition
+                   <a href="#sec-pract-end-to-end-security"></a> discusses methods
+                   to provide end-to-end security between WoT endpoints in case an intermediate
+                   node, such as a WoT Gateway Servient, is compromised. </td>
                </tr>
            </table>
        </section>
 
        <section>
        <h3>Threats</h3>
-       <p>This section lists all basic WoT threats, both in-scope and out-of-scope.</p>
+       <p>This section lists all basic WoT threats with the exception of threats on
+       the attack surfaces that we have put out of scope in the previous section.</p>
 
        <p>The WoT threat model assumes that the WoT Client
          (which might reside on a non-WoT device, such as a smartphone, a PC browser, etc.)
@@ -1019,22 +1074,6 @@
                <th>Asset</th>
                <th>Attack method and pre-conditions</th>
            </tr><tr>
-               <th><dfn>Non-WoT End Point Threat</dfn></th>
-               <td>All attacker types</td>
-               <td>Any type of the WoT assets</td>
-               <td><strong>Attack method:</strong>
-                   Any remote or local attack method on the Non-WoT End Point that results in attacker obtaining
-                   unauthorized access or the ability to modify any WoT asset stored at
-                   the Non-WoT End Point or to cause any type of DoS attack on <a>WoT Thing Resources</a> or <a>WoT Infrastructure Resources</a></td>
-           </tr><tr>
-               <th><dfn>Native OS Threat</dfn></th>
-               <td>All attacker types</td>
-               <td>Any type of the WoT assets</td>
-               <td><strong>Attack method:</strong>
-                   Any remote or local attack method on levels below WoT runtime that results in attacker obtaining
-                   unauthorized access or the ability to modify any WoT asset stored at
-                   the WoT Runtime or to cause any type of DoS attack on <a>WoT Thing Resources</a> or <a>WoT Infrastructure Resources</a></td>
-           </tr><tr>
                <th><dfn>WoT Protocol Binding Threat</dfn></th>
                <td><a>Network Attacker</a>,
                    <a>Malware Developer</a>,
@@ -1052,7 +1091,7 @@
                    compromising protocol binding component and access to all available WoT assets</td>
            </tr><tr>
                <th><dfn>WoT Interface Threat - Thing Instance Compromise</dfn></th>
-               <td><a>Network Attacker</a>, 
+               <td><a>Network Attacker</a>,
                    <a>Malware Developer</a>,
                    <a>Malicious Users</a></td>
                <td>All available WoT assets in the same execution boundary</td>
@@ -1410,16 +1449,6 @@ An example of privacy threat: a compromised application on a user smartphone con
 <th><strong>Threat name</strong></th>
 <th><strong>Reasoning &amp; recommendation</strong></th>
 </tr>
-
-
-<tr>
-<td><a>Non-WoT End Point Threat</a></td>
-<td><strong>Reasoning</strong> : The security of non-WoT end points and their external interfaces is out of the WoT scope. <strong>Recommendations</strong> : Solution providers and OEMs are recommended to use industry best security practices when designing their non-WoT End points, protocols and interfaces.</td>
-</tr>
-<tr>
-<td><a>Native OS Threat</a></td>
-<td>TBD</td>
-</tr>
 <tr>
 <td><a>WoT Communication Threat - Side Channels</a></td>
 <td>TBD</td>
@@ -1429,7 +1458,7 @@ An example of privacy threat: a compromised application on a user smartphone con
 <td></td>
 </tr>
 </table>
-    </section>
+</section>
  
     <section>
     <h3>Scenario 2 - Business/Corporate environment</h3>
@@ -1503,15 +1532,7 @@ An example of privacy threat: a compromised application on a user smartphone con
     <th><strong>Threat name</strong></th>
     <th><strong>Reasoning &amp; recommendation</strong></th>
     </tr>
-    <tr>
-    <td><a>Non-WoT End Point Threat</a></td>
-    <td>TBD</td>
-    </tr>
-    <tr>
-    <td><a>Native OS Threat</a></td>
-    <td>TBD</td>
-    </tr>
-    <tr>
+        <tr>
     <td><a>WoT Communication Threat - Side Channels</a></td>
     <td>TBD</td>
     </tr>
@@ -1593,14 +1614,6 @@ An example of privacy threat: a compromised application on a user smartphone con
     <tr>
     <th><strong>Threat name</strong></th>
     <th><strong>Reasoning &amp; recommendation</strong></th>
-    </tr>
-    <tr>
-    <td><a>Non-WoT End Point Threat</a></td>
-    <td>TBD</td>
-    </tr>
-    <tr>
-    <td><a>Native OS Threat</a></td>
-    <td>TBD</td>
     </tr>
     <tr>
     <td><a>WoT Communication Threat - Side Channels</a></td>
@@ -1807,20 +1820,20 @@ An example of privacy threat: a compromised application on a user smartphone con
 
         <section>
 	      <h3>Minimize Network Interface Functionality</h3>
-            <p>
-	          Network interfaces exposed by a TD (WoT Interfaces) should only provide the minimal necessary functionality,
-            which helps to minimize implementation errors,
-	         possibilities for exposing potentially sensitive data, DoS attack possibilities etc.  
-	         Devices should be strongly encapsulated, meaning the network interfaces should not expose implementation details
-            (for example, the use of particular software frameworks).
+          <p>
+	         Network interfaces exposed by a TD (WoT Interfaces) should only provide
+           the minimal necessary functionality, which helps to minimize implementation errors,
+	         possibilities for exposing potentially sensitive data, DoS attack possibilities etc.
+	         Devices should be strongly encapsulated, meaning the network interfaces should not
+           expose implementation details (for example, the use of particular software frameworks).
 	         Consider different levels of access for different users.
-            </p>
-            <p>
-	         This recommendation helps prevent the following threats: 
-            <a>WoT Interface Threat - Thing Instance Compromise</a>, 
-            <a>WoT Interface Threat - Unauthorized WoT Interface Access</a>, 
+          </p>
+          <p>
+	         This recommendation helps prevent the following threats:
+            <a>WoT Interface Threat - Thing Instance Compromise</a>,
+            <a>WoT Interface Threat - Unauthorized WoT Interface Access</a>,
             <a>WoT DoS Threat</a>.
-            </p>
+          </p>
         </section>
       </section>
     
@@ -1831,6 +1844,33 @@ An example of privacy threat: a compromised application on a user smartphone con
           </p>
       </section>
 
+      <section id="sec-pract-things-directory">
+        <h2>Secure Practices for designing a Things Directory and interaction protocol</h2>
+          <p class="ednote" title="Fill in the content">
+          This subsection content needs to be added.
+          </p>
+      </section>
+
+      <section id="sec-pract-non-wot-endpoints">
+        <h2>Secure Practices for designing non-WoT endpoints</h2>
+          <p class="ednote" title="Fill in the content">
+          This subsection content needs to be added.
+          </p>
+      </section>
+
+      <section id="sec-pract-below-wot-runtime">
+        <h2>Secure Practices for designing levels below the WoT Runtime</h2>
+          <p class="ednote" title="Fill in the content">
+          This subsection content needs to be added.
+          </p>
+      </section>
+
+      <section id="sec-pract-end-to-end-security">
+        <h2>Secure Practices for end-to-end security</h2>
+          <p class="ednote" title="Fill in the content">
+          This subsection content needs to be added.
+          </p>
+      </section>
     </section>
 
     <section>
@@ -1925,7 +1965,7 @@ An example of privacy threat: a compromised application on a user smartphone con
            <h2>Basic Interaction between WoT Thing and WoT Client via Split Proxy</h2>
 
            <p>
-            <a href="#wot_client_thing_double_proxy"></a> shows another commonly done setup, where the WoT Thing resides in a local protected network, behind a NAT/Firewall. The WoT Thing cannot be contacted directly, but the communication between the WoT Client and the WoT Thing goes via a pair of Gateway Servients: local (residing in the local protected network) and remote (residing in the Internet in open). The Local and Remote Gateway Servients are connected with a non-WoT secure channel and the Local Gateway Servient only accepts the connections from the remote one. The WoT Remote Gateway Servient should use the mechanisms described in Section <a href="#wot-client-server-basic"></a> in order to authenticate and authorize the WoT Client before processing any of it requests. Similar to the setups, described in Section <a href="#wot-client-server-basic"></a>, the authenticity, confidentiality and replay protection can be guaranteed by underlying usage of secure protocols to exchange the data between the WoT Client and the Remote Gateway Servient. If the WoT Client is authorized, then the Remote Gateway Servient can package the WoT request and transfer it over the secured channel to the Local Gateway Servient, which in turn can issue request to the Wot Thing. The WoT channel between the Local Gateway Servient and the WoT Thing can be fully unprotected (relying purely on the closed nature of the local network), but it is strongly recommended to employ various security mechanisms described in Section <a href="#wot-client-server-basic"></a> to perform authentication & authorization of involved parties (WoT Thing and Local Gateway Servient), as well as to provide confidentiality and integrity of transferred solution data and TD.
+            <a href="#wot_client_thing_double_proxy"></a> shows another commonly done setup, where the WoT Thing resides in a local protected network, behind a NAT/Firewall. The WoT Thing cannot be contacted directly, but the communication between the WoT Client and the WoT Thing goes via a pair of Gateway Servients: local (residing in the local protected network) and remote (residing in the Internet in open). The Local and Remote Gateway Servients are connected with a non-WoT secure channel and the Local Gateway Servient only accepts the connections from the remote one. The WoT Remote Gateway Servient should use the mechanisms described in Section <a href="#wot-client-server-basic"></a> in order to authenticate and authorize the WoT Client before processing any of it requests. Similar to the setups, described in Section <a href="#wot-client-server-basic"></a>, the authenticity, confidentiality and replay protection can be guaranteed by underlying usage of secure protocols to exchange the data between the WoT Client and the Remote Gateway Servient. If the WoT Client is authorized, then the Remote Gateway Servient can package the WoT request and transfer it over the secured channel to the Local Gateway Servient, which in turn can issue request to the Wot Thing. The WoT channel between the Local Gateway Servient and the WoT Thing can be fully unprotected (relying purely on the closed nature of the local network), but it is strongly recommended to employ various security mechanisms described in Section <a href="#wot-client-server-basic"></a> to perform authentication and authorization of involved parties (WoT Thing and Local Gateway Servient), as well as to provide confidentiality and integrity of transferred solution data and TD.
            </p>
 
             <figure id="wot_client_thing_double_proxy">
@@ -1934,7 +1974,7 @@ An example of privacy threat: a compromised application on a user smartphone con
             </figure>
 
            <p>
-            An alternative security setup for such scenario can be done using end-to-end security authentication and authorization, where the WoT Client would not only need to authenticate & authorize itself to the Remote Gateway Servient, but also to the WoT Thing. In this case it would need a separate set of security credentials, required to successfully authenticate with each party and the exposed TD should indicate the mechanisms to obtain them.           
+            An alternative security setup for such scenario can be done using end-to-end security authentication and authorization, where the WoT Client would not only need to authenticate and authorize itself to the Remote Gateway Servient, but also to the WoT Thing. In this case it would need a separate set of security credentials, required to successfully authenticate with each party and the exposed TD should indicate the mechanisms to obtain them.           
           </p>
 
           </section>
@@ -1973,7 +2013,7 @@ An example of privacy threat: a compromised application on a user smartphone con
             </p>
 
             <p>
-            <a href="#wot_scripts_security_2"></a> shows handling of security configuration during the exposure of a new WoT Thing, MyLampThing. Since the security configurations (types of authentication & authorization methods and corresponding credentials) are not exposed to the WoT Scripts, but handled by the WoT Runtime and underlying protocol bindings, WoT Scripts must either rely on WoT Runtime to use the default credentials provisioned to it, or indicate the choice of security methods and credentials using a name/id tag known to the WoT Runtime.   
+            <a href="#wot_scripts_security_2"></a> shows handling of security configuration during the exposure of a new WoT Thing, MyLampThing. Since the security configurations (types of authentication and authorization methods and corresponding credentials) are not exposed to the WoT Scripts, but handled by the WoT Runtime and underlying protocol bindings, WoT Scripts must either rely on WoT Runtime to use the default credentials provisioned to it, or indicate the choice of security methods and credentials using a name/id tag known to the WoT Runtime.   
 
 
             <figure id="wot_scripts_security_2">
