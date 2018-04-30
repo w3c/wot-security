@@ -1898,22 +1898,59 @@ An example of privacy threat: a compromised application on a user smartphone con
             </p>
           </section>
           <section>
-          <h2>Interaction between WoT Thing and WoT Client via WoT Servient Gateway</h2>
+          <h2>Interaction between WoT Thing and WoT Client via a WoT Servient Gateway</h2>
             <p>
-             <a href="#wot_client_thing_gateway"></a> shows the same basic WoT Client that is used to operate the WoT Thing. However in contrast to the previous case, the interaction between the WoT Client and the WoT Thing happens via the WoT Servient Gateway. The latter exposes a WoT interface and provides a Thing Description with actions that can be performed on a Thing.
+            <a href="#wot_client_thing_gateway"></a>, as in the <a href="#wot_client_thing_basic"></a> configuration,
+                also allows a WoT Client to connect to and operate or monitor a WoT Thing.
+                However in contrast to the basic (direct connection) case,
+                the interaction between the WoT Client and the WoT Thing is now mediated by a WoT Servient Gateway.
+                The WoT Servient Gateway exposes a WoT interface and provides a Thing Description that describes 
+                interactions that that apply to the Thing.
+                In general, the TD provided by the WoT Servient Gateway is structurally
+                identical to the one that would have been provided by the Thing directly,
+                except for any necessary modifications to URLs and (perhaps) a modified security configuration.
             </p>
             <figure id="wot_client_thing_gateway">
               <img src="images/client-server-gateway.png" style="width: 1000px;" />
               <figcaption>WoT Thing and WoT Client via Gateway</figcaption>
             </figure>
             <p>
-            From a security standpoint this case is quite similar to the one described in Section <a href="#wot-client-server-basic"></a> with the main difference that mutual authentication should be established between all directly communicating parties, i.e. between the WoT Client and the WoT Servient Gateway, and between the WoT Servient Gateway and the device exposing the WoT Thing. If there is no direct communication between the WoT Servient Gateway and the device providing the WoT Thing the mutual authentication between them is redundant. The authentication mechanisms described in Section <a href="#wot-client-server-basic"></a> are also applicable for this case.
+            From a security standpoint this case is quite similar to the one described in Section <a href="#wot-client-server-basic"></a>. 
+            The main difference is that mutual authentication should be established between all directly communicating parties,
+            i.e. between the WoT Client and the WoT Servient Gateway,
+            as well as between the WoT Servient Gateway and the device exposing the WoT Thing.
+            If there is no direct communication between the WoT Servient Gateway
+            and the device providing the WoT Thing however the mutual authentication between them is redundant.
+            The authentication mechanisms described in Section <a href="#wot-client-server-basic"></a> are also applicable for this case.
             </p>
             <p>
-            The Thing Description that WoT Gateway device provides to the WoT Client can be the same as it gets from the device exposing the WoT Thing or it can be modified to better suit the deployment use case or expose additional functionality via the WoT Gateway. It is also possible that the end device behind the WoT Gateway is a non-WoT device and does not provide any Thing Description on its own, neither supports any interaction via the WoT Interface. In this case the WoT Servient Gateway has to build the Thing Description by itself and expose it to the WoT Client. For all typical use cases, the WoT Servient Gateway should be considered as a trusted entity and it can freely modify or build Thing Descriptions it exposes as well as setup the fine-grained access controls on different exposed WoT Interfaces. It can do it using the same methods described in Section <a href="#wot-client-server-basic"></a> and therefore act fully on behalf of the end device.
+            The Thing Description that the WoT Servient Gateway device provides to the WoT Client 
+            can be the same as it gets from the device exposing the WoT Thing or it can be modified 
+            to better suit the deployment use case or expose additional functionality via the WoT Gateway.
+            It is also possible that the end device behind the WoT Gateway is a non-WoT device and does
+            not provide any Thing Description on its own, and may not support any interaction via a WoT-compatible network Interface.
+            In this case the WoT Servient Gateway has to build the Thing Description by itself and expose it to the WoT Client.
+            For all typical use cases,
+            the WoT Servient Gateway should be considered a trusted entity and in this case
+            it can freely modify or build Thing Descriptions it exposes as well as set up 
+            fine-grained access controls on different exposed WoT Interfaces.
+            The WoT Servient Gateway can do this using the same methods described in
+            Section <a href="#wot-client-server-basic"></a>, and therefore acts fully on behalf of the end device.
             </p>
             <p>
-            <a href="#wot_client_thing_gateway_2"></a> is identical to the previous case but with an important difference that a Thing Description is not provided by the the WoT Servient Gateway, but can be fetched by the WoT client from a Things Directory residing on a remote cloud. Similar to the previous case, this Thing Description can either be original Thing Description supplied by the end device (i.e. garage door) or modified by the WoT Servient Gateway. Regardless of the actual setup, the transfer of Thing Description between any two endpoints should be done using underlying secure protocols and the usage of TLS/DTLS is the recommended method. Similarly to Section <a href="#wot-client-server-basic"></a> in case the remote cloud does not guarantee the secure storage and delivery of Thing Descriptions to the WoT Client or in case the remote cloud is not a trusted entity, the authenticity of the Thing Description should be verified using other methods on the application layer.
+            <a href="#wot_client_thing_gateway_2"></a> is identical to the previous case but with an important difference
+            that a Thing Description is not provided by the the WoT Servient Gateway,
+            but can be fetched by the WoT client from a Things Directory residing on a remote cloud.
+            Similar to the previous case,
+            this Thing Description can either be original Thing Description supplied by the end device (i.e. garage door)
+            or modified by the WoT Servient Gateway.
+            Regardless of the actual setup,
+            the transfer of Thing Description between any two endpoints should be done using underlying secure protocols
+            and currently the use of TLS or DTLS is recommended.
+            Similarly to Section <a href="#wot-client-server-basic"></a> in case the remote cloud does not guarantee
+            the secure storage and delivery of Thing Descriptions to the WoT Client
+            or in case the remote cloud is not a trusted entity,
+            the authenticity of the Thing Description should be verified using other methods on the application layer.
             </p>
             <figure id="wot_client_thing_gateway_2">
               <img src="images/client-server-gateway-2.png" style="width: 1000px;" />
@@ -1925,7 +1962,29 @@ An example of privacy threat: a compromised application on a user smartphone con
            <h2>Basic Interaction between WoT Thing and WoT Client via Split Proxy</h2>
 
            <p>
-            <a href="#wot_client_thing_double_proxy"></a> shows another commonly done setup, where the WoT Thing resides in a local protected network, behind a NAT/Firewall. The WoT Thing cannot be contacted directly, but the communication between the WoT Client and the WoT Thing goes via a pair of Gateway Servients: local (residing in the local protected network) and remote (residing in the Internet in open). The Local and Remote Gateway Servients are connected with a non-WoT secure channel and the Local Gateway Servient only accepts the connections from the remote one. The WoT Remote Gateway Servient should use the mechanisms described in Section <a href="#wot-client-server-basic"></a> in order to authenticate and authorize the WoT Client before processing any of it requests. Similar to the setups, described in Section <a href="#wot-client-server-basic"></a>, the authenticity, confidentiality and replay protection can be guaranteed by underlying usage of secure protocols to exchange the data between the WoT Client and the Remote Gateway Servient. If the WoT Client is authorized, then the Remote Gateway Servient can package the WoT request and transfer it over the secured channel to the Local Gateway Servient, which in turn can issue request to the Wot Thing. The WoT channel between the Local Gateway Servient and the WoT Thing can be fully unprotected (relying purely on the closed nature of the local network), but it is strongly recommended to employ various security mechanisms described in Section <a href="#wot-client-server-basic"></a> to perform authentication & authorization of involved parties (WoT Thing and Local Gateway Servient), as well as to provide confidentiality and integrity of transferred solution data and TD.
+            <a href="#wot_client_thing_double_proxy"></a> shows another common situation
+            where the WoT Thing resides in a local protected network, behind a NAT/Firewall.
+            In this case the WoT Client cannot contact the WoT Thing directly.
+            Instead the communication between the WoT Client and the WoT Thing goes via a pair of Wot Gateway Servients: 
+            one residing in the local protected network, known as the Local Gateway, and another running in the cloud, known as the Remote Gateway.
+            We refer to this configuration as a "Split Proxy" because the combination of the Local and Remote Proxy together
+            act like a single proxy service.
+            The Local and Remote Gateway Servients are connected with a secure channel (which may be non-WoT, eg it does not have to
+            use a protocol known to WoT) as the Local Gateway Servient only communicates over this channel with the Remote Gateway Servient.
+            The WoT Remote Gateway Servient should use the mechanisms described in Section <a href="#wot-client-server-basic"></a>
+            in order to authenticate and authorize the WoT Client before processing any of its requests.
+            Similar to the configurations described in Section <a href="#wot-client-server-basic"></a>,
+            secure protocols should be used to protect authenticity and confidentiality and provide replay protection when
+            data is exchanged between the WoT Client and the Remote Gateway Servient.
+            If the WoT Client is authorized,
+            then the Remote Gateway Servient can package the WoT request and transfer it over the secure channel to the Local Gateway Servient,
+            which in turn can issue requests to the WoT Thing on the local network.
+            The WoT channel between the Local Gateway Servient and the WoT Thing can be left unprotected
+            (relying purely on the closed nature of the local network),
+            but it is strongly recommended to employ suitable additional security mechanisms 
+            as described in Section <a href="#wot-client-server-basic"></a> to perform authentication
+            and authorization of involved parties (WoT Thing and Local Gateway Servient),
+            as well as to provide confidentiality and integrity of transferred solution data and TD.
            </p>
 
             <figure id="wot_client_thing_double_proxy">
@@ -1934,9 +1993,31 @@ An example of privacy threat: a compromised application on a user smartphone con
             </figure>
 
            <p>
-            An alternative security setup for such scenario can be done using end-to-end security authentication and authorization, where the WoT Client would not only need to authenticate & authorize itself to the Remote Gateway Servient, but also to the WoT Thing. In this case it would need a separate set of security credentials, required to successfully authenticate with each party and the exposed TD should indicate the mechanisms to obtain them.           
+            An alternative security setup for this scenario can use end-to-end security authentication and authorization.
+            In this case the WoT Client would not only need to authenticate and authorize itself to the Remote Gateway Servient,
+            but also to the WoT Thing.
+            In this case it would need a separate set of security credentials,
+            required to successfully authenticate with each party and the exposed TD should indicate the mechanisms to obtain them.           
           </p>
 
+          </section>
+
+          <section id="wot-client-server-tunnel">
+           <h2>Basic Interaction between WoT Thing and WoT Client via a Tunnel</h2>
+
+           <p>As an alternative to the use of a split proxy, which requires a trusted remote proxy to accept interaction
+           requests on behalf of the WoT Thing, a secure tunnel (such as an SSH tunnel) can be set up between the WoT Thing and
+           an endpoint in the cloud.  In order to traverse the NAT the WoT Thing would have to initiate the connection, so
+           in practice this would be a reverse tunnel.  However, then a port made available by the Thing would be made
+           available directly on the cloud server supporting the tunnel endpoint, possibly mapped to a different port.
+           </p>
+           <p>
+           In this configuration the WoT Thing would be responsible for all security, including (if necessary) certificates
+           appropriate for the tunnel endpoint in the cloud.  If the WoT thing provides a TD, it should use URLs that refer
+           to the tunnel endpoint.  This means that the port used for the local side of the tunnel
+           should not be used to provide local connections as the certificates will be incorrect for local connections.
+           Instead a separate port (and possibly a separate TD with local URLs) should be provided.
+           </p>
           </section>
 
          <section>
