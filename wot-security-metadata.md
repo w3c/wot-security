@@ -41,7 +41,154 @@ specification.
 
 ## TD Example
 Before giving the details of each supported security configuration scheme,
-we will give a simple example of a TD using basic
+we will give a few examples, working up from simple to more complex.
+The simplest approach to configuring security simply uses the same configuration
+for all forms.  It is also possible to give a per-form security configuration,
+but if a global security definition is given this is only needed for forms whose
+security configuration is different from the global definitions.  In other words,
+only the "exceptions" need explicit configuration.  In complex situations
+where the forms fall into a number of different classes, security definitions
+can be given which basically creates named configurations which can then be
+used in place of security configuration objects.
+
+Here is a simple example using the first approach, a single global security
+configuration that applies to all forms:
+
+    {
+      "@context": ["https://w3c.github.io/wot/w3c-wot-td-context.jsonld",
+                   "https://w3c.github.io/wot/w3c-wot-common-context.jsonld",
+                    {
+                      "iot": "http://iotschema.org/"
+                    }
+                  ],
+      "@type": ["Thing","iot:Light","iot:BinarySwitch"],
+      "label": "MyLampThing",
+      "@id": "urn:dev:wot:my-lamp-thing",
+      // default (global) security configuration
+      security: [
+        {
+          "scheme": "basic"
+        }
+      ],
+      "properties": {
+        "status": {
+          "label": "Status",
+          "@type": ["iot:SwitchStatus"],
+          "type": "boolean",
+          "writable": true,
+          "observable": true,
+          "form": [
+            {
+              "href": "https://mylamp.example.com/status",
+              "mediaType": "application/json",
+            }
+          ]
+        }
+      },
+      "actions": {
+        "toggle": {
+          "name": "Toggle",
+          "@type": ["iot:ToggleAction"],
+          "form": [
+            {
+              "href": "https://mylamp.example.com/toggle",
+              "mediaType": "application/json"
+            }
+          ]
+        }
+      },
+      "events": {
+        "overheating": {
+          "name": "Overheating",
+          "@type": ["iot:OverheatEvent"],
+          "type": "string",
+          "form": [
+            {
+              "href": "https://mylamp.example.com/oh",
+              "mediaType": "application/json"
+            }
+          ]
+        }
+      }
+    }
+
+Note that this relies on the defaults being suitable for the device in question, i.e.
+using the most common mappings from the abstract interaction patterns to HTTPS verbs.
+
+As a slightly more complex example, suppose we want to disable security for
+the overheating event for some reason.  This can be accomplished by modifying the
+above example slightly to give an empty security definition for the overheating form.
+The difference is only a single line to specify the exception.
+
+    {
+      "@context": ["https://w3c.github.io/wot/w3c-wot-td-context.jsonld",
+                   "https://w3c.github.io/wot/w3c-wot-common-context.jsonld",
+                    {
+                      "iot": "http://iotschema.org/"
+                    }
+                  ],
+      "@type": ["Thing","iot:Light","iot:BinarySwitch"],
+      "label": "MyLampThing",
+      "@id": "urn:dev:wot:my-lamp-thing",
+      // default (global) security configuration
+      security: [
+        {
+          "scheme": "basic"
+        }
+      ],
+      "properties": {
+        "status": {
+          "label": "Status",
+          "@type": ["iot:SwitchStatus"],
+          "type": "boolean",
+          "writable": true,
+          "observable": true,
+          "form": [
+            {
+              "href": "https://mylamp.example.com/status",
+              "mediaType": "application/json",
+            }
+          ]
+        }
+      },
+      "actions": {
+        "toggle": {
+          "name": "Toggle",
+          "@type": ["iot:ToggleAction"],
+          "form": [
+            {
+              "href": "https://mylamp.example.com/toggle",
+              "mediaType": "application/json"
+            }
+          ]
+        }
+      },
+      "events": {
+        "overheating": {
+          "name": "Overheating",
+          "@type": ["iot:OverheatEvent"],
+          "type": "string",
+          "form": [
+            {
+              "href": "https://mylamp.example.com/oh",
+              "mediaType": "application/json",
+              "security": [] // security disabled; overrides default
+            }
+          ]
+        }
+      }
+    }
+
+In more complex situations we might have to use many different configurations
+for different forms.  This may arise for example for devices that use multiple
+sub-APIs with different security requirements or that use multiple protocols with
+different security schemes.  In this case it is possible to expand upon the above
+but in many cases the same security configuration will be reused in multiple forms,
+leading to redundancy.  Security definitions avoid the redundancy by allowing
+security configurations to be defined in a single place and then later referred
+to by name.  This also allows a certain level of abstraction.
+
+Here is an example TD using security definitions.  It uses basic
 HTTP authentication for HTTPS links and OCF access control lists for equivalent CoAP links:
 
     {
@@ -164,7 +311,7 @@ and another case where two are required (to turn on the light by CoAP/OCF, we ne
 access rights in the ACL _and_ an API key; the corresponding HTTPS interface needs both
 basic authentication and the key).
 
-*Note:* Security is specified per `form` so that it can be different for each one,
+Security is specified per `form` so that it can be different for each one,
 as is often necessary when multiple protocols are supported for the same interaction,
 since different protocols may support different security mechanisms.  In this case we
 also wanted to support stronger security (eg multiple authentication mechanisms)
@@ -212,9 +359,10 @@ Arrays can contain strings or objects, or both, using the same rules as single v
 In other words, a single non-array element (string or object) is equivalent to an array
 with one element.
 
-It is possible in general to eliminate the definitions and expand all configurations
-locally; it is just more verbose.  Here is the above example with all definitions 
-expanded, and also with all "single-element" security definitions converted to arrays:
+It is possible in general to eliminate definitions and expand all configurations
+locally; it is just more verbose.  Here is the above example rewritten with all definitions 
+expanded, and also with all "single-element" security definitions converted to arrays with
+one element (which is how they should be interpreted):
 
     {
       "@context": ["https://w3c.github.io/wot/w3c-wot-td-context.jsonld",
