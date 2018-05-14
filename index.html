@@ -2108,6 +2108,7 @@ An example of privacy threat: a compromised application on a user smartphone con
            an endpoint in the cloud.  In order to traverse the NAT the WoT Thing would have to initiate the connection, so
            in practice this would be a reverse tunnel.  However, then a port made available by the Thing would be made
            available directly on the cloud server supporting the tunnel endpoint, possibly mapped to a different port.
+	   The use of a tunnel for NAT traversal is shown in <a href="#wot_client_thing_tunnel"></a>.
            </p>
            <figure id="wot_client_thing_tunnel">
               <img src="images/tunnel.svg" style="width: 1000px;" />
@@ -2115,12 +2116,37 @@ An example of privacy threat: a compromised application on a user smartphone con
             </figure>
 		  
            <p>
-           In this configuration the WoT Thing would be responsible for all security, including (if necessary) certificates
-           appropriate for the tunnel endpoint in the cloud.  If the WoT thing provides a TD, it should use URLs that refer
-           to the tunnel endpoint.  This means that the port used for the local side of the tunnel
+           In this configuration the WoT Thing must be responsible for all security, including (if necessary) certificates
+           appropriate for the tunnel endpoint in the cloud.  This implies that the WoT Thing needs to be 
+	   relatively powerful, as constrained devices may not be able to support security mechanisms suitable for
+           direct exposure on the internet.  The WoT Thing would also have to be actively maintained and patched.
+           If the WoT thing provides a TD, it should use URLs that refer to the tunnel endpoint.  
+	   This generally means that the port used for the local side of the tunnel
            should not be used to provide local connections as the certificates will be incorrect for local connections.
            Instead a separate port (and possibly a separate TD with local URLs) should be provided.
+           </p>	  
+           <p>One advantage of this arrangement is that communication is never available in plaintext on either the
+           gateway or the client.  Specifically, the private keys for end-to-end communication between the 
+	   WoT Thing and the WoT Client, assuming a secure protocol such as HTTPS is used, never need to be made
+	   available to either the local gateway or the cloud portal.
+           Because of this, it is not technically necessary for the tunnel to be over SSH; a regular IP tunnel would
+	   suffice.
+	   </p>
+	   <p>A variation of this is shown in <a href="#wot_client_thing_proxy"></a>.  A reverse tunnel is still
+           used here, but terminates in a local port "inside" the cloud portal, that is, the local port is not made visible outside
+	   the cloud portal's firewall.  A local proxy service then runs inside the cloud portal and provides
+	   a bridge to a secure external network interface.  For example, the protocol from the WoT Thing might be HTTP,
+           which the proxy service could bridge to an external HTTPS network interface.  In this case, the
+           tunnel should be encrypted (eg use SSH) to prevent evesdropping.  Depending on the configuration, 
+           the unencryped traffic (eg HTTP) may also be visible on the local network.   This might actually
+	   be useful if an unencrypted local network interface is desired (in that case, the only protection
+           would be from WiFi encryption).  If such a relatively unprotected local interace is <emph>not</emph> desirable,
+	   another SSH tunnel can be used between the WoT Thing and the Gateway, or the WoT Thing can act as
+           its own gateway (with the HTTP traffic protected behind a firewall).
            </p>
+	   <p>In the case of SSH tunnels, of course credentials need to be provisioned between the gateway and the
+	   cloud portal.  However, this only needs to be done once, when the gateway is installed.
+	   </p>
 		  
             <figure id="wot_client_thing_proxy">
               <img src="images/proxy.svg" style="width: 1000px;" />
