@@ -2109,6 +2109,11 @@ An example of privacy threat: a compromised application on a user smartphone con
            in practice this would be a reverse tunnel.  However, then a port made available by the Thing would be made
            available directly on the cloud server supporting the tunnel endpoint, possibly mapped to a different port.
            </p>
+           <figure id="wot_client_thing_tunnel">
+              <img src="images/tunnel.svg" style="width: 1000px;" />
+              <figcaption>WoT Thing and WoT Client via Tunnel</figcaption>
+            </figure>
+		  
            <p>
            In this configuration the WoT Thing would be responsible for all security, including (if necessary) certificates
            appropriate for the tunnel endpoint in the cloud.  If the WoT thing provides a TD, it should use URLs that refer
@@ -2116,6 +2121,11 @@ An example of privacy threat: a compromised application on a user smartphone con
            should not be used to provide local connections as the certificates will be incorrect for local connections.
            Instead a separate port (and possibly a separate TD with local URLs) should be provided.
            </p>
+		  
+            <figure id="wot_client_thing_proxy">
+              <img src="images/proxy.svg" style="width: 1000px;" />
+              <figcaption>WoT Thing and WoT Client via HTTPS/HTTP Proxy</figcaption>
+            </figure>
           </section>
 
          <section>
