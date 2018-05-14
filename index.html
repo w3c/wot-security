@@ -603,7 +603,7 @@
                      Others: read only for minimal required part.</td>
                  <td>Storage on thing itself, cloud storage, in-transfer (network) including TD updates.</td>
          </tr><tr>
-            <th><dfn>System User Data</dfn></th>
+            <th><dfn data-lt="system user data">System User Data</dfn></th>
             <td>This includes all data that is produced or processed by the elements of a WoT system,
                i.e. sensor readings and their states, users configurations and preferences, actuators commands,
                video/audio streams, etc.  Can be highly privacy sensitive and confidential.</td>
@@ -2053,6 +2053,60 @@ An example of privacy threat: a compromised application on a user smartphone con
             Fill in the isolation recommendations when we understand how security metadata is stored and made accessible to scripts
             </p>
             </section>
+    </section>
+
+    <section>
+      <h1>Privacy considerations</h1>
+            <p>              
+              In this section we focus specifically on the privacy aspects that are important to keep in mind
+              while developing and deploying WoT solutions. While the threat model, described in <a href="#wot-threat-model"></a>,
+              takes into account numerous privacy-related threats and aspects, this section summaries them and gives guidelines
+              and recommendations to minimize privacy-related risks. 
+            </p>
+            <p>              
+              The following WoT privacy threats can potentially affect the privacy of WoT <a>system users</a>:              
+             <table>
+                <tr>
+                <th><strong>Privacy threat name</strong></th>
+                <th><strong>Details</strong></th>
+                <th><strong>Mitigation</strong></th>
+                </tr>
+                <tr>
+                 <td>Disclosing WoT Thing/Device configuration</td>
+                 <td> Thing Descriptions (TDs) might leak privacy-sensitive information, such as
+                      detailed configuration of a single WoT Thing.</td>
+                 <td>TBD</td>
+                </tr>
+                <tr>
+                 <td>Disclosing WoT System configuration</td>
+                 <td> Privacy-sensitive information might be induced via observing the communication
+                      between a WoT endpoint (Client, Servient or Device) and Things Directory.
+                      For example one can learn a certain WoT system configuration by observing the TDs
+                      that a certain WoT Gateway downloads from Things Directory.</td>
+                 <td>TBD</td>
+                </tr>
+                <tr>
+                 <td>Leaking WoT <a>System User Data</a></td>
+                 <td> Depending on the network topology, WoT <a>system user data</a> can be transfered
+                      between the WoT Client and WoT Device via many intermediate nodes, such as WoT
+                      Servient Gateway or non-WoT nodes. If these nodes can access or process the WoT
+                      <a>system user data</a>, they can unintentionally leak the information that affect
+                      privacy of WoT <a>system users</a>. In addition, if WoT interfaces are publicly
+                      accessible (for example query a state of WoT Thing), it can also leak WoT
+                      <a>System User Data</a>.</td>
+                 <td>TBD</td>
+                </tr>   
+                <tr>
+                 <td>Tracking WoT <a>System User</a></td>
+                 <td> If a TD includes a unique identifier (UUID) (required for several use cases),
+                      then a WoT device might be uniquely identified and its communications tracked.
+                      Similar can be done without UUID by using fingerprinting techniques based on
+                      a WoT System configuration information (which is likely to be unique).</td>
+                 <td>TBD</td>
+                </tr>                
+             </table>
+            </p>
+        </section>
     </section>
 
     <section>
