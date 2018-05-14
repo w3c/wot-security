@@ -2158,6 +2158,28 @@ An example of privacy threat: a compromised application on a user smartphone con
             </figure>
           </section>
 
+           <p>Yet another variant of this approach is shown in <a href="#wot_client_thing_wot_proxy"></a>.
+	   In this variant, a caching proxy is used.  This means that the proxy may not always forward requests to the 
+           WoT Thing, but may instead respond on its behalf using stored state.  There are two sub-variants of this
+	   approach.  First, a simple HTTP Proxy can be used that caches responses from the WoT Thing.  For example,
+	   property reads might return an earlier cached payload if only a small amount of time has elapsed since the
+	   last request for that property.  However, this approach still requires that the WoT Thing be "always on"
+           and able to respond as a server in case cached content cannot be used.  It also requires some care on the 
+	   part of the WoT Thing to mark payloads as cacheable or uncacheable and configure appropriate time-to-live
+	   values.</p>
+           <p>The second sub-variant takes advantage of the metadata provided by the Thing Description.
+           Specifically, the Thing Description indicates which interactions are "properties" that can be "observed".
+           The proxy service can then "observe" all such properties and maintain copies in the cloud server.
+           Then when a request comes in to read a property, it can be read from the stored state.  However, the 
+           observe pattern allows the WoT Thing to send updates on its own schedule, leading to greater power
+	   efficiency.  In addition, the proxy service can see from the Thing Description which network interface
+           methods are "actions" and need to be sent directly to the WoT Thing.  This reduces the need for the 
+           WoT Thing to mark responses as being cacheable.</p>
+           <p>In both of these sub-patterns, object security (that is, response encryption
+	   at the application level) can be used to preserve confidentiality if necessary.  A caching proxy can
+	   simply store and return copies of the encrypted data representing the state of "private" properties.
+           </p>
+
          <section>
             <h2>WoT Servient Single-Tenant</h2>
             <p>
