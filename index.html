@@ -2207,7 +2207,7 @@ An example of privacy threat: a compromised application on a user smartphone con
               <figcaption>WoT Thing and WoT Client via HTTPS/HTTP Proxy</figcaption>
             </figure>
 
-           <p>Yet another variant of this approach is shown in <a href="#wot_client_thing_wot_proxy"></a>.
+           <p>Yet another variant of this approach is shown in <a href="#wot_client_thing_proxy"></a>.
 	       In this variant, the proxy is extended to support caching.
            This means that the proxy may not always forward requests to the 
            WoT Thing, but may instead respond on its behalf using stored state.
@@ -2225,7 +2225,7 @@ An example of privacy threat: a compromised application on a user smartphone con
               <img src="images/cachingproxy.svg" style="width: 1000px;" />
               <figcaption>WoT Thing and WoT Client via HTTPS/HTTP Proxy</figcaption>
             </figure>
-            <p>The second sub-variant, shown in <a href="#wot_client_thing_wot_cachingproxy"></a>,
+            <p>The second sub-variant, shown in <a href="#wot_client_thing_cachingproxy"></a>,
            takes advantage of the metadata provided by the Thing Description.
            Specifically, the Thing Description indicates which interactions are "properties" that can be "observed".
            The proxy service can "observe" all such properties and maintain copies of their state in the cloud server
@@ -2235,11 +2235,13 @@ An example of privacy threat: a compromised application on a user smartphone con
 	       efficiency.  In addition, the proxy service can see from the Thing Description which network interface
            methods are "actions" and need to be sent directly to the WoT Thing.  This reduces the need for the 
            WoT Thing to mark interactions as being cacheable or not.
-           The cache can either be combined with the security endpoint proxy or can be instantiated
-           as a separate service or "middleware layer".  Conceptually the functions are distinct.
+		    <!--
+           The cache functionality can either be combined with the security endpoint proxy or can be instantiated
+           as a separate service.  Conceptually the functions are distinct. -->
            </p>
-           <p>In both of these sub-patterns, object security (that is, encryption of payloads
-	       at the application level) can be used to preserve confidentiality if necessary [[COSE]].  A caching proxy can
+           <p>In both of these sub-patterns, object security (that is, encryption and authentication of payloads
+	       at the application level) can be used to preserve confidentiality and integrity if necessary [[COSE]].
+	       A caching proxy can
 	       simply store and return copies of the encrypted data representing the state of "private" properties.
            </p>
            <p>A caching proxy, being a variant of the proxy configuration discussed above,
