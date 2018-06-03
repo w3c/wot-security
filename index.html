@@ -2345,7 +2345,12 @@ An example of privacy threat: a compromised application on a user smartphone con
                  <td>Disclosing WoT Thing/Device configuration</td>
                  <td> Thing Descriptions (TDs) might leak privacy-sensitive information, such as
                       detailed configuration of a single WoT Thing.</td>
-                 <td>TBD</td>
+                 <td>WoT TDs should minimize the amount
+                      of information that is publicly available about a WoT Thing.
+                      There has to be a way (if a TD is privacy-sensitive) to limit clients who can
+                      obtain a certain TD (or its privacy-sensitive parts) via authentication and
+                      authorization methods.
+                      </td>
                 </tr>
                 <tr>
                  <td>Disclosing WoT System configuration</td>
@@ -2353,7 +2358,13 @@ An example of privacy threat: a compromised application on a user smartphone con
                       between a WoT endpoint (Client, Servient or Device) and Things Directory.
                       For example one can learn a certain WoT system configuration by observing the TDs
                       that a certain WoT Gateway downloads from Things Directory.</td>
-                 <td>TBD</td>
+                 <td>The communication between WoT endpoints and TD hosting service (i.e. Things
+                      Directory) should be protected against eavesdropper using well-established
+                      security protocols. It also should not be possible for a causal observer
+                      (a guest visiting person home with the access to a local wireless access point)
+                      to query available WoT devices (there has to be a way to limit WoT devices
+                      abilities to respond to different broadcast events) and as a result obtaining
+                      WoT System configuration that way. </td>
                 </tr>
                 <tr>
                  <td>Leaking WoT <a>System User Data</a></td>
@@ -2364,16 +2375,21 @@ An example of privacy threat: a compromised application on a user smartphone con
                       privacy of WoT <a>system users</a>. In addition, if WoT interfaces are publicly
                       accessible (for example query a state of WoT Thing), it can also leak WoT
                       <a>System User Data</a>.</td>
-                 <td>TBD</td>
-                </tr>   
+                 <td>WoT things should minimize the amount of publicly accessible WoT interfaces.
+                      If WoT System User Data is privacy-sensitive and travels via intermediate
+                      nodes, end-to-end encryption methods should be preferred. </td>
+                </tr>
                 <tr>
                  <td>Tracking WoT <a>System User</a></td>
                  <td> If a TD includes a unique identifier (UUID) (required for several use cases),
                       then a WoT device might be uniquely identified and its communications tracked.
                       Similar can be done without UUID by using fingerprinting techniques based on
                       a WoT System configuration information (which is likely to be unique).</td>
-                 <td>TBD</td>
-                </tr>                
+                 <td>A TD should not expose any unique identifiers or any other immutable
+                      hardware identifiers that can be used to track it.
+                      Using methods to limit disclosure of WoT system configuration helps to prevent
+                      tracking of WoT System user. </td>
+                </tr>
              </table>
             </p>
         </section>
