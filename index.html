@@ -370,12 +370,13 @@
      need to be protected and also have security and privacy implications.
      </p><p>
      We define the general security requirements for a Web of Things system using a threat model.
-     The WoT threat model defines the main security stakeholders, security-relevant assets, possible attackers, attack surfaces, 
+     The WoT threat model defines the main security stakeholders, security-relevant assets, 
+     possible attackers, attack surfaces, 
      and finally threats for a WoT system.
-     Using this generic WoT threat model as a foundation, 
-     it should be possible to build a specific set of security objectives for a concrete WoT system implementation.
+     Using this generic WoT threat model for guidance, 
+     it should be possible to select a specific set of security objectives for a concrete WoT system implementation.
      We provide several examples using common scenarios based on home, enterprise, and industrial use cases.
-     We also provide more general guidance on the design and deployment of a secure WoT system.
+     We also provide more general suggestions for the design and deployment of a secure WoT system.
      All recommendations are linked to the corresponding WoT threats in the generic woT threat model in order to
      facilitate understanding of why they are needed.
      </p><p>
@@ -387,8 +388,8 @@
      for each WoT building block.
      </p>
      <p class="ednote">
-        Check that content is consistent with the summary in the 
-        Security sections of other documents, in particular the
+        This content should be consistent with the summaries in the 
+        Security sections of other WoT documents, in particular the
 	     <a href="https://www.w3.org/TR/2017/WD-wot-architecture-20170914/#sec-security-considerations">WoT Architecture</a> 
         document.
      </p>
@@ -402,8 +403,9 @@
 
     <section>
       <h1>Introduction</h1>
-      <p>Security of a WoT system can refer to the security of the Thing Description itself or the security of the Thing the Thing Description describes.
-      See also:
+      <p>Security of a WoT system can refer to the security of the Thing Description itself or 
+      the security of the Thing the Thing Description describes.
+      For details on the Web of Things architecture, please refer to the following:
       <ul>
         <li>the <a href="https://www.w3.org/WoT/IG/">Interest Group</a> web site</li>
         <li>the <a href="https://www.w3.org/WoT/WG/">Working Group</a> web site</li>
@@ -425,35 +427,43 @@
            <figcaption>WoT Device Lifecycle</figcaption>
        </figure>
 
-      <p>The lifecycle of a WoT device is similar to the lifecycles of other IoT devices and services,
-      and may be identical if a WoT Thing Description is being used simply to describe an existing device.
-      For discussion purposes we will use the lifecycle shown in Figure <a href="#wot-lifecycle"></a> consisting of the following states:
+      <p>The lifecycle of a WoT device is similar to the lifecycles of other IoT devices and services.
+      Iy may in fact be identical if a WoT Thing Description is being used simply to describe an existing device
+      implemented using another standard.
+      However, 
+      for discussion purposes we will use the generic lifecycle shown in Figure <a href="#wot-lifecycle"></a> 
+      which includes the following states:
       <ul>
-        <li><strong>Manufactured:</strong> The WoT device has been manufactured by an OEM with a variant of WoT stack enabled. 
-		It might have a WoT runtime present that enables single or multi-tenant users or it might only have exposed WoT interfaces present.
-		From the manufactured state, based on the deployment scenario, the device can transition to either of two states: 
+        <li><strong>Manufactured:</strong> The WoT device has been manufactured by an OEM.
+		It might have a WoT runtime present that enables single or multi-tenant users 
+                or it might only have network interfaces exposed present that are compatible with a WoT description.
+		From the Manufactured state, based on the deployment scenario, the device can transition to either of two states: 
 		the Installation/Commissioning state or the Security Provisioning state.</li>
         <li><strong>Installation/Commissioning:</strong> A WoT device has been installed into its intended deployment environment
 		by a system provider or system integrator and any necessary SW configuration has been performed. 
-		In practice this state may be combined with or reorderd with the Security Provisioning state.</li>
+		In practice this state may be combined with or reordered with the Security Provisioning state.</li>
         <li><strong>Security Provisioning:</strong> A WoT device is provisioned with the security metadata and credentials needed 
 		during its Operational state. 
-		The exact set of these credentials will vary based on the WoT device's deployment model and choice of security mechanisms. 
-		<cite> The State-of-the-Art and Challenges for the Internet of Things Security</cite> [[Garcia17]] 
-		document refers to this stage as "Bootstrapping".</li>
-        <li><strong>Operational State:</strong> The default operational state of WoT devices. 
+		The exact set of necessary credentials will vary based on the WoT device's deployment model and choice of security mechanisms. 
+		The document <cite>The State-of-the-Art and Challenges for the Internet of Things Security</cite> [[Garcia17]] 
+		refers to this stage as "Bootstrapping".</li>
+        <li><strong>Operational:</strong> The default operational state of WoT devices. 
 		Devices in this state are fully ready to communicate over WoT interfaces and satisfy their deployment's operational roles. 
-		From the Operational state a device can return back to manufactured state if it is fully decommissioned and security de-provisioned 
+		From the Operational state a device can return to the Manufactured state 
+                if it is fully decommissioned and security de-provisioned 
 		(link E in Figure <a href="#wot-lifecycle"></a>). 
 		It is also possible to perform only a partial reset of a device,
 		if it only requires re-installation and recommissioning without security re-provisioning 
 		(link D in Figure <a href="#wot-lifecycle"></a>).
-		It is also possible that only security re-provisioning is needed without re-installation and re-commissioning (link C in Figure <a href="#wot-lifecycle"></a>).</li>
-        <li><strong>Maintenance and Security Updates:</strong> 
-	        An optional state that can be activated remotely or locally (link A in Figure <a href="#wot-lifecycle"></a>) 
+		It is also possible that only security re-provisioning is needed 
+                without re-installation and re-commissioning (link C in Figure <a href="#wot-lifecycle"></a>).</li>
+        <li><strong>Maintenance and Security Update:</strong> 
+                A state that is entered when the device's software or configuration needs to be updated.
+	        This is an optional state that can be activated remotely or locally (link A in Figure <a href="#wot-lifecycle"></a>) 
 		on a WoT device depending on the deployment model and overall setup. 
-		This state can be required for example to update the SW layers of a WoT device or perform some security-related updates, 
-		such as key revocation or certificate updates. 
+		This state can be required to maintain security,
+                for example to patch SW vulnerabilities or perform security-related configuration updates, 
+		such as key revocation or certificate refresh. 
 		After maintenance or updates are done, 
 		the device normally returns to the Operational state (link B in Figure <a href="#wot-lifecycle"></a>). </li>
       </ul>
@@ -462,7 +472,7 @@
       successfully provisioned during the Security Provisioning state and 
       are available transparently to the WoT runtime level. 
       Security-related system management updates (such as the revocation and update of keys and other credentials),
-      while important, are considered to be out of the scope of this document.
+      while important to maintaining the security of a system, are considered to be out of the scope of this document.
       </p>
     </section>
 
@@ -473,18 +483,19 @@
         <h2>General</h2>
             <p>
             In general using the WoT approach should "do no harm": the security of any protocols should be maintained.
-		        The Web of Things systems does not introduce new security mechanisms, 
-            but should preserve the functionality of existing mechanisms.
+            The Web of Things does not introduce new security mechanisms, 
+            but should preserve the functionality and security of existing mechanisms.
+            We also have the following requirements:
             <ul>
                 <li><strong>Exposing:</strong>
                 When exposing a TD, especially via the Scripting API,
                 it should be possible to use best practices for security,
-                including maintaining the integrity of the TD and delivering it only to an authorized recipient.</li>
+                including maintaining the integrity of the TD and delivering it only to authorized recipients.</li>
                 <li><strong>Consuming:</strong>
-		            A consumed TD should accurately reflect the actual security status of a target device.</li>
+		A consumed TD should accurately reflect the actual security status of the device it describes.</li>
                 <li><strong>Protocols:</strong>
-		            We will ensure in particular that, at a minimum, 
-                the needs of the following protocols are addressed: http(s) and coap(s).</li>
+                The WoT can potentially apply to many protocols but to limit scope in this 
+                discussion we will focus on the needs of HTTP(S), CoAP(S), and MQTT(S).</li>
             </ul>
             </p>
         </section>
@@ -494,15 +505,15 @@
             <p> 
               Due to the large diversity of devices, use cases, deployment scenarios and various requirements for WoT Things,
               it is impossible to define a single WoT threat model that would fit every case.
-              Instead we have created an overall WoT threat model framework that can be adjusted
+              Instead we describe here an overall WoT threat model framework that can be adjusted
               by OEMs or other WoT system users or providers based on their concrete security requirements.
             </p>
             <p>
-            When selecting suitable mitigations to the WoT threats, it is important to consider various
-            criteria that raise risk level for a particular WoT architecture, such as handing
-            privacy-sensitive data, physical safety or individuals or surrounding environment, high
-            availability requirements, etc. 
-            In addition threat mitigations would be always limited by the capabilities of underlying 
+            When selecting suitable mitigations to the WoT threats described, it is important to consider various
+            criteria that might increase the risk level for a particular WoT architecture, such as handing
+            privacy-sensitive data, physical safety of individuals or the surrounding environment, high
+            availability requirements, and so forth.
+            In addition threat mitigations will always be limited by the capabilities of underlying 
             devices, their list of supported security protocols, processes isolation capabilities, etc. 
             </p>
 
