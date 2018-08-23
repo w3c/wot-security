@@ -634,7 +634,7 @@
 
     <section id="wot-threat-model-assets">
     <h3>Assets</h3>
-         <p>This section lists all WoT Assets that are important from security point of view.</p>
+         <p>This section lists all WoT Assets that are important from a security point of view.</p>
          <table>
          <tr>
             <th>Asset</th>
@@ -644,11 +644,11 @@
          </tr><tr>
             <th><dfn data-lt="thing descriptions|td|tds">
                  Thing Description</dfn> (TD)</th>
-            <td>Access Control policies for TDs and the resources it describes are part of TDs 
-            and they are managed using a discretionary access control model 
+            <td>Access Control policies for TDs and the resources it describes are part of TDs. 
+            They are managed using a discretionary access control model 
             (the owner of a TD sets the AC policy).
-            Some contents of TDs might be privacy sensitive and therefore should not be shared without a need.
-            The integrity of TDs is crucial for the correct operation of WoT network.
+            Some contents of TDs might be privacy sensitive and therefore should not be shared without a specific need.
+            The integrity of TDs is crucial for the correct operation of a WoT system.
             </td>
                  <td>TD owner: full access<br/> 
                      Others: read only for minimal required part.</td>
@@ -656,16 +656,16 @@
          </tr><tr>
             <th><dfn data-lt="system user data">System User Data</dfn></th>
             <td>This includes all data that is produced or processed by the elements of a WoT system,
-               i.e. sensor readings and their states, users configurations and preferences, actuators commands,
+               i.e. sensor readings and their states, user configurations and preferences, actuator commands,
                video/audio streams, etc.  Can be highly privacy sensitive and confidential.</td>
-            <td>Different <a>system users</a> might have different levels of
+            <td>Different <a>System Users</a> might have different levels of
             access to this data based on the use case. In some cases (like user preferences or settings)
-            the partial access to this asset is also needed by a <a>system provider</a>. 
+            the partial access to this asset is also needed by a <a>System Provider</a>. 
             Non-authorized access must be minimized since access even to a small amount of information
             (for example the last timestamp when a door lock API was used) might have severe
-            privacy concerns (example allows an attacker to detect that the owner has been away
+            privacy concerns (this example would allow an attacker to detect when the owner is away
             from his house).
-            Mechanism should be flexible to configure and might also need to include RBAC.<br/>
+            Security mechanisms should be flexible to configure and might also need to include RBAC.<br/>
             Others: should have no access unless specifically allowed</td>
             <td>Storage on the device itself, remote solution provider storage (Cloud or other),
             in-transfer (network)</td>
@@ -673,13 +673,17 @@
             <th><dfn data-lt="system provider scripts|system provider script">
                      System Provider Data</dfn>
             <td>This includes both WoT scripts and any WoT configuration data produced and owned by a
-            <a>System Provider</a>. It also includes the notion of a Thing instance, i.e.
-            run-time representation of script running inside WoT Runtime.
+            <a>System Provider</a>. It also includes Thing instances, i.e.
+            run-time representations of scripts running inside a WoT Runtime.
             <a>System providers</a> might have Intellectual Property (IP) in their scripts,
             making them highly confidential. 
-            Protocol Bindings might be part of System Provider Data, if a WoT device has a single System Provider that installs and configures WoT Runtime and Protocol Bindings. However, it can be also done by OEM, and same Protocol Bindings can be used by
+            Protocol Bindings might be part of System Provider Data, 
+            if a WoT device has a single System Provider that 
+            installs and configures WoT Runtime and Protocol Bindings. 
+            However, these can be also provided and confgured by the OEM, 
+            and the same Protocol Bindings could be used by
             multiple System Providers on the same device. </td>
-            <td><a>System provider</a>: full access<br/>
+            <td><a>System Provider</a>: full access<br/>
             Others: no access</td>
             <td>Storage on the device itself, runtime memory representation,
             in-transfer only for initial provisioning and script updates
@@ -690,7 +694,7 @@
                      <dfn data-lt="wot infrastructure resource">
                      WoT Infrastructure Resources</dfn></th>
             <td>Resources should only be used for legitimate purposes and be available when required.</td>
-            <td><a>System User</a>, <a>System provider</a></td>
+            <td><a>System User</a>, <a>System Provider</a></td>
             <!-- TODO: "WoT Interface" is a term for the network API of a Thing 
             defined in the WoT architecture document. How do we refer to these,
             and can we link to their definitions? -->
@@ -699,9 +703,9 @@
             <th><dfn>WoT Controlled Environment</dfn></th>
             <td>WoT devices that have actuator capabilities are able to affect the physical environment
             around them.
-            Such capability must only be used by authorized entities and for legitimate purposes only.
+            Such capability must only be used by authorized entities and for legitimate purposes.
             An actuator capability also implies a possible safety risk.</td>
-            <td><a>System User</a>, <a>System provider</a> and whoever is explicitly authorized by them to control the environment. </td>
+            <td><a>System User</a>, <a>System Provider</a> and whoever is explicitly authorized by them to control the environment. </td>
             <td>WoT Interface</td>
           </tr><tr>
             <th><dfn>WoT Behavior Metrics</dfn></th>
@@ -713,7 +717,10 @@
             <td>In-transfer data and usage of WoT Interface</td>
           </tr><tr>
             <th><dfn>WoT Basic Security Metadata</dfn></th>
-            <td>All required security metadata (keys, certificates etc.) that might be provisioned to the WoT device in order to be able to perform various security-related operations, such as authenticating another device or WoT client in the WoT network, authenticating remote authorization service in case the access control to WoT interfaces is done using tokens, etc.</td>
+            <td>All required security metadata (keys, certificates etc.) that might be provisioned 
+            to the WoT device in order to be able to perform various security-related operations, 
+            such as authenticating another device or WoT client in the WoT network, 
+            authenticating remote authorization service in case the access control to WoT interfaces is done using tokens, etc.</td>
             <td>Thing Manager (if present in WoT Runtime), WoT Runtime </td>
             <td> On device storage, in-transfer including provisioning and updates of security metadata.
             </td>
@@ -733,15 +740,15 @@
                   <th>Who should have access?</br>(Trust Model)</th>
                   <th>Attack Points</th>
               </tr><tr>
-                  <th><dfn>WoT Scripts Security Metadata</dfn></th>
+                  <th><dfn>WoT Script Security Metadata</dfn></th>
                   <td>Defines who can provision, install, update, and remove scripts and other
-                      <a>System Provider Data</a> inside a WOT runtime.</td>
+                      <a>System Provider Data</a> inside a WoT runtime.</td>
                   <td><a>System Provider</a>, <a>System Maintainer</a></td>
                   <td>WoT Script Management Interface</td>
               </tr>
           </table>
 
-          <p>If a WoT system allows co-existence of different independent <a>System providers</a> (tenants)
+          <p>If a WoT system allows co-existence of different independent <a>System Providers</a> (tenants)
              on a single physical device, the following assets are added:</p>
 
           <table>
@@ -753,7 +760,9 @@
               </tr><tr>
                   <th><dfn>WoT Runtime Isolation Policies</dfn></th>
                   <td>Access control policies for isolating co-existing system providers on the device.
-                      Not required if a simple baseline policy of "full isolation" is applied to different WoT Runtimes running scripts from different System providers. It might be required if some level of data sharing between them is needed. </td>
+                      Not required if a simple baseline policy of "full isolation" is applied 
+                      to different WoT Runtimes running scripts from different System providers. 
+                      It might be required if some level of data sharing between them is needed. </td>
                   <td><a>System Provider</a>, <a>System Maintainer</a></td>
                   <td>Storage on the thing itself, remote storage (if they are backed up to a remote storage),
                       in-transfer for initial provisioning and policy updates</td>
