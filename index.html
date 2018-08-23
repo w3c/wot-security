@@ -1105,11 +1105,11 @@
 
        <p>The WoT threat model assumes that the WoT Client
          (which might reside on a non-WoT device, such as a smartphone, a PC browser, etc.)
-         communicates with WoT network using standard WoT Interfaces and WoT Protocol Bindings.
+         communicates with a WoT network using standard WoT Interfaces and WoT Protocol Bindings.
          In order to minimize the attack surface,
          it is strongly recommended that no other separate communication means is provided for this purpose.
          This threat model makes the assumption that this recommendation is followed.
-         It is also assumed that WoT Protocol Bindings are trusted and cannot come from untrusted parties.
+         It is also assumed that WoT Protocol Bindings are trusted and cannot be installed by untrusted parties.
 
        <table>
            <tr>
@@ -1124,9 +1124,9 @@
                    <a>Malicious Users</a></td>
                <td>All WoT assets within the same execution boundary</td>
                <td><strong>Pre-conditions:</strong>
-                   General preconditions for network attacker with access to the WoT Protocol Bindings and/or WoT Interface.
+                   General preconditions for a network attacker with access to the WoT Protocol Bindings and/or WoT Interface.
                    In case of <a>Malicious Authorized Solution User</a>
-                   or <a>Malware developer</a>
+                   or <a>Malware Developer</a>
                    also access to solution user credentials available on the configuration interface 
                    (smartphone, tablet etc.)<br/>
                    <strong>Attack method:</strong>
@@ -1149,14 +1149,14 @@
                    <a>Malware Developer</a>,
                    <a>Malicious Unauthorized Users</a>,
                    <a>Malicious System Provider</a></td>
-               <td>An asset exposed via WoT Interface:
+               <td>An asset exposed via a WoT Interface:
                    <a>WoT controlled environment</a>,
                     <a>System user data</a>,
                     non-public parts of <a>TDs</a>, etc.</td>
                <td><strong>Pre-conditions:</strong>
-                   An attacker with an access to the WoT Interface<br/>
+                   An attacker with an access to a WoT Interface<br/>
                    <strong>Attack method:</strong>
-                   Any remote attack method using WoT Interface
+                   Any remote attack method using a WoT Interface
                    with the purpose of obtaining unauthorized access to a WoT asset</td>
            </tr><tr>
                <th><dfn>WoT DoS Threat</dfn></th>
@@ -1167,11 +1167,11 @@
                    <a>WoT Infrastructure Resources</a>,
                    Infrastructure operability</td>
                <td><strong>Pre-conditions:</strong>
-                   General preconditions for an attacker with access to the WoT Interface<br/>
+                   General preconditions for an attacker with access to a WoT Interface<br/>
                    <strong>Attack method:</strong>
-                   Any attack method using WoT Interface in order to cause DoS to an end thing,
-                   device or infrastructure
-                   (calling WoT Interface methods that require processing, sending too many messages etc.)
+                   Any attack method using a WoT Interface in order to cause Denial-of-Service (DoS) to an end thing,
+                   device, service, or infrastructure
+                   (calling WoT Interface methods that require excessive processing, sending too many messages etc.)
                    or to disturb the service operation by intentional dropping
                    of all or selective WoT messages</td>
             </tr><tr>
@@ -1182,7 +1182,7 @@
                     <a>Malicious System Provider</a></td>
                 <td>TDs authenticity in-transfer</td>
                 <td><strong>Pre-conditions:</strong>
-                    General preconditions for network attacker with access to the WoT Interface<br/>
+                    General preconditions for network attacker with access to a WoT Interface<br/>
                     <strong>Attack method:</strong>
                     Any attack method on <a>TDs</a> in-transfer with the purpose of its modification,
                     including rolling back to an older version of a <a>TD</a></td>
@@ -1194,7 +1194,7 @@
                     <a>Malicious System Provider</a></td>
                 <td>Confidential and privacy-sensitive parts of <a>TDs</a>in-transfer</td>
                 <td><strong>Pre-conditions:</strong>
-                    General preconditions for network attacker with access to the WoT Interface<br/>
+                    General preconditions for network attacker with access to a WoT Interface<br/>
                     <strong>Attack method:</strong>
                     Any attack method on TDs in-transfer with the purpose of obtaining unauthorized
                     access to non-public parts of TDs or passively observing public parts of TD in-transfer</td>
@@ -1206,7 +1206,7 @@
                      <a>Malicious System Provider</a></td>
                  <td><a>System User Data</a> authenticity in-transfer</td>
                  <td><strong>Pre-conditions:</strong>
-                     General preconditions for network attacker with access to the WoT Interface<br/>
+                     General preconditions for network attacker with access to a WoT Interface<br/>
                      <strong>Attack method:</strong>
                      Any attack method on solution data in-transfer with the purpose of its modification,
                      including sequence of received data,
@@ -1219,7 +1219,7 @@
                      <a>Malicious System Provider</a></td>
                  <td><a>System User Data</a> confidentiality in-transfer</td>
                  <td><strong>Pre-conditions:</strong>
-                     General preconditions for network attacker with access to the WoT Interface<br/>
+                     General preconditions for network attacker with access to a WoT Interface<br/>
                      <strong>Attack method:</strong>
                      Any attack method on solution data in-transfer with the purpose of obtaining
                      unauthorized access</td>
@@ -1230,7 +1230,7 @@
                      <a>Malicious System Provider</a></td>
                  <td><a>WoT Behavior Metrics</a></td>
                  <td><strong>Pre-conditions:</strong>
-                     General preconditions for network attacker with access to the WoT Interface<br/>
+                     General preconditions for network attacker with access to a WoT Interface<br/>
                      <strong>Attack method:</strong>
                      Passive observation of WoT network and messages with the intention to learn 
                      behavioral and operational patterns</td>
@@ -1257,9 +1257,9 @@
                  <td>Execution inside WoT Runtime (stepping stone to other further local attacks) 
                      and all assets within WoT Runtime</td>
                  <td><strong>Pre-conditions:</strong>
-                     General preconditions for network attacker with access to the WoT Script Mgm API<br>
+                     General preconditions for network attacker with access to a WoT Script Management API<br>
                      <strong>Attack method:</strong>
-                     Attacker installs its own script into WoT runtime using WoT Script Management Interface</td>
+                     Attacker installs its own script into WoT runtime using a WoT Script Management Interface</td>
              </tr><tr>
                  <th><dfn>WoT Script Management Interface Threat - WoT Runtime Compromise</dfn></th>
                  <td><a>Network Attacker</a>,
@@ -1267,9 +1267,9 @@
                      <a>Malicious Users</td>
                  <td>Compromize of WoT Runtime itself (stepping stone to other further local attacks) and all assets within WoT Runtime</td>
                  <td><strong>Pre-conditions:</strong>
-                     General preconditions for network attacker with access to the WoT Script Mgm API<br/>
+                     General preconditions for network attacker with access to the WoT Script Management API<br/>
                      <strong>Attack method:</strong>
-                     Attacker compromises WoT Runtime itself using WoT Script Management Interface</td>
+                     Attacker compromises WoT Runtime itself using a WoT Script Management Interface</td>
              </tr><tr>
                  <th><dfn>WoT Script Management Interface Threat - DoS</dfn></th>
                  <td><a>Network Attacker</a>,
@@ -1277,7 +1277,7 @@
                      <a>Malicious Users</td>
                  <td><a>WoT Thing Resources</a>, <a>WoT Infrastructure Resources</a></td>
                  <td><strong>Pre-conditions:</strong>
-                     General preconditions for network attacker with access to the WoT Script Mgm API<br/>
+                     General preconditions for network attacker with access to the WoT Script Management API<br/>
                      <strong>Attack method:</strong>
                      Attacker misuses WoT Script Management Interface to cause DoS on things or infrastructure,
                      including deleting, corrupting WoT scripts</td>
@@ -1289,7 +1289,7 @@
              <a>WoT Script Management Interface Threat - WoT Runtime Compromise</a>, or 
              <a>WoT Script Management Interface Threat - DoS</a>.</p>
 
-         <p>If a WoT system allows co-existence of different independent system providers (tenants) on a
+         <p>If a WoT system allows co-existence of different independent <a>System Providers</a> (tenants) on a
             single physical device or if WoT scripts are assumed to be untrusted,
             it brings the following new threats in addition to the above ones:</p>
          <table>
@@ -1305,9 +1305,9 @@
                    <a>Malicious Users</a> (if they can install their own scripts)</td>
                <td>Component compromise and all WoT assets within the same execution boundary</td>
                <td><strong>Pre-conditions:</strong>
-                   An attacker has a full control over the script running inside WoT runtime either
-                   legitimately (<a>system provider script</a>) or by compromising a system provider script or
-                   by installing its own script by other means.<br/>
+                   An attacker has full control over a script running inside a WoT runtime either
+                   legitimately (<a>System Provider Script</a>) or by compromising a <a>System Provider Script</a> or
+                   by installing their own script by other means.<br/>
                    <strong>Attack method:</strong>
                    Any local attack method on another script running in the same WoT runtime that results
                    in an attacker compromising that script and getting controls over it</td>
@@ -1343,8 +1343,8 @@
                     Same as for <a>WoT Untrusted Script Threat - Script Compromise</a><br/>
                       <strong>Attack method:</strong>
                       Any local attack method on another script running in the same WoT runtime that results
-                      in attacker in modifying script or its configuration,
-                      including rolling back to an older version of a script</td>
+                      in allowing an attacker to modifying that script or its configuration,
+                      including rolling back to an older version of the script</td>
               </tr><tr>
                   <th><dfn>WoT Untrusted Script Threat - TD Confidentiality and Privacy</dfn></th>
                   <td><a>Malicious System Provider</a>,
@@ -1355,7 +1355,8 @@
                     Same as for <a>WoT Untrusted Script Threat - Script Compromise</a><br/>
                       <strong>Attack method:</strong>
                       Any local attack method on another script running in the same WoT runtime that results
-                      in attacker unauthorized access to non-public parts of <a>TDs</a> or privacy sensitive parts of <a>TDs</a>.</td>
+                      in an attacker obtaining unauthorized access 
+                      to non-public parts of <a>TDs</a> or privacy sensitive parts of <a>TDs</a>.</td>
               </tr><tr>
                   <th><dfn>WoT Untrusted Script Threat - TD Authenticity</dfn></th>
                   <td><a>Malicious System Provider</a>,
@@ -1366,8 +1367,8 @@
                     Same as for <a>WoT Untrusted Script Threat - Script Compromise</a><br/>
                       <strong>Attack method:</strong>
                       Any local attack method on another script running in the same WoT runtime that results
-                      in attacker unauthorized modification of <a>TDs</a>,
-                      including rolling back to an older version of TD</td>
+                      in an attacker acheiving unauthorized modification of <a>TDs</a>,
+                      including rolling back to an older version of that TD</td>
               </tr><tr>
                   <th><dfn>WoT Untrusted Script Threat - System User Data Authenticity</dfn></th>
                   <td><a>Malicious System Provider</a>,
@@ -1378,7 +1379,7 @@
                     Same as for <a>WoT Untrusted Script Threat - Script Compromise</a><br/>
                       <strong>Attack method:</strong>
                       Any local attack method on another script running in the same WoT runtime that results
-                      in attacker in being able to modify <a>system user data</a>,
+                      in an attacker in being able to modify <a>System User Data</a>,
                       including rolling back to an older version</td>
               </tr><tr>
                   <th><dfn>WoT Untrusted Script Threat - System User Data Confidentiality and Privacy</dfn></th>
@@ -1390,7 +1391,7 @@
                     Same as for <a>WoT Untrusted Script Threat - Script Compromise</a><br/>
                       <strong>Attack method:</strong>
                       Any local attack method on another script running in the same WoT runtime that results
-                      in an attacker getting unauthorized access to <a>system user data</a></td>
+                      in an attacker getting unauthorized access to <a>System User Data</a></td>
               </tr><tr>
                   <th><dfn>WoT Untrusted Script Threat - DoS</dfn></th>
                   <td><a>Malicious System Provider</a>
@@ -1401,7 +1402,7 @@
                     Same as for <a>WoT Untrusted Script Threat - Script Compromise</a><br/>
                       <strong>Attack method:</strong> 
                       Any local attack method with the goal of consuming things or infrastructure resources
-                      that disturb legitimate operation of co-existing System providers.</td>
+                      that disturb legitimate operation of co-existing <a>System Providers</a>.</td>
               </tr>
           </table>
       </section>
