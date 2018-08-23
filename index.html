@@ -874,8 +874,8 @@
        <h3>Attack Surfaces</h3>
            <p>In order to correctly define WoT attack surfaces one needs to determine the system's
               trust model as well as execution context boundaries. 
-              <a href="#wot-security-fig-attack-surfaces"></a> presents a
-              high-level view of the WoT architecture from the security point of view,
+              A high-level view of the WoT architecture from the security point of view is presented in
+              <a href="#wot-security-fig-attack-surfaces"></a>,
               showing all possible execution boundaries.
               However, in practice certain execution boundaries might not be present as they are 
               dependent on the actual device implementation.</p>
@@ -902,22 +902,24 @@
                        contexts (with WoT runtime isolation means) 
                        or by having separate process execution contexts
                        (with OS process isolation means)</td>
-                   <td>This boundary is required if we assume that WoT Runtime can run untrusted scripts or if some scripts are having a higher chance of being compromised remotely</td>
+                   <td>This boundary is required if we assume that WoT Runtime can run untrusted scripts 
+                   or if some scripts have a higher chance of being compromised remotely</td>
                </tr><tr>
                    <th><dfn>WoT Runtime Instance Execution Boundary</dfn></th>
                    <td>Separates execution contexts between different WoT Runtime instances.
                        If present,
-                       this boundary should be implemented at least with OS process isolation means,
+                       this boundary should be implemented using at least with OS process isolation,
                        but in addition can be implemented using any stronger security measures available
                        on the device (Mandatory Access Control, OS-kernel level virtualization,
                        Full Virtualization etc.)</td>
-                   <td>This boundary is required if we assume that we have different System Providers running on the same device in different WoT Runtime Instances.</td>
+                   <td>This boundary is required if we assume that we have different <a>System Providers</a> 
+                       running on the same device in different WoT Runtime Instances.</td>
                </tr><tr>
                    <th><dfn>WoT Execution Boundary</dfn></th>
                    <td>Separates execution contexts between WoT runtime
                        (including WoT Protocol Bindings) and the rest of the system.
                        If present,
-                       this boundary should be implemented at least with OS process isolation means,
+                       this boundary should be implemented at least using OS process isolation,
                        but in addition can be implemented using any stronger security measures available
                        on the device (Mandatory Access Control, OS-kernel level virtualization,
                        Full Virtualization etc.)</td>
@@ -930,8 +932,8 @@
                    <th><dfn>WoT Runtime and Protocol Bindings Execution Boundaries</dfn></th>
                    <td>Separate execution contexts between WoT runtime and Protocol Bindings.
                        If present,
-                       these boundaries should be implemented at least with OS process isolation means.</td>
-                   <td>These boundaries might be needed if we assume that WoT Runtime can run untrusted scripts
+                       these boundaries should be implemented at least using OS process isolation.</td>
+                   <td>These boundaries might be needed if we assume that a WoT Runtime can run untrusted scripts
                        and would like to implement additional access control measures
                        at the Protocol Binding level.</td>
                </tr>
@@ -970,9 +972,9 @@
                </tr>
            </table>
 
-          <p>The following WoT attack surfaces are only in-scope for the WoT Security model 
+          <p>The following WoT attack surfaces are only in-scope for the WoT security model 
               if we assume a WoT runtime can run untrusted scripts
-              or we assume co-existence of different System providers (tenants)
+              or we assume co-existence of different <a>System Providers</a> (tenants)
               on a single physical device:</p>
            <table>
                <tr>
@@ -995,7 +997,7 @@
                </tr><tr>
                    <td><a>WoT Runtime Instance Execution Boundary</a></td>
                    <td>Modification or unauthorized access to any asset available
-                   to other WoT Runtime running on the same HW device.
+                   to another WoT Runtime running on the same HW device.
                    Denial of Service</td>
                    <td><a>TDs</a>,
                        <a>System User Data</a>,
@@ -1038,33 +1040,33 @@
                    <th>Attack Method</th>
                    <th>Reasoning</th>
                </tr><tr>
-                   <th>WoT Things Directory</th>
+                   <th>WoT Thing Directory</th>
                    <td>Modification or unauthorized access to hosted TDs,
                    Denial of Service by preventing legitimate users from obtaining TDs,
                    Inference of non-public or privacy sensitive information based on
                    the observation of the protocol between the WoT endpoints and
                    Things Directory.</td>
-                   <td><a>TDs</a>, history of interaction with Things Directory</td>
-                   <td>Any remote or local attack method on the Things Directory service
+                   <td><a>TDs</a>, history of interaction with Thing Directory</td>
+                   <td>Any remote or local attack method on a Thing Directory service
                    that results in attacker obtaining unauthorized access or the ability
                    to modify TDs hosted by this service or to cause any type of DoS attack
-                   on the hosting service itself. In addition public hosting of TDs by the
-                   Things Directory can have strong privacy implications and risks, as well
-                   as obtaining information on interactions between the Things Directory
-                   and given WoT network setup or user</td>
+                   on the hosting service itself. In addition public hosting of TDs by a
+                   Thing Directory can have strong privacy implications and risks, as well
+                   as obtaining information on interactions between the Thing Directory
+                   and a given WoT network setup or user</td>
                    <td>This attack surface is out of scope because WoT specifications do
-                   not define the internal structure of Things Directory or its interaction
+                   not define the internal structure of Thing Directory services or their interaction
                    protocol. However, <a href="#sec-pract-things-directory"></a> lists
                    generic recommendations and best known security practices that should be
-                   followed when designing Things Directory and interaction protocol. </td>
+                   followed when designing Thing Directory services and interaction protocols. </td>
                </tr><tr>
                   <th>Non-WoT endpoints</th>
                    <td>Component compromise. This includes legacy devices,
                    remote clouds and other infrastructures, user interfaces
                    such as browsers or applications on a smartphone, etc.)</td>
-                   <td>Any type of the WoT assets</td>
-                   <td>Any remote or local attack method on the non-WoT endpoint that
-                   results in attacker obtaining unauthorized access or the ability to
+                   <td>Any type of WoT asset</td>
+                   <td>Any remote or local attack method on a non-WoT endpoint that
+                   results in an attacker obtaining unauthorized access or the ability to
                    modify any WoT asset stored at the non-WoT endpoint or to cause any
                    type of DoS attack on <a>WoT Thing Resources</a> or <a>WoT
                    Infrastructure Resources</a></td>
@@ -1075,8 +1077,8 @@
                </tr><tr>
                    <th>Native device compromise</th>
                    <td>Component compromise on levels below WoT Runtime,
-                   including any WoT component, such as WoT Gateway Servient,
-                   WoT Client or WoT Thing device. </td>
+                   including any WoT component, such as WoT Gateway Servients,
+                   WoT Clients or WoT Things. </td>
                    <td>Any type of the WoT assets</td>
                    <td>Any remote or local attack method on WoT devices (WoT Gateway Servient,
                    WoT Client, WoT Thing device, etc.) on levels below WoT runtime that
