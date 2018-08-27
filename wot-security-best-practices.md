@@ -4,13 +4,13 @@
 
 * HTTPS (HTTP + TLS 1.3) 
 * CoAPS (CoAP + DTLS) 
-* MQTTS (CoAP + TLS 1.3) 
+* MQTTS (MQTT + TLS 1.3) 
 
 ## Authentication
 
 * HTTPS with one of oauth2, basic, digest...
 * CoAPS with one of psk, public, cert.
-* MQTTS with basic
+* MQTTS with basic (MQTT native username/password)
 
 ## Access Control
 
