@@ -503,10 +503,13 @@
         <section id="wot-threat-model">
         <h2>Threat Model</h2>
             <p> 
-              Due to the large diversity of devices, use cases, deployment scenarios and various requirements for WoT Things,
+              Due to the large diversity of devices, use cases, 
+	      deployment scenarios and requirements for WoT Things,
               it is impossible to define a single WoT threat model that would fit every case.
               Instead we describe here an overall WoT threat model framework that can be adjusted
               by OEMs or other WoT system users or providers based on their concrete security requirements.
+	      This framework gives a set of possible threats that implementers should
+	      consider, but which may or may not apply to their system.
             </p>
             <p>
             When selecting suitable mitigations to the WoT threats described, it is important to consider various
@@ -1124,7 +1127,8 @@
                    <a>Malicious Users</a></td>
                <td>All WoT assets within the same execution boundary</td>
                <td><strong>Pre-conditions:</strong>
-                   General preconditions for a network attacker with access to the WoT Protocol Bindings and/or WoT Interface.
+                   General preconditions for a network attacker with access to 
+		   the WoT Protocol Bindings and/or WoT Interface.
                    In case of <a>Malicious Authorized Solution User</a>
                    or <a>Malware Developer</a>
                    also access to solution user credentials available on the configuration interface 
@@ -1142,7 +1146,8 @@
                <td><strong>Pre-conditions:</strong>
                    Same as for <a>WoT Protocol Binding Threat</a>
                    <strong>Attack method</strong>:
-                   Same as for <a>WoT Protocol Binding Threat</a> with the purpose of compromising a Thing instance.</td>
+                   Same as for <a>WoT Protocol Binding Threat</a> with 
+		   the purpose of compromising a Thing instance.</td>
            </tr><tr>
                <th><dfn>WoT Interface Threat - Unauthorized WoT Interface Access</dfn></th>
                <td><a>Network Attacker</a>,
@@ -1169,9 +1174,11 @@
                <td><strong>Pre-conditions:</strong>
                    General preconditions for an attacker with access to a WoT Interface<br/>
                    <strong>Attack method:</strong>
-                   Any attack method using a WoT Interface in order to cause Denial-of-Service (DoS) to an end thing,
+                   Any attack method using a WoT Interface in order to 
+		   cause Denial-of-Service (DoS) to an end thing,
                    device, service, or infrastructure
-                   (calling WoT Interface methods that require excessive processing, sending too many messages etc.)
+                   (calling WoT Interface methods that require excessive processing, 
+		   sending too many messages etc.)
                    or to disturb the service operation by intentional dropping
                    of all or selective WoT messages</td>
             </tr><tr>
@@ -1184,8 +1191,8 @@
                 <td><strong>Pre-conditions:</strong>
                     General preconditions for network attacker with access to a WoT Interface<br/>
                     <strong>Attack method:</strong>
-                    Any attack method on <a>TDs</a> in-transfer with the purpose of its modification,
-                    including rolling back to an older version of a <a>TD</a></td>
+                    Any attack method on a <a>TD</a> in-transfer with the purpose of its modification,
+                    including rolling back to an older version of that <a>TD</a></td>
             </tr><tr>
                 <th><dfn>WoT Communication Threat - TD Confidentiality and Privacy</dfn></th>
                 <td><a>Network Attacker</a>,
@@ -1197,7 +1204,7 @@
                     General preconditions for network attacker with access to a WoT Interface<br/>
                     <strong>Attack method:</strong>
                     Any attack method on TDs in-transfer with the purpose of obtaining unauthorized
-                    access to non-public parts of TDs or passively observing public parts of TD in-transfer</td>
+                    access to non-public parts of TDs or passively observing public parts of TDs in-transfer</td>
              </tr><tr>
                  <th><dfn>WoT Communication Threat - System User Data Authenticity</dfn></th>
                  <td><a>Network Attacker</a>,
@@ -1238,7 +1245,11 @@
          </table>
 
          <p class="ednote" title="Policy management threats to be added">
-             Need to add all threats to credentials/policy management when we clarify how they are exposed/stored within WoT runtime
+             We may need to add threats related to credentials/policy management 
+	     depending on how they are exposed/stored within WoT runtime via scripting.
+	     However, currently WoT scripting is (intentionally) not able to access or manage credentials;
+	     instead they must be installed using a separate management interface
+	     during the runtime's configuration.
          </p>
 
          <p>If a WoT system allows dynamic installation of scripts inside a WoT runtime,
@@ -1265,7 +1276,8 @@
                  <td><a>Network Attacker</a>,
                      <a>Malware Developer</a>,
                      <a>Malicious Users</td>
-                 <td>Compromize of WoT Runtime itself (stepping stone to other further local attacks) and all assets within WoT Runtime</td>
+                 <td>Compromise of WoT Runtime itself (stepping stone to other further local attacks) 
+			 and all assets within WoT Runtime</td>
                  <td><strong>Pre-conditions:</strong>
                      General preconditions for network attacker with access to the WoT Script Management API<br/>
                      <strong>Attack method:</strong>
@@ -1280,7 +1292,7 @@
                      General preconditions for network attacker with access to the WoT Script Management API<br/>
                      <strong>Attack method:</strong>
                      Attacker misuses WoT Script Management Interface to cause DoS on things or infrastructure,
-                     including deleting, corrupting WoT scripts</td>
+                     including deleting or corrupting WoT scripts</td>
              </tr>
          </table>
 
@@ -1291,7 +1303,7 @@
 
          <p>If a WoT system allows co-existence of different independent <a>System Providers</a> (tenants) on a
             single physical device or if WoT scripts are assumed to be untrusted,
-            it brings the following new threats in addition to the above ones:</p>
+            the following new threats appear in addition to the above ones:</p>
          <table>
             <tr>
                <th>Threat</th>
@@ -1306,7 +1318,8 @@
                <td>Component compromise and all WoT assets within the same execution boundary</td>
                <td><strong>Pre-conditions:</strong>
                    An attacker has full control over a script running inside a WoT runtime either
-                   legitimately (<a>System Provider Script</a>) or by compromising a <a>System Provider Script</a> or
+                   legitimately (<a>System Provider Script</a>) 
+		   or by compromising a <a>System Provider Script</a> or
                    by installing their own script by other means.<br/>
                    <strong>Attack method:</strong>
                    Any local attack method on another script running in the same WoT runtime that results
@@ -1362,12 +1375,12 @@
                   <td><a>Malicious System Provider</a>,
                       <a>Malware Developer</a>,
                       <a>Malicious Users</a> (if they can install their own scripts)</td>
-                  <td>TDs authenticity as stored on a thing</td>
+                  <td>TD authenticity as stored on a thing</td>
                   <td><strong>Pre-conditions:</strong>
                     Same as for <a>WoT Untrusted Script Threat - Script Compromise</a><br/>
                       <strong>Attack method:</strong>
                       Any local attack method on another script running in the same WoT runtime that results
-                      in an attacker acheiving unauthorized modification of <a>TDs</a>,
+                      in an attacker acheiving unauthorized modification of a <a>TD</a>,
                       including rolling back to an older version of that TD</td>
               </tr><tr>
                   <th><dfn>WoT Untrusted Script Threat - System User Data Authenticity</dfn></th>
@@ -1386,7 +1399,7 @@
                   <td><a>Malicious System Provider</a>,
                       <a>Malware Developer</a>,
                       <a>Malicious Users</a> (if they can install their own scripts)</td>
-                  <td><a>System user data</a> confidentiality as stored/processed on a thing</td>
+                  <td><a>System User Data</a> confidentiality as stored/processed on a thing</td>
                   <td><strong>Pre-conditions:</strong>
                     Same as for <a>WoT Untrusted Script Threat - Script Compromise</a><br/>
                       <strong>Attack method:</strong>
@@ -1411,19 +1424,21 @@
 <section id="wot-security-scenarios">
  <h2>Security Scenarios</h2>
   <p>
-    Here we describe typical high-level WoT scenarios and give practical examples of the above threats
+    Here we describe some typical high-level WoT scenarios and give practical examples of the above threats
     for each scenario.   
   </p>
 
 <section>
 <h3>Scenario 1 - Home Environment</h3>
 
-<p>In this scenario we assume a standard home environment with a WoT network running behind a firewall that
+<p>In this scenario we assume a standard home environment with a WoT network running behind a firewall NAT that
  separates it from the rest of the Internet. However the WoT network is shared with the standard user home
- network that contains other non-WoT devices that have high chances of being compromised. This results on
- viewing these non-WoT devices as network attackers with access to WoT network and its APIs/Protocol Bindings.
- WoT scripts and protocol bindings are considered trusted, single <a>System Provider</a> exists on physical
- WoT devices, no dynamic installation of WoT scripts are possible.</p>
+ network that contains other non-WoT devices that have high chances of being compromised. 
+ This results in viewing these non-WoT devices as possible network attackers 
+ with access to the WoT network and its APIs/Protocol Bindings.
+ Other assumptions: 
+ WoT scripts and protocol bindings are considered trusted; a single <a>System Provider</a> exists on physical
+ WoT devices; and no dynamic installation of WoT scripts is possible.</p>
 
 <p>In this scenario the following <strong>WoT Threats</strong> are possible:</p>
 
@@ -1433,68 +1448,70 @@
 <th><strong>Example(s)</strong></th>
 </tr>
 <tr>
-<td><a>WoT Protocol Binding Threat</a></td>
+<td><a>WoT Protocol Binding Threat - Protocol Binding Compromise</a></td>
 <td>A compromised application on a user smartphone connected to the same internal network as WoT devices sends
-a malformed request to a WoT device using directly Protocol Bindings interface. This malformed request causes
-the respective Protocol Binding to be compromised and attacker is able to run the code with the privileges of
+a malformed request to a WoT device targeting the Protocol Bindings interface directly. 
+This malformed request causes
+the respective Protocol Binding to be compromised (e.g. by exploiting a buffer-overflow bug)
+and the attacker is able to run code with the privileges of
 the Protocol Binding on the WoT device.</td>
 </tr>
 <tr>
 <td><a>WoT Interface Threat - Thing Instance Compromise</a></td>
 <td>A compromised application on a user smartphone connected to the same internal network as WoT devices sends
- a malformed request to a WoT device using WoT interface. This malformed request causes the respective Thing 
- Instance to be compromised and attacker is able to run the code with the privileges of the Thing Instance on
+ a malformed request to a WoT device using the WoT interface. This malformed request causes the respective Thing 
+ Instance to be compromised and attacker is able to run code with the privileges of the Thing Instance on
  the WoT device.</td>
 </tr>
 <tr>
 <td><a>WoT Interface Threat - Unauthorized WoT Interface Access</a></td>
-<td>A user's party guest with the network access to the same internal network as WoT devices using his device
- sends a WoT interface request to a user's WoT device for a certain resource access, for example, to get a 
+<td>A user's party guest with network access to the same internal network as WoT devices uses his device
+ to send a WoT interface request to a user's WoT device for a certain resource access, for example, to get a 
  video stream from user's video camera footage or permission to unlock some rooms in the house. Due to lack of
- proper authentication, he is able to access this information or execute the required action (opening the 
- door).</td>
+ proper authentication, he is able to access this information or execute the required action (e.g. opening the 
+ targeted door).</td>
 </tr>
 <tr>
 <td><a>WoT Communication Threat - TD Authenticity</a></td>
 <td>A compromised application on a user smartphone connected to the same internal network as WoT devices
-  listens to the network and intercepts a legitimate TD send by one of the WoT devices. Then it modifies the TD
+  listens to the network and intercepts a legitimate TD sent by one of the WoT devices. Then it modifies the TD
   to state different authentication method or authority and forwards it to the intended device. The device
   follow the instructions in the modified TD and sends authentication request to the attacker's specified 
-  location potentially revealing its credentials, such as keys etc. Similarly instead of modifying the 
-  legitimate TD, an attack might save it and use later on, for example when it would be updated to a newer 
-  version. Then, an attacker substitutes a new version of TD with an older version to cause DoS to a device
+  location potentially revealing its credentials, such as username and password. Similarly instead of modifying the 
+  legitimate TD, an attack might save it and use iit later on, for example when it would be updated to a newer 
+  version. Then, an attacker substitutes a new version of the TD with an older version to cause DoS to a device
   trying to get an access to a resource. An additional reason for using an older TD might be exposing a 
-  previously available vulnerable interface that got hidden when TD was updated to a newer version. This can 
+  previously available vulnerable interface that got hidden when the TD was updated to a newer version. This can 
   be a stepping stone to conducting other attacks on the WoT network.</td>
 </tr>
 <tr>
 <td><a>WoT Communication Threat - TD Confidentiality and Privacy</a></td>
-<td>A user's party guest with the network access to the same internal network as WoT devices using his device
+<td>A user's party guest with network access to the same internal network as WoT devices using his device
  listens to the network and intercepts a legitimate TD send by one of the WoT devices. While inspecting the TD
- he/she learns the privacy-sensitive information about the host, such as presence of medical tracking or
+ he/she learns privacy-sensitive information about the host, such as presence of medical tracking or
  assistant equipment, name of healthcare provider company etc.
  An example of privacy threat: a compromised application on a user smartphone connected to the same internal
- network as WoT devices listens for publicly broadcasted TDs and sends this data to a remote attacker to build
- a profile of home installed devices and their purpose.</td>
+ network as WoT devices listens for publicly broadcast TDs and sends this data to a remote attacker to build
+ a profile of devices installed in the home and their purpose.</td>
 </tr>
 <tr>
 <td><a>WoT Communication Threat - System User Data Authenticity</a></td>
-<td>A user's party guest with the network access to the same internal network as WoT devices using his device
+<td>A user's party guest with network access to the same internal network as WoT devices using his device
  listens to the network and intercepts a legitimate WoT interface request to set some settings on some
  actuator, for example the time when house doors get locked and unlocked. He then modifies the specified value
  to the desirable one and then forwards the request to the destination WoT device. The destination WoT device
  accepts incorrect settings.<br />Another attack example is a replay of a legitimate WoT interface request to
  set a setting, for example, increase temperature of the house by a number of degrees. When repeated many
- times, it might not only make living environment unusable, but also break heating equipment.<br />Another
- attack involves replaying an old legitimate WoT interface request that attacker intercepts while visiting
- user's home, such as command to unlock the doors, stop camera recordings etc. in a different time when user
+ times, it might not only make living environment unusable, but also might damage the heating equipment.<br />Another
+ attack involves replaying an old legitimate WoT interface request that attacker intercepts while visiting the
+ user's home, such as commands to unlock doors, stop camera recordings etc. from a different time when the user
  wants to get authorized access to the house.</td>
 </tr>
 <tr>
 <td><a>WoT Communication Threat - System User Data Confidentiality and Privacy</a></td>
-<td>A user's party guest with the network access to the same internal network as WoT devices using his device
+<td>A user's party guest with network access to the same internal network as WoT devices using his device
 listens to the network and intercepts WoT interface exchange between legitimate entities. From that exchange 
-the guest learns the privacy-sensitive information about the host, such as data stream from his medical 
+the guest learns privacy-sensitive information about the host, such as a data stream from his medical 
 tracking equipment, information about user's preferences in home environment, video/audio camera stream etc.
 </td>
 </tr>
@@ -1513,8 +1530,10 @@ tracking equipment, information about user's preferences in home environment, vi
 <tr>
 <td><a>WoT Communication Threat - Side Channels</a></td>
 <td>A compromised application on a user smartphone connected to the same internal network as WoT devices
- listens to the WoT network traffic. By this passive listening, he is able to induce various privacy-related
- information, such as WoT system configuration and present WoT devices, network active and passive phases,
+ listens to the WoT network traffic. 
+ By this passive listening, he is able to infer various forms of privacy-related
+ information, such as WoT system configuration, WoT devices that are present, 
+ network active and passive phase timing,
  etc. 
 </td>
 </tr>
@@ -1524,26 +1543,26 @@ tracking equipment, information about user's preferences in home environment, vi
 <section>
   <h3>Scenario 2 - Business/Corporate Environment</h3>
 
-    <p>In this scenario we assume an office building environment that is shared between a number
-     of independent companies (tenants) with a WoT network running that controls temperature, lights, video
+    <p>In this scenario we assume an office building environment shared between a number
+     of independent companies (tenants) with a shared WoT network running that controls temperature, lights, video
      surveillance, air etc. 
      The companies sharing the premises do not trust each other and can be viewed as potential attackers.
      However, we assume that there is a trusted non-compromised <a>System Provider</a>
      that sets the WoT network through the whole building and handles the on-boarding and termination process
      for all building tenants (making sure that after company leaves the building, all its data is not present
      in the WoT system anymore).
-     Compare to the Scenario 1 above, the main challenge here is to securely share the WoT network
+     Compared to Scenario 1 above, the main challenge here is to securely share the WoT network
      between these companies and make sure their WoT <a>System User Data</a> (that can include
-     highly confidential company information) is not exposed, tampered, etc. 
+     highly confidential company information) is not exposed, tampered with, etc. 
      Additionally one has to take into account the fact that a set of building tenants might change from
-     time to time, as well as potentially high employee turnover in each company. Therefore the WoT setup
-     must be flexible enough to handle correctly the case when an employee access to the WoT system needs
-     to be started and terminated promptly.
+     time to time, including employee turnover in each company. Therefore the WoT setup
+     must be flexible enough to start and terminate access to the WoT system promptly to both
+     companies (entire sets of users) and individuals.
      Privacy is also important here, because companies need to make sure that the data about their
-     employees or clients is well protected also. 
+     employees or clients is well protected, including such information as employee presence. 
      Since we assume the presence of a trusted <a>System Provider</a>, we can consider the WoT scripts and
      protocol bindings to be trusted also. 
-     And similar as in Scenario 1, there is only a single <a>System Provider</a> present on
+     Similar to Scenario 1, there is only a single <a>System Provider</a> present on
      physical WoT devices, and no dynamic installation of WoT scripts are possible for simplicity.
     </p>
 
@@ -1557,11 +1576,11 @@ tracking equipment, information about user's preferences in home environment, vi
     </tr>
 
     <tr>
-    <td><a>WoT Protocol Binding Threat</a></td>
-    <td>This attack is similar to the one, described in Scenario 1, if a WoT network shares the
-     connectivity with the non-WoT normal devices (smartphones, PCs, etc.). 
-     In this case a company's employee can send a malformed request to a WoT device using directly
-     Protocol Bindings interface. 
+    <td><a>WoT Protocol Binding Threat - Protocol Binding Compromise</a></td>
+    <td>This attack is similar to the one described in Scenario 1 where a WoT network shares 
+     connectivity with other non-WoT devices (smartphones, PCs, etc.). 
+     In this case a company's employee can send a malformed request to a WoT device targeting a
+     Protocol Binding interface directly. 
      This malformed request causes the respective Protocol Binding to be compromised and attacker
      is able to run the code with the privileges of the Protocol Binding on the WoT device. 
      As a result the attacker can get any WoT asset from that device, including <a>System User Data</a> 
@@ -1570,65 +1589,70 @@ tracking equipment, information about user's preferences in home environment, vi
     </tr>
     <tr>
     <td><a>WoT Interface Threat - Thing Instance Compromise</a></td>
-    <td>Similar as in Scenario 1, but the attack can be done by an employee with the network access to the
+    <td>Similar to Scenario 1, but the attack can be done by an employee with network access to the
     same internal network as WoT devices.
     </td>
     </tr>
     <tr>
     <td><a>WoT Interface Threat - Unauthorized WoT Interface Access</a></td>
-    <td>An employee with the network access to the same internal network as WoT devices using his device
+    <td>An employee with network access to the same internal network as WoT devices using his device
     sends a WoT interface request to obtain the data from a WoT video camera device located in a meeting
     room of another company or to unlock the door to another company's office wing. Due to lack of proper
-    authentication, he is able to access this information or execute the required action (opening the door).
+    authentication, he is able to access this information or execute the targeted action 
+    (e.g. opening the door and getting physical access to another company's premises).
     </td>
     </tr>
     <tr>
     <td><a>WoT Communication Threat - TD Authenticity</a></td>
-    <td>Similar as in Scenario 1, but the attack can be done by an employee with the network access to the
+    <td>Similar to Scenario 1, but the attack can be done by an employee with network access to the
      same internal network as WoT devices.
     </td>
     </tr>
     <tr>
     <td><a>WoT Communication Threat - TD Confidentiality and Privacy</a></td>
-    <td>Do we have this threat in this scenario? If we assume that all Things and their TDs are standard to
-    the building, all info in them is public (since they relate to System provider and not system users)? 
+    <td>If we assume that all Things and their TDs are standard to
+    the building, then unlike Scenario 1 we can (perhaps) assume that all info in them is public 
+    (since they relate to System provider and not system users).  However, if companies or employees
+    can add their own devices to the WoT network (for instance, wearables or desk lamps) than
+    the system may have to protect non-public TDs.
     </td>
     </tr>
     <tr>
     <td><a>WoT Communication Threat - System User Data Authenticity</a></td>
     <td>
-      Similar as in Scenario 1, but the attack can be done by an employee with the network access to the same
-      internal network as WoT devices. In case this attack succeeds, an attacker may be able to control other's
-      company WoT devices using actuator capabilities (including unlocking doors), changing important settings
-      etc.
+    Similar to Scenario 1, but the attack can be done by an employee with network access to the same
+    internal network as WoT devices. In case this if the attack succeeds, an attacker may be able to control other's
+    company WoT devices using actuator capabilities (including unlocking doors), changing important settings
+    (such as heating controls, disrupting a company's business activities) etc.
     </td>
     </tr>
     <tr>
     <td><a>WoT Communication Threat - System User Data Confidentiality and Privacy</a></td>
     <td>
-      Similar as in Scenario 1, but the attack can be done by an employee with the network access to the same
-      internal network as WoT devices. In case this attack succeeds, an attacker may learn other's company
+      Similar to Scenario 1, but the attack can be done by an employee with network access to the same
+      internal network as WoT devices. In case this if an attack succeeds, an attacker may learn other's company
       confidential information, and get access to the privacy-sensitive information of other's company clients
-      and employees. 
+      and employees (including, for example, employee presence information).
     </td>
     </tr>
     <tr>
     <td><a>WoT DoS Threat</a></td>
     <td>
-      An employee with the network access to the same internal network as WoT devices using his device
-      sends huge amount of requests to either a single WoT device or all device available in the WoT network
-      using directly Protocol Bindings interface or WoT interface. 
-      These requests take all the processing bandwidth of a WoT device or WoT network and make it impossible
+      An employee with network access to the same internal network as WoT devices using his device
+      sends a huge number of requests to either a single WoT device or all devices available in the WoT network
+      using either the Protocol Bindings interface directly or the WoT interface. 
+      These requests consume all the processing or bandwidth of a WoT device or WoT network and make it impossible
       for employees of other company to communicate with WoT devices or devices to communicate with each 
-      other. Depending on the implementation it can also lead to the case that alarm or authentication systems
-      might be disabled and attackers can get into other company's premises (however systems should always
+      other. Depending on the implementation it might also lead to alarm or authentication systems
+      being disabled and allowing attackers to get into other company's premises (however systems should always
       implement "safe defaults" principle and in such cases keeps doors closed despite of inability to 
-      authenticate).
+      authenticate; but this causes the opposite problem of denying authorized users access and disrupting
+      legitimate business).
     </td>
     </tr>
     <tr>
     <td><a>WoT Communication Threat - Side Channels</a></td>
-    <td>Similar as in Scenario 1, but the attack can be done by an employee with the network access to the
+    <td>Similar to Scenario 1, but the attack can be done by an employee with network access to the
     same internal network as WoT devices.
     </td>
     </tr>
@@ -1640,32 +1664,46 @@ tracking equipment, information about user's preferences in home environment, vi
    <h3>Scenario 3 - Industrial/Critical Infrastructure Environment</h3>
 
    <p>In this scenario we assume an industrial factory or infrastructure (power plant, water distribution
-     system) environment that is using WoT network to monitor or perform certain automation tasks in its Operational Technology (OT) network.
-     Compare to other scenarios above, the main challenge here is to guarantee safety and availability
-     of the critical infrastructure and therefore even Denial-Of-Service attacks must be mitigated as well as
-     possible. On the other hand, privacy is usually less important for this scenario. 
-
-     Similar as in previous scenarios, we assume that there is a trusted non-compromised <a>System Provider</a>
-     that sets the WoT network, and therefore we can consider the WoT scripts and protocol bindings to be
-     trusted also. There is only a single <a>System Provider</a> present on physical WoT devices, and no
-     dynamic installation of WoT scripts are possible for simplicity.
+     system, etc.) environment that is using WoT network 
+     to monitor or perform certain automation tasks in its Operational Technology (OT) network.
+     Compared to other scenarios above, the main challenge here is to guarantee safety and availability
+     of the critical infrastructure. 
+     Therefore, for example, Denial-Of-Service attacks must be mitigated as well as possible. 
+     On the other hand, privacy is usually less important for this scenario. 
     </p>
     <p>
-     Due to the high safety and availability requirements, typically the WoT network (part of a bigger OT
-     network) in the industrial environment won't be shared with the general IT network, where all other
-     company operations happening. For example, we don't expect the factory employees to browse the internet
-     in the coffee break using the same network. However, since some bridging must be present between the OT
-     and IT networking due monitoring requirements, these networks are not fully isolated. 
-     As a result, in this scenario, the risk of compromised devices and applications interacting with the WoT network is limited, but nonetheless present.
+     Similar to the previous scenarios, we assume that there is a trusted non-compromised <a>System Provider</a>
+     that sets up the WoT network, so we can consider all WoT scripts and protocol bindings to be
+     trusted also. 
+     We also assume there is only a single <a>System Provider</a> present on physical WoT devices and
+     a single tenant on all system, and assume no
+     dynamic installation of WoT scripts is possible for simplicity.
+    </p>
+    <p>
+     Due to the high safety and availability requirements in the industrial environment, 
+     typically the WoT network (part of a bigger OT network) won't be shared with other tenants of the same
+     building amd probably won't be shared with the general IT network of the same company.
+     The IT network is where all other company operations are happening, for example, accounting. 
+     We also don't expect factory employees to browse the internet in the coffee break using the OT network
+     (and ideally not the IT network; in some companies, a third network is even provided for employee personal use 
+     or for less-trusted personal devices.) 
+     However, usually some bridging must be present between the OT
+     and IT networking in order to support monitoring requirements, so these networks are not fully isolated. 
+     In this scenario, 
+     the risk of compromised devices and applications interacting with the WoT network is limited 
+     but nonetheless present.
      Therefore the usual WoT threats, described in the previous scenarios, still apply, if a malicious
-     application or device gets into the industrial WoT network. Also, a factory employee with the access to
-     the WoT network can be also viewed as potential attacker. 
+     application or device gets into the industrial OT WoT network. 
     </p>
     <p>
-     The additional security challenge in this scenario is a role management, i.e. distribution of the
-     accesses between the actors (factory employees, devices with actuators, etc.) in a way that a single
+     Also, a factory employee with authorized access to
+     the OT WoT network can be also viewed as a potential attacker. 
+     The additional security challenge in this case is role management, i.e. distribution of authorized
+     accesses between the actors (factory employees, devices with actuators, etc.) in such a way that a single
      misbehaving actor does not have enough authorization to endanger the safety and availability of the whole
-     infrastructure. And similar to the scenario 2, the prompt termination and managing of employees’ access rights to the WoT networking is essential. 
+     infrastructure. 
+     Similar to the case in Scenario 2, the ability to promptly terminate an employees’ access rights to the 
+     WoT network when necessary, and without disrupting other activities, is essential. 
     </p>
 
    </section>
