@@ -1,5 +1,17 @@
 # WoT Security Best Practices
 
-# Secure Transport
+## Secure Transport
 
-# End-to-end Security
+* HTTPS (HTTP + TLS 1.3) 
+* CoAPS (CoAP + DTLS) 
+* MQTTS (CoAP + TLS 1.3) 
+
+## Authentication
+
+* HTTPS with one of oauth2, basic, digest...
+* CoAPS with one of psk, public, cert.
+* MQTTS with basic
+
+## Access Control
+
+## End-to-end Security
