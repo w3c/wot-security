@@ -1074,9 +1074,13 @@
                    type of DoS attack on <a>WoT Thing Resources</a> or <a>WoT
                    Infrastructure Resources</a></td>
                    <td>This attack surface is out of scope because WoT specifications do
-                   not cover non-WoT endpoints. However, <a href="#sec-pract-non-wot-endpoints"></a>
+                   not cover non-WoT endpoints. 
+		   <!--
+		   However, <a href="#sec-pract-non-wot-endpoints"></a>
                    lists generic recommendations and best known security practices that
-                   should be followed when designing non-WoT endpoints. </td>
+                   should be followed when designing non-WoT endpoints. 
+		   -->
+		   </td>
                </tr><tr>
                    <th>Native device compromise</th>
                    <td>Component compromise on levels below WoT Runtime,
@@ -1090,13 +1094,16 @@
                    of DoS attack on <a>WoT Thing Resources</a> or <a>WoT Infrastructure
                    Resources</a></td>
                    <td>This attack surface is out of scope because WoT specifications do
-                   not cover levels below the WoT Runtime. However,
+                   not cover levels below the WoT Runtime. 
+		   <!-- However,
                    <a href="#sec-pract-below-wot-runtime"></a> lists generic
                    recommendations and best known security practices that should be
                    followed when designing the levels below WoT Runtime. In addition
                    <a href="#sec-pract-end-to-end-security"></a> discusses methods
                    to provide end-to-end security between WoT endpoints in case an intermediate
-                   node, such as a WoT Gateway Servient, is compromised. </td>
+                   node, such as a WoT Gateway Servient, is compromised. 
+		   -->
+		   </td>
                </tr>
            </table>
        </section>
@@ -1682,7 +1689,7 @@ tracking equipment, information about user's preferences in home environment, vi
     <p>
      Due to the high safety and availability requirements in the industrial environment, 
      typically the WoT network (part of a bigger OT network) won't be shared with other tenants of the same
-     building amd probably won't be shared with the general IT network of the same company.
+     building and normally won't be shared with the general IT network of the same company.
      The IT network is where all other company operations are happening, for example, accounting. 
      We also don't expect factory employees to browse the internet in the coffee break using the OT network
      (and ideally not the IT network; in some companies, a third network is even provided for employee personal use 
@@ -1838,7 +1845,7 @@ tracking equipment, information about user's preferences in home environment, vi
     </section>
 
   <section>
-  <h1>Existing Security Best Practices</h1>
+  <h1>References to Existing Security Best Practices</h1>
     <p>
       Best practices in security are constantly evolving,
       and it is important to keep up to date.
@@ -1846,7 +1853,7 @@ tracking equipment, information about user's preferences in home environment, vi
       IoT is new enough and is itself evolving rapidly enough that best practices
       are just now emerging and are likely to require rapid updating.  
       Recently attempts have been made to document and categorize useful approaches to security in IoT.
-      The following are among some of the more useful references.
+      The following are some of the more useful points of reference:
       <ul>
       <li>[[Garcia17]] - <cite>State-of-the-Art and Challenges for the Internet of Things Security</cite>:<br/>
       This IETF document, a product of the IETF T2TRG, is still in draft form but is now a candidate for
@@ -1854,7 +1861,8 @@ tracking equipment, information about user's preferences in home environment, vi
       It covers a range of recommendations for securing IoT systems.  
       Readers should look for the latest version using the IETF RFC tracker.</li>
       <li>[[IicSF16]] - <cite>The Industrial Internet of Things Volume G4: Security Framework</cite>:<br/>
-      Focuses on industrial IoT systems and use cases, and so emphasizes safety over privacy considerations.
+      Focuses on industrial IoT systems and use cases, and so as discussed above
+      emphasizes safety over privacy considerations.
       However, this document includes many practices that are also relevant to other IoT use cases.
       </li>
       <li>[[IETFACE]] - <cite>IETF Authentication and Authorization for Constrained Environments (ACE)</cite>:<br/>
@@ -1870,7 +1878,7 @@ tracking equipment, information about user's preferences in home environment, vi
     </p><p>
       Here are some additional general references for threat modeling and security architecture planning.
       These frameworks can be helpful when designing the security architecture of a specific IoT system or 
-      standard.
+      standard.  OWASP in particular is useful for Things using the HTTP protocol for their network interface.
       <ul>
       <li>[[Mic17]] - <cite>STRIDE - Internet of Things security architecture</cite></li>
       <li>[[Nis15]] - <cite>NIST Guide to Industrial Control Systems (ICS) Security</cite></li>
@@ -1927,11 +1935,17 @@ tracking equipment, information about user's preferences in home environment, vi
   </section>
 
   <section id="security-mitigations">
-  <h1>Recommended Security Practices and Mitigations</h1>
+  <h1>Best Security Practices and Mitigations for WoT Systems</h1>
       <p>
-        Based on the main WoT assets, privacy and security threats listed in <a href="#wot-threat-model-assets"></a>, <a href="#wot-threat-model-threats"></a> and
-        <a href="#wot-privacy"></a>, we provide a set of recommended practices for
-        enhancing security and privacy when designing various aspects of WoT network.
+        Based on the main WoT assets, 
+	privacy and security threats listed in <a href="#wot-threat-model-assets"></a>, 
+	<a href="#wot-threat-model-threats"></a> and
+        <a href="#wot-privacy"></a>, we provide here a set of recommended practices for
+        enhancing security and privacy when designing a WoT network.
+	Depending on the usage scenario, these may not be adequate for securing
+	any given WoT system, however.  The full threat model should be 
+	considered to identify and mitigate any additional threats for 
+	a specific WoT system.
       </p>
 
       <section>
@@ -1939,19 +1953,23 @@ tracking equipment, information about user's preferences in home environment, vi
 
          <p><strong>Secure Delivery and Storage of Thing Description.</strong></p>
          <p>            
-    	        When a TD is transferred between WoT endpoints, to or from the TD
+    	      When a TD is transferred between WoT endpoints, to or from the TD
               hosting service, it is important to use secure protocols guaranteeing
-    	        data authenticity, freshness and in many cases confidentiality 
+    	      data authenticity, freshness and in many cases confidentiality 
               (depending on whenever a TD contains any confidential or
-              privacy-sensitive information). If end-to-end TD authenticity or
+              privacy-sensitive information). 
+	      TDs should not be provided without first authenticating the requester
+	      and checking that they have authorization to access the requested TDs.
+	      If end-to-end TD authenticity or
               confidentiality is required, see <a href="#sec-pract-end-to-end-security"></a>
               for more specific guidance. 
-              When TD is stored at the end device or remote storage,
+              When a TD is stored at the end device, in a gateway (e.g. in a cache or directory
+	      service) or in remote storage (e.g. an archive),
               its authenticity and in some cases confidentiality should
               also be protected using the best available local methods. 
             </p>
             <p>
-  	          This recommendation helps prevent the following threats: 
+  	      This recommendation helps prevent the following threats: 
               <a>WoT Communication Threat - TD Authenticity</a>,
               <a>WoT Communication Threat - TD Confidentiality and Privacy</a>,
               <a>Disclosing WoT Thing/Device configuration</a>,
@@ -1961,9 +1979,17 @@ tracking equipment, information about user's preferences in home environment, vi
 
          <p><strong>Avoid Exposing Persistent Unique Identifiers</strong></p>
             <p>
-             When defining fields exposed by a TD personally identifiable information should be avoided.
-             It is also strongly recommended to avoid exposing any immutable hardware identifiers or persistent unique identifiers.
-             Instead it is recommended to use "soft identifiers", i.e. identifiers that can be changed during device lifecycle.
+             When defining fields exposed by a TD immutable information should be avoided,
+	     especially if that information can be tied to a particular person or 
+	     is associated with personally identifiable information.
+             It is specifically strongly recommended to avoid exposing 
+	     any immutable hardware identifiers.
+             Instead it is recommended to use "soft identifiers", 
+	     i.e. identifiers that can be changed at some point during the device's lifecycle.
+	     Given the requirements of Linked Data, it may not be possible to change
+	     the identifier during the Operational state of a device without additional
+	     infrastructure to register consumers of a TD and notify them of updates, but it should 
+	     at least be possible during (re-)provisioning.
             </p>
             <p>
             This recommendation helps prevent the following threats: 
@@ -1976,6 +2002,11 @@ tracking equipment, information about user's preferences in home environment, vi
             <p>
              WoT TDs should minimize the amount of information that
              is publicly available about a WoT Thing.             
+	     For example, the TD should generally not identify the version of the software or
+	     operating system a device is running, since this information can be used
+	     to identify vulnerable systems.  
+	     Instead the TD should capture all information
+	     needed to support interoperability without reference to particular implementions.
             </p>
             <p>
             This recommendation helps prevent the following threats: 
@@ -1992,6 +2023,8 @@ tracking equipment, information about user's preferences in home environment, vi
              via authentication and authorization methods.
              This can be done by exposing a number of TD variants for the same 
              WoT Thing based on the level of client’s access.           
+	     For example, versions of a TD for "public access" may be generated with a subset
+	     of information in the full TD, omitting (for example) support or version metadata.
             </p>
             <p>
             This recommendation helps prevent the following threats: 
@@ -2010,6 +2043,9 @@ tracking equipment, information about user's preferences in home environment, vi
              When defining protocols for APIs exposed by a TD, 
              it is often important to use secure protocols guaranteeing
              <a>System User Data</a> authenticity and confidentiality.
+	     Specifically, HTTPS (using TLS), CoAPS (using DTLS), and
+	     MQTTS (using TLS) should be used if any kind of authentication 
+	     or secure access is required.
              If data travels many intermediate nodes (potentially malicious
              or not privacy-preserving), end-to-end encryption
              methods should be preferred.
@@ -2021,11 +2057,11 @@ tracking equipment, information about user's preferences in home environment, vi
             <a>Leaking WoT System User Data</a>.
             </p>
  
-        <p><strong>User concent</strong></p>
+        <p><strong>User Consent</strong></p>
             <p> 
-            Keep <a>System User</a> informed about the information that can
-            be exposed or collected about him.
-            Have a way for <a>System User</a> to control the degree of such exposure.
+            Keep <a>System Users</a> informed about the information that can
+            be exposed or collected about them.
+            Provide a way for <a>System Users</a> to control the degree of such exposure.
             </p>
             <p>
             This recommendation helps prevent the following threats:
@@ -2038,12 +2074,13 @@ tracking equipment, information about user's preferences in home environment, vi
    <section id="sec-pract-wot-interfaces">
       <h2>Secure Practices for designing WoT Interfaces</h2>
 
-         <p><strong>Use appropriate access control schemes</strong></p>
+         <p><strong>Use Appropriate Access Control Schemes</strong></p>
             <p>
               Use Security Metadata options to configure appropriate
               authentication and authorization methods for WoT Interfaces
-              exposed by a WoT Thing. Minimize the amount of WoT Interfaces
-              without any access control defined (including emmiting public
+              exposed by a WoT Thing. 
+	      Minimize the amount of WoT Interfaces
+              without any access control defined (including emitting public
               events). 
               Consider different levels of access for different users.
             </p>
@@ -2061,7 +2098,8 @@ tracking equipment, information about user's preferences in home environment, vi
           <p><strong>Avoid Heavy Functional Processing without Authentication</strong></p>
             <p>
               When defining WoT Interfaces exposed by a TD,
-              it is important to avoid any heavy functional processing before the successful authentication of a WoT client.
+              it is important to avoid any heavy functional processing 
+	      before the successful authentication of a WoT client.
               Any publicly exposed network interface should avoid heavy processing altogether. 
             </p>
             <p>
@@ -2084,9 +2122,11 @@ tracking equipment, information about user's preferences in home environment, vi
             <a>WoT DoS Threat</a>.
           </p>
 
-         <p><strong>Strong validation and fuzz testing on all WoT Interfaces</strong></p>
+         <p><strong>Strong Validation and Fuzz Testing on All WoT Interfaces</strong></p>
           <p>
-           All WoT Interfaces (and especially the public ones) should be well-tested (including fuzz testing) and validated since they are a primary attack surface of a WoT Thing. 
+           All WoT Interfaces (and especially public ones) 
+	   should be well-tested (including fuzz testing) and validated 
+	   since they are a primary attack surface of a WoT Thing. 
           </p>
           <p>
            This recommendation helps prevent the following threats:
@@ -2098,14 +2138,15 @@ tracking equipment, information about user's preferences in home environment, vi
       </section>
 
       <section id="sec-pract-things-directory">
-        <h2>Secure Practices for designing a Things Directory and interaction protocol</h2>
+        <h2>Secure Practices for Thing Directory Interaction Protocols</h2>
           <p class="ednote" title="Fill in the content">
           This subsection content needs to be added.
           </p>
       </section>
 
+      <!-- Don't think these are necessary
       <section id="sec-pract-non-wot-endpoints">
-        <h2>Secure Practices for designing non-WoT endpoints</h2>
+        <h2>Secure Practices for Designing non-WoT Endpoints</h2>
           <p class="ednote" title="Fill in the content">
           This subsection content needs to be added.
           </p>
@@ -2117,6 +2158,7 @@ tracking equipment, information about user's preferences in home environment, vi
           This subsection content needs to be added.
           </p>
       </section>
+      -->
 
       <section id="sec-pract-end-to-end-security">
         <h2>Secure Practices for end-to-end security</h2>
@@ -2126,17 +2168,19 @@ tracking equipment, information about user's preferences in home environment, vi
               digital signatures (using asymmetric cryptographic primitives) or Message
               Authentication Codes (MACs, using symmetric cryptographic primitives).
               Such digital signatures or MACs are created by the producers/issuers of the objects
-              and validated by consumers of the objects (which should reject signed the objects whose signatures/MACs are invalid).
-              For the objects expressed in JSON, RFC 7515 (IETF JSON Web Signature: 
-              https://datatracker.ietf.org/doc/rfc7515/) provides guidelines for computation
+              and validated by consumers of the objects 
+	      (which should reject signed the objects whose signatures/MACs are invalid).
+              For data expressed in JSON, 
+	      <a href="https://datatracker.ietf.org/doc/rfc7515/">RFC 7515 (IETF JSON Web Signature)</a>
+	      provides guidelines for computation
               and validation of digital signatures or MACs using JSON-based data structures. 
             </p>
             <p>
               Similarly, if end-to-end confidentiality is desired,
               it is possible to encrypt objects using available cryptographic encryption primitives.
               For the objects expressed in JSON,
-              RFC 7516 (IETF JSON Web Encryption: https://datatracker.ietf.org/doc/rfc7516/)
-              provides the guidelines for encryption and decryption of JSON-based data structures. 
+	      <a href="https://datatracker.ietf.org/doc/rfc7516/">RFC 7516 (IETF JSON Web Encryption)</a>
+              provides guidelines for encryption and decryption of JSON-based data structures. 
             </p>
             <p>
             This recommendation helps prevent the following threats: 
