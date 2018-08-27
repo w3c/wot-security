@@ -601,7 +601,7 @@
       but also his/her/its role,
       type of access, or time and context.</td>
       </tr><tr>
-      <th><dfn data-lt="system owner">System Owner</dfn></th>
+      <th><dfn data-lt="system owner|system owners">System Owner</dfn></th>
       <td>
       An entity that provisions a thing with the security root of trust
       and sets up the initial policies on who can provision/update/remove scripts
@@ -618,7 +618,7 @@
       </td>
       <td></td>
       </tr><tr>
-      <th><dfn data-lt="system maintainer">System Maintainer</dfn></th>
+      <th><dfn data-lt="system maintainer|system maintainers">System Maintainer</dfn></th>
       <td>
       This is an optional stakeholder.
       It administers a WoT system on behalf of a <a>System Provider</a>
@@ -1448,7 +1448,7 @@
 <th><strong>Example(s)</strong></th>
 </tr>
 <tr>
-<td><a>WoT Protocol Binding Threat - Protocol Binding Compromise</a></td>
+<td><a>WoT Protocol Binding Threat</a></td>
 <td>A compromised application on a user smartphone connected to the same internal network as WoT devices sends
 a malformed request to a WoT device targeting the Protocol Bindings interface directly. 
 This malformed request causes
@@ -1576,7 +1576,7 @@ tracking equipment, information about user's preferences in home environment, vi
     </tr>
 
     <tr>
-    <td><a>WoT Protocol Binding Threat - Protocol Binding Compromise</a></td>
+    <td><a>WoT Protocol Binding Threat</a></td>
     <td>This attack is similar to the one described in Scenario 1 where a WoT network shares 
      connectivity with other non-WoT devices (smartphones, PCs, etc.). 
      In this case a company's employee can send a malformed request to a WoT device targeting a
@@ -1712,12 +1712,14 @@ tracking equipment, information about user's preferences in home environment, vi
 </section>
 
 <section id="wot-privacy">
-      <h1>Privacy considerations</h1>
+      <h1>Privacy Considerations</h1>
             <p>              
               In this section we focus specifically on the privacy aspects that are important to keep in mind
-              while developing and deploying WoT solutions. While the threat model, described in <a href="#wot-threat-model"></a>,
-              takes into account numerous privacy-related threats and aspects, this section summaries them and gives guidelines
-              and recommendations to minimize privacy-related risks. 
+              while developing and deploying WoT solutions. 
+	      The threat model, described in <a href="#wot-threat-model"></a>,
+              already takes into account numerous privacy-related threats and aspects.
+	      However, this section summarizes them and gives guidelines
+              and recommendations specifically aimed at minimizing privacy-related risks. 
             </p>
             <p>              
               The following WoT privacy threats can potentially affect the privacy of WoT <a>system users</a>:              
@@ -1735,27 +1737,33 @@ tracking equipment, information about user's preferences in home environment, vi
                       of information that is publicly available about a WoT Thing.
                       There has to be a way (if a TD is privacy-sensitive) to limit clients who can
                       obtain a certain TD (or its privacy-sensitive parts) via authentication and
-                      authorization methods. This can be done by exposing a number of TD variants
+                      authorization methods. 
+		      It is also possible to expose a number of TD variants
                       for the same WoT Thing based on the level of client's access.  
                       This recommendation corresponds to the data minimization
                       and security (unauthorized usage, peer entity authentication and confidentiality)
-                      treat mitigation strategies outlined in [[Coo13]] - <cite>Privacy Considerations for Internet Protocols</cite>.
+                      treat mitigation strategies outlined in 
+		      [[Coo13]] - <cite>Privacy Considerations for Internet Protocols</cite>.
                       </td>
                 </tr>
                 <tr>
                  <td><dfn>Disclosing WoT System configuration</dfn></td>
-                 <td> Privacy-sensitive information might be induced via observing the communication
-                      between a WoT endpoint (Client, Servient or Device) and Things Directory.
-                      For example one can learn a certain WoT system configuration by observing the TDs
-                      that a certain WoT Gateway downloads from Things Directory. 
-                      In addition, loading JSON-LD context files might also leak WoT System configuration. </td>
-                 <td>The communication between WoT endpoints and TD hosting service (i.e. Things
-                      Directory) should be protected against eavesdropper using well-established
+                 <td> Privacy-sensitive information might be inferred via observing the communication
+                      between a WoT endpoint (Client, Servient or Device) and a Thing Directory.
+                      For example one can learn information about the configuration of a target
+		      WoT system by observing the TDs
+                      that the target WoT system downloads from a Thing Directory. 
+                      In addition, loading JSON-LD context files might also leak WoT System configuration.
+		      For example, context files may be used to allow TDs to be extended with
+		      new protocols and security schemes; loading these context files then
+		      implies the TDs uses these protocols or schemes. </td>
+                 <td>The communication between WoT endpoints and a TD distribution service (i.e. Thing
+                      Directories) should be protected against eavesdroppers using well-established
                       security protocols. It also should not be possible for a casual observer
-                      (a guest visiting person home with the access to a local wireless access point)
-                      to query available WoT devices (there has to be a way to limit WoT devices
-                      abilities to respond to different broadcast events) and as a result obtaining
-                      WoT System configuration that way. 
+                      (for example, a guest visiting a person's home with access to a private wireless access point)
+                      to query available WoT devices (there has to be a way to limit WoT devices'
+                      ability to respond to different broadcast events) and as a result obtaining
+                      WoT System configuration. 
                       Caching on gateways can help with the JSON-LD context files loading problem.  
                       This recommendation corresponds to the data minimization
                       and security (unauthorized usage, peer entity authentication and confidentiality)
@@ -1764,16 +1772,19 @@ tracking equipment, information about user's preferences in home environment, vi
                 </tr>
                 <tr>
                  <td><dfn>Leaking WoT <a>System User Data</a></dfn></td>
-                 <td> Depending on the network topology, WoT <a>system user data</a> can be transferred
-                      between the WoT Client and WoT Device via many intermediate nodes, such as WoT
+                 <td> Depending on the network topology, WoT <a>System User Data</a> can be transferred
+                      between the WoT Client and WoT Device via many intermediate nodes, such as a WoT
                       Servient Gateway or non-WoT nodes. If these nodes can access or process the WoT
-                      <a>system user data</a>, they can unintentionally leak the information that affect
-                      privacy of WoT <a>system users</a>. In addition, if WoT interfaces are publicly
-                      accessible (for example query a state of WoT Thing), it can also leak WoT
+                      <a>system user data</a>, they can unintentionally leak information impacting
+                      the privacy of WoT <a>System Users</a>. 
+		      In addition, if WoT interfaces are publicly
+                      accessible (for example allowing anyone to query the state of WoT Thing), 
+		      it can also leak WoT
                       <a>System User Data</a>.</td>
-                 <td>WoT things should minimize the amount of publicly accessible WoT interfaces.
+                 <td>WoT things should minimize publicly accessible WoT interfaces.
                       If WoT System User Data is privacy-sensitive and travels via intermediate
-                      nodes, end-to-end encryption methods and object level security should be preferred. This recommendation 
+                      nodes, end-to-end encryption methods and object level security should be preferred. 
+		      This recommendation 
                       corresponds to the data minimization and security (inappropriate usage,
                       unauthorized usage and confidentiality) treat mitigation strategies outlined in 
                       [[Coo13]] - <cite>Privacy Considerations for Internet Protocols</cite>.</td>
@@ -1781,42 +1792,53 @@ tracking equipment, information about user's preferences in home environment, vi
                 <tr>
                  <td><dfn>Tracking WoT System User</dfn></td>
                  <td> According to the WoT specification, each TD includes a unique identifier (id), but it
-                      is not specified how such identifier should be generated and its time of life.
+                      is not specified how such identifier should be generated and the duration of its 
+		      validity.
                       Typically such identifiers are generated using various methods outlined in
                       [[Lea05]] - <cite>A Universally Unique IDentifier (UUID) URN Namespace</cite>.
                       If this identifier is a persistent unique identifier that is never changed during device 
                       lifecycle (immutable) or changed very rarely (for example only when a WoT system is
                       installed and bootstrapped), then a WoT device and a WoT <a>System User</a> might
                       be uniquely identified and its communications tracked.
-                      Similar can be done even without identifiers by using fingerprinting techniques based on
+                      Similar tracking can be done even without identifiers by using 
+		      fingerprinting techniques based on
                       a WoT System configuration information (which is likely to be unique).</td>
-                 <td>A TD should avoid exposing any persistent unique identifiers (especially immutable ones)
-                      that can be used to track it. Instead, TD's identifier (id) should be changed
+                 <td>A TD should avoid exposing publically any persistent unique identifiers 
+		      (especially immutable ones)
+                      that can be used to track it. 
+		      Ideally, a TD's identifier (id) should be changed
                       periodically (potentially even every time the WoT Thing instance is created, if it does
-                      not infer the normal operation mode of a WoT Thing) or it should be at least possible
-                      to change it when required. 
-                      Using methods to limit disclosure of WoT system configuration also helps to prevent
-                      tracking of WoT System user. </td>
+                      not infer the normal operation mode of a WoT Thing).
+		      This however conflicts with the needs of Linked Data and the registration of 
+		      Things in directories and their use by other Things.  
+		      A compromise needs to be struck.  Mechanisms to notify
+		      legitimate users of a Thing when a Thing's identifier has changed may be considered
+		      if frequent updates are necessary.
+		      It should be at least possible to change a Thing's identifier
+		      by re-provisioning the device if necessary.
+                      Using methods to limit disclosure of WoT system configuration and TDs also helps to prevent
+                      tracking of WoT System users.</td>
                 </tr>
              </table>
-             In addition to the mitigations described above, it is also important to keep <a>System User</a>
-             informed about the information that can be exposed and/or collected about him, as well as to have
-             a way for a <a>System User</a> to control the degree of such exposure. This recommendation
-             corresponds to the user participation treat mitigation strategy outlined in 
+             In addition to the mitigations described above, it is also important to keep <a>System Users</a>
+             informed about the information that can be exposed and/or collected about them, as well as to have
+             a way for <a>System Users</a> to control the degree of such exposure. 
+	     This recommendation
+             corresponds to the user participation in treat mitigation strategy outlined in 
              [[Coo13]] - <cite>Privacy Considerations for Internet Protocols</cite>.
             </p>
 
           <p class="ednote" title="Links">
-            Need to mention privacy risks associated with links.
+            We may need to mention privacy risks associated with links.
+	    In particular, dereferencing links carries similar inferencing risks
+	    as context file dereferencing.
           </p>
 
         </section>
     </section>
 
-
-
   <section>
-  <h1>Existing Security Best Practices in related fields</h1>
+  <h1>Existing Security Best Practices</h1>
     <p>
       Best practices in security are constantly evolving,
       and it is important to keep up to date.
@@ -2526,7 +2548,14 @@ tracking equipment, information about user's preferences in home environment, vi
             </ul>
             </p>
             <p>
-            The mechanisms are provided in the order from weakest to the strongest isolation method and can be used in combination. In order to choose the appropriate mechanism one should study the capabilities of the underlying device, as well as evaluate the risk level of particular deployment scenario (see Section <a href="#determine-suitable-architecture"></a> for more details on how to evaluate the risk level). It is also important to note that all isolation mechanisms usually affect performance and might require non-trivial policy setup and management.
+            The mechanisms are provided in the order from weakest to the strongest isolation method 
+	    and can be used in combination. 
+	    In order to choose the appropriate mechanism one should study the capabilities of the underlying device, 
+	    as well as evaluate the risk level of particular deployment scenario. 
+	    <!--
+	    See Section <a href="#determine-suitable-architecture"></a> for more details on how to evaluate the risk level. 
+	    -->
+	    It is also important to note that all isolation mechanisms usually affect performance and might require non-trivial policy setup and management.
             </p>
             <p>
             Now if we consider the basic communication scenario between the WoT Client and the device exposing the WoT Thing described in Section <a href="#wot-client-server-basic"></a> from a perspective of script instances running inside WoT Runtime, each such instance should be able to have a way to perform mutual authentication between itself and a remote WoT Client or support the token-based authentication methods. However, there are no methods in the WoT Scripting API to perform any such tasks, but instead the underlying WoT Runtime and protocol bindings handle the required security functionality transparently for the WoT scripts. <a href="#wot_scripts_security_1"></a> shows how it is done, when a WoT Script discovers a new WoT Thing, MyLampThing, using the discover() scripting API method, and invokes an action "toggle". 
