@@ -12,6 +12,10 @@
 * CoAPS with one of psk, public, cert.
 * MQTTS with basic (MQTT native username/password)
 
+In addition, TDs with HTTP/nosec and CoAP/nosec should be tested and properly handled.
+They are useful in conjunction with reverse proxies that layer on one of the above secure
+transport and authentication schemes.
+
 ## Access Control
 
 ## End-to-end Security
