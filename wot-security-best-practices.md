@@ -18,4 +18,12 @@ transport and authentication schemes.
 
 ## Access Control
 
+* Thing Directories: protected with basic or digest auth and HTTPS
+** node-wot may need to be updated to work with this
+* OAuth2 scopes on forms
+** Scripting API may need to be updated to allow specification of scopes on properties etc.
+* OAuth authentication servers
+** Allowing connection of scopes to roles
+** Allowing assignment of roles to users
+
 ## End-to-end Security
