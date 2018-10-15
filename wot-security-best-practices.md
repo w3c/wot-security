@@ -27,3 +27,13 @@ transport and authentication schemes.
 ** Allowing assignment of roles to users
 
 ## End-to-end Security
+
+* COSE 
+* OSCORE
+* OSCOAP ?
+
+## Secure Update and Post Manufacturing Provisioning
+
+## Secure Interaction with Thing Directory
+
+
