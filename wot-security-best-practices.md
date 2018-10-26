@@ -16,7 +16,7 @@ TODO: define and list threats
                   Profiles for the Internet of Things](https://tools.ietf.org/html/rfc7925)
     - [IETF RFC7252 The Constrained Application Protocol (CoAP)](https://tools.ietf.org/html/rfc7252)
 * MQTTS (MQTT + TLS 1.3) 
-    - TODO link to standard
+    - [OASIS Message Queuing Telemetry Transport (MQTT) TC](https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=mqtt)
     - standard URL scheme for "mqtts://..." (draft IETF RFC for URL scheme)
     
 ### TODO TD Example
