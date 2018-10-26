@@ -11,7 +11,10 @@ TODO: define and list threats
 
 * HTTPS (HTTP + TLS 1.3) 
 * CoAPS (CoAP + DTLS) 
-    - TODO link to the standard
+    - [IETF RFC7925 Transport Layer Security (TLS) /
+                Datagram Transport Layer Security (DTLS)
+                  Profiles for the Internet of Things](https://tools.ietf.org/html/rfc7925)
+    - [IETF RFC7252 The Constrained Application Protocol (CoAP)](https://tools.ietf.org/html/rfc7252)
 * MQTTS (MQTT + TLS 1.3) 
     - TODO link to standard
     - standard URL scheme for "mqtts://..." (draft IETF RFC for URL scheme)
