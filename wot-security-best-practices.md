@@ -17,6 +17,7 @@ TODO: define and list threats
     - [IETF RFC7252 The Constrained Application Protocol (CoAP)](https://tools.ietf.org/html/rfc7252)
 * MQTTS (MQTT + TLS 1.3) 
     - [OASIS Message Queuing Telemetry Transport (MQTT) TC](https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=mqtt)
+    - [MQTT Security Subcommittee https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=mqtt-security]
     - standard URL scheme for "mqtts://..." (draft IETF RFC for URL scheme)
     
 ### TODO TD Example
