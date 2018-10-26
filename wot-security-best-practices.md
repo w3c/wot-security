@@ -39,6 +39,9 @@ In addition, TDs with HTTP/nosec and CoAP/nosec should be tested and properly ha
 They are useful in conjunction with reverse proxies that layer on one of the above secure
 transport and authentication schemes.
 
+Note: security schemes that we do not have a tested implementation should probably 
+be moved to extensions, for example, pop tokens.
+
 ### Recommendations
 
 ## Thing Directories
