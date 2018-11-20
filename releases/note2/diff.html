@@ -1,54 +1,65 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta charset="utf-8"><meta name="generator" content="ReSpec 23.7.0"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- ISSUES/NOTES --- */
-div.issue-title, div.note-title , div.ednote-title, div.warning-title {
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta name="generator" content=
+"HTML Tidy for HTML5 for Linux version 5.2.0" />
+<meta charset="utf-8" />
+<meta name="generator" content="ReSpec 23.7.0" />
+<meta name="viewport" content=
+"width=device-width, initial-scale=1, shrink-to-fit=no" />
+<style>
+<![CDATA[
+  /* --- ISSUES/NOTES --- */
+  div.issue-title, div.note-title , div.ednote-title, div.warning-title {
     padding-right:  1em;
     min-width: 7.5em;
     color: #b9ab2d;
-}
-div.issue-title { color: #e05252; }
-div.note-title, div.ednote-title { color: #2b2; }
-div.warning-title { color: #f22; }
-div.issue-title span, div.note-title span, div.ednote-title span, div.warning-title span {
+  }
+  div.issue-title { color: #e05252; }
+  div.note-title, div.ednote-title { color: #2b2; }
+  div.warning-title { color: #f22; }
+  div.issue-title span, div.note-title span, div.ednote-title span, div.warning-title span {
     text-transform: uppercase;
-}
-div.note, div.issue, div.ednote, div.warning {
+  }
+  div.note, div.issue, div.ednote, div.warning {
     margin-top: 1em;
     margin-bottom: 1em;
-}
-.note > p:first-child, .ednote > p:first-child, .issue > p:first-child, .warning > p:first-child { margin-top: 0 }
-.issue, .note, .ednote, .warning {
+  }
+  .note > p:first-child, .ednote > p:first-child, .issue > p:first-child, .warning > p:first-child { margin-top: 0 }
+  .issue, .note, .ednote, .warning {
     padding: .5em;
     border-left-width: .5em;
     border-left-style: solid;
-}
-div.issue, div.note , div.ednote,  div.warning {
+  }
+  div.issue, div.note , div.ednote,  div.warning {
     padding: 1em 1.2em 0.5em;
     margin: 1em 0;
     position: relative;
     clear: both;
-}
-span.note, span.ednote, span.issue, span.warning { padding: .1em .5em .15em; }
+  }
+  span.note, span.ednote, span.issue, span.warning { padding: .1em .5em .15em; }
 
-.issue {
+  .issue {
     border-color: #e05252;
     background: #fbe9e9;
-}
-.issue.closed span.issue-number {
+  }
+  .issue.closed span.issue-number {
     text-decoration: line-through;
-}
+  }
 
-.note, .ednote {
+  .note, .ednote {
     border-color: #52e052;
     background: #e9fbe9;
-}
+  }
 
-.warning {
+  .warning {
     border-color: #f11;
     border-width: .2em;
     border-style: solid;
     background: #fbe9e9;
-}
+  }
 
-.warning-title:before{
+  .warning-title:before{
     content: "⚠"; /*U+26A0 WARNING SIGN*/
     font-size: 3em;
     float: left;
@@ -56,18 +67,18 @@ span.note, span.ednote, span.issue, span.warning { padding: .1em .5em .15em; }
     padding-right: .3em;
     vertical-align: top;
     margin-top: -0.5em;
-}
+  }
 
-li.task-list-item {
+  li.task-list-item {
     list-style: none;
-}
+  }
 
-input.task-list-item-checkbox {
+  input.task-list-item-checkbox {
     margin: 0 0.35em 0.25em -1.6em;
     vertical-align: middle;
-}
+  }
 
-.issue a.respec-gh-label {
+  .issue a.respec-gh-label {
   padding: 5px;
   margin: 0 2px 0 2px;
   font-size: 10px;
@@ -77,219 +88,221 @@ input.task-list-item-checkbox {
   border-radius: 4px;
   position: relative;
   bottom: 2px;
-}
+  }
 
-.issue a.respec-label-dark {
+  .issue a.respec-label-dark {
   color: #fff;
   background-color: #000;
-}
+  }
 
-.issue a.respec-label-light {
+  .issue a.respec-label-light {
   color: #000;
   background-color: #fff;
-}
+  }
+]]>
 </style>
-    <link rel="stylesheet" href="tablestyle.css">
-    
-    <title>Web of Things (WoT) Security and Privacy Considerations</title>
-    
-    
-  <style id="respec-mainstyle">/*****************************************************************
- * ReSpec 3 CSS
- * Robin Berjon - http://berjon.com/
- *****************************************************************/
+<link rel="stylesheet" href="tablestyle.css" />
+<title>Web of Things (WoT) Security and Privacy
+Considerations</title>
 
-/* Override code highlighter background */
-.hljs {
+<style id="respec-mainstyle">
+<![CDATA[
+  /*****************************************************************
+  * ReSpec 3 CSS
+  * Robin Berjon - http://berjon.com/
+  *****************************************************************/
+
+  /* Override code highlighter background */
+  .hljs {
   background: transparent !important;
-}
+  }
 
-/* --- INLINES --- */
-h1 abbr,
-h2 abbr,
-h3 abbr,
-h4 abbr,
-h5 abbr,
-h6 abbr,
-a abbr {
+  /* --- INLINES --- */
+  h1 abbr,
+  h2 abbr,
+  h3 abbr,
+  h4 abbr,
+  h5 abbr,
+  h6 abbr,
+  a abbr {
   border: none;
-}
+  }
 
-dfn {
+  dfn {
   font-weight: bold;
-}
+  }
 
-a.internalDFN {
+  a.internalDFN {
   color: inherit;
   border-bottom: 1px solid #99c;
   text-decoration: none;
-}
+  }
 
-a.externalDFN {
+  a.externalDFN {
   color: inherit;
   border-bottom: 1px dotted #ccc;
   text-decoration: none;
-}
+  }
 
-a.bibref {
+  a.bibref {
   text-decoration: none;
-}
+  }
 
-#references :target {
+  #references :target {
   background: #eaf3ff;
-}
+  }
 
-cite .bibref {
+  cite .bibref {
   font-style: normal;
-}
+  }
 
-code {
+  code {
   color: #c83500;
-}
+  }
 
-th code {
+  th code {
   color: inherit;
-}
+  }
 
-/* --- TOC --- */
+  /* --- TOC --- */
 
-.toc a,
-.tof a {
+  .toc a,
+  .tof a {
   text-decoration: none;
-}
+  }
 
-a .secno,
-a .figno {
+  a .secno,
+  a .figno {
   color: #000;
-}
+  }
 
-ul.tof,
-ol.tof {
+  ul.tof,
+  ol.tof {
   list-style: none outside none;
-}
+  }
 
-.caption {
+  .caption {
   margin-top: 0.5em;
   font-style: italic;
-}
+  }
 
-/* --- TABLE --- */
+  /* --- TABLE --- */
 
-table.simple {
+  table.simple {
   border-spacing: 0;
   border-collapse: collapse;
   border-bottom: 3px solid #005a9c;
-}
+  }
 
-.simple th {
+  .simple th {
   background: #005a9c;
   color: #fff;
   padding: 3px 5px;
   text-align: left;
-}
+  }
 
-.simple th[scope="row"] {
+  .simple th[scope="row"] {
   background: inherit;
   color: inherit;
   border-top: 1px solid #ddd;
-}
+  }
 
-.simple td {
+  .simple td {
   padding: 3px 10px;
   border-top: 1px solid #ddd;
-}
+  }
 
-.simple tr:nth-child(even) {
+  .simple tr:nth-child(even) {
   background: #f0f6ff;
-}
+  }
 
-/* --- DL --- */
+  /* --- DL --- */
 
-.section dd>p:first-child {
+  .section dd>p:first-child {
   margin-top: 0;
-}
+  }
 
-.section dd>p:last-child {
+  .section dd>p:last-child {
   margin-bottom: 0;
-}
+  }
 
-.section dd {
+  .section dd {
   margin-bottom: 1em;
-}
+  }
 
-.section dl.attrs dd,
-.section dl.eldef dd {
+  .section dl.attrs dd,
+  .section dl.eldef dd {
   margin-bottom: 0;
-}
+  }
 
-#issue-summary>ul,
-.respec-dfn-list {
+  #issue-summary>ul,
+  .respec-dfn-list {
   column-count: 2;
-}
+  }
 
-#issue-summary li,
-.respec-dfn-list li {
+  #issue-summary li,
+  .respec-dfn-list li {
   list-style: none;
-}
+  }
 
-details.respec-tests-details {
+  details.respec-tests-details {
   margin-left: 1em;
   display: inline-block;
   vertical-align: top;
-}
+  }
 
-details.respec-tests-details>* {
+  details.respec-tests-details>* {
   padding-right: 2em;
-}
+  }
 
-details.respec-tests-details[open] {
+  details.respec-tests-details[open] {
   z-index: 999999;
   position: absolute;
   border: thin solid #cad3e2;
   border-radius: 0.3em;
   background-color: white;
   padding-bottom: 0.5em;
-}
+  }
 
-details.respec-tests-details[open]>summary {
+  details.respec-tests-details[open]>summary {
   border-bottom: thin solid #cad3e2;
   padding-left: 1em;
   margin-bottom: 1em;
   line-height: 2em;
-}
+  }
 
-details.respec-tests-details>ul {
+  details.respec-tests-details>ul {
   width: 100%;
   margin-top: -0.3em;
-}
+  }
 
-details.respec-tests-details>li {
+  details.respec-tests-details>li {
   padding-left: 1em;
-}
+  }
 
-a[href].self-link:hover {
+  a[href].self-link:hover {
   opacity: 1;
   text-decoration: none;
   background-color: transparent;
-}
+  }
 
-h2,
-h3,
-h4,
-h5,
-h6 {
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
   position: relative;
-}
+  }
 
-aside.example .marker > a.self-link {
+  aside.example .marker > a.self-link {
   color: inherit;
-}
+  }
 
-h2>a.self-link,
-h3>a.self-link,
-h4>a.self-link,
-h5>a.self-link,
-h6>a.self-link {
+  h2>a.self-link,
+  h3>a.self-link,
+  h4>a.self-link,
+  h5>a.self-link,
+  h6>a.self-link {
   border: none;
   color: inherit;
   font-size: 83%;
@@ -302,18 +315,18 @@ h6>a.self-link {
   top: 0;
   transition: opacity .2s;
   width: 2em;
-}
+  }
 
-h2>a.self-link::before,
-h3>a.self-link::before,
-h4>a.self-link::before,
-h5>a.self-link::before,
-h6>a.self-link::before {
+  h2>a.self-link::before,
+  h3>a.self-link::before,
+  h4>a.self-link::before,
+  h5>a.self-link::before,
+  h6>a.self-link::before {
   content: "§";
   display: block;
-}
+  }
 
-@media (max-width: 767px) {
+  @media (max-width: 767px) {
   dd {
     margin-left: 0;
   }
@@ -327,17 +340,24 @@ h6>a.self-link::before {
     left: auto;
     top: auto;
   }
-}
+  }
 
-@media print {
+  @media print {
   .removeOnSave {
     display: none;
   }
-}
-</style><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"><link rel="canonical" href="https://www.w3.org/TR/wot-security/"><script id="initialUserConfig" type="application/json">{
-  "specStatus": "ED",
+  }
+]]>
+</style>
+<link rel="stylesheet" href=
+"https://www.w3.org/StyleSheets/TR/2016/W3C-WG-NOTE" />
+<link rel="canonical" href="https://www.w3.org/TR/wot-security/" />
+<script id="initialUserConfig" type="application/json">
+<![CDATA[
+  {
+  "specStatus": "WG-NOTE",
   "noRecTrack": "true",
-  "processVersion": 2017,
+  "processVersion": 2018,
   "shortName": "wot-security",
   "copyrightStart": 2017,
   "wg": "Web of Things Working Group",
@@ -815,13 +835,13 @@ h6>a.self-link::before {
       "id": "yeg11"
     }
   },
-  "publishISODate": "2018-11-05T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 05 November 2018"
-}</script><meta name="description" content="This document provides non-normative guidance on Web of Things (WoT) security and privacy.
-     The Web of Things is descriptive, not prescriptive, 
-     and so is generally designed to support the security models and mechanisms of the systems it describes,
-     not introduce new ones.
-     However, a WoT system also has its own unique assets, such as a Scripting API and Thing Descriptions, that
+  "publishISODate": "2018-11-20T00:00:00.000Z",
+  "generatedSubtitle": "Working Group Note 20 November 2018"
+  }
+]]>
+</script>
+<meta name="description" content=
+"This document provides non-normative guidance on Web of Things (WoT) security and privacy. The Web of Things is descriptive, not prescriptive, and so is generally designed to support the security models and mechanisms of the systems it describes, not introduce new ones. However, a WoT system also has its own unique assets, such as a Scripting API and Thing Descriptions, that need to be protected and also have security and privacy implications." />
 <style type='text/css'>
 .diff-old-a {
   font-size: smaller;
@@ -841,10 +861,11 @@ h6>a.self-link::before {
     { content: "\2193" }
 :focus { border: thin red solid}
 </style>
-     need to be protected and also have security and privacy implications."></head>
-  <body class="h-entry toc-inline"><div class="head">
-<a href="https://www.w3.org/" class="logo">
-<img alt="W3C" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" width="72" height="48">
+</head>
+<body class="h-entry toc-inline">
+<div class="head">
+<a href="https://www.w3.org/" class= "logo">
+<img alt="W3C" src= "https://www.w3.org/StyleSheets/TR/2016/logos/W3C" width="72" height="48" />
 </a>
 <h1 id="title" class="title p-name">
 Web
@@ -860,17 +881,15 @@ Considerations
 <abbr title="World Wide Web Consortium">
 W3C
 </abbr>
-<del class="diff-old">Working
+Working
 Group
 Note
-14
+<del class="diff-old">14
 December
 2017
 </del>
-<ins class="diff-chg">Editor's
-Draft
-</ins><time class="dt-published" datetime="2018-11-05"><ins class="diff-chg">
-05
+<time class="dt-published" datetime="2018-11-20">
+<ins class="diff-chg">20
 November
 2018
 </ins>
@@ -881,11 +900,11 @@ November
 This
 version:
 </dt>
+<dd>
 <del class="diff-old">https://www.w3.org/TR/2017/NOTE-wot-security-20171214/
 </del>
-<dd>
-<a class="u-url" href="https://w3c.github.io/wot-security/">
-<ins class="diff-chg">https://w3c.github.io/wot-security/
+<a class="u-url" href= "https://www.w3.org/TR/2018/NOTE-wot-security-20181120/">
+<ins class="diff-chg">https://www.w3.org/TR/2018/NOTE-wot-security-20181120/
 </ins>
 </a>
 </dd>
@@ -895,7 +914,7 @@ published
 version:
 </dt>
 <dd>
-<a href="https://www.w3.org/TR/wot-security/">
+<a href= "https://www.w3.org/TR/wot-security/">
 https://www.w3.org/TR/wot-security/
 </a>
 </dd>
@@ -905,48 +924,43 @@ editor's
 draft:
 </dt>
 <dd>
-<a href="https://w3c.github.io/wot-security/">
+<a href= "https://w3c.github.io/wot-security/">
 https://w3c.github.io/wot-security/
 </a>
 </dd>
 <dt>
+<ins class="diff-new">Previous
+version:
+</ins></dt><dd><a class="u-url" href= "https://www.w3.org/TR/2017/NOTE-wot-security-20171214/"><ins class="diff-new">
+https://www.w3.org/TR/2017/NOTE-wot-security-20171214/
+</ins></a></dd><dt>
 Editors:
 </dt>
 <dd class="p-author h-card vcard" data-editor-id="99327">
 <span class="p-name fn">
 Elena
 Reshetova
-<del class="diff-old">,
-</del>
-</span>
-<ins class="diff-chg">(
-</ins><a class="p-org org h-org h-card" href="https://www.intel.com/">
+</span>,
+<a class= "p-org org h-org h-card" href="https://www.intel.com/">
 Intel
 Corp.
 </a>
-<ins class="diff-chg">)
-</ins>
 </dd>
 <dd class="p-author h-card vcard" data-editor-id="93137">
 <span class="p-name fn">
 Michael
 McCool
-<del class="diff-old">,
-</del>
-</span>
-<ins class="diff-chg">(
-</ins><a class="p-org org h-org h-card" href="https://www.intel.com/">
+</span>,
+<a class= "p-org org h-org h-card" href="https://www.intel.com/">
 Intel
 Corp.
 </a>
-<ins class="diff-chg">)
-</ins>
 </dd>
 <dt>
 Contributors:
 </dt>
 <dd>
-<a href="https://github.com/w3c/wot-security/graphs/contributors">
+<a href= "https://github.com/w3c/wot-security/graphs/contributors">
 In
 the
 GitHub
@@ -972,13 +986,13 @@ bug
 </a>
 </dd>
 <dd>
-<a href="https://github.com/w3c/wot-security/pulls">
+<a href= "https://github.com/w3c/wot-security/pulls">
 Contribute
 </a>
 </dd>
 </dl>
 <p class="copyright">
-<a href="https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">
+<a href= "https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">
 Copyright
 </a>
 ©
@@ -987,7 +1001,7 @@ Copyright
 <ins class="diff-chg">2017-2018
 </ins>
 <a href="https://www.w3.org/">
-<abbr title="World Wide Web Consortium">
+<abbr title= "World Wide Web Consortium">
 W3C
 </abbr>
 </a>
@@ -995,34 +1009,34 @@ W3C
 ®
 </sup>
 (
-<a href="https://www.csail.mit.edu/">
-<abbr title="Massachusetts Institute of Technology">
+<a href= "https://www.csail.mit.edu/">
+<abbr title= "Massachusetts Institute of Technology">
 MIT
 </abbr>
 </a>,
-<a href="https://www.ercim.eu/">
-<abbr title="European Research Consortium for Informatics and Mathematics">
+<a href= "https://www.ercim.eu/">
+<abbr title= "European Research Consortium for Informatics and Mathematics">
 ERCIM
 </abbr>
 </a>,
 <a href="https://www.keio.ac.jp/">
 Keio
 </a>,
-<a href="http://ev.buaa.edu.cn/">
+<a href= "http://ev.buaa.edu.cn/">
 Beihang
 </a>
 ).
-<abbr title="World Wide Web Consortium">
+<abbr title= "World Wide Web Consortium">
 W3C
 </abbr>
-<a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">
+<a href= "https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">
 liability
 </a>,
-<a href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">
+<a href= "https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">
 trademark
 </a>
 and
-<a rel="license" href="https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document">
+<a rel="license" href= "https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document">
 permissive
 document
 license
@@ -1030,7 +1044,7 @@ license
 rules
 apply.
 </p>
-<hr title="Separator for header">
+<hr title="Separator for header" />
 </div>
 <section id="abstract" class="introductory">
 <h2>
@@ -1353,7 +1367,7 @@ documents,
 in
 particular
 the
-<a href="https://www.w3.org/TR/2017/WD-wot-architecture-20170914/#sec-security-considerations">
+<a href= "https://www.w3.org/TR/2017/WD-wot-architecture-20170914/#sec-security-considerations">
 WoT
 Architecture
 </a>
@@ -1394,7 +1408,7 @@ A
 list
 of
 current
-<abbr title="World Wide Web Consortium">
+<abbr title= "World Wide Web Consortium">
 W3C
 </abbr>
 publications
@@ -1411,8 +1425,8 @@ be
 found
 in
 the
-<a href="https://www.w3.org/TR/">
-<abbr title="World Wide Web Consortium">
+<a href= "https://www.w3.org/TR/">
+<abbr title= "World Wide Web Consortium">
 W3C
 </abbr>
 technical
@@ -1429,9 +1443,7 @@ https://www.w3.org/TR/.
 Editor's
 note
 </span>
-<del class="diff-old">:
-</del>
-<span style="text-transform: none">:
+<span style= "text-transform: none">:
 The
 W3C
 WoT
@@ -1450,7 +1462,7 @@ this
 draft
 using
 the
-<a href="https://github.com/w3c/wot-security/issues">
+<a href= "https://github.com/w3c/wot-security/issues">
 GitHub
 Issue
 </a>
@@ -1474,7 +1486,7 @@ was
 published
 by
 the
-<a href="https://www.w3.org/WoT/WG/">
+<a href= "https://www.w3.org/WoT/WG/">
 Web
 of
 Things
@@ -1482,16 +1494,14 @@ Working
 Group
 </a>
 as
-<del class="diff-old">a
+a
 Working
 Group
-Note.
-</del>
-<ins class="diff-chg">an
-Editor's
-Draft.
-</ins></p><p>
+<del class="diff-old">Note.
 Comments
+</del>
+<ins class="diff-chg">Note.Comments
+</ins>
 regarding
 this
 document
@@ -1501,14 +1511,14 @@ Please
 send
 them
 to
-<a href="mailto:public-wot-wg@w3.org">
+<a href= "mailto:public-wot-wg@w3.org">
 public-wot-wg@w3.org
 </a>
 (
 <del class="diff-old">subscribe
 ,
 </del>
-<a href="https://lists.w3.org/Archives/Public/public-wot-wg/">
+<a href= "https://lists.w3.org/Archives/Public/public-wot-wg/">
 archives
 </a>
 ).
@@ -1516,15 +1526,10 @@ archives
 <p>
 Publication
 as
-<del class="diff-old">a
+a
 Working
 Group
 Note
-</del>
-<ins class="diff-chg">an
-Editor's
-Draft
-</ins>
 does
 not
 imply
@@ -1579,7 +1584,7 @@ operating
 under
 the
 <a href="https://www.w3.org/Consortium/Patent-Policy/">
-<abbr title="World Wide Web Consortium">
+<abbr title= "World Wide Web Consortium">
 W3C
 </abbr>
 Patent
@@ -1590,7 +1595,7 @@ W3C
 </abbr>
 maintains
 a
-<a rel="disclosure" href="">
+<a href="https://www.w3.org/2004/01/pp-impl/95969/status" rel= "disclosure">
 public
 list
 of
@@ -1630,7 +1635,7 @@ the
 individual
 believes
 contains
-<a href="https://www.w3.org/Consortium/Patent-Policy/#def-essential">
+<a href= "https://www.w3.org/Consortium/Patent-Policy/#def-essential">
 Essential
 Claim(s)
 </a>
@@ -1641,7 +1646,7 @@ information
 in
 accordance
 with
-<a href="https://www.w3.org/Consortium/Patent-Policy/#sec-Disclosure">
+<a href= "https://www.w3.org/Consortium/Patent-Policy/#sec-Disclosure">
 section
 6
 of
@@ -1684,7 +1689,7 @@ Contents
 </h2>
 <ol class="toc">
 <li class="tocline">
-<a href="#introduction" class="tocxref">
+<a href="#introduction" class= "tocxref">
 <span class="secno">
 1.
 </span>
@@ -1692,7 +1697,7 @@ Introduction
 </a>
 </li>
 <li class="tocline">
-<a href="#lifecycle-of-a-wot-device" class="tocxref">
+<a href="#lifecycle-of-a-wot-device" class= "tocxref">
 <span class="secno">
 2.
 </span>
@@ -1701,7 +1706,7 @@ of
 a
 WoT
 device
-</ins></a></li><li class="tocline"><a href="#requirements" class="tocxref"><span class="secno"><ins class="diff-new">
+</ins></a></li><li class="tocline"><a href="#requirements" class= "tocxref"><span class="secno"><ins class="diff-new">
 3.
 </ins></span>
 Requirements
@@ -1709,9 +1714,9 @@ Requirements
 <ol class="toc">
 <li class="tocline">
 <a href="#general" class="tocxref">
+<span class= "secno">
 <del class="diff-old">2.1
 </del>
-<span class="secno">
 <ins class="diff-chg">3.1
 </ins>
 </span>
@@ -1719,7 +1724,7 @@ General
 </a>
 </li>
 <li class="tocline">
-<a href="#wot-threat-model" class="tocxref">
+<a href="#wot-threat-model" class= "tocxref">
 <span class="secno">
 <del class="diff-old">2.2
 </del>
@@ -1731,7 +1736,7 @@ Model
 </a>
 <ol class="toc">
 <li class="tocline">
-<a href="#wot-threat-model-stakeholders" class="tocxref">
+<a href="#wot-threat-model-stakeholders" class= "tocxref">
 <span class="secno">
 <del class="diff-old">2.2.1
 </del>
@@ -1743,14 +1748,14 @@ Primary
 Stakeholders
 </a>
 </li>
+<li class="tocline">
 <del class="diff-old">2.2.2
 WoT
 Supported
 Physical
 Roles
 </del>
-<li class="tocline">
-<a href="#wot-threat-model-assets" class="tocxref">
+<a href="#wot-threat-model-assets" class= "tocxref">
 <span class="secno">
 <del class="diff-old">2.2.3
 </del>
@@ -1761,7 +1766,7 @@ Assets
 </a>
 </li>
 <li class="tocline">
-<a href="#wot-threat-adversaries" class="tocxref">
+<a href="#wot-threat-adversaries" class= "tocxref">
 <span class="secno">
 <del class="diff-old">2.2.4
 </del>
@@ -1784,7 +1789,7 @@ Surfaces
 </a>
 </li>
 <li class="tocline">
-<a href="#wot-threat-model-threats" class="tocxref">
+<a href="#wot-threat-model-threats" class= "tocxref">
 <del class="diff-old">2.2.6
 </del>
 <span class="secno">
@@ -1797,7 +1802,7 @@ Threats
 </ol>
 </li>
 <li class="tocline">
-<a href="#wot-security-scenarios" class="tocxref">
+<a href="#wot-security-scenarios" class= "tocxref">
 <span class="secno">
 <del class="diff-old">2.3
 </del>
@@ -1812,7 +1817,7 @@ Security
 </a>
 <ol class="toc">
 <li class="tocline">
-<a href="#scenario-1-home-environment" class="tocxref">
+<a href="#scenario-1-home-environment" class= "tocxref">
 <span class="secno">
 <del class="diff-old">2.3.1
 </del>
@@ -1830,7 +1835,7 @@ Home
 </a>
 </li>
 <li class="tocline">
-<a href="#scenario-2-business-corporate-environment" class="tocxref">
+<a href= "#scenario-2-business-corporate-environment" class= "tocxref">
 <span class="secno">
 <del class="diff-old">2.3.2
 </del>
@@ -1848,7 +1853,7 @@ Business/Corporate
 </a>
 </li>
 <li class="tocline">
-<a href="#scenario-3-industrial-critical-infrastructure-environment" class="tocxref">
+<a href= "#scenario-3-industrial-critical-infrastructure-environment" class= "tocxref">
 <span class="secno">
 <del class="diff-old">2.3.3
 </del>
@@ -1872,7 +1877,7 @@ Environment
 </ol>
 </li>
 <li class="tocline">
-<a href="#wot-privacy" class="tocxref">
+<a href="#wot-privacy" class= "tocxref">
 <span class="secno">
 <del class="diff-old">2.4
 </del>
@@ -1891,7 +1896,7 @@ Considerations
 </a>
 </li>
 <li class="tocline">
-<a href="#references-to-existing-security-best-practices" class="tocxref">
+<a href= "#references-to-existing-security-best-practices" class= "tocxref">
 <span class="secno">
 <del class="diff-old">3.
 </del>
@@ -1912,7 +1917,7 @@ fields
 </a>
 </li>
 <li class="tocline">
-<a href="#security-mitigations" class="tocxref">
+<a href="#security-mitigations" class= "tocxref">
 <span class="secno">
 <del class="diff-old">4.
 </del>
@@ -1934,7 +1939,7 @@ Systems
 </a>
 <ol class="toc">
 <li class="tocline">
-<a href="#secure-practices-for-designing-a-thing-description" class="tocxref">
+<a href= "#secure-practices-for-designing-a-thing-description" class= "tocxref">
 <span class="secno">
 <del class="diff-old">4.1
 </del>
@@ -1951,7 +1956,7 @@ Description
 </a>
 </li>
 <li class="tocline">
-<a href="#sec-pract-system-user-data" class="tocxref">
+<a href="#sec-pract-system-user-data" class= "tocxref">
 <span class="secno">
 <del class="diff-old">4.1.1
 </del>
@@ -1977,7 +1982,7 @@ Data
 </a>
 </li>
 <li class="tocline">
-<a href="#sec-pract-wot-interfaces" class="tocxref">
+<a href="#sec-pract-wot-interfaces" class= "tocxref">
 <span class="secno">
 <del class="diff-old">4.1.2
 </del>
@@ -1998,7 +2003,7 @@ Interfaces
 </a>
 </li>
 <li class="tocline">
-<a href="#sec-pract-things-directory" class="tocxref">
+<a href="#sec-pract-things-directory" class= "tocxref">
 <span class="secno">
 <del class="diff-old">4.1.3
 </del>
@@ -2023,7 +2028,7 @@ Protocols
 </a>
 </li>
 <li class="tocline">
-<a href="#sec-pract-end-to-end-security" class="tocxref">
+<a href="#sec-pract-end-to-end-security" class= "tocxref">
 <span class="secno">
 <del class="diff-old">4.1.4
 </del>
@@ -2046,7 +2051,7 @@ security
 </ol>
 </li>
 <li class="tocline">
-<a href="#examples-of-wot-security-configurations" class="tocxref">
+<a href= "#examples-of-wot-security-configurations" class= "tocxref">
 <span class="secno">
 <del class="diff-old">4.1.5
 </del>
@@ -2067,7 +2072,7 @@ Configurations
 </a>
 <ol class="toc">
 <li class="tocline">
-<a href="#wot-client-server-basic" class="tocxref">
+<a href="#wot-client-server-basic" class= "tocxref">
 <span class="secno">
 <del class="diff-old">4.2
 </del>
@@ -2098,7 +2103,7 @@ APIs
 </a>
 </li>
 <li class="tocline">
-<a href="#interaction-between-wot-thing-and-wot-client-via-a-wot-servient-gateway" class="tocxref">
+<a href= "#interaction-between-wot-thing-and-wot-client-via-a-wot-servient-gateway" class="tocxref">
 <span class="secno">
 <del class="diff-old">5.
 </del>
@@ -2151,7 +2156,7 @@ Proxy
 </a>
 </li>
 <li class="tocline">
-<a href="#wot-client-server-tunnel" class="tocxref">
+<a href="#wot-client-server-tunnel" class= "tocxref">
 <span class="secno">
 <del class="diff-old">5.2
 </del>
@@ -2178,7 +2183,7 @@ Tunnel
 </a>
 </li>
 <li class="tocline">
-<a href="#wot-servient-single-tenant" class="tocxref">
+<a href="#wot-servient-single-tenant" class= "tocxref">
 <span class="secno">
 <del class="diff-old">5.3
 </del>
@@ -2191,7 +2196,7 @@ Single-Tenant
 </a>
 </li>
 <li class="tocline">
-<a href="#wot-servient-multi-tenant" class="tocxref">
+<a href="#wot-servient-multi-tenant" class= "tocxref">
 <span class="secno">
 <del class="diff-old">5.4
 </del>
@@ -2206,7 +2211,7 @@ Multi-Tenant
 </ol>
 </li>
 <li class="tocline">
-<a href="#security-validation" class="tocxref">
+<a href="#security-validation" class= "tocxref">
 <span class="secno">
 <del class="diff-old">6.
 </del>
@@ -2218,7 +2223,7 @@ Validation
 </a>
 </li>
 <li class="tocline">
-<a href="#terminology" class="tocxref">
+<a href="#terminology" class= "tocxref">
 <span class="secno">
 <del class="diff-old">7.
 </del>
@@ -2230,9 +2235,9 @@ Terminology
 </li>
 <li class="tocline">
 <a href="#summary" class="tocxref">
+<span class= "secno">
 <del class="diff-old">8.
 </del>
-<span class="secno">
 <ins class="diff-chg">10.
 </ins>
 </span>
@@ -2240,7 +2245,7 @@ Summary
 </a>
 </li>
 <li class="tocline">
-<a href="#references" class="tocxref">
+<a href="#references" class= "tocxref">
 <span class="secno">
 A.
 </span>
@@ -2248,7 +2253,7 @@ References
 </a>
 <ol class="toc">
 <li class="tocline">
-<a href="#normative-references" class="tocxref">
+<a href="#normative-references" class= "tocxref">
 <span class="secno">
 A.1
 </span>
@@ -2269,7 +2274,7 @@ references
 1.
 </span>
 Introduction
-<a class="self-link" aria-label="§" href="#introduction">
+<a class="self-link" aria-label="§" href= "#introduction">
 </a>
 </h2>
 <p>
@@ -2337,7 +2342,7 @@ site
 </li>
 <li>
 the
-<a href="https://www.w3.org/TR/2017/WD-wot-architecture-20170914/">
+<a href= "https://www.w3.org/TR/2017/WD-wot-architecture-20170914/">
 WoT
 Architecture
 </a>
@@ -2345,7 +2350,7 @@ document,
 </li>
 <li>
 the
-<a href="https://www.w3.org/TR/2017/WD-wot-thing-description-20170914/">
+<a href= "https://www.w3.org/TR/2017/WD-wot-thing-description-20170914/">
 WoT
 Thing
 Description
@@ -2364,7 +2369,7 @@ and
 </li>
 <li>
 the
-<a href="https://www.w3.org/TR/2017/WD-wot-scripting-api-20170914/">
+<a href= "https://www.w3.org/TR/2017/WD-wot-scripting-api-20170914/">
 WoT
 Scripting
 API
@@ -2372,8 +2377,6 @@ API
 document.
 </li>
 </ul>
-<p>
-</p>
 </section>
 <section id="lifecycle-of-a-wot-device">
 <h2 id="x2-lifecycle-of-a-wot-device">
@@ -2385,11 +2388,11 @@ of
 a
 WoT
 device
-</ins><a class="self-link" aria-label="§" href="#lifecycle-of-a-wot-device"></a></h2><figure id="wot-lifecycle"><img src="images/WoT_lifecycle_diagram.png" title="WoT Device Lifecycle" width="100%"><figcaption><ins class="diff-new">
+</ins><a class="self-link" aria-label="§" href= "#lifecycle-of-a-wot-device"></a></h2><figure id="wot-lifecycle"><img src= "images/WoT_lifecycle_diagram.png" title="WoT Device Lifecycle" width="100%" /><figcaption><ins class="diff-new">
 Figure
 </ins><span class="figno"><ins class="diff-new">
 1
-</ins></span><span class="fig-title"><ins class="diff-new">
+</ins></span><span class= "fig-title"><ins class="diff-new">
 WoT
 Device
 Lifecycle
@@ -2448,7 +2451,7 @@ lifecycle
 shown
 in
 Figure
-</ins><a href="#wot-lifecycle" class="fig-ref" title="WoT Device Lifecycle"><ins class="diff-new">
+</ins><a href= "#wot-lifecycle" class="fig-ref" title= "WoT Device Lifecycle"><ins class="diff-new">
 Figure
 </ins><span class="figno"><ins class="diff-new">
 1
@@ -2624,7 +2627,7 @@ Things
 Security
 </ins></cite><ins class="diff-new">
 [
-</ins><cite><a class="bibref" href="#bib-garcia17"><ins class="diff-new">
+</ins><cite><a class="bibref" href= "#bib-garcia17"><ins class="diff-new">
 Garcia17
 </ins></a></cite><ins class="diff-new">
 ]
@@ -2686,9 +2689,9 @@ de-provisioned
 E
 in
 Figure
-</ins><a href="#wot-lifecycle" class="fig-ref" title="WoT Device Lifecycle"><ins class="diff-new">
+</ins><a href="#wot-lifecycle" class= "fig-ref" title="WoT Device Lifecycle"><ins class="diff-new">
 Figure
-</ins><span class="figno"><ins class="diff-new">
+</ins><span class= "figno"><ins class="diff-new">
 1
 </ins></span></a><ins class="diff-new">
 ).
@@ -2719,7 +2722,7 @@ re-provisioning
 D
 in
 Figure
-</ins><a href="#wot-lifecycle" class="fig-ref" title="WoT Device Lifecycle"><ins class="diff-new">
+</ins><a href="#wot-lifecycle" class="fig-ref" title= "WoT Device Lifecycle"><ins class="diff-new">
 Figure
 </ins><span class="figno"><ins class="diff-new">
 1
@@ -2743,9 +2746,9 @@ re-commissioning
 C
 in
 Figure
-</ins><a href="#wot-lifecycle" class="fig-ref" title="WoT Device Lifecycle"><ins class="diff-new">
+</ins><a href="#wot-lifecycle" class="fig-ref" title= "WoT Device Lifecycle"><ins class="diff-new">
 Figure
-</ins><span class="figno"><ins class="diff-new">
+</ins><span class= "figno"><ins class="diff-new">
 1
 </ins></span></a><ins class="diff-new">
 ).
@@ -2786,9 +2789,9 @@ locally
 A
 in
 Figure
-</ins><a href="#wot-lifecycle" class="fig-ref" title="WoT Device Lifecycle"><ins class="diff-new">
+</ins><a href="#wot-lifecycle" class= "fig-ref" title="WoT Device Lifecycle"><ins class="diff-new">
 Figure
-</ins><span class="figno"><ins class="diff-new">
+</ins><span class= "figno"><ins class="diff-new">
 1
 </ins></span></a><ins class="diff-new">
 )
@@ -2848,9 +2851,9 @@ state
 B
 in
 Figure
-</ins><a href="#wot-lifecycle" class="fig-ref" title="WoT Device Lifecycle"><ins class="diff-new">
+</ins><a href="#wot-lifecycle" class="fig-ref" title= "WoT Device Lifecycle"><ins class="diff-new">
 Figure
-</ins><span class="figno"><ins class="diff-new">
+</ins><span class= "figno"><ins class="diff-new">
 1
 </ins></span></a><ins class="diff-new">
 ).
@@ -2932,11 +2935,11 @@ scope
 of
 this
 document.
-</ins><p></p></section><section id="requirements"><h2 id="x3-requirements"><span class="secno"><ins class="diff-new">
+</ins></section><section id="requirements"><h2 id="x3-requirements"><span class="secno"><ins class="diff-new">
 3.
 </ins></span>
 Requirements
-<a class="self-link" aria-label="§" href="#requirements">
+<a class="self-link" aria-label="§" href= "#requirements">
 </a>
 </h2>
 <section id="general">
@@ -2948,7 +2951,7 @@ Requirements
 </ins>
 </span>
 General
-<a class="self-link" aria-label="§" href="#general">
+<a class="self-link" aria-label="§" href= "#general">
 </a>
 </h3>
 <p>
@@ -3125,8 +3128,6 @@ and
 </ins>
 </li>
 </ul>
-<p>
-</p>
 </section>
 <section id="wot-threat-model">
 <h3 id="x3-2-threat-model">
@@ -3138,7 +3139,7 @@ and
 </span>
 Threat
 Model
-<a class="self-link" aria-label="§" href="#wot-threat-model">
+<a class="self-link" aria-label="§" href= "#wot-threat-model">
 </a>
 </h3>
 <p>
@@ -3305,9 +3306,9 @@ etc.
 </p>
 <section id="wot-threat-model-stakeholders">
 <h4 id="x3-2-1-wot-primary-stakeholders">
+<span class= "secno">
 <del class="diff-old">2.2.1
 </del>
-<span class="secno">
 <ins class="diff-chg">3.2.1
 </ins>
 </span>
@@ -3346,7 +3347,7 @@ cases
 </tr>
 <tr>
 <th>
-<dfn data-lt="device manufacturer|device manufacturers|manufacturer|oem" data-dfn-type="dfn" id="dfn-device-manufacturer">
+<dfn data-lt= "device manufacturer|device manufacturers|manufacturer|oem" data-dfn-type="dfn" id="dfn-device-manufacturer">
 Device
 Manufacturer
 </dfn>
@@ -3441,7 +3442,7 @@ requirements
 of
 <del class="diff-old">Thing
 </del>
-<a href="#dfn-system-user" class="internalDFN" data-link-type="dfn">
+<a href="#dfn-system-user" class="internalDFN" data-link-type= "dfn">
 <ins class="diff-chg">System
 </ins>
 users
@@ -3449,7 +3450,7 @@ users
 and
 <del class="diff-old">Thing
 </del>
-<a href="#dfn-system-provider" class="internalDFN" data-link-type="dfn">
+<a href="#dfn-system-provider" class= "internalDFN" data-link-type="dfn">
 <ins class="diff-chg">System
 </ins>
 providers
@@ -3470,12 +3471,12 @@ sales.
 <th>
 <del class="diff-old">Thing
 </del>
-<dfn data-lt="system provider|system providers" data-dfn-type="dfn" id="dfn-system-provider">
+<dfn data-lt="system provider|system providers" data-dfn-type= "dfn" id="dfn-system-provider">
 <ins class="diff-chg">System
 </ins>
 Provider
 </dfn>
-<br>
+<br />
 or
 <del class="diff-old">Thing
 </del>
@@ -3484,9 +3485,9 @@ or
 </ins>
 Integrator
 </dfn>
-<br>
+<br />
 <ins class="diff-new">or
-</ins><dfn data-lt="system installer|system installers" data-dfn-type="dfn" id="dfn-system-installer"><ins class="diff-new">
+</ins><dfn data-lt="system installer|system installers" data-dfn-type= "dfn" id="dfn-system-installer"><ins class="diff-new">
 System
 Installer
 </ins></dfn>
@@ -3495,7 +3496,7 @@ Installer
 Uses
 devices
 from
-<a href="#dfn-device-manufacturer" class="internalDFN" data-link-type="dfn">
+<a href="#dfn-device-manufacturer" class= "internalDFN" data-link-type="dfn">
 OEM
 </a>
 s
@@ -3512,7 +3513,7 @@ WoT
 use
 case(s).
 An
-<a href="#dfn-device-manufacturer" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-device-manufacturer" class="internalDFN" data-link-type= "dfn">
 OEM
 </a>
 might
@@ -3542,7 +3543,7 @@ by
 <ins class="diff-chg">other
 entities
 (
-</ins><a href="#dfn-device-manufacturer" class="internalDFN" data-link-type="dfn">
+</ins><a href="#dfn-device-manufacturer" class= "internalDFN" data-link-type="dfn">
 OEM
 </a>
 <del class="diff-old">s.
@@ -3755,7 +3756,7 @@ identification.
 <th>
 <del class="diff-old">Thing
 </del>
-<dfn data-lt="system user|system users" data-dfn-type="dfn" id="dfn-system-user">
+<dfn data-lt="system user|system users" data-dfn-type="dfn" id= "dfn-system-user">
 <ins class="diff-chg">System
 </ins>
 User
@@ -3913,7 +3914,7 @@ provider
 </del>
 <ins class="diff-chg">System
 User,
-</ins><a href="#dfn-system-provider" class="internalDFN" data-link-type="dfn"><ins class="diff-chg">
+</ins><a href="#dfn-system-provider" class="internalDFN" data-link-type= "dfn"><ins class="diff-chg">
 System
 Provider
 </ins>
@@ -4230,7 +4231,7 @@ Provider
 or
 <del class="diff-old">Thing
 </del>
-<a href="#dfn-system-user" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-system-user" class="internalDFN" data-link-type="dfn">
 <ins class="diff-chg">System
 </ins>
 User
@@ -4331,23 +4332,12 @@ separate
 role.
 Editor's
 note
-</del>
-<ins class="diff-chg">the
-data
-of
-other
-stakeholders.
-</ins></td><td>
-<del class="diff-old">:
+:
 Are
 there
 additional
 roles?
-</del>
-</td>
-</tr>
-</tbody>
-<del class="diff-old">Are
+Are
 there
 any
 additional
@@ -4370,8 +4360,9 @@ Security
 Owner
 mentioned
 in
+</del>
 the
-previous
+<del class="diff-old">previous
 section
 a
 role
@@ -4389,7 +4380,11 @@ System
 Maintainer
 ?
 </del>
-</table>
+<ins class="diff-chg">data
+of
+other
+stakeholders.
+</ins></td><td></td></tr></tbody></table>
 </section>
 <section id="wot-threat-model-assets">
 <h4 id="x3-2-2-assets">
@@ -4400,7 +4395,7 @@ Maintainer
 </ins>
 </span>
 Assets
-<a class="self-link" aria-label="§" href="#wot-threat-model-assets">
+<a class="self-link" aria-label="§" href= "#wot-threat-model-assets">
 </a>
 </h4>
 <p>
@@ -4435,7 +4430,7 @@ Who
 should
 have
 access
-<br>
+<br />
 (Trust
 Model)
 </th>
@@ -4533,7 +4528,7 @@ TD
 owner:
 full
 access
-<br>
+<br />
 Others:
 read
 only
@@ -4560,7 +4555,7 @@ updates.
 <th>
 <del class="diff-old">Thing
 </del>
-<dfn data-lt="system user data|system user data" data-dfn-type="dfn" id="dfn-system-user-data">
+<dfn data-lt="system user data|system user data" data-dfn-type= "dfn" id="dfn-system-user-data">
 <ins class="diff-chg">System
 </ins>
 User
@@ -4730,7 +4725,7 @@ need
 to
 include
 RBAC.
-<br>
+<br />
 Others:
 should
 have
@@ -4764,7 +4759,7 @@ in-transfer
 <th>
 <del class="diff-old">Thing
 </del>
-<dfn data-lt="system provider scripts|system provider script|system provider data" data-dfn-type="dfn" id="dfn-system-provider-scripts">
+<dfn data-lt= "system provider scripts|system provider script|system provider data" data-dfn-type="dfn" id="dfn-system-provider-scripts">
 <ins class="diff-chg">System
 </ins>
 Provider
@@ -4791,7 +4786,7 @@ by
 a
 <del class="diff-old">Thing
 </del>
-<a href="#dfn-system-provider" class="internalDFN" data-link-type="dfn">
+<a href="#dfn-system-provider" class= "internalDFN" data-link-type="dfn">
 <ins class="diff-chg">System
 </ins>
 Provider
@@ -4828,7 +4823,7 @@ WoT
 Runtime.
 <del class="diff-old">Thing
 </del>
-<a href="#dfn-system-provider" class="internalDFN" data-link-type="dfn">
+<a href="#dfn-system-provider" class= "internalDFN" data-link-type="dfn">
 <ins class="diff-chg">System
 </ins>
 providers
@@ -4912,7 +4907,7 @@ Provider
 </a>:
 full
 access
-<br>
+<br />
 Others:
 no
 access
@@ -4943,9 +4938,9 @@ WoT
 Thing
 Resources
 </dfn>
-<br>
+<br />
 and
-<dfn data-lt="wot infrastructure resource|wot infrastructure resources" data-dfn-type="dfn" id="dfn-wot-infrastructure-resource">
+<dfn data-lt= "wot infrastructure resource|wot infrastructure resources" data-dfn-type="dfn" id="dfn-wot-infrastructure-resource">
 WoT
 Infrastructure
 Resources
@@ -4969,7 +4964,7 @@ required.
 <td>
 <del class="diff-old">Thing
 </del>
-<a href="#dfn-system-user" class="internalDFN" data-link-type="dfn">
+<a href="#dfn-system-user" class="internalDFN" data-link-type= "dfn">
 <ins class="diff-chg">System
 </ins>
 User
@@ -4977,7 +4972,7 @@ User
 <del class="diff-old">Thing
 provider
 </del>
-<a href="#dfn-system-provider" class="internalDFN" data-link-type="dfn">
+<a href="#dfn-system-provider" class= "internalDFN" data-link-type="dfn">
 <ins class="diff-chg">System
 Provider
 </ins>
@@ -4990,7 +4985,7 @@ Interface
 </tr>
 <tr>
 <th>
-<dfn data-dfn-type="dfn" id="dfn-wot-controlled-environment">
+<dfn data-dfn-type="dfn" id= "dfn-wot-controlled-environment">
 WoT
 Controlled
 Environment
@@ -5042,7 +5037,7 @@ risk.
 <td>
 <del class="diff-old">Thing
 </del>
-<a href="#dfn-system-user" class="internalDFN" data-link-type="dfn">
+<a href="#dfn-system-user" class="internalDFN" data-link-type= "dfn">
 <ins class="diff-chg">System
 </ins>
 User
@@ -5050,7 +5045,7 @@ User
 <del class="diff-old">Thing
 provider
 </del>
-<a href="#dfn-system-provider" class="internalDFN" data-link-type="dfn">
+<a href="#dfn-system-provider" class= "internalDFN" data-link-type="dfn">
 <ins class="diff-chg">System
 Provider
 </ins>
@@ -5147,7 +5142,7 @@ Interface
 </tr>
 <tr>
 <th>
-<dfn data-dfn-type="dfn" id="dfn-wot-basic-security-metadata">
+<dfn data-dfn-type="dfn" id= "dfn-wot-basic-security-metadata">
 WoT
 Basic
 Security
@@ -5290,7 +5285,7 @@ to
 either
 <del class="diff-old">Thing
 </del>
-<a href="#dfn-system-user-data" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-system-user-data" class="internalDFN" data-link-type= "dfn">
 <ins class="diff-chg">System
 </ins>
 User
@@ -5299,7 +5294,7 @@ Data
 or
 <del class="diff-old">Thing
 </del>
-<a href="#dfn-system-provider-scripts" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-system-provider-scripts" class="internalDFN" data-link-type= "dfn">
 <ins class="diff-chg">System
 </ins>
 Provider
@@ -5403,7 +5398,7 @@ Who
 should
 have
 access?
-<br>
+<br />
 (Trust
 Model)
 </th>
@@ -5414,7 +5409,7 @@ Points
 </tr>
 <tr>
 <th>
-<dfn data-dfn-type="dfn" id="dfn-wot-script-security-metadata">
+<dfn data-dfn-type="dfn" id= "dfn-wot-script-security-metadata">
 WoT
 <del class="diff-old">Scripts
 </del>
@@ -5438,7 +5433,7 @@ and
 other
 <del class="diff-old">Thing
 </del>
-<a href="#dfn-system-provider-scripts" class="internalDFN" data-link-type="dfn">
+<a href="#dfn-system-provider-scripts" class= "internalDFN" data-link-type="dfn">
 <ins class="diff-chg">System
 </ins>
 Provider
@@ -5460,7 +5455,7 @@ runtime.
 </ins>
 Provider
 </a>,
-<a href="#dfn-system-maintainer" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-system-maintainer" class="internalDFN" data-link-type= "dfn">
 System
 Maintainer
 </a>
@@ -5487,7 +5482,7 @@ independent
 <del class="diff-old">Thing
 providers
 </del>
-<a href="#dfn-system-provider" class="internalDFN" data-link-type="dfn">
+<a href="#dfn-system-provider" class="internalDFN" data-link-type= "dfn">
 <ins class="diff-chg">System
 Providers
 </ins>
@@ -5518,7 +5513,7 @@ Who
 should
 have
 access?
-<br>
+<br />
 (Trust
 Model)
 </th>
@@ -5529,7 +5524,7 @@ Points
 </tr>
 <tr>
 <th>
-<dfn data-dfn-type="dfn" id="dfn-wot-runtime-isolation-policies">
+<dfn data-dfn-type="dfn" id= "dfn-wot-runtime-isolation-policies">
 WoT
 Runtime
 Isolation
@@ -5599,7 +5594,7 @@ needed.
 </ins>
 Provider
 </a>,
-<a href="#dfn-system-maintainer" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-system-maintainer" class="internalDFN" data-link-type= "dfn">
 System
 Maintainer
 </a>
@@ -5642,7 +5637,7 @@ updates
 </ins>
 </span>
 Adversaries
-<a class="self-link" aria-label="§" href="#wot-threat-adversaries">
+<a class="self-link" aria-label="§" href= "#wot-threat-adversaries">
 </a>
 </h4>
 <p>
@@ -5775,7 +5770,7 @@ traffic.
 </tr>
 <tr>
 <th>
-<dfn data-lt="malicious authorized solution user|malicious authorized solution users|malicious authorized users|malicious authorized user" data-dfn-type="dfn" id="dfn-malicious-authorized-solution-user">
+<dfn data-lt= "malicious authorized solution user|malicious authorized solution users|malicious authorized users|malicious authorized user" data-dfn-type="dfn" id= "dfn-malicious-authorized-solution-user">
 Malicious
 Authorized
 User
@@ -5821,7 +5816,7 @@ originally
 intended
 <ins class="diff-new">by
 the
-</ins><a href="#dfn-system-owner" class="internalDFN" data-link-type="dfn"><ins class="diff-new">
+</ins><a href="#dfn-system-owner" class="internalDFN" data-link-type= "dfn"><ins class="diff-new">
 System
 Owner
 </ins></a>
@@ -5858,7 +5853,7 @@ interface,
 </tr>
 <tr>
 <th>
-<dfn data-lt="malicious unauthorized solution user|malicious unauthorized solution users|malicious unauthorized users|malicious unauthorized user" data-dfn-type="dfn" id="dfn-malicious-unauthorized-solution-user">
+<dfn data-lt= "malicious unauthorized solution user|malicious unauthorized solution users|malicious unauthorized users|malicious unauthorized user" data-dfn-type="dfn" id= "dfn-malicious-unauthorized-solution-user">
 Malicious
 Unauthorized
 User
@@ -5992,14 +5987,14 @@ refer
 to
 either
 a
-<a href="#dfn-malicious-authorized-solution-user" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-malicious-authorized-solution-user" class="internalDFN" data-link-type="dfn">
 Malicious
 Authorized
 User
 </a>
 or
 a
-<a href="#dfn-malicious-unauthorized-solution-user" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-malicious-unauthorized-solution-user" class="internalDFN" data-link-type="dfn">
 Malicious
 Unauthorized
 User
@@ -6051,7 +6046,7 @@ Type
 </tr>
 <tr>
 <th>
-<dfn data-dfn-type="dfn" id="dfn-malicious-system-provider">
+<dfn data-dfn-type="dfn" id= "dfn-malicious-system-provider">
 Malicious
 <del class="diff-old">Thing
 </del>
@@ -6070,7 +6065,7 @@ modify
 other
 <del class="diff-old">Thing
 </del>
-<a href="#dfn-system-provider-scripts" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-system-provider-scripts" class="internalDFN" data-link-type= "dfn">
 <ins class="diff-chg">System
 </ins>
 Provider
@@ -6083,7 +6078,7 @@ or
 modify
 <del class="diff-old">Thing
 </del>
-<a href="#dfn-system-user-data" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-system-user-data" class="internalDFN" data-link-type= "dfn">
 <ins class="diff-chg">System
 </ins>
 User
@@ -6100,7 +6095,7 @@ software
 adversary:
 <del class="diff-old">Thing
 </del>
-<a href="#dfn-system-provider-scripts" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-system-provider-scripts" class="internalDFN" data-link-type= "dfn">
 <ins class="diff-chg">System
 </ins>
 provider
@@ -6235,7 +6230,7 @@ access
 </tr>
 <tr>
 <th>
-<dfn data-dfn-type="dfn" id="dfn-careless-system-provider">
+<dfn data-dfn-type="dfn" id= "dfn-careless-system-provider">
 Careless
 <del class="diff-old">Thing
 </del>
@@ -6279,7 +6274,7 @@ access
 </tr>
 <tr>
 <th>
-<dfn data-dfn-type="dfn" id="dfn-non-wot-end-point-attacker">
+<dfn data-dfn-type="dfn" id= "dfn-non-wot-end-point-attacker">
 Non-WoT
 End
 Point
@@ -6328,7 +6323,7 @@ attack
 </span>
 Attack
 Surfaces
-<a class="self-link" aria-label="§" href="#wot-threat-model-attack-surfaces">
+<a class="self-link" aria-label="§" href= "#wot-threat-model-attack-surfaces">
 </a>
 </h4>
 <p>
@@ -6383,9 +6378,9 @@ of
 is
 presented
 in
-</ins><a href="#wot-security-fig-attack-surfaces" class="fig-ref" title="WoT High-Level Architecture Security View"><ins class="diff-chg">
+</ins><a href= "#wot-security-fig-attack-surfaces" class="fig-ref" title= "WoT High-Level Architecture Security View"><ins class="diff-chg">
 Figure
-</ins><span class="figno"><ins class="diff-chg">
+</ins><span class= "figno"><ins class="diff-chg">
 2
 </ins></span></a>,
 showing
@@ -6414,7 +6409,7 @@ device
 implementation.
 </p>
 <figure id="wot-security-fig-attack-surfaces">
-<img src="images/WoTArchSecurityView.png" title="WoT High-Level Architecture Security View" width="100%">
+<img src= "images/WoTArchSecurityView.png" title= "WoT High-Level Architecture Security View" width="100%" />
 <figcaption>
 Figure
 <span class="figno">
@@ -6423,7 +6418,7 @@ Figure
 <ins class="diff-chg">2
 </ins>
 </span>
-<span class="fig-title">
+<span class= "fig-title">
 WoT
 High-Level
 Architecture
@@ -6457,7 +6452,7 @@ Notes
 </tr>
 <tr>
 <th>
-<dfn data-dfn-type="dfn" id="dfn-script-execution-boundary">
+<dfn data-dfn-type="dfn" id= "dfn-script-execution-boundary">
 Script
 Execution
 Boundary
@@ -6538,7 +6533,7 @@ remotely
 </tr>
 <tr>
 <th>
-<dfn data-dfn-type="dfn" id="dfn-wot-runtime-instance-execution-boundary">
+<dfn data-dfn-type="dfn" id= "dfn-wot-runtime-instance-execution-boundary">
 WoT
 Runtime
 Instance
@@ -6613,7 +6608,7 @@ have
 different
 <del class="diff-old">Thing
 </del>
-<a href="#dfn-system-provider" class="internalDFN" data-link-type="dfn">
+<a href="#dfn-system-provider" class="internalDFN" data-link-type= "dfn">
 <ins class="diff-chg">System
 </ins>
 Providers
@@ -6749,7 +6744,7 @@ compromised
 </tr>
 <tr>
 <th>
-<dfn data-dfn-type="dfn" id="dfn-wot-runtime-and-protocol-bindings-execution-boundaries">
+<dfn data-dfn-type="dfn" id= "dfn-wot-runtime-and-protocol-bindings-execution-boundaries">
 WoT
 Runtime
 and
@@ -6897,22 +6892,22 @@ TDs
 User
 Data
 </a>,
-<a href="#dfn-thing-resource" class="internalDFN" data-link-type="dfn">
+<a href="#dfn-thing-resource" class="internalDFN" data-link-type= "dfn">
 WoT
 Thing
 Resources
 </a>,
-<a href="#dfn-wot-infrastructure-resource" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-wot-infrastructure-resource" class="internalDFN" data-link-type="dfn">
 WoT
 Infrastructure
 Resources
 </a>,
-<a href="#dfn-wot-controlled-environment" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-wot-controlled-environment" class="internalDFN" data-link-type="dfn">
 WoT
 Controlled
 Environment
 </a>,
-<a href="#dfn-wot-behavior-metrics" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-wot-behavior-metrics" class="internalDFN" data-link-type= "dfn">
 WoT
 Behavior
 Metrics
@@ -6958,7 +6953,7 @@ Service
 User
 Data
 </a>,
-<a href="#dfn-thing-resource" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-thing-resource" class="internalDFN" data-link-type="dfn">
 WoT
 Thing
 Resources
@@ -6968,7 +6963,7 @@ WoT
 Infrastructure
 Resources
 </a>,
-<a href="#dfn-wot-controlled-environment" class="internalDFN" data-link-type="dfn">
+<a href="#dfn-wot-controlled-environment" class= "internalDFN" data-link-type="dfn">
 WoT
 Controlled
 Environment
@@ -7022,7 +7017,7 @@ different
 <del class="diff-old">Thing
 providers
 </del>
-<a href="#dfn-system-provider" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-system-provider" class="internalDFN" data-link-type= "dfn">
 <ins class="diff-chg">System
 Providers
 </ins></a>
@@ -7089,17 +7084,17 @@ TDs
 User
 Data
 </a>,
-<a href="#dfn-thing-resource" class="internalDFN" data-link-type="dfn">
+<a href="#dfn-thing-resource" class="internalDFN" data-link-type= "dfn">
 WoT
 Thing
 Resources
 </a>,
-<a href="#dfn-wot-infrastructure-resource" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-wot-infrastructure-resource" class="internalDFN" data-link-type="dfn">
 WoT
 Infrastructure
 Resources
 </a>,
-<a href="#dfn-wot-controlled-environment" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-wot-controlled-environment" class="internalDFN" data-link-type="dfn">
 WoT
 Controlled
 Environment
@@ -7127,7 +7122,7 @@ method.
 </tr>
 <tr>
 <td>
-<a href="#dfn-wot-runtime-instance-execution-boundary" class="internalDFN" data-link-type="dfn">
+<a href="#dfn-wot-runtime-instance-execution-boundary" class= "internalDFN" data-link-type="dfn">
 WoT
 Runtime
 Instance
@@ -7173,17 +7168,17 @@ TDs
 User
 Data
 </a>,
-<a href="#dfn-thing-resource" class="internalDFN" data-link-type="dfn">
+<a href="#dfn-thing-resource" class="internalDFN" data-link-type= "dfn">
 WoT
 Thing
 Resources
 </a>,
-<a href="#dfn-wot-infrastructure-resource" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-wot-infrastructure-resource" class="internalDFN" data-link-type="dfn">
 WoT
 Infrastructure
 Resources
 </a>,
-<a href="#dfn-wot-controlled-environment" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-wot-controlled-environment" class="internalDFN" data-link-type="dfn">
 WoT
 Controlled
 Environment
@@ -7282,7 +7277,7 @@ Scripts
 of
 <del class="diff-old">Thing
 </del>
-<a href="#dfn-system-provider-scripts" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-system-provider-scripts" class="internalDFN" data-link-type= "dfn">
 <ins class="diff-chg">System
 </ins>
 Provider
@@ -7300,14 +7295,14 @@ attack
 </td>
 </tr>
 </tbody>
+</table>
 <del class="diff-old">Editor's
 note
 :
 Untrusted
 Protocol
 Bindings
-</del>
-<del class="diff-old">Another
+Another
 additional
 set
 of
@@ -7326,7 +7321,6 @@ can
 be
 untrusted.
 </del>
-</table>
 <p>
 The
 following
@@ -7519,7 +7513,7 @@ their
 interaction
 protocol.
 However,
-</ins><a href="#sec-pract-things-directory" class="sec-ref"><span class="secno"><ins class="diff-new">
+</ins><a href= "#sec-pract-things-directory" class="sec-ref"><span class= "secno"><ins class="diff-new">
 6.4
 </ins></span><span class="sec-title"><ins class="diff-new">
 Secure
@@ -7644,7 +7638,7 @@ of
 DoS
 attack
 on
-</ins><a href="#dfn-thing-resource" class="internalDFN" data-link-type="dfn"><ins class="diff-chg">
+</ins><a href="#dfn-thing-resource" class= "internalDFN" data-link-type="dfn"><ins class="diff-chg">
 WoT
 Thing
 Resources
@@ -7819,7 +7813,7 @@ Runtime.
 </ins>
 </span>
 Threats
-<a class="self-link" aria-label="§" href="#wot-threat-model-threats">
+<a class="self-link" aria-label="§" href= "#wot-threat-model-threats">
 </a>
 </h4>
 <p>
@@ -7944,15 +7938,9 @@ and
 cannot
 <del class="diff-old">come
 from
-</del>
-<ins class="diff-chg">be
-installed
-by
-</ins>
 untrusted
 parties.
-</p>
-<del class="diff-old">Editor's
+Editor's
 note
 :
 Protocol
@@ -7961,16 +7949,16 @@ as
 Thing
 Provider
 Data
-</del>
-<del class="diff-old">We
+We
 should
 discuss
 whether
 Protocol
 Bindings
 should
+</del>
 be
-considered
+<del class="diff-old">considered
 part
 of
 Thing
@@ -8024,10 +8012,17 @@ the
 basic
 configuration
 provided
+</del>
+<ins class="diff-chg">installed
+</ins>
 by
-the
+<del class="diff-old">the
 OEM.
 </del>
+<ins class="diff-chg">untrusted
+parties.
+</ins>
+</p>
 <table>
 <tbody>
 <tr>
@@ -8047,6 +8042,8 @@ and
 pre-conditions
 </th>
 </tr>
+<tr>
+<th>
 <del class="diff-old">Non-WoT
 End
 Point
@@ -8172,9 +8169,7 @@ WoT
 Infrastructure
 Resources
 </del>
-<tr>
-<th>
-<dfn data-dfn-type="dfn" id="dfn-wot-protocol-binding-threat">
+<dfn data-dfn-type="dfn" id= "dfn-wot-protocol-binding-threat">
 WoT
 Protocol
 Binding
@@ -8186,11 +8181,11 @@ Threat
 Network
 Attacker
 </a>,
-<a href="#dfn-malware-developer" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-malware-developer" class="internalDFN" data-link-type= "dfn">
 Malware
 Developer
 </a>,
-<a href="#dfn-malicious-users" class="internalDFN" data-link-type="dfn">
+<a href="#dfn-malicious-users" class= "internalDFN" data-link-type="dfn">
 Malicious
 Users
 </a>
@@ -8229,7 +8224,7 @@ Interface.
 In
 case
 of
-<a href="#dfn-malicious-authorized-solution-user" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-malicious-authorized-solution-user" class="internalDFN" data-link-type="dfn">
 Malicious
 Authorized
 Solution
@@ -8257,7 +8252,7 @@ interface
 (smartphone,
 tablet
 etc.)
-<br>
+<br />
 <strong>
 Attack
 method:
@@ -8294,7 +8289,7 @@ assets
 </tr>
 <tr>
 <th>
-<dfn data-dfn-type="dfn" id="dfn-wot-interface-threat-thing-instance-compromise">
+<dfn data-dfn-type="dfn" id= "dfn-wot-interface-threat-thing-instance-compromise">
 WoT
 Interface
 Threat
@@ -8309,11 +8304,11 @@ Compromise
 Network
 Attacker
 </a>,
-<a href="#dfn-malware-developer" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-malware-developer" class="internalDFN" data-link-type= "dfn">
 Malware
 Developer
 </a>,
-<a href="#dfn-malicious-users" class="internalDFN" data-link-type="dfn">
+<a href="#dfn-malicious-users" class= "internalDFN" data-link-type="dfn">
 Malicious
 Users
 </a>
@@ -8336,7 +8331,7 @@ Pre-conditions:
 Same
 as
 for
-<a href="#dfn-wot-protocol-binding-threat" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-wot-protocol-binding-threat" class="internalDFN" data-link-type="dfn">
 WoT
 Protocol
 Binding
@@ -8349,7 +8344,7 @@ method
 Same
 as
 for
-<a href="#dfn-wot-protocol-binding-threat" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-wot-protocol-binding-threat" class="internalDFN" data-link-type="dfn">
 WoT
 Protocol
 Binding
@@ -8367,7 +8362,7 @@ instance.
 </tr>
 <tr>
 <th>
-<dfn data-dfn-type="dfn" id="dfn-wot-interface-threat-unauthorized-wot-interface-access">
+<dfn data-dfn-type="dfn" id= "dfn-wot-interface-threat-unauthorized-wot-interface-access">
 WoT
 Interface
 Threat
@@ -8383,16 +8378,16 @@ Access
 Network
 Attacker
 </a>,
-<a href="#dfn-malware-developer" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-malware-developer" class="internalDFN" data-link-type= "dfn">
 Malware
 Developer
 </a>,
-<a href="#dfn-malicious-unauthorized-solution-user" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-malicious-unauthorized-solution-user" class="internalDFN" data-link-type="dfn">
 Malicious
 Unauthorized
 Users
 </a>,
-<a href="#dfn-malicious-system-provider" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-malicious-system-provider" class="internalDFN" data-link-type="dfn">
 Malicious
 <del class="diff-old">Thing
 </del>
@@ -8410,14 +8405,14 @@ via
 </ins>
 WoT
 Interface:
-<a href="#dfn-wot-controlled-environment" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-wot-controlled-environment" class="internalDFN" data-link-type="dfn">
 WoT
 controlled
 environment
 </a>,
 <del class="diff-old">Thing
 </del>
-<a href="#dfn-system-user-data" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-system-user-data" class="internalDFN" data-link-type= "dfn">
 <ins class="diff-chg">System
 </ins>
 user
@@ -8426,7 +8421,7 @@ data
 non-public
 parts
 of
-<a href="#dfn-thing-descriptions" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-thing-descriptions" class="internalDFN" data-link-type= "dfn">
 TDs
 </a>,
 etc.
@@ -8447,7 +8442,7 @@ to
 </ins>
 WoT
 Interface
-<br>
+<br />
 <strong>
 Attack
 method:
@@ -8474,6 +8469,8 @@ WoT
 asset
 </td>
 </tr>
+<tr>
+<th>
 <del class="diff-old">WoT
 TD
 Threat
@@ -8482,8 +8479,7 @@ Local
 Storage
 Malware
 Developer
-</del>
-<del class="diff-old">TDs
+TDs
 authenticity
 Attack
 method:
@@ -8511,8 +8507,6 @@ version
 of
 TD
 </del>
-<tr>
-<th>
 <dfn data-dfn-type="dfn" id="dfn-wot-dos-threat">
 WoT
 DoS
@@ -8524,11 +8518,11 @@ Threat
 Network
 Attacker
 </a>,
-<a href="#dfn-malware-developer" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-malware-developer" class="internalDFN" data-link-type= "dfn">
 Malware
 Developer
 </a>,
-<a href="#dfn-malicious-users" class="internalDFN" data-link-type="dfn">
+<a href="#dfn-malicious-users" class= "internalDFN" data-link-type="dfn">
 Malicious
 Users
 </a>
@@ -8539,7 +8533,7 @@ WoT
 Thing
 Resources
 </a>,
-<a href="#dfn-wot-infrastructure-resource" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-wot-infrastructure-resource" class="internalDFN" data-link-type="dfn">
 WoT
 Infrastructure
 Resources
@@ -8565,7 +8559,7 @@ to
 </ins>
 WoT
 Interface
-<br>
+<br />
 <strong>
 Attack
 method:
@@ -8631,7 +8625,7 @@ messages
 </tr>
 <tr>
 <th>
-<dfn data-dfn-type="dfn" id="dfn-wot-communication-threat-td-authenticity">
+<dfn data-dfn-type="dfn" id= "dfn-wot-communication-threat-td-authenticity">
 WoT
 Communication
 Threat
@@ -8645,15 +8639,15 @@ Authenticity
 Network
 Attacker
 </a>,
-<a href="#dfn-malware-developer" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-malware-developer" class="internalDFN" data-link-type= "dfn">
 Malware
 Developer
 </a>,
-<a href="#dfn-malicious-users" class="internalDFN" data-link-type="dfn">
+<a href="#dfn-malicious-users" class= "internalDFN" data-link-type="dfn">
 Malicious
 Users
 </a>,
-<a href="#dfn-malicious-system-provider" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-malicious-system-provider" class="internalDFN" data-link-type="dfn">
 Malicious
 <del class="diff-old">Thing
 </del>
@@ -8685,7 +8679,7 @@ to
 </ins>
 WoT
 Interface
-<br>
+<br />
 <strong>
 Attack
 method:
@@ -8694,11 +8688,12 @@ Any
 attack
 method
 on
+<ins class="diff-new">a
+</ins>
+<a href= "#dfn-thing-descriptions" class="internalDFN" data-link-type= "dfn">
 <del class="diff-old">TDs
 </del>
-<ins class="diff-chg">a
-</ins><a href="#dfn-thing-descriptions" class="internalDFN" data-link-type="dfn"><ins class="diff-chg">
-TD
+<ins class="diff-chg">TD
 </ins>
 </a>
 in-transfer
@@ -8719,14 +8714,15 @@ of
 <del class="diff-old">a
 </del>
 <ins class="diff-chg">that
-</ins><a href="#dfn-thing-descriptions" class="internalDFN" data-link-type="dfn">
+</ins>
+<a href= "#dfn-thing-descriptions" class="internalDFN" data-link-type= "dfn">
 TD
 </a>
 </td>
 </tr>
 <tr>
 <th>
-<dfn data-dfn-type="dfn" id="dfn-wot-communication-threat-td-confidentiality-and-privacy">
+<dfn data-dfn-type="dfn" id= "dfn-wot-communication-threat-td-confidentiality-and-privacy">
 WoT
 Communication
 Threat
@@ -8745,15 +8741,15 @@ Privacy
 Network
 Attacker
 </a>,
-<a href="#dfn-malware-developer" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-malware-developer" class="internalDFN" data-link-type= "dfn">
 Malware
 Developer
 </a>,
-<a href="#dfn-malicious-users" class="internalDFN" data-link-type="dfn">
+<a href="#dfn-malicious-users" class= "internalDFN" data-link-type="dfn">
 Malicious
 Users
 </a>,
-<a href="#dfn-malicious-system-provider" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-malicious-system-provider" class="internalDFN" data-link-type="dfn">
 Malicious
 <del class="diff-old">Thing
 </del>
@@ -8768,7 +8764,7 @@ and
 privacy-sensitive
 parts
 of
-<a href="#dfn-thing-descriptions" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-thing-descriptions" class="internalDFN" data-link-type= "dfn">
 TDs
 </a>
 in-transfer
@@ -8791,7 +8787,7 @@ to
 </ins>
 WoT
 Interface
-<br>
+<br />
 <strong>
 Attack
 method:
@@ -8829,7 +8825,7 @@ in-transfer
 </tr>
 <tr>
 <th>
-<dfn data-dfn-type="dfn" id="dfn-wot-communication-threat-system-user-data-authenticity">
+<dfn data-dfn-type="dfn" id= "dfn-wot-communication-threat-system-user-data-authenticity">
 WoT
 Communication
 Threat
@@ -8848,15 +8844,15 @@ Authenticity
 Network
 Attacker
 </a>,
-<a href="#dfn-malware-developer" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-malware-developer" class="internalDFN" data-link-type= "dfn">
 Malware
 developer
 </a>,
-<a href="#dfn-malicious-users" class="internalDFN" data-link-type="dfn">
+<a href="#dfn-malicious-users" class= "internalDFN" data-link-type="dfn">
 Malicious
 Users
 </a>,
-<a href="#dfn-malicious-system-provider" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-malicious-system-provider" class="internalDFN" data-link-type="dfn">
 Malicious
 <del class="diff-old">Thing
 </del>
@@ -8895,7 +8891,7 @@ to
 </ins>
 WoT
 Interface
-<br>
+<br />
 <strong>
 Attack
 method:
@@ -8927,7 +8923,7 @@ replay
 </tr>
 <tr>
 <th>
-<dfn data-dfn-type="dfn" id="dfn-wot-communication-threat-system-user-data-confidentiality-and-privacy">
+<dfn data-dfn-type="dfn" id= "dfn-wot-communication-threat-system-user-data-confidentiality-and-privacy">
 WoT
 Communication
 Threat
@@ -8949,15 +8945,15 @@ Privacy
 Network
 Attacker
 </a>,
-<a href="#dfn-malware-developer" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-malware-developer" class="internalDFN" data-link-type= "dfn">
 Malware
 Developer
 </a>,
-<a href="#dfn-malicious-users" class="internalDFN" data-link-type="dfn">
+<a href="#dfn-malicious-users" class= "internalDFN" data-link-type="dfn">
 Malicious
 Users
 </a>,
-<a href="#dfn-malicious-system-provider" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-malicious-system-provider" class="internalDFN" data-link-type="dfn">
 Malicious
 <del class="diff-old">Thing
 </del>
@@ -8996,7 +8992,7 @@ to
 </ins>
 WoT
 Interface
-<br>
+<br />
 <strong>
 Attack
 method:
@@ -9019,7 +9015,7 @@ access
 </tr>
 <tr>
 <th>
-<dfn data-dfn-type="dfn" id="dfn-wot-communication-threat-side-channels">
+<dfn data-dfn-type="dfn" id= "dfn-wot-communication-threat-side-channels">
 WoT
 Communication
 Threat
@@ -9033,7 +9029,7 @@ Channels
 Network
 attacker
 </a>,
-<a href="#dfn-malicious-users" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-malicious-users" class="internalDFN" data-link-type= "dfn">
 Malicious
 users
 </a>,
@@ -9071,7 +9067,7 @@ to
 </ins>
 WoT
 Interface
-<br>
+<br />
 <strong>
 Attack
 method:
@@ -9102,9 +9098,7 @@ patterns
 Editor's
 note
 </span>
-<del class="diff-old">:
-</del>
-<span style="text-transform: none">:
+<span style= "text-transform: none">:
 Policy
 management
 threats
@@ -9217,7 +9211,7 @@ pre-conditions
 </tr>
 <tr>
 <th>
-<dfn data-dfn-type="dfn" id="dfn-wot-script-management-interface-threat-script-installation">
+<dfn data-dfn-type="dfn" id= "dfn-wot-script-management-interface-threat-script-installation">
 WoT
 Script
 Management
@@ -9233,11 +9227,11 @@ installation
 Network
 Attacker
 </a>,
-<a href="#dfn-malware-developer" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-malware-developer" class="internalDFN" data-link-type= "dfn">
 Malware
 Developer
 </a>,
-<a href="#dfn-malicious-users" class="internalDFN" data-link-type="dfn">
+<a href="#dfn-malicious-users" class= "internalDFN" data-link-type="dfn">
 Malicious
 Users
 </a>
@@ -9284,7 +9278,7 @@ Script
 <ins class="diff-chg">Management
 </ins>
 API
-<br>
+<br />
 <strong>
 Attack
 method:
@@ -9308,7 +9302,7 @@ Interface
 </tr>
 <tr>
 <th>
-<dfn data-dfn-type="dfn" id="dfn-wot-script-management-interface-threat-wot-runtime-compromise">
+<dfn data-dfn-type="dfn" id= "dfn-wot-script-management-interface-threat-wot-runtime-compromise">
 WoT
 Script
 Management
@@ -9325,11 +9319,11 @@ Compromise
 Network
 Attacker
 </a>,
-<a href="#dfn-malware-developer" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-malware-developer" class="internalDFN" data-link-type= "dfn">
 Malware
 Developer
 </a>,
-<a href="#dfn-malicious-users" class="internalDFN" data-link-type="dfn">
+<a href="#dfn-malicious-users" class= "internalDFN" data-link-type="dfn">
 Malicious
 Users
 </a>
@@ -9374,7 +9368,7 @@ Script
 <ins class="diff-chg">Management
 </ins>
 API
-<br>
+<br />
 <strong>
 Attack
 method:
@@ -9395,7 +9389,7 @@ Interface
 </tr>
 <tr>
 <th>
-<dfn data-dfn-type="dfn" id="dfn-wot-script-management-interface-threat-dos">
+<dfn data-dfn-type="dfn" id= "dfn-wot-script-management-interface-threat-dos">
 WoT
 Script
 Management
@@ -9410,11 +9404,11 @@ DoS
 Network
 Attacker
 </a>,
-<a href="#dfn-malware-developer" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-malware-developer" class="internalDFN" data-link-type= "dfn">
 Malware
 Developer
 </a>,
-<a href="#dfn-malicious-users" class="internalDFN" data-link-type="dfn">
+<a href="#dfn-malicious-users" class= "internalDFN" data-link-type="dfn">
 Malicious
 Users
 </a>
@@ -9425,7 +9419,7 @@ WoT
 Thing
 Resources
 </a>,
-<a href="#dfn-wot-infrastructure-resource" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-wot-infrastructure-resource" class="internalDFN" data-link-type="dfn">
 WoT
 Infrastructure
 Resources
@@ -9451,7 +9445,7 @@ Script
 <ins class="diff-chg">Management
 </ins>
 API
-<br>
+<br />
 <strong>
 Attack
 method:
@@ -9486,7 +9480,7 @@ scripts
 The
 general
 term
-<dfn data-dfn-type="dfn" id="dfn-wot-script-management-interface-threat">
+<dfn data-dfn-type="dfn" id= "dfn-wot-script-management-interface-threat">
 WoT
 Script
 Management
@@ -9503,7 +9497,7 @@ any
 or
 all
 of
-<a href="#dfn-wot-script-management-interface-threat-script-installation" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-wot-script-management-interface-threat-script-installation" class="internalDFN" data-link-type="dfn">
 WoT
 Script
 Management
@@ -9513,7 +9507,7 @@ Threat
 Script
 installation
 </a>,
-<a href="#dfn-wot-script-management-interface-threat-wot-runtime-compromise" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-wot-script-management-interface-threat-wot-runtime-compromise" class="internalDFN" data-link-type="dfn">
 WoT
 Script
 Management
@@ -9525,7 +9519,7 @@ Runtime
 Compromise
 </a>,
 or
-<a href="#dfn-wot-script-management-interface-threat-dos" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-wot-script-management-interface-threat-dos" class= "internalDFN" data-link-type="dfn">
 WoT
 Script
 Management
@@ -9548,7 +9542,7 @@ independent
 <del class="diff-old">thing
 providers
 </del>
-<a href="#dfn-system-provider" class="internalDFN" data-link-type="dfn">
+<a href="#dfn-system-provider" class="internalDFN" data-link-type= "dfn">
 <ins class="diff-chg">System
 Providers
 </ins></a>
@@ -9604,7 +9598,7 @@ pre-conditions
 </tr>
 <tr>
 <th>
-<dfn data-dfn-type="dfn" id="dfn-wot-untrusted-script-threat-script-compromise">
+<dfn data-dfn-type="dfn" id= "dfn-wot-untrusted-script-threat-script-compromise">
 WoT
 Untrusted
 Script
@@ -9623,11 +9617,11 @@ Malicious
 </ins>
 Provider
 </a>,
-<a href="#dfn-malware-developer" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-malware-developer" class="internalDFN" data-link-type= "dfn">
 Malware
 Developer
 </a>,
-<a href="#dfn-malicious-users" class="internalDFN" data-link-type="dfn">
+<a href="#dfn-malicious-users" class= "internalDFN" data-link-type="dfn">
 Malicious
 Users
 </a>
@@ -9714,7 +9708,7 @@ script
 by
 other
 means.
-<br>
+<br />
 <strong>
 Attack
 method:
@@ -9749,7 +9743,7 @@ it
 </tr>
 <tr>
 <th>
-<dfn data-dfn-type="dfn" id="dfn-wot-untrusted-script-threat-runtime-compromise">
+<dfn data-dfn-type="dfn" id= "dfn-wot-untrusted-script-threat-runtime-compromise">
 WoT
 Untrusted
 Script
@@ -9768,11 +9762,11 @@ Malicious
 </ins>
 Provider
 </a>,
-<a href="#dfn-malware-developer" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-malware-developer" class="internalDFN" data-link-type= "dfn">
 Malware
 Developer
 </a>,
-<a href="#dfn-malicious-users" class="internalDFN" data-link-type="dfn">
+<a href="#dfn-malicious-users" class= "internalDFN" data-link-type="dfn">
 Malicious
 Users
 </a>
@@ -9804,7 +9798,7 @@ Pre-conditions:
 Same
 as
 for
-<a href="#dfn-wot-untrusted-script-threat-script-compromise" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-wot-untrusted-script-threat-script-compromise" class= "internalDFN" data-link-type="dfn">
 WoT
 Untrusted
 Script
@@ -9813,7 +9807,7 @@ Threat
 Script
 Compromise
 </a>
-<br>
+<br />
 <strong>
 Attack
 method:
@@ -9841,7 +9835,7 @@ level
 </tr>
 <tr>
 <th>
-<dfn data-dfn-type="dfn" id="dfn-wot-untrusted-script-threat-confidentiality">
+<dfn data-dfn-type="dfn" id= "dfn-wot-untrusted-script-threat-confidentiality">
 WoT
 Untrusted
 Script
@@ -9859,11 +9853,11 @@ Malicious
 </ins>
 Provider
 </a>,
-<a href="#dfn-malware-developer" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-malware-developer" class="internalDFN" data-link-type= "dfn">
 Malware
 Developer
 </a>,
-<a href="#dfn-malicious-users" class="internalDFN" data-link-type="dfn">
+<a href="#dfn-malicious-users" class= "internalDFN" data-link-type="dfn">
 Malicious
 Users
 </a>
@@ -9896,7 +9890,7 @@ Pre-conditions:
 Same
 as
 for
-<a href="#dfn-wot-untrusted-script-threat-script-compromise" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-wot-untrusted-script-threat-script-compromise" class= "internalDFN" data-link-type="dfn">
 WoT
 Untrusted
 Script
@@ -9905,7 +9899,7 @@ Threat
 Script
 Compromise
 </a>
-<br>
+<br />
 <strong>
 Attack
 method:
@@ -9940,7 +9934,7 @@ configuration
 </tr>
 <tr>
 <th>
-<dfn data-dfn-type="dfn" id="dfn-wot-untrusted-script-threat-authenticity">
+<dfn data-dfn-type="dfn" id= "dfn-wot-untrusted-script-threat-authenticity">
 WoT
 Untrusted
 Script
@@ -9958,11 +9952,11 @@ Malicious
 </ins>
 Provider
 </a>,
-<a href="#dfn-malware-developer" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-malware-developer" class="internalDFN" data-link-type= "dfn">
 Malware
 Developer
 </a>,
-<a href="#dfn-malicious-users" class="internalDFN" data-link-type="dfn">
+<a href="#dfn-malicious-users" class= "internalDFN" data-link-type="dfn">
 Malicious
 Users
 </a>
@@ -9995,7 +9989,7 @@ Pre-conditions:
 Same
 as
 for
-<a href="#dfn-wot-untrusted-script-threat-script-compromise" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-wot-untrusted-script-threat-script-compromise" class= "internalDFN" data-link-type="dfn">
 WoT
 Untrusted
 Script
@@ -10004,7 +9998,7 @@ Threat
 Script
 Compromise
 </a>
-<br>
+<br />
 <strong>
 Attack
 method:
@@ -10057,7 +10051,7 @@ script
 </tr>
 <tr>
 <th>
-<dfn data-dfn-type="dfn" id="dfn-wot-untrusted-script-threat-td-confidentiality-and-privacy">
+<dfn data-dfn-type="dfn" id= "dfn-wot-untrusted-script-threat-td-confidentiality-and-privacy">
 WoT
 Untrusted
 Script
@@ -10081,11 +10075,11 @@ Malicious
 </ins>
 Provider
 </a>,
-<a href="#dfn-malware-developer" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-malware-developer" class="internalDFN" data-link-type= "dfn">
 Malware
 Developer
 </a>,
-<a href="#dfn-malicious-users" class="internalDFN" data-link-type="dfn">
+<a href="#dfn-malicious-users" class= "internalDFN" data-link-type="dfn">
 Malicious
 Users
 </a>
@@ -10120,7 +10114,7 @@ Pre-conditions:
 Same
 as
 for
-<a href="#dfn-wot-untrusted-script-threat-script-compromise" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-wot-untrusted-script-threat-script-compromise" class= "internalDFN" data-link-type="dfn">
 WoT
 Untrusted
 Script
@@ -10129,7 +10123,7 @@ Threat
 Script
 Compromise
 </a>
-<br>
+<br />
 <strong>
 Attack
 method:
@@ -10161,7 +10155,7 @@ to
 non-public
 parts
 of
-<a href="#dfn-thing-descriptions" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-thing-descriptions" class="internalDFN" data-link-type= "dfn">
 TDs
 </a>
 or
@@ -10169,14 +10163,14 @@ privacy
 sensitive
 parts
 of
-<a href="#dfn-thing-descriptions" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-thing-descriptions" class="internalDFN" data-link-type= "dfn">
 TDs
 </a>.
 </td>
 </tr>
 <tr>
 <th>
-<dfn data-dfn-type="dfn" id="dfn-wot-untrusted-script-threat-td-authenticity">
+<dfn data-dfn-type="dfn" id= "dfn-wot-untrusted-script-threat-td-authenticity">
 WoT
 Untrusted
 Script
@@ -10195,11 +10189,11 @@ Malicious
 </ins>
 Provider
 </a>,
-<a href="#dfn-malware-developer" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-malware-developer" class="internalDFN" data-link-type= "dfn">
 Malware
 Developer
 </a>,
-<a href="#dfn-malicious-users" class="internalDFN" data-link-type="dfn">
+<a href="#dfn-malicious-users" class= "internalDFN" data-link-type="dfn">
 Malicious
 Users
 </a>
@@ -10230,7 +10224,7 @@ Pre-conditions:
 Same
 as
 for
-<a href="#dfn-wot-untrusted-script-threat-script-compromise" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-wot-untrusted-script-threat-script-compromise" class= "internalDFN" data-link-type="dfn">
 WoT
 Untrusted
 Script
@@ -10239,7 +10233,7 @@ Threat
 Script
 Compromise
 </a>
-<br>
+<br />
 <strong>
 Attack
 method:
@@ -10268,12 +10262,11 @@ attacker
 unauthorized
 modification
 of
-<ins class="diff-new">a
-</ins>
-<a href="#dfn-thing-descriptions" class="internalDFN" data-link-type="dfn">
 <del class="diff-old">TDs
 </del>
-<ins class="diff-chg">TD
+<ins class="diff-chg">a
+</ins><a href= "#dfn-thing-descriptions" class="internalDFN" data-link-type= "dfn"><ins class="diff-chg">
+TD
 </ins>
 </a>,
 including
@@ -10291,7 +10284,7 @@ TD
 </tr>
 <tr>
 <th>
-<dfn data-dfn-type="dfn" id="dfn-wot-untrusted-script-threat-system-user-data-authenticity">
+<dfn data-dfn-type="dfn" id= "dfn-wot-untrusted-script-threat-system-user-data-authenticity">
 WoT
 Untrusted
 Script
@@ -10315,11 +10308,11 @@ Malicious
 </ins>
 Provider
 </a>,
-<a href="#dfn-malware-developer" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-malware-developer" class="internalDFN" data-link-type= "dfn">
 Malware
 Developer
 </a>,
-<a href="#dfn-malicious-users" class="internalDFN" data-link-type="dfn">
+<a href="#dfn-malicious-users" class= "internalDFN" data-link-type="dfn">
 Malicious
 Users
 </a>
@@ -10354,7 +10347,7 @@ Pre-conditions:
 Same
 as
 for
-<a href="#dfn-wot-untrusted-script-threat-script-compromise" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-wot-untrusted-script-threat-script-compromise" class= "internalDFN" data-link-type="dfn">
 WoT
 Untrusted
 Script
@@ -10363,7 +10356,7 @@ Threat
 Script
 Compromise
 </a>
-<br>
+<br />
 <strong>
 Attack
 method:
@@ -10396,7 +10389,7 @@ modify
 user
 data
 </del>
-<a href="#dfn-system-user-data" class="internalDFN" data-link-type="dfn">
+<a href="#dfn-system-user-data" class= "internalDFN" data-link-type="dfn">
 <ins class="diff-chg">System
 User
 Data
@@ -10413,7 +10406,7 @@ version
 </tr>
 <tr>
 <th>
-<dfn data-dfn-type="dfn" id="dfn-wot-untrusted-script-threat-system-user-data-confidentiality-and-privacy">
+<dfn data-dfn-type="dfn" id= "dfn-wot-untrusted-script-threat-system-user-data-confidentiality-and-privacy">
 WoT
 Untrusted
 Script
@@ -10440,11 +10433,11 @@ Malicious
 </ins>
 Provider
 </a>,
-<a href="#dfn-malware-developer" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-malware-developer" class="internalDFN" data-link-type= "dfn">
 Malware
 Developer
 </a>,
-<a href="#dfn-malicious-users" class="internalDFN" data-link-type="dfn">
+<a href="#dfn-malicious-users" class= "internalDFN" data-link-type="dfn">
 Malicious
 Users
 </a>
@@ -10481,7 +10474,7 @@ Pre-conditions:
 Same
 as
 for
-<a href="#dfn-wot-untrusted-script-threat-script-compromise" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-wot-untrusted-script-threat-script-compromise" class= "internalDFN" data-link-type="dfn">
 WoT
 Untrusted
 Script
@@ -10490,7 +10483,7 @@ Threat
 Script
 Compromise
 </a>
-<br>
+<br />
 <strong>
 Attack
 method:
@@ -10531,7 +10524,7 @@ Data
 </tr>
 <tr>
 <th>
-<dfn data-dfn-type="dfn" id="dfn-wot-untrusted-script-threat-dos">
+<dfn data-dfn-type="dfn" id= "dfn-wot-untrusted-script-threat-dos">
 WoT
 Untrusted
 Script
@@ -10549,11 +10542,11 @@ Malicious
 </ins>
 Provider
 </a>
-<a href="#dfn-malware-developer" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-malware-developer" class="internalDFN" data-link-type= "dfn">
 Malware
 Developer
 </a>,
-<a href="#dfn-malicious-users" class="internalDFN" data-link-type="dfn">
+<a href="#dfn-malicious-users" class= "internalDFN" data-link-type="dfn">
 Malicious
 Users
 </a>
@@ -10571,7 +10564,7 @@ WoT
 Thing
 Resources
 </a>,
-<a href="#dfn-wot-infrastructure-resource" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-wot-infrastructure-resource" class="internalDFN" data-link-type="dfn">
 WoT
 Infrastructure
 Resources
@@ -10580,7 +10573,7 @@ of
 another
 <del class="diff-old">thing
 </del>
-<a href="#dfn-system-provider" class="internalDFN" data-link-type="dfn">
+<a href="#dfn-system-provider" class="internalDFN" data-link-type= "dfn">
 <ins class="diff-chg">system
 </ins>
 provider
@@ -10593,7 +10586,7 @@ Pre-conditions:
 Same
 as
 for
-<a href="#dfn-wot-untrusted-script-threat-script-compromise" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-wot-untrusted-script-threat-script-compromise" class= "internalDFN" data-link-type="dfn">
 WoT
 Untrusted
 Script
@@ -10602,7 +10595,7 @@ Threat
 Script
 Compromise
 </a>
-<br>
+<br />
 <strong>
 Attack
 method:
@@ -10651,7 +10644,7 @@ Security
 <del class="diff-old">Objectives
 </del>
 <ins class="diff-chg">Scenarios
-</ins><a class="self-link" aria-label="§" href="#wot-security-scenarios"></a>
+</ins><a class="self-link" aria-label="§" href= "#wot-security-scenarios"></a>
 </h3>
 <p>
 <del class="diff-old">Practical
@@ -10689,9 +10682,9 @@ scenario.
 </p>
 <section id="scenario-1-home-environment">
 <h4 id="x3-3-1-scenario-1-home-environment">
+<span class= "secno">
 <del class="diff-old">2.3.1
 </del>
-<span class="secno">
 <ins class="diff-chg">3.3.1
 </ins>
 </span>
@@ -10702,7 +10695,7 @@ Home
 <del class="diff-old">environment
 </del>
 <ins class="diff-chg">Environment
-</ins><a class="self-link" aria-label="§" href="#scenario-1-home-environment"></a>
+</ins><a class= "self-link" aria-label="§" href= "#scenario-1-home-environment"></a>
 </h4>
 <p>
 In
@@ -10802,7 +10795,7 @@ single
 <del class="diff-old">solution
 provider
 </del>
-<a href="#dfn-system-provider" class="internalDFN" data-link-type="dfn">
+<a href="#dfn-system-provider" class= "internalDFN" data-link-type="dfn">
 <ins class="diff-chg">System
 Provider
 </ins></a>
@@ -11037,7 +11030,7 @@ device.
 </tr>
 <tr>
 <td>
-<a href="#dfn-wot-interface-threat-unauthorized-wot-interface-access" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-wot-interface-threat-unauthorized-wot-interface-access" class="internalDFN" data-link-type="dfn">
 WoT
 Interface
 Threat
@@ -11148,7 +11141,7 @@ door).
 </tr>
 <tr>
 <td>
-<a href="#dfn-wot-communication-threat-td-authenticity" class="internalDFN" data-link-type="dfn">
+<a href="#dfn-wot-communication-threat-td-authenticity" class= "internalDFN" data-link-type="dfn">
 WoT
 Communication
 Threat
@@ -11350,7 +11343,7 @@ network.
 </tr>
 <tr>
 <td>
-<a href="#dfn-wot-communication-threat-td-confidentiality-and-privacy" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-wot-communication-threat-td-confidentiality-and-privacy" class="internalDFN" data-link-type="dfn">
 WoT
 Communication
 Threat
@@ -11492,7 +11485,7 @@ purpose.
 </tr>
 <tr>
 <td>
-<a href="#dfn-wot-communication-threat-system-user-data-authenticity" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-wot-communication-threat-system-user-data-authenticity" class="internalDFN" data-link-type="dfn">
 WoT
 Communication
 Threat
@@ -11583,7 +11576,7 @@ device
 accepts
 incorrect
 settings.
-<br>
+<br />
 Another
 attack
 example
@@ -11634,7 +11627,7 @@ the
 </ins>
 heating
 equipment.
-<br>
+<br />
 Another
 attack
 involves
@@ -11694,7 +11687,7 @@ house.
 </tr>
 <tr>
 <td>
-<a href="#dfn-wot-communication-threat-system-user-data-confidentiality-and-privacy" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-wot-communication-threat-system-user-data-confidentiality-and-privacy" class="internalDFN" data-link-type="dfn">
 WoT
 Communication
 Threat
@@ -11922,7 +11915,7 @@ authenticate).
 </tr>
 <tr>
 <td>
-<a href="#dfn-wot-communication-threat-side-channels" class="internalDFN" data-link-type="dfn">
+<a href="#dfn-wot-communication-threat-side-channels" class= "internalDFN" data-link-type="dfn">
 WoT
 <del class="diff-old">TD
 </del>
@@ -12090,7 +12083,7 @@ Business/Corporate
 <del class="diff-old">environment
 </del>
 <ins class="diff-chg">Environment
-</ins><a class="self-link" aria-label="§" href="#scenario-2-business-corporate-environment"></a>
+</ins><a class="self-link" aria-label="§" href= "#scenario-2-business-corporate-environment"></a>
 </h4>
 <p>
 In
@@ -12160,7 +12153,7 @@ is
 a
 trusted
 non-compromised
-</ins><a href="#dfn-system-provider" class="internalDFN" data-link-type="dfn"><ins class="diff-chg">
+</ins><a href= "#dfn-system-provider" class="internalDFN" data-link-type= "dfn"><ins class="diff-chg">
 System
 Provider
 </ins></a><ins class="diff-chg">
@@ -12211,8 +12204,9 @@ needs
 system
 anymore).
 Compared
+</ins>
 to
-Scenario
+<ins class="diff-new">Scenario
 1
 above,
 the
@@ -12234,11 +12228,11 @@ make
 sure
 their
 WoT
-</ins><a href="#dfn-system-user-data" class="internalDFN" data-link-type="dfn"><ins class="diff-chg">
+</ins><a href="#dfn-system-user-data" class="internalDFN" data-link-type="dfn"><ins class="diff-new">
 System
 User
 Data
-</ins></a><ins class="diff-chg">
+</ins></a><ins class="diff-new">
 (that
 can
 include
@@ -12271,9 +12265,8 @@ might
 change
 from
 time
-</ins>
 to
-<ins class="diff-new">time,
+time,
 including
 employee
 turnover
@@ -12346,7 +12339,7 @@ presence
 of
 a
 trusted
-</ins><a href="#dfn-system-provider" class="internalDFN" data-link-type="dfn"><ins class="diff-chg">
+</ins><a href="#dfn-system-provider" class= "internalDFN" data-link-type="dfn"><ins class="diff-chg">
 System
 Provider
 </ins></a>,<ins class="diff-chg">
@@ -12372,7 +12365,7 @@ is
 only
 a
 single
-</ins><a href="#dfn-system-provider" class="internalDFN" data-link-type="dfn"><ins class="diff-chg">
+</ins><a href= "#dfn-system-provider" class="internalDFN" data-link-type= "dfn"><ins class="diff-chg">
 System
 Provider
 </ins></a><ins class="diff-chg">
@@ -12535,7 +12528,7 @@ from
 that
 device,
 including
-</ins><a href="#dfn-system-user-data" class="internalDFN" data-link-type="dfn"><ins class="diff-chg">
+</ins><a href="#dfn-system-user-data" class= "internalDFN" data-link-type="dfn"><ins class="diff-chg">
 System
 User
 Data
@@ -12590,7 +12583,7 @@ devices.
 </tr>
 <tr>
 <td>
-<a href="#dfn-wot-interface-threat-unauthorized-wot-interface-access" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-wot-interface-threat-unauthorized-wot-interface-access" class="internalDFN" data-link-type="dfn">
 WoT
 Interface
 Threat
@@ -12688,7 +12681,7 @@ premises).
 </tr>
 <tr>
 <td>
-<a href="#dfn-wot-communication-threat-td-authenticity" class="internalDFN" data-link-type="dfn">
+<a href="#dfn-wot-communication-threat-td-authenticity" class= "internalDFN" data-link-type="dfn">
 WoT
 Communication
 Threat
@@ -12729,7 +12722,7 @@ devices.
 </tr>
 <tr>
 <td>
-<a href="#dfn-wot-communication-threat-td-confidentiality-and-privacy" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-wot-communication-threat-td-confidentiality-and-privacy" class="internalDFN" data-link-type="dfn">
 WoT
 Communication
 Threat
@@ -12819,7 +12812,7 @@ TDs.
 </tr>
 <tr>
 <td>
-<a href="#dfn-wot-communication-threat-system-user-data-authenticity" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-wot-communication-threat-system-user-data-authenticity" class="internalDFN" data-link-type="dfn">
 WoT
 Communication
 Threat
@@ -12902,7 +12895,7 @@ etc.
 </tr>
 <tr>
 <td>
-<a href="#dfn-wot-communication-threat-system-user-data-confidentiality-and-privacy" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-wot-communication-threat-system-user-data-confidentiality-and-privacy" class="internalDFN" data-link-type="dfn">
 WoT
 Communication
 Threat
@@ -13171,7 +13164,7 @@ business).
 </tr>
 <tr>
 <td>
-<a href="#dfn-wot-communication-threat-side-channels" class="internalDFN" data-link-type="dfn">
+<a href="#dfn-wot-communication-threat-side-channels" class= "internalDFN" data-link-type="dfn">
 WoT
 Communication
 Threat
@@ -13213,8 +13206,8 @@ devices.
 </tbody>
 </table>
 </section>
-<section id="scenario-3-industrial-critical-infrastructure-environment">
-<h4 id="x3-3-3-scenario-3-industrial-critical-infrastructure-environment">
+<section id= "scenario-3-industrial-critical-infrastructure-environment">
+<h4 id= "x3-3-3-scenario-3-industrial-critical-infrastructure-environment">
 <span class="secno">
 <del class="diff-old">2.3.3
 </del>
@@ -13230,7 +13223,7 @@ environment
 </del>
 <ins class="diff-chg">Infrastructure
 Environment
-</ins><a class="self-link" aria-label="§" href="#scenario-3-industrial-critical-infrastructure-environment"></a>
+</ins><a class="self-link" aria-label="§" href= "#scenario-3-industrial-critical-infrastructure-environment"></a>
 </h4>
 <p>
 In
@@ -13332,7 +13325,7 @@ is
 a
 trusted
 non-compromised
-</ins><a href="#dfn-system-provider" class="internalDFN" data-link-type="dfn"><ins class="diff-chg">
+</ins><a href="#dfn-system-provider" class= "internalDFN" data-link-type="dfn"><ins class="diff-chg">
 System
 Provider
 </ins></a><ins class="diff-chg">
@@ -13364,7 +13357,7 @@ is
 only
 a
 single
-</ins><a href="#dfn-system-provider" class="internalDFN" data-link-type="dfn"><ins class="diff-chg">
+</ins><a href="#dfn-system-provider" class="internalDFN" data-link-type= "dfn"><ins class="diff-chg">
 System
 Provider
 </ins></a><ins class="diff-chg">
@@ -13674,7 +13667,7 @@ note
 </span>
 <ins class="diff-new">Privacy
 Considerations
-</ins><a class="self-link" aria-label="§" href="#wot-privacy">
+</ins><a class="self-link" aria-label="§" href= "#wot-privacy">
 <del class="diff-old">:
 Fill
 in
@@ -13713,7 +13706,7 @@ threat
 model,
 described
 in
-</ins><a href="#wot-threat-model" class="sec-ref"><span class="secno"><ins class="diff-chg">
+</ins><a href= "#wot-threat-model" class="sec-ref"><span class="secno"><ins class="diff-chg">
 3.2
 </ins></span><span class="sec-title"><ins class="diff-chg">
 Threat
@@ -13813,7 +13806,7 @@ Mitigation
 </tr>
 <tr>
 <td>
-<dfn data-dfn-type="dfn" id="dfn-disclosing-wot-thing-device-configuration">
+<dfn data-dfn-type="dfn" id= "dfn-disclosing-wot-thing-device-configuration">
 <ins class="diff-chg">Disclosing
 </ins>
 WoT
@@ -13971,7 +13964,7 @@ Threat
 -
 Unauthorized
 </del>
-<dfn data-dfn-type="dfn" id="dfn-disclosing-wot-system-configuration">
+<dfn data-dfn-type="dfn" id= "dfn-disclosing-wot-system-configuration">
 <ins class="diff-chg">Disclosing
 </ins>
 WoT
@@ -14221,7 +14214,7 @@ Protocols
 </tr>
 <tr>
 <td>
-<dfn data-dfn-type="dfn" id="dfn-leaking-wot-system-user-data">
+<dfn data-dfn-type="dfn" id= "dfn-leaking-wot-system-user-data">
 <ins class="diff-chg">Leaking
 </ins>
 WoT
@@ -14231,7 +14224,7 @@ Threat
 TD
 Confidentiality/Privacy
 </del>
-<a href="#dfn-system-user-data" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-system-user-data" class="internalDFN" data-link-type= "dfn">
 <ins class="diff-chg">System
 User
 Data
@@ -14254,7 +14247,7 @@ Threat
 -
 Thing
 </del>
-<a href="#dfn-system-user-data" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-system-user-data" class="internalDFN" data-link-type= "dfn">
 <ins class="diff-chg">System
 User
 </ins>
@@ -14311,7 +14304,7 @@ the
 privacy
 of
 WoT
-</ins><a href="#dfn-system-user" class="internalDFN" data-link-type="dfn"><ins class="diff-chg">
+</ins><a href= "#dfn-system-user" class="internalDFN" data-link-type="dfn"><ins class="diff-chg">
 System
 Users
 </ins></a>.<ins class="diff-chg">
@@ -14339,7 +14332,7 @@ can
 also
 leak
 WoT
-</ins><a href="#dfn-system-user-data" class="internalDFN" data-link-type="dfn"><ins class="diff-chg">
+</ins><a href="#dfn-system-user-data" class= "internalDFN" data-link-type="dfn"><ins class="diff-chg">
 System
 User
 Data
@@ -14406,7 +14399,7 @@ outlined
 in
 [
 </ins><cite>
-<a class="bibref" href="#bib-coo13">
+<a class="bibref" href= "#bib-coo13">
 <ins class="diff-chg">Coo13
 </ins></a>
 <del class="diff-old">TBD
@@ -14425,7 +14418,7 @@ Protocols
 </tr>
 <tr>
 <td>
-<dfn data-dfn-type="dfn" id="dfn-tracking-wot-system-user">
+<dfn data-dfn-type="dfn" id= "dfn-tracking-wot-system-user">
 <ins class="diff-chg">Tracking
 </ins>
 WoT
@@ -14540,7 +14533,7 @@ device
 and
 a
 WoT
-</ins><a href="#dfn-system-user" class="internalDFN" data-link-type="dfn"><ins class="diff-new">
+</ins><a href="#dfn-system-user" class= "internalDFN" data-link-type="dfn"><ins class="diff-new">
 System
 User
 </ins></a><ins class="diff-new">
@@ -14766,7 +14759,7 @@ have
 a
 way
 for
-</ins><a href="#dfn-system-user" class="internalDFN" data-link-type="dfn"><ins class="diff-new">
+</ins><a href="#dfn-system-user" class= "internalDFN" data-link-type="dfn"><ins class="diff-new">
 System
 Users
 </ins></a><ins class="diff-new">
@@ -14829,6 +14822,12 @@ Threat
 <del class="diff-old">Side
 Channels
 TBD
+2.4
+Determining
+a
+suitable
+security
+architecture
 </del>
 <cite>
 <ins class="diff-chg">Privacy
@@ -14836,28 +14835,17 @@ Considerations
 for
 Internet
 Protocols
-</ins></cite>.<p>
-</p>
-<div class="ednote" id="issue-container-generatedID-2">
-<del class="diff-old">2.4
-Determining
-a
-suitable
-security
-architecture
-</del>
-<div role="heading" class="ednote-title marker" id="h-ednote-2" aria-level="3">
+</ins></cite>.<div class="ednote" id="issue-container-generatedID-2"><div role="heading" class="ednote-title marker" id="h-ednote-2" aria-level="3">
 <span>
 Editor's
 note
 </span>
-<del class="diff-old">:
-Fill
+<span style= "text-transform: none">:
+<del class="diff-old">Fill
 in
 the
 content
 </del>
-<span style="text-transform: none">:
 <ins class="diff-chg">Links
 </ins>
 </span>
@@ -14988,7 +14976,7 @@ Practices
 related
 fields
 </del>
-<a class="self-link" aria-label="§" href="#references-to-existing-security-best-practices">
+<a class="self-link" aria-label="§" href= "#references-to-existing-security-best-practices">
 </a>
 </h2>
 <p>
@@ -15072,7 +15060,7 @@ reference:
 <li>
 [
 <cite>
-<a class="bibref" href="#bib-garcia17">
+<a class="bibref" href= "#bib-garcia17">
 Garcia17
 </a>
 </cite>
@@ -15089,7 +15077,7 @@ of
 Things
 Security
 </cite>:
-<br>
+<br />
 This
 IETF
 document,
@@ -15137,7 +15125,7 @@ tracker.
 <li>
 [
 <cite>
-<a class="bibref" href="#bib-iicsf16">
+<a class="bibref" href= "#bib-iicsf16">
 IicSF16
 </a>
 </cite>
@@ -15154,7 +15142,7 @@ G4:
 Security
 Framework
 </cite>:
-<br>
+<br />
 Focuses
 on
 industrial
@@ -15193,7 +15181,7 @@ cases.
 <li>
 [
 <cite>
-<a class="bibref" href="#bib-ietface">
+<a class="bibref" href= "#bib-ietface">
 IETFACE
 </a>
 </cite>
@@ -15209,7 +15197,7 @@ Constrained
 Environments
 (ACE)
 </cite>:
-<br>
+<br />
 Discusses
 the
 use
@@ -15263,7 +15251,7 @@ Best
 Practice
 Guidelines
 </cite>:
-<br>
+<br />
 A
 general
 set
@@ -15281,8 +15269,6 @@ lifecycle
 management.
 </li>
 </ul>
-<p>
-</p>
 <p>
 Here
 are
@@ -15389,8 +15375,6 @@ Modeling
 </li>
 </ul>
 <p>
-</p>
-<p>
 The
 following
 documents
@@ -15458,17 +15442,13 @@ Considerations
 </cite>
 </li>
 </ul>
-<p>
-</p>
 <div class="ednote" id="issue-container-generatedID-3">
 <div role="heading" class="ednote-title marker" id="h-ednote-3" aria-level="3">
 <span>
 Editor's
 note
 </span>
-<del class="diff-old">:
-</del>
-<span style="text-transform: none">:
+<span style= "text-transform: none">:
 Elaborate
 on
 additional
@@ -15521,7 +15501,7 @@ references:
 <li>
 [
 <cite>
-<a class="bibref" href="#bib-core-rd">
+<a class="bibref" href= "#bib-core-rd">
 CoRE-RD
 </a>
 </cite>
@@ -15812,7 +15792,7 @@ Architecture
 <li>
 [
 <cite>
-<a class="bibref" href="#bib-iicra17">
+<a class="bibref" href= "#bib-iicra17">
 IicRA17
 </a>
 </cite>
@@ -16052,17 +16032,13 @@ Rant
 </cite>
 </li>
 </ul>
-<p>
-</p>
 <div class="ednote" id="issue-container-generatedID-4">
 <div role="heading" class="ednote-title marker" id="h-ednote-4" aria-level="3">
 <span>
 Editor's
 note
 </span>
-<del class="diff-old">:
-</del>
-<span style="text-transform: none">:
+<span style= "text-transform: none">:
 Use
 global
 database
@@ -16089,10 +16065,10 @@ entries.
 </p>
 </div>
 </section>
-<section id="security-mitigations">
-<h2 id="x6-best-security-practices-and-mitigations-for-wot-systems">
 <del class="diff-old">4.
 </del>
+<section id="security-mitigations">
+<h2 id= "x6-best-security-practices-and-mitigations-for-wot-systems">
 <span class="secno">
 <ins class="diff-chg">6.
 </ins>
@@ -16130,19 +16106,19 @@ listed
 <del class="diff-old">above,
 </del>
 <ins class="diff-chg">in
-</ins><a href="#wot-threat-model-assets" class="sec-ref"><span class="secno"><ins class="diff-chg">
+</ins><a href="#wot-threat-model-assets" class= "sec-ref"><span class="secno"><ins class="diff-chg">
 3.2.2
-</ins></span><span class="sec-title"><ins class="diff-chg">
+</ins></span><span class= "sec-title"><ins class="diff-chg">
 Assets
 </ins></span></a>,<a href="#wot-threat-model-threats" class="sec-ref"><span class="secno"><ins class="diff-chg">
 3.2.5
-</ins></span><span class="sec-title"><ins class="diff-chg">
+</ins></span><span class= "sec-title"><ins class="diff-chg">
 Threats
 </ins></span></a><ins class="diff-chg">
 and
-</ins><a href="#wot-privacy" class="sec-ref"><span class="secno"><ins class="diff-chg">
+</ins><a href="#wot-privacy" class= "sec-ref"><span class="secno"><ins class="diff-chg">
 4.
-</ins></span><span class="sec-title"><ins class="diff-chg">
+</ins></span><span class= "sec-title"><ins class="diff-chg">
 Privacy
 Considerations
 </ins></span></a>,
@@ -16223,7 +16199,7 @@ designing
 a
 Thing
 Description
-<a class="self-link" aria-label="§" href="#secure-practices-for-designing-a-thing-description">
+<a class="self-link" aria-label="§" href= "#secure-practices-for-designing-a-thing-description">
 </a>
 </h3>
 <del class="diff-old">4.1.1
@@ -16402,9 +16378,9 @@ provides
 guidelines
 </del>
 <ins class="diff-chg">see
-</ins><a href="#sec-pract-end-to-end-security" class="sec-ref"><span class="secno"><ins class="diff-chg">
+</ins><a href="#sec-pract-end-to-end-security" class= "sec-ref"><span class="secno"><ins class="diff-chg">
 6.5
-</ins></span><span class="sec-title"><ins class="diff-chg">
+</ins></span><span class= "sec-title"><ins class="diff-chg">
 Secure
 Practices
 </ins>
@@ -16547,14 +16523,14 @@ prevent
 the
 following
 threats:
-</ins><a href="#dfn-wot-communication-threat-td-authenticity" class="internalDFN" data-link-type="dfn"><ins class="diff-chg">
+</ins><a href="#dfn-wot-communication-threat-td-authenticity" class= "internalDFN" data-link-type="dfn"><ins class="diff-chg">
 WoT
 Communication
 Threat
 -
 TD
 Authenticity
-</ins></a>,<a href="#dfn-wot-communication-threat-td-confidentiality-and-privacy" class="internalDFN" data-link-type="dfn"><ins class="diff-chg">
+</ins></a>,<a href= "#dfn-wot-communication-threat-td-confidentiality-and-privacy" class="internalDFN" data-link-type="dfn"><ins class="diff-chg">
 WoT
 Communication
 Threat
@@ -16563,12 +16539,12 @@ TD
 Confidentiality
 and
 Privacy
-</ins></a>,<a href="#dfn-disclosing-wot-thing-device-configuration" class="internalDFN" data-link-type="dfn"><ins class="diff-chg">
+</ins></a>,<a href= "#dfn-disclosing-wot-thing-device-configuration" class= "internalDFN" data-link-type="dfn"><ins class="diff-chg">
 Disclosing
 WoT
 Thing/Device
 configuration
-</ins></a>,<a href="#dfn-disclosing-wot-system-configuration" class="internalDFN" data-link-type="dfn"><ins class="diff-chg">
+</ins></a>,<a href= "#dfn-disclosing-wot-system-configuration" class="internalDFN" data-link-type="dfn"><ins class="diff-chg">
 Disclosing
 WoT
 System
@@ -16733,7 +16709,7 @@ and
 Privacy
 </ins>
 </a>,
-<a href="#dfn-disclosing-wot-system-configuration" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-disclosing-wot-system-configuration" class="internalDFN" data-link-type="dfn">
 <ins class="diff-chg">Disclosing
 WoT
 System
@@ -16834,12 +16810,12 @@ and
 Privacy
 </ins>
 </a>,
-<a href="#dfn-disclosing-wot-thing-device-configuration" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-disclosing-wot-thing-device-configuration" class= "internalDFN" data-link-type="dfn">
 <ins class="diff-chg">Disclosing
 WoT
 Thing/Device
 configuration
-</ins></a>,<a href="#dfn-disclosing-wot-system-configuration" class="internalDFN" data-link-type="dfn"><ins class="diff-chg">
+</ins></a>,<a href= "#dfn-disclosing-wot-system-configuration" class="internalDFN" data-link-type="dfn"><ins class="diff-chg">
 Disclosing
 WoT
 System
@@ -16849,7 +16825,7 @@ Tracking
 WoT
 System
 User
-</ins></a>,<a href="#dfn-wot-dos-threat" class="internalDFN" data-link-type="dfn"><ins class="diff-chg">
+</ins></a>,<a href= "#dfn-wot-dos-threat" class="internalDFN" data-link-type="dfn"><ins class="diff-chg">
 WoT
 DoS
 Threat
@@ -16949,17 +16925,17 @@ Storage
 Confidentiality
 and
 Privacy
-</ins></a>,<a href="#dfn-disclosing-wot-thing-device-configuration" class="internalDFN" data-link-type="dfn"><ins class="diff-chg">
+</ins></a>,<a href= "#dfn-disclosing-wot-thing-device-configuration" class= "internalDFN" data-link-type="dfn"><ins class="diff-chg">
 Disclosing
 WoT
 Thing/Device
 configuration
-</ins></a>,<a href="#dfn-tracking-wot-system-user" class="internalDFN" data-link-type="dfn"><ins class="diff-chg">
+</ins></a>,<a href="#dfn-tracking-wot-system-user" class= "internalDFN" data-link-type="dfn"><ins class="diff-chg">
 Tracking
 WoT
 System
 User
-</ins></a>,<a href="#dfn-wot-dos-threat" class="internalDFN" data-link-type="dfn"><ins class="diff-chg">
+</ins></a>,<a href="#dfn-wot-dos-threat" class="internalDFN" data-link-type= "dfn"><ins class="diff-chg">
 WoT
 DoS
 Threat
@@ -16967,10 +16943,10 @@ Threat
 </a>.
 </p>
 </section>
-<section id="sec-pract-system-user-data">
-<h3 id="x6-2-secure-practices-for-protecting-system-user-data">
 <del class="diff-old">4.1.2
 </del>
+<section id="sec-pract-system-user-data">
+<h3 id="x6-2-secure-practices-for-protecting-system-user-data">
 <span class="secno">
 <ins class="diff-chg">6.2
 </ins>
@@ -16979,11 +16955,11 @@ Threat
 Practices
 for
 protecting
-</ins><a href="#dfn-system-user-data" class="internalDFN" data-link-type="dfn"><ins class="diff-new">
+</ins><a href="#dfn-system-user-data" class="internalDFN" data-link-type= "dfn"><ins class="diff-new">
 System
 User
 Data
-</ins></a><a class="self-link" aria-label="§" href="#sec-pract-system-user-data"></a></h3><p><strong>
+</ins></a><a class="self-link" aria-label="§" href= "#sec-pract-system-user-data"></a></h3><p><strong>
 Use
 Secure
 Transports
@@ -17010,7 +16986,7 @@ protocols
 guaranteeing
 <del class="diff-old">data
 </del>
-<a href="#dfn-system-user-data" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-system-user-data" class="internalDFN" data-link-type= "dfn">
 <ins class="diff-chg">System
 User
 Data
@@ -17082,7 +17058,7 @@ User
 Data
 Authenticity
 </a>,
-<a href="#dfn-wot-communication-threat-system-user-data-confidentiality-and-privacy" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-wot-communication-threat-system-user-data-confidentiality-and-privacy" class="internalDFN" data-link-type="dfn">
 WoT
 Communication
 Threat
@@ -17095,7 +17071,7 @@ Data
 Confidentiality
 and
 Privacy
-</ins></a>,<a href="#dfn-leaking-wot-system-user-data" class="internalDFN" data-link-type="dfn"><ins class="diff-chg">
+</ins></a>,<a href= "#dfn-leaking-wot-system-user-data" class="internalDFN" data-link-type="dfn"><ins class="diff-chg">
 Leaking
 WoT
 System
@@ -17157,7 +17133,7 @@ Data
 Confidentiality
 <ins class="diff-new">and
 Privacy
-</ins></a>,<a href="#dfn-leaking-wot-system-user-data" class="internalDFN" data-link-type="dfn"><ins class="diff-new">
+</ins></a>,<a href= "#dfn-leaking-wot-system-user-data" class="internalDFN" data-link-type="dfn"><ins class="diff-new">
 Leaking
 WoT
 System
@@ -17181,7 +17157,7 @@ for
 designing
 WoT
 Interfaces
-</ins><a class="self-link" aria-label="§" href="#sec-pract-wot-interfaces"></a></h3><p><strong><ins class="diff-new">
+</ins><a class="self-link" aria-label="§" href= "#sec-pract-wot-interfaces"></a></h3><p><strong><ins class="diff-new">
 Use
 Appropriate
 Access
@@ -17247,7 +17223,7 @@ Unauthorized
 WoT
 Interface
 Access
-</ins></a>,<a href="#dfn-wot-interface-threat-thing-instance-compromise" class="internalDFN" data-link-type="dfn"><ins class="diff-new">
+</ins></a>,<a href= "#dfn-wot-interface-threat-thing-instance-compromise" class= "internalDFN" data-link-type="dfn"><ins class="diff-new">
 WoT
 Interface
 Threat
@@ -17255,7 +17231,7 @@ Threat
 Thing
 Instance
 Compromise
-</ins></a>,<a href="#dfn-wot-communication-threat-system-user-data-authenticity" class="internalDFN" data-link-type="dfn"><ins class="diff-new">
+</ins></a>,<a href= "#dfn-wot-communication-threat-system-user-data-authenticity" class="internalDFN" data-link-type="dfn"><ins class="diff-new">
 WoT
 Communication
 Threat
@@ -17264,7 +17240,7 @@ System
 User
 Data
 Authenticity
-</ins></a>,<a href="#dfn-wot-communication-threat-system-user-data-confidentiality-and-privacy" class="internalDFN" data-link-type="dfn"><ins class="diff-new">
+</ins></a>,<a href= "#dfn-wot-communication-threat-system-user-data-confidentiality-and-privacy" class="internalDFN" data-link-type="dfn"><ins class="diff-new">
 WoT
 Communication
 Threat
@@ -17275,18 +17251,18 @@ Data
 Confidentiality
 and
 Privacy
-</ins></a>,<a href="#dfn-leaking-wot-system-user-data" class="internalDFN" data-link-type="dfn"><ins class="diff-new">
+</ins></a>,<a href= "#dfn-leaking-wot-system-user-data" class="internalDFN" data-link-type="dfn"><ins class="diff-new">
 Leaking
 WoT
 System
 User
 Data
-</ins></a>,<a href="#dfn-disclosing-wot-thing-device-configuration" class="internalDFN" data-link-type="dfn"><ins class="diff-new">
+</ins></a>,<a href= "#dfn-disclosing-wot-thing-device-configuration" class= "internalDFN" data-link-type="dfn"><ins class="diff-new">
 Disclosing
 WoT
 Thing/Device
 configuration
-</ins></a>,<a href="#dfn-wot-dos-threat" class="internalDFN" data-link-type="dfn"><ins class="diff-new">
+</ins></a>,<a href="#dfn-wot-dos-threat" class= "internalDFN" data-link-type="dfn"><ins class="diff-new">
 WoT
 DoS
 Threat
@@ -17344,7 +17320,7 @@ prevent
 the
 following
 threats:
-<a href="#dfn-wot-dos-threat" class="internalDFN" data-link-type="dfn">
+<a href="#dfn-wot-dos-threat" class="internalDFN" data-link-type= "dfn">
 WoT
 DoS
 Threat
@@ -17355,7 +17331,9 @@ Avoid
 Exposing
 Immutable
 Identifiers
-When
+</del>
+<p>
+<del class="diff-old">When
 defining
 fields
 exposed
@@ -17397,9 +17375,7 @@ changed
 during
 device
 lifecycle.
-</del>
-<p>
-<del class="diff-old">This
+This
 recommendation
 helps
 prevent
@@ -17498,7 +17474,7 @@ Threat
 Thing
 Instance
 Compromise
-</ins></a>,<a href="#dfn-wot-interface-threat-unauthorized-wot-interface-access" class="internalDFN" data-link-type="dfn"><ins class="diff-chg">
+</ins></a>,<a href= "#dfn-wot-interface-threat-unauthorized-wot-interface-access" class="internalDFN" data-link-type="dfn"><ins class="diff-chg">
 WoT
 Interface
 Threat
@@ -17507,7 +17483,7 @@ Unauthorized
 WoT
 Interface
 Access
-</ins></a>,<a href="#dfn-wot-dos-threat" class="internalDFN" data-link-type="dfn"><ins class="diff-chg">
+</ins></a>,<a href= "#dfn-wot-dos-threat" class="internalDFN" data-link-type="dfn"><ins class="diff-chg">
 WoT
 DoS
 Threat
@@ -17573,7 +17549,7 @@ Thing
 Instance
 Compromise
 </a>,
-<a href="#dfn-wot-interface-threat-unauthorized-wot-interface-access" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-wot-interface-threat-unauthorized-wot-interface-access" class="internalDFN" data-link-type="dfn">
 WoT
 Interface
 Threat
@@ -17583,7 +17559,7 @@ WoT
 Interface
 Access
 </a>,
-<a href="#dfn-wot-dos-threat" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-wot-dos-threat" class="internalDFN" data-link-type="dfn">
 WoT
 DoS
 Threat
@@ -17591,7 +17567,7 @@ Threat
 </p>
 </section>
 <section id="sec-pract-things-directory">
-<h3 id="x6-4-secure-practices-for-thing-directory-interaction-protocols">
+<h3 id= "x6-4-secure-practices-for-thing-directory-interaction-protocols">
 <span class="secno">
 <del class="diff-old">4.2
 </del>
@@ -17613,7 +17589,7 @@ APIs
 Directory
 Interaction
 Protocols
-</ins><a class="self-link" aria-label="§" href="#sec-pract-things-directory"></a>
+</ins><a class="self-link" aria-label="§" href= "#sec-pract-things-directory"></a>
 </h3>
 <div class="ednote" id="issue-container-generatedID-5">
 <div role="heading" class="ednote-title marker" id="h-ednote-5" aria-level="4">
@@ -17621,9 +17597,7 @@ Protocols
 Editor's
 note
 </span>
-<del class="diff-old">:
-</del>
-<span style="text-transform: none">:
+<span style= "text-transform: none">:
 Fill
 in
 the
@@ -17643,7 +17617,7 @@ added.
 </section>
 <section id="sec-pract-end-to-end-security">
 <h3 id="x6-5-secure-practices-for-end-to-end-security">
-<span class="secno">
+<span class= "secno">
 <ins class="diff-new">6.5
 </ins></span><ins class="diff-new">
 Secure
@@ -17651,7 +17625,7 @@ Practices
 for
 end-to-end
 security
-</ins><a class="self-link" aria-label="§" href="#sec-pract-end-to-end-security"></a></h3><p><ins class="diff-new">
+</ins><a class="self-link" aria-label="§" href= "#sec-pract-end-to-end-security"></a></h3><p><ins class="diff-new">
 If
 end-to-end
 authenticity
@@ -17665,7 +17639,7 @@ sign
 WoT
 objects
 (TDs,
-</ins><a href="#dfn-system-user-data" class="internalDFN" data-link-type="dfn"><ins class="diff-new">
+</ins><a href="#dfn-system-user-data" class= "internalDFN" data-link-type="dfn"><ins class="diff-new">
 System
 User
 Data
@@ -17770,7 +17744,7 @@ objects
 expressed
 in
 JSON,
-</ins><a href="https://datatracker.ietf.org/doc/rfc7516/"><ins class="diff-new">
+</ins><a href= "https://datatracker.ietf.org/doc/rfc7516/"><ins class="diff-new">
 RFC
 7516
 (IETF
@@ -17805,7 +17779,7 @@ System
 User
 Data
 Authenticity
-</ins></a>,<a href="#dfn-wot-communication-threat-system-user-data-confidentiality-and-privacy" class="internalDFN" data-link-type="dfn"><ins class="diff-new">
+</ins></a>,<a href= "#dfn-wot-communication-threat-system-user-data-confidentiality-and-privacy" class="internalDFN" data-link-type="dfn"><ins class="diff-new">
 WoT
 Communication
 Threat
@@ -17816,20 +17790,20 @@ Data
 Confidentiality
 and
 Privacy
-</ins></a>,<a href="#dfn-leaking-wot-system-user-data" class="internalDFN" data-link-type="dfn"><ins class="diff-new">
+</ins></a>,<a href= "#dfn-leaking-wot-system-user-data" class="internalDFN" data-link-type="dfn"><ins class="diff-new">
 Leaking
 WoT
 System
 User
 Data
-</ins></a>,<a href="#dfn-wot-communication-threat-td-authenticity" class="internalDFN" data-link-type="dfn"><ins class="diff-new">
+</ins></a>,<a href= "#dfn-wot-communication-threat-td-authenticity" class="internalDFN" data-link-type="dfn"><ins class="diff-new">
 WoT
 Communication
 Threat
 -
 TD
 Authenticity
-</ins></a>,<a href="#dfn-wot-communication-threat-td-confidentiality-and-privacy" class="internalDFN" data-link-type="dfn"><ins class="diff-new">
+</ins></a>,<a href= "#dfn-wot-communication-threat-td-confidentiality-and-privacy" class="internalDFN" data-link-type="dfn"><ins class="diff-new">
 WoT
 Communication
 Threat
@@ -17842,9 +17816,9 @@ Privacy
 </section>
 <section id="examples-of-wot-security-configurations">
 <h2 id="x7-examples-of-wot-security-configurations">
+<span class= "secno">
 <del class="diff-old">5.
 </del>
-<span class="secno">
 <ins class="diff-chg">7.
 </ins>
 </span>
@@ -17856,7 +17830,7 @@ configurations
 </del>
 <ins class="diff-chg">Security
 Configurations
-</ins><a class="self-link" aria-label="§" href="#examples-of-wot-security-configurations"></a>
+</ins><a class= "self-link" aria-label="§" href= "#examples-of-wot-security-configurations"></a>
 </h2>
 <p>
 <ins class="diff-new">The
@@ -17959,13 +17933,12 @@ Thing
 and
 WoT
 Client
-<a class="self-link" aria-label="§" href="#wot-client-server-basic">
+<a class="self-link" aria-label="§" href= "#wot-client-server-basic">
 </a>
 </h3>
 <p>
-<a href="#wot_client_thing_basic" class="fig-ref" title="Basic WoT Thing and WoT Client">
+<a href="#wot_client_thing_basic" class="fig-ref" title= "Basic WoT Thing and WoT Client">
 Figure
-<span class="figno">
 <del class="diff-old">2
 Basic
 WoT
@@ -17974,6 +17947,7 @@ and
 WoT
 Client
 </del>
+<span class= "figno">
 <ins class="diff-chg">3
 </ins>
 </span>
@@ -18070,7 +18044,7 @@ WoT
 Thing.
 </p>
 <figure id="wot_client_thing_basic">
-<img src="images/client-server-basic.png" style="width: 1000px;" width="1760" height="720">
+<img src= "images/client-server-basic.png" style="width: 1000px;" width= "1760" height="720" />
 <figcaption>
 Figure
 <span class="figno">
@@ -18079,7 +18053,7 @@ Figure
 <ins class="diff-chg">3
 </ins>
 </span>
-<span class="fig-title">
+<span class= "fig-title">
 Basic
 WoT
 Thing
@@ -18621,7 +18595,7 @@ Section
 7
 [
 <cite>
-<a class="bibref" href="#bib-ocf17">
+<a class="bibref" href= "#bib-ocf17">
 Ocf17
 </a>
 </cite>
@@ -18786,7 +18760,7 @@ Section
 9.2.3
 [
 <cite>
-<a class="bibref" href="#bib-ocf17">
+<a class="bibref" href= "#bib-ocf17">
 Ocf17
 </a>
 </cite>
@@ -18899,7 +18873,7 @@ Section
 9.2.5
 [
 <cite>
-<a class="bibref" href="#bib-ocf17">
+<a class="bibref" href= "#bib-ocf17">
 Ocf17
 </a>
 </cite>
@@ -18920,8 +18894,6 @@ Section
 9.3.
 </li>
 </ul>
-<p>
-</p>
 <p>
 In
 case
@@ -19049,7 +19021,7 @@ specification
 draft
 [
 <cite>
-<a class="bibref" href="#bib-ietface">
+<a class="bibref" href= "#bib-ietface">
 IETFACE
 </a>
 </cite>
@@ -19103,7 +19075,7 @@ token
 format
 [
 <cite>
-<a class="bibref" href="#bib-cbor17">
+<a class="bibref" href= "#bib-cbor17">
 CBOR17
 </a>
 </cite>
@@ -19121,7 +19093,7 @@ specification
 draft
 [
 <cite>
-<a class="bibref" href="#bib-ietface">
+<a class="bibref" href= "#bib-ietface">
 IETFACE
 </a>
 </cite>
@@ -19158,15 +19130,13 @@ please
 see
 [
 <cite>
-<a class="bibref" href="#bib-ietface">
+<a class= "bibref" href="#bib-ietface">
 IETFACE
 </a>
 </cite>
 ].
 </li>
 </ul>
-<p>
-</p>
 <p>
 Instead
 of
@@ -19257,7 +19227,7 @@ mitigate
 of
 </ins>
 the
-<a href="#dfn-wot-interface-threat-unauthorized-wot-interface-access" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-wot-interface-threat-unauthorized-wot-interface-access" class="internalDFN" data-link-type="dfn">
 WoT
 Interface
 Threat
@@ -19367,7 +19337,7 @@ Threat
 TD
 Authenticity
 </a>,
-<a href="#dfn-wot-communication-threat-td-confidentiality-and-privacy" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-wot-communication-threat-td-confidentiality-and-privacy" class="internalDFN" data-link-type="dfn">
 WoT
 Communication
 Threat
@@ -19380,7 +19350,7 @@ and
 Privacy
 </ins>
 </a>,
-<a href="#dfn-wot-communication-threat-system-user-data-authenticity" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-wot-communication-threat-system-user-data-authenticity" class="internalDFN" data-link-type="dfn">
 WoT
 Communication
 Threat
@@ -19393,7 +19363,7 @@ User
 Data
 Authenticity
 </a>,
-<a href="#dfn-wot-communication-threat-system-user-data-confidentiality-and-privacy" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-wot-communication-threat-system-user-data-confidentiality-and-privacy" class="internalDFN" data-link-type="dfn">
 WoT
 Communication
 Threat
@@ -19537,7 +19507,7 @@ specification
 draft
 [
 <cite>
-<a class="bibref" href="#bib-oscoap17">
+<a class="bibref" href= "#bib-oscoap17">
 OSCOAP17
 </a>
 </cite>
@@ -19548,7 +19518,7 @@ The
 scenario
 shown
 in
-<a href="#wot_client_thing_basic_2" class="fig-ref" title="Basic WoT Thing and WoT Client with TD provided from a Thing Directory">
+<a href="#wot_client_thing_basic_2" class= "fig-ref" title= "Basic WoT Thing and WoT Client with TD provided from a Thing Directory">
 Figure
 <span class="figno">
 <del class="diff-old">3
@@ -19669,7 +19639,7 @@ support.
 </ins>
 </p>
 <figure id="wot_client_thing_basic_2">
-<img src="images/client-server-basic-2.png" style="width: 1000px;" width="1760" height="720">
+<img src= "images/client-server-basic-2.png" style="width: 1000px;" width= "1760" height="720" />
 <figcaption>
 Figure
 <span class="figno">
@@ -19678,7 +19648,7 @@ Figure
 <ins class="diff-chg">4
 </ins>
 </span>
-<span class="fig-title">
+<span class= "fig-title">
 Basic
 WoT
 Thing
@@ -19910,8 +19880,8 @@ remote
 cloud.
 </p>
 </section>
-<section id="interaction-between-wot-thing-and-wot-client-via-a-wot-servient-gateway">
-<h3 id="x7-2-interaction-between-wot-thing-and-wot-client-via-a-wot-servient-gateway">
+<section id= "interaction-between-wot-thing-and-wot-client-via-a-wot-servient-gateway">
+<h3 id= "x7-2-interaction-between-wot-thing-and-wot-client-via-a-wot-servient-gateway">
 <span class="secno">
 <del class="diff-old">5.2
 </del>
@@ -19931,20 +19901,25 @@ via
 WoT
 Servient
 Gateway
-<a class="self-link" aria-label="§" href="#interaction-between-wot-thing-and-wot-client-via-a-wot-servient-gateway">
+<a class="self-link" aria-label="§" href= "#interaction-between-wot-thing-and-wot-client-via-a-wot-servient-gateway">
 </a>
 </h3>
 <p>
-<ins class="diff-chg">A
-</ins><a href="#wot_client_thing_gateway" class="fig-ref" title="WoT Thing and WoT Client via Gateway">
+<ins class="diff-new">A
+</ins><a href="#wot_client_thing_gateway" class="fig-ref" title= "WoT Thing and WoT Client via Gateway"><ins class="diff-new">
+Figure
+</ins><span class= "figno"><ins class="diff-new">
+5
+</ins></span>
+</a>,
+<ins class="diff-chg">as
+in
+the
+</ins><a href="#wot_client_thing_basic" class="fig-ref" title="Basic WoT Thing and WoT Client">
 Figure
 <span class="figno">
 <del class="diff-old">4
-</del>
-<ins class="diff-chg">5
-</ins>
-</span>
-<del class="diff-old">WoT
+WoT
 Thing
 and
 WoT
@@ -19952,14 +19927,7 @@ Client
 via
 Gateway
 </del>
-</a>,
-<ins class="diff-chg">as
-in
-the
-</ins><a href="#wot_client_thing_basic" class="fig-ref" title="Basic WoT Thing and WoT Client"><ins class="diff-chg">
-Figure
-</ins><span class="figno"><ins class="diff-chg">
-3
+<ins class="diff-chg">3
 </ins>
 </span>
 </a>
@@ -20106,7 +20074,7 @@ configuration.
 </ins>
 </p>
 <figure id="wot_client_thing_gateway">
-<img src="images/client-server-gateway.png" style="width: 1000px;" width="1760" height="720">
+<img src= "images/client-server-gateway.png" style="width: 1000px;" width= "1760" height="720" />
 <figcaption>
 Figure
 <span class="figno">
@@ -20115,7 +20083,7 @@ Figure
 <ins class="diff-chg">5
 </ins>
 </span>
-<span class="fig-title">
+<span class= "fig-title">
 WoT
 Thing
 and
@@ -20142,14 +20110,14 @@ one
 described
 in
 Section
-<a href="#wot-client-server-basic" class="sec-ref">
+<a href="#wot-client-server-basic" class= "sec-ref">
 <span class="secno">
 <del class="diff-old">5.1
 </del>
 <ins class="diff-chg">7.1
 </ins>
 </span>
-<span class="sec-title">
+<span class= "sec-title">
 Basic
 Interaction
 between
@@ -20246,14 +20214,14 @@ mechanisms
 described
 in
 Section
-<a href="#wot-client-server-basic" class="sec-ref">
+<a href="#wot-client-server-basic" class= "sec-ref">
 <del class="diff-old">5.1
 </del>
 <span class="secno">
 <ins class="diff-chg">7.1
 </ins>
 </span>
-<span class="sec-title">
+<span class= "sec-title">
 Basic
 Interaction
 between
@@ -20467,7 +20435,7 @@ Section
 <ins class="diff-chg">7.1
 </ins>
 </span>
-<span class="sec-title">
+<span class= "sec-title">
 Basic
 Interaction
 between
@@ -20524,7 +20492,7 @@ for
 this.
 </del>
 <p>
-<a href="#wot_client_thing_gateway_2" class="fig-ref" title="WoT Thing and WoT Client via Gateway with Remote Cloud">
+<a href="#wot_client_thing_gateway_2" class="fig-ref" title= "WoT Thing and WoT Client via Gateway with Remote Cloud">
 Figure
 <span class="figno">
 <del class="diff-old">5
@@ -20678,14 +20646,14 @@ method.
 Similarly
 to
 Section
-<a href="#wot-client-server-basic" class="sec-ref">
+<a href="#wot-client-server-basic" class= "sec-ref">
 <del class="diff-old">5.1
 </del>
 <span class="secno">
 <ins class="diff-chg">7.1
 </ins>
 </span>
-<span class="sec-title">
+<span class= "sec-title">
 Basic
 Interaction
 between
@@ -20754,7 +20722,7 @@ application
 layer.
 </p>
 <figure id="wot_client_thing_gateway_2">
-<img src="images/client-server-gateway-2.png" style="width: 1000px;" width="1760" height="720">
+<img src= "images/client-server-gateway-2.png" style="width: 1000px;" width= "1760" height="720" />
 <figcaption>
 Figure
 <span class="figno">
@@ -20763,7 +20731,7 @@ Figure
 <ins class="diff-chg">6
 </ins>
 </span>
-<span class="fig-title">
+<span class= "fig-title">
 WoT
 Thing
 and
@@ -20779,7 +20747,7 @@ Cloud
 </figure>
 </section>
 <section id="wot-client-server-double-proxy">
-<h3 id="x7-3-basic-interaction-between-wot-thing-and-wot-client-via-a-split-proxy">
+<h3 id= "x7-3-basic-interaction-between-wot-thing-and-wot-client-via-a-split-proxy">
 <span class="secno">
 <ins class="diff-new">7.3
 </ins></span><ins class="diff-new">
@@ -20795,9 +20763,9 @@ via
 a
 Split
 Proxy
-</ins><a class="self-link" aria-label="§" href="#wot-client-server-double-proxy"></a></h3><p><a href="#wot_client_thing_double_proxy" class="fig-ref" title="WoT Thing and WoT Client via Split Proxy"><ins class="diff-new">
+</ins><a class="self-link" aria-label="§" href="#wot-client-server-double-proxy"></a></h3><p><a href="#wot_client_thing_double_proxy" class="fig-ref" title= "WoT Thing and WoT Client via Split Proxy"><ins class="diff-new">
 Figure
-</ins><span class="figno"><ins class="diff-new">
+</ins><span class= "figno"><ins class="diff-new">
 7
 </ins></span></a><ins class="diff-new">
 shows
@@ -20957,7 +20925,7 @@ mechanisms
 described
 in
 Section
-</ins><a href="#wot-client-server-basic" class="sec-ref"><span class="secno"><ins class="diff-new">
+</ins><a href= "#wot-client-server-basic" class="sec-ref"><span class= "secno"><ins class="diff-new">
 7.1
 </ins></span><span class="sec-title"><ins class="diff-new">
 Basic
@@ -20991,7 +20959,7 @@ configurations
 described
 in
 Section
-</ins><a href="#wot-client-server-basic" class="sec-ref"><span class="secno"><ins class="diff-new">
+</ins><a href="#wot-client-server-basic" class="sec-ref"><span class= "secno"><ins class="diff-new">
 7.1
 </ins></span><span class="sec-title"><ins class="diff-new">
 Basic
@@ -21114,7 +21082,7 @@ as
 described
 in
 Section
-</ins><a href="#wot-client-server-basic" class="sec-ref"><span class="secno"><ins class="diff-new">
+</ins><a href= "#wot-client-server-basic" class="sec-ref"><span class= "secno"><ins class="diff-new">
 7.1
 </ins></span><span class="sec-title"><ins class="diff-new">
 Basic
@@ -21155,11 +21123,11 @@ data
 and
 the
 TD.
-</ins></p><figure id="wot_client_thing_double_proxy"><img src="images/client-server-double-proxy.png" style="width: 1000px;" width="2705" height="1070"><figcaption><ins class="diff-new">
+</ins></p><figure id="wot_client_thing_double_proxy"><img src= "images/client-server-double-proxy.png" style="width: 1000px;" width="2705" height="1070" /><figcaption><ins class="diff-new">
 Figure
 </ins><span class="figno"><ins class="diff-new">
 7
-</ins></span><span class="fig-title"><ins class="diff-new">
+</ins></span><span class= "fig-title"><ins class="diff-new">
 WoT
 Thing
 and
@@ -21242,7 +21210,7 @@ credentials,
 e.g.
 via
 OAuth2.
-</ins></p></section><section id="wot-client-server-tunnel"><h3 id="x7-4-basic-interaction-between-wot-thing-and-wot-client-via-a-tunnel"><span class="secno"><ins class="diff-new">
+</ins></p></section><section id="wot-client-server-tunnel"><h3 id= "x7-4-basic-interaction-between-wot-thing-and-wot-client-via-a-tunnel"><span class="secno"><ins class="diff-new">
 7.4
 </ins></span><ins class="diff-new">
 Basic
@@ -21373,15 +21341,15 @@ traversal
 is
 shown
 in
-</ins><a href="#wot_client_thing_tunnel" class="fig-ref" title="WoT Thing and WoT Client via Tunnel"><ins class="diff-new">
+</ins><a href= "#wot_client_thing_tunnel" class="fig-ref" title= "WoT Thing and WoT Client via Tunnel"><ins class="diff-new">
+Figure
+</ins><span class= "figno"><ins class="diff-new">
+8
+</ins></span></a>.</p><figure id="wot_client_thing_tunnel"><img src="images/tunnel.svg" style="width: 1000px;" width="1006" height="399" /><figcaption><ins class="diff-new">
 Figure
 </ins><span class="figno"><ins class="diff-new">
 8
-</ins></span></a>.</p><figure id="wot_client_thing_tunnel"><img src="images/tunnel.svg" style="width: 1000px;" width="1006" height="399"><figcaption><ins class="diff-new">
-Figure
-</ins><span class="figno"><ins class="diff-new">
-8
-</ins></span><span class="fig-title"><ins class="diff-new">
+</ins></span><span class= "fig-title"><ins class="diff-new">
 WoT
 Thing
 and
@@ -21631,9 +21599,9 @@ this
 is
 shown
 in
-</ins><a href="#wot_client_thing_proxy" class="fig-ref" title="WoT Thing and WoT Client via HTTPS/HTTP Proxy"><ins class="diff-new">
+</ins><a href= "#wot_client_thing_proxy" class="fig-ref" title= "WoT Thing and WoT Client via HTTPS/HTTP Proxy"><ins class="diff-new">
 Figure
-</ins><span class="figno"><ins class="diff-new">
+</ins><span class= "figno"><ins class="diff-new">
 9
 </ins></span></a>.<ins class="diff-new">
 A
@@ -21774,9 +21742,9 @@ unprotected
 local
 interace
 is
-</ins><emph><ins class="diff-new">
+</ins><em><ins class="diff-new">
 not
-</ins></emph><ins class="diff-new">
+</ins></em><ins class="diff-new">
 desirable,
 another
 SSH
@@ -21906,15 +21874,15 @@ end-to-end
 object
 security
 [
-</ins><cite><a class="bibref" href="#bib-cose17"><ins class="diff-new">
+</ins><cite><a class="bibref" href= "#bib-cose17"><ins class="diff-new">
 COSE17
 </ins></a></cite><ins class="diff-new">
 ].
-</ins></p><figure id="wot_client_thing_proxy"><img src="images/proxy.svg" style="width: 1000px;" width="1006" height="399"><figcaption><ins class="diff-new">
+</ins></p><figure id="wot_client_thing_proxy"><img src="images/proxy.svg" style="width: 1000px;" width="1006" height="399" /><figcaption><ins class="diff-new">
 Figure
 </ins><span class="figno"><ins class="diff-new">
 9
-</ins></span><span class="fig-title"><ins class="diff-new">
+</ins></span><span class= "fig-title"><ins class="diff-new">
 WoT
 Thing
 and
@@ -21933,9 +21901,9 @@ approach
 is
 shown
 in
-</ins><a href="#wot_client_thing_proxy" class="fig-ref" title="WoT Thing and WoT Client via HTTPS/HTTP Proxy"><ins class="diff-new">
+</ins><a href= "#wot_client_thing_proxy" class="fig-ref" title= "WoT Thing and WoT Client via HTTPS/HTTP Proxy"><ins class="diff-new">
 Figure
-</ins><span class="figno"><ins class="diff-new">
+</ins><span class= "figno"><ins class="diff-new">
 9
 </ins></span></a>.<ins class="diff-new">
 In
@@ -22084,11 +22052,11 @@ configure
 appropriate
 time-to-live
 values.
-</ins></p><figure id="wot_client_thing_cachingproxy"><img src="images/cachingproxy.svg" style="width: 1000px;" width="1006" height="399"><figcaption><ins class="diff-new">
+</ins></p><figure id="wot_client_thing_cachingproxy"><img src= "images/cachingproxy.svg" style="width: 1000px;" width="1006" height="399" /><figcaption><ins class="diff-new">
 Figure
 </ins><span class="figno"><ins class="diff-new">
 10
-</ins></span><span class="fig-title"><ins class="diff-new">
+</ins></span><span class= "fig-title"><ins class="diff-new">
 WoT
 Thing
 and
@@ -22103,9 +22071,9 @@ second
 sub-variant,
 shown
 in
-</ins><a href="#wot_client_thing_cachingproxy" class="fig-ref" title="WoT Thing and WoT Client via HTTPS/HTTP Proxy"><ins class="diff-new">
+</ins><a href= "#wot_client_thing_cachingproxy" class="fig-ref" title= "WoT Thing and WoT Client via HTTPS/HTTP Proxy"><ins class="diff-new">
 Figure
-</ins><span class="figno"><ins class="diff-new">
+</ins><span class= "figno"><ins class="diff-new">
 10
 </ins></span></a>,<ins class="diff-new">
 takes
@@ -22318,9 +22286,9 @@ caveats.
 </ins></p></section>
 <section id="wot-servient-single-tenant">
 <h3 id="x7-5-wot-servient-single-tenant">
+<span class= "secno">
 <del class="diff-old">5.3
 </del>
-<span class="secno">
 <ins class="diff-chg">7.5
 </ins>
 </span>
@@ -22353,14 +22321,14 @@ Interfaces
 and
 Thing
 Descriptions.
-<a href="#wot_servient-single-tenant" class="fig-ref" title="WoT Servient Single-Tenant">
+<a href="#wot_servient-single-tenant" class="fig-ref" title= "WoT Servient Single-Tenant">
 Figure
-<span class="figno">
 <del class="diff-old">6
 WoT
 Servient
 Single-Tenant
 </del>
+<span class= "figno">
 <ins class="diff-chg">11
 </ins>
 </span>
@@ -22445,7 +22413,7 @@ installation).
 </ins>
 </p>
 <figure id="wot_servient-single-tenant">
-<img src="images/servient-single-tenant.png" style="width: 1000px;" width="1579" height="933">
+<img src= "images/servient-single-tenant.png" style="width: 1000px;" width= "1579" height="933" />
 <figcaption>
 Figure
 <span class="figno">
@@ -22454,7 +22422,7 @@ Figure
 <ins class="diff-chg">11
 </ins>
 </span>
-<span class="fig-title">
+<span class= "fig-title">
 WoT
 Servient
 Single-Tenant
@@ -22790,8 +22758,6 @@ etc.
 </li>
 </ul>
 <p>
-</p>
-<p>
 The
 mechanisms
 are
@@ -22905,14 +22871,14 @@ Thing
 described
 in
 Section
-<a href="#wot-client-server-basic" class="sec-ref">
+<a href="#wot-client-server-basic" class= "sec-ref">
 <span class="secno">
 <del class="diff-old">5.1
 </del>
 <ins class="diff-chg">7.1
 </ins>
 </span>
-<span class="sec-title">
+<span class= "sec-title">
 Basic
 Interaction
 between
@@ -23044,7 +23010,7 @@ for
 the
 WoT
 scripts.
-</ins><a href="#wot_scripts_security_1" class="fig-ref" title="Transparent handling of security during WoT Thing discovery and use"><ins class="diff-chg">
+</ins><a href="#wot_scripts_security_1" class="fig-ref" title= "Transparent handling of security during WoT Thing discovery and use"><ins class="diff-chg">
 Figure
 </ins><span class="figno"><ins class="diff-chg">
 12
@@ -23060,14 +23026,14 @@ is
 done,
 when
 a
+</ins>
 WoT
-Script
+<ins class="diff-new">Script
 discovers
 a
 new
-</ins>
 WoT
-<ins class="diff-new">Thing,
+Thing,
 MyLampThing,
 using
 the
@@ -23080,11 +23046,11 @@ invokes
 an
 action
 "toggle".
-</ins></p><figure id="wot_scripts_security_1"><img src="images/scripts-security-1.png" style="width: 1000px;" width="1845" height="912"><figcaption><ins class="diff-new">
+</ins></p><figure id="wot_scripts_security_1"><img src= "images/scripts-security-1.png" style="width: 1000px;" width="1845" height="912" /><figcaption><ins class="diff-new">
 Figure
 </ins><span class="figno"><ins class="diff-new">
 12
-</ins></span><span class="fig-title"><ins class="diff-new">
+</ins></span><span class= "fig-title"><ins class="diff-new">
 Transparent
 handling
 of
@@ -23105,9 +23071,7 @@ use
 </figcaption>
 </figure>
 <p>
-</p>
-<p>
-<a href="#wot_scripts_security_2" class="fig-ref" title="Transparent handling of security during WoT Thing exposure">
+<a href="#wot_scripts_security_2" class="fig-ref" title= "Transparent handling of security during WoT Thing exposure">
 <ins class="diff-chg">Figure
 </ins><span class="figno"><ins class="diff-chg">
 13
@@ -23241,11 +23205,15 @@ to
 the
 WoT
 Runtime.
-</ins></p><figure id="wot_scripts_security_2"><img src="images/scripts-security-2.png" style="width: 1000px;" width="2045" height="898"><figcaption><ins class="diff-chg">
-Figure
+</ins>
+</p>
+<figure id="wot_scripts_security_2">
+<img src= "images/scripts-security-2.png" style="width: 1000px;" width="2045" height="898" />
+<figcaption>
+<ins class="diff-chg">Figure
 </ins><span class="figno"><ins class="diff-chg">
 13
-</ins></span><span class="fig-title"><ins class="diff-chg">
+</ins></span><span class= "fig-title"><ins class="diff-chg">
 Transparent
 handling
 of
@@ -23254,14 +23222,13 @@ during
 WoT
 Thing
 exposure
-</ins></span></figcaption></figure><p>
-</p>
+</ins></span></figcaption></figure>
 </section>
 <section id="wot-servient-multi-tenant">
 <h3 id="x7-6-wot-servient-multi-tenant">
+<span class= "secno">
 <del class="diff-old">5.4
 </del>
-<span class="secno">
 <ins class="diff-chg">7.6
 </ins>
 </span>
@@ -23272,14 +23239,14 @@ Multi-Tenant
 </a>
 </h3>
 <p>
-<a href="#wot_servient-multi-tenant" class="fig-ref" title="WoT Servient Multi-Tenant">
+<a href="#wot_servient-multi-tenant" class="fig-ref" title= "WoT Servient Multi-Tenant">
 Figure
-<span class="figno">
 <del class="diff-old">7
 WoT
 Servient
 Multi-Tenant
 </del>
+<span class= "figno">
 <ins class="diff-chg">14
 </ins>
 </span>
@@ -23348,7 +23315,7 @@ WoT
 Runtimes.
 </p>
 <figure id="wot_servient-multi-tenant">
-<img src="images/servient-multi-tenant.png" style="width: 1000px;" width="2234" height="1078">
+<img src= "images/servient-multi-tenant.png" style="width: 1000px;" width= "2234" height="1078" />
 <figcaption>
 Figure
 <span class="figno">
@@ -23357,7 +23324,7 @@ Figure
 <ins class="diff-chg">14
 </ins>
 </span>
-<span class="fig-title">
+<span class= "fig-title">
 WoT
 Servient
 Multi-Tenant
@@ -23398,14 +23365,14 @@ be
 taken
 into
 account:
-<a href="#dfn-wot-script-management-interface-threat" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-wot-script-management-interface-threat" class="internalDFN" data-link-type="dfn">
 WoT
 Script
 Management
 Interface
 Threat
 </a>,
-<a href="#dfn-wot-untrusted-script-threat-script-compromise" class="internalDFN" data-link-type="dfn">
+<a href="#dfn-wot-untrusted-script-threat-script-compromise" class= "internalDFN" data-link-type="dfn">
 WoT
 Untrusted
 Script
@@ -23414,7 +23381,7 @@ Threat
 Script
 Compromise
 </a>,
-<a href="#dfn-wot-untrusted-script-threat-runtime-compromise" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-wot-untrusted-script-threat-runtime-compromise" class= "internalDFN" data-link-type="dfn">
 WoT
 Untrusted
 Script
@@ -23423,7 +23390,7 @@ Threat
 Runtime
 Compromise
 </a>,
-<a href="#dfn-wot-untrusted-script-threat-authenticity" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-wot-untrusted-script-threat-authenticity" class="internalDFN" data-link-type="dfn">
 WoT
 Untrusted
 Script
@@ -23431,7 +23398,7 @@ Threat
 -
 Authenticity
 </a>,
-<a href="#dfn-wot-untrusted-script-threat-confidentiality" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-wot-untrusted-script-threat-confidentiality" class= "internalDFN" data-link-type="dfn">
 WoT
 Untrusted
 Script
@@ -23439,7 +23406,7 @@ Threat
 -
 Confidentiality
 </a>,
-<a href="#dfn-wot-untrusted-script-threat-td-authenticity" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-wot-untrusted-script-threat-td-authenticity" class= "internalDFN" data-link-type="dfn">
 WoT
 Untrusted
 Script
@@ -23448,7 +23415,7 @@ Threat
 TD
 Authenticity
 </a>,
-<a href="#dfn-wot-untrusted-script-threat-td-confidentiality-and-privacy" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-wot-untrusted-script-threat-td-confidentiality-and-privacy" class="internalDFN" data-link-type="dfn">
 WoT
 Untrusted
 Script
@@ -23462,7 +23429,7 @@ and
 Privacy
 </ins>
 </a>,
-<a href="#dfn-wot-untrusted-script-threat-system-user-data-authenticity" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-wot-untrusted-script-threat-system-user-data-authenticity" class="internalDFN" data-link-type="dfn">
 WoT
 Untrusted
 Script
@@ -23476,7 +23443,7 @@ User
 Data
 Authenticity
 </a>,
-<a href="#dfn-wot-untrusted-script-threat-system-user-data-confidentiality-and-privacy" class="internalDFN" data-link-type="dfn">
+<a href= "#dfn-wot-untrusted-script-threat-system-user-data-confidentiality-and-privacy" class="internalDFN" data-link-type="dfn">
 WoT
 Untrusted
 Script
@@ -23592,10 +23559,10 @@ methods
 described
 in
 Section
-<a href="#wot-client-server-basic" class="sec-ref">
+<a href= "#wot-client-server-basic" class="sec-ref">
+<span class= "secno">
 <del class="diff-old">5.1
 </del>
-<span class="secno">
 <ins class="diff-chg">7.1
 </ins>
 </span>
@@ -23617,9 +23584,7 @@ Client
 Editor's
 note
 </span>
-<del class="diff-old">:
-</del>
-<span style="text-transform: none">:
+<span style= "text-transform: none">:
 WoT
 Script
 provisioning
@@ -23720,7 +23685,7 @@ scripts
 </span>
 Security
 Validation
-<a class="self-link" aria-label="§" href="#security-validation">
+<a class="self-link" aria-label="§" href= "#security-validation">
 </a>
 </h2>
 <p>
@@ -23753,9 +23718,7 @@ perspective.
 Editor's
 note
 </span>
-<del class="diff-old">:
-</del>
-<span style="text-transform: none">:
+<span style= "text-transform: none">:
 Fill
 in
 the
@@ -23777,7 +23740,7 @@ validation
 section
 of
 the
-</ins><a href="https://github.com/w3c/wot/blob/master/testing/plan.md"><ins class="diff-new">
+</ins><a href= "https://github.com/w3c/wot/blob/master/testing/plan.md"><ins class="diff-new">
 WoT
 Testing
 plan
@@ -23798,7 +23761,7 @@ meantime.
 </ins>
 </span>
 Terminology
-<a class="self-link" aria-label="§" href="#terminology">
+<a class="self-link" aria-label="§" href= "#terminology">
 </a>
 </h2>
 <p>
@@ -23806,7 +23769,7 @@ Please
 refer
 to
 the
-<a href="https://www.w3.org/TR/2017/WD-wot-architecture-20170914/#terminology">
+<a href= "https://www.w3.org/TR/2017/WD-wot-architecture-20170914/#terminology">
 WoT
 Architecture
 </a>
@@ -23825,7 +23788,7 @@ definitions.
 </ins>
 </span>
 Summary
-<a class="self-link" aria-label="§" href="#summary">
+<a class="self-link" aria-label="§" href= "#summary">
 </a>
 </h2>
 </section>
@@ -23839,7 +23802,7 @@ Summary
 A.
 </span>
 References
-<a class="self-link" aria-label="§" href="#references">
+<a class="self-link" aria-label="§" href= "#references">
 </a>
 </h2>
 <section id="normative-references">
@@ -23852,7 +23815,7 @@ A.1
 <ins class="diff-chg">Normative
 </ins>
 references
-<a class="self-link" aria-label="§" href="#normative-references">
+<a class="self-link" aria-label="§" href= "#normative-references">
 </a>
 </h3>
 <dl class="bibliography">
@@ -23860,7 +23823,7 @@ references
 [Bel13]
 </dt>
 <dd>
-<a href="https://csrc.nist.gov/csrc/media/events/workshop-on-improving-trust-in-the-online-marketpl/documents/presentations/bellovin_ca-workshop2013.pdf">
+<a href= "https://csrc.nist.gov/csrc/media/events/workshop-on-improving-trust-in-the-online-marketpl/documents/presentations/bellovin_ca-workshop2013.pdf">
 <cite>
 Web
 Security
@@ -23884,7 +23847,7 @@ NIST.
 April
 2013.
 URL:
-<a href="https://csrc.nist.gov/csrc/media/events/workshop-on-improving-trust-in-the-online-marketpl/documents/presentations/bellovin_ca-workshop2013.pdf">
+<a href= "https://csrc.nist.gov/csrc/media/events/workshop-on-improving-trust-in-the-online-marketpl/documents/presentations/bellovin_ca-workshop2013.pdf">
 https://csrc.nist.gov/csrc/media/events/workshop-on-improving-trust-in-the-online-marketpl/documents/presentations/bellovin_ca-workshop2013.pdf
 </a>
 </dd>
@@ -23892,7 +23855,7 @@ https://csrc.nist.gov/csrc/media/events/workshop-on-improving-trust-in-the-onlin
 [Bel89]
 </dt>
 <dd>
-<a href="https://cseweb.ucsd.edu/classes/sp99/cse227/ipext.pdf">
+<a href= "https://cseweb.ucsd.edu/classes/sp99/cse227/ipext.pdf">
 <cite>
 Security
 Problems
@@ -23915,7 +23878,7 @@ No.
 April
 1989.
 URL:
-<a href="https://cseweb.ucsd.edu/classes/sp99/cse227/ipext.pdf">
+<a href= "https://cseweb.ucsd.edu/classes/sp99/cse227/ipext.pdf">
 https://cseweb.ucsd.edu/classes/sp99/cse227/ipext.pdf
 </a>
 </dd>
@@ -23923,7 +23886,7 @@ https://cseweb.ucsd.edu/classes/sp99/cse227/ipext.pdf
 [Ber14]
 </dt>
 <dd>
-<a href="http://www.cloudidentity.com/blog/2014/04/22/authentication-protocols-web-ux-and-web-api/">
+<a href= "http://www.cloudidentity.com/blog/2014/04/22/authentication-protocols-web-ux-and-web-api/">
 <cite>
 Authentication
 Protocols,
@@ -23938,7 +23901,7 @@ V.
 Bertocci.April
 2014.
 URL:
-<a href="http://www.cloudidentity.com/blog/2014/04/22/authentication-protocols-web-ux-and-web-api/">
+<a href= "http://www.cloudidentity.com/blog/2014/04/22/authentication-protocols-web-ux-and-web-api/">
 http://www.cloudidentity.com/blog/2014/04/22/authentication-protocols-web-ux-and-web-api/
 </a>
 </dd>
@@ -23946,7 +23909,7 @@ http://www.cloudidentity.com/blog/2014/04/22/authentication-protocols-web-ux-and
 [Bor14]
 </dt>
 <dd>
-<a href="https://tools.ietf.org/rfc/rfc7228.txt">
+<a href= "https://tools.ietf.org/rfc/rfc7228.txt">
 <cite>
 Terminology
 for
@@ -23964,7 +23927,7 @@ RFC
 May
 2014.
 URL:
-<a href="https://tools.ietf.org/rfc/rfc7228.txt">
+<a href= "https://tools.ietf.org/rfc/rfc7228.txt">
 https://tools.ietf.org/rfc/rfc7228.txt
 </a>
 </dd>
@@ -23972,7 +23935,7 @@ https://tools.ietf.org/rfc/rfc7228.txt
 [Bru14]
 </dt>
 <dd>
-<a href="https://www.cs.utexas.edu/~shmat/shmat_oak14.pdf">
+<a href= "https://www.cs.utexas.edu/~shmat/shmat_oak14.pdf">
 <cite>
 Using
 Frankencerts
@@ -23997,7 +23960,7 @@ Security
 Privacy.
 2014.
 URL:
-<a href="https://www.cs.utexas.edu/~shmat/shmat_oak14.pdf">
+<a href= "https://www.cs.utexas.edu/~shmat/shmat_oak14.pdf">
 https://www.cs.utexas.edu/~shmat/shmat_oak14.pdf
 </a>
 </dd>
@@ -24005,7 +23968,7 @@ https://www.cs.utexas.edu/~shmat/shmat_oak14.pdf
 [CBOR17]
 </dt>
 <dd>
-<a href="https://tools.ietf.org/pdf/draft-ietf-ace-cbor-web-token-07.pdf">
+<a href= "https://tools.ietf.org/pdf/draft-ietf-ace-cbor-web-token-07.pdf">
 <cite>
 CBOR
 Web
@@ -24018,7 +23981,7 @@ June
 2017.
 Internet-Draft.
 URL:
-<a href="https://tools.ietf.org/pdf/draft-ietf-ace-cbor-web-token-07.pdf">
+<a href= "https://tools.ietf.org/pdf/draft-ietf-ace-cbor-web-token-07.pdf">
 https://tools.ietf.org/pdf/draft-ietf-ace-cbor-web-token-07.pdf
 </a>
 </dd>
@@ -24047,7 +24010,7 @@ Guideline).
 July
 2013.
 URL:
-<a href="https://tools.ietf.org/html/rfc6973">
+<a href= "https://tools.ietf.org/html/rfc6973">
 https://tools.ietf.org/html/rfc6973
 </a>
 </dd>
@@ -24055,7 +24018,7 @@ https://tools.ietf.org/html/rfc6973
 [CoRE-RD]
 </dt>
 <dd>
-<a href="https://tools.ietf.org/html/draft-ietf-core-resource-directory-11">
+<a href= "https://tools.ietf.org/html/draft-ietf-core-resource-directory-11">
 <cite>
 CoRE
 Resource
@@ -24068,7 +24031,7 @@ July
 2017.
 Internet-Draft.
 URL:
-<a href="https://tools.ietf.org/html/draft-ietf-core-resource-directory-11">
+<a href= "https://tools.ietf.org/html/draft-ietf-core-resource-directory-11">
 https://tools.ietf.org/html/draft-ietf-core-resource-directory-11
 </a>
 </dd>
@@ -24076,7 +24039,7 @@ https://tools.ietf.org/html/draft-ietf-core-resource-directory-11
 [COSE17]
 </dt>
 <dd>
-<a href="https://tools.ietf.org/pdf/draft-ietf-cose-msg-24.pdf">
+<a href= "https://tools.ietf.org/pdf/draft-ietf-cose-msg-24.pdf">
 <cite>
 CBOR
 Object
@@ -24091,7 +24054,7 @@ May
 2017.
 Internet-Draft.
 URL:
-<a href="https://tools.ietf.org/pdf/draft-ietf-cose-msg-24.pdf">
+<a href= "https://tools.ietf.org/pdf/draft-ietf-cose-msg-24.pdf">
 https://tools.ietf.org/pdf/draft-ietf-cose-msg-24.pdf
 </a>
 </dd>
@@ -24099,7 +24062,7 @@ https://tools.ietf.org/pdf/draft-ietf-cose-msg-24.pdf
 [Dur13]
 </dt>
 <dd>
-<a href="https://conferences.sigcomm.org/imc/2013/papers/imc257-durumericAemb.pdf">
+<a href= "https://conferences.sigcomm.org/imc/2013/papers/imc257-durumericAemb.pdf">
 <cite>
 Analysis
 of
@@ -24127,7 +24090,7 @@ October
 URL:
 <del class="diff-old">http://conferences.sigcomm.org/imc/2013/papers/imc257-durumericAemb.pdf
 </del>
-<a href="https://conferences.sigcomm.org/imc/2013/papers/imc257-durumericAemb.pdf">
+<a href= "https://conferences.sigcomm.org/imc/2013/papers/imc257-durumericAemb.pdf">
 <ins class="diff-chg">https://conferences.sigcomm.org/imc/2013/papers/imc257-durumericAemb.pdf
 </ins>
 </a>
@@ -24166,7 +24129,7 @@ n
 1,.
 2000.
 URL:
-<a href="https://www.schneier.com/paper-pki.pdf">
+<a href= "https://www.schneier.com/paper-pki.pdf">
 https://www.schneier.com/paper-pki.pdf
 </a>
 </dd>
@@ -24174,7 +24137,7 @@ https://www.schneier.com/paper-pki.pdf
 [Fu01]
 </dt>
 <dd>
-<a href="https://pdos.csail.mit.edu/papers/webauth:sec10.pdf">
+<a href= "https://pdos.csail.mit.edu/papers/webauth:sec10.pdf">
 <cite>
 Dos
 and
@@ -24201,7 +24164,7 @@ August
 URL:
 <del class="diff-old">http://pdos.csail.mit.edu/papers/webauth:sec10.pdf
 </del>
-<a href="https://pdos.csail.mit.edu/papers/webauth:sec10.pdf">
+<a href= "https://pdos.csail.mit.edu/papers/webauth:sec10.pdf">
 <ins class="diff-chg">https://pdos.csail.mit.edu/papers/webauth:sec10.pdf
 </ins>
 </a>
@@ -24210,7 +24173,7 @@ URL:
 [Garcia17]
 </dt>
 <dd>
-<a href="https://datatracker.ietf.org/doc/draft-irtf-t2trg-iot-seccons/">
+<a href= "https://datatracker.ietf.org/doc/draft-irtf-t2trg-iot-seccons/">
 <cite>
 State-of-the-Art
 and
@@ -24229,7 +24192,7 @@ S.
 Kumar;
 M.
 Sethi.URL:
-<a href="https://datatracker.ietf.org/doc/draft-irtf-t2trg-iot-seccons/">
+<a href= "https://datatracker.ietf.org/doc/draft-irtf-t2trg-iot-seccons/">
 https://datatracker.ietf.org/doc/draft-irtf-t2trg-iot-seccons/
 </a>
 </dd>
@@ -24237,7 +24200,7 @@ https://datatracker.ietf.org/doc/draft-irtf-t2trg-iot-seccons/
 [Geo12]
 </dt>
 <dd>
-<a href="https://www.cs.utexas.edu/~shmat/shmat_ccs12.pdf">
+<a href= "https://www.cs.utexas.edu/~shmat/shmat_ccs12.pdf">
 <cite>
 The
 Most
@@ -24273,7 +24236,7 @@ security.
 URL:
 <del class="diff-old">http://www.cs.utexas.edu/~shmat/shmat_ccs12.pdf
 </del>
-<a href="https://www.cs.utexas.edu/~shmat/shmat_ccs12.pdf">
+<a href= "https://www.cs.utexas.edu/~shmat/shmat_ccs12.pdf">
 <ins class="diff-chg">https://www.cs.utexas.edu/~shmat/shmat_ccs12.pdf
 </ins>
 </a>
@@ -24282,7 +24245,7 @@ URL:
 [Gol03]
 </dt>
 <dd>
-<a href="http://www.wisdom.weizmann.ac.il/~oded/foc-sur01.html">
+<a href= "http://www.wisdom.weizmann.ac.il/~oded/foc-sur01.html">
 <cite>
 Cryptography
 and
@@ -24298,7 +24261,7 @@ vol.
 16.
 2003.
 URL:
-<a href="http://www.wisdom.weizmann.ac.il/~oded/foc-sur01.html">
+<a href= "http://www.wisdom.weizmann.ac.il/~oded/foc-sur01.html">
 http://www.wisdom.weizmann.ac.il/~oded/foc-sur01.html
 </a>
 </dd>
@@ -24306,7 +24269,7 @@ http://www.wisdom.weizmann.ac.il/~oded/foc-sur01.html
 [Gre14]
 </dt>
 <dd>
-<a href="https://blog.cryptographyengineering.com/2014/03/19/how-do-you-know-if-rng-is-working/">
+<a href= "https://blog.cryptographyengineering.com/2014/03/19/how-do-you-know-if-rng-is-working/">
 <cite>
 How
 do
@@ -24325,7 +24288,7 @@ Green.March
 URL:
 <del class="diff-old">http://blog.cryptographyengineering.com/2014/03/how-do-you-know-if-rng-is-working.html
 </del>
-<a href="https://blog.cryptographyengineering.com/2014/03/19/how-do-you-know-if-rng-is-working/">
+<a href= "https://blog.cryptographyengineering.com/2014/03/19/how-do-you-know-if-rng-is-working/">
 <ins class="diff-chg">https://blog.cryptographyengineering.com/2014/03/19/how-do-you-know-if-rng-is-working/
 </ins>
 </a>
@@ -24334,7 +24297,7 @@ URL:
 [Gut02]
 </dt>
 <dd>
-<a href="https://www.cs.auckland.ac.nz/~pgut001/pubs/notdead.pdf">
+<a href= "https://www.cs.auckland.ac.nz/~pgut001/pubs/notdead.pdf">
 <cite>
 PKI:
 It’s
@@ -24355,7 +24318,7 @@ no.
 Aug.
 2002.
 URL:
-<a href="https://www.cs.auckland.ac.nz/~pgut001/pubs/notdead.pdf">
+<a href= "https://www.cs.auckland.ac.nz/~pgut001/pubs/notdead.pdf">
 https://www.cs.auckland.ac.nz/~pgut001/pubs/notdead.pdf
 </a>
 </dd>
@@ -24363,7 +24326,7 @@ https://www.cs.auckland.ac.nz/~pgut001/pubs/notdead.pdf
 [Hea13]
 </dt>
 <dd>
-<a href="https://googleblog.blogspot.de/2013/02/an-update-on-our-war-against-account.html">
+<a href= "https://googleblog.blogspot.de/2013/02/an-update-on-our-war-against-account.html">
 <cite>
 An
 update
@@ -24381,7 +24344,7 @@ Hearn.Feb
 URL:
 <del class="diff-old">http://googleblog.blogspot.de/2013/02/an-update-on-our-war-against-account.html
 </del>
-<a href="https://googleblog.blogspot.de/2013/02/an-update-on-our-war-against-account.html">
+<a href= "https://googleblog.blogspot.de/2013/02/an-update-on-our-war-against-account.html">
 <ins class="diff-chg">https://googleblog.blogspot.de/2013/02/an-update-on-our-war-against-account.html
 </ins>
 </a>
@@ -24403,7 +24366,7 @@ Environments
 </cite>
 </a>.
 URL:
-<a href="https://tools.ietf.org/wg/ace/">
+<a href= "https://tools.ietf.org/wg/ace/">
 https://tools.ietf.org/wg/ace/
 </a>
 </dd>
@@ -24424,7 +24387,7 @@ Internet
 Consortium.June
 2015.
 URL:
-<a href="http://www.iiconsortium.org/IIRA.htm">
+<a href= "http://www.iiconsortium.org/IIRA.htm">
 http://www.iiconsortium.org/IIRA.htm
 </a>
 </dd>
@@ -24454,7 +24417,7 @@ Jan
 URL:
 <del class="diff-old">http://www.iiconsortium.org/IIRA.htm
 </del>
-<a href="https://www.iiconsortium.org/IIRA.htm">
+<a href= "https://www.iiconsortium.org/IIRA.htm">
 <ins class="diff-chg">https://www.iiconsortium.org/IIRA.htm
 </ins>
 </a>
@@ -24485,7 +24448,7 @@ Sept
 URL:
 <del class="diff-old">http://www.iiconsortium.org/IISF.htm
 </del>
-<a href="https://www.iiconsortium.org/IISF.htm">
+<a href= "https://www.iiconsortium.org/IISF.htm">
 <ins class="diff-chg">https://www.iiconsortium.org/IISF.htm
 </ins>
 </a>
@@ -24494,7 +24457,7 @@ URL:
 [ISF17]
 </dt>
 <dd>
-<a href="https://iotsecurityfoundation.org/best-practice-guidelines/">
+<a href= "https://iotsecurityfoundation.org/best-practice-guidelines/">
 <cite>
 IoT
 Security
@@ -24509,7 +24472,7 @@ Security
 Foundation.May
 2017.
 URL:
-<a href="https://iotsecurityfoundation.org/best-practice-guidelines/">
+<a href= "https://iotsecurityfoundation.org/best-practice-guidelines/">
 https://iotsecurityfoundation.org/best-practice-guidelines/
 </a>
 </dd>
@@ -24517,7 +24480,7 @@ https://iotsecurityfoundation.org/best-practice-guidelines/
 [Jon14]
 </dt>
 <dd>
-<a href="http://www.niso.org/sites/default/files/stories/2017-08/SP_Jones_JSON_isqv26no3.pdf">
+<a href= "http://www.niso.org/sites/default/files/stories/2017-08/SP_Jones_JSON_isqv26no3.pdf">
 <cite>
 A
 JSON-Based
@@ -24557,7 +24520,7 @@ IETF.
 May
 2015.
 URL:
-<a href="https://tools.ietf.org/html/rfc7519">
+<a href= "https://tools.ietf.org/html/rfc7519">
 https://tools.ietf.org/html/rfc7519
 </a>
 </dd>
@@ -24592,7 +24555,7 @@ D.C.
 URL:
 <del class="diff-old">http://www.nap.edu/openbook.php?isbn=0309088968
 </del>
-<a href="https://www.nap.edu/read/10656/chapter/1">
+<a href= "https://www.nap.edu/read/10656/chapter/1">
 <ins class="diff-chg">https://www.nap.edu/read/10656/chapter/1
 </ins>
 </a>
@@ -24601,7 +24564,7 @@ URL:
 [Lam04]
 </dt>
 <dd>
-<a href="https://pdfs.semanticscholar.org/6fe5/ba7a096e391d985e7818fef9d0f0636210a0.pdf">
+<a href= "https://pdfs.semanticscholar.org/6fe5/ba7a096e391d985e7818fef9d0f0636210a0.pdf">
 <cite>
 Computer
 Security
@@ -24622,7 +24585,7 @@ no.
 June
 2004.
 URL:
-<a href="https://pdfs.semanticscholar.org/6fe5/ba7a096e391d985e7818fef9d0f0636210a0.pdf">
+<a href= "https://pdfs.semanticscholar.org/6fe5/ba7a096e391d985e7818fef9d0f0636210a0.pdf">
 https://pdfs.semanticscholar.org/6fe5/ba7a096e391d985e7818fef9d0f0636210a0.pdf
 </a>
 </dd>
@@ -24647,13 +24610,13 @@ RFC
 July
 2005.
 URL:
-</ins><a href="https://tools.ietf.org/html/rfc4122"><ins class="diff-chg">
+</ins><a href= "https://tools.ietf.org/html/rfc4122"><ins class="diff-chg">
 https://tools.ietf.org/html/rfc4122
 </ins></a></dd><dt id="bib-loc05">
 [Loc05]
 </dt>
 <dd>
-<a href="http://www.oracle.com/technetwork/testcontent/saml-084342.html">
+<a href= "http://www.oracle.com/technetwork/testcontent/saml-084342.html">
 <cite>
 Demystifying
 SAML
@@ -24663,7 +24626,7 @@ H.
 Lockhart.May
 2005.
 URL:
-<a href="http://www.oracle.com/technetwork/testcontent/saml-084342.html">
+<a href= "http://www.oracle.com/technetwork/testcontent/saml-084342.html">
 http://www.oracle.com/technetwork/testcontent/saml-084342.html
 </a>
 </dd>
@@ -24671,7 +24634,7 @@ http://www.oracle.com/technetwork/testcontent/saml-084342.html
 [Mel15]
 </dt>
 <dd>
-<a href="https://c.ymcdn.com/sites/www.issa.org/resource/resmgr/journalpdfs/feature0615.pdf">
+<a href= "https://c.ymcdn.com/sites/www.issa.org/resource/resmgr/journalpdfs/feature0615.pdf">
 <cite>
 Securing
 the
@@ -24687,7 +24650,7 @@ Melzer.June
 URL:
 <del class="diff-old">http://c.ymcdn.com/sites/www.issa.org/resource/resmgr/journalpdfs/feature0615.pdf
 </del>
-<a href="https://c.ymcdn.com/sites/www.issa.org/resource/resmgr/journalpdfs/feature0615.pdf">
+<a href= "https://c.ymcdn.com/sites/www.issa.org/resource/resmgr/journalpdfs/feature0615.pdf">
 <ins class="diff-chg">https://c.ymcdn.com/sites/www.issa.org/resource/resmgr/journalpdfs/feature0615.pdf
 </ins>
 </a>
@@ -24696,7 +24659,7 @@ URL:
 [Mic17]
 </dt>
 <dd>
-<a href="https://docs.microsoft.com/en-us/azure/iot-suite/iot-security-architecture">
+<a href= "https://docs.microsoft.com/en-us/azure/iot-suite/iot-security-architecture">
 <cite>
 Internet
 of
@@ -24714,7 +24677,7 @@ IoT.
 Jan
 2017.
 URL:
-<a href="https://docs.microsoft.com/en-us/azure/iot-suite/iot-security-architecture">
+<a href= "https://docs.microsoft.com/en-us/azure/iot-suite/iot-security-architecture">
 https://docs.microsoft.com/en-us/azure/iot-suite/iot-security-architecture
 </a>
 </dd>
@@ -24722,7 +24685,7 @@ https://docs.microsoft.com/en-us/azure/iot-suite/iot-security-architecture
 [Moo02]
 </dt>
 <dd>
-<a href="https://www.csd.uoc.gr/~hy435/material/moors.pdf">
+<a href= "https://www.csd.uoc.gr/~hy435/material/moors.pdf">
 <cite>
 A
 critical
@@ -24749,7 +24712,7 @@ Communications.
 URL:
 <del class="diff-old">http://www.csd.uoc.gr/~hy435/material/moors.pdf
 </del>
-<a href="https://www.csd.uoc.gr/~hy435/material/moors.pdf">
+<a href= "https://www.csd.uoc.gr/~hy435/material/moors.pdf">
 <ins class="diff-chg">https://www.csd.uoc.gr/~hy435/material/moors.pdf
 </ins>
 </a>
@@ -24777,7 +24740,7 @@ Publication
 [Ocf17]
 </dt>
 <dd>
-<a href="https://openconnectivity.org/specs/OCF_Security_Specification_v1.0.0.pdf">
+<a href= "https://openconnectivity.org/specs/OCF_Security_Specification_v1.0.0.pdf">
 <cite>
 The
 OCF
@@ -24791,7 +24754,7 @@ OCF.
 June
 2017.
 URL:
-<a href="https://openconnectivity.org/specs/OCF_Security_Specification_v1.0.0.pdf">
+<a href= "https://openconnectivity.org/specs/OCF_Security_Specification_v1.0.0.pdf">
 https://openconnectivity.org/specs/OCF_Security_Specification_v1.0.0.pdf
 </a>
 </dd>
@@ -24799,7 +24762,7 @@ https://openconnectivity.org/specs/OCF_Security_Specification_v1.0.0.pdf
 [Oos10]
 </dt>
 <dd>
-<a href="https://tnc2011.terena.org/getfile/696">
+<a href= "https://tnc2011.terena.org/getfile/696">
 <cite>
 Provisioning
 scenarios
@@ -24817,7 +24780,7 @@ Research
 Paper.
 2010.
 URL:
-<a href="https://tnc2011.terena.org/getfile/696">
+<a href= "https://tnc2011.terena.org/getfile/696">
 https://tnc2011.terena.org/getfile/696
 </a>
 </dd>
@@ -24825,7 +24788,7 @@ https://tnc2011.terena.org/getfile/696
 [OSCOAP17]
 </dt>
 <dd>
-<a href="https://tools.ietf.org/pdf/draft-ietf-core-object-security-04.pdf">
+<a href= "https://tools.ietf.org/pdf/draft-ietf-core-object-security-04.pdf">
 <cite>
 Object
 Security
@@ -24839,7 +24802,7 @@ July
 2017.
 Internet-Draft.
 URL:
-<a href="https://tools.ietf.org/pdf/draft-ietf-core-object-security-04.pdf">
+<a href= "https://tools.ietf.org/pdf/draft-ietf-core-object-security-04.pdf">
 https://tools.ietf.org/pdf/draft-ietf-core-object-security-04.pdf
 </a>
 </dd>
@@ -24847,7 +24810,7 @@ https://tools.ietf.org/pdf/draft-ietf-core-object-security-04.pdf
 [Owa17]
 </dt>
 <dd>
-<a href="https://www.owasp.org/index.php/Threat_Risk_Modeling">
+<a href= "https://www.owasp.org/index.php/Threat_Risk_Modeling">
 <cite>
 Threat
 Risk
@@ -24859,7 +24822,7 @@ OWASP.
 Jan
 2017.
 URL:
-<a href="https://www.owasp.org/index.php/Threat_Risk_Modeling">
+<a href= "https://www.owasp.org/index.php/Threat_Risk_Modeling">
 https://www.owasp.org/index.php/Threat_Risk_Modeling
 </a>
 </dd>
@@ -24898,7 +24861,7 @@ https://tools.ietf.org/html/rfc3552
 [Sch14]
 </dt>
 <dd>
-<a href="https://www.wired.com/2014/01/theres-no-good-way-to-patch-the-internet-of-things-and-thats-a-huge-problem/">
+<a href= "https://www.wired.com/2014/01/theres-no-good-way-to-patch-the-internet-of-things-and-thats-a-huge-problem/">
 <cite>
 The
 Internet
@@ -24930,7 +24893,7 @@ URL:
 [Sch99]
 </dt>
 <dd>
-<a href="https://www.schneier.com/paper-smart-card-threats.pdf">
+<a href= "https://www.schneier.com/paper-smart-card-threats.pdf">
 <cite>
 Breaking
 Up
@@ -24960,7 +24923,7 @@ USENIX
 Press.
 1999.
 URL:
-<a href="https://www.schneier.com/paper-smart-card-threats.pdf">
+<a href= "https://www.schneier.com/paper-smart-card-threats.pdf">
 https://www.schneier.com/paper-smart-card-threats.pdf
 </a>
 </dd>
@@ -24987,7 +24950,7 @@ RFC
 June
 2014.
 URL:
-<a href="https://tools.ietf.org/rfc/rfc7252.txt">
+<a href= "https://tools.ietf.org/rfc/rfc7252.txt">
 https://tools.ietf.org/rfc/rfc7252.txt
 </a>
 </dd>
@@ -25012,7 +24975,7 @@ RFC
 Aug.
 2000.
 URL:
-<a href="https://tools.ietf.org/rfc/rfc2904.txt">
+<a href= "https://tools.ietf.org/rfc/rfc2904.txt">
 https://tools.ietf.org/rfc/rfc2904.txt
 </a>
 </dd>
@@ -25020,7 +24983,7 @@ https://tools.ietf.org/rfc/rfc2904.txt
 [Yeg11]
 </dt>
 <dd>
-<a href="https://plus.google.com/+RipRowan/posts/eVeouesvaVX">
+<a href= "https://plus.google.com/+RipRowan/posts/eVeouesvaVX">
 <cite>
 Stevey's
 Google
@@ -25034,7 +24997,7 @@ Blog.
 Oct.
 2011.
 URL:
-<a href="https://plus.google.com/+RipRowan/posts/eVeouesvaVX">
+<a href= "https://plus.google.com/+RipRowan/posts/eVeouesvaVX">
 https://plus.google.com/+RipRowan/posts/eVeouesvaVX
 </a>
 </dd>
@@ -25043,7 +25006,7 @@ https://plus.google.com/+RipRowan/posts/eVeouesvaVX
 </section>
 <p role="navigation" id="back-to-top">
 <a href="#title">
-<abbr title="Back to Top">
+<abbr title= "Back to Top">
 ↑
 </abbr>
 </a>
