@@ -829,8 +829,8 @@
       "id": "yeg11"
     }
   },
-  "publishISODate": "2018-11-20T00:00:00.000Z",
-  "generatedSubtitle": "Working Group Note 20 November 2018"
+  "publishISODate": "2018-12-03T00:00:00.000Z",
+  "generatedSubtitle": "Working Group Note 3 December 2018"
   }
   </script>
   <meta name="description" content=
@@ -844,13 +844,13 @@
     <h1 id="title" class="title p-name">Web of Things (WoT)
     Security and Privacy Considerations</h1>
     <h2><abbr title="World Wide Web Consortium">W3C</abbr> Working
-    Group Note <time class="dt-published" datetime="2018-11-20">20
-    November 2018</time></h2>
+    Group Note <time class="dt-published" datetime="2018-12-03">3
+    December 2018</time></h2>
     <dl>
       <dt>This version:</dt>
       <dd>
         <a class="u-url" href=
-        "https://www.w3.org/TR/2018/NOTE-wot-security-20181120/">https://www.w3.org/TR/2018/NOTE-wot-security-20181120/</a>
+        "https://www.w3.org/TR/2018/NOTE-wot-security-20181203/">https://www.w3.org/TR/2018/NOTE-wot-security-20181203/</a>
       </dd>
       <dt>Latest published version:</dt>
       <dd>
@@ -1500,7 +1500,7 @@
               security root of trust and sets up the initial
               policies on who can provision/update/remove scripts
               to/from the WoT runtimes, if such model is supported.
-              Any of the above stakholders can be the System Owner
+              Any of the above stakeholders can be the System Owner
               depending on the concrete setup. A WoT system might
               have a number of independent System Owners, each with
               their own set of provisioned certificates and/or
@@ -1620,7 +1620,7 @@
                 Data, if a WoT device has a single System Provider
                 that installs and configures WoT Runtime and
                 Protocol Bindings. However, these can be also
-                provided and confgured by the OEM, and the same
+                provided and configured by the OEM, and the same
                 Protocol Bindings could be used by multiple System
                 Providers on the same device.
               </td>
@@ -2929,7 +2929,7 @@
                 Untrusted Script Threat - Script Compromise</a><br>
                 <strong>Attack method:</strong> Any local attack
                 method on another script running in the same WoT
-                runtime that results in an attacker acheiving
+                runtime that results in an attacker achieving
                 unauthorized modification of a <a href=
                 "#dfn-thing-descriptions" class="internalDFN"
                 data-link-type="dfn">TD</a>, including rolling back
@@ -3144,7 +3144,7 @@
               specified location potentially revealing its
               credentials, such as username and password. Similarly
               instead of modifying the legitimate TD, an attack
-              might save it and use iit later on, for example when
+              might save it and use it later on, for example when
               it would be updated to a newer version. Then, an
               attacker substitutes a new version of the TD with an
               older version to cause DoS to a device trying to get
@@ -3993,7 +3993,7 @@
       can be used to identify vulnerable systems. Instead the TD
       should capture all information needed to support
       interoperability without reference to particular
-      implementions.</p>
+      implementations.</p>
       <p>This recommendation helps prevent the following threats:
       <a href=
       "#dfn-wot-communication-threat-td-confidentiality-and-privacy"
@@ -4329,7 +4329,7 @@
         provisioning.</li>
         <li><strong>Certificates.</strong> This method assumes that
         the WoT Client has been provisioned with the certificate of
-        the device exposing the WoT thing (and vica versa) so the
+        the device exposing the WoT thing (and vice versa) so the
         devices are able to mutually authenticate each other. The
         provisioning of the certificates can take place during
         device provisioning/on-boarding phase using one of the
@@ -4580,7 +4580,7 @@
       "Split Proxy" because the combination of the Local and Remote
       Proxy together act like a single proxy service. The Local and
       Remote Gateway Servients are connected with a secure channel
-      (which may be non-WoT, eg it does not have to use a protocol
+      (which may be non-WoT, e.g., it does not have to use a protocol
       known to WoT) as the Local Gateway Servient only communicates
       over this channel with the Remote Gateway Servient. The WoT
       Remote Gateway Servient should use the mechanisms described
@@ -4695,11 +4695,11 @@
       bridge to an external HTTPS network interface. In this case,
       the tunnel should be encrypted (for example, using SSH) to
       prevent eavesdropping; a regular IP tunnel is not sufficient.
-      Depending on the configuration, the unencryped traffic (eg
+      Depending on the configuration, the encrypted traffic (eg
       HTTP) may also be visible on the local network. In this case,
       the only protection would be from that provided by the local
-      network, eg WPA. If such a relatively unprotected local
-      interace is <em>not</em> desirable, another SSH tunnel can be
+      network, e.g., WPA. If such a relatively unprotected local
+      interface is <em>not</em> desirable, another SSH tunnel can be
       used between the WoT Thing and the Gateway, or the WoT Thing
       can act as its own gateway (with the HTTP traffic protected
       behind a firewall).</p>
