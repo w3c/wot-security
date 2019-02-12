@@ -428,10 +428,10 @@
        </figure>
 
       <p>The lifecycle of a WoT device is similar to the lifecycles of other IoT devices and services.
-      Iy may in fact be identical if a WoT Thing Description is being used simply to describe an existing device
+      It may in fact be identical if a WoT Thing Description is being used simply to describe an existing device
       implemented using another standard.
       However, 
-      for discussion purposes we will use the generic lifecycle shown in Figure <a href="#wot-lifecycle"></a> 
+      for discussion purposes we will use the generic lifecycle shown in <a href="#wot-lifecycle"></a> 
       which includes the following states:
       <ul>
         <li><strong>Manufactured:</strong> The WoT device has been manufactured by an OEM.
@@ -451,21 +451,21 @@
 		Devices in this state are fully ready to communicate over WoT interfaces and satisfy their deployment's operational roles. 
 		From the Operational state a device can return to the Manufactured state 
                 if it is fully decommissioned and security de-provisioned 
-		(link E in Figure <a href="#wot-lifecycle"></a>). 
+		(link E in <a href="#wot-lifecycle"></a>). 
 		It is also possible to perform only a partial reset of a device,
 		if it only requires re-installation and recommissioning without security re-provisioning 
-		(link D in Figure <a href="#wot-lifecycle"></a>).
+		(link D in <a href="#wot-lifecycle"></a>).
 		It is also possible that only security re-provisioning is needed 
-                without re-installation and re-commissioning (link C in Figure <a href="#wot-lifecycle"></a>).</li>
+                without re-installation and re-commissioning (link C in <a href="#wot-lifecycle"></a>).</li>
         <li><strong>Maintenance and Security Update:</strong> 
                 A state that is entered when the device's software or configuration needs to be updated.
-	        This is an optional state that can be activated remotely or locally (link A in Figure <a href="#wot-lifecycle"></a>) 
+	        This is an optional state that can be activated remotely or locally (link A in <a href="#wot-lifecycle"></a>) 
 		on a WoT device depending on the deployment model and overall setup. 
 		This state can be required to maintain security,
                 for example to patch SW vulnerabilities or perform security-related configuration updates, 
 		such as key revocation or certificate refresh. 
 		After maintenance or updates are done, 
-		the device normally returns to the Operational state (link B in Figure <a href="#wot-lifecycle"></a>). </li>
+		the device normally returns to the Operational state (link B in <a href="#wot-lifecycle"></a>). </li>
       </ul>
       The scope of this document only covers the Operational State of a WoT device 
       with the assumption that all relevant security metadata and credentials has been 
@@ -2754,9 +2754,6 @@ tracking equipment, information about user's preferences in home environment, vi
 	    This can be achieved by authenticating the tenant 
 	    using one of the authentication methods described in Section <a href="#wot-client-server-basic"></a>.
             </p>
-            <p class="ednote" title="WoT Script provisioning">
-            Do we want to describe/point to examples how provisioning could be done?
-            </p>
             <p>
             Also each tenant inside the WoT runtime requires a different set of security credentials 
 	    to be provisioned and made accessible for its scripts. 
@@ -2768,18 +2765,10 @@ tracking equipment, information about user's preferences in home environment, vi
     <section>
       <h1>Security Validation</h1>
             <p>              
-              In this section we give overall guidelines on how a deployed WoT network should be 
-	      validated and tested from the security perspective.
-            <!-- todo: add names of the tools. -->
-            <!-- (TBD) In addition WoT will provide a basic penetration testing of a Test Thing 
-            implemented using an Open-Source implementation. -->
-            </p>
-            <p class="ednote" title="Fill in the content">
-              This section content needs to be added.  
-	      See the security validation section of the 
-	      <a href="https://github.com/w3c/wot/blob/master/testing/plan.md">WoT Testing plan</a> 
-	      in the meantime.
-            </p>
+              The <a href="https://www.w3.org/TR/wot-security-testing-plan/">WoT Security Testing Plan</a>  document
+	      provides the overall guidelines on how a deployed WoT network should be 
+	      validated and tested from the security perspective.	    
+            </p>   
         </section>
     </section>
 
