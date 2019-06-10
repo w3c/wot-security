@@ -363,17 +363,17 @@
     <section id="abstract">
      <p>
      This document provides non-normative guidance on Web of Things (WoT) security and privacy.
-     The Web of Things is descriptive, not prescriptive, 
+     The Web of Things is descriptive, not prescriptive,
      and so is generally designed to support the security models and mechanisms of the systems it describes,
      not introduce new ones.
      However, a WoT system also has its own unique assets, such as a Scripting API and Thing Descriptions, that
      need to be protected and also have security and privacy implications.
      </p><p>
      We define the general security requirements for a Web of Things system using a threat model.
-     The WoT threat model defines the main security stakeholders, security-relevant assets, 
-     possible attackers, attack surfaces, 
+     The WoT threat model defines the main security stakeholders, security-relevant assets,
+     possible attackers, attack surfaces,
      and finally threats for a WoT system.
-     Using this generic WoT threat model for guidance, 
+     Using this generic WoT threat model for guidance,
      it should be possible to select a specific set of security objectives for a concrete WoT system implementation.
      We provide several examples using common scenarios based on home, enterprise, and industrial use cases.
      We also provide more general suggestions for the design and deployment of a secure WoT system.
@@ -381,7 +381,7 @@
      facilitate understanding of why they are needed.
      </p><p>
      It is not the intention of this document to limit the set of security mechanisms that can be used to 
-     secure a WoT network.  
+     secure a WoT network.
      In particular, while we provide examples and recommendations based on the best available practices in the industry,
      this document contains informative statements only.
      Specific normative security aspects of the WoT specification are defined in the corresponding normative WoT documents
@@ -403,7 +403,7 @@
 
     <section>
       <h1>Introduction</h1>
-      <p>Security of a WoT system can refer to the security of the Thing Description itself or 
+      <p>Security of a WoT system can refer to the security of the Thing Description (TD) itself or 
       the security of the Thing the Thing Description describes.
       For details on the Web of Things architecture, please refer to the following:
       <ul>
@@ -603,11 +603,11 @@
       </tr><tr>
       <th><dfn data-lt="system owner|system owners">System Owner</dfn></th>
       <td>
-      An entity that provisions a thing with the security root of trust
+      An entity that provisions a Thing with the security root of trust
       and sets up the initial policies on who can provision/update/remove scripts
       to/from the WoT runtimes, if such model is supported.
-      Any of the above stakholders can be the System Owner depending on the
-      concrete setup.  
+      Any of the above stakeholders can be the System Owner depending on the
+      concrete setup.
       A WoT system might have a number of independent System Owners,
       each with their own set of provisioned certificates and/or credentials.
       Underlying IoT protocol suites may also have their own notion of ownership.
@@ -724,7 +724,7 @@
             to the WoT device in order to be able to perform various security-related operations, 
             such as authenticating another device or WoT client in the WoT network, 
             authenticating remote authorization service in case the access control to WoT interfaces is done using tokens, etc.</td>
-            <td>Thing Manager (if present in WoT Runtime), WoT Runtime </td>
+            <td> Manager Thing (if present in WoT Runtime) - an entity that can implement script lifecycle management operations, WoT Runtime </td>
             <td> On device storage, in-transfer including provisioning and updates of security metadata.
             </td>
           </tr>
@@ -942,41 +942,8 @@
                </tr>
            </table>
 
-           <p>The following WoT attack surfaces are always in-scope for the WoT Security model:</p>
-           <table>
-               <tr>
-                   <th>System Element</th>
-                   <th>Compromise Type(s)</th>
-                   <th>Assets Exposed</th>
-                   <th>Attack Method</th>
-               </tr><tr>
-                   <th>WoT Interface</th>
-                   <td>Modification or unauthorized access to any affected asset,
-                       Unauthorized execution of exposed WoT Interfaces,
-                       Denial of Service</td>
-                   <td><a>TDs</a>,
-                       <a>System User Data</a>,
-                       <a>WoT Thing Resources</a>,
-                       <a>WoT Infrastructure Resources</a>,
-                       <a>WoT Controlled Environment</a>,
-                       <a>WoT Behavior Metrics</a></td>
-                   <td>Network attack</td>
-               </tr><tr>
-                   <th>WoT Protocol Bindings</th>
-                   <td>Modification or unauthorized access to any affected asset,
-                       Unauthorized execution of exposed WoT Protocol Bindings,
-                       Denial of Service</td>
-                  <td> <a>System User Data</a>,
-                       <a>WoT Thing Resources</a>,
-                       <a>WoT Infrastructure Resources</a>,
-                       <a>WoT Controlled Environment</a>,
-                       <a>WoT Behavior Metrics</a></td>
-                   <td>Network attack</td>
-               </tr>
-           </table>
-
-          <p>The following WoT attack surfaces are only in-scope for the WoT security model 
-              if we assume a WoT runtime can run untrusted scripts
+            <p>Out of above execution boundaries, the following ones become in-scope attack surfaces
+            for the WoT security model only if we assume a WoT runtime can run untrusted scripts
               or we assume co-existence of different <a>System Providers</a> (tenants)
               on a single physical device:</p>
            <table>
@@ -1011,6 +978,50 @@
                    local method.</a></td>
                </tr>
            </table>
+           <p> While the <a>WoT Execution Boundary</a> is the main boundary between the WoT
+           layer and the rest of the software on a given physical device, we don't consider it
+           as in-scope attack surface for this threat model, because we are not able to define
+           security measures that prevent lower layers of device's software stack to access
+           and compromise the WoT runtime and Protocol Bindings. Such measures would greatly 
+           depend on underlying device implementation and should be considered by an OEM that
+           produces physical device and enables it for WoT usage. Similar the <a>WoT Runtime 
+           and Protocol Bindings Execution Boundaries</a>are out of scope, because their presence
+           and implementation depends on concrete architecture of WoT runtime.</p>
+
+           <p>In addition to attack surfaces related to the execution boundaries within a
+           physical device, the following network-facing interfaces are in-scope attack surfaces
+           for this threat model:</p>
+           <table>
+               <tr>
+                   <th>System Element</th>
+                   <th>Compromise Type(s)</th>
+                   <th>Assets Exposed</th>
+                   <th>Attack Method</th>
+               </tr><tr>
+                   <th>WoT Interface</th>
+                   <td>Modification or unauthorized access to any affected asset,
+                       Unauthorized execution of exposed WoT Interfaces,
+                       Denial of Service</td>
+                   <td><a>TDs</a>,
+                       <a>System User Data</a>,
+                       <a>WoT Thing Resources</a>,
+                       <a>WoT Infrastructure Resources</a>,
+                       <a>WoT Controlled Environment</a>,
+                       <a>WoT Behavior Metrics</a></td>
+                   <td>Network attack</td>
+               </tr><tr>
+                   <th>WoT Protocol Bindings</th>
+                   <td>Modification or unauthorized access to any affected asset,
+                       Unauthorized execution of exposed WoT Protocol Bindings,
+                       Denial of Service</td>
+                  <td> <a>System User Data</a>,
+                       <a>WoT Thing Resources</a>,
+                       <a>WoT Infrastructure Resources</a>,
+                       <a>WoT Controlled Environment</a>,
+                       <a>WoT Behavior Metrics</a></td>
+                   <td>Network attack</td>
+               </tr>
+           </table>
 
            <p>If a WoT system allows dynamic installation of scripts inside WoT runtime,
               the following attack surfaces are added:</p>
@@ -1021,7 +1032,10 @@
                    <th>Assets exposed</th>
                    <th>Attack Method</th>
                </tr><tr>
-                   <th>WoT Script Management Interface</th>
+                   <th>WoT Script Management Interface. This interface, likely in practice
+                   implemented by a manager Thing (or Thing Manager), allows dynamic installation,
+                   removal and update of WoT scripts. 
+                </th>
                    <td>Compromise of WoT scripts,
                        including installing an older version of legitimate scripts (rollback)</td>
                    <td><a>System Provider Scripts</a> (part of <a>System Provider Data</a>)
@@ -1043,7 +1057,7 @@
                    <th>Attack Method</th>
                    <th>Reasoning</th>
                </tr><tr>
-                   <th>WoT Thing Directory</th>
+                   <th>Thing Directory</th>
                    <td>Modification or unauthorized access to hosted TDs,
                    Denial of Service by preventing legitimate users from obtaining TDs,
                    Inference of non-public or privacy sensitive information based on
@@ -1059,9 +1073,7 @@
                    and a given WoT network setup or user</td>
                    <td>This attack surface is out of scope because WoT specifications do
                    not define the internal structure of Thing Directory services or their interaction
-                   protocol. However, <a href="#sec-pract-things-directory"></a> lists
-                   generic recommendations and best known security practices that should be
-                   followed when designing Thing Directory services and interaction protocols. </td>
+                   protocol.</td>
                </tr><tr>
                   <th>Non-WoT endpoints</th>
                    <td>Component compromise. This includes legacy devices,
@@ -1083,12 +1095,9 @@
 		   </td>
                </tr><tr>
                    <th>Native device compromise</th>
-                   <td>Component compromise on levels below WoT Runtime,
-                   including any WoT component, such as WoT Gateway Servients,
-                   WoT Clients or WoT Things. </td>
+                   <td>Device compromise on all SW or HW levels below WoT Runtime.</td>
                    <td>Any type of the WoT assets</td>
-                   <td>Any remote or local attack method on WoT devices (WoT Gateway Servient,
-                   WoT Client, WoT Thing device, etc.) on levels below WoT runtime that
+                   <td>Any remote or local attack method on WoT devices on levels below WoT runtime that
                    results in attacker obtaining unauthorized access or the ability to
                    modify any WoT asset stored at the WoT Runtime or to cause any type
                    of DoS attack on <a>WoT Thing Resources</a> or <a>WoT Infrastructure
@@ -1206,7 +1215,7 @@
                     <a>Malware Developer</a>,
                     <a>Malicious Users</a>,
                     <a>Malicious System Provider</a></td>
-                <td>Confidential and privacy-sensitive parts of <a>TDs</a>in-transfer</td>
+                <td>Confidential and privacy-sensitive parts of <a>TDs</a> in-transfer</td>
                 <td><strong>Pre-conditions:</strong>
                     General preconditions for network attacker with access to a WoT Interface<br/>
                     <strong>Attack method:</strong>
@@ -1778,7 +1787,7 @@ tracking equipment, information about user's preferences in home environment, vi
                       [[Coo13]] - <cite>Privacy Considerations for Internet Protocols</cite>. </td>
                 </tr>
                 <tr>
-                 <td><dfn>Leaking WoT <a>System User Data</a></dfn></td>
+                 <td><dfn>Leaking WoT System User Data</dfn></td>
                  <td> Depending on the network topology, WoT <a>System User Data</a> can be transferred
                       between the WoT Client and WoT Device via many intermediate nodes, such as a WoT
                       Servient Gateway or non-WoT nodes. If these nodes can access or process the WoT
@@ -2006,7 +2015,7 @@ tracking equipment, information about user's preferences in home environment, vi
 	     operating system a device is running, since this information can be used
 	     to identify vulnerable systems.  
 	     Instead the TD should capture all information
-	     needed to support interoperability without reference to particular implementions.
+	     needed to support interoperability without reference to particular implementations.
             </p>
             <p>
             This recommendation helps prevent the following threats: 
@@ -2036,7 +2045,7 @@ tracking equipment, information about user's preferences in home environment, vi
    </section>
 
     <section id="sec-pract-system-user-data">
-        <h2>Secure Practices for protecting <a>System User Data</a></h2>
+        <h2>Secure Practices for protecting System User Data</h2>
 
         <p><strong>Use Secure Transports</strong></p>
             <p> 
@@ -2135,13 +2144,6 @@ tracking equipment, information about user's preferences in home environment, vi
             <a>WoT DoS Threat</a>.
           </p>
 
-      </section>
-
-      <section id="sec-pract-things-directory">
-        <h2>Secure Practices for Thing Directory Interaction Protocols</h2>
-          <p class="ednote" title="Fill in the content">
-          This subsection content needs to be added.
-          </p>
       </section>
 
       <!-- Don't think these are necessary
