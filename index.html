@@ -354,6 +354,119 @@
                   , title: "Stevey's Google Platforms Rant"
                   , publisher: "Blog"
                   , date: "Oct. 2011"
+                },"ITUx1500": {
+                  authors: ["ITU-T SG17"]
+                  , href: "https://www.itu.int/rec/T-REC-X.1500"
+                  , title: "ITU-T Rec. X.1500 Overview of cybersecurity information exchange"
+                  , publisher: "International Telecommunication Union"
+                  , date: "Apr 2011"
+                },
+                "ITUx1520": {
+                  authors: ["ITU-T SG17"]
+                  , href: "https://www.itu.int/rec/T-REC-X.1520"
+                  , title: "ITU-T Rec. X.1520 Common vulnerabilities and exposures"
+                  , publisher: "International Telecommunication Union"
+                  , date: "Jan 2014"
+                },
+                "ITUx1524": {
+                  authors: ["ITU-T SG17"]
+                  , href: "https://www.itu.int/rec/T-REC-X.1524"
+                  , title: "ITU-T Rec. X.1524 Common weakness enumeration"
+                  , publisher: "International Telecommunication Union"
+                  , date: "March 2012"
+                },
+                "Owa17": {
+                  authors: ["OWASP"]
+                  , href: "https://www.owasp.org/index.php/Threat_Risk_Modeling"
+                  , title: "Threat Risk Modeling"
+                  , publisher: "OWASP"
+                  , date: "Jan 2017"
+                },
+        "Owa18": {
+                  authors: ["OWASP"]
+                  , href: "https://www.owasp.org/index.php/Web_Service_Security_Testing_Cheat_Sheet"
+                  , title: "Web Service Security Testing"
+                  , publisher: "OWASP"
+                  , date: "Aug 2018"
+                },
+                "FuzzCoAP": {
+                  href: "https://github.com/bsmelo/fuzzcoap"
+                  , title: "FuzzCoAP - Fuzzing for Robustness and Security Testing of CoAP Servers"
+                },
+                "Wfuzz": {
+                  href: "http://www.edge-security.com/wfuzz.php"
+                  , title: "Wfuzz. The web application Bruteforcer"
+                },
+                "Snyk": {
+                  href: "https://snyk.io/"
+                  , title: "A developer-first solution that automates finding and fixing vulnerabilities in your dependencies"
+                },
+                "OWASP-Dependency-Check": {
+                  href: "https://www.owasp.org/index.php/OWASP_Dependency_Check"
+                  , title: "OWASP Dependency Check"
+                },
+                "w3af": {
+                  href: "http://w3af.org/"
+                  , title: "Web Application Attack and Audit Framework"
+                },
+                "Burp": {
+                  href: "https://portswigger.net/burp"
+                  , title: "Burp Suite Web vulnerability scanner"
+                },
+                "Protecode": {
+                  href: "https://www.synopsys.com/software-integrity/security-testing/software-composition-analysis.html"
+                  , title: "Black Duck Software Composition Analysis"
+                },
+                "PeachPit-COAP": {
+                  href: "https://www.peach.tech/wp-content/uploads/CoAP_DataSheet.pdf"
+                  , title: "CoAP Peach Pit User Guide"
+                },
+                "wapiti": {
+                  href: "http://wapiti.sourceforge.net/"
+                  , title: "Wapiti - The web-application vulnerability scanner"
+                },
+                "Coverity": {
+                  href: "https://community.synopsys.com/s/article/Coverity-Tutorial-Introduction-to-Coverity"
+                  , title: "Coverity Tutorial: Introduction to Coverity"
+                },
+                "Klocwork": {
+                  href: "https://www.roguewave.com/products-services/klocwork"
+                  , title: "Klocwork. Faster delivery of secure, reliable, and conformant code"
+                },
+                "Checkmarx": {
+                  href: "https://www.checkmarx.com/"
+                  , title: "Checkmarx project page"
+                },
+                "CoverityOnline": {
+                  href: "https://scan.coverity.com"
+                  , title: "Coverity online scanning service"
+                },
+                "Wireshark": {
+                  href: "https://www.wireshark.org/"
+                  , title: "Wireshark project page"
+                },
+                "tcpdump": {
+                  href: "https://www.tcpdump.org/"
+                  , title: "tcpdump and libpcap project page"
+                },
+                "exploit-db": {
+                  href: "https://www.exploit-db.com/"
+                  , title: "Exploit database project page"
+                },
+                "WATOBO": {
+                  href: "http://watobo.sourceforge.net/index.html"
+                  , title: "WATOBO. The Web Application Toolbox"
+                },
+                "Nikto": {
+                  href: "https://cirt.net/Nikto2"
+                  , title: "Nikto web server scanner"
+                },
+                "Yeg11": {
+                  authors: ["S. Yegge"]
+                  , href: "https://plus.google.com/+RipRowan/posts/eVeouesvaVX"
+                  , title: "Stevey's Google Platforms Rant"
+                  , publisher: "Blog"
+                  , date: "Oct. 2011"
                 }
               }
             };
@@ -405,16 +518,30 @@
       <h1>Introduction</h1>
       <p>Security of a WoT system can refer to the security of the Thing Description (TD) itself or 
       the security of the Thing the Thing Description describes.
-      For details on the Web of Things architecture, please refer to the following:
+    <section>
+      <h2>Related W3C Documents</h2>
+      <p>
+        For a general discussion of best practices for developing secure WoT systems, 
+        as well as a set of suggested combinations of authentication mechanisms
+        and secured protocols,
+        see the <a href="https://github.com/w3c/wot-security-best-practices/">WoT 
+        Security Best Practices</a> document.
+      </p>
+      <p>For details on the Web of Things architecture, please refer to the following:
       <ul>
         <li>the <a href="https://www.w3.org/WoT/IG/">Interest Group</a> web site</li>
         <li>the <a href="https://www.w3.org/WoT/WG/">Working Group</a> web site</li>
-	<li>the <a href="https://www.w3.org/TR/2017/WD-wot-architecture-20170914/">WoT Architecture</a> document,</li>
-        <li>the <a href="https://www.w3.org/TR/2017/WD-wot-thing-description-20170914/">WoT Thing Description</a> document,</li>
-        <li>the <a href="https://w3c.github.io/wot-binding-templates/">WoT Binding Templates</a> document, and</li>
-        <li>the <a href="https://www.w3.org/TR/2017/WD-wot-scripting-api-20170914/">WoT Scripting API</a> document.</li>
+    <li>the <a href="https://www.w3.org/TR/2017/WD-wot-architecture-20170914/">WoT Architecture</a> 
+            document,</li>
+        <li>the <a href="https://www.w3.org/TR/2017/WD-wot-thing-description-20170914/">WoT Thing Description</a> 
+            document,</li>
+        <li>the <a href="https://w3c.github.io/wot-binding-templates/">WoT Binding Templates</a> 
+            document, and</li>
+        <li>the <a href="https://www.w3.org/TR/2017/WD-wot-scripting-api-20170914/">WoT Scripting API</a> 
+            document.</li>
       </ul>
       </p>
+</section>
     </section>
 
     <section>
@@ -2766,20 +2893,503 @@ tracking equipment, information about user's preferences in home environment, vi
 
     <section>
       <h1>Security Validation</h1>
-            <p>              
-              The <a href="https://www.w3.org/TR/wot-security-testing-plan/">WoT Security Testing Plan</a>  document
-	      provides the overall guidelines on how a deployed WoT network should be 
-	      validated and tested from the security perspective.	    
-            </p>   
-        </section>
+          <p>This section provides guidance on how a WoT system implementation can be
+          tested in order to evaluate its security and privacy.  
+          A <a href="https://github.com/w3c/wot-security-best-practices/">WoT Security Best Practices</a> 
+          document describes best practices for securing WoT implementations.  
+          This section focuses on systems that follow those best practice since systems that do
+          not generally will have known vulnerabilities and testing
+          to reveal them would be redundant.
+          </p>WoT systems can consist both of purpose-built components and pre-existing
+          components.  
+          Purpose-built WoT components should be
+          implemented using WoT security best practices.  
+          However, pre-existing systems may also have WoT Thing Descriptions written 
+          for them so that other WoT components can interface with them.  
+          Such "retrofitted" pre-existing components
+          may also have pre-existing security weaknesses and vulnerabilities.  
+          Security testing may reveal these
+          as well, but it should be understood that describing a network interface
+          using a WoT Thing Description does not guarantee that it will be secure: in order
+          to accommodate pre-existing devices, WoT Thing Descriptions need to be flexible
+          enough to describe both secure <em>and</em> insecure interfaces.
+          Security mitigations need to consider the entire system and should in
+          particular take into account that not all components of the system may be
+          equally secure.
+          </p>
+      <section>
+      <h2>Testing Goals</h2>
+          <p>
+          The goal of WoT security testing is to find security vulnerabilities in
+          the implementation of WoT components, so they can be mitigated.  
+          This can be broadened to finding weaknesses (potential vulnerabilities)
+          since mitigating both actual and potential vulnerabilities is
+          sufficient to secure a system, and in general it can be hard to determine
+          if a weakness is exploitable.
+          It is not possible in general to prove the converse, 
+          that a WoT component is secure (that is, that it has no vulnerabilities).  
+          However, thorough security testing can at least ensure
+          that there are no obvious (easily discoverable) weaknesses or 
+          vulnerabilities in an implementation.
+          </p><p>
+          Furthermore, the goal of security testing for an implementor is to identify the existence of
+          weaknesses, not to exploit them to break into or manipulate a system.
+          For an implementor, the priority after discovery of a weakness is to 
+          implement a mitigation to prevent it from being exploited,
+          not to actually find or create an exploit and use it.  
+          Not all weaknesses are vulnerabilities.  
+          Fixing actual (exploitable) vulnerabilities should have a higher priority than
+          simple weaknesses,
+          so an implementor may want to also determine which weaknesses are
+          exploitable in order to prioritize mitigations.
+          </p><p>
+          In the following we provide some background on testing, including
+          a description of several varieties of security testing and examples of suitable
+          tools for each.
+          While we provide some tool examples in the following,
+          they are just examples; you are free to use any tool that fits the purpose.
+          After introducing the categories of testing and examples of tools for each,
+          we then present a general security testing plan for WoT systems based on these categories.
+          </p>
+    </section>
+    <section>
+      <h2>Best Practices</h2>
+      <p>Before beginning security testing, it is useful to determine if the components 
+      of the system being tested have been implemented following good and up-to-date security practices.
+      What we really want to do is identify systems that use known insecure practices, 
+      for which vulnerabilities are known. Many times such vulnerabilities will be
+      obvious from the WoT Thing Description, and can be identified with simple tools.
+      </p><p>
+      As an example, suppose a WoT Thing combines "basic" authentication with plain (unencrypted) HTTP.
+      In this case the username and password can be easily recovered from the header
+      information of the unencrypted HTTP request by an eavesdropper with access to the 
+      network traffic, for example by code running in a compromised router or by someone
+      who has broken WiFi encryption.
+      </p><p>
+      As another example, an older device may use an obsolete form of encryption for which
+      an attack is known.
+      </p><p>
+      Hiding the Thing Descriptions of such systems is not really a solution: this is
+      equivalent to security by obscurity which is widely considered to be ineffective.
+      Generally, the "secret information" 
+      allowing access to a system should be in the form of easily modifiable keys,
+      not engineering details which, once revealed, cannot be easily changed.
+      However, certainly mitigating obvious vulnerabilities
+      easily discoverable in the Thing Description should be a high priority.
+      Ideally mitigation is accomplished by modifying the implementation but this
+      is not possible in all cases. If the implementation cannot be modified it may be
+      possible to achieve partial mitigation by securing the network environment, e.g. by
+      using a VPN or encrypted tunnels to encapsulate the vulnerable network traffic.
+      </p><p>
+      Another point to note is that a Thing Description may not describe all the
+      network interfaces of a Thing. A Thing may have a Thing Description that describes
+      a network interface that follows best practices and may pass all the additional
+      security tests described below on that interface, but may still have an insecure
+      backdoor (additional network interface) not described in the Thing Description.  
+      It is the implementor's
+      responsibility to secure <em>all</em> network interfaces, even if the Thing Description is
+      subsetted.  Note that there are valid reasons to subset a Thing Description,
+      for example to provide different interfaces to users with different roles and
+      access rights.
+      </p><p>
+      A WoT system may also have infrastructure components that do not have Thing Descriptions.
+      There may, for example, be services such as proxies or directories.  These
+      should also be tested.  If they are web services or otherwise have documented
+      network interfaces, then much of the testing
+      procedure described below should also apply to them.
+      <p>
+    </section>
+    <section>
+      <h2>Functional Security Testing</h2>
+      <p>Functional testing checks that a WoT Thing implements the interactions
+      described in its Thing Description. This includes whether or not it 
+      responds to all URLs given and accepts and returns data as specified 
+      in the data schemas given in the Thing Description for each interaction.
+      </p><p>
+      Functional testing should also check that all security mechanisms 
+      described in the Thing Description are implemented properly.
+      Does the Thing do what the Thing Description says it does in terms of security, 
+      and only that?
+      Does the Thing Description accurately describe the security mechanisms
+      used by the Thing?
+      Do all interactions accept authorized accesses, and reject accesses
+      that do not provide correct authentication and authorization information?
+      </p><p>
+      Again, there can be both purpose-built and pre-existing devices described 
+      by a Thing Description.  A Thing Description needs to accurately describe
+      the security behavior and requirements in both cases. 
+      </p>
+    </section>
+    <section>
+      <h2>Adversarial Security Testing</h2>
+      <p>Adversarial security testing (also known as penetration testing or pentesting) 
+      includes various checks that can be done in order
+      to find weaknesses in the target device or service and determine their
+      severity and exploitability (that is, whether they are actual vulnerabilities).
+      On a high level adversarial testing consists of three stages, which
+      are often applied iteratively:
+      <ol>
+          <li><strong>Information gathering:</strong> 
+          Required information is collected about the attack target.
+          <li><strong>Weakness discovery:</strong>
+          An attack target is analyzed and weaknesses are found.
+          <li><strong>Exploitation generation:</strong> 
+          An attempt is made to convert weaknesses into vulnerabilities
+          by discovering or designing exploits.
+      </ol>
+      <p>Exploits are designed to achieve a desired outcome, 
+      such as privilege escalation, authorization bypass, denial of service, and other goals.
+      A successful exploit of one vulnerability 
+      may be used to expose other weaknesses and allow them in turn to be exploitable.
+      Conversely, a weakness may be prevented from exploitation by a mitigation that
+      prevents the class of exploit to which it is vulnerable.
+      </p>
+      <p>Many resources and tools exist to help penetration and security testers to
+      perform the above activities.  Many documents and tutorials have also been written
+      to help guide this activity. One example of such guide is the "Web Service
+      Security Testing Cheat Sheet" [[Owa18]] written by the Open Web Application
+      Security Project (OWASP).  Generally speaking, WoT components can be treated
+      as web services for the purposes of security testing, especially if they use HTTP.  
+      However, WoT components also
+      have some additional considerations, 
+      for example local access while using HTTPS, or
+      use of non-HTTP protocols such as CoAP or MQTT.
+      </p><p>
+      For the purposes of WoT security testing we will focus on Stage 2,
+      <em>Weakness Discovery</em>.  
+      Weakness discovery can be broken down into a combination of
+      static weakness discovery and runtime weakness discovery.
+      </p><p>
+      Stage 1 is not really necessary in the case of white-box
+      testing, which we will assume (given that, for example, a Thing Description already
+      documents much of the information needed). Generally speaking, trying to achieve
+      security through obscurity is not feasible or desirable, so for testing we should assume the
+      attacker knows as much about the system as the implementor.
+      Also, since our goal is to test the 
+      security of the components of a WoT system, not actually break into it,
+      we also will not focus on Stage 3.
+      However, an exploitable vulnerability has a higher priority for correction 
+      than a simple weakness for which no exploit is (yet) known, so this information
+      is still useful to prioritize mitigation.
+      </p>
+      
+    <section id="static-weakness-discovery">
+    <h3>Static Weakness Discovery</h3>
+      <p>Static weakness discovery typically requires an access to the target's source code,
+      and therefore is not always possible to perform for a black-box penetration tester.
+      However, since a WoT Thing developer or WoT Service provider have the access,
+      they are strongly encouraged to use the below methods to check for weaknesses (potential
+      vulnerabilities) in their components as part of white-box testing. 
+      Static weakness discovery is very well supported and automated.
+      Many tools are available, so after an initial setup phase,
+      it should add little overhead to the WoT component development and release process.
+      </p>
+
+      <section id="static-code-analysis">
+      <h4>Static Code Analysis</h4>
+      <p>The most common example of static weakness discovery is usage of a
+      static code analyzer tool that is able to parse a program's code and
+      highlight potential development mistakes and insecure practices, 
+      such usage of insecure functions or libraries,
+      forgotten boundary checks when operating on arrays, and many other sources
+      of security weakness.
+      Usually the output of such a tool is in the form of a report that
+      needs to be manually triaged to determine if each reported issue is a false positive
+      or a real mistake. 
+      While static development tools are constantly improving and 
+      over time are able
+      to offer better and better coverage, lower false positive rates, 
+      and discover more weaknesses, 
+      it is important to remember that these tools (as any others) do
+      not guarantee finding all weaknesses in the scanned component.
+      Other methods should be used to complement static analysis.</p>
+
+      <p><strong>Examples of tools:</strong>
+      Many commercial and open source tools exist that primarily differ on the
+      source code languages that they can process as input. Our major suggestion
+      would be to choose a well-established, mature tool that is actively
+      supported and developed. Some examples include Klocwork [[Klocwork]],
+      Coverity [[Coverity]], and Checkmarx [[Checkmarx]].
+      Also, while some of these tools are commercial and require a license
+      to use, they often do provide a free scanning service for open source projects.
+      One example of such service is the online Coverity service [[CoverityOnline]].
+      </p>
+      </section>
+
+      <section id="known-vulnerability-checking">
+      <h4>Known vulnerability checking</h4>
+      <p>In addition to checking for development mistakes in new code,
+      it is also important to check that programs do not include
+      vulnerable third-party libraries or utilities with known weaknesses or 
+      vulnerabilities. There are many tools developed
+      for this purpose and on a high level they work by scanning executable binaries
+      (or source code for non-compiled languages) or application packages in a search
+      for vulnerable components, such as old versions of libraries that are vulnerable
+      to known attacks. 
+      The information about weaknesses and vulnerabilities usually comes from
+      the open NIST database which is updated regularly since
+      new weaknesses and vulnerabilities are reported all the time.  
+      This also implies that the analysis should be repeated regularly, ideally
+      daily and as part of an automated build process, using the latest version
+      of the weakness and vulnerability database.  As new weaknesses, vulnerabilities,  
+      and exploits are found, components may then have to be updated to mitigate any
+      new weaknesses and vulnerabilities.
+      </p>
+
+      <p><strong>Examples of tools:</strong>
+      Just as with static code analyzer software, our major suggestion
+      would be to choose a well-established, mature tool that is actively
+      supported and developed. Some examples include Protecode [[Protecode]],
+      Dependency-check [[OWASP-Dependency-Check]], and Snyk [[Snyk]].
+      </p>
+      </section>
+    </section>
+
+
+    <section id="runtime-weakness-discovery">
+      <h3>Runtime (Dynamic) Weakness Discovery</h3>
+      <p>In contrast to static weakness discovery, runtime
+      weakness discovery does not require access to the source code or
+      compiled binaries of a component, but merely an ability to access a
+      component's exposed interfaces (especially network-facing interfaces)
+      and/or an ability to observe and modify the protocol and the 
+      component's communication with other components.
+      </p><p>
+      The goal of runtime weakness discovery is to find an interface input 
+      or protocol modification that leads to unintended behavior, such as component
+      deadlock or crash.  Even if a crash is not the desired outcome for an attacker,
+      a crash is also an indication of a weakness, such as a 
+      lack of input validation, that can be used in more sophisticated exploits.
+      Of course finding inputs that cause such problems and mitigating them
+      also increases the overall robustness and quality of the code.
+      </p><p>
+      Just as with static weakness discovery, many tools exist to
+      help with this task.  For web services, it is generally a bit harder to reach full
+      automation (with the exception of fuzz testing) here, and the best results
+      can usually only be achieved by combining both manual and automated tasks.
+      However, the advent of API metadata such as OpenAPI and the WoT Thing Description
+      may in the future lead to more sophisticated and automated tooling in this
+      area.
+      </p>
+
+      <section id="fuzz-testing">
+      <h4>Fuzz Testing</h4>
+      <p>Fuzz testing is one of the most well known and used runtime weakness
+      discovery methods. It is well-automated, many tools exist for common
+      protocols and payloads.  
+      It is a very powerful method for weakness discovery.
+      Fuzz testing works by generating (randomly or pattern-based) highly
+      varied input for a specific network exposed interface or protocol payload,
+      sending this input to the tested component, and observing the result.
+      If a "desired" outcome happens (such as tested component crashes), the
+      corresponding input and details of the crash are recorded for the
+      analyst to manually process.</p>
+
+      <p>The biggest challenge with fuzz testing is usually to be able to
+      generate the randomized input in a form that is still "correct enough"
+      that it does not get discarded by the lower layers of software or network stack. 
+      For example, if the fuzz testing goal is to test how a network-enabled thermostat 
+      processes numeric values on its temperature setting HTTP-exposed interface,
+      it is important that fuzzed requests have valid HTTP headers, body
+      structure, etc. This way the requests will get delivered all the way
+      to the high-level logic inside the device runtime 
+      and will not discarded by lower-level HTTP message validation
+      and processing components.
+      </p>
+
+      <p><strong>Examples of tools:</strong>
+      There are numerous tools exists for fuzzing
+      HTTP(S)-exposed interfaces. 
+      Examples include Burp Suite [[Burp]], Wfuzz [[Wfuzz]], and Wapiti [[wapiti]].
+      Newer protocols, like COAP(S) and MQTT(S), have considerably fewer tools
+      available.  However some do exist.
+      Examples for CoAP(S) include fuzzcoap [[FuzzCoAP]] and CoAP Peach Pit (from Peach Fuzzer)
+      [[PeachPit-COAP]].  Some of these may still in the experimental phase.</p>
+      </section>
+
+      <section id="protocol-analysis">
+      <h4>Protocol Analysis</h4>
+      <p>In addition to automated Fuzz testing, one might be able to discover
+      weaknesses by manually analyzing protocol elements such as
+      headers, payload, and attributes. 
+      For example, an analyst might look for the use of older encryption 
+      or authentication algorithms, or the use of insecure combinations of protocol options.
+      While the actual protocol analysis is a manual process, 
+      many tools exist to capture the protocol traffic, parse it
+      according to the protocol, and present it to the analyst in an organized fashion.
+
+      <p><strong>Examples of tools:</strong> Examples of network protocol
+      analyzers include Wireshark [[Wireshark]] and tcpdump [[tcpdump]]. </p>
+      </section>
+
+      <section id="vulnerability-scanners">
+      <h4>Vulnerability Scanners</h4>
+      <p>There are many tools available that attempt to perform runtime
+      testing for known vulnerabilities. They usually operate
+      by attempting to run a known set of exploits or weakness trigger inputs
+      against the target and report the outcomes. 
+      Such tools should be used in combination with other testing tools
+      in order to obtain a more complete runtime weakness and vulnerability discovery result.
+      </p>
+
+      <p><strong>Examples of tools:</strong> While many different vulnerability
+      scanners exist, some specifically target web applications and web server
+      service vulnerabilities and are therefore more focused. 
+      Examples include w3af [[w3af]],
+      the Burp vulnerability scanner [[Burp]], Nikto [[Nikto]], and WATOBO [[WATOBO]].
+      </p>
+      </section>
+      </section>
+
+      <section id="exploitation">
+      <h3>Exploitation</h3>
+        <p>When a weakness or a set of weaknesses is found for a component,
+        it is important to estimate the exploitation risk level for them.
+        Exploitation risk level aims to determine if a particular
+        weakness can be converted into a vulnerability and
+        used by an attacker to achieve particular attack end goals,
+        such as privilege escalation, authorization bypass, denial of service, and so on.
+        This step can help to prioritize the order in which weaknesses must be mitigated.
+        Developers should fix the most easily exploitable vulnerabilities first and 
+        then continuing with others in decreasing level of severity or probability of
+        exploitation.
+        Some tools mentioned in section <a href="#protocol-analysis"></a> can be used to test
+        the exploitabilty of a particular weakness. Additionally, for known
+        vulnerabilities, the Exploit-DB [[exploit-db]] database hosts many public exploits
+        and allows to search by the CVE number of the associated (known) vulnerability.
+        However, it is important to remember that it is generally very hard to reliably
+        determine the exploitability of a given weakness: if an exploit cannot be
+        found, it does not guarantee that the weakness is not exploitable. Moreover,
+        for some weaknesses, they might not be exploitable on their own, or may
+        only be weakly exploitable, but may still play
+        an important role in the attacker exploitation chain as a stepping stone towards
+        the end exploitation goal. 
+        Therefore, it is strongly encouraged to fix or mitigate all 
+        weaknesses discovered in analyzed components.</p>
+    </section>
     </section>
 
     <section>
+    <h2>Security Testing Plan Framework</h2>
+      <p>Given the above background, we can now outline a testing plan framework for WoT systems.
+      This is just an outline and would have to be expanded and adapted for the specific
+      circumstances and application area of the WoT system under test.  In particular, some
+      tool choices may depend on the programming language, build environment, network environment,
+      and budget (for non-free tools).  Also the testing procedure will be different for
+      purpose-built devices and services vs. pre-existing devices and services.</p>
+      <ol>
+      <li><strong><a href="#static-weakness-discovery">Static Weakness Discovery</a></strong> 
+        <ol>
+        <li><strong><a href="#static-code-analysis">Static Code Analysis:</a></strong>
+        If source code is available, a static code checker should be used to check
+        for weaknesses in new purpose-written code.</li>
+        <li><strong><a href="#known-vulnerability-checking">Known Vulnerability Checking:</a></strong>
+        If binaries and/or a list of package dependencies are available, a vulnerability
+        checker should be used to check for known weaknesses and vulnerabilities in any libraries used.
+        </li>
+        </ol>
+      </li>
+      <li><strong><a href="#runtime-weakness-discovery">Runtime Weakness Discovery</a></strong> 
+        appropriate tools 
+        such as <a href="#fuzz-testing">Fuzz Testing</a>,
+        <a href="#protocol-analysis">Protocol Analysis</a>,
+        and <a href="#vulnerability-scanners">Vulnerability Scanners</a>
+        can be discover problems even when only the network interface is
+        available, and are complementary to other kinds of checks.
+     </li>
+     <li><strong><a href="#exploitation">Exploitation Analysis</a></strong> 
+        This can be used to prioritize which weaknesses and vulnerabilities should be addressed
+        first or whether a given vulnerable system can even be used in a given
+        environment. 
+     </li>
+     </ol> 
+     <p>Ideally, security testing should be integrated into the development process
+     and all discovered weaknesses addressed as soon as possible.  If this is
+     not possible, weaknesses should be prioritized based on the threat
+     model and potential for exploitation and addressed in priority order.
+     </p>
+    </section> 
+            
+    <section>
+    <h2>Suggested Testing Frequency</h2>
+        <p>The actual detailed test procedure depends on the type of activity, the WoT
+        device setup and the actual test tool used. 
+        However, below are our general recommendations
+        for the frequency of different testing activities:</p>
+        <ol>
+        <li><strong><a href="#static-weakness-discovery">Static Weakness Discovery</a></strong> 
+        should be done regularly,
+        ideally integrated into the development work flow for a WoT component.
+        This is important, since any even small code changes can introduce
+        development mistakes, or alternatively new weaknesses can be 
+        discovered in the libraries that a program depends on.  
+        New weaknesses and vulnerabilities
+        are discovered in existing libraries almost daily.
+        </li>
+        <li><strong><a href="#runtime-weakness-discovery">Runtime Weakness Discovery</a></strong> 
+        should be also done on a regular basis, for example for each major release
+        or development milestone.
+        </li>
+        <li><strong><a href="#exploitation">Exploitation Analysis</a></strong> 
+        should be done occasionally,
+        whenever possible.  
+        It is the most time and resource consuming
+        activity, often requires external resources with specialized knowledge,
+        and cannot in general be automated.
+        </li>
+        </ol>
+    </section>
+
+    <section>
+      <h2>Summary</h2>
+      <p>A security testing plan focused on weakness and vulnerability discovery
+      has been presented that leverages existing tools and approaches for web services
+      and emerging tools for new IoT-oriented network interfaces.
+      A testing plan should be developed suitable for each system developed using the
+      WoT architecture but will generally consist of three stages:
+      <a href="#static-weakness-discovery">static weakness discovery</a>,
+      <a href="#runtime-weakness-discovery">runtime weakness discovery</a>,
+      and <a href="#exploitation">Exploitation Analysis</a>.
+      A vulnerability is a weakness with a known exploit and should have priority for
+      mitigation, but all weaknesses may potentially lead to vulnerabilities and
+      ideally all weaknesses would be mitigated or corrected.
+      In general, a WoT Thing Description can be used to describe both secure and
+      insecure systems, and in fact this is necessary to support existing devices,
+      which may or may not themselves be intrinsically secure.
+      However, WoT Thing Descriptions provide new opportunities for understanding and
+      planning security testing and mitigations.
+      </p>
+</section>
+   
+    </section>
+</section>
+
+    <section>
       <h1>Terminology</h1>
+
+    <p>We are using the security vocabulary defined by the ITU-T [[ITUx1500]], [[ITUx1520]], [[ITUx1524]]
+      for the following terms:
+      <dl>
+          <dt>Vulnerability:</dt><dd>
+           Any weakness in software that could be exploited to violate a system or the information 
+           it contains 
+           [[ITUx1500]].
+          </dd>
+          <dt>Weakness:</dt><dd>
+          A shortcoming or imperfection in the software code, design, architecture, or deployment that, 
+          could, at some point become a vulnerability, 
+          or contribute to the introduction of other vulnerabilities
+          [[ITUx1500]].
+          </dd>
+      </dl>
+      In short, a weakness is a <em>potential</em> vulnerability.
+      A weakness only becomes an <em>actual</em> vulnerability once an exploit is known.
+      </p>
+
       <p>
         Please refer to the 
 	<a href="https://www.w3.org/TR/2017/WD-wot-architecture-20170914/#terminology">WoT Architecture</a> 
-	document for terminology definitions.
+	document for additional terminology definitions.
       </p>
     </section>
 
