@@ -8,49 +8,49 @@
 <meta name="viewport" content=
 "width=device-width, initial-scale=1, shrink-to-fit=no" />
 <style>
-<![CDATA[
-/* --- ISSUES/NOTES --- */
-.issue-label {
+  <![CDATA[
+  /* --- ISSUES/NOTES --- */
+  .issue-label {
     text-transform: initial;
-}
+  }
 
-.warning > p:first-child { margin-top: 0 }
-.warning {
+  .warning > p:first-child { margin-top: 0 }
+  .warning {
     padding: .5em;
     border-left-width: .5em;
     border-left-style: solid;
-}
-span.warning { padding: .1em .5em .15em; }
+  }
+  span.warning { padding: .1em .5em .15em; }
 
-.issue.closed span.issue-number {
+  .issue.closed span.issue-number {
     text-decoration: line-through;
-}
+  }
 
-.warning {
+  .warning {
     border-color: #f11;
     border-width: .2em;
     border-style: solid;
     background: #fbe9e9;
-}
+  }
 
-.warning-title:before{
+  .warning-title:before{
     content: "⚠"; /*U+26A0 WARNING SIGN*/
     font-size: 1.3em;
     float: left;
     padding-right: .3em;
     margin-top: -0.3em;
-}
+  }
 
-li.task-list-item {
+  li.task-list-item {
     list-style: none;
-}
+  }
 
-input.task-list-item-checkbox {
+  input.task-list-item-checkbox {
     margin: 0 0.35em 0.25em -1.6em;
     vertical-align: middle;
-}
+  }
 
-.issue a.respec-gh-label {
+  .issue a.respec-gh-label {
   padding: 5px;
   margin: 0 2px 0 2px;
   font-size: 10px;
@@ -61,30 +61,30 @@ input.task-list-item-checkbox {
   position: relative;
   bottom: 2px;
   border: none;
-}
+  }
 
-.issue a.respec-label-dark {
+  .issue a.respec-label-dark {
   color: #fff;
   background-color: #000;
-}
+  }
 
-.issue a.respec-label-light {
+  .issue a.respec-label-light {
   color: #000;
   background-color: #fff;
-}
-]]>
+  }
+  ]]>
 </style>
 <link rel="stylesheet" href="tablestyle.css" />
 <title>Web of Things (WoT) Security and Privacy Guidelines</title>
 
 <style id="respec-mainstyle">
-<![CDATA[
-/*****************************************************************
- * ReSpec 3 CSS
- * Robin Berjon - http://berjon.com/
- *****************************************************************/
+  <![CDATA[
+  /*****************************************************************
+  * ReSpec 3 CSS
+  * Robin Berjon - http://berjon.com/
+  *****************************************************************/
 
-@keyframes pop {
+  @keyframes pop {
   0% {
     transform: scale(1, 1);
   }
@@ -95,53 +95,53 @@ input.task-list-item-checkbox {
   100% {
     transform: scale(1, 1);
   }
-}
+  }
 
-/* Override code highlighter background */
-.hljs {
+  /* Override code highlighter background */
+  .hljs {
   background: transparent !important;
-}
+  }
 
-/* --- INLINES --- */
-h1 abbr,
-h2 abbr,
-h3 abbr,
-h4 abbr,
-h5 abbr,
-h6 abbr,
-a abbr {
+  /* --- INLINES --- */
+  h1 abbr,
+  h2 abbr,
+  h3 abbr,
+  h4 abbr,
+  h5 abbr,
+  h6 abbr,
+  a abbr {
   border: none;
-}
+  }
 
-dfn {
+  dfn {
   font-weight: bold;
-}
+  }
 
-a.internalDFN {
+  a.internalDFN {
   color: inherit;
   border-bottom: 1px solid #99c;
   text-decoration: none;
-}
+  }
 
-a.externalDFN {
+  a.externalDFN {
   color: inherit;
   border-bottom: 1px dotted #ccc;
   text-decoration: none;
-}
+  }
 
-a.bibref {
+  a.bibref {
   text-decoration: none;
-}
+  }
 
-.respec-offending-element:target {
+  .respec-offending-element:target {
   animation: pop 0.25s ease-in-out 0s 1;
-}
+  }
 
-.respec-offending-element,
-a[href].respec-offending-element {
+  .respec-offending-element,
+  a[href].respec-offending-element {
   text-decoration: red wavy underline;
-}
-@supports not (text-decoration: red wavy underline) {
+  }
+  @supports not (text-decoration: red wavy underline) {
   .respec-offending-element:not(pre) {
     display: inline-block;
   }
@@ -150,179 +150,179 @@ a[href].respec-offending-element {
     background: url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=)
       bottom repeat-x;
   }
-}
+  }
 
-#references :target {
+  #references :target {
   background: #eaf3ff;
   animation: pop 0.4s ease-in-out 0s 1;
-}
+  }
 
-cite .bibref {
+  cite .bibref {
   font-style: normal;
-}
+  }
 
-code {
+  code {
   color: #c83500;
-}
+  }
 
-th code {
+  th code {
   color: inherit;
-}
+  }
 
-a[href].orcid {
+  a[href].orcid {
     padding-left: 4px;
     padding-right: 4px;
-}
+  }
 
-a[href].orcid > svg {
+  a[href].orcid > svg {
     margin-bottom: -2px;
-}
+  }
 
-/* --- TOC --- */
+  /* --- TOC --- */
 
-.toc a,
-.tof a {
+  .toc a,
+  .tof a {
   text-decoration: none;
-}
+  }
 
-a .secno,
-a .figno {
+  a .secno,
+  a .figno {
   color: #000;
-}
+  }
 
-ul.tof,
-ol.tof {
+  ul.tof,
+  ol.tof {
   list-style: none outside none;
-}
+  }
 
-.caption {
+  .caption {
   margin-top: 0.5em;
   font-style: italic;
-}
+  }
 
-/* --- TABLE --- */
+  /* --- TABLE --- */
 
-table.simple {
+  table.simple {
   border-spacing: 0;
   border-collapse: collapse;
   border-bottom: 3px solid #005a9c;
-}
+  }
 
-.simple th {
+  .simple th {
   background: #005a9c;
   color: #fff;
   padding: 3px 5px;
   text-align: left;
-}
+  }
 
-.simple th a {
+  .simple th a {
   color: #fff;
   padding: 3px 5px;
   text-align: left;
-}
+  }
 
-.simple th[scope="row"] {
+  .simple th[scope="row"] {
   background: inherit;
   color: inherit;
   border-top: 1px solid #ddd;
-}
+  }
 
-.simple td {
+  .simple td {
   padding: 3px 10px;
   border-top: 1px solid #ddd;
-}
+  }
 
-.simple tr:nth-child(even) {
+  .simple tr:nth-child(even) {
   background: #f0f6ff;
-}
+  }
 
-/* --- DL --- */
+  /* --- DL --- */
 
-.section dd > p:first-child {
+  .section dd > p:first-child {
   margin-top: 0;
-}
+  }
 
-.section dd > p:last-child {
+  .section dd > p:last-child {
   margin-bottom: 0;
-}
+  }
 
-.section dd {
+  .section dd {
   margin-bottom: 1em;
-}
+  }
 
-.section dl.attrs dd,
-.section dl.eldef dd {
+  .section dl.attrs dd,
+  .section dl.eldef dd {
   margin-bottom: 0;
-}
+  }
 
-#issue-summary > ul,
-.respec-dfn-list {
+  #issue-summary > ul,
+  .respec-dfn-list {
   column-count: 2;
-}
+  }
 
-#issue-summary li,
-.respec-dfn-list li {
+  #issue-summary li,
+  .respec-dfn-list li {
   list-style: none;
-}
+  }
 
-details.respec-tests-details {
+  details.respec-tests-details {
   margin-left: 1em;
   display: inline-block;
   vertical-align: top;
-}
+  }
 
-details.respec-tests-details > * {
+  details.respec-tests-details > * {
   padding-right: 2em;
-}
+  }
 
-details.respec-tests-details[open] {
+  details.respec-tests-details[open] {
   z-index: 999999;
   position: absolute;
   border: thin solid #cad3e2;
   border-radius: 0.3em;
   background-color: white;
   padding-bottom: 0.5em;
-}
+  }
 
-details.respec-tests-details[open] > summary {
+  details.respec-tests-details[open] > summary {
   border-bottom: thin solid #cad3e2;
   padding-left: 1em;
   margin-bottom: 1em;
   line-height: 2em;
-}
+  }
 
-details.respec-tests-details > ul {
+  details.respec-tests-details > ul {
   width: 100%;
   margin-top: -0.3em;
-}
+  }
 
-details.respec-tests-details > li {
+  details.respec-tests-details > li {
   padding-left: 1em;
-}
+  }
 
-a[href].self-link:hover {
+  a[href].self-link:hover {
   opacity: 1;
   text-decoration: none;
   background-color: transparent;
-}
+  }
 
-h2,
-h3,
-h4,
-h5,
-h6 {
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
   position: relative;
-}
+  }
 
-aside.example .marker > a.self-link {
+  aside.example .marker > a.self-link {
   color: inherit;
-}
+  }
 
-h2 > a.self-link,
-h3 > a.self-link,
-h4 > a.self-link,
-h5 > a.self-link,
-h6 > a.self-link {
+  h2 > a.self-link,
+  h3 > a.self-link,
+  h4 > a.self-link,
+  h5 > a.self-link,
+  h6 > a.self-link {
   border: none;
   color: inherit;
   font-size: 83%;
@@ -335,18 +335,18 @@ h6 > a.self-link {
   top: 0;
   transition: opacity 0.2s;
   width: 2em;
-}
+  }
 
-h2 > a.self-link::before,
-h3 > a.self-link::before,
-h4 > a.self-link::before,
-h5 > a.self-link::before,
-h6 > a.self-link::before {
+  h2 > a.self-link::before,
+  h3 > a.self-link::before,
+  h4 > a.self-link::before,
+  h5 > a.self-link::before,
+  h6 > a.self-link::before {
   content: "§";
   display: block;
-}
+  }
 
-@media (max-width: 767px) {
+  @media (max-width: 767px) {
   dd {
     margin-left: 0;
   }
@@ -360,45 +360,45 @@ h6 > a.self-link::before {
     left: auto;
     top: auto;
   }
-}
+  }
 
-@media print {
+  @media print {
   .removeOnSave {
     display: none;
   }
-}
-]]>
+  }
+  ]]>
 </style>
 <link rel="canonical" href="https://www.w3.org/TR/wot-security/" />
 <style>
-<![CDATA[
-var {
+  <![CDATA[
+  var {
   position: relative;
   cursor: pointer;
-}
+  }
 
-var[data-type]::before,
-var[data-type]::after {
+  var[data-type]::before,
+  var[data-type]::after {
   position: absolute;
   left: 50%;
   top: -6px;
   opacity: 0;
   transition: opacity 0.4s;
   pointer-events: none;
-}
+  }
 
-/* the triangle or arrow or caret or whatever */
-var[data-type]::before {
+  /* the triangle or arrow or caret or whatever */
+  var[data-type]::before {
   content: "";
   transform: translateX(-50%);
   border-width: 4px 6px 0 6px;
   border-style: solid;
   border-color: transparent;
   border-top-color: #000;
-}
+  }
 
-/* actual text */
-var[data-type]::after {
+  /* actual text */
+  var[data-type]::after {
   content: attr(data-type);
   transform: translateX(-50%) translateY(-100%);
   background: #000;
@@ -411,18 +411,18 @@ var[data-type]::after {
   color: #daca88;
   text-indent: 0;
   font-weight: normal;
-}
+  }
 
-var[data-type]:hover::after,
-var[data-type]:hover::before {
+  var[data-type]:hover::after,
+  var[data-type]:hover::before {
   opacity: 1;
-}
-]]>
+  }
+  ]]>
 </style>
 
 <script id="initialUserConfig" type="application/json">
-<![CDATA[
-{
+  <![CDATA[
+  {
   "specStatus": "ED",
   "noRecTrack": "true",
   "processVersion": 2017,
@@ -1035,8 +1035,8 @@ var[data-type]:hover::before {
   },
   "publishISODate": "2019-08-21T00:00:00.000Z",
   "generatedSubtitle": "Editor's Draft 21 August 2019"
-}
-]]>
+  }
+  ]]>
 </script>
 <meta name="description" content=
 "This document provides non-normative guidance on Web of Things (WoT) security and privacy. The Web of Things is descriptive, not prescriptive, and so is generally designed to support the security models and mechanisms of the systems it describes, not introduce new ones. However, a WoT System also has its own unique assets, such as a Scripting API and Thing Descriptions, that need to be protected and also have security and privacy implications." />
