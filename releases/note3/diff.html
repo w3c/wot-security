@@ -369,7 +369,7 @@
   }
   ]]>
 </style>
-<link rel="canonical" href="https://www.w3.org/TR/wot-security/" />
+
 <style>
   <![CDATA[
   var {
@@ -419,13 +419,15 @@
   }
   ]]>
 </style>
-
+<link rel="stylesheet" href=
+"https://www.w3.org/StyleSheets/TR/2016/W3C-WG-NOTE" />
+<link rel="canonical" href="https://www.w3.org/TR/wot-security/" />
 <script id="initialUserConfig" type="application/json">
   <![CDATA[
   {
-  "specStatus": "ED",
+  "specStatus": "WG-NOTE",
   "noRecTrack": "true",
-  "processVersion": 2017,
+  "processVersion": 2019,
   "shortName": "wot-security",
   "copyrightStart": 2017,
   "wg": "Web of Things Working Group",
@@ -1033,15 +1035,13 @@
       "id": "nikto"
     }
   },
-  "publishISODate": "2019-08-21T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 21 August 2019"
+  "publishISODate": "2019-10-29T00:00:00.000Z",
+  "generatedSubtitle": "Working Group Note 29 October 2019"
   }
   ]]>
 </script>
 <meta name="description" content=
 "This document provides non-normative guidance on Web of Things (WoT) security and privacy. The Web of Things is descriptive, not prescriptive, and so is generally designed to support the security models and mechanisms of the systems it describes, not introduce new ones. However, a WoT System also has its own unique assets, such as a Scripting API and Thing Descriptions, that need to be protected and also have security and privacy implications." />
-<link rel="stylesheet" href=
-"https://www.w3.org/StyleSheets/TR/2016/W3C-ED" />
 <style type='text/css'>
 .diff-old-a {
   font-size: smaller;
@@ -1081,19 +1081,19 @@ Privacy
 </ins>
 </h1>
 <h2>
+<abbr title="World Wide Web Consortium">
 W3C
-<del class="diff-old">Working
+</abbr>
+Working
 Group
 Note
-3
+<del class="diff-old">3
 December
 2018
 </del>
-<ins class="diff-chg">Editor's
-Draft
-</ins><time class="dt-published" datetime= "2019-08-21"><ins class="diff-chg">
-21
-August
+<time class="dt-published" datetime="2019-10-29">
+<ins class="diff-chg">29
+October
 2019
 </ins>
 </time>
@@ -1106,8 +1106,8 @@ version:
 <dd>
 <del class="diff-old">https://www.w3.org/TR/2018/NOTE-wot-security-20181203/
 </del>
-<a class="u-url" href= "https://w3c.github.io/wot-security/">
-<ins class="diff-chg">https://w3c.github.io/wot-security/
+<a class="u-url" href= "https://www.w3.org/TR/2019/NOTE-wot-security-20191029/">
+<ins class="diff-chg">https://www.w3.org/TR/2019/NOTE-wot-security-20191029/
 </ins>
 </a>
 </dd>
@@ -1132,10 +1132,18 @@ https://w3c.github.io/wot-security/
 </a>
 </dd>
 <dt>
-<del class="diff-old">Previous
+Previous
 version:
-https://www.w3.org/TR/2017/NOTE-wot-security-20171214/
+</dt>
+<dd>
+<del class="diff-old">https://www.w3.org/TR/2017/NOTE-wot-security-20171214/
 </del>
+<a class="u-url" href= "https://www.w3.org/TR/2018/NOTE-wot-security-20181203/">
+<ins class="diff-chg">https://www.w3.org/TR/2018/NOTE-wot-security-20181203/
+</ins>
+</a>
+</dd>
+<dt>
 Editors:
 </dt>
 <dd class="p-author h-card vcard" data-editor-id="99327">
@@ -1703,15 +1711,10 @@ Working
 Group
 </a>
 as
-<del class="diff-old">a
+a
 Working
 Group
 Note.
-</del>
-<ins class="diff-chg">an
-Editor's
-Draft.
-</ins></p><p>
 Comments
 regarding
 this
@@ -1722,13 +1725,13 @@ Please
 send
 them
 to
-<a href="mailto:public-wot-wg@w3.org">
+<a href= "mailto:public-wot-wg@w3.org">
 public-wot-wg@w3.org
 </a>
 (
-<del class="diff-old">subscribe
-,
-</del>
+<a href= "mailto:public-wot-wg-request@w3.org?subject=subscribe">
+subscribe
+</a>,
 <a href= "https://lists.w3.org/Archives/Public/public-wot-wg/">
 archives
 </a>
@@ -1750,15 +1753,10 @@ purposes.
 </del>
 Publication
 as
-<del class="diff-old">a
+a
 Working
 Group
 Note
-</del>
-<ins class="diff-chg">an
-Editor's
-Draft
-</ins>
 does
 not
 imply
@@ -23383,12 +23381,8 @@ of
 one
 vulnerability
 may
-</ins>
 be
-<del class="diff-old">added.
-See
-</del>
-<ins class="diff-chg">used
+used
 to
 expose
 other
@@ -23399,8 +23393,12 @@ them
 in
 turn
 to
+</ins>
 be
-exploitable.
+<del class="diff-old">added.
+See
+</del>
+<ins class="diff-chg">exploitable.
 Conversely,
 a
 weakness
@@ -23414,8 +23412,9 @@ a
 mitigation
 that
 prevents
+</ins>
 the
-class
+<ins class="diff-new">class
 of
 exploit
 to
@@ -23423,7 +23422,7 @@ which
 it
 is
 vulnerable.
-</ins></p><p><ins class="diff-chg">
+</ins></p><p><ins class="diff-new">
 Many
 resources
 and
@@ -23433,8 +23432,9 @@ to
 help
 penetration
 and
+</ins>
 security
-testers
+<ins class="diff-new">testers
 to
 perform
 the
@@ -23467,9 +23467,9 @@ Testing
 Cheat
 Sheet"
 [
-</ins><cite><a class="bibref" href="#bib-owa18" title= "Web Service Security Testing" data-link-type= "biblio"><ins class="diff-chg">
+</ins><cite><a class="bibref" href="#bib-owa18" title= "Web Service Security Testing" data-link-type= "biblio"><ins class="diff-new">
 Owa18
-</ins></a></cite><ins class="diff-chg">
+</ins></a></cite><ins class="diff-new">
 ]
 written
 by
@@ -23526,7 +23526,7 @@ as
 CoAP
 or
 MQTT.
-</ins></p><p><ins class="diff-chg">
+</ins></p><p><ins class="diff-new">
 For
 the
 purposes
@@ -23540,10 +23540,10 @@ focus
 on
 Stage
 2,
-</ins><em><ins class="diff-chg">
+</ins><em><ins class="diff-new">
 Weakness
 Discovery
-</ins></em>.<ins class="diff-chg">
+</ins></em>.<ins class="diff-new">
 Weakness
 discovery
 can
@@ -23561,7 +23561,7 @@ and
 runtime
 weakness
 discovery.
-</ins></p><p><ins class="diff-chg">
+</ins></p><p><ins class="diff-new">
 Stage
 1
 is
@@ -23681,13 +23681,13 @@ useful
 to
 prioritize
 mitigation.
-</ins></p><section id="static-weakness-discovery"><h4 id="x8-4-1-static-weakness-discovery"><bdi class= "secno"><ins class="diff-chg">
+</ins></p><section id="static-weakness-discovery"><h4 id="x8-4-1-static-weakness-discovery"><bdi class= "secno"><ins class="diff-new">
 8.4.1
-</ins></bdi><ins class="diff-chg">
+</ins></bdi><ins class="diff-new">
 Static
 Weakness
 Discovery
-</ins><a class="self-link" aria-label="§" href="#static-weakness-discovery"></a></h4><p><ins class="diff-chg">
+</ins><a class="self-link" aria-label="§" href="#static-weakness-discovery"></a></h4><p><ins class="diff-new">
 Static
 weakness
 discovery
@@ -23724,9 +23724,8 @@ WoT
 Service
 provider
 have
-</ins>
 the
-<ins class="diff-new">access,
+access,
 they
 are
 strongly
@@ -23840,9 +23839,8 @@ many
 other
 sources
 of
-</ins>
 security
-<ins class="diff-new">weakness.
+weakness.
 Usually
 the
 output
@@ -25526,8 +25524,13 @@ addressed
 in
 priority
 order.
-</ins></p></section><section id="suggested-testing-frequency"><h3 id="x8-6-suggested-testing-frequency"><bdi class= "secno"><ins class="diff-chg">
-8.6
+</ins>
+</p>
+</section>
+<section id="suggested-testing-frequency">
+<h3 id="x8-6-suggested-testing-frequency">
+<bdi class= "secno">
+<ins class="diff-chg">8.6
 </ins></bdi><ins class="diff-chg">
 Suggested
 Testing
@@ -25833,9 +25836,7 @@ security
 testing
 and
 mitigations.
-</ins>
-</p>
-</section>
+</ins></p></section>
 </section>
 <section id="terminology">
 <h2 id="x9-terminology">
@@ -25905,13 +25906,10 @@ define
 the
 following
 terms:
-</ins>
-</p>
-<dl>
-<dt>
-<ins class="diff-new">WoT
+</ins></p><dl><dt><ins class="diff-chg">
+WoT
 System:
-</ins></dt><dd><ins class="diff-new">
+</ins></dt><dd><ins class="diff-chg">
 A
 set
 of
@@ -25923,10 +25921,10 @@ communication
 links
 between
 them.
-</ins></dd><dt><ins class="diff-new">
+</ins></dd><dt><ins class="diff-chg">
 WoT
 Device:
-</ins></dt><dd><ins class="diff-new">
+</ins></dt><dd><ins class="diff-chg">
 A
 physical
 device
@@ -25940,13 +25938,13 @@ of
 its
 software
 stack.
-</ins></dd></dl><p><ins class="diff-new">
+</ins></dd></dl><p><ins class="diff-chg">
 Within
 the
-</ins><a href="#security-validation"><ins class="diff-new">
+</ins><a href="#security-validation"><ins class="diff-chg">
 Security
 Validation
-</ins></a><ins class="diff-new">
+</ins></a><ins class="diff-chg">
 section
 we
 are
@@ -25959,26 +25957,29 @@ by
 the
 ITU-T
 [
-</ins><cite><a class="bibref" href="#bib-itux1500" title= "ITU-T Rec. X.1500 Overview of cybersecurity information exchange" data-link-type="biblio"><ins class="diff-new">
+</ins><cite><a class="bibref" href="#bib-itux1500" title= "ITU-T Rec. X.1500 Overview of cybersecurity information exchange" data-link-type="biblio"><ins class="diff-chg">
 ITUx1500
-</ins></a></cite><ins class="diff-new">
+</ins></a></cite><ins class="diff-chg">
 ],
 [
-</ins><cite><a class= "bibref" href="#bib-itux1520" title= "ITU-T Rec. X.1520 Common vulnerabilities and exposures" data-link-type="biblio"><ins class="diff-new">
+</ins><cite><a class= "bibref" href="#bib-itux1520" title= "ITU-T Rec. X.1520 Common vulnerabilities and exposures" data-link-type="biblio"><ins class="diff-chg">
 ITUx1520
-</ins></a></cite><ins class="diff-new">
+</ins></a></cite><ins class="diff-chg">
 ],
 [
-</ins><cite><a class= "bibref" href="#bib-itux1524" title= "ITU-T Rec. X.1524 Common weakness enumeration" data-link-type= "biblio"><ins class="diff-new">
+</ins><cite><a class= "bibref" href="#bib-itux1524" title= "ITU-T Rec. X.1524 Common weakness enumeration" data-link-type= "biblio"><ins class="diff-chg">
 ITUx1524
-</ins></a></cite><ins class="diff-new">
+</ins></a></cite><ins class="diff-chg">
 ]
 for
 the
 following
 terms:
-</ins></p><dl><dt><ins class="diff-new">
-Vulnerability:
+</ins>
+</p>
+<dl>
+<dt>
+<ins class="diff-new">Vulnerability:
 </ins></dt><dd><ins class="diff-new">
 Any
 weakness
