@@ -503,8 +503,8 @@
      <p class="ednote">
         This content should be consistent with the summaries in the 
         Security sections of other WoT documents, in particular the
-	     <a href="https://www.w3.org/TR/2017/WD-wot-architecture-20170914/#sec-security-considerations">WoT Architecture</a> 
-        document.
+	[[WoT Architecture]] and [[WoT Thing Description]] 
+        documents.
      </p>
     </section>
 
@@ -531,14 +531,10 @@
       <ul>
         <li>the <a href="https://www.w3.org/WoT/IG/">Interest Group</a> web site</li>
         <li>the <a href="https://www.w3.org/WoT/WG/">Working Group</a> web site</li>
-    <li>the <a href="https://www.w3.org/TR/2017/WD-wot-architecture-20170914/">WoT Architecture</a> 
-            document,</li>
-        <li>the <a href="https://www.w3.org/TR/2017/WD-wot-thing-description-20170914/">WoT Thing Description</a> 
-            document,</li>
-        <li>the <a href="https://w3c.github.io/wot-binding-templates/">WoT Binding Templates</a> 
-            document, and</li>
-        <li>the <a href="https://www.w3.org/TR/2017/WD-wot-scripting-api-20170914/">WoT Scripting API</a> 
-            document.</li>
+        <li>the [[WoT-Architecture]] document,</li> 
+        <li>the [[WoT-Thing-Description]] document,</li>
+        <li>the [[WoT-Binding-Templates]] document, and</li>
+        <li>the [[WoT-Scripting-API]] document.</li>
       </ul>
       </p>
 </section>
@@ -1001,7 +997,7 @@
        </section>
 
        <section id="wot-threat-model-attack-surfaces">
-       <h3>Attack Surfaces</h3>
+       <h3 id="e-wot-threat-model-attack-surfaces">Attack Surfaces</h3>
            <p>In order to correctly define WoT attack surfaces one needs to determine the system's
               trust model as well as execution context boundaries. 
               A high-level view of the WoT architecture from the security point of view is presented in
@@ -1972,9 +1968,12 @@ tracking equipment, information about user's preferences in home environment, vi
             </p>
 
           <p class="ednote" title="Links">
-            We may need to mention privacy risks associated with links.
+            We need to mention privacy risks associated with links.
 	    In particular, dereferencing links carries similar inferencing risks
 	    as context file dereferencing.
+            This has been mentioned in the Security and Privacy 
+            sections of [[WoT-Architecture]] and 
+            [[WoT-Thing-Description]] but needs to be expanded upon here.
           </p>
 
         </section>
@@ -2892,7 +2891,7 @@ tracking equipment, information about user's preferences in home environment, vi
     </section>
 
     <section id="security-validation">
-      <h1>Security Validation</h1>
+      <h1 id="e-security-validation">Security Validation</h1>
           <p>This section provides guidance on how a WoT System implementation can be
           tested in order to evaluate its security and privacy.  
           A <a href="https://github.com/w3c/wot-security-best-practices/">WoT Security Best Practices</a> 
@@ -3346,7 +3345,7 @@ tracking equipment, information about user's preferences in home environment, vi
       has been presented that leverages existing tools and approaches for web services
       and emerging tools for new IoT-oriented network interfaces.
       A testing plan should be developed suitable for each system developed using the
-      WoT architecture but will generally consist of three stages:
+      WoT Architecture but will generally consist of three stages:
       <a href="#static-weakness-discovery">static weakness discovery</a>,
       <a href="#runtime-weakness-discovery">runtime weakness discovery</a>,
       and <a href="#exploitation">Exploitation Analysis</a>.
@@ -3364,15 +3363,15 @@ tracking equipment, information about user's preferences in home environment, vi
     </section>
 </section>
 
-    <section>
-      <h1>Terminology</h1>
+    <section id="terminology">
+      <h1 id="e-terminology">Terminology</h1>
 
       <p>
-        Please refer to the 
-	<a href="https://www.w3.org/TR/2017/WD-wot-architecture-20170914/#terminology">WoT Architecture</a> 
-	document for terminology definitions of the following terms used in this document: WoT Consumer,
+        Please refer to  
+	[[WoT-Architecture]] 
+	for definitions of the following terms used in this document: WoT Consumer,
     WoT Thing, WoT Servient, WoT Protocol Binding, WoT Binding Templates, WoT Intermediary,
-    WoT Thing Directory, WoT Thing Description, Exposed Thing, WoT Interface, WoT Runtime, WoT Scripting API.
+    WoT Thing Directory, WoT Thing Description, Exposed Thing, WoT Interface, WoT Runtime, and WoT Scripting API.
       </p>
         <p>
         Additionally we define the following terms:
@@ -3407,9 +3406,52 @@ tracking equipment, information about user's preferences in home environment, vi
 
     </section>
 
-    <section>
-      <h1>Summary</h1>
+    <section id="changes" class="appendix">
+      <h1 id="e-changes">Change Log</h1>
+      <section id="changes-from-second-release">
+        <h2 id="e-changes-from-second-release">Changes from Second Release</h2>
+        <ul>
+        <li>Addition of references to published versions of 
+            the [[WoT-Architecture]], [[WoT-Thing-Description]],
+            [[WoT-Binding-Templates]], and
+            [[WoT-Scripting-API]] documents,
+            as well as the following new references:
+            [[Burp]], [[Checkmarx]], [[Coverity]], [[CoverityOnline]],
+            [[exploit-db]], [[FuzzCoAP]], [[ITUx1500]], [[ITUx1520]],
+            [[ITUx1524]], [[Klocwork]], [[Nikto]], [[Owa18]],
+            [[OWASP-Dependency-Check]], [[PeachPit-COAP]], [[Protecode]],
+            [[Snyk]], [[tcpdump]], [[w3af]], [[wapiti]], [[WATOBO]],
+            [[Wfuzz]], and [[Wireshark]].</li>
+        <li>The name was changed from
+            <em>Web of Things (WoT) Security and Privacy Considerations</em>
+            to <em>Web of Things (WoT) Security and Privacy Guidelines</em>.
+            This change was made to avoid
+            confusion with the "considerations" sections of individual
+            WoT documents.</li>
+        <li>Revision and clarification of the attack surfaces 
+            of a WoT System described in  
+            <a href="#wot-threat-model-attack-surfaces"></a>.</li>
+        <li>Empty section for <em>Secure Practices for Thing Directory
+            Interaction Protocols</em> was removed.</li>
+        <li>Addition of <a href="#security-validation"></a>,
+            which provides security testing guidance for WoT Systems.
+        <li>Revision of terminology usage to be consistent with the definitions
+            in [[WoT-Architecture]].
+        <li>Revision of <a href="#terminology"></a>
+            to state specific terms
+            used from [[WoT-Architecture]], add
+            definitions of terms used only in this document, and reference
+            externally defined terms in [[ITUx1500]].
+        </ul>
+      </section>
+      <section id="changes-from-First-release">
+        <h2 id="e-changes-from-first-release">Changes from First Release</h2>
+        <ul>
+        <li>To Do</li>
+        </ul>
+      </section>
     </section>
+
     <!--<section class="appendix remove">
       <h2>Acknowledgements</h2>
       <p> @TODO decide whether needed... </p>
