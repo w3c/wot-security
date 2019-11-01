@@ -540,8 +540,8 @@
 </section>
     </section>
 
-    <section>
-      <h1>Lifecycle of a WoT Device</h1>
+    <section id="wot-lifecycle">
+      <h1 id="e-wot-lifecycle">Lifecycle of a WoT Device</h1>
 
       <figure id="wot-lifecycle">
            <img src="images/WoT_lifecycle_diagram.png"
@@ -3447,7 +3447,30 @@ tracking equipment, information about user's preferences in home environment, vi
       <section id="changes-from-First-release">
         <h2 id="e-changes-from-first-release">Changes from First Release</h2>
         <ul>
-        <li>To Do</li>
+        <li>Replace inline description of W3C Patent Policy with link to 
+            <a href="https://www.w3.org/Consortium/Patent-Policy/">external document</a>.</li>
+        <li>Added <a href="#wot-lifecycle"></a> describing the states and
+            transitions of a device throughout its lifetime.</li>
+        <li>Added MQTT as a focus protocol.</li>
+        <li>Expanded and clarified role and threat definitions in
+            <a href="#wot-threat-model"></a>.</li>
+        <li>Added WoT Thing Directory to items (currently) out of scope.</li>
+        <li>Added Side Channel threat to 
+            <a href="#scenario-1-home-environment"></a>.</li>
+        <li>Added <a href="#scenario-2-business-corporate-environment"></a>
+            describing threats in an office building environment.</li>
+        <li>Added <a href="#scenario-3-industrial-critical-infrastructure-environment"></a>
+            describing threats in an industrial environment.</li>
+        <li>Added <a href="#wot-privacy"></a>.</li>
+        <li>Revised <a href="#security-mitigations"></a>, and
+            added recommended mitigations.</li>
+        <li>Revised <a href="#wot-client-server-basic"></a> to include OCF
+            as an example, and describe use of CoAPS and DTLS in this
+            case.</li>
+        <li>Added <a href="#wot-client-server-double-proxy"></a>
+            and <a href="#wot-client-server-tunnel"></a> to describe
+            two possible strategies for traversing NATs.
+        </li>
         </ul>
       </section>
     </section>
