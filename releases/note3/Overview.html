@@ -1030,7 +1030,7 @@
     }
   },
   "publishISODate": "2019-11-05T00:00:00.000Z",
-  "generatedSubtitle": "Working Group Note 05 November 2019"
+  "generatedSubtitle": "Working Group Note 5 November 2019"
   }
   //]]>
   </script>
@@ -1045,7 +1045,7 @@
     <h1 id="title" class="title p-name">Web of Things (WoT)
     Security and Privacy Guidelines</h1>
     <h2><abbr title="World Wide Web Consortium">W3C</abbr> Working
-    Group Note <time class="dt-published" datetime="2019-11-05">05
+    Group Note <time class="dt-published" datetime="2019-11-05">5
     November 2019</time></h2>
     <dl>
       <dt>This version:</dt>
@@ -1155,8 +1155,13 @@
       </div>
       <p class="">This content should be consistent with the
       summaries in the Security sections of other WoT documents, in
-      particular the [[WoT Architecture]] and [[WoT Thing
-      Description]] documents.</p>
+      particular the [<cite><a class="bibref" href=
+      "#bib-wot-architecture" title=
+      "Web of Things (WoT) Architecture" data-link-type=
+      "biblio">WoT-Architecture</a></cite>] and [<cite><a class=
+      "bibref" href="#bib-wot-thing-description" title=
+      "Web of Things (WoT) Thing Description" data-link-type=
+      "biblio">WoT-Thing-Description</a></cite>] documents.</p>
     </div>
   </section>
   <section id="sotd" class="introductory">
@@ -1188,8 +1193,6 @@
     "mailto:public-wot-wg@w3.org">public-wot-wg@w3.org</a>
     (<a href="mailto:public-wot-wg-request@w3.org?subject=subscribe">subscribe</a>,
     <a href="https://lists.w3.org/Archives/Public/public-wot-wg/">archives</a>).</p>
-    <p>A <a href="diff.html">diff-marked version</a> of this document is also
-    available for comparison purposes.</p>
     <p>Publication as a Working Group Note does not imply
     endorsement by the <abbr title=
     "World Wide Web Consortium">W3C</abbr> Membership. This is a
@@ -1223,7 +1226,7 @@
         </ol>
       </li>
       <li class="tocline">
-        <a class="tocxref" href="#wot-lifecycle"><bdi class=
+        <a class="tocxref" href="#wot-device-lifecycle"><bdi class=
         "secno">2.</bdi> Lifecycle of a WoT Device</a>
       </li>
       <li class="tocline">
@@ -1542,12 +1545,12 @@
       </ul>
     </section>
   </section>
-  <section id="wot-lifecycle">
-    <h2 id="e-wot-lifecycle"><bdi class="secno">2.</bdi> Lifecycle
-    of a WoT Device<a class="self-link" aria-label="§" href=
-    "#wot-lifecycle"></a></h2>
+  <section id="wot-device-lifecycle">
+    <h2 id="e-wot-device-lifecycle"><bdi class="secno">2.</bdi>
+    Lifecycle of a WoT Device<a class="self-link" aria-label="§"
+    href="#wot-device-lifecycle"></a></h2>
     <figure id="wot-lifecycle">
-      <img src="images/WoT_lifecycle_diagram.png" width="100%"
+      <img src="images/WoT_lifecycle_diagram.png"
       title="WoT Device Lifecycle" />
       <figcaption>
         Figure <bdi class="figno">1</bdi> <span class=
@@ -1559,9 +1562,9 @@
     if a WoT Thing Description is being used simply to describe an
     existing device implemented using another standard. However,
     for discussion purposes we will use the generic lifecycle shown
-    in <a href="#wot-lifecycle" class="sec-ref">§&nbsp;<bdi class=
-    "secno">2.</bdi> Lifecycle of a WoT Device</a> which includes
-    the following states:</p>
+    in <a href="#wot-lifecycle" class="fig-ref" title=
+    "WoT Device Lifecycle">Figure <bdi class="figno">1</bdi></a>
+    which includes the following states:</p>
     <ul>
       <li><strong>Manufactured:</strong> The WoT Device has been
       manufactured by an OEM. It might have a WoT runtime present
@@ -1595,34 +1598,36 @@
         deployment's operational roles. From the Operational state
         a device can return to the Manufactured state if it is
         fully decommissioned and security de-provisioned (link E in
-        <a href="#wot-lifecycle" class="sec-ref">§&nbsp;<bdi class=
-        "secno">2.</bdi> Lifecycle of a WoT Device</a>). It is also
-        possible to perform only a partial reset of a device, if it
-        only requires re-installation and recommissioning without
-        security re-provisioning (link D in <a href=
-        "#wot-lifecycle" class="sec-ref">§&nbsp;<bdi class=
-        "secno">2.</bdi> Lifecycle of a WoT Device</a>). It is also
-        possible that only security re-provisioning is needed
-        without re-installation and re-commissioning (link C in
-        <a href="#wot-lifecycle" class="sec-ref">§&nbsp;<bdi class=
-        "secno">2.</bdi> Lifecycle of a WoT Device</a>).
+        <a href="#wot-lifecycle" class="fig-ref" title=
+        "WoT Device Lifecycle">Figure <bdi class=
+        "figno">1</bdi></a>). It is also possible to perform only a
+        partial reset of a device, if it only requires
+        re-installation and recommissioning without security
+        re-provisioning (link D in <a href="#wot-lifecycle" class=
+        "fig-ref" title="WoT Device Lifecycle">Figure <bdi class=
+        "figno">1</bdi></a>). It is also possible that only
+        security re-provisioning is needed without re-installation
+        and re-commissioning (link C in <a href="#wot-lifecycle"
+        class="fig-ref" title="WoT Device Lifecycle">Figure
+        <bdi class="figno">1</bdi></a>).
       </li>
       <li>
         <strong>Maintenance and Security Update:</strong> A state
         that is entered when the device's software or configuration
         needs to be updated. This is an optional state that can be
         activated remotely or locally (link A in <a href=
-        "#wot-lifecycle" class="sec-ref">§&nbsp;<bdi class=
-        "secno">2.</bdi> Lifecycle of a WoT Device</a>) on a WoT
-        Device depending on the deployment model and overall setup.
-        This state can be required to maintain security, for
-        example to patch SW vulnerabilities or perform
-        security-related configuration updates, such as key
-        revocation or certificate refresh. After maintenance or
-        updates are done, the device normally returns to the
-        Operational state (link B in <a href="#wot-lifecycle"
-        class="sec-ref">§&nbsp;<bdi class="secno">2.</bdi>
-        Lifecycle of a WoT Device</a>).
+        "#wot-lifecycle" class="fig-ref" title=
+        "WoT Device Lifecycle">Figure <bdi class=
+        "figno">1</bdi></a>) on a WoT Device depending on the
+        deployment model and overall setup. This state can be
+        required to maintain security, for example to patch SW
+        vulnerabilities or perform security-related configuration
+        updates, such as key revocation or certificate refresh.
+        After maintenance or updates are done, the device normally
+        returns to the Operational state (link B in <a href=
+        "#wot-lifecycle" class="fig-ref" title=
+        "WoT Device Lifecycle">Figure <bdi class=
+        "figno">1</bdi></a>).
       </li>
     </ul>The scope of this document only covers the Operational
     State of a WoT Device with the assumption that all relevant
@@ -2288,7 +2293,7 @@
         execution boundaries might not be present as they are
         dependent on the actual device implementation.</p>
         <figure id="wot-security-fig-attack-surfaces">
-          <img src="images/WoTArchSecurityView.png" width="100%"
+          <img src="images/WoTArchSecurityView.png"
           title="WoT High-Level Architecture Security View" />
           <figcaption>
             Figure <bdi class="figno">2</bdi> <span class=
@@ -6107,10 +6112,10 @@
         "https://www.w3.org/Consortium/Patent-Policy/">external
         document</a>.
         </li>
-        <li>Added <a href="#wot-lifecycle" class=
-        "sec-ref">§&nbsp;<bdi class="secno">2.</bdi> Lifecycle of a
-        WoT Device</a> describing the states and transitions of a
-        device throughout its lifetime.
+        <li>Added <a href="#wot-device-lifecycle" class="sec-ref">
+          §&nbsp;<bdi class="secno">2.</bdi> Lifecycle of a WoT
+          Device</a> describing the states and transitions of a
+          device throughout its lifetime.
         </li>
         <li>Added MQTT as a focus protocol.</li>
         <li>Expanded and clarified role and threat definitions in
@@ -6719,7 +6724,7 @@
           "https://www.w3.org/TR/wot-architecture/"><cite>Web of
           Things (WoT) Architecture</cite></a>. Matthias Kovatsch;
           Ryuichi Matsukura; Michael Lagally; Toru Kawaguchi;
-          Kunihiko Toumura; Kazuo Kajimoto. W3C. 16 May 2019. W3C
+          Kunihiko Toumura; Kazuo Kajimoto. W3C. 5 November 2019. W3C
           Candidate Recommendation. URL: <a href=
           "https://www.w3.org/TR/wot-architecture/">https://www.w3.org/TR/wot-architecture/</a>
         </dd>
@@ -6748,7 +6753,7 @@
           "https://www.w3.org/TR/wot-thing-description/"><cite>Web
           of Things (WoT) Thing Description</cite></a>. Sebastian
           Käbisch; Takuki Kamiya; Michael McCool; Victor Charpenay.
-          W3C. 16 May 2019. W3C Candidate Recommendation. URL:
+          W3C. 5 November 2019. W3C Candidate Recommendation. URL:
           <a href=
           "https://www.w3.org/TR/wot-thing-description/">https://www.w3.org/TR/wot-thing-description/</a>
         </dd>
