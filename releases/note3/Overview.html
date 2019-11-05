@@ -1029,8 +1029,8 @@
       "id": "nikto"
     }
   },
-  "publishISODate": "2019-10-29T00:00:00.000Z",
-  "generatedSubtitle": "Working Group Note 29 October 2019"
+  "publishISODate": "2019-11-05T00:00:00.000Z",
+  "generatedSubtitle": "Working Group Note 05 November 2019"
   }
   //]]>
   </script>
@@ -1045,13 +1045,13 @@
     <h1 id="title" class="title p-name">Web of Things (WoT)
     Security and Privacy Guidelines</h1>
     <h2><abbr title="World Wide Web Consortium">W3C</abbr> Working
-    Group Note <time class="dt-published" datetime="2019-10-29">29
-    October 2019</time></h2>
+    Group Note <time class="dt-published" datetime="2019-11-05">05
+    November 2019</time></h2>
     <dl>
       <dt>This version:</dt>
       <dd>
         <a class="u-url" href=
-        "https://www.w3.org/TR/2019/NOTE-wot-security-20191029/">https://www.w3.org/TR/2019/NOTE-wot-security-20191029/</a>
+        "https://www.w3.org/TR/2019/NOTE-wot-security-20191105/">https://www.w3.org/TR/2019/NOTE-wot-security-20191105/</a>
       </dd>
       <dt>Latest published version:</dt>
       <dd>
@@ -1155,9 +1155,8 @@
       </div>
       <p class="">This content should be consistent with the
       summaries in the Security sections of other WoT documents, in
-      particular the <a href=
-      "https://www.w3.org/TR/2019/CR-wot-architecture-20190516/#sec-security-considerations">
-      WoT Architecture</a> document.</p>
+      particular the [[WoT Architecture]] and [[WoT Thing
+      Description]] documents.</p>
     </div>
   </section>
   <section id="sotd" class="introductory">
@@ -1224,9 +1223,8 @@
         </ol>
       </li>
       <li class="tocline">
-        <a class="tocxref" href=
-        "#lifecycle-of-a-wot-device"><bdi class="secno">2.</bdi>
-        Lifecycle of a WoT Device</a>
+        <a class="tocxref" href="#wot-lifecycle"><bdi class=
+        "secno">2.</bdi> Lifecycle of a WoT Device</a>
       </li>
       <li class="tocline">
         <a class="tocxref" href="#requirements"><bdi class=
@@ -1468,16 +1466,28 @@
         "secno">9.</bdi> Terminology</a>
       </li>
       <li class="tocline">
-        <a class="tocxref" href="#summary-0"><bdi class=
-        "secno">10.</bdi> Summary</a>
-      </li>
-      <li class="tocline">
-        <a class="tocxref" href="#references"><bdi class=
-        "secno">A.</bdi> References</a>
+        <a class="tocxref" href="#changes"><bdi class=
+        "secno">A.</bdi> Change Log</a>
         <ol class="toc">
           <li class="tocline">
             <a class="tocxref" href=
-            "#informative-references"><bdi class="secno">A.1</bdi>
+            "#changes-from-second-release"><bdi class=
+            "secno">A.1</bdi> Changes from Second Release</a>
+          </li>
+          <li class="tocline">
+            <a class="tocxref" href=
+            "#changes-from-First-release"><bdi class=
+            "secno">A.2</bdi> Changes from First Release</a>
+          </li>
+        </ol>
+      </li>
+      <li class="tocline">
+        <a class="tocxref" href="#references"><bdi class=
+        "secno">B.</bdi> References</a>
+        <ol class="toc">
+          <li class="tocline">
+            <a class="tocxref" href=
+            "#informative-references"><bdi class="secno">B.1</bdi>
             Informative references</a>
           </li>
         </ol>
@@ -1512,31 +1522,32 @@
         <li>the <a href="https://www.w3.org/WoT/WG/">Working
         Group</a> web site
         </li>
-        <li>the <a href=
-        "https://www.w3.org/TR/2019/CR-wot-architecture-20190516/">
-          WoT Architecture</a> document,
-        </li>
-        <li>the <a href=
-        "https://www.w3.org/TR/2019/CR-wot-thing-description-20190516/">
-          WoT Thing Description</a> document,
-        </li>
-        <li>the <a href=
-        "https://w3c.github.io/wot-binding-templates/">WoT Binding
-        Templates</a> document, and
-        </li>
-        <li>the <a href=
-        "https://www.w3.org/TR/2019/WD-wot-scripting-api-20191028/">
-          WoT Scripting API</a> document.
-        </li>
+        <li>the [<cite><a class="bibref" href=
+        "#bib-wot-architecture" title=
+        "Web of Things (WoT) Architecture" data-link-type=
+        "biblio">WoT-Architecture</a></cite>] document,</li>
+        <li>the [<cite><a class="bibref" href=
+        "#bib-wot-thing-description" title=
+        "Web of Things (WoT) Thing Description" data-link-type=
+        "biblio">WoT-Thing-Description</a></cite>] document,</li>
+        <li>the [<cite><a class="bibref" href=
+        "#bib-wot-binding-templates" title=
+        "Web of Things (WoT) Protocol Binding Templates"
+        data-link-type="biblio">WoT-Binding-Templates</a></cite>]
+        document, and</li>
+        <li>the [<cite><a class="bibref" href=
+        "#bib-wot-scripting-api" title=
+        "Web of Things (WoT) Scripting API" data-link-type=
+        "biblio">WoT-Scripting-API</a></cite>] document.</li>
       </ul>
     </section>
   </section>
-  <section id="lifecycle-of-a-wot-device">
-    <h2 id="x2-lifecycle-of-a-wot-device"><bdi class=
-    "secno">2.</bdi> Lifecycle of a WoT Device<a class="self-link"
-    aria-label="§" href="#lifecycle-of-a-wot-device"></a></h2>
+  <section id="wot-lifecycle">
+    <h2 id="e-wot-lifecycle"><bdi class="secno">2.</bdi> Lifecycle
+    of a WoT Device<a class="self-link" aria-label="§" href=
+    "#wot-lifecycle"></a></h2>
     <figure id="wot-lifecycle">
-      <img src="images/WoT_lifecycle_diagram.png"
+      <img src="images/WoT_lifecycle_diagram.png" width="100%"
       title="WoT Device Lifecycle" />
       <figcaption>
         Figure <bdi class="figno">1</bdi> <span class=
@@ -1548,9 +1559,9 @@
     if a WoT Thing Description is being used simply to describe an
     existing device implemented using another standard. However,
     for discussion purposes we will use the generic lifecycle shown
-    in <a href="#wot-lifecycle" class="fig-ref" title=
-    "WoT Device Lifecycle">Figure <bdi class="figno">1</bdi></a>
-    which includes the following states:</p>
+    in <a href="#wot-lifecycle" class="sec-ref">§&nbsp;<bdi class=
+    "secno">2.</bdi> Lifecycle of a WoT Device</a> which includes
+    the following states:</p>
     <ul>
       <li><strong>Manufactured:</strong> The WoT Device has been
       manufactured by an OEM. It might have a WoT runtime present
@@ -1584,36 +1595,34 @@
         deployment's operational roles. From the Operational state
         a device can return to the Manufactured state if it is
         fully decommissioned and security de-provisioned (link E in
-        <a href="#wot-lifecycle" class="fig-ref" title=
-        "WoT Device Lifecycle">Figure <bdi class=
-        "figno">1</bdi></a>). It is also possible to perform only a
-        partial reset of a device, if it only requires
-        re-installation and recommissioning without security
-        re-provisioning (link D in <a href="#wot-lifecycle" class=
-        "fig-ref" title="WoT Device Lifecycle">Figure <bdi class=
-        "figno">1</bdi></a>). It is also possible that only
-        security re-provisioning is needed without re-installation
-        and re-commissioning (link C in <a href="#wot-lifecycle"
-        class="fig-ref" title="WoT Device Lifecycle">Figure
-        <bdi class="figno">1</bdi></a>).
+        <a href="#wot-lifecycle" class="sec-ref">§&nbsp;<bdi class=
+        "secno">2.</bdi> Lifecycle of a WoT Device</a>). It is also
+        possible to perform only a partial reset of a device, if it
+        only requires re-installation and recommissioning without
+        security re-provisioning (link D in <a href=
+        "#wot-lifecycle" class="sec-ref">§&nbsp;<bdi class=
+        "secno">2.</bdi> Lifecycle of a WoT Device</a>). It is also
+        possible that only security re-provisioning is needed
+        without re-installation and re-commissioning (link C in
+        <a href="#wot-lifecycle" class="sec-ref">§&nbsp;<bdi class=
+        "secno">2.</bdi> Lifecycle of a WoT Device</a>).
       </li>
       <li>
         <strong>Maintenance and Security Update:</strong> A state
         that is entered when the device's software or configuration
         needs to be updated. This is an optional state that can be
         activated remotely or locally (link A in <a href=
-        "#wot-lifecycle" class="fig-ref" title=
-        "WoT Device Lifecycle">Figure <bdi class=
-        "figno">1</bdi></a>) on a WoT Device depending on the
-        deployment model and overall setup. This state can be
-        required to maintain security, for example to patch SW
-        vulnerabilities or perform security-related configuration
-        updates, such as key revocation or certificate refresh.
-        After maintenance or updates are done, the device normally
-        returns to the Operational state (link B in <a href=
-        "#wot-lifecycle" class="fig-ref" title=
-        "WoT Device Lifecycle">Figure <bdi class=
-        "figno">1</bdi></a>).
+        "#wot-lifecycle" class="sec-ref">§&nbsp;<bdi class=
+        "secno">2.</bdi> Lifecycle of a WoT Device</a>) on a WoT
+        Device depending on the deployment model and overall setup.
+        This state can be required to maintain security, for
+        example to patch SW vulnerabilities or perform
+        security-related configuration updates, such as key
+        revocation or certificate refresh. After maintenance or
+        updates are done, the device normally returns to the
+        Operational state (link B in <a href="#wot-lifecycle"
+        class="sec-ref">§&nbsp;<bdi class="secno">2.</bdi>
+        Lifecycle of a WoT Device</a>).
       </li>
     </ul>The scope of this document only covers the Operational
     State of a WoT Device with the assumption that all relevant
@@ -2263,7 +2272,7 @@
         </table>
       </section>
       <section id="wot-threat-model-attack-surfaces">
-        <h4 id="x3-2-4-attack-surfaces"><bdi class=
+        <h4 id="e-wot-threat-model-attack-surfaces"><bdi class=
         "secno">3.2.4</bdi> Attack Surfaces<a class="self-link"
         aria-label="§" href=
         "#wot-threat-model-attack-surfaces"></a></h4>
@@ -2279,7 +2288,7 @@
         execution boundaries might not be present as they are
         dependent on the actual device implementation.</p>
         <figure id="wot-security-fig-attack-surfaces">
-          <img src="images/WoTArchSecurityView.png"
+          <img src="images/WoTArchSecurityView.png" width="100%"
           title="WoT High-Level Architecture Security View" />
           <figcaption>
             Figure <bdi class="figno">2</bdi> <span class=
@@ -4014,9 +4023,17 @@
         <span>Editor's note</span><span class="issue-label">:
         Links</span>
       </div>
-      <p class="">We may need to mention privacy risks associated
-      with links. In particular, dereferencing links carries
-      similar inferencing risks as context file dereferencing.</p>
+      <p class="">We need to mention privacy risks associated with
+      links. In particular, dereferencing links carries similar
+      inferencing risks as context file dereferencing. This has
+      been mentioned in the Security and Privacy sections of
+      [<cite><a class="bibref" href="#bib-wot-architecture" title=
+      "Web of Things (WoT) Architecture" data-link-type=
+      "biblio">WoT-Architecture</a></cite>] and [<cite><a class=
+      "bibref" href="#bib-wot-thing-description" title=
+      "Web of Things (WoT) Thing Description" data-link-type=
+      "biblio">WoT-Thing-Description</a></cite>] but needs to be
+      expanded upon here.</p>
     </div>
   </section>
   <section id="references-to-existing-security-best-practices">
@@ -4569,7 +4586,7 @@
       performed on the WoT Thing.</p>
       <figure id="wot_client_thing_basic">
         <img src="images/client-server-basic.png" style=
-        "width: 500px;" />
+        "width: 500px;" height="822" width="1726" />
         <figcaption>
           Figure <bdi class="figno">3</bdi> <span class=
           "fig-title">Basic WoT Thing and WoT Consumer</span>
@@ -4764,7 +4781,7 @@
       can support.</p>
       <figure id="wot_client_thing_basic_2">
         <img src="images/client-server-basic-2.png" style=
-        "width: 500px;" />
+        "width: 500px;" height="1079" width="1727" />
         <figcaption>
           Figure <bdi class="figno">4</bdi> <span class=
           "fig-title">Basic WoT Thing and WoT Consumer with TD
@@ -4821,7 +4838,7 @@
       (perhaps) a modified security configuration.</p>
       <figure id="wot_client_thing_gateway">
         <img src="images/client-server-gateway.png" style=
-        "width: 1000px;" />
+        "width: 1000px;" height="763" width="2667" />
         <figcaption>
           Figure <bdi class="figno">5</bdi> <span class=
           "fig-title">WoT Thing and WoT Consumer via Intermediary
@@ -4890,7 +4907,7 @@
       methods in the application layer.</p>
       <figure id="wot_client_thing_gateway_2">
         <img src="images/client-server-gateway-2.png" style=
-        "width: 1000px;" />
+        "width: 1000px;" height="1090" width="2668" />
         <figcaption>
           Figure <bdi class="figno">6</bdi> <span class=
           "fig-title">WoT Thing and WoT Consumer via Intermediary
@@ -4953,7 +4970,7 @@
       integrity of transferred solution data and the TD.</p>
       <figure id="wot_client_thing_double_proxy">
         <img src="images/client-server-double-proxy.png" style=
-        "width: 1000px;" />
+        "width: 1000px;" height="1071" width="2704" />
         <figcaption>
           Figure <bdi class="figno">7</bdi> <span class=
           "fig-title">WoT Thing and WoT Consumer via Split
@@ -4991,7 +5008,8 @@
       "WoT Thing and WoT Consumer via Tunnel">Figure <bdi class=
       "figno">8</bdi></a>.</p>
       <figure id="wot_client_thing_tunnel">
-        <img src="images/tunnel.png" style="width: 1000px;" />
+        <img src="images/tunnel.png" style="width: 1000px;" height=
+        "1071" width="2677" />
         <figcaption>
           Figure <bdi class="figno">8</bdi> <span class=
           "fig-title">WoT Thing and WoT Consumer via Tunnel</span>
@@ -5058,7 +5076,8 @@
       title="CBOR Object Signing and Encryption (COSE)"
       data-link-type="biblio">COSE17</a></cite>].</p>
       <figure id="wot_client_thing_proxy">
-        <img src="images/proxy.png" style="width: 1000px;" />
+        <img src="images/proxy.png" style="width: 1000px;" height=
+        "1071" width="2674" />
         <figcaption>
           Figure <bdi class="figno">9</bdi> <span class=
           "fig-title">WoT Thing and WoT Consumer via HTTPS/HTTP
@@ -5085,8 +5104,8 @@
       uncacheable and configure appropriate time-to-live
       values.</p>
       <figure id="wot_client_thing_cachingproxy">
-        <img src="images/cachingproxy.png" style=
-        "width: 1000px;" />
+        <img src="images/cachingproxy.png" style="width: 1000px;"
+        height="1071" width="2674" />
         <figcaption>
           Figure <bdi class="figno">10</bdi> <span class=
           "fig-title">WoT Thing and WoT Consumer via HTTPS/HTTP
@@ -5141,7 +5160,7 @@
       example by the manufacturer during factory installation).</p>
       <figure id="wot_servient-single-tenant">
         <img src="images/servient-single-tenant.png" style=
-        "width: 500px;" />
+        "width: 500px;" height="933" width="1579" />
         <figcaption>
           Figure <bdi class="figno">11</bdi> <span class=
           "fig-title">WoT Servient Single-Tenant</span>
@@ -5212,7 +5231,7 @@
       action "toggle".</p>
       <figure id="wot_scripts_security_1">
         <img src="images/scripts-security-1.png" style=
-        "width: 1000px;" />
+        "width: 1000px;" height="862" width="1845" />
         <figcaption>
           Figure <bdi class="figno">12</bdi> <span class=
           "fig-title">Transparent handling of security during WoT
@@ -5233,7 +5252,7 @@
       to the WoT Runtime.</p>
       <figure id="wot_scripts_security_2">
         <img src="images/scripts-security-2.png" style=
-        "width: 1000px;" />
+        "width: 1000px;" height="917" width="2045" />
         <figcaption>
           Figure <bdi class="figno">13</bdi> <span class=
           "fig-title">Transparent handling of security during WoT
@@ -5258,7 +5277,7 @@
       WoT Runtimes.</p>
       <figure id="wot_servient-multi-tenant">
         <img src="images/servient-multi-tenant.png" style=
-        "width: 600px;" />
+        "width: 600px;" height="1078" width="2234" />
         <figcaption>
           Figure <bdi class="figno">14</bdi> <span class=
           "fig-title">WoT Servient Multi-Tenant</span>
@@ -5318,7 +5337,7 @@
     </section>
   </section>
   <section id="security-validation">
-    <h2 id="x8-security-validation"><bdi class="secno">8.</bdi>
+    <h2 id="e-security-validation"><bdi class="secno">8.</bdi>
     Security Validation<a class="self-link" aria-label="§" href=
     "#security-validation"></a></h2>
     <p>This section provides guidance on how a WoT System
@@ -5882,7 +5901,7 @@
       existing tools and approaches for web services and emerging
       tools for new IoT-oriented network interfaces. A testing plan
       should be developed suitable for each system developed using
-      the WoT architecture but will generally consist of three
+      the WoT Architecture but will generally consist of three
       stages: <a href="#static-weakness-discovery">static weakness
       discovery</a>, <a href="#runtime-weakness-discovery">runtime
       weakness discovery</a>, and <a href=
@@ -5900,17 +5919,18 @@
     </section>
   </section>
   <section id="terminology">
-    <h2 id="x9-terminology"><bdi class="secno">9.</bdi>
+    <h2 id="e-terminology"><bdi class="secno">9.</bdi>
     Terminology<a class="self-link" aria-label="§" href=
     "#terminology"></a></h2>
-    <p>Please refer to the <a href=
-    "https://www.w3.org/TR/2019/CR-wot-architecture-20190516/#terminology">
-    WoT Architecture</a> document for terminology definitions of
-    the following terms used in this document: WoT Consumer, WoT
-    Thing, WoT Servient, WoT Protocol Binding, WoT Binding
-    Templates, WoT Intermediary, WoT Thing Directory, WoT Thing
-    Description, Exposed Thing, WoT Interface, WoT Runtime, WoT
-    Scripting API.</p>
+    <p>Please refer to [<cite><a class="bibref" href=
+    "#bib-wot-architecture" title=
+    "Web of Things (WoT) Architecture" data-link-type=
+    "biblio">WoT-Architecture</a></cite>] for definitions of the
+    following terms used in this document: WoT Consumer, WoT Thing,
+    WoT Servient, WoT Protocol Binding, WoT Binding Templates, WoT
+    Intermediary, WoT Thing Directory, WoT Thing Description,
+    Exposed Thing, WoT Interface, WoT Runtime, and WoT Scripting
+    API.</p>
     <p>Additionally we define the following terms:</p>
     <dl>
       <dt>WoT System:</dt>
@@ -5951,10 +5971,199 @@
     vulnerability. A weakness only becomes an <em>actual</em>
     vulnerability once an exploit is known.
   </section>
-  <section id="summary-0">
-    <h2 id="x10-summary"><bdi class="secno">10.</bdi>
-    Summary<a class="self-link" aria-label="§" href=
-    "#summary-0"></a></h2>
+  <section id="changes" class="appendix">
+    <h2 id="e-changes"><bdi class="secno">A.</bdi> Change
+    Log<a class="self-link" aria-label="§" href=
+    "#changes"></a></h2>
+    <section id="changes-from-second-release">
+      <h3 id="e-changes-from-second-release"><bdi class=
+      "secno">A.1</bdi> Changes from Second Release<a class=
+      "self-link" aria-label="§" href=
+      "#changes-from-second-release"></a></h3>
+      <ul>
+        <li>Addition of references to published versions of the
+        [<cite><a class="bibref" href="#bib-wot-architecture"
+        title="Web of Things (WoT) Architecture" data-link-type=
+        "biblio">WoT-Architecture</a></cite>], [<cite><a class=
+        "bibref" href="#bib-wot-thing-description" title=
+        "Web of Things (WoT) Thing Description" data-link-type=
+        "biblio">WoT-Thing-Description</a></cite>],
+        [<cite><a class="bibref" href="#bib-wot-binding-templates"
+        title="Web of Things (WoT) Protocol Binding Templates"
+        data-link-type="biblio">WoT-Binding-Templates</a></cite>],
+        and [<cite><a class="bibref" href="#bib-wot-scripting-api"
+        title="Web of Things (WoT) Scripting API" data-link-type=
+        "biblio">WoT-Scripting-API</a></cite>] documents, as well
+        as the following new references: [<cite><a class="bibref"
+        href="#bib-burp" title=
+        "Burp Suite Web vulnerability scanner" data-link-type=
+        "biblio">Burp</a></cite>], [<cite><a class="bibref" href=
+        "#bib-checkmarx" title="Checkmarx project page"
+        data-link-type="biblio">Checkmarx</a></cite>],
+        [<cite><a class="bibref" href="#bib-coverity" title=
+        "Coverity Tutorial: Introduction to Coverity"
+        data-link-type="biblio">Coverity</a></cite>],
+        [<cite><a class="bibref" href="#bib-coverityonline" title=
+        "Coverity online scanning service" data-link-type=
+        "biblio">CoverityOnline</a></cite>], [<cite><a class=
+        "bibref" href="#bib-exploit-db" title=
+        "Exploit database project page" data-link-type=
+        "biblio">exploit-db</a></cite>], [<cite><a class="bibref"
+        href="#bib-fuzzcoap" title=
+        "FuzzCoAP - Fuzzing for Robustness and Security Testing of CoAP Servers"
+        data-link-type="biblio">FuzzCoAP</a></cite>],
+        [<cite><a class="bibref" href="#bib-itux1500" title=
+        "ITU-T Rec. X.1500 Overview of cybersecurity information exchange"
+        data-link-type="biblio">ITUx1500</a></cite>],
+        [<cite><a class="bibref" href="#bib-itux1520" title=
+        "ITU-T Rec. X.1520 Common vulnerabilities and exposures"
+        data-link-type="biblio">ITUx1520</a></cite>],
+        [<cite><a class="bibref" href="#bib-itux1524" title=
+        "ITU-T Rec. X.1524 Common weakness enumeration"
+        data-link-type="biblio">ITUx1524</a></cite>],
+        [<cite><a class="bibref" href="#bib-klocwork" title=
+        "Klocwork. Faster delivery of secure, reliable, and conformant code"
+        data-link-type="biblio">Klocwork</a></cite>],
+        [<cite><a class="bibref" href="#bib-nikto" title=
+        "Nikto web server scanner" data-link-type=
+        "biblio">Nikto</a></cite>], [<cite><a class="bibref" href=
+        "#bib-owa18" title="Web Service Security Testing"
+        data-link-type="biblio">Owa18</a></cite>], [<cite><a class=
+        "bibref" href="#bib-owasp-dependency-check" title=
+        "OWASP Dependency Check" data-link-type=
+        "biblio">OWASP-Dependency-Check</a></cite>],
+        [<cite><a class="bibref" href="#bib-peachpit-coap" title=
+        "CoAP Peach Pit User Guide" data-link-type=
+        "biblio">PeachPit-COAP</a></cite>], [<cite><a class=
+        "bibref" href="#bib-protecode" title=
+        "Black Duck Software Composition Analysis" data-link-type=
+        "biblio">Protecode</a></cite>], [<cite><a class="bibref"
+        href="#bib-snyk" title=
+        "A developer-first solution that automates finding and fixing vulnerabilities in your dependencies"
+        data-link-type="biblio">Snyk</a></cite>], [<cite><a class=
+        "bibref" href="#bib-tcpdump" title=
+        "tcpdump and libpcap project page" data-link-type=
+        "biblio">tcpdump</a></cite>], [<cite><a class="bibref"
+        href="#bib-w3af" title=
+        "Web Application Attack and Audit Framework"
+        data-link-type="biblio">w3af</a></cite>], [<cite><a class=
+        "bibref" href="#bib-wapiti" title=
+        "Wapiti - The web-application vulnerability scanner"
+        data-link-type="biblio">wapiti</a></cite>],
+        [<cite><a class="bibref" href="#bib-watobo" title=
+        "WATOBO. The Web Application Toolbox" data-link-type=
+        "biblio">WATOBO</a></cite>], [<cite><a class="bibref" href=
+        "#bib-wfuzz" title="Wfuzz. The web application Bruteforcer"
+        data-link-type="biblio">Wfuzz</a></cite>], and
+        [<cite><a class="bibref" href="#bib-wireshark" title=
+        "Wireshark project page" data-link-type=
+        "biblio">Wireshark</a></cite>].</li>
+        <li>The name was changed from <em>Web of Things (WoT)
+        Security and Privacy Considerations</em> to <em>Web of
+        Things (WoT) Security and Privacy Guidelines</em>. This
+        change was made to avoid confusion with the
+        "considerations" sections of individual WoT documents.</li>
+        <li>Revision and clarification of the attack surfaces of a
+        WoT System described in <a href=
+        "#wot-threat-model-attack-surfaces" class=
+        "sec-ref">§&nbsp;<bdi class="secno">3.2.4</bdi> Attack
+        Surfaces</a>.
+        </li>
+        <li>Empty section for <em>Secure Practices for Thing
+        Directory Interaction Protocols</em> was removed.</li>
+        <li>Addition of <a href="#security-validation" class=
+        "sec-ref">§&nbsp;<bdi class="secno">8.</bdi> Security
+        Validation</a>, which provides security testing guidance
+        for WoT Systems.
+        </li>
+        <li>Revision of terminology usage to be consistent with the
+        definitions in [<cite><a class="bibref" href=
+        "#bib-wot-architecture" title=
+        "Web of Things (WoT) Architecture" data-link-type=
+        "biblio">WoT-Architecture</a></cite>].</li>
+        <li>Revision of <a href="#terminology" class=
+        "sec-ref">§&nbsp;<bdi class="secno">9.</bdi>
+        Terminology</a> to state specific terms used from
+        [<cite><a class="bibref" href="#bib-wot-architecture"
+          title="Web of Things (WoT) Architecture" data-link-type=
+          "biblio">WoT-Architecture</a></cite>], add definitions of
+          terms used only in this document, and reference
+          externally defined terms in [<cite><a class="bibref"
+          href="#bib-itux1500" title=
+          "ITU-T Rec. X.1500 Overview of cybersecurity information exchange"
+          data-link-type="biblio">ITUx1500</a></cite>].
+        </li>
+      </ul>
+    </section>
+    <section id="changes-from-First-release">
+      <h3 id="e-changes-from-first-release"><bdi class=
+      "secno">A.2</bdi> Changes from First Release<a class=
+      "self-link" aria-label="§" href=
+      "#changes-from-First-release"></a></h3>
+      <ul>
+        <li>Replace inline description of <abbr title=
+        "World Wide Web Consortium">W3C</abbr> Patent Policy with
+        link to <a href=
+        "https://www.w3.org/Consortium/Patent-Policy/">external
+        document</a>.
+        </li>
+        <li>Added <a href="#wot-lifecycle" class=
+        "sec-ref">§&nbsp;<bdi class="secno">2.</bdi> Lifecycle of a
+        WoT Device</a> describing the states and transitions of a
+        device throughout its lifetime.
+        </li>
+        <li>Added MQTT as a focus protocol.</li>
+        <li>Expanded and clarified role and threat definitions in
+        <a href="#wot-threat-model" class=
+        "sec-ref">§&nbsp;<bdi class="secno">3.2</bdi> Threat
+        Model</a>.
+        </li>
+        <li>Added WoT Thing Directory to items (currently) out of
+        scope.</li>
+        <li>Added Side Channel threat to <a href=
+        "#scenario-1-home-environment" class=
+        "sec-ref">§&nbsp;<bdi class="secno">3.3.1</bdi> Scenario 1
+        - Home Environment</a>.
+        </li>
+        <li>Added <a href=
+        "#scenario-2-business-corporate-environment" class=
+        "sec-ref">§&nbsp;<bdi class="secno">3.3.2</bdi> Scenario 2
+        - Business/Corporate Environment</a> describing threats in
+        an office building environment.
+        </li>
+        <li>Added <a href=
+        "#scenario-3-industrial-critical-infrastructure-environment"
+          class="sec-ref">§&nbsp;<bdi class="secno">3.3.3</bdi>
+          Scenario 3 - Industrial/Critical Infrastructure
+          Environment</a> describing threats in an industrial
+          environment.
+        </li>
+        <li>Added <a href="#wot-privacy" class=
+        "sec-ref">§&nbsp;<bdi class="secno">4.</bdi> Privacy
+        Considerations</a>.
+        </li>
+        <li>Revised <a href="#security-mitigations" class=
+        "sec-ref">§&nbsp;<bdi class="secno">6.</bdi> Best Security
+        Practices and Mitigations for WoT Systems</a>, and added
+        recommended mitigations.
+        </li>
+        <li>Revised <a href="#wot-client-server-basic" class=
+        "sec-ref">§&nbsp;<bdi class="secno">7.1</bdi> Basic
+        Interaction between WoT Thing and WoT Consumer</a> to
+        include OCF as an example, and describe use of CoAPS and
+        DTLS in this case.
+        </li>
+        <li>Added <a href="#wot-client-server-double-proxy"
+          class="sec-ref">§&nbsp;<bdi class="secno">7.3</bdi> Basic
+          Interaction between WoT Thing and WoT Consumer via a
+          Split Proxy</a> and <a href="#wot-client-server-tunnel"
+          class="sec-ref">§&nbsp;<bdi class="secno">7.4</bdi> Basic
+          Interaction between WoT Thing and WoT Consumer via a
+          Tunnel</a> to describe two possible strategies for
+          traversing NATs.
+        </li>
+      </ul>
+    </section>
   </section>
   <script id="dstimer" language="javascript">
   //<![CDATA[
@@ -5962,12 +6171,12 @@
   //]]>
   </script>
   <section id="references" class="appendix">
-    <h2 id="a-references"><bdi class="secno">A.</bdi>
+    <h2 id="b-references"><bdi class="secno">B.</bdi>
     References<a class="self-link" aria-label="§" href=
     "#references"></a></h2>
     <section id="informative-references">
-      <h3 id="a-1-informative-references"><bdi class=
-      "secno">A.1</bdi> Informative references<a class="self-link"
+      <h3 id="b-1-informative-references"><bdi class=
+      "secno">B.1</bdi> Informative references<a class="self-link"
       aria-label="§" href="#informative-references"></a></h3>
       <dl class="bibliography">
         <dt id="bib-bel13">[Bel13]</dt>
@@ -6503,6 +6712,45 @@
           <a href="https://www.wireshark.org/"><cite>Wireshark
           project page</cite></a>. URL: <a href=
           "https://www.wireshark.org/">https://www.wireshark.org/</a>
+        </dd>
+        <dt id="bib-wot-architecture">[WoT-Architecture]</dt>
+        <dd>
+          <a href=
+          "https://www.w3.org/TR/wot-architecture/"><cite>Web of
+          Things (WoT) Architecture</cite></a>. Matthias Kovatsch;
+          Ryuichi Matsukura; Michael Lagally; Toru Kawaguchi;
+          Kunihiko Toumura; Kazuo Kajimoto. W3C. 16 May 2019. W3C
+          Candidate Recommendation. URL: <a href=
+          "https://www.w3.org/TR/wot-architecture/">https://www.w3.org/TR/wot-architecture/</a>
+        </dd>
+        <dt id="bib-wot-binding-templates">
+        [WoT-Binding-Templates]</dt>
+        <dd>
+          <a href=
+          "https://www.w3.org/TR/wot-binding-templates/"><cite>Web
+          of Things (WoT) Protocol Binding Templates</cite></a>.
+          Michael Koster. W3C. 5 April 2018. W3C Note. URL:
+          <a href="https://www.w3.org/TR/wot-binding-templates/">https://www.w3.org/TR/wot-binding-templates/</a>
+        </dd>
+        <dt id="bib-wot-scripting-api">[WoT-Scripting-API]</dt>
+        <dd>
+          <a href=
+          "https://www.w3.org/TR/wot-scripting-api/"><cite>Web of
+          Things (WoT) Scripting API</cite></a>. Zoltan Kis; Daniel
+          Peintner; Johannes Hund; Kazuaki Nimura. W3C. 28 October
+          2019. W3C Working Draft. URL: <a href=
+          "https://www.w3.org/TR/wot-scripting-api/">https://www.w3.org/TR/wot-scripting-api/</a>
+        </dd>
+        <dt id="bib-wot-thing-description">
+        [WoT-Thing-Description]</dt>
+        <dd>
+          <a href=
+          "https://www.w3.org/TR/wot-thing-description/"><cite>Web
+          of Things (WoT) Thing Description</cite></a>. Sebastian
+          Käbisch; Takuki Kamiya; Michael McCool; Victor Charpenay.
+          W3C. 16 May 2019. W3C Candidate Recommendation. URL:
+          <a href=
+          "https://www.w3.org/TR/wot-thing-description/">https://www.w3.org/TR/wot-thing-description/</a>
         </dd>
         <dt id="bib-yeg11">[Yeg11]</dt>
         <dd>

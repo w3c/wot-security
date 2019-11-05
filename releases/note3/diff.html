@@ -1035,8 +1035,8 @@
       "id": "nikto"
     }
   },
-  "publishISODate": "2019-10-29T00:00:00.000Z",
-  "generatedSubtitle": "Working Group Note 29 October 2019"
+  "publishISODate": "2019-11-05T00:00:00.000Z",
+  "generatedSubtitle": "Working Group Note 05 November 2019"
   }
   //]]>
 </script>
@@ -1091,9 +1091,9 @@ Note
 December
 2018
 </del>
-<time class="dt-published" datetime="2019-10-29">
-<ins class="diff-chg">29
-October
+<time class="dt-published" datetime="2019-11-05">
+<ins class="diff-chg">05
+November
 2019
 </ins>
 </time>
@@ -1106,8 +1106,8 @@ version:
 <dd>
 <del class="diff-old">https://www.w3.org/TR/2018/NOTE-wot-security-20181203/
 </del>
-<a class="u-url" href= "https://www.w3.org/TR/2019/NOTE-wot-security-20191029/">
-<ins class="diff-chg">https://www.w3.org/TR/2019/NOTE-wot-security-20191029/
+<a class="u-url" href= "https://www.w3.org/TR/2019/NOTE-wot-security-20191105/">
+<ins class="diff-chg">https://www.w3.org/TR/2019/NOTE-wot-security-20191105/
 </ins>
 </a>
 </dd>
@@ -1585,11 +1585,18 @@ documents,
 in
 particular
 the
-<a href= "https://www.w3.org/TR/2019/CR-wot-architecture-20190516/#sec-security-considerations">
-WoT
+<del class="diff-old">WoT
 Architecture
-</a>
 document.
+</del>
+<ins class="diff-chg">[[WoT
+Architecture]]
+and
+[[WoT
+Thing
+Description]]
+documents.
+</ins>
 </p>
 </div>
 </section>
@@ -1877,7 +1884,7 @@ Documents
 </ol>
 </li>
 <li class="tocline">
-<a class="tocxref" href= "#lifecycle-of-a-wot-device">
+<a class="tocxref" href= "#wot-lifecycle">
 <bdi class="secno">
 2.
 </bdi>
@@ -2254,13 +2261,23 @@ Goals
 </li>
 <li class="tocline">
 <a class="tocxref" href= "#best-practices">
+<del class="diff-old">9.
+Terminology
+</del>
 <bdi class="secno">
 <ins class="diff-chg">8.2
 </ins></bdi><ins class="diff-chg">
 Best
 Practices
-</ins></a></li><li class="tocline"><a class="tocxref" href= "#functional-security-testing"><bdi class="secno"><ins class="diff-chg">
-8.3
+</ins>
+</a>
+</li>
+<li class="tocline">
+<a class="tocxref" href= "#functional-security-testing">
+<del class="diff-old">10.
+</del>
+<bdi class="secno">
+<ins class="diff-chg">8.3
 </ins></bdi><ins class="diff-chg">
 Functional
 Security
@@ -2330,38 +2347,54 @@ Testing
 Frequency
 </ins></a></li><li class="tocline"><a class="tocxref" href="#summary"><bdi class= "secno"><ins class="diff-chg">
 8.7
+</ins></bdi>
+Summary
+</a>
+</li>
+</ol>
+</li>
+<li class="tocline">
+<a class="tocxref" href= "#terminology">
+<bdi class="secno">
+<ins class="diff-chg">9.
 </ins></bdi><ins class="diff-chg">
-Summary
-</ins></a></li></ol></li><li class="tocline"><a class="tocxref" href= "#terminology"><bdi class="secno">
-9.
-</bdi>
 Terminology
-</a>
-</li>
-<li class="tocline">
-<a class="tocxref" href= "#summary-0">
-<bdi class="secno">
-10.
-</bdi>
-Summary
-</a>
-</li>
-<li class="tocline">
-<a class="tocxref" href= "#references">
-<bdi class="secno">
+</ins></a></li><li class="tocline"><a class="tocxref" href="#changes"><bdi class= "secno">
 A.
+<del class="diff-old">References
+</del>
 </bdi>
-References
+<ins class="diff-chg">Change
+Log
+</ins>
 </a>
 <ol class="toc">
 <li class="tocline">
-<a class="tocxref" href= "#informative-references">
+<a class="tocxref" href= "#changes-from-second-release">
 <bdi class="secno">
 A.1
 <del class="diff-old">Normative
 </del>
 </bdi>
-<ins class="diff-chg">Informative
+<ins class="diff-chg">Changes
+from
+Second
+Release
+</ins></a></li><li class="tocline"><a class="tocxref" href= "#changes-from-First-release"><bdi class="secno"><ins class="diff-chg">
+A.2
+</ins></bdi><ins class="diff-chg">
+Changes
+from
+First
+Release
+</ins></a></li></ol></li><li class="tocline"><a class="tocxref" href= "#references"><bdi class="secno"><ins class="diff-chg">
+B.
+</ins></bdi><ins class="diff-chg">
+References
+</ins></a><ol class="toc"><li class="tocline"><a class="tocxref" href= "#informative-references"><bdi class="secno"><ins class="diff-chg">
+B.1
+</ins></bdi><ins class="diff-chg">
+Informative
 </ins>
 references
 </a>
@@ -2493,45 +2526,73 @@ site
 </li>
 <li>
 the
-<a href= "https://www.w3.org/TR/2019/CR-wot-architecture-20190516/">
-WoT
+<del class="diff-old">WoT
 Architecture
+</del>
+<ins class="diff-chg">[
+</ins><cite><a class="bibref" href="#bib-wot-architecture" title="Web of Things (WoT) Architecture" data-link-type= "biblio"><ins class="diff-chg">
+WoT-Architecture
+</ins>
 </a>
+</cite>
+<ins class="diff-new">]
+</ins>
 document,
 </li>
 <li>
 the
-<a href= "https://www.w3.org/TR/2019/CR-wot-thing-description-20190516/">
-WoT
+<del class="diff-old">WoT
 Thing
 Description
+</del>
+<ins class="diff-chg">[
+</ins><cite><a class="bibref" href="#bib-wot-thing-description" title="Web of Things (WoT) Thing Description" data-link-type= "biblio"><ins class="diff-chg">
+WoT-Thing-Description
+</ins>
 </a>
+</cite>
+<ins class="diff-new">]
+</ins>
 document,
 </li>
 <li>
 the
-<a href="https://w3c.github.io/wot-binding-templates/">
-WoT
+<del class="diff-old">WoT
 Binding
 Templates
+</del>
+<ins class="diff-chg">[
+</ins><cite><a class="bibref" href="#bib-wot-binding-templates" title="Web of Things (WoT) Protocol Binding Templates" data-link-type="biblio"><ins class="diff-chg">
+WoT-Binding-Templates
+</ins>
 </a>
+</cite>
+<ins class="diff-new">]
+</ins>
 document,
 and
 </li>
 <li>
 the
-<a href= "https://www.w3.org/TR/2019/WD-wot-scripting-api-20191028/">
-WoT
+<del class="diff-old">WoT
 Scripting
 API
+</del>
+<ins class="diff-chg">[
+</ins><cite><a class="bibref" href="#bib-wot-scripting-api" title="Web of Things (WoT) Scripting API" data-link-type= "biblio"><ins class="diff-chg">
+WoT-Scripting-API
+</ins>
 </a>
+</cite>
+<ins class="diff-new">]
+</ins>
 document.
 </li>
 </ul>
 </section>
 </section>
-<section id="lifecycle-of-a-wot-device">
-<h2 id="x2-lifecycle-of-a-wot-device">
+<section id="wot-lifecycle">
+<h2 id="e-wot-lifecycle">
 <bdi class="secno">
 2.
 </bdi>
@@ -2542,12 +2603,11 @@ WoT
 <del class="diff-old">device
 </del>
 <ins class="diff-chg">Device
-</ins>
-<a class="self-link" aria-label="§" href= "#lifecycle-of-a-wot-device">
+</ins><a class="self-link" aria-label="§" href= "#wot-lifecycle">
 </a>
 </h2>
 <figure id="wot-lifecycle">
-<img src= "images/WoT_lifecycle_diagram.png" title="WoT Device Lifecycle" />
+<img src= "images/WoT_lifecycle_diagram.png" width="100%" title= "WoT Device Lifecycle" />
 <figcaption>
 Figure
 <bdi class="figno">
@@ -2621,12 +2681,20 @@ lifecycle
 shown
 in
 <del class="diff-old">Figure
-</del>
-<a href= "#wot-lifecycle" class="fig-ref" title= "WoT Device Lifecycle">
 Figure
-<bdi class="figno">
 1
-</bdi>
+</del>
+<a href= "#wot-lifecycle" class="sec-ref">
+<ins class="diff-chg">§&nbsp;
+</ins><bdi class="secno"><ins class="diff-chg">
+2.
+</ins></bdi><ins class="diff-chg">
+Lifecycle
+of
+a
+WoT
+Device
+</ins>
 </a>
 which
 includes
@@ -2886,13 +2954,21 @@ de-provisioned
 (link
 E
 in
-<a href="#wot-lifecycle" class="fig-ref" title="WoT Device Lifecycle">
-Figure
 <del class="diff-old">Figure
-</del>
-<bdi class= "figno">
+Figure
 1
-</bdi>
+</del>
+<a href="#wot-lifecycle" class= "sec-ref">
+<ins class="diff-chg">§&nbsp;
+</ins><bdi class="secno"><ins class="diff-chg">
+2.
+</ins></bdi><ins class="diff-chg">
+Lifecycle
+of
+a
+WoT
+Device
+</ins>
 </a>
 ).
 It
@@ -2922,12 +2998,20 @@ re-provisioning
 D
 in
 <del class="diff-old">Figure
-</del>
-<a href="#wot-lifecycle" class="fig-ref" title= "WoT Device Lifecycle">
 Figure
-<bdi class="figno">
 1
-</bdi>
+</del>
+<a href= "#wot-lifecycle" class="sec-ref">
+<ins class="diff-chg">§&nbsp;
+</ins><bdi class="secno"><ins class="diff-chg">
+2.
+</ins></bdi><ins class="diff-chg">
+Lifecycle
+of
+a
+WoT
+Device
+</ins>
 </a>
 ).
 It
@@ -2947,13 +3031,21 @@ re-commissioning
 (link
 C
 in
-<a href= "#wot-lifecycle" class="fig-ref" title= "WoT Device Lifecycle">
-Figure
 <del class="diff-old">Figure
-</del>
-<bdi class="figno">
+Figure
 1
-</bdi>
+</del>
+<a href="#wot-lifecycle" class= "sec-ref">
+<ins class="diff-chg">§&nbsp;
+</ins><bdi class="secno"><ins class="diff-chg">
+2.
+</ins></bdi><ins class="diff-chg">
+Lifecycle
+of
+a
+WoT
+Device
+</ins>
 </a>
 ).
 </li>
@@ -2994,13 +3086,21 @@ locally
 (link
 A
 in
-<a href="#wot-lifecycle" class="fig-ref" title="WoT Device Lifecycle">
-Figure
 <del class="diff-old">Figure
-</del>
-<bdi class="figno">
+Figure
 1
-</bdi>
+</del>
+<a href="#wot-lifecycle" class= "sec-ref">
+<ins class="diff-chg">§&nbsp;
+</ins><bdi class="secno"><ins class="diff-chg">
+2.
+</ins></bdi><ins class="diff-chg">
+Lifecycle
+of
+a
+WoT
+Device
+</ins>
 </a>
 )
 on
@@ -3061,13 +3161,21 @@ state
 (link
 B
 in
-<a href= "#wot-lifecycle" class="fig-ref" title= "WoT Device Lifecycle">
-Figure
 <del class="diff-old">Figure
-</del>
-<bdi class="figno">
+Figure
 1
-</bdi>
+</del>
+<a href= "#wot-lifecycle" class="sec-ref">
+<ins class="diff-chg">§&nbsp;
+</ins><bdi class="secno"><ins class="diff-chg">
+2.
+</ins></bdi><ins class="diff-chg">
+Lifecycle
+of
+a
+WoT
+Device
+</ins>
 </a>
 ).
 </li>
@@ -5997,13 +6105,13 @@ attack
 </table>
 </section>
 <section id="wot-threat-model-attack-surfaces">
-<h4 id="x3-2-4-attack-surfaces">
-<bdi class="secno">
+<h4 id="e-wot-threat-model-attack-surfaces">
+<bdi class= "secno">
 3.2.4
 </bdi>
 Attack
 Surfaces
-<a class="self-link" aria-label="§" href= "#wot-threat-model-attack-surfaces">
+<a class="self-link" aria-label= "§" href="#wot-threat-model-attack-surfaces">
 </a>
 </h4>
 <p>
@@ -6077,7 +6185,7 @@ device
 implementation.
 </p>
 <figure id="wot-security-fig-attack-surfaces">
-<img src= "images/WoTArchSecurityView.png" title= "WoT High-Level Architecture Security View" />
+<img src= "images/WoTArchSecurityView.png" width="100%" title= "WoT High-Level Architecture Security View" />
 <figcaption>
 Figure
 <bdi class="figno">
@@ -14067,7 +14175,8 @@ Links
 </div>
 <p class="">
 We
-may
+<del class="diff-old">may
+</del>
 need
 to
 mention
@@ -14088,6 +14197,36 @@ as
 context
 file
 dereferencing.
+<ins class="diff-new">This
+has
+been
+mentioned
+in
+the
+Security
+and
+Privacy
+sections
+of
+[
+</ins><cite><a class="bibref" href= "#bib-wot-architecture" title="Web of Things (WoT) Architecture" data-link-type="biblio"><ins class="diff-new">
+WoT-Architecture
+</ins></a></cite><ins class="diff-new">
+]
+and
+[
+</ins><cite><a class="bibref" href="#bib-wot-thing-description" title= "Web of Things (WoT) Thing Description" data-link-type= "biblio"><ins class="diff-new">
+WoT-Thing-Description
+</ins></a></cite><ins class="diff-new">
+]
+but
+needs
+to
+be
+expanded
+upon
+here.
+</ins>
 </p>
 </div>
 </section>
@@ -16855,7 +16994,7 @@ WoT
 Thing.
 </p>
 <figure id="wot_client_thing_basic">
-<img src= "images/client-server-basic.png" style="width: 500px;" />
+<img src= "images/client-server-basic.png" style="width: 500px;" height="822" width="1726" />
 <figcaption>
 Figure
 <bdi class="figno">
@@ -18178,7 +18317,7 @@ can
 support.
 </p>
 <figure id="wot_client_thing_basic_2">
-<img src= "images/client-server-basic-2.png" style="width: 500px;" />
+<img src= "images/client-server-basic-2.png" style="width: 500px;" height= "1079" width="1727" />
 <figcaption>
 Figure
 <bdi class="figno">
@@ -18574,7 +18713,7 @@ security
 configuration.
 </p>
 <figure id="wot_client_thing_gateway">
-<img src= "images/client-server-gateway.png" style="width: 1000px;" />
+<img src= "images/client-server-gateway.png" style="width: 1000px;" height= "763" width="2667" />
 <figcaption>
 Figure
 <bdi class="figno">
@@ -19159,7 +19298,7 @@ application
 layer.
 </p>
 <figure id="wot_client_thing_gateway_2">
-<img src= "images/client-server-gateway-2.png" style="width: 1000px;" />
+<img src= "images/client-server-gateway-2.png" style="width: 1000px;" height= "1090" width="2668" />
 <figcaption>
 Figure
 <bdi class="figno">
@@ -19658,7 +19797,7 @@ the
 TD.
 </p>
 <figure id="wot_client_thing_double_proxy">
-<img src= "images/client-server-double-proxy.png" style="width: 1000px;" />
+<img src= "images/client-server-double-proxy.png" style="width: 1000px;" height="1071" width="2704" />
 <figcaption>
 Figure
 <bdi class="figno">
@@ -19909,7 +20048,7 @@ Figure
 </a>.
 </p>
 <figure id="wot_client_thing_tunnel">
-<img src="images/tunnel.png" style="width: 1000px;" />
+<img src="images/tunnel.png" style="width: 1000px;" height="1071" width="2677" />
 <figcaption>
 Figure
 <bdi class="figno">
@@ -20479,7 +20618,7 @@ COSE17
 ].
 </p>
 <figure id="wot_client_thing_proxy">
-<img src="images/proxy.png" style="width: 1000px;" />
+<img src="images/proxy.png" style="width: 1000px;" height="1071" width="2674" />
 <figcaption>
 Figure
 <bdi class="figno">
@@ -20665,7 +20804,7 @@ time-to-live
 values.
 </p>
 <figure id="wot_client_thing_cachingproxy">
-<img src= "images/cachingproxy.png" style="width: 1000px;" />
+<img src= "images/cachingproxy.png" style="width: 1000px;" height="1071" width="2674" />
 <figcaption>
 Figure
 <bdi class="figno">
@@ -21022,7 +21161,7 @@ factory
 installation).
 </p>
 <figure id="wot_servient-single-tenant">
-<img src= "images/servient-single-tenant.png" style="width: 500px;" />
+<img src= "images/servient-single-tenant.png" style="width: 500px;" height= "933" width="1579" />
 <figcaption>
 Figure
 <bdi class="figno">
@@ -21540,7 +21679,7 @@ action
 "toggle".
 </p>
 <figure id="wot_scripts_security_1">
-<img src= "images/scripts-security-1.png" style="width: 1000px;" />
+<img src= "images/scripts-security-1.png" style="width: 1000px;" height="862" width="1845" />
 <figcaption>
 Figure
 <bdi class="figno">
@@ -21648,7 +21787,7 @@ WoT
 Runtime.
 </p>
 <figure id="wot_scripts_security_2">
-<img src= "images/scripts-security-2.png" style="width: 1000px;" />
+<img src= "images/scripts-security-2.png" style="width: 1000px;" height="917" width="2045" />
 <figcaption>
 Figure
 <bdi class="figno">
@@ -21749,7 +21888,7 @@ WoT
 Runtimes.
 </p>
 <figure id="wot_servient-multi-tenant">
-<img src= "images/servient-multi-tenant.png" style="width: 600px;" />
+<img src= "images/servient-multi-tenant.png" style="width: 600px;" height= "1078" width="2234" />
 <figcaption>
 Figure
 <bdi class="figno">
@@ -22051,7 +22190,7 @@ tenants.
 </section>
 </section>
 <section id="security-validation">
-<h2 id="x8-security-validation">
+<h2 id="e-security-validation">
 <bdi class="secno">
 8.
 </bdi>
@@ -23206,9 +23345,8 @@ to
 find
 weaknesses
 in
-</ins>
 the
-<ins class="diff-new">target
+target
 device
 or
 service
@@ -23240,10 +23378,10 @@ are
 often
 applied
 iteratively:
-</ins></p><ol><li><strong><ins class="diff-new">
+</ins></p><ol><li><strong><ins class="diff-chg">
 Information
 gathering:
-</ins></strong><ins class="diff-new">
+</ins></strong><ins class="diff-chg">
 Required
 information
 is
@@ -23252,10 +23390,10 @@ about
 the
 attack
 target.
-</ins></li><li><strong><ins class="diff-new">
+</ins></li><li><strong><ins class="diff-chg">
 Weakness
 discovery:
-</ins></strong><ins class="diff-new">
+</ins></strong><ins class="diff-chg">
 An
 attack
 target
@@ -23265,10 +23403,10 @@ and
 weaknesses
 are
 found.
-</ins></li><li><strong><ins class="diff-new">
+</ins></li><li><strong><ins class="diff-chg">
 Exploitation
 generation:
-</ins></strong><ins class="diff-new">
+</ins></strong><ins class="diff-chg">
 An
 attempt
 is
@@ -23283,7 +23421,7 @@ discovering
 or
 designing
 exploits.
-</ins></li></ol><p><ins class="diff-new">
+</ins></li></ol><p><ins class="diff-chg">
 Exploits
 are
 designed
@@ -23347,7 +23485,7 @@ which
 it
 is
 vulnerable.
-</ins></p><p><ins class="diff-new">
+</ins></p><p><ins class="diff-chg">
 Many
 resources
 and
@@ -23391,9 +23529,9 @@ Testing
 Cheat
 Sheet"
 [
-</ins><cite><a class="bibref" href="#bib-owa18" title= "Web Service Security Testing" data-link-type= "biblio"><ins class="diff-new">
+</ins><cite><a class="bibref" href="#bib-owa18" title= "Web Service Security Testing" data-link-type= "biblio"><ins class="diff-chg">
 Owa18
-</ins></a></cite><ins class="diff-new">
+</ins></a></cite><ins class="diff-chg">
 ]
 written
 by
@@ -23418,9 +23556,8 @@ for
 the
 purposes
 of
-</ins>
 security
-<ins class="diff-new">testing,
+testing,
 especially
 if
 they
@@ -23451,7 +23588,7 @@ as
 CoAP
 or
 MQTT.
-</ins></p><p><ins class="diff-new">
+</ins></p><p><ins class="diff-chg">
 For
 the
 purposes
@@ -23465,10 +23602,10 @@ focus
 on
 Stage
 2,
-</ins><em><ins class="diff-new">
+</ins><em><ins class="diff-chg">
 Weakness
 Discovery
-</ins></em>.<ins class="diff-new">
+</ins></em>.<ins class="diff-chg">
 Weakness
 discovery
 can
@@ -23486,7 +23623,7 @@ and
 runtime
 weakness
 discovery.
-</ins></p><p><ins class="diff-new">
+</ins></p><p><ins class="diff-chg">
 Stage
 1
 is
@@ -23606,13 +23743,13 @@ useful
 to
 prioritize
 mitigation.
-</ins></p><section id="static-weakness-discovery"><h4 id="x8-4-1-static-weakness-discovery"><bdi class= "secno"><ins class="diff-new">
+</ins></p><section id="static-weakness-discovery"><h4 id="x8-4-1-static-weakness-discovery"><bdi class= "secno"><ins class="diff-chg">
 8.4.1
-</ins></bdi><ins class="diff-new">
+</ins></bdi><ins class="diff-chg">
 Static
 Weakness
 Discovery
-</ins><a class="self-link" aria-label="§" href="#static-weakness-discovery"></a></h4><p><ins class="diff-new">
+</ins><a class="self-link" aria-label="§" href="#static-weakness-discovery"></a></h4><p><ins class="diff-chg">
 Static
 weakness
 discovery
@@ -23621,8 +23758,9 @@ requires
 an
 access
 to
+</ins>
 the
-target's
+<ins class="diff-new">target's
 source
 code,
 and
@@ -23764,8 +23902,9 @@ many
 other
 sources
 of
+</ins>
 security
-weakness.
+<ins class="diff-new">weakness.
 Usually
 the
 output
@@ -25046,20 +25185,24 @@ to
 test
 the
 exploitabilty
+</ins>
 of
-a
+<ins class="diff-new">a
 particular
 weakness.
 Additionally,
 for
 known
 vulnerabilities,
+</ins>
 the
-Exploit-DB
+<del class="diff-old">WoT
+</del>
+<ins class="diff-chg">Exploit-DB
 [
-</ins><cite><a class="bibref" href="#bib-exploit-db" title= "Exploit database project page" data-link-type= "biblio"><ins class="diff-new">
+</ins><cite><a class="bibref" href="#bib-exploit-db" title= "Exploit database project page" data-link-type= "biblio"><ins class="diff-chg">
 exploit-db
-</ins></a></cite><ins class="diff-new">
+</ins></a></cite><ins class="diff-chg">
 ]
 database
 hosts
@@ -25074,12 +25217,9 @@ by
 the
 CVE
 number
-</ins>
 of
 the
-<del class="diff-old">WoT
-</del>
-<ins class="diff-chg">associated
+associated
 (known)
 vulnerability.
 However,
@@ -25269,10 +25409,8 @@ Discovery
 Static
 Code
 Analysis:
-</ins>
-</a>
-</strong>
-<ins class="diff-new">If
+</ins></a></strong><ins class="diff-new">
+If
 source
 code
 is
@@ -25320,17 +25458,18 @@ known
 weaknesses
 and
 vulnerabilities
-</ins>
 in
-<ins class="diff-new">any
+any
 libraries
 used.
 </ins></li></ol></li><li><strong><a href="#runtime-weakness-discovery"><ins class="diff-new">
 Runtime
 Weakness
 Discovery
-</ins></a></strong><ins class="diff-new">
-appropriate
+</ins>
+</a>
+</strong>
+<ins class="diff-new">appropriate
 tools
 such
 as
@@ -25353,11 +25492,8 @@ problems
 even
 when
 only
-</ins>
 the
-<del class="diff-old">meantime.
-</del>
-<ins class="diff-chg">network
+network
 interface
 is
 available,
@@ -25369,10 +25505,10 @@ other
 kinds
 of
 checks.
-</ins></li><li><strong><a href="#exploitation"><ins class="diff-chg">
+</ins></li><li><strong><a href="#exploitation"><ins class="diff-new">
 Exploitation
 Analysis
-</ins></a></strong><ins class="diff-chg">
+</ins></a></strong><ins class="diff-new">
 This
 can
 be
@@ -25397,11 +25533,12 @@ can
 even
 be
 used
+</ins>
 in
-a
+<ins class="diff-new">a
 given
 environment.
-</ins></li></ol><p><ins class="diff-chg">
+</ins></li></ol><p><ins class="diff-new">
 Ideally,
 security
 testing
@@ -25409,8 +25546,11 @@ should
 be
 integrated
 into
+</ins>
 the
-development
+<del class="diff-old">meantime.
+</del>
+<ins class="diff-chg">development
 process
 and
 all
@@ -25652,7 +25792,7 @@ developed
 using
 the
 WoT
-architecture
+Architecture
 but
 will
 generally
@@ -25759,7 +25899,7 @@ mitigations.
 </ins></p></section>
 </section>
 <section id="terminology">
-<h2 id="x9-terminology">
+<h2 id="e-terminology">
 <bdi class="secno">
 9.
 </bdi>
@@ -25771,27 +25911,27 @@ Terminology
 Please
 refer
 to
-the
-<a href= "https://www.w3.org/TR/2019/CR-wot-architecture-20190516/#terminology">
-WoT
-Architecture
-</a>
-document
+<ins class="diff-new">[
+</ins><cite><a class="bibref" href= "#bib-wot-architecture" title="Web of Things (WoT) Architecture" data-link-type="biblio"><ins class="diff-new">
+WoT-Architecture
+</ins></a></cite><ins class="diff-new">
+]
 for
-terminology
-<del class="diff-old">definitions.
-</del>
-<ins class="diff-chg">definitions
+definitions
 of
+</ins>
 the
-following
+<ins class="diff-chg">following
 terms
 used
 in
 this
 document:
+</ins>
 WoT
-Consumer,
+<del class="diff-old">Architecture
+</del>
+<ins class="diff-chg">Consumer,
 WoT
 Thing,
 WoT
@@ -25816,6 +25956,7 @@ WoT
 Interface,
 WoT
 Runtime,
+and
 WoT
 Scripting
 API.
@@ -25864,8 +26005,11 @@ the
 </ins><a href="#security-validation"><ins class="diff-chg">
 Security
 Validation
-</ins></a><ins class="diff-chg">
-section
+</ins>
+</a>
+<del class="diff-old">document
+</del>
+<ins class="diff-chg">section
 we
 are
 using
@@ -25891,8 +26035,12 @@ ITUx1520
 ITUx1524
 </ins></a></cite><ins class="diff-chg">
 ]
+</ins>
 for
-the
+<del class="diff-old">terminology
+definitions.
+</del>
+<ins class="diff-chg">the
 following
 terms:
 </ins>
@@ -25986,37 +26134,602 @@ is
 known.
 </ins>
 </section>
-<section id="summary-0">
-<h2 id="x10-summary">
-<bdi class="secno">
-10.
-</bdi>
+<section id="changes" class="appendix">
+<h2 id="e-changes">
+<del class="diff-old">10.
 Summary
-<a class= "self-link" aria-label="§" href="#summary-0">
+</del>
+<bdi class="secno">
+<ins class="diff-chg">A.
+</ins></bdi><ins class="diff-chg">
+Change
+Log
+</ins><a class= "self-link" aria-label="§" href="#changes">
 </a>
 </h2>
+<section id="changes-from-second-release">
+<h3 id="e-changes-from-second-release">
+<bdi class="secno">
+<ins class="diff-new">A.1
+</ins></bdi><ins class="diff-new">
+Changes
+from
+Second
+Release
+</ins><a class="self-link" aria-label="§" href="#changes-from-second-release"></a></h3><ul><li><ins class="diff-new">
+Addition
+of
+references
+to
+published
+versions
+of
+the
+[
+</ins><cite><a class="bibref" href="#bib-wot-architecture" title= "Web of Things (WoT) Architecture" data-link-type= "biblio"><ins class="diff-new">
+WoT-Architecture
+</ins></a></cite><ins class="diff-new">
+],
+[
+</ins><cite><a class="bibref" href="#bib-wot-thing-description" title= "Web of Things (WoT) Thing Description" data-link-type= "biblio"><ins class="diff-new">
+WoT-Thing-Description
+</ins></a></cite><ins class="diff-new">
+],
+[
+</ins><cite><a class= "bibref" href="#bib-wot-binding-templates" title= "Web of Things (WoT) Protocol Binding Templates" data-link-type= "biblio"><ins class="diff-new">
+WoT-Binding-Templates
+</ins></a></cite><ins class="diff-new">
+],
+and
+[
+</ins><cite><a class= "bibref" href="#bib-wot-scripting-api" title= "Web of Things (WoT) Scripting API" data-link-type= "biblio"><ins class="diff-new">
+WoT-Scripting-API
+</ins></a></cite><ins class="diff-new">
+]
+documents,
+as
+well
+as
+the
+following
+new
+references:
+[
+</ins><cite><a class="bibref" href="#bib-burp" title="Burp Suite Web vulnerability scanner" data-link-type= "biblio"><ins class="diff-new">
+Burp
+</ins></a></cite><ins class="diff-new">
+],
+[
+</ins><cite><a class="bibref" href= "#bib-checkmarx" title="Checkmarx project page" data-link-type= "biblio"><ins class="diff-new">
+Checkmarx
+</ins></a></cite><ins class="diff-new">
+],
+[
+</ins><cite><a class="bibref" href= "#bib-coverity" title="Coverity Tutorial: Introduction to Coverity" data-link-type="biblio"><ins class="diff-new">
+Coverity
+</ins></a></cite><ins class="diff-new">
+],
+[
+</ins><cite><a class= "bibref" href="#bib-coverityonline" title= "Coverity online scanning service" data-link-type= "biblio"><ins class="diff-new">
+CoverityOnline
+</ins></a></cite><ins class="diff-new">
+],
+[
+</ins><cite><a class="bibref" href= "#bib-exploit-db" title="Exploit database project page" data-link-type="biblio"><ins class="diff-new">
+exploit-db
+</ins></a></cite><ins class="diff-new">
+],
+[
+</ins><cite><a class= "bibref" href="#bib-fuzzcoap" title= "FuzzCoAP - Fuzzing for Robustness and Security Testing of CoAP Servers" data-link-type="biblio"><ins class="diff-new">
+FuzzCoAP
+</ins></a></cite><ins class="diff-new">
+],
+[
+</ins><cite><a class= "bibref" href="#bib-itux1500" title= "ITU-T Rec. X.1500 Overview of cybersecurity information exchange" data-link-type="biblio"><ins class="diff-new">
+ITUx1500
+</ins></a></cite><ins class="diff-new">
+],
+[
+</ins><cite><a class= "bibref" href="#bib-itux1520" title= "ITU-T Rec. X.1520 Common vulnerabilities and exposures" data-link-type="biblio"><ins class="diff-new">
+ITUx1520
+</ins></a></cite><ins class="diff-new">
+],
+[
+</ins><cite><a class= "bibref" href="#bib-itux1524" title= "ITU-T Rec. X.1524 Common weakness enumeration" data-link-type= "biblio"><ins class="diff-new">
+ITUx1524
+</ins></a></cite><ins class="diff-new">
+],
+[
+</ins><cite><a class="bibref" href= "#bib-klocwork" title= "Klocwork. Faster delivery of secure, reliable, and conformant code" data-link-type="biblio"><ins class="diff-new">
+Klocwork
+</ins></a></cite><ins class="diff-new">
+],
+[
+</ins><cite><a class= "bibref" href="#bib-nikto" title="Nikto web server scanner" data-link-type="biblio"><ins class="diff-new">
+Nikto
+</ins></a></cite><ins class="diff-new">
+],
+[
+</ins><cite><a class="bibref" href="#bib-owa18" title="Web Service Security Testing" data-link-type="biblio"><ins class="diff-new">
+Owa18
+</ins></a></cite><ins class="diff-new">
+],
+[
+</ins><cite><a class="bibref" href="#bib-owasp-dependency-check" title="OWASP Dependency Check" data-link-type="biblio"><ins class="diff-new">
+OWASP-Dependency-Check
+</ins></a></cite><ins class="diff-new">
+],
+[
+</ins><cite><a class="bibref" href="#bib-peachpit-coap" title= "CoAP Peach Pit User Guide" data-link-type= "biblio"><ins class="diff-new">
+PeachPit-COAP
+</ins></a></cite><ins class="diff-new">
+],
+[
+</ins><cite><a class="bibref" href= "#bib-protecode" title="Black Duck Software Composition Analysis" data-link-type="biblio"><ins class="diff-new">
+Protecode
+</ins></a></cite><ins class="diff-new">
+],
+[
+</ins><cite><a class= "bibref" href="#bib-snyk" title= "A developer-first solution that automates finding and fixing vulnerabilities in your dependencies" data-link-type="biblio"><ins class="diff-new">
+Snyk
+</ins></a></cite><ins class="diff-new">
+],
+[
+</ins><cite><a class="bibref" href="#bib-tcpdump" title="tcpdump and libpcap project page" data-link-type="biblio"><ins class="diff-new">
+tcpdump
+</ins></a></cite><ins class="diff-new">
+],
+[
+</ins><cite><a class= "bibref" href="#bib-w3af" title= "Web Application Attack and Audit Framework" data-link-type= "biblio"><ins class="diff-new">
+w3af
+</ins></a></cite><ins class="diff-new">
+],
+[
+</ins><cite><a class="bibref" href= "#bib-wapiti" title= "Wapiti - The web-application vulnerability scanner" data-link-type="biblio"><ins class="diff-new">
+wapiti
+</ins></a></cite><ins class="diff-new">
+],
+[
+</ins><cite><a class= "bibref" href="#bib-watobo" title= "WATOBO. The Web Application Toolbox" data-link-type= "biblio"><ins class="diff-new">
+WATOBO
+</ins></a></cite><ins class="diff-new">
+],
+[
+</ins><cite><a class="bibref" href= "#bib-wfuzz" title="Wfuzz. The web application Bruteforcer" data-link-type="biblio"><ins class="diff-new">
+Wfuzz
+</ins></a></cite><ins class="diff-new">
+],
+and
+[
+</ins><cite><a class= "bibref" href="#bib-wireshark" title="Wireshark project page" data-link-type="biblio"><ins class="diff-new">
+Wireshark
+</ins></a></cite><ins class="diff-new">
+].
+</ins></li><li><ins class="diff-new">
+The
+name
+was
+changed
+from
+</ins><em><ins class="diff-new">
+Web
+of
+Things
+(WoT)
+Security
+and
+Privacy
+Considerations
+</ins></em><ins class="diff-new">
+to
+</ins><em><ins class="diff-new">
+Web
+of
+Things
+(WoT)
+Security
+and
+Privacy
+Guidelines
+</ins></em>.<ins class="diff-new">
+This
+change
+was
+made
+to
+avoid
+confusion
+with
+the
+"considerations"
+sections
+of
+individual
+WoT
+documents.
+</ins></li><li><ins class="diff-new">
+Revision
+and
+clarification
+of
+the
+attack
+surfaces
+of
+a
+WoT
+System
+described
+in
+</ins><a href="#wot-threat-model-attack-surfaces" class="sec-ref"><ins class="diff-new">
+§&nbsp;
+</ins><bdi class="secno"><ins class="diff-new">
+3.2.4
+</ins></bdi><ins class="diff-new">
+Attack
+Surfaces
+</ins></a>.</li><li><ins class="diff-new">
+Empty
+section
+for
+</ins><em><ins class="diff-new">
+Secure
+Practices
+for
+Thing
+Directory
+Interaction
+Protocols
+</ins></em><ins class="diff-new">
+was
+removed.
+</ins></li><li><ins class="diff-new">
+Addition
+of
+</ins><a href="#security-validation" class= "sec-ref"><ins class="diff-new">
+§&nbsp;
+</ins><bdi class="secno"><ins class="diff-new">
+8.
+</ins></bdi><ins class="diff-new">
+Security
+Validation
+</ins></a>,<ins class="diff-new">
+which
+provides
+security
+testing
+guidance
+for
+WoT
+Systems.
+</ins></li><li><ins class="diff-new">
+Revision
+of
+terminology
+usage
+to
+be
+consistent
+with
+the
+definitions
+in
+[
+</ins><cite><a class="bibref" href= "#bib-wot-architecture" title="Web of Things (WoT) Architecture" data-link-type="biblio"><ins class="diff-new">
+WoT-Architecture
+</ins></a></cite><ins class="diff-new">
+].
+</ins></li><li><ins class="diff-new">
+Revision
+of
+</ins><a href="#terminology" class= "sec-ref"><ins class="diff-new">
+§&nbsp;
+</ins><bdi class="secno"><ins class="diff-new">
+9.
+</ins></bdi><ins class="diff-new">
+Terminology
+</ins></a><ins class="diff-new">
+to
+state
+specific
+terms
+used
+from
+[
+</ins><cite><a class="bibref" href= "#bib-wot-architecture" title="Web of Things (WoT) Architecture" data-link-type="biblio"><ins class="diff-new">
+WoT-Architecture
+</ins></a></cite><ins class="diff-new">
+],
+add
+definitions
+of
+terms
+used
+only
+in
+this
+document,
+and
+reference
+externally
+defined
+terms
+in
+[
+</ins><cite><a class="bibref" href= "#bib-itux1500" title= "ITU-T Rec. X.1500 Overview of cybersecurity information exchange" data-link-type="biblio"><ins class="diff-new">
+ITUx1500
+</ins></a></cite><ins class="diff-new">
+].
+</ins></li></ul></section><section id="changes-from-First-release"><h3 id="e-changes-from-first-release"><bdi class="secno"><ins class="diff-new">
+A.2
+</ins></bdi><ins class="diff-new">
+Changes
+from
+First
+Release
+</ins><a class="self-link" aria-label="§" href= "#changes-from-First-release"></a></h3><ul><li><ins class="diff-new">
+Replace
+inline
+description
+of
+</ins><abbr title= "World Wide Web Consortium"><ins class="diff-new">
+W3C
+</ins></abbr><ins class="diff-new">
+Patent
+Policy
+with
+link
+to
+</ins><a href="https://www.w3.org/Consortium/Patent-Policy/"><ins class="diff-new">
+external
+document
+</ins></a>.</li><li><ins class="diff-new">
+Added
+</ins><a href="#wot-lifecycle" class= "sec-ref"><ins class="diff-new">
+§&nbsp;
+</ins><bdi class="secno"><ins class="diff-new">
+2.
+</ins></bdi><ins class="diff-new">
+Lifecycle
+of
+a
+WoT
+Device
+</ins></a><ins class="diff-new">
+describing
+the
+states
+and
+transitions
+of
+a
+device
+throughout
+its
+lifetime.
+</ins></li><li><ins class="diff-new">
+Added
+MQTT
+as
+a
+focus
+protocol.
+</ins></li><li><ins class="diff-new">
+Expanded
+and
+clarified
+role
+and
+threat
+definitions
+in
+</ins><a href= "#wot-threat-model" class="sec-ref"><ins class="diff-new">
+§&nbsp;
+</ins><bdi class= "secno"><ins class="diff-new">
+3.2
+</ins></bdi><ins class="diff-new">
+Threat
+Model
+</ins></a>.</li><li><ins class="diff-new">
+Added
+WoT
+Thing
+Directory
+to
+items
+(currently)
+out
+of
+scope.
+</ins></li><li><ins class="diff-new">
+Added
+Side
+Channel
+threat
+to
+</ins><a href= "#scenario-1-home-environment" class="sec-ref"><ins class="diff-new">
+§&nbsp;
+</ins><bdi class= "secno"><ins class="diff-new">
+3.3.1
+</ins></bdi><ins class="diff-new">
+Scenario
+1
+-
+Home
+Environment
+</ins></a>.</li><li><ins class="diff-new">
+Added
+</ins><a href="#scenario-2-business-corporate-environment" class="sec-ref"><ins class="diff-new">
+§&nbsp;
+</ins><bdi class="secno"><ins class="diff-new">
+3.3.2
+</ins></bdi><ins class="diff-new">
+Scenario
+2
+-
+Business/Corporate
+Environment
+</ins></a><ins class="diff-new">
+describing
+threats
+in
+an
+office
+building
+environment.
+</ins></li><li><ins class="diff-new">
+Added
+</ins><a href= "#scenario-3-industrial-critical-infrastructure-environment" class= "sec-ref"><ins class="diff-new">
+§&nbsp;
+</ins><bdi class="secno"><ins class="diff-new">
+3.3.3
+</ins></bdi><ins class="diff-new">
+Scenario
+3
+-
+Industrial/Critical
+Infrastructure
+Environment
+</ins></a><ins class="diff-new">
+describing
+threats
+in
+an
+industrial
+environment.
+</ins></li><li><ins class="diff-new">
+Added
+</ins><a href="#wot-privacy" class="sec-ref"><ins class="diff-new">
+§&nbsp;
+</ins><bdi class= "secno"><ins class="diff-new">
+4.
+</ins></bdi><ins class="diff-new">
+Privacy
+Considerations
+</ins></a>.</li><li><ins class="diff-new">
+Revised
+</ins><a href="#security-mitigations" class= "sec-ref"><ins class="diff-new">
+§&nbsp;
+</ins><bdi class="secno"><ins class="diff-new">
+6.
+</ins></bdi><ins class="diff-new">
+Best
+Security
+Practices
+and
+Mitigations
+for
+WoT
+Systems
+</ins></a>,<ins class="diff-new">
+and
+added
+recommended
+mitigations.
+</ins></li><li><ins class="diff-new">
+Revised
+</ins><a href="#wot-client-server-basic" class= "sec-ref"><ins class="diff-new">
+§&nbsp;
+</ins><bdi class="secno"><ins class="diff-new">
+7.1
+</ins></bdi><ins class="diff-new">
+Basic
+Interaction
+between
+WoT
+Thing
+and
+WoT
+Consumer
+</ins></a><ins class="diff-new">
+to
+include
+OCF
+as
+an
+example,
+and
+describe
+use
+of
+CoAPS
+and
+DTLS
+in
+this
+case.
+</ins></li><li><ins class="diff-new">
+Added
+</ins><a href="#wot-client-server-double-proxy" class= "sec-ref"><ins class="diff-new">
+§&nbsp;
+</ins><bdi class="secno"><ins class="diff-new">
+7.3
+</ins></bdi><ins class="diff-new">
+Basic
+Interaction
+between
+WoT
+Thing
+and
+WoT
+Consumer
+via
+a
+Split
+Proxy
+</ins></a><ins class="diff-new">
+and
+</ins><a href="#wot-client-server-tunnel" class= "sec-ref"><ins class="diff-new">
+§&nbsp;
+</ins><bdi class="secno"><ins class="diff-new">
+7.4
+</ins></bdi><ins class="diff-new">
+Basic
+Interaction
+between
+WoT
+Thing
+and
+WoT
+Consumer
+via
+a
+Tunnel
+</ins></a><ins class="diff-new">
+to
+describe
+two
+possible
+strategies
+for
+traversing
+NATs.
+</ins></li></ul></section>
 </section>
 <script id="dstimer" language="javascript">
 //
 <![CDATA[ if(dschk() == 1) { if(typeof (dsSetTimers) != "undefined") { dsSetTimers(1454572750,1454589711,43200,86400,180,1454589796 - parseInt(""+(new Date()).getTime()/1000),1);}} //]]>
 </script>
 <section id="references" class="appendix">
-<h2 id="a-references">
+<h2 id="b-references">
+<del class="diff-old">A.
+</del>
 <bdi class="secno">
-A.
-</bdi>
+<ins class="diff-chg">B.
+</ins></bdi>
 References
 <a class="self-link" aria-label="§" href= "#references">
 </a>
 </h2>
 <section id="informative-references">
-<h3 id="a-1-informative-references">
-<bdi class="secno">
-A.1
-<del class="diff-old">Normative
+<h3 id="b-1-informative-references">
+<del class="diff-old">A.1
+Normative
 </del>
-</bdi>
-<ins class="diff-chg">Informative
+<bdi class="secno">
+<ins class="diff-chg">B.1
+</ins></bdi><ins class="diff-chg">
+Informative
 </ins>
 references
 <a class="self-link" aria-label="§" href= "#informative-references">
@@ -27502,6 +28215,115 @@ page
 URL:
 </ins><a href= "https://www.wireshark.org/"><ins class="diff-new">
 https://www.wireshark.org/
+</ins></a></dd><dt id="bib-wot-architecture"><ins class="diff-new">
+[WoT-Architecture]
+</ins></dt><dd><a href="https://www.w3.org/TR/wot-architecture/"><cite><ins class="diff-new">
+Web
+of
+Things
+(WoT)
+Architecture
+</ins></cite></a>.<ins class="diff-new">
+Matthias
+Kovatsch;
+Ryuichi
+Matsukura;
+Michael
+Lagally;
+Toru
+Kawaguchi;
+Kunihiko
+Toumura;
+Kazuo
+Kajimoto.
+W3C.
+16
+May
+2019.
+W3C
+Candidate
+Recommendation.
+URL:
+</ins><a href= "https://www.w3.org/TR/wot-architecture/"><ins class="diff-new">
+https://www.w3.org/TR/wot-architecture/
+</ins></a></dd><dt id="bib-wot-binding-templates"><ins class="diff-new">
+[WoT-Binding-Templates]
+</ins></dt><dd><a href= "https://www.w3.org/TR/wot-binding-templates/"><cite><ins class="diff-new">
+Web
+of
+Things
+(WoT)
+Protocol
+Binding
+Templates
+</ins></cite></a>.<ins class="diff-new">
+Michael
+Koster.
+W3C.
+5
+April
+2018.
+W3C
+Note.
+URL:
+</ins><a href= "https://www.w3.org/TR/wot-binding-templates/"><ins class="diff-new">
+https://www.w3.org/TR/wot-binding-templates/
+</ins></a></dd><dt id="bib-wot-scripting-api"><ins class="diff-new">
+[WoT-Scripting-API]
+</ins></dt><dd><a href="https://www.w3.org/TR/wot-scripting-api/"><cite><ins class="diff-new">
+Web
+of
+Things
+(WoT)
+Scripting
+API
+</ins></cite></a>.<ins class="diff-new">
+Zoltan
+Kis;
+Daniel
+Peintner;
+Johannes
+Hund;
+Kazuaki
+Nimura.
+W3C.
+28
+October
+2019.
+W3C
+Working
+Draft.
+URL:
+</ins><a href= "https://www.w3.org/TR/wot-scripting-api/"><ins class="diff-new">
+https://www.w3.org/TR/wot-scripting-api/
+</ins></a></dd><dt id="bib-wot-thing-description"><ins class="diff-new">
+[WoT-Thing-Description]
+</ins></dt><dd><a href= "https://www.w3.org/TR/wot-thing-description/"><cite><ins class="diff-new">
+Web
+of
+Things
+(WoT)
+Thing
+Description
+</ins></cite></a>.<ins class="diff-new">
+Sebastian
+Käbisch;
+Takuki
+Kamiya;
+Michael
+McCool;
+Victor
+Charpenay.
+W3C.
+16
+May
+2019.
+W3C
+Candidate
+Recommendation.
+URL:
+</ins><a href= "https://www.w3.org/TR/wot-thing-description/"><ins class="diff-new">
+https://www.w3.org/TR/wot-thing-description/
 </ins>
 </a>
 </dd>
