@@ -503,7 +503,7 @@
      <p class="ednote">
         This content should be consistent with the summaries in the 
         Security sections of other WoT documents, in particular the
-	[[WoT Architecture]] and [[WoT Thing Description]] 
+	[[WoT-Architecture]] and [[WoT-Thing-Description]] 
         documents.
      </p>
     </section>
@@ -540,8 +540,8 @@
 </section>
     </section>
 
-    <section id="wot-lifecycle">
-      <h1 id="e-wot-lifecycle">Lifecycle of a WoT Device</h1>
+    <section id="wot-device-lifecycle">
+      <h1 id="e-wot-device-lifecycle">Lifecycle of a WoT Device</h1>
 
       <figure id="wot-lifecycle">
            <img src="images/WoT_lifecycle_diagram.png"
@@ -2680,7 +2680,7 @@ tracking equipment, information about user's preferences in home environment, vi
            the unencrypted traffic (eg HTTP) may also be visible on the local network.   
 	   In this case, the only protection
            would be from that provided by the local network, eg WPA.
-           If such a relatively unprotected local interface is <emph>not</emph> desirable,
+           If such a relatively unprotected local interface is <em>not</em> desirable,
 	   another SSH tunnel can be used between the WoT Thing and the Intermediary WoT Servient, 
 	   or the WoT Thing can act as
            its own gateway (with the HTTP traffic protected behind a firewall).
@@ -3262,7 +3262,7 @@ tracking equipment, information about user's preferences in home environment, vi
         for some weaknesses, they might not be exploitable on their own, or may
         only be weakly exploitable, but may still play
         an important role in the attacker exploitation chain as a stepping stone towards
-        the end exploitation goal. 
+        the end exploitation goal.
         Therefore, it is strongly encouraged to fix or mitigate all 
         weaknesses discovered in analyzed components.</p>
     </section>
@@ -3449,7 +3449,7 @@ tracking equipment, information about user's preferences in home environment, vi
         <ul>
         <li>Replace inline description of W3C Patent Policy with link to 
             <a href="https://www.w3.org/Consortium/Patent-Policy/">external document</a>.</li>
-        <li>Added <a href="#wot-lifecycle"></a> describing the states and
+        <li>Added <a href="#wot-device-lifecycle"></a> describing the states and
             transitions of a device throughout its lifetime.</li>
         <li>Added MQTT as a focus protocol.</li>
         <li>Expanded and clarified role and threat definitions in
