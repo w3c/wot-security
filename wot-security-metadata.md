@@ -113,7 +113,7 @@ configuration that applies to all forms:
     }
 
 Note that this relies on the defaults being suitable for the device in question, i.e.
-using the most common mappings from the abstract interaction patterns to HTTPS verbs.
+using the most common mappings from the abstract interaction patterns to HTTP verbs (over TLS).
 
 As a slightly more complex example, suppose we want to disable security for
 the overheating event for some reason.  This can be accomplished by modifying the
@@ -189,7 +189,7 @@ security configurations to be defined in a single place and then later referred
 to by name.  This also allows a certain level of abstraction.
 
 Here is an example TD using security definitions.  It uses basic
-HTTP authentication for HTTPS links and OCF access control lists for equivalent CoAP links:
+HTTP authentication for https-links and OCF access control lists for equivalent CoAP links:
 
     {
       "@context": ["https://w3c.github.io/wot/w3c-wot-td-context.jsonld",
@@ -306,9 +306,9 @@ HTTP authentication for HTTPS links and OCF access control lists for equivalent 
 
 In this example, we have three different security configurations: HTTP Basic Authentication,
 OCF access control lists (the CoAP interface is actually to OCF devices), and an API key.
-We also have one case where _no_ security is used (the HTTPS interface to get overheating events)
+We also have one case where _no_ security is used (the HTTP-over-TLS interface to get overheating events)
 and another case where two are required (to turn on the light by CoAP/OCF, we need both
-access rights in the ACL _and_ an API key; the corresponding HTTPS interface needs both
+access rights in the ACL _and_ an API key; the corresponding HTTP-over-TLS interface needs both
 basic authentication and the key).
 
 Security is specified per `form` so that it can be different for each one,
@@ -509,8 +509,8 @@ one element (which is how they should be interpreted):
     }
 
 
-All links in this example use secure transport, i.e. either CoAPS (CoAP over UDP using DTLS)
-or HTTPS (HTTP over TCP using TLS).
+All links in this example use secure transport, i.e. either CoAP-over-DTLS
+or HTTP-over-TLS.
 These transports use certificates for mutual authentication, secure session key exchange,
 and of course encrypted transport.  Use of such encrypted transport is essential
 for many authorization schemes, such as basic HTTP authentication, which transmits a
@@ -732,14 +732,14 @@ These are specified in the corresponding sections below.
 - In general we have tried to use generic tags identifying authorization schemes that are
   orthogonal to protocols.
     - For example, in theory, `basic` authentication can be combined with several transport
-      protocols, such as HTTPS and MQTT, although it is only secure if that transport is
+      protocols, such as HTTP-over-TLS and MQTT, although it is only secure if that transport is
       previously encrypted by other means.
     - This also raises a validation question:
       combining certain authentication schemes with certain protocols should be considered an
       error.
 - OCF is an exception.  It has its own scheme label since it has an authentication scheme specific to OCF,
   even though it is built on top of the ACE specification.  OCF authorization and communication
-  can also take place over multiple protocols (COAPS and HTTPS).
+  can also take place over multiple protocols (CoAP-over-DTLS and HTTP-over-TLS).
     - **To discuss:** we may want to add an `ace` scheme with an appropriate set of parameters.
 - This is not a closed set. In particular, additional tags may be needed for additional schemes
   specific to particular ecosystems: OneM2M, OPC-UA, MQTT, AWS IoT, HomeKit, etc. or supported
@@ -757,10 +757,10 @@ some protocols as follows:
 
 Since the username and password used in this scheme are in plaintext, they need
 to be sent via a mechanism that provides transport security, such as TLS.  In the case of HTTP,
-this means that a secure HTTPS connection needs to be established before this authentication
+this means that a secure HTTP-over-TLS connection needs to be established before this authentication
 method can be used.  In the context of a Thing Description this means that this mechanism
 should only be combined with protocols supporting secure transport,
-eg. COAPS, HTTPS, and the equivalent.
+eg. COAP-over-DTLS, HTTP-over-TLS, and the equivalent.
 
 ### Digest Authentication
 Scheme: `digest`
@@ -978,10 +978,10 @@ Schemes only resolve into specific security mechanisms when combined with specif
 Right now only the following combinations are supported:
 - `basic`+`https`: Basic HTTP Authentication
     - When used in combination with a `proxyUrl` tag indicates Basic HTTP Proxy Authentication
-- `digest`+`http`: Digest HTTP Authentication
+- `digest`+`http`: HTTP Digest Authentication
     - When used in combination with a `proxyUrl` tag indicates Digest HTTP Proxy Authentication
-- `digest`+`https`: Digest HTTPS Authentication
-    - When used in combination with a `proxyUrl` tag indicates Digest HTTPS Proxy Authentication
+- `digest`+`https`: HTTP Digest Authentication
+    - When used in combination with a `proxyUrl` tag indicates Digest HTTP Proxy Authentication
 - `bearer`+`https`: requires a `format` tag as well
 - `bearer`+`coaps`: requires a 'format` tag as well
 - `pop`+`https`: requires a `format` tag as well
