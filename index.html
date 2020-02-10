@@ -467,6 +467,19 @@
                   , title: "Stevey's Google Platforms Rant"
                   , publisher: "Blog"
                   , date: "Oct. 2011"
+                },
+                "Pri19": {
+                  authors: ["M. Pritikin, M. Richardson, T. Eckert,M. Behringer, K. Watsen"]
+                  , href: "https://tools.ietf.org/html/draft-ietf-anima-bootstrapping-keyinfra-26"
+                  , title: "Bootstrapping Remote Secure Key Infrastructures (BRSKI)"
+                  , publisher: "IETF"
+                  , date: "Aug. 2019"
+                },
+                "SDO": {
+                    href: "https://www.intel.com/content/dam/www/public/us/en/documents/product-briefs/intel-secure-device-onboard-product-brief.pdf"
+                  , title: "Intel® Secure Device Onboard"
+                  , publisher: "Intel"
+                  , date: "2017"
                 }
               }
             };
@@ -590,12 +603,8 @@
 		After maintenance or updates are done, 
 		the device normally returns to the Operational state (link B in <a href="#wot-lifecycle"></a>). </li>
       </ul>
-      The scope of this document only covers the Operational State of a WoT Device 
-      with the assumption that all relevant security metadata and credentials has been 
-      successfully provisioned during the Security Provisioning state and 
-      are available transparently to the WoT runtime level. 
-      Security-related system management updates (such as the revocation and update of keys and other credentials),
-      while important to maintaining the security of a system, are considered to be out of the scope of this document.
+      The scope of this document only covers the Security Provisioning, Operational and Maintenance and Security
+      Update States of a WoT Device.
       </p>
     </section>
 
@@ -1978,6 +1987,77 @@ tracking equipment, information about user's preferences in home environment, vi
 
         </section>
     </section>
+
+  <section>
+  <h1>Security Provisioning(Onboarding) and Maintenance</h1>
+    <section>
+    <h2>Goals and requirements</h2>
+    <p>   
+    Following the lifecycle diagram  <a href="#wot-lifecycle"></a> , 
+    the purpose of the Security provisioning
+    is that upon its completion a WoT Device is equipped with the security metadata
+    and credentials it needs during its Operational state.
+    The exact set of necessary credentials
+    will vary based on the WoT Device's deployment model and choice of security
+    mechanisms. The document The State-of-the-Art and Challenges for the Internet
+    of Things Security [[Garcia17]] refers to this stage as "Bootstrapping".
+    </p>
+
+    <p>
+    The purpose of the Security maintenance is maintaining security level set
+    during the security provisioning phase,
+    i.e. security-related configuration updates, such as key rotation or
+    certificate refresh. This also includes the actions to be taken in case of 
+    credential compromise, i.e. key revocation.
+    </p>
+
+    Security provisioning usually consists of three main stages outlined below. 
+    The WoT adds WoT-specific stage at the end:
+    <ul>
+      <li><strong>Initial enablement.</strong> During manufacturing a device is provisioned with the
+      necessary credentials that enable secure mutual authentication and remote attestation in the next step.</li> 
+      <li><strong> Mutual trust establishment.</strong> Establishing mutual trust between the device to be provisioned
+      and the provisioning entity.  Note that the provisioning entity is not necessary (and quite commonly not)
+      a manufacturer, but some service provider or service domain owner. 
+      This includes mutual authentication and authorization for both device and provisioning entity and
+      potentially remote attestation of device.</li> 
+      <li><strong> Runtime credential provisioning.</strong> The actual provisioning of credentials for the operational
+       phase in a secure fashion between the provisioning entity and the device.</li>
+       <li><strong> WoT specific provisioning.</strong> Installing the provisioned secrets and made them available and
+        ready to use on the WoT level (within the WoT Runtime)</li>
+    </ul>
+
+    <p class="ednote" title="Question1">
+    Do we try to describe only the bootstrapping of the credentials 
+    into a WoT run time (after which it can be transparently used during operational
+    phase) or do we go into describing of how credentials will end up in the physical
+    device at the first place, and then how they can be securely retrieved and embedded into
+    WoT run time? 
+    </p>
+    <p class="ednote" title="Question2">
+    Do we limit ourselves to the case of a single tenant (single security domain device joins
+    and accepts credentials from a single provisioning entity) or we also take multiple tenants in
+    the scope from beginning? 
+    </p>
+
+    </section>
+    <section>
+    <h2>Existing approaches</h2>
+
+    <p class="ednote" title="Question3">
+        I guess we dont want to consider old style approaches as "ask user to input manually smth"
+    or "connect to manufacturer to fetch credentials via manufacturer service"?
+    </p>
+    <section>
+     <h3>Bootstrapping Remote Secure Key Infrastructures (BRSKI)</h3>
+        The draft IETF standard [[Pri19]]
+    </section>
+    <section>
+     <h3>Intel Secure Device Onboard (SDO)</h3>
+        Intel technology overview [[SDO]]
+     </section>
+    </section>
+  </section>
 
   <section>
   <h1>References to Existing Security Best Practices</h1>
