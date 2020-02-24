@@ -2,15 +2,15 @@
 
 ## Secure Transport
 
-* HTTPS (HTTP + TLS 1.3) 
-* CoAPS (CoAP + DTLS) 
-* MQTTS (MQTT + TLS 1.3) 
+* HTTP-over-TLS (HTTP + TLS 1.3) 
+* CoAP-over-DTLS (CoAP + DTLS) 
+* MQTT-over-TLS (MQTT + TLS 1.3) 
 
 ## Authentication
 
-* HTTPS with one of oauth2, basic, digest...
-* CoAPS with one of psk, public, cert.
-* MQTTS with basic (MQTT native username/password)
+* HTTP-over-TLS with one of oauth2, basic, digest...
+* CoAP-over-DTLS with one of psk, public, cert.
+* MQTT-over-TLS with basic (MQTT native username/password)
 
 ## Access Control
 
