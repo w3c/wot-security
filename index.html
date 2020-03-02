@@ -2083,7 +2083,7 @@ tracking equipment, information about user's preferences in home environment, vi
       <li>[[IETFACE]] - <cite>IETF Authentication and Authorization for Constrained Environments (ACE)</cite>:<br/>
       Discusses the use of existing IETF standards for constrained environments 
       (such as CoAP and DTLS) of relevance to IoT.
-      This document also defines a generic IoT security architecture that is followed by several IoT standards.
+      This working group defines building blocks for IoT security esp. addressing authentication and authorization.
       </li>
       <li>[[ISF17]] - <cite>IoT Security Foundation Best Practice Guidelines</cite>:<br/>
       A general set of recommendations for managing the security of IoT systems,
@@ -2258,10 +2258,10 @@ tracking equipment, information about user's preferences in home environment, vi
              When defining protocols for APIs exposed by a TD, 
              it is often important to use secure protocols guaranteeing
              <a>System User Data</a> authenticity and confidentiality.
-	     Specifically, HTTPS (using TLS), CoAPS (using DTLS), and
-	     MQTTS (using TLS) should be used if any kind of authentication 
+	     Specifically, HTTP-over-TLS (HTTPS), CoAP-over-DTLS (COAPS), and
+	     MQTT-over-TLS (MQTTS) should be used if any kind of authentication 
 	     or secure access is required.
-             If data travels many intermediate nodes (potentially malicious
+             If data travels over many intermediate nodes (potentially malicious
              or not privacy-preserving), end-to-end encryption
              methods should be preferred.
             </p>
@@ -2737,7 +2737,7 @@ tracking equipment, information about user's preferences in home environment, vi
            </p>	  
            <p>One advantage of this arrangement is that communication is never available in plaintext on either the
            gateway or the client.  Specifically, the private keys for end-to-end communication between the 
-	   WoT Thing and the WoT Consumer, assuming a secure protocol such as HTTPS is used, never need to be made
+	   WoT Thing and the WoT Consumer, assuming a secure protocol stack such as HTTP-over-TLS is used, never need to be made
 	   available to either the local gateway or to the cloud portal.
            In other words, this configuration supports end-to-end encrypted communication, and does not rely
            on trusting either the gateway or the cloud portal.
@@ -2752,7 +2752,7 @@ tracking equipment, information about user's preferences in home environment, vi
 	   A local proxy service then runs inside the cloud portal and provides
 	   a bridge to a secure external network interface.  
 	   For example, the protocol from the WoT Thing might be HTTP,
-           which the proxy service could bridge to an external HTTPS network interface.  
+           which the proxy service could bridge to an external HTTP-over-TLS (HTTPS) network interface.  
 	   In this case, the
            tunnel should be encrypted (for example, using SSH) to prevent eavesdropping; 
 	   a regular IP tunnel is not sufficient.
@@ -2777,7 +2777,8 @@ tracking equipment, information about user's preferences in home environment, vi
 		  
             <figure id="wot_client_thing_proxy">
               <img src="images/proxy.png" style="width: 1000px;" />
-              <figcaption>WoT Thing and WoT Consumer via HTTPS/HTTP Proxy</figcaption>
+              <figcaption>WoT Thing and WoT Consumer via HTTP-over-TLS (
+HTTPS)/HTTP Proxy</figcaption>
             </figure>
 
            <p>Yet another variant of this approach is shown in <a href="#wot_client_thing_proxy"></a>.
@@ -2797,7 +2798,7 @@ tracking equipment, information about user's preferences in home environment, vi
            </p>
             <figure id="wot_client_thing_cachingproxy">
               <img src="images/cachingproxy.png" style="width: 1000px;" />
-              <figcaption>WoT Thing and WoT Consumer via HTTPS/HTTP Proxy</figcaption>
+              <figcaption>WoT Thing and WoT Consumer via HTTP-over-TLS (HTTPS)/HTTP Proxy</figcaption>
             </figure>
             <p>The second sub-variant, shown in <a href="#wot_client_thing_cachingproxy"></a>,
            takes advantage of the metadata provided by the Thing Description.
@@ -3131,7 +3132,7 @@ tracking equipment, information about user's preferences in home environment, vi
       as web services for the purposes of security testing, especially if they use HTTP.  
       However, WoT components also
       have some additional considerations, 
-      for example local access while using HTTPS, or
+      for example local access while using HTTP-over-TLS (HTTPS), or
       use of non-HTTP protocols such as CoAP or MQTT.
       </p><p>
       For the purposes of WoT security testing we will focus on Stage 2,
