@@ -2371,6 +2371,24 @@ tracking equipment, information about user's preferences in home environment, vi
       <section id="sec-pract-end-to-end-security">
         <h2>Secure Practices for end-to-end security</h2>
             <p>
+		    The notion 'end-to-end' security is often encountered when security is considered. 
+		    This notion is often misleading: it is a matter of risk assessment to determine 
+		    the "ends" that are to be protected (identifying the domain-of-protection) and 
+		    then select one or more security technologies to fulfill the identified demand 
+		    (rather than vice versa). In that sense, there is no single, universal notion of
+		    "end-to-end" in WoT security. There is also no single security technology that 
+		    allows to deliver "end-to-end security" for any definition of the ends. The 
+		    perception of WoT security is to support users of WoT security in implementing 
+		    security architectures according their perception of the ends (which can vary 
+		    across users, deployments etc.)
+		    For instance: MACSec provides E2E security between endpoints in one (local) 
+		    network, IPSec provides E2E security between endpoints in an IP-based internetwork, 
+		    (D)TLS provides E2E security between client and server processes, CMS as well as 
+		    XML/JSON/CBOR security can provide E2E security on level of application data
+            </p>
+	    <p>
+		    The following text addresses E2E security in the sense of protecting application 
+		    data exchanged between WoT system components:
               If end-to-end authenticity is desired,
               it is possible to sign WoT objects (TDs, <a>System User Data</a>) with either
               digital signatures (using asymmetric cryptographic primitives) or Message
@@ -2382,8 +2400,7 @@ tracking equipment, information about user's preferences in home environment, vi
 	      <a href="https://datatracker.ietf.org/doc/rfc7515/">RFC 7515 (IETF JSON Web Signature)</a>
 	      provides guidelines for computation
               and validation of digital signatures or MACs using JSON-based data structures. 
-            </p>
-            <p>
+           
               Similarly, if end-to-end confidentiality is desired,
               it is possible to encrypt objects using available cryptographic encryption primitives.
               For the objects expressed in JSON,
