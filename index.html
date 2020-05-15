@@ -2371,24 +2371,53 @@ tracking equipment, information about user's preferences in home environment, vi
       <section id="sec-pract-end-to-end-security">
         <h2>Secure Practices for end-to-end security</h2>
             <p>
-              If end-to-end authenticity is desired,
-              it is possible to sign WoT objects (TDs, <a>System User Data</a>) with either
-              digital signatures (using asymmetric cryptographic primitives) or Message
-              Authentication Codes (MACs, using symmetric cryptographic primitives).
-              Such digital signatures or MACs are created by the producers/issuers of the objects
-              and validated by consumers of the objects 
-	      (which should reject signed the objects whose signatures/MACs are invalid).
-              For data expressed in JSON, 
-	      <a href="https://datatracker.ietf.org/doc/rfc7515/">RFC 7515 (IETF JSON Web Signature)</a>
-	      provides guidelines for computation
-              and validation of digital signatures or MACs using JSON-based data structures. 
+              The notion 'end-to-end' security (short: E2E security) is often encountered when security 
+	      is considered. Quite often, this notion is encountered in a way that is misleading: it is a 
+	      matter of risk assessment to determine the "ends" that are to be protected in a distributed 
+	      system such as WoT (identifying the domain-of-protection) and then select one or more security 
+	      technologies to fulfill the identified demand (not: vice versa). 
             </p>
             <p>
-              Similarly, if end-to-end confidentiality is desired,
-              it is possible to encrypt objects using available cryptographic encryption primitives.
-              For the objects expressed in JSON,
-	      <a href="https://datatracker.ietf.org/doc/rfc7516/">RFC 7516 (IETF JSON Web Encryption)</a>
-              provides guidelines for encryption and decryption of JSON-based data structures. 
+              In that sense, there is no single, universal notion of E2E security in WoT. There is also no 
+	      single security technology that allows to deliver E2E security for any definition of the ends. 
+	      The perception of WoT security is to support users of WoT in implementing security architectures 
+	      according their perception of the ends (which can vary across users, deployments etc.) using for 
+	      instance:
+	      <ul>
+                 <li>CMS as well as XML/JSON/CBOR security (IETF resp. W3C) to provide E2E security on the level 
+		     of application data</li>
+                 <li>(D)TLS (IETF) to provide E2E security between client and server processes</li>
+                 <li>IPsec (IETF) to provide E2E security between endpoints in an IP-based inter-network</li>
+		 <li>MACsec (IEEE) to provide E2E security between endpoints in one local network</li>
+              </ul>
+            </p>
+	    <p>
+              The following technologies allow to address E2E security in the first sense (protecting exchanges 
+	      between WoT system components on the level of application data):
+	      <ul>
+                 <li>If authenticity is desired for exchanged application data, then sign WoT objects (TDs, System 
+	             User Data) using either digital signatures (using asymmetric cryptographic primitives) or Message 
+	             Authentication Codes (MACs, using symmetric cryptographic primitives). Such digital signatures or 
+		     MACs are created by the producers/issuers of the objects and validated by consumers of the objects 
+		     (which should reject signed the objects whose signatures/MACs are invalid). For data expressed in 
+		     JSON, RFC 7515 (JSON Web Signature (JWS)) provides a guideline for expressing digital signatures or 
+		     MACs as well as security metadata using JSON-based data structures. RFC 8152 (CBOR Object Signing and 
+	             Encryption (COSE)) does the same for CBOR.</li>
+                 <li>If confidentiality is desired for exchanged application data, then encrypt WoT objects using well-known 
+		     encryption primitives. For data expressed in JSON, RFC 7516 (JSON Web Encryption (JWE)) provides a 
+		     guideline for expressing encrypted data as well as security metadata using JSON-based data structures. 
+		     RFC 8152 (CBOR Object Signing and Encryption (COSE)) does the same for CBOR. Moreover the following is 
+		     important here:
+		     <ul>
+                         <li>Confidentiality without authenticity (i.e. encryption-only) does not provide a secure scheme. 
+		             Use authenticated encryption, not encryption-only to provide confidentiality</li>
+                         <li>Classical cryptographic schemes (pre-AEAD) cover encryption-only and authentication-only. This 
+		             requires an own design to deliver authenticated encryption and this tends to go wrong. Use AEAD 
+			     schemes to deliver authenticated encryption (or use an underlying security protocol such as (D)TLS – 
+			     when this can fulfill the identified E2E security demand)</li>
+                      </ul>
+		 </li>
+              </ul>
             </p>
             <p>
             This recommendation helps prevent the following threats: 
