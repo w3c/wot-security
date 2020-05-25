@@ -61,7 +61,13 @@
                 }
               ]
             , localBiblio: {
-                "CoRE-RD": {
+                "AEAD08": {
+                  href: "https://tools.ietf.org/html/rfc5116"
+                , title: "An Interface and Algorithms for Authenticated Encryption"
+                , publisher: "IETF"
+                , date: "January 2008"
+                },
+		"CoRE-RD": {
                   href: "https://tools.ietf.org/html/draft-ietf-core-resource-directory-11"
                 , title: "CoRE Resource Directory"
                 , status:    "Internet-Draft"
@@ -73,6 +79,18 @@
                 , title: "The OCF Security Specification, version 1.0.0"
                 , publisher: "OCF"
                 , date: "June 2017"
+                },
+		"JWE15": {
+                  href: "https://tools.ietf.org/html/rfc7516"
+                , title: "JSON Web Encryption (JWE)"
+                , publisher: "IETF"
+                , date: "May 2015"
+                },
+		"JWS15": {
+                  href: "https://tools.ietf.org/html/rfc7515"
+                , title: "JSON Web Signature (JWS)"
+                , publisher: "IETF"
+                , date: "May 2015"
                 },
                 "JWT15": {
                   href: "https://tools.ietf.org/html/rfc7519"
@@ -95,9 +113,8 @@
                 , date: "July 2017"
                 },
                 "COSE17": {
-                  href: "https://tools.ietf.org/pdf/draft-ietf-cose-msg-24.pdf"
+                  href: "https://tools.ietf.org/html/rfc8152"
                 , title: "CBOR Object Signing and Encryption (COSE)"
-                , status:    "Internet-Draft"
                 , publisher: "IETF"
                 , date: "May 2017"
                 },
@@ -2369,7 +2386,7 @@ tracking equipment, information about user's preferences in home environment, vi
       -->
 
       <section id="sec-pract-end-to-end-security">
-        <h2>Secure Practices for end-to-end security</h2>
+        <h2>Secure Practices for End-to-End security</h2>
             <p>
               The notion 'end-to-end' security (short: E2E security) is often encountered when security 
 	      is considered. Quite often, this notion is encountered in a way that is misleading: it is a 
@@ -2395,26 +2412,25 @@ tracking equipment, information about user's preferences in home environment, vi
               The following technologies allow to address E2E security in the first sense (protecting exchanges 
 	      between WoT system components on the level of application data):
 	      <ul>
-                 <li>If authenticity is desired for exchanged application data, then sign WoT objects (TDs, System 
-	             User Data) using either digital signatures (using asymmetric cryptographic primitives) or Message 
+                 <li>If authenticity is desired for exchanged application data, then sign WoT objects (TDs, system 
+	             user data) using either digital signatures (using asymmetric cryptographic primitives) or Message 
 	             Authentication Codes (MACs, using symmetric cryptographic primitives). Such digital signatures or 
 		     MACs are created by the producers/issuers of the objects and validated by consumers of the objects 
 		     (which should reject signed the objects whose signatures/MACs are invalid). For data expressed in 
-		     JSON, RFC 7515 (JSON Web Signature (JWS)) provides a guideline for expressing digital signatures or 
-		     MACs as well as security metadata using JSON-based data structures. RFC 8152 (CBOR Object Signing and 
-	             Encryption (COSE)) does the same for CBOR.</li>
+		     JSON, [[JWS15]] provides a guideline for expressing digital signatures or MACs as well as related 
+		     security metadata using JSON-based data structures. [[COSE17]] does the same for CBOR.</li>
                  <li>If confidentiality is desired for exchanged application data, then encrypt WoT objects using well-known 
-		     encryption primitives. For data expressed in JSON, RFC 7516 (JSON Web Encryption (JWE)) provides a 
-		     guideline for expressing encrypted data as well as security metadata using JSON-based data structures. 
-		     RFC 8152 (CBOR Object Signing and Encryption (COSE)) does the same for CBOR. Moreover the following is 
-		     important here:
+		     encryption primitives. For data expressed in JSON, [[JWE15]] provides a guideline for expressing 
+	             encrypted data as well as related security metadata using JSON-based data structures. [[COSE17] does 
+	             the same for CBOR. Moreover the following is important here:
 		     <ul>
                          <li>Confidentiality without authenticity (i.e. encryption-only) does not provide a secure scheme. 
 		             Use authenticated encryption, not encryption-only to provide confidentiality</li>
-                         <li>Classical cryptographic schemes (pre-AEAD) cover encryption-only and authentication-only. This 
-		             requires an own design to deliver authenticated encryption and this tends to go wrong. Use AEAD 
-			     schemes to deliver authenticated encryption (or use an underlying security protocol such as (D)TLS – 
-			     when this can fulfill the identified E2E security demand)</li>
+                         <li>Classical cryptographic schemes (pre-AEAD, see [[AEAD08]]) cover encryption-only as well as 
+		             authentication-only. This requires users of cryptographic schemes to create an own design to 
+			     deliver authenticated encryption and this tends to go wrong. Use AEAD schemes to deliver 
+		             authenticated encryption (or use an underlying security protocol such as (D)TLS – when this can 
+			     fulfill the identified E2E security demand)</li>
                       </ul>
 		 </li>
               </ul>
