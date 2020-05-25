@@ -11,6 +11,8 @@
 
 [Coo13] Cooper, A. et al: [https://tools.ietf.org/html/rfc6973 Privacy Considerations for Internet Protocols]. IETF RFC 6973 (IAB Guideline), July 2013.
 
+[COSE17] J. Schaaed, et al.: [https://tools.ietf.org/html/rfc8152 CBOR Object Signing and Encryption (COSE)]. IETF RFC 8152, 2017.
+
 [Dur13] Durumeric, Z. et al.: [http://conferences.sigcomm.org/imc/2013/papers/imc257-durumericAemb.pdf Analysis of the HTTPS Certificate Ecosystem]. Proc. of the 2013 conference on Internet measurement conference. October 2013
 
 [Ell00] Ellison, C.; Schneier, B.: [https://www.schneier.com/paper-pki.pdf Ten Risks of PKI: What You’re not Being Told about Public Key Infrastructure]. Computer Security Journal, v 16, n 1, 2000, pp. 1-7
@@ -38,6 +40,12 @@
 [ISF17] IoT Security Foundation: [https://iotsecurityfoundation.org/best-practice-guidelines/ IoT Security Foundation Best Practice Guidelines].  Web page May 17.
 
 [Jon14] Jones, M.: [http://www.niso.org/apps/group_public/download.php/14003/SP_Jones_JSON_isqv26no3.pdf A JSON-Based Identity Protocol Suite]. Information Standards Quarterly, vol. 26, no. 3, 2014, pp. 19–22 
+
+[JWE15] Jones, M. et al.: [https://tools.ietf.org/html/rfc7516 JSON Web Encryption (JWE)]. IETF RFC 7516, 2015.
+
+[JWS15] Jones, M. et al.: [https://tools.ietf.org/html/rfc7515 JSON Web Signature (JWS)]. IETF RFC 7515, 2015.
+
+[JWT15] Jones, M. et al.: [https://tools.ietf.org/html/rfc7519 JSON Web Token (JWT)]. IETF RFC 7519, 2015.
 
 [Ken03] Kent, S.; Millet, L. (eds): [http://www.nap.edu/openbook.php?isbn=0309088968 Who Goes There? Authentication Through the Lens of Privacy]. The National Academies Press, Washington D.C., 2003
 
@@ -70,5 +78,3 @@
 [Yeg11] Yegge, S.: [https://plus.google.com/+RipRowan/posts/eVeouesvaVX Stevey's Google Platforms Rant]. Blog Oct. 2011
 
 [Ocf17] OCF: [https://openconnectivity.org/specs/OCF_Security_Specification_v1.0.0.pdf The OCF Security Specification, version 1.0.0]. Jun. 2017
-
-[JWT15] M. Jones, E. et al.: [https://tools.ietf.org/html/rfc7519 JSON Web Token (JWT)]. IETF RFC 7519, 2015.
