@@ -13,6 +13,8 @@ The reviews should answer the following questions:
 It would also be helpful to summarize what services the hub offers.
 
 ## Home Assistant
+Web page: https://www.home-assistant.io/
+
 Description from their web page:
 * Open source home automation that puts local control and privacy first.
   Powered by a worldwide community of tinkerers and DIY enthusiasts.
@@ -52,3 +54,43 @@ or just the ability to see your local web dashboard.
 
 [TODO: Discuss] Other security mechanisms are different authentication methods to access the
 web dashboard but I think it is not relevant for our use cases.
+
+## OpenHAB
+Web page: https://www.openhab.org/
+Description from their web page:
+* Empowering the smart home - a vendor and technology agnostic open source automation software for your home.
+
+With respect to security, the openHAB documentation appears to be scattered and fuzzy in parts.
+The parts with a more clear description appear to suffer from a low level of elaboration.
+This creates the impression that security is no major prio in openHAB development.
+
+Here is my reading:
+
+"Thing-to-Thing"-security in openHab: openHAB uses the term "channel" to denote actual
+operational exchanges within the system.
+I did not find information about "channel" security and guess that openHab anticipates a
+default deployment where unprotected plaintext exchanges happen between things within a
+dedicated/segregated local network.
+I.e. security between things seems to remain unelaborated
+(beyond making that a concern of the network that is being utilized).
+However this appears to be implicit i.e. the Thing-to-Thing security aspect of openHab
+security appears to be not elaborated at all (its probably fair to descope this
+aspect but a descopting of this should be explicit)
+
+"User-to-openHAB system"-security: is elaborated in
+https://www.openhab.org/docs/installation/security.html
+and distinguishes/respectively supports:
+
+Commandine console: this means openHAB can (shall) use SSH.
+In contrast to HTTP-over-TLS for "user-to-openHab system"-security,
+the SSH flavor supports client resp. user authentication
+(hence gets around the wrap it again with virtual private networking techniques)
+HTTP: this means must use TLS (subject to an embedded Web server called Jetty).
+But the employed TLS security model is simplistic and seems to encourage
+bad practices such as self-signed EE certs (for the embedded Web server)
+for TLS server authentication.
+It does not support TLS client authentication as well as client or user
+authentication on the HTTP layer (layer 7a) or inside HTTP payload (layer 7b).
+For that reason another protecttion layer is needed to protect the HTTP-over-TLS responder.
+That is suggested to be done using virtual private network techniques by the openHAB
+documentation.
