@@ -1,5 +1,12 @@
 # WoT Security and Privacy
-Github repository of the W3C Web of Things Security and Privacy Task Force to manage cross-cutting security and privacy considerations.
+[![Follow on Twitter](https://img.shields.io/twitter/follow/W3C_WoT.svg?label=follow+W3C_WoT)](https://twitter.com/W3C_WoT)
+[![Stack Exchange questions](https://img.shields.io/stackexchange/stackoverflow/t/web-of-things?style=plastic)]( https://stackoverflow.com/questions/tagged/web-of-things)
+
+General information about the Web of Things can be found on https://www.w3.org/WoT/.
+  
+---
+This is the github repository for the W3C Web of Things Security and Privacy Task Force,
+and is used to manage cross-cutting security and privacy considerations.
 
 * [References](wot-security-references.md):
   List of both normative and informative source material.
