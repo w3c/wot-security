@@ -392,6 +392,24 @@
                   , title: "Intel® Secure Device Onboard"
                   , publisher: "Intel"
                   , date: "2017"
+                },
+                "ISO-IEC-2382": {
+                  href: "https://www.iso.org/obp/ui/#iso:std:iso-iec:2382:ed-1:v1:en",
+                  title: "Information technology — Vocabulary",
+                  publisher: "ISO",
+                  date: "2015"
+                },
+                "ISO-IEC-27000": {
+                  href: "https://www.iso.org/obp/ui/#iso:std:iso-iec:27000:ed-5:v1:en",
+                  title: "Information technology — Security techniques — Information security management systems — Overview and vocabulary",
+                  publisher: "ISO",
+                  date: "2018"
+                },
+                "ISO-IEC-29100": {
+                  href: "https://www.iso.org/obp/ui/#iso:std:iso-iec:29100:ed-1:v1:en",
+                  title: "Information technology — Security techniques — Privacy framework",
+                  publisher: "ISO",
+                  date: "2011"
                 }
               }
             };
@@ -441,8 +459,27 @@
 
     <section>
       <h1>Introduction</h1>
-      <p>Security of a WoT System can refer to the security of the Thing Description (TD) itself or
-      the security of the Thing the Thing Description describes.
+      <p>
+        Security and privacy are crucial requirements for Web of Things:
+        Using WoT-based technologies must not put the integrity of a system or the confidentiality of personal information at risk.
+        This document wants to help implementors and stakeholders in fulfilling these important requirements and provides guidelines for secure and privacy-respecting deployments.
+      </p>
+      <p>
+        Definition-wise, this document builds upon the [[WoT-Architecture11]] and the ISO definitions for security [[ISO-IEC-27000]] and privacy ([[ISO-IEC-2382]], [[ISO-IEC-29100]]) it is referring to.
+        The informative guidelines defined here accompany the other deliverables published by the WoT Working Group and especially the normative [[WoT-Architecture11]],  [[WoT-Thing-Description11]], and [[WoT-Discovery]] documents (also see section [[[#related-documents]]]).
+      </p>
+      <p>
+        <!-- TODO: Revisit document overview -->
+        The rest of this document is structured as follows:
+        Section [[[#wot-device-lifecycle]]] first explains the lifecycle of a WoT Device and the security-related considerations that go along with it.
+        [[[#requirements]]] then derives a number of security-related requirements from these considerations and formulates a Threat Model, illustrated by three different scenarios.
+        [[[#wot-privacy]]] elaborates on privacy considerations and provides specific guidelines and recommendations, before security aspects related to onboarding are discussed in [[[#security-provisioning-onboarding-and-maintenance]]].
+        Possible mitigations for the threats previously described are presented in section [[[#security-mitigations]]].
+        Section [[[#examples-of-wot-security-configurations]]] gives a number of examples for security configurations in different scenarios.
+        Finally, section [[[#e-security-validation]]] provides guidance for testing and the evaluation of security and privacy considerations.
+        Additional terminology used throughout the document is introduced in section [[[#e-terminology]]].
+      </p>
+
     <section id="related-documents">
       <h2>Related W3C Documents</h2>
       <p>
