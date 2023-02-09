@@ -112,12 +112,6 @@
                 , publisher: "IETF"
                 , date: "July 2017"
                 },
-                "COSE17": {
-                  href: "https://tools.ietf.org/html/rfc8152"
-                , title: "CBOR Object Signing and Encryption (COSE)"
-                , publisher: "IETF"
-                , date: "May 2017"
-                },
                 "Bel89": {
                   authors: ["S. Bellovin"]
                 , href: "https://cseweb.ucsd.edu/classes/sp99/cse227/ipext.pdf"
@@ -2418,10 +2412,10 @@ tracking equipment, information about user's preferences in home environment, vi
 		     MACs are created by the producers/issuers of the objects and validated by consumers of the objects
 		     (which should reject signed the objects whose signatures/MACs are invalid). For data expressed in
 		     JSON, [[JWS15]] provides a guideline for expressing digital signatures or MACs as well as related
-		     security metadata using JSON-based data structures. [[COSE17]] does the same for CBOR.</li>
+		     security metadata using JSON-based data structures. [[RFC9052]] does the same for CBOR.</li>
                  <li>If confidentiality is desired for exchanged application data, then encrypt WoT objects using well-known
 		     encryption primitives. For data expressed in JSON, [[JWE15]] provides a guideline for expressing
-	             encrypted data as well as related security metadata using JSON-based data structures. [[COSE17] does
+	             encrypted data as well as related security metadata using JSON-based data structures. [[RFC9052]] does
 	             the same for CBOR. Moreover the following is important here:
 		     <ul>
                          <li>Confidentiality without authenticity (i.e. encryption-only) does not provide a secure scheme.
@@ -2614,7 +2608,7 @@ tracking equipment, information about user's preferences in home environment, vi
             Thing Descriptions to the WoT Consumer or in case the remote cloud is not a trusted entity,
 	    the authenticity of the Thing Description should be verified using other methods on the application layer,
             such as wrapping the Thing Description into a protected
-	    CBOR Object Encryption and Signing (COSE) object [[COSE17]].
+	    CBOR Object Encryption and Signing (COSE) object [[RFC9052]].
             This can be done by the provider of the Thing Description and verified by the
 	    WoT Consumer after the download from the remote cloud.
             </p>
@@ -2817,7 +2811,7 @@ tracking equipment, information about user's preferences in home environment, vi
            tunnel configuration.  In particular, unencrypted traffic is available both locally (on the local network
            and/or inside the gateway) and in the cloud portal.  Therefore both the gateway and the cloud portal
            need to be trusted.  This can be mitigated somewhat by using application-level end-to-end object security
-           [[COSE17]].
+           [[RFC9052]].
            </p>
 
             <figure id="wot_client_thing_proxy">
@@ -2860,7 +2854,7 @@ HTTPS)/HTTP Proxy</figcaption>
            as a separate service.  Conceptually the functions are distinct. -->
            </p>
            <p>In both of these sub-patterns, object security (that is, encryption and authentication of payloads
-	   at the application level) can be used to preserve confidentiality and integrity if necessary [[COSE17]].
+	   at the application level) can be used to preserve confidentiality and integrity if necessary [[RFC9052]].
 	   A caching proxy can
 	   simply store and return copies of the encrypted data representing the state of "private" properties.
            </p>
