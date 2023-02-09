@@ -61,12 +61,6 @@
                 }
               ]
             , localBiblio: {
-                "AEAD08": {
-                  href: "https://tools.ietf.org/html/rfc5116"
-                , title: "An Interface and Algorithms for Authenticated Encryption"
-                , publisher: "IETF"
-                , date: "January 2008"
-                },
                 "Ocf17": {
                   href: "https://openconnectivity.org/specs/OCF_Security_Specification_v1.0.0.pdf"
                 , title: "The OCF Security Specification, version 1.0.0"
@@ -2380,7 +2374,7 @@ tracking equipment, information about user's preferences in home environment, vi
 		     <ul>
                          <li>Confidentiality without authenticity (i.e. encryption-only) does not provide a secure scheme.
 		             Use authenticated encryption, not encryption-only to provide confidentiality</li>
-                         <li>Classical cryptographic schemes (pre-AEAD, see [[AEAD08]]) cover encryption-only as well as
+                         <li>Classical cryptographic schemes (pre-AEAD, see [[RFC5116]]) cover encryption-only as well as
 		             authentication-only. This requires users of cryptographic schemes to create an own design to
 			     deliver authenticated encryption and this tends to go wrong. Use AEAD schemes to deliver
 		             authenticated encryption (or use an underlying security protocol such as (D)TLS – when this can
