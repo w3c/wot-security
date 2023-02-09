@@ -80,12 +80,6 @@
                 , publisher: "OCF"
                 , date: "June 2017"
                 },
-		"JWS15": {
-                  href: "https://tools.ietf.org/html/rfc7515"
-                , title: "JSON Web Signature (JWS)"
-                , publisher: "IETF"
-                , date: "May 2015"
-                },
                 "JWT15": {
                   href: "https://tools.ietf.org/html/rfc7519"
                 , title: "JSON Web Token (JWT)"
@@ -2405,7 +2399,7 @@ tracking equipment, information about user's preferences in home environment, vi
 	             Authentication Codes (MACs, using symmetric cryptographic primitives). Such digital signatures or
 		     MACs are created by the producers/issuers of the objects and validated by consumers of the objects
 		     (which should reject signed the objects whose signatures/MACs are invalid). For data expressed in
-		     JSON, [[JWS15]] provides a guideline for expressing digital signatures or MACs as well as related
+		     JSON, [[RFC7515]] provides a guideline for expressing digital signatures or MACs as well as related
 		     security metadata using JSON-based data structures. [[RFC9052]] does the same for CBOR.</li>
                  <li>If confidentiality is desired for exchanged application data, then encrypt WoT objects using well-known
 		     encryption primitives. For data expressed in JSON, [[RFC7516]] provides a guideline for expressing
