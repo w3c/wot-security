@@ -466,18 +466,7 @@
       </p>
       <p>
         Definition-wise, this document builds upon the [[WoT-Architecture11]] and the ISO definitions for security [[ISO-IEC-27000]] and privacy ([[ISO-IEC-2382]], [[ISO-IEC-29100]]) it is referring to.
-        The informative guidelines defined here accompany the other deliverables published by the WoT Working Group and especially the normative [[WoT-Architecture11]],  [[WoT-Thing-Description11]], and [[WoT-Discovery]] documents (also see section [[[#related-documents]]]).
-      </p>
-      <p>
-        <!-- TODO: Revisit document overview -->
-        The rest of this document is structured as follows:
-        Section [[[#wot-device-lifecycle]]] first explains the lifecycle of a WoT Device and the security-related considerations that go along with it.
-        [[[#requirements]]] then derives a number of security-related requirements from these considerations and formulates a Threat Model, illustrated by three different scenarios.
-        [[[#wot-privacy]]] elaborates on privacy considerations and provides specific guidelines and recommendations, before security aspects related to onboarding are discussed in [[[#security-provisioning-onboarding-and-maintenance]]].
-        Possible mitigations for the threats previously described are presented in section [[[#security-mitigations]]].
-        Section [[[#examples-of-wot-security-configurations]]] gives a number of examples for security configurations in different scenarios.
-        Finally, section [[[#e-security-validation]]] provides guidance for testing and the evaluation of security and privacy considerations.
-        Additional terminology used throughout the document is introduced in section [[[#e-terminology]]].
+        The informative guidelines defined here accompany the other deliverables published by the WoT Working Group.
       </p>
 
     <section id="related-documents">
@@ -499,7 +488,45 @@
         <li>the [[WoT-Scripting-API]] document.</li>
       </ul>
       </p>
-</section>
+    </section>
+
+      <section>
+        <h2>
+          Document Outline
+        </h2>
+        <p>
+          <!-- TODO: Revisit document overview -->
+          The rest of this document is structured as follows:
+
+          <ul>
+            <li>
+              Section [[[#wot-device-lifecycle]]] first explains the process by which things are incorporated into a WoT system and the security-related considerations that go along with it.
+            </li>
+            <li>
+              Section [[[#requirements]]] then derives a number of security-related requirements from these considerations and formulates a Threat Model, illustrated by three different scenarios.
+            </li>
+            <li>
+              Section [[[#wot-privacy]]] elaborates on privacy considerations and provides specific guidelines and recommendations.
+            </li>
+            <li>
+              Security aspects related to onboarding are discussed in section [[[#security-provisioning-onboarding-and-maintenance]]].
+            </li>
+            <li>
+              Possible mitigations for the threats previously described are presented in section [[[#security-mitigations]]].
+            </li>
+            <li>
+              Section [[[#examples-of-wot-security-configurations]]] gives a number of examples for security configurations in different scenarios.
+            </li>
+            <li>
+              Finally, section [[[#e-security-validation]]] provides guidance for testing and the evaluation of security and privacy considerations.
+            </li>
+            <li>
+              <!-- TODO: Should the terminology be moved to the beginning of the document? -->
+              Additional terminology used throughout the document is introduced in section [[[#e-terminology]]].
+            </li>
+          </ul>
+        </p>
+      </section>
     </section>
 
     <section id="wot-device-lifecycle">
