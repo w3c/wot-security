@@ -392,6 +392,24 @@
                   , title: "Intel® Secure Device Onboard"
                   , publisher: "Intel"
                   , date: "2017"
+                },
+                "ISO-IEC-2382": {
+                  href: "https://www.iso.org/obp/ui/#iso:std:iso-iec:2382:ed-1:v1:en",
+                  title: "Information technology — Vocabulary",
+                  publisher: "ISO",
+                  date: "2015"
+                },
+                "ISO-IEC-27000": {
+                  href: "https://www.iso.org/obp/ui/#iso:std:iso-iec:27000:ed-5:v1:en",
+                  title: "Information technology — Security techniques — Information security management systems — Overview and vocabulary",
+                  publisher: "ISO",
+                  date: "2018"
+                },
+                "ISO-IEC-29100": {
+                  href: "https://www.iso.org/obp/ui/#iso:std:iso-iec:29100:ed-1:v1:en",
+                  title: "Information technology — Security techniques — Privacy framework",
+                  publisher: "ISO",
+                  date: "2011"
                 }
               }
             };
@@ -428,7 +446,7 @@
      <p class="ednote">
         This content should be consistent with the summaries in the
         Security sections of other WoT documents, in particular the
-	[[WoT-Architecture]] and [[WoT-Thing-Description]]
+	[[WoT-Architecture11]] and [[WoT-Thing-Description11]]
         documents.
      </p>
     </section>
@@ -441,9 +459,23 @@
 
     <section>
       <h1>Introduction</h1>
-      <p>Security of a WoT System can refer to the security of the Thing Description (TD) itself or
-      the security of the Thing the Thing Description describes.
-    <section>
+      <p>
+        Security and privacy are crucial requirements for Web of Things.
+        Using WoT-based technologies must not put security or privacy at risk,
+	including the
+	integrity of a system or the confidentiality of personal information,
+	nor allow WoT systems to be used to attack other systems,
+	among other concerns.
+        This document wants to help implementors and stakeholders in fulfilling 
+	these important requirements and provides guidelines for 
+	secure and privacy-respecting deployments.
+      </p>
+      <p>
+        Definition-wise, this document uses the [[WoT-Architecture11]] as well as the ISO definitions for security [[ISO-IEC-27000]] and privacy ([[ISO-IEC-2382]], [[ISO-IEC-29100]]).
+        The informative guidelines defined here accompany the other deliverables published by the WoT Working Group.
+      </p>
+
+    <section id="related-documents">
       <h2>Related W3C Documents</h2>
       <p>
         For a general discussion of best practices for developing secure WoT Systems,
@@ -452,17 +484,59 @@
         see the <a href="https://github.com/w3c/wot-security-best-practices/">WoT
         Security Best Practices</a> document.
       </p>
-      <p>For details on the Web of Things architecture, please refer to the following:
+      <p>For detailed Web of Things specifications, please refer to the following:</p>
       <ul>
-        <li>the <a href="https://www.w3.org/WoT/IG/">Interest Group</a> web site</li>
-        <li>the <a href="https://www.w3.org/WoT/WG/">Working Group</a> web site</li>
-        <li>the [[WoT-Architecture]] document,</li>
-        <li>the [[WoT-Thing-Description]] document,</li>
+        <li>the [[WoT-Usecases]] document,</li>
+        <li>the [[WoT-Architecture11]] document,</li>
+        <li>the [[WoT-Thing-Description11]] document,</li>
+	<li>the [[WoT-Discovery]] document,</li>
         <li>the [[WoT-Binding-Templates]] document, and</li>
         <li>the [[WoT-Scripting-API]] document.</li>
       </ul>
-      </p>
-</section>
+      <p>Other information on the Web of Things can be found on the WoT web site at
+      <a href="https://www.w3.org/WoT/">https://www.w3.org/WoT/</a>.</p>
+    </section>
+
+      <section>
+        <h2>
+          Document Outline
+        </h2>
+        <p>
+          <!-- TODO: Revisit document overview -->
+          The rest of this document is structured as follows:
+
+          <ul>
+            <li>
+              Section [[[#wot-device-lifecycle]]] first explains the process by which things are incorporated into a WoT system and the security-related considerations that go along with it.
+            </li>
+            <li>
+              Section [[[#requirements]]] then derives a number of security-related requirements from these considerations and formulates a Threat Model, illustrated by three different scenarios.
+            </li>
+            <li>
+              Section [[[#wot-privacy]]] elaborates on privacy considerations and provides specific guidelines and recommendations.
+            </li>
+            <li>
+              Security aspects related to onboarding are discussed in section [[[#security-provisioning-onboarding-and-maintenance]]].
+            </li>
+            <li>
+              Section [[[#references-to-existing-security-best-practices]]] conducts a review of existing security best practices.
+            </li>
+            <li>
+              Possible mitigations for the threats previously described are presented in section [[[#security-mitigations]]].
+            </li>
+            <li>
+              Section [[[#examples-of-wot-security-configurations]]] gives a number of examples for security configurations in different scenarios.
+            </li>
+            <li>
+              Finally, section [[[#e-security-validation]]] provides guidance for testing and the evaluation of security and privacy considerations.
+            </li>
+            <li>
+              <!-- TODO: Should the terminology be moved to the beginning of the document? -->
+              Additional terminology used throughout the document is introduced in section [[[#e-terminology]]].
+            </li>
+          </ul>
+        </p>
+      </section>
     </section>
 
     <section id="wot-device-lifecycle">
@@ -520,7 +594,7 @@
       </p>
     </section>
 
-  <section>
+  <section id="requirements">
     <h1>Requirements</h1>
 
         <section>
@@ -1893,14 +1967,14 @@ tracking equipment, information about user's preferences in home environment, vi
 	    In particular, dereferencing links carries similar inferencing risks
 	    as context file dereferencing.
             This has been mentioned in the Security and Privacy
-            sections of [[WoT-Architecture]] and
-            [[WoT-Thing-Description]] but needs to be expanded upon here.
+            sections of [[WoT-Architecture11]] and
+            [[WoT-Thing-Description11]] but needs to be expanded upon here.
           </p>
 
         </section>
     </section>
 
-  <section>
+  <section id="security-provisioning-onboarding-and-maintenance">
   <h1>Security Provisioning(Onboarding) and Maintenance</h1>
     <section>
     <h2>Goals and requirements</h2>
@@ -1971,7 +2045,7 @@ tracking equipment, information about user's preferences in home environment, vi
     </section>
   </section>
 
-  <section>
+  <section id="references-to-existing-security-best-practices">
   <h1>References to Existing Security Best Practices</h1>
     <p>
       Best practices in security are constantly evolving,
@@ -2338,7 +2412,7 @@ tracking equipment, information about user's preferences in home environment, vi
 
   </section>
 
-    <section>
+    <section id="examples-of-wot-security-configurations">
     <h1>Examples of WoT Security Configurations</h1>
         <p>
           The WoT is intended to be used in variety of use cases and deployment configurations.
@@ -3383,7 +3457,7 @@ HTTPS)/HTTP Proxy</figcaption>
 
       <p>
         Please refer to
-	[[WoT-Architecture]]
+	[[WoT-Architecture11]]
 	for definitions of the following terms used in this document: WoT Consumer,
     WoT Thing, WoT Servient, WoT Protocol Binding, WoT Binding Templates, WoT Intermediary,
     WoT Thing Directory, WoT Thing Description, Exposed Thing, WoT Interface, WoT Runtime, and WoT Scripting API.
