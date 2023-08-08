@@ -1347,6 +1347,22 @@
                    or to disturb the service operation by intentional dropping
                    of all or selective WoT messages</td>
             </tr><tr>
+               <th><dfn>WoT DDoS Threat</dfn></th>
+               <td><a>Network Attacker</a>,
+                   <a>Malware Developer</a></td>
+               <td><a>WoT Thing Resources</a>,
+                   <a>WoT Infrastructure Resources</a>,
+                   other Internet resources,
+                   Infrastructure operability</td>
+               <td><strong>Pre-conditions:</strong>
+                   General preconditions for an attacker with access to a WoT Interface<br/>
+                   <strong>Attack method:</strong>
+                   Any attack method using a WoT Interface in order to 
+		   execute a Distributed Denial-of-Service (DDoS) attack on some other network
+                   endpoint, for example by amplifying network traffic into that
+                   endpoint or acting as a network traffic generator.
+             </td>
+            </tr><tr>
                 <th><dfn>WoT Communication Threat - TD Authenticity</dfn></th>
                 <td><a>Network Attacker</a>,
                     <a>Malware Developer</a>,
@@ -1693,6 +1709,18 @@ tracking equipment, information about user's preferences in home environment, vi
 </td>
 </tr>
 <tr>
+<td><a>WoT DDoS Threat</a></td>
+<td>A compromised WoT device could be used to generate network traffic to another endpoint,
+  which could be anywere on the network.  A collection of such devices could be used to generate 
+  enough traffic to disrupt the service of that endpoint.  Note that the user may have nothing to
+  do with the service, and each user's network traffic may not be enough to disrupt the user's
+  own service.
+  A variant of this is an amplification attack, where a feature of the WoT Device's network
+  API or implementation allows network traffic to be "redirected" (and increased in volume)
+  onto a target endpoint.  This does not require compromise of the device.
+</td>
+</tr>
+<tr>
 <td><a>WoT Communication Threat - Side Channels</a></td>
 <td>A compromised application on a user smartphone connected to the same internal network as WoT Devices
  listens to the WoT System traffic. 
@@ -1816,6 +1844,13 @@ tracking equipment, information about user's preferences in home environment, vi
     </td>
     </tr>
     <tr>
+    <td><a>WoT DDoS Threat</a></td>
+    <td>Same as in Scenario 1.
+      Note again that the attack target may be unassociated with the <a>System Owner</a> and the attack
+      may not actually disrupt the service.  
+    </td>
+    </tr>
+    <tr>
     <td><a>WoT Communication Threat - Side Channels</a></td>
     <td>Similar to Scenario 1, but the attack can be done by an employee with network access to the
     same internal network as WoT Devices.
@@ -1833,8 +1868,10 @@ tracking equipment, information about user's preferences in home environment, vi
      to monitor or perform certain automation tasks in its Operational Technology (OT) network.
      Compared to other scenarios above, the main challenge here is to guarantee safety and availability
      of the critical infrastructure. 
-     Therefore, for example, Denial-Of-Service attacks must be mitigated as well as possible. 
+     Therefore, for example, Denial-Of-Service (DoS) attacks must be mitigated as well as possible. 
      On the other hand, privacy is usually less important for this scenario. 
+     As in the above scenarios network isolation, in particular limiting both incoming and outbound
+     connections, can be used to mitigate many attacks including Distributed DoS.
     </p>
     <p>
      Similar to the previous scenarios, we assume that there is a trusted non-compromised <a>System Provider</a>
