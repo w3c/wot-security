@@ -18,9 +18,6 @@ and is used to manage cross-cutting security and privacy considerations.
       This compiles out the complex JavaScript implementing the ReSpec system,
       making it faster to view and more compatible with a wider range of browsers.
       However, there may a small delay before it gets updated when the master changes.
-    * A working "unstable" version is also available [here](https://rawgit.com/w3c/wot-security/working/index.html)
-      but has not yet been validated and may have errors.
-      It is also not "compiled" and so may be slow to display (or display with issues) on some broswers.
 * You may also be interested in the 
   [WoT Security Best Practices document](https://github.com/w3c/wot-security-best-practices).
   The Guidelines describe general principles and establish foundational definitions.
