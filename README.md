@@ -13,7 +13,7 @@ and is used to manage cross-cutting security and privacy considerations.
 * [WoT Security and Privacy Guidelines](index.html):
   A unified set of informative recommendations for security and privacy in a Web of Things system.
   Includes a threat model.  
-    * The latest stable version can be found [here](https://rawgit.com/w3c/wot-security/master/index.html).
+    * The latest stable version can be found [here](https://github.com/w3c/wot-security/blob/main/index.html).
     * A "rendered" form of the latest stable version can be found [here](https://w3c.github.io/wot-security/).
       This compiles out the complex JavaScript implementing the ReSpec system,
       making it faster to view and more compatible with a wider range of browsers.
