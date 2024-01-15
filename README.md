@@ -10,6 +10,8 @@ and is used to manage cross-cutting security and privacy considerations.
 
 * [References](wot-security-references.md):
   List of both normative and informative source material.
+* [Survey of Considerations](considerations.md):
+  List of security and privacy considerations in other deliverables.
 * [WoT Security and Privacy Guidelines](index.html):
   A unified set of informative recommendations for security and privacy in a Web of Things system.
   Includes a threat model.  
@@ -27,3 +29,4 @@ and is used to manage cross-cutting security and privacy considerations.
 Older material has been moved to an `archive` subdirectory.
 This material has mostly already been incorporated into the 
 main guidelines or best-practices documents.
+
